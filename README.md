@@ -12,6 +12,7 @@ article/
 ├── signature-algorithms/              # 签名算法逆向
 ├── packing-bypass/                    # 加固/混淆绕过
 ├── native-analysis/                   # Native SO 分析
+├── mobile-app-reverse/                # 移动 App 逆向方法/环境/流程
 └── web-reverse/                       # Web 逆向 (webpack/框架/JS)
 ```
 
