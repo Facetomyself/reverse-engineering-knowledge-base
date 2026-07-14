@@ -2,7 +2,7 @@
 
 ## 仓库职责
 
-本仓库是 `reverse_ENV` 的独立 Private 逆向知识库。正文、分类和 canonical index 均在本仓维护，并由 `reverse_ENV/article/` submodule 固定版本。
+本仓库是 `reverse_ENV` 的独立 Public 逆向知识库。正文、分类和 canonical index 均在本仓维护，并由 `reverse_ENV/article/` submodule 固定版本。
 
 ## 强制规则
 
