@@ -1,211 +1,150 @@
-# Qidian (起点读书) — 签名算法分析报告
+# Qidian 请求签名与 Fock SDK 结论更新
 
-> 时间: 2026-06-27 ｜ 基于: jadx 反编译 + 28MB 流量分析
+> 来源项目: `workspace/qidian` ｜ 样本: 起点读书 7.9.464 ｜ 初始分析: 2026-06-27 ｜ 更新: 2026-07-15
+>
+> 证据: 28 MB 流量、126 条 QDSign、jadx/IDA、3DES 独立解密复核、公开实现交叉验证
 
-## 总体架构
+## 技术摘要
 
-起点读书 APP 使用**阅文自研 Fock SDK** 进行请求签名，核心逻辑全部在 **Native层 (.so)** 实现。Java 层只做桥接和调度。
+起点读书通过 `FockUtil.addRetrofitH/getH` 向请求注入 QDSign、borgus、cecelia、gorgon、ibex、tstamp 等字段。早期文章把 QDSign 推测为 RSA/HMAC，并把 `libfock.so` 的 AES/Hash 链当作最终签名算法；126 条真实样本复核已推翻该判断。
 
-```
-请求发起 → OkHttp Interceptor Chain
-  ├─ [1] C4984e (QDRequestInterceptor)
-  │     └─ FockUtil.addRetrofitH(request) → NATIVE → 注入 QDSign/borgus/cecelia/gorgon/ibex
-  ├─ [2] QDRequestAddKnobsInterceptor
-  │     └─ native intercept() → 注入 sora
-  └─ [3..7] 登录/错误处理拦截器
-```
+当前样本的 QDSign 是固定 24-byte key 与 8-byte IV 下的 3DES-CBC 字段密文。`libfock.so` 内确实存在 AES、DES、Hash 与 CRC 代码，但其业务归属需要重新沿 JNI 调用链确认。
 
-## 7 大签名头详解
+## 请求注入结构
 
-### 1. QDSign — 核心请求签名
+~~~text
+OkHttp request
+  -> FockUtil.addRetrofitH(request)
+     -> FockUtil.getH(...)
+        -> QDSign / borgus / cecelia / gorgon / ibex / tstamp
+  -> QDRequestAddKnobsInterceptor
+     -> sora
+~~~
 
-| 属性 | 值 |
-|------|-----|
-| 生成位置 | `libfock.so` / `libfockrt.so` 的 `addRetrofitH()` |
-| 格式 | Base64 (174~187 chars) |
-| 固定前缀 | `R7TCs6Tou2X1UIwpRMMiP` (21 chars) |
-| 类型 | 疑似 RSA 签名或 HMAC-SHA256 |
+Java 层负责组装和调度，Native/Fock runtime 负责部分字段生成。不能再概括为“所有签名逻辑全部位于 `libfock.so`”，因为当前 QDSign 已可由独立字段链闭环，而 `libfock.so` 中相关函数尚未完成一一映射。
 
-**证据**:
-- 所有请求的 QDSign 共享相同 21-char 前缀 → 这是 Fock Key 的固定标识符
-- 前缀可能对应 Base64 编码的 RSA 公钥指纹或 HMAC key ID
-- 长度因 URL/body 长度而变化 (174 vs 187 chars)
-- 每个请求值都不同
+## QDSign 已验证算法
 
-```
-样本 1 (GET):  R7TCs6Tou2X1UIwpRMMiP65kdT7LAB0gLJWI1G8d9vO...  (174 chars)
-样本 2 (POST): R7TCs6Tou2X1UIwpRMMiPzrlHgzK0jWrjmZaxxzUkWL... (174 chars)
-样本 3 (POST): R7TCs6Tou2X1UIwpRMMiP/wa5vBQMFvO/25MLcduvqF...  (187 chars)
-```
+### 字段与加密
 
-### 2. borgus — 请求哈希
+~~~text
+plaintext =
+  marker |
+  timestamp_ms |
+  0 |
+  QIMEI |
+  1 |
+  app_version |
+  0 |
+  MD5(payload.lower()) |
+  certificate_md5
 
-| 属性 | 值 |
-|------|-----|
-| 格式 | 32-char hex (MD5) |
-| 样本 | `57f4e90d64453960b2a5475d16db35cb` |
-| 推测 | URL + body + tstamp 的 MD5 |
+QDSign = Base64(
+  3DES-CBC(
+    PKCS#7(plaintext),
+    STATIC_KEY_24,
+    STATIC_IV_8
+  )
+)
+~~~
 
-### 3. cecelia — 版本化签名
+`payload` 的取值随请求类型变化：
 
-| 属性 | 值 |
-|------|-----|
-| 格式 | `2_` + 68-char hex |
-| 样本 | `2_e5317e67a68b059cca9a9ddda492b1f69b7d8ad18a05e90bcb8c853821c4f6ccc7cf` |
-| 推测 | Version=2, 68 hex chars = SHA-256? |
+- GET 通常对应 query string；
+- 无参数请求通常对应空字符串；
+- POST 通常对应 body 或经过 canonicalization 的请求数据；
+- 不能只凭缓存 key 猜测，需与实际 call-site/抓包关联。
 
-### 4. tstamp — 时间戳
+### 本地复核结果
 
-| 属性 | 值 |
-|------|-----|
-| 格式 | Unix 毫秒时间戳 |
-| 样本 | `1782546156804` (= 2026-06-27 15:42:36) |
-| 用途 | 防重放攻击的时效性参数 |
+对 `analysis/qdsign_db.json` 的 126 条样本逐条执行 Base64 解码、3DES-CBC 解密和 PKCS#7 校验：
 
-### 5. gorgon — 设备令牌 (静态!)
+| 检查项 | 结果 |
+|--------|------|
+| 可正确解密并通过 padding | 126 / 126 |
+| 明文为 9 个管道字段 | 126 / 126 |
+| 版本字段为 `7.9.464` | 126 / 126 |
+| query 小写 MD5 直接匹配 | 104 / 126 |
+| QIMEI 长度 | 16 或 36 |
+| 密文长度 | 128 或 144 bytes |
+| 唯一首密文块数量 | 1 |
 
-| 属性 | 值 |
-|------|-----|
-| 格式 | 超长 Base64 (~1100 chars) |
-| 特殊性 | **所有请求完全相同！** |
-| 推测 | 设备注册时生成，长期不变 |
+剩余 22 条不应判为算法失败，优先检查 POST body、空参数、参数排序和项目缓存 key 是否丢失了原始 canonicalization 信息。
 
-**关键发现**: gorgon 是静态的！这意味着它可以在一次提取后被复用。
+### 固定前缀的正确解释
 
-### 6. sora — 服务端配置 (Knobs)
+所有样本共享固定 Base64 前缀，原因是：
 
-| 属性 | 值 |
-|------|-----|
-| 生成位置 | `QDRequestAddKnobsInterceptor` → `checkKnobsUrl()` |
-| 格式 | 超长 Base64 (~1100 chars) |
-| 对应 SO | `libknobs.so` |
-| 推测 | 服务端下发的环境配置/策略信息 |
+- 首个明文字段固定；
+- 3DES key 和 IV 固定；
+- CBC 的第一个密文块因此固定。
 
-### 7. ibex — 设备指纹 (Nib SDK)
+这不是 RSA 公钥指纹，也没有证据证明它是 FockKey ID。密文长度会随 QIMEI/字段长度从 128 bytes 变化到 144 bytes，也与固定长度 RSA 签名不符。
 
-| 属性 | 值 |
-|------|-----|
-| 生成位置 | `com.yuewen.nib.search.cihai(Context)` |
-| 对应 SO | `libnib.so` |
-| 格式 | 超长 Base64 (~800+ chars) |
-| 内容 | 设备环境 + 风控检测结果 |
+## 其他请求头的验证状态
 
-**采集的指纹维度** (反编译 `com.yuewen.nib.search.judian()`):
-- 硬件信息: `ro.boot.hardware`, `ro.setupwizard.mode`, `ro.secureboot.lockstate`
-- 设备属性: `ro.product.model`, `ro.product.brand`, `ro.product.board`, `ro.product.manufacturer`
-- CPU: `ro.product.cpu.abi`, `ro.product.cpu.abi2`
-- 安全检测: Xposed, Frida (端口/文件描述符/task), Root (PATH/pkg/Magisk/ATTR)
-- 模拟器检测: CPU info, 文件特征, eth0 MAC, Multi-box, VMOS
-- 辅助功能: Accessibility, Auto.js, UIAutomator
-- SCRCPY 检测, ADB 检测, LSPosed 检测
-- GUID, QIMEI, 签名 MD5, 包名
+以下结论来自匿名排行榜接口的重放实验，不自动外推到登录、付费、内容解密或风控接口。
 
-## Native 库清单
+| 字段 | 样本行为 | 当前解释 |
+|------|----------|----------|
+| `QDSign` | 删除后返回签名错误 | 排行榜样本中的必需字段 |
+| `borgus` | 删除后仍成功 | 该批 endpoint 未独立校验 |
+| `cecelia` | 删除后仍成功 | 该批 endpoint 未独立校验 |
+| `gorgon` | 多请求中保持不变，删除后仍成功 | 更像设备/注册态材料；并非该批 endpoint 的必需字段 |
+| `ibex` | 删除后仍成功 | Nib 设备指纹，在其他风控接口可能仍有意义 |
+| `tstamp` | 删除后仍成功 | QDSign 明文内部仍有 timestamp；服务端是否校验取决于 endpoint |
+| `QDInfo` | 删除后仍成功 | 设备信息密文，不是该批 endpoint 的必需字段 |
+| `sora` | Knobs interceptor 注入 | 需按目标 URL 单独验证 |
 
-| 文件 | 大小 | 职责 |
-|------|------|------|
-| `libfock.so` | 154K | Fock 核心 — 签名生成 |
-| `libfockrt.so` | 1.2M | Fock Runtime — 密钥管理/加密 |
-| `libnib.so` | 138K | Nib SDK — 设备指纹 |
-| `libknobs.so` | 150K | Knobs — 服务端配置策略 |
-| `libcrypto.so` | 1.6M | OpenSSL — 基础密码运算 |
-| `libjiagu_vip.so` | — | 360加固 — 反调试/完整性 |
+## 重放与时效性
 
-## 密钥管理流程
+历史测试中，旧 QDSign 在 27 个排行榜分类接口上仍被接受。这说明这些 endpoint 没有严格执行 QDSign 内部 timestamp 的短时窗口，但不能写成“所有 QDSign 永不过期”。
 
-```
-1. APP 启动 → FockUtil.run()
-     ├─ checkAssets() → 校验 assets 完整性
-     ├─ checkMeta() → 校验 META-INF 签名
-     └─ checkSign() → 校验 APK 签名
+正确边界：
 
-2. requestKey(context) → 向服务器请求 FockKey
-     GET/POST druidv6.if.qidian.com/argus/api/v1/client/getFockKey (?)
-     返回: { key: "...", version: "..." }
-     → 存入 SharedPreferences + 内存
+- 已验证：指定版本、指定设备字段和排行榜 endpoint 的旧样本可重放；
+- 待验证：登录、付费章节、内容 key、用户态请求和新版 App；
+- 任何服务端策略变更都可能使缓存失效。
 
-3. 每次 HTTP 请求:
-     FockUtil.addRetrofitH(request)
-     ├─ 读取缓存的 FockKey
-     ├─ tstamp = System.currentTimeMillis()
-     ├─ borgus = MD5(url + body + tstamp)
-     ├─ cecelia = "2_" + SHA256(...)
-     ├─ QDSign = RSA_sign(FockKey, url + body + tstamp + ...)
-     ├─ gorgon = 设备注册令牌 (静态)
-     ├─ ibex = Nib SDK 设备指纹
-     └─ sora = Knobs 服务端配置
-```
+## Native/Fock 组件关系
 
-## 攻击面分析
+| 组件 | 已确认 | 待确认 |
+|------|--------|--------|
+| `FockUtil` | 请求头注入入口、Java bridge | 不同 endpoint 对 Native 方法的选择 |
+| `libfock.so` | JNI 注册、AES/DES/Hash/CRC/hex 函数 | 哪条函数链对应当前 QDSign、QDInfo 或其他 Fock 功能 |
+| `libfockrt.so` | QuickJS runtime、远端配置/数据接口 | 与当前 QDSign 静态 3DES 字段链的直接关系 |
+| `libnib.so` | `ibex` 设备环境链 | 服务端按 endpoint 的校验强度 |
+| `libknobs.so` | `sora` / Knobs | URL 命中与配置内容语义 |
 
-### 已确认可绕过
+`libfock.so` 的 AES-256-CBC、自定义 sponge、SHA1 风格 Hash、MD5 和 CRC32 分析仍有价值，但现在只能作为“库内算法能力”记录，不能继续命名为最终 QDSign 算法。
 
-| 机制 | 状态 | 说明 |
-|------|------|------|
-| 排行榜认证 | 可绕过 | API 不校验登录态 |
-| gorgon | 可复用 | 静态令牌，一个值无限复用 |
+## 当前复现边界
 
-### 需要逆向的
+生成 QDSign 至少需要：
 
-| 机制 | 难度 | 路径 |
-|------|------|------|
-| QDSign | 高 | Native `libfock.so` `addRetrofitH()` |
-| borgus/cecelia | 中 | 同一 Native 函数内 |
-| ibex | 中 | `libnib.so` 或 Frida Hook `com.yuewen.nib.search.cihai()` |
-| sora | 低 | `libknobs.so` 或 Frida Hook `checkKnobsUrl()` |
+- 当前版本的字段 marker；
+- timestamp；
+- 与目标设备/会话一致的 QIMEI；
+- App version；
+- payload 的准确 canonicalization；
+- certificate MD5；
+- 对应版本的 static key/IV。
 
-### 建议攻击路径
+Public 知识库不保存真实设备 QIMEI、流量 Cookie、用户 token 或测试账号材料。实现中使用 `QIMEI`、`CERT_MD5`、`STATIC_KEY_24`、`STATIC_IV_8` 占位，并从项目本地 fixture 注入。
 
-| 优先级 | 方法 | 说明 |
-|--------|------|------|
-| 1️⃣ | **Frida Hook** `FockUtil.addRetrofitH()` | 直接拦截签名前/后的 headers，观察输入→输出 |
-| 2️⃣ | **Frida Hook** `getH()` | 返回 Map<String,String>，直接导出签名参数 |
-| 3️⃣ | IDA 静态分析 `libfock.so` | 深度逆向签名算法，但 360 加固增加难度 |
-| 4️⃣ | 重放攻击 | gorgon 静态 + tstamp 可控 → 尝试修改时间窗口 |
+## 结论矩阵
 
-## Frida Hook 模板
+| Claim | 状态 |
+|-------|------|
+| 当前 QDSign 是 RSA/HMAC | 已推翻 |
+| 当前 QDSign 是 3DES-CBC 管道字段 | 已验证 |
+| 固定前缀是 FockKey 标识符 | 已推翻 |
+| 排行榜 endpoint 只独立校验 QDSign | 已验证于当前样本 |
+| 所有 endpoint 都忽略其他头 | 未验证 |
+| `libfock.so` 的 AES 链就是 QDSign | 未验证，现有网络证据相冲突 |
 
-```javascript
-// Hook FockUtil.addRetrofitH — 签名入口
-Java.perform(function() {
-    var FockUtil = Java.use("com.qidian.QDReader.component.util.FockUtil");
-    FockUtil.addRetrofitH.implementation = function(request) {
-        console.log("[FockUtil.addRetrofitH]");
-        console.log("  URL: " + request.url().toString());
-        console.log("  Method: " + request.method());
-        console.log("  Headers BEFORE: " + request.headers().toString());
-        
-        var result = this.addRetrofitH(request);
-        
-        console.log("  Headers AFTER: " + result.headers().toString());
-        return result;
-    };
-    
-    // Hook FockUtil.getH — 签名参数 Map
-    FockUtil.getH.implementation = function(url, str, requestBody) {
-        console.log("[FockUtil.getH] url=" + url);
-        var result = this.getH(url, str, requestBody);
-        console.log("  Result: " + JSON.stringify(result));
-        return result;
-    };
-    
-    // Hook Nib — 设备指纹
-    var NibSearch = Java.use("com.yuewen.nib.search");
-    NibSearch.cihai.implementation = function(context) {
-        console.log("[Nib.cihai] generating device fingerprint...");
-        var result = this.cihai(context);
-        console.log("  ibex = " + result.substring(0, 100) + "...");
-        return result;
-    };
-});
-```
+## 关联资料
 
-## 关联文件
-
-| 文件 | 位置 |
-|------|------|
-| 流量分析 | `analysis/report.md` |
-| 结构化发现 | `analysis/findings.json` |
-| 项目 triage | `triage.md` |
-| SO 文件 | `native/arm64-v8a/` (libfock.so, libnib.so, libknobs.so, libfockrt.so) |
-| 反编译 Java | `decompiled/java/` |
+- [Qidian Native SO 分析与结论纠偏](../native-analysis/qidian-so-analysis.md)
+- [360 Jiagu VIP 绕过与脱壳能力](../packing-bypass/jiagu-bypass-analysis.md)
+- [GodKeawa/AppApiCrack](https://github.com/GodKeawa/AppApiCrack)

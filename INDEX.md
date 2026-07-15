@@ -1,6 +1,6 @@
 # 逆向知识库文章索引
 
-> 自动生成于 2026-07-13 ｜ 来源: `article/`
+> 自动生成于 2026-07-15 ｜ 来源: `article/`
 >
 > 新项目启动时，按主题/技术标签检索相关文章，避免重复分析。
 
@@ -25,19 +25,19 @@
 
 | 文章 | 来源项目 | 关键词 | 摘要 |
 |------|----------|--------|------|
-| [qidian-fock-signature.md](./signature-algorithms/qidian-fock-signature.md) | qidian (起点读书) | `QDSign`, `Fock SDK`, `AES-CBC`, `HMAC`, `3DES-CBC`, `阅文`, `签名算法`, `7大签名头`, `borgus`, `cecelia`, `gorgon`, `ibex`, `sora` | 起点读书 Fock SDK 7大签名头完整分析：QDSign 算法链、borgus/cecelia/gorgon 生成逻辑、Native 层 key 派生、请求注入点 |
+| [qidian-fock-signature.md](./signature-algorithms/qidian-fock-signature.md) | qidian (起点读书) | `QDSign`, `Fock SDK`, `3DES-CBC`, `PKCS#7`, `QIMEI`, `certificate MD5`, `请求 canonicalization`, `重放验证`, `7大签名头` | 起点读书 QDSign 结论更新：126/126 样本验证 3DES-CBC 管道字段，纠正旧 RSA/HMAC 推测，并区分排行榜 endpoint 的头部校验边界 |
 
 ### 加固绕过 (`article/packing-bypass/`)
 
 | 文章 | 来源项目 | 关键词 | 摘要 |
 |------|----------|--------|------|
-| [jiagu-bypass-analysis.md](./packing-bypass/jiagu-bypass-analysis.md) | qidian (起点读书) | `Jiagu`, `360加固`, `Frida检测`, `ptrace`, `XOR混淆`, `反调试`, `反注入`, `动态解密`, `raise(9)`, `shadow-hook` | 360 Jiagu VIP 版加固绕过：ELF 结构分析、字符串 XOR(0xA5) 混淆还原、反调试机制 (ptrace/TracerPid/raise)、Frida spawn 注入存活方案 |
+| [jiagu-bypass-analysis.md](./packing-bypass/jiagu-bypass-analysis.md) | qidian (起点读书) | `Jiagu`, `360加固`, `raise(9)`, `PR_SET_PTRACER`, `direct syscall`, `panda`, `whole-DEX`, `方法抽取`, `CodeItem`, `FART`, `JDex2`, `CDEX` | 360 Jiagu VIP 更新：区分进程存活与 Frida 持久会话，证明起点样本 DEX 原本明文，并记录 LDPlayer + panda 导出 13 DEX 的部分运行时恢复及方法抽取分流 |
 
 ### Native 分析 (`article/native-analysis/`)
 
 | 文章 | 来源项目 | 关键词 | 摘要 |
 |------|----------|--------|------|
-| [qidian-so-analysis.md](./native-analysis/qidian-so-analysis.md) | qidian (起点读书) | `libfock.so`, `libfockrt.so`, `ARM64`, `radare2`, `IDA Pro`, `JNI动态注册`, `RSA-1024`, `AES-256-CBC`, `QuickJS` | 起点读书 Native SO 深度分析：libfock.so/libfockrt.so/libnib.so 反编译、QDSign 结构还原、JNI 调用链追踪、QuickJS 引擎角色 |
+| [qidian-so-analysis.md](./native-analysis/qidian-so-analysis.md) | qidian (起点读书) | `libfock.so`, `libfockrt.so`, `ARM64`, `JNI动态注册`, `3DES-CBC`, `AES-256-CBC`, `QuickJS`, `Unicorn`, `结论纠偏` | 起点读书 Native SO 结论纠偏：126 条 QDSign 推翻 RSA/AES 归因，保留 libfock 算法能力、QuickJS runtime、Jiagu 与 DEX/SO 分工的证据边界 |
 | [ai-assisted-vmp-trace-recovery.md](./native-analysis/ai-assisted-vmp-trace-recovery.md) | — (公众号归档) | `ARM64 trace`, `VMP`, `tracedb`, `MCP`, `数据流回溯`, `AES-256-CBC`, `HMAC-SHA256`, `Adjust nSign` | 以固定宽度 trace 数据库和自定义 MCP 驱动 AI，从 196GB 指令轨迹中闭合 nSign 算法证据链 |
 
 ### 移动 App 逆向 (`article/mobile-app-reverse/`)
@@ -62,11 +62,11 @@
 
 ### 密码学
 - **AES-GCM**: [mmtls](./protocols/mmtls-protocol-analysis.md), [qidian-fock](./signature-algorithms/qidian-fock-signature.md)
-- **AES-CBC**: [qidian-fock](./signature-algorithms/qidian-fock-signature.md), [qidian-so](./native-analysis/qidian-so-analysis.md)
-- **3DES-CBC**: [qidian-fock](./signature-algorithms/qidian-fock-signature.md)
+- **AES-256-CBC（libfock.so 内部能力）**: [qidian-so](./native-analysis/qidian-so-analysis.md)
+- **3DES-CBC**: [qidian-fock](./signature-algorithms/qidian-fock-signature.md), [qidian-so](./native-analysis/qidian-so-analysis.md)
+- **PKCS#7**: [qidian-fock](./signature-algorithms/qidian-fock-signature.md)
 - **ECDHE (P-256)**: [mmtls](./protocols/mmtls-protocol-analysis.md)
 - **HKDF**: [mmtls](./protocols/mmtls-protocol-analysis.md)
-- **RSA-1024**: [qidian-so](./native-analysis/qidian-so-analysis.md)
 - **SM4 (国密)**: [51job-webpack](./web-reverse/51job-webpack-analysis.md)
 - **AES/RSA/TEA/DES/MD5（Android 实战）**: [paopao-android](./mobile-app-reverse/paopao-android-reverse-compilation.md)
 - **AES-256-CBC + HMAC-SHA256**: [ai-vmp-trace](./native-analysis/ai-assisted-vmp-trace-recovery.md)
@@ -82,9 +82,10 @@
 ### 反检测/对抗
 - **WAF 绕过**: [51job-anti-detection](./anti-detection/51job-anti-detection-analysis.md)
 - **设备指纹**: [51job-anti-detection](./anti-detection/51job-anti-detection-analysis.md)
-- **加固绕过**: [jiagu-bypass](./packing-bypass/jiagu-bypass-analysis.md)
+- **加固绕过 / whole-DEX 分流**: [jiagu-bypass](./packing-bypass/jiagu-bypass-analysis.md)
 - **反调试 (ptrace/TracerPid)**: [jiagu-bypass](./packing-bypass/jiagu-bypass-analysis.md)
-- **Frida 检测绕过**: [jiagu-bypass](./packing-bypass/jiagu-bypass-analysis.md)
+- **Frida 终止链与 prctl 定位**: [jiagu-bypass](./packing-bypass/jiagu-bypass-analysis.md)
+- **方法抽取 / CodeItem 恢复**: [jiagu-bypass](./packing-bypass/jiagu-bypass-analysis.md)
 - **WebDriver/CDP 检测**: [51job-anti-detection](./anti-detection/51job-anti-detection-analysis.md), [chromium-fingerprint-compilation](./anti-detection/chromium-fingerprint-compilation.md)
 - **Chromium 源码修改/指纹浏览器**: [chromium-fingerprint-compilation](./anti-detection/chromium-fingerprint-compilation.md)
 - **TLS/JA3/JA4 指纹**: [chromium-fingerprint-compilation](./anti-detection/chromium-fingerprint-compilation.md)
@@ -111,7 +112,9 @@
 - **抓包+逐字节匹配**: [mmtls](./protocols/mmtls-protocol-analysis.md)
 - **IDA Pro 静态分析**: [qidian-so](./native-analysis/qidian-so-analysis.md), [jiagu-bypass](./packing-bypass/jiagu-bypass-analysis.md)
 - **radare2 快速侦察**: [qidian-so](./native-analysis/qidian-so-analysis.md)
-- **Frida spawn 注入**: [jiagu-bypass](./packing-bypass/jiagu-bypass-analysis.md)
+- **Frida spawn / survival hook**: [jiagu-bypass](./packing-bypass/jiagu-bypass-analysis.md)
+- **panda whole-DEX**: [jiagu-bypass](./packing-bypass/jiagu-bypass-analysis.md)
+- **FART / JDex2 / FartFixer 分流**: [jiagu-bypass](./packing-bypass/jiagu-bypass-analysis.md)
 - **Chromium 源码编译与修改**: [chromium-fingerprint-compilation](./anti-detection/chromium-fingerprint-compilation.md)
 - **App 逆向三步法**: [app-reverse-global-map](./mobile-app-reverse/app-reverse-global-map.md)
 - **OkHttp/Interceptor 定位**: [app-reverse-global-map](./mobile-app-reverse/app-reverse-global-map.md)
