@@ -1,6 +1,6 @@
 # 逆向知识库文章索引
 
-> 自动生成于 2026-07-15 ｜ 来源: `article/`
+> 自动生成于 2026-07-16 ｜ 来源: `article/`
 >
 > 新项目启动时，按主题/技术标签检索相关文章，避免重复分析。
 
@@ -20,6 +20,8 @@
 | [chromium-fingerprint-compilation.md](./anti-detection/chromium-fingerprint-compilation.md) | — (CSDN 归档) | `Chromium编译`, `指纹浏览器`, `Canvas指纹`, `WebGL指纹`, `WebRTC`, `TLS/JA3/JA4`, `CDP绕过`, `无头检测`, `源码修改`, `BoringSSL`, `V8`, `Blink` | Chromium 源码级指纹浏览器编译全系列 (38篇)：15+ 指纹维度随机化/固定、反检测绕过 (WebDriver/CDP/无头/Selenium)、爬虫增强 (Shadow DOM/跨域iframe/CSS动画禁用)、工程化 (JWT校验/Cookie明文/任务栏徽章) |
 | [anti-crawler-risk-control-compilation.md](./anti-detection/anti-crawler-risk-control-compilation.md) | — (公众号归档) | `浏览器指纹`, `验证码`, `行为风控`, `TLS指纹`, `HTTP/2指纹`, `代理检测`, `注册环境` | 浏览器、网络、验证码与行为模型的风控对抗系列，保留检测维度、定位方法和综合系统设计 |
 | [ruyi-browser-anti-detection-compilation.md](./anti-detection/ruyi-browser-anti-detection-compilation.md) | — (公众号归档) | `Chromium`, `Firefox`, `WebKit`, `Canvas`, `WebGL`, `WebGPU`, `TLS`, `CDP`, `BiDi`, `RuyiTrace`, `浏览器指纹` | 97 篇浏览器内核、指纹检测、自动化对抗、论文研读与 Web 逆向工具链合集 |
+| [benru-anti-detection-compilation.md](./anti-detection/benru-anti-detection-compilation.md) | — (公众号归档) | `请求头一致性`, `curl_cffi`, `TLS指纹`, `Selenium stealth`, `登录态`, `字体反爬`, `验证码`, `Canvas` | 本如笔记 8 篇反爬与反检测实战，覆盖客户端一致性、浏览器自动化伪装、字体/验证码识别和 Canvas 指纹 |
+| [yuanrenxue-anti-detection-compilation.md](./anti-detection/yuanrenxue-anti-detection-compilation.md) | — (公众号归档) | `Squid`, `Cookie`, `Referer`, `响应编码`, `DNS缓存`, `Akamai`, `JA3`, `JA4`, `HTTP/2指纹` | 猿人学 8 篇请求一致性与反检测资料，从代理、会话和 DNS 管理延伸到 Akamai TLS 指纹复刻 |
 
 ### 签名算法 (`article/signature-algorithms/`)
 
@@ -48,6 +50,7 @@
 | [app-reverse-environment-setup.md](./mobile-app-reverse/app-reverse-environment-setup.md) | — (PDF 归档) | `App逆向环境`, `Android`, `LDPlayer`, `MuMu`, `Magisk`, `LSPosed`, `JustTrustMe`, `Charles`, `jadx-gui`, `APKTool`, `Frida`, `证书安装` | App 逆向环境搭建：模拟器与真机选型、Root/Magisk/LSPosed、证书安装与代理配置、抓包/反编译/动态调试工具链和常见问题排查 |
 | [anti-crawler-app-reverse-series.md](./mobile-app-reverse/anti-crawler-app-reverse-series.md) | — (公众号归档) | `App逆向`, `jadx`, `Frida`, `JNI`, `SO层`, `密码算法`, `Python复现` | 从全局视角到 SO 层还原的 6 章 App 逆向入门系列 |
 | [paopao-android-reverse-compilation.md](./mobile-app-reverse/paopao-android-reverse-compilation.md) | — (公众号归档) | `Frida`, `Unidbg`, `ARM64`, `JNI`, `Stalker`, `SSL Pinning`, `Protobuf`, `DEX脱壳`, `Root检测` | 67 篇 Android 抓包、密码算法、Native 模拟、Hook、反检测与脱壳系统合集 |
+| [yuanrenxue-mobile-app-reverse-compilation.md](./mobile-app-reverse/yuanrenxue-mobile-app-reverse-compilation.md) | — (公众号归档) | `Token Hook`, `TCP抓包`, `Protobuf`, `双向认证`, `Android`, `iOS`, `Flutter`, `Jailbreak检测` | 猿人学 17 篇移动 App 逆向资料，覆盖认证协议、Native 参数、抓包对抗、跨平台运行时与越狱检测 |
 
 ### Web 逆向 (`article/web-reverse/`)
 
@@ -55,6 +58,8 @@
 |------|----------|--------|------|
 | [51job-webpack-analysis.md](./web-reverse/51job-webpack-analysis.md) | 51job-web-reverse | `Webpack 4`, `Vue 2.7`, `模块自吐`, `加密定位`, `sign`, `AES`, `SM4`, `国密`, `webpackJsonp` | 51job Webpack 模块自吐分析：1634 个 factory 模块识别、加密/签名模块定位、Vue 组件反编译、chunk 加载机制 |
 | [anti-crawler-web-reverse-compilation.md](./web-reverse/anti-crawler-web-reverse-compilation.md) | — (公众号归档) | `Akamai`, `JSVMP`, `Babel AST`, `控制流平坦化`, `Chrome DevTools`, `Hook`, `反Hook` | Akamai 参数、JSVMP、AST 反混淆与 Chrome DevTools 调试对抗的 16 篇实战合集 |
+| [benru-web-reverse-compilation.md](./web-reverse/benru-web-reverse-compilation.md) | — (公众号归档) | `WBI签名`, `AST`, `JS混淆`, `Node补环境`, `mitmproxy`, `动态参数`, `Webpack RPC`, `Python还原` | 本如笔记 12 篇 Web 逆向与协议恢复实战，从参数定位、反混淆和补环境延伸到 RPC 与 Python 复现 |
+| [yuanrenxue-web-reverse-compilation.md](./web-reverse/yuanrenxue-web-reverse-compilation.md) | — (公众号归档) | `JS Cookie`, `参数加密`, `反调试`, `字符串混淆`, `控制流混淆`, `微信小程序`, `AI逆向` | 猿人学 7 篇 Web 与 JavaScript 逆向方法论，保留长期可复用的定位、调试和反混淆路径 |
 
 ---
 
@@ -70,6 +75,7 @@
 - **SM4 (国密)**: [51job-webpack](./web-reverse/51job-webpack-analysis.md)
 - **AES/RSA/TEA/DES/MD5（Android 实战）**: [paopao-android](./mobile-app-reverse/paopao-android-reverse-compilation.md)
 - **AES-256-CBC + HMAC-SHA256**: [ai-vmp-trace](./native-analysis/ai-assisted-vmp-trace-recovery.md)
+- **WBI/Base64/常见哈希与动态参数识别**: [benru-web](./web-reverse/benru-web-reverse-compilation.md), [yuanrenxue-web](./web-reverse/yuanrenxue-web-reverse-compilation.md), [yuanrenxue-app](./mobile-app-reverse/yuanrenxue-mobile-app-reverse-compilation.md)
 
 ### 协议
 - **TLS 1.3 变体**: [mmtls](./protocols/mmtls-protocol-analysis.md)
@@ -78,6 +84,8 @@
 - **HTTP DNS**: [mmtls](./protocols/mmtls-protocol-analysis.md)
 - **Protobuf/gRPC**: [paopao-android](./mobile-app-reverse/paopao-android-reverse-compilation.md)
 - **TLS/HTTP2 网络指纹**: [anti-crawler-risk](./anti-detection/anti-crawler-risk-control-compilation.md), [ruyi-browser](./anti-detection/ruyi-browser-anti-detection-compilation.md)
+- **WBI/Protobuf/TCP/mTLS 与认证协议**: [benru-web](./web-reverse/benru-web-reverse-compilation.md), [yuanrenxue-app](./mobile-app-reverse/yuanrenxue-mobile-app-reverse-compilation.md)
+- **Akamai JA3/JA4/HTTP2 指纹**: [yuanrenxue-anti](./anti-detection/yuanrenxue-anti-detection-compilation.md)
 
 ### 反检测/对抗
 - **WAF 绕过**: [51job-anti-detection](./anti-detection/51job-anti-detection-analysis.md)
@@ -95,6 +103,9 @@
 - **验证码与行为风控**: [anti-crawler-risk](./anti-detection/anti-crawler-risk-control-compilation.md)
 - **浏览器内核级指纹与自动化对抗**: [ruyi-browser](./anti-detection/ruyi-browser-anti-detection-compilation.md)
 - **Android Root/反调试/Frida 对抗**: [paopao-android](./mobile-app-reverse/paopao-android-reverse-compilation.md)
+- **curl_cffi/Selenium stealth/字体与验证码/Canvas**: [benru-anti](./anti-detection/benru-anti-detection-compilation.md)
+- **Cookie/Referer/代理/DNS/TLS 请求一致性**: [yuanrenxue-anti](./anti-detection/yuanrenxue-anti-detection-compilation.md)
+- **Flutter/iOS Jailbreak 与抓包对抗**: [yuanrenxue-app](./mobile-app-reverse/yuanrenxue-mobile-app-reverse-compilation.md)
 
 ### 厂商/平台
 - **腾讯 (微信/应用宝)**: [mmtls](./protocols/mmtls-protocol-analysis.md)
@@ -105,7 +116,7 @@
 - **CSDN/w1101662433 (fivcan)**: [chromium-fingerprint-compilation](./anti-detection/chromium-fingerprint-compilation.md)
 - **Android/App 逆向**: [app-reverse-global-map](./mobile-app-reverse/app-reverse-global-map.md), [app-reverse-environment-setup](./mobile-app-reverse/app-reverse-environment-setup.md)
 - **Akamai**: [anti-crawler-web](./web-reverse/anti-crawler-web-reverse-compilation.md)
-- **微信公众号技术归档（反爬破解社/如意私塾/泡泡以安）**: [anti-crawler-web](./web-reverse/anti-crawler-web-reverse-compilation.md), [ruyi-browser](./anti-detection/ruyi-browser-anti-detection-compilation.md), [paopao-android](./mobile-app-reverse/paopao-android-reverse-compilation.md)
+- **微信公众号技术归档（反爬破解社/如意私塾/泡泡以安/本如笔记/猿人学Python）**: [anti-crawler-web](./web-reverse/anti-crawler-web-reverse-compilation.md), [ruyi-browser](./anti-detection/ruyi-browser-anti-detection-compilation.md), [paopao-android](./mobile-app-reverse/paopao-android-reverse-compilation.md), [benru-web](./web-reverse/benru-web-reverse-compilation.md), [benru-anti](./anti-detection/benru-anti-detection-compilation.md), [yuanrenxue-web](./web-reverse/yuanrenxue-web-reverse-compilation.md), [yuanrenxue-app](./mobile-app-reverse/yuanrenxue-mobile-app-reverse-compilation.md), [yuanrenxue-anti](./anti-detection/yuanrenxue-anti-detection-compilation.md)
 
 ### 工具/方法
 - **Webpack 模块自吐**: [51job-webpack](./web-reverse/51job-webpack-analysis.md)
@@ -125,6 +136,8 @@
 - **Frida/Unidbg/Stalker/Native Hook**: [paopao-android](./mobile-app-reverse/paopao-android-reverse-compilation.md)
 - **trace 数据库 + MCP 证据回溯**: [ai-vmp-trace](./native-analysis/ai-assisted-vmp-trace-recovery.md)
 - **Chromium/Firefox/WebKit 内核定制**: [ruyi-browser](./anti-detection/ruyi-browser-anti-detection-compilation.md)
+- **AST/JS 混淆/Node 补环境/Webpack RPC**: [benru-web](./web-reverse/benru-web-reverse-compilation.md), [yuanrenxue-web](./web-reverse/yuanrenxue-web-reverse-compilation.md)
+- **mitmproxy/Charles/Frida/Protobuf/iOS/Flutter 工具链**: [benru-web](./web-reverse/benru-web-reverse-compilation.md), [yuanrenxue-app](./mobile-app-reverse/yuanrenxue-mobile-app-reverse-compilation.md)
 
 ---
 
