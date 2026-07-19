@@ -1,5 +1,4 @@
-修改chromium源码随机webGL指纹
----------------------
+# 修改 Chromium 源码随机 WebGL 指纹
 
 #### 一、WebGL指纹是什么
 

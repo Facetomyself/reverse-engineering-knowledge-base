@@ -1,3 +1,5 @@
+# Chromium 源码随机 Fonts 指纹
+
 ### 一、什么是字体指纹
 
 *   Font fingerprinting，即字体指纹技术，是一种在线跟踪用户行为的方法。

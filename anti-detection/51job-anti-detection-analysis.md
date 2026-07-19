@@ -1,5 +1,12 @@
 # 51job 风控检测面分析 & bypass 对抗设计
 
+> 来源: `workspace/51job-web-reverse`
+> 原始发布时间: 2026-07-05
+> 归档日期: 2026-07-05
+> 分类: anti-detection
+>
+> 面向 51job 三层风控检测面，整理可验证的检测向量、现有脚本缺口与逐项对抗设计。
+
 ## 目标
 
 分析 51job (we.51job.com) 对 Tampermonkey/debugger-bypass 脚本的**所有潜在检测向量**，并逐一设计对抗策略。

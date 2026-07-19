@@ -1,3 +1,4 @@
+# Chromium 禁用 CSS Animation 与 Canvas
 
 ### 一、目标：
 

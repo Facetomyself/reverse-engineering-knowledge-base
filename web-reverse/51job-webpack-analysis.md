@@ -1,5 +1,12 @@
 # 51job Webpack 模块自吐分析
 
+> 来源: `workspace/51job-web-reverse`
+> 原始发布时间: 2026-07-03
+> 归档日期: 2026-07-05
+> 分类: web-reverse
+>
+> 通过 Webpack factory 模块自吐定位 51job 的框架、业务模块、请求链和加密候选。
+
 ## 基本信息
 
 | 项目 | 值 |

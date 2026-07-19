@@ -1,3 +1,5 @@
+# Chromium 源码随机 Plugins 指纹
+
 ### 一、什么是plugins指纹
 
 *   "Plugins 指纹"(browser plugin fingerprinting)是一种在线追踪技术。

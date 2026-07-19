@@ -1,5 +1,4 @@
-关于更改chromium源码\-修改大版本
----------------------
+# 修改 Chromium 大版本
 
 *   上篇博客实现了更改chromium小版本：[插眼传送](https://blog.csdn.net/w1101662433/article/details/140542646)
 *   但已经好几个同学都在尝试模拟手机端和微信端，需要模拟较低版本的chromium内核。

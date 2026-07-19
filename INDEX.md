@@ -1,6 +1,8 @@
 # 逆向知识库文章索引
 
-> 自动生成于 2026-07-16 ｜ 来源: `article/`
+> 更新于 2026-07-18 ｜ 来源: `article/`
+>
+> 本文件维护 canonical 入口与技术标签；合集子文章详见 [CATALOG.md](./CATALOG.md)，机器读取使用 [`catalog.json`](./catalog.json)。
 >
 > 新项目启动时，按主题/技术标签检索相关文章，避免重复分析。
 
@@ -147,3 +149,5 @@
 2. 同步更新「按技术标签检索」中的标签映射
 3. 新增分类时，在 `article/` 下创建子目录 + 更新本索引
 4. 来源项目列始终指向原始 workspace 项目名
+5. 正文或索引变更后运行 `scripts/kb_catalog.py generate`，不要手工编辑 `CATALOG.md` / `catalog.json`
+6. 提交前运行 `scripts/kb_catalog.py check` 和 `python -m unittest discover -s tests -v`

@@ -1,2 +1,4 @@
 pending/*
 !pending/.gitkeep
+__pycache__/
+*.pyc

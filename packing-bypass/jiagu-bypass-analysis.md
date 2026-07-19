@@ -1,6 +1,11 @@
 # 360 Jiagu VIP 绕过与脱壳能力更新
 
-> 来源项目: `workspace/qidian` ｜ 样本: 起点读书 7.9.464 / `libjiagu_vip.so` ｜ 初始分析: 2026-07-02 ｜ 更新: 2026-07-15
+> 来源: `workspace/qidian`
+> 原始发布时间: 2026-07-02
+> 归档日期: 2026-07-05
+> 分类: packing-bypass
+>
+> 样本: 起点读书 7.9.464 / `libjiagu_vip.so` ｜ 更新: 2026-07-15
 >
 > 当前状态: 终止链与部分 `prctl` 链已定位；Frida 进程存活不等于会话持久；LDPlayer + panda whole-DEX 路线已跑通
 
