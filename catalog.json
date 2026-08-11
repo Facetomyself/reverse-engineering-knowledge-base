@@ -9722,7 +9722,7 @@
       "content_sha256": "1bb7e920d1185b5c9842e606f15c021d99da7d19928554b37e80d5e0f1426166"
     },
     {
-      "path": "web-reverse/web-reverse-env-objects-reference.md",
+      "path": "web-reverse/browser-env-objects.md",
       "kind": "canonical",
       "category": "web-reverse",
       "parent": null,
@@ -9750,15 +9750,15 @@
         "对象一览",
         "使用边界"
       ],
-      "bytes": 6916,
+      "bytes": 6600,
       "lines": 52,
-      "content_sha256": "6dd4a5b26a3cae39bb2b6403d1d993bc5f3421a68e2d81a61daad108f5cc3d61"
+      "content_sha256": "5aa729b4add615afcca9b7eddfabb37cd228bceceeb36707b0b7653d5ed9bf0c"
     },
     {
-      "path": "web-reverse/web-reverse-env-objects-reference/audio-fingerprint.md",
+      "path": "web-reverse/browser-env-objects/audio-fingerprint.md",
       "kind": "nested",
       "category": "web-reverse",
-      "parent": "web-reverse/web-reverse-env-objects-reference.md",
+      "parent": "web-reverse/browser-env-objects.md",
       "title": "Audio 指纹对象参考",
       "source": "JS终结计划课程方法论（clean-room 重写）",
       "original_date": "多篇合集",
@@ -9776,10 +9776,10 @@
       "content_sha256": "6f42a051be78eba06c7fa8af87d6b087e8a10878d080b4522af3d69e194932a4"
     },
     {
-      "path": "web-reverse/web-reverse-env-objects-reference/canvas-webgl.md",
+      "path": "web-reverse/browser-env-objects/canvas-webgl.md",
       "kind": "nested",
       "category": "web-reverse",
-      "parent": "web-reverse/web-reverse-env-objects-reference.md",
+      "parent": "web-reverse/browser-env-objects.md",
       "title": "Canvas / WebGL 对象参考",
       "source": "JS终结计划课程方法论（clean-room 重写）",
       "original_date": "多篇合集",
@@ -9797,10 +9797,10 @@
       "content_sha256": "71d3b995872dc70d8478b612c155c0d14ed6546899eb86d85b0f068f7a56e3e0"
     },
     {
-      "path": "web-reverse/web-reverse-env-objects-reference/crypto-binary.md",
+      "path": "web-reverse/browser-env-objects/crypto-binary.md",
       "kind": "nested",
       "category": "web-reverse",
-      "parent": "web-reverse/web-reverse-env-objects-reference.md",
+      "parent": "web-reverse/browser-env-objects.md",
       "title": "Crypto / 编码 / 二进制对象参考",
       "source": "JS终结计划课程方法论（clean-room 重写）",
       "original_date": "多篇合集",
@@ -9818,10 +9818,10 @@
       "content_sha256": "2643e551331d927eb0590d29e7f42f7d7df63f644ce54e6d4f84d2d3a080a226"
     },
     {
-      "path": "web-reverse/web-reverse-env-objects-reference/css-layout-font.md",
+      "path": "web-reverse/browser-env-objects/css-layout-font.md",
       "kind": "nested",
       "category": "web-reverse",
-      "parent": "web-reverse/web-reverse-env-objects-reference.md",
+      "parent": "web-reverse/browser-env-objects.md",
       "title": "CSS / Layout / Font 对象参考",
       "source": "JS终结计划课程方法论（clean-room 重写）",
       "original_date": "多篇合集",
@@ -9839,10 +9839,10 @@
       "content_sha256": "137ff41f8abda0c00d035013e0103fa3a9bc55d8bf7b1d9dc5016779555c845c"
     },
     {
-      "path": "web-reverse/web-reverse-env-objects-reference/document.md",
+      "path": "web-reverse/browser-env-objects/document.md",
       "kind": "nested",
       "category": "web-reverse",
-      "parent": "web-reverse/web-reverse-env-objects-reference.md",
+      "parent": "web-reverse/browser-env-objects.md",
       "title": "document 对象参考",
       "source": "JS终结计划课程方法论（clean-room 重写）",
       "original_date": "多篇合集",
@@ -9860,10 +9860,10 @@
       "content_sha256": "315dc3df02d42760df28e9cea9a1ec9d3519941f2e8bed584e289c0ae7e295e9"
     },
     {
-      "path": "web-reverse/web-reverse-env-objects-reference/dom-collections.md",
+      "path": "web-reverse/browser-env-objects/dom-collections.md",
       "kind": "nested",
       "category": "web-reverse",
-      "parent": "web-reverse/web-reverse-env-objects-reference.md",
+      "parent": "web-reverse/browser-env-objects.md",
       "title": "DOM 集合对象参考",
       "source": "JS终结计划课程方法论（clean-room 重写）",
       "original_date": "多篇合集",
@@ -9881,10 +9881,10 @@
       "content_sha256": "7ffe9e6d9ecd56808c7d5d4fdd6d9283efbf64faa77632b59c9550bbd723b762"
     },
     {
-      "path": "web-reverse/web-reverse-env-objects-reference/dom-node-element.md",
+      "path": "web-reverse/browser-env-objects/dom-node-element.md",
       "kind": "nested",
       "category": "web-reverse",
-      "parent": "web-reverse/web-reverse-env-objects-reference.md",
+      "parent": "web-reverse/browser-env-objects.md",
       "title": "DOM 节点与元素参考",
       "source": "JS终结计划课程方法论（clean-room 重写）",
       "original_date": "多篇合集",
@@ -9902,10 +9902,10 @@
       "content_sha256": "50a83d1893f7db3fcc8db061eb18e16bb5ee28cd7ae86a8621fae13417f2ba9b"
     },
     {
-      "path": "web-reverse/web-reverse-env-objects-reference/event-input.md",
+      "path": "web-reverse/browser-env-objects/event-input.md",
       "kind": "nested",
       "category": "web-reverse",
-      "parent": "web-reverse/web-reverse-env-objects-reference.md",
+      "parent": "web-reverse/browser-env-objects.md",
       "title": "事件与输入设备参考",
       "source": "JS终结计划课程方法论（clean-room 重写）",
       "original_date": "多篇合集",
@@ -9923,10 +9923,10 @@
       "content_sha256": "71101f4e380c87a363bf4096c4f31975b485f3c7aafc1da8528e9c7bedd70ff5"
     },
     {
-      "path": "web-reverse/web-reverse-env-objects-reference/fingerprint-overview.md",
+      "path": "web-reverse/browser-env-objects/fingerprint-overview.md",
       "kind": "nested",
       "category": "web-reverse",
-      "parent": "web-reverse/web-reverse-env-objects-reference.md",
+      "parent": "web-reverse/browser-env-objects.md",
       "title": "指纹内容总纲",
       "source": "JS终结计划课程方法论（clean-room 重写）",
       "original_date": "多篇合集",
@@ -9944,10 +9944,10 @@
       "content_sha256": "9d60f6bde7dceb9da0f361d48124f08742649ef71c89d3b00f568750a79921be"
     },
     {
-      "path": "web-reverse/web-reverse-env-objects-reference/iframe.md",
+      "path": "web-reverse/browser-env-objects/iframe.md",
       "kind": "nested",
       "category": "web-reverse",
-      "parent": "web-reverse/web-reverse-env-objects-reference.md",
+      "parent": "web-reverse/browser-env-objects.md",
       "title": "iframe / 子 realm 参考",
       "source": "JS终结计划课程方法论（clean-room 重写）",
       "original_date": "多篇合集",
@@ -9965,10 +9965,10 @@
       "content_sha256": "d56ce5c816f841c0d46bc205242ea872a549fde4127235573ab28b0d156e4d9b"
     },
     {
-      "path": "web-reverse/web-reverse-env-objects-reference/location.md",
+      "path": "web-reverse/browser-env-objects/location.md",
       "kind": "nested",
       "category": "web-reverse",
-      "parent": "web-reverse/web-reverse-env-objects-reference.md",
+      "parent": "web-reverse/browser-env-objects.md",
       "title": "location 对象参考",
       "source": "JS终结计划课程方法论（clean-room 重写）",
       "original_date": "多篇合集",
@@ -9986,10 +9986,10 @@
       "content_sha256": "74cf27ca8a53c571b15c503a82f7c27bc5f19b54698690dc3b52b242487dfdd0"
     },
     {
-      "path": "web-reverse/web-reverse-env-objects-reference/navigator-subobjects.md",
+      "path": "web-reverse/browser-env-objects/navigator-subobjects.md",
       "kind": "nested",
       "category": "web-reverse",
-      "parent": "web-reverse/web-reverse-env-objects-reference.md",
+      "parent": "web-reverse/browser-env-objects.md",
       "title": "navigator 子对象参考",
       "source": "JS终结计划课程方法论（clean-room 重写）",
       "original_date": "多篇合集",
@@ -10007,10 +10007,10 @@
       "content_sha256": "746059c79d7f62e69538eaeada56c84260528e794c84da215e16a24e5d66000e"
     },
     {
-      "path": "web-reverse/web-reverse-env-objects-reference/navigator.md",
+      "path": "web-reverse/browser-env-objects/navigator.md",
       "kind": "nested",
       "category": "web-reverse",
-      "parent": "web-reverse/web-reverse-env-objects-reference.md",
+      "parent": "web-reverse/browser-env-objects.md",
       "title": "navigator 对象参考",
       "source": "JS终结计划课程方法论（clean-room 重写）",
       "original_date": "多篇合集",
@@ -10028,10 +10028,10 @@
       "content_sha256": "742a4cefd6f8b4ae95cdacc6c92c89f260ff160edb78d9780c8738f96ad3c515"
     },
     {
-      "path": "web-reverse/web-reverse-env-objects-reference/network-fetch-xhr.md",
+      "path": "web-reverse/browser-env-objects/network-fetch-xhr.md",
       "kind": "nested",
       "category": "web-reverse",
-      "parent": "web-reverse/web-reverse-env-objects-reference.md",
+      "parent": "web-reverse/browser-env-objects.md",
       "title": "网络与请求对象参考",
       "source": "JS终结计划课程方法论（clean-room 重写）",
       "original_date": "多篇合集",
@@ -10049,10 +10049,10 @@
       "content_sha256": "c9d7e24c008464bcac1847400330d402ca5a8f78d46932cbce7cdd31fe7222dd"
     },
     {
-      "path": "web-reverse/web-reverse-env-objects-reference/performance-timing.md",
+      "path": "web-reverse/browser-env-objects/performance-timing.md",
       "kind": "nested",
       "category": "web-reverse",
-      "parent": "web-reverse/web-reverse-env-objects-reference.md",
+      "parent": "web-reverse/browser-env-objects.md",
       "title": "Performance / Timing / Observer 参考",
       "source": "JS终结计划课程方法论（clean-room 重写）",
       "original_date": "多篇合集",
@@ -10070,10 +10070,10 @@
       "content_sha256": "1023469d3039349cc0c7b3a02a524c7e44853c9b83a107ffa13f59542f60f53e"
     },
     {
-      "path": "web-reverse/web-reverse-env-objects-reference/permissions-device.md",
+      "path": "web-reverse/browser-env-objects/permissions-device.md",
       "kind": "nested",
       "category": "web-reverse",
-      "parent": "web-reverse/web-reverse-env-objects-reference.md",
+      "parent": "web-reverse/browser-env-objects.md",
       "title": "权限 / 设备 / 环境探测参考",
       "source": "JS终结计划课程方法论（clean-room 重写）",
       "original_date": "多篇合集",
@@ -10091,10 +10091,10 @@
       "content_sha256": "f9833c793da60c1e63dafcfa71248dd0ac3c1271b4b52f95c65d6461d7f4ab93"
     },
     {
-      "path": "web-reverse/web-reverse-env-objects-reference/screen.md",
+      "path": "web-reverse/browser-env-objects/screen.md",
       "kind": "nested",
       "category": "web-reverse",
-      "parent": "web-reverse/web-reverse-env-objects-reference.md",
+      "parent": "web-reverse/browser-env-objects.md",
       "title": "screen / visualViewport 参考",
       "source": "JS终结计划课程方法论（clean-room 重写）",
       "original_date": "多篇合集",
@@ -10112,10 +10112,10 @@
       "content_sha256": "e43f7b86f5205bbd79ea6a3bf3cd1bb1b684ac34c36a1ab9ea8867504afe8bcc"
     },
     {
-      "path": "web-reverse/web-reverse-env-objects-reference/storage.md",
+      "path": "web-reverse/browser-env-objects/storage.md",
       "kind": "nested",
       "category": "web-reverse",
-      "parent": "web-reverse/web-reverse-env-objects-reference.md",
+      "parent": "web-reverse/browser-env-objects.md",
       "title": "storage / cookie 参考",
       "source": "JS终结计划课程方法论（clean-room 重写）",
       "original_date": "多篇合集",
@@ -10133,10 +10133,10 @@
       "content_sha256": "641da7224cd62f6db568867fbf3bc3d113a0b15cbad4606905ec8807e2b147fc"
     },
     {
-      "path": "web-reverse/web-reverse-env-objects-reference/window.md",
+      "path": "web-reverse/browser-env-objects/window.md",
       "kind": "nested",
       "category": "web-reverse",
-      "parent": "web-reverse/web-reverse-env-objects-reference.md",
+      "parent": "web-reverse/browser-env-objects.md",
       "title": "window / WindowProxy 参考",
       "source": "JS终结计划课程方法论（clean-room 重写）",
       "original_date": "多篇合集",
@@ -10154,10 +10154,10 @@
       "content_sha256": "27e88e3f734da4ab4c31dee195c49823056dd12270ed0657bd872e68d8d8327d"
     },
     {
-      "path": "web-reverse/web-reverse-env-objects-reference/worker-message.md",
+      "path": "web-reverse/browser-env-objects/worker-message.md",
       "kind": "nested",
       "category": "web-reverse",
-      "parent": "web-reverse/web-reverse-env-objects-reference.md",
+      "parent": "web-reverse/browser-env-objects.md",
       "title": "Worker / Message 参考",
       "source": "JS终结计划课程方法论（clean-room 重写）",
       "original_date": "多篇合集",
@@ -10175,7 +10175,7 @@
       "content_sha256": "22ac6a3a62ecbf73e9221eac77780177f922aecbe49c99161fac5a8fe834bfee"
     },
     {
-      "path": "web-reverse/web-reverse-products-index.md",
+      "path": "web-reverse/products.md",
       "kind": "canonical",
       "category": "web-reverse",
       "parent": null,
@@ -10212,15 +10212,15 @@
         "使用边界",
         "与主线工作流的衔接"
       ],
-      "bytes": 6872,
+      "bytes": 6572,
       "lines": 62,
-      "content_sha256": "2b4a231539102591a72177f48b894d273aac79d0685bf3139402e94cbda02456"
+      "content_sha256": "b40b6c982dbd5ef8ee115b0b36a0a6079f4e8385671c7844aa1cf6bb72b8ad5c"
     },
     {
-      "path": "web-reverse/web-reverse-products-index/akamai.md",
+      "path": "web-reverse/products/akamai.md",
       "kind": "nested",
       "category": "web-reverse",
-      "parent": "web-reverse/web-reverse-products-index.md",
+      "parent": "web-reverse/products.md",
       "title": "Akamai（Bot Manager / BMP / CSC）",
       "source": "JS终结计划课程方法论（clean-room 重写）",
       "original_date": "多篇合集",
@@ -10239,10 +10239,10 @@
       "content_sha256": "562405353d683dd4484e19fe96093620fc48999d4fe0f3ec6c9cc0be99833e55"
     },
     {
-      "path": "web-reverse/web-reverse-products-index/ali_bxua.md",
+      "path": "web-reverse/products/alibaba-bxua.md",
       "kind": "nested",
       "category": "web-reverse",
-      "parent": "web-reverse/web-reverse-products-index.md",
+      "parent": "web-reverse/products.md",
       "title": "阿里 Baxia / AWSC bx-ua 与 fire_ua",
       "source": "JS终结计划课程方法论（clean-room 重写）",
       "original_date": "多篇合集",
@@ -10261,10 +10261,10 @@
       "content_sha256": "13e94cdc104d6fcd0d4f9464ccecebd98ae9b593973fbc0ba5be92ef516cb721"
     },
     {
-      "path": "web-reverse/web-reverse-products-index/alibaba_h5sec_awsc_fireye.md",
+      "path": "web-reverse/products/alibaba-h5sec-awsc-fireye.md",
       "kind": "nested",
       "category": "web-reverse",
-      "parent": "web-reverse/web-reverse-products-index.md",
+      "parent": "web-reverse/products.md",
       "title": "阿里 H5Sec / AWSC / Fireye（140/231/234 / x5sec）",
       "source": "JS终结计划课程方法论（clean-room 重写）",
       "original_date": "多篇合集",
@@ -10283,32 +10283,10 @@
       "content_sha256": "3f775ead210925ae6effded20866f10a0b63c9378ab174905ca1e363eb6c0dbf"
     },
     {
-      "path": "web-reverse/web-reverse-products-index/aliyun_captcha.md",
+      "path": "web-reverse/products/aliyun-captcha-v2.md",
       "kind": "nested",
       "category": "web-reverse",
-      "parent": "web-reverse/web-reverse-products-index.md",
-      "title": "阿里云验证码 / AWSC / noCaptcha（含 WAF 1036 / x5sec）",
-      "source": "JS终结计划课程方法论（clean-room 重写）",
-      "original_date": "多篇合集",
-      "archive_date": "2026-08-11",
-      "summary": "阿里云验证码 v2 滑块、AWSC/noCaptcha、阿里系 WAF 1036 与 x5sec 处罚页链路的通用识别与验收参考。",
-      "keywords": [],
-      "headings": [
-        "命中特征",
-        "常见链路",
-        "观察优先级",
-        "常见坑",
-        "验证口径"
-      ],
-      "bytes": 3963,
-      "lines": 69,
-      "content_sha256": "6f38fff45c2edcdf97e4e2a9ab8ca93d0e93727681eae47d7b91d6b3c0879356"
-    },
-    {
-      "path": "web-reverse/web-reverse-products-index/aliyun_captcha_v2.md",
-      "kind": "nested",
-      "category": "web-reverse",
-      "parent": "web-reverse/web-reverse-products-index.md",
+      "parent": "web-reverse/products.md",
       "title": "阿里云验证码 v2（callback-proof 状态机）",
       "source": "JS终结计划课程方法论（clean-room 重写）",
       "original_date": "多篇合集",
@@ -10327,10 +10305,10 @@
       "content_sha256": "0574dc7039484a062dee1ad98b01a7fdb3ddb825096e85548ee940905eac1049"
     },
     {
-      "path": "web-reverse/web-reverse-products-index/aliyun_captcha_v3.md",
+      "path": "web-reverse/products/aliyun-captcha-v3.md",
       "kind": "nested",
       "category": "web-reverse",
-      "parent": "web-reverse/web-reverse-products-index.md",
+      "parent": "web-reverse/products.md",
       "title": "阿里云验证码 V3（direct-verify / CHECK_BOX）",
       "source": "JS终结计划课程方法论（clean-room 重写）",
       "original_date": "多篇合集",
@@ -10349,10 +10327,32 @@
       "content_sha256": "75e2e98c71df33f0bacf80c89b3ac5da3920ff49085e832eefdd42ea6863bcc5"
     },
     {
-      "path": "web-reverse/web-reverse-products-index/cloudflare_5s.md",
+      "path": "web-reverse/products/aliyun-captcha.md",
       "kind": "nested",
       "category": "web-reverse",
-      "parent": "web-reverse/web-reverse-products-index.md",
+      "parent": "web-reverse/products.md",
+      "title": "阿里云验证码 / AWSC / noCaptcha（含 WAF 1036 / x5sec）",
+      "source": "JS终结计划课程方法论（clean-room 重写）",
+      "original_date": "多篇合集",
+      "archive_date": "2026-08-11",
+      "summary": "阿里云验证码 v2 滑块、AWSC/noCaptcha、阿里系 WAF 1036 与 x5sec 处罚页链路的通用识别与验收参考。",
+      "keywords": [],
+      "headings": [
+        "命中特征",
+        "常见链路",
+        "观察优先级",
+        "常见坑",
+        "验证口径"
+      ],
+      "bytes": 3963,
+      "lines": 69,
+      "content_sha256": "6f38fff45c2edcdf97e4e2a9ab8ca93d0e93727681eae47d7b91d6b3c0879356"
+    },
+    {
+      "path": "web-reverse/products/cloudflare-5s-challenge.md",
+      "kind": "nested",
+      "category": "web-reverse",
+      "parent": "web-reverse/products.md",
       "title": "Cloudflare 5s / WAF Challenge",
       "source": "JS终结计划课程方法论（clean-room 重写）",
       "original_date": "多篇合集",
@@ -10371,10 +10371,10 @@
       "content_sha256": "95309d7e683f69ff2d36f1867975f99866b6914fb7fe82a952c42e8ac9b4dbae"
     },
     {
-      "path": "web-reverse/web-reverse-products-index/datadome.md",
+      "path": "web-reverse/products/datadome.md",
       "kind": "nested",
       "category": "web-reverse",
-      "parent": "web-reverse/web-reverse-products-index.md",
+      "parent": "web-reverse/products.md",
       "title": "DataDome",
       "source": "JS终结计划课程方法论（clean-room 重写）",
       "original_date": "多篇合集",
@@ -10393,10 +10393,10 @@
       "content_sha256": "4cf818a898295a7c4d32349647633e97c09c090deabb930c52bdacfbc7b81424"
     },
     {
-      "path": "web-reverse/web-reverse-products-index/dy_abgous.md",
+      "path": "web-reverse/products/douyin-a-bogus.md",
       "kind": "nested",
       "category": "web-reverse",
-      "parent": "web-reverse/web-reverse-products-index.md",
+      "parent": "web-reverse/products.md",
       "title": "抖音 a_bogus",
       "source": "JS终结计划课程方法论（clean-room 重写）",
       "original_date": "多篇合集",
@@ -10415,10 +10415,10 @@
       "content_sha256": "b74c3ab9f3d7d36e24a574d9e3c22cb3c494421ca81150165291d763461a575d"
     },
     {
-      "path": "web-reverse/web-reverse-products-index/dy_creator_im.md",
+      "path": "web-reverse/products/douyin-creator-im.md",
       "kind": "nested",
       "category": "web-reverse",
-      "parent": "web-reverse/web-reverse-products-index.md",
+      "parent": "web-reverse/products.md",
       "title": "抖音创作 IM 私信链路",
       "source": "JS终结计划课程方法论（clean-room 重写）",
       "original_date": "多篇合集",
@@ -10437,10 +10437,10 @@
       "content_sha256": "359095e566d82b2e2619ab4226cb7f048047ea3f60e8b062d7984d65a1365f02"
     },
     {
-      "path": "web-reverse/web-reverse-products-index/dy_ticket_guard.md",
+      "path": "web-reverse/products/douyin-ticket-guard.md",
       "kind": "nested",
       "category": "web-reverse",
-      "parent": "web-reverse/web-reverse-products-index.md",
+      "parent": "web-reverse/products.md",
       "title": "抖音 / 字节 Ticket Guard 与 SecureSDK",
       "source": "JS终结计划课程方法论（clean-room 重写）",
       "original_date": "多篇合集",
@@ -10459,10 +10459,10 @@
       "content_sha256": "6324a74a6e72a9deb18b0c66444a5a0cb116c68252e6cbe9e2e303d818ea21d8"
     },
     {
-      "path": "web-reverse/web-reverse-products-index/dy_verifycenter_slide.md",
+      "path": "web-reverse/products/douyin-verifycenter-slide.md",
       "kind": "nested",
       "category": "web-reverse",
-      "parent": "web-reverse/web-reverse-products-index.md",
+      "parent": "web-reverse/products.md",
       "title": "抖音 VerifyCenter 滑块验证码",
       "source": "JS终结计划课程方法论（clean-room 重写）",
       "original_date": "多篇合集",
@@ -10481,10 +10481,10 @@
       "content_sha256": "b91eaa54ed701d6893ad4fbd5e90852100e5cb0f2c31b7ece58397daa7e38578"
     },
     {
-      "path": "web-reverse/web-reverse-products-index/ele_accs_lwp.md",
+      "path": "web-reverse/products/eleme-accs-lwp.md",
       "kind": "nested",
       "category": "web-reverse",
-      "parent": "web-reverse/web-reverse-products-index.md",
+      "parent": "web-reverse/products.md",
       "title": "饿了么商家 ACCS / 钉钉 LWP WebSocket",
       "source": "JS终结计划课程方法论（clean-room 重写）",
       "original_date": "多篇合集",
@@ -10503,10 +10503,10 @@
       "content_sha256": "b04d4d75ffff776e268bb833fa7dda70e1690c8cddaf6b5c9aff49b883f502f9"
     },
     {
-      "path": "web-reverse/web-reverse-products-index/f5_shape.md",
+      "path": "web-reverse/products/f5-shape.md",
       "kind": "nested",
       "category": "web-reverse",
-      "parent": "web-reverse/web-reverse-products-index.md",
+      "parent": "web-reverse/products.md",
       "title": "F5 Shape / Shape Defense",
       "source": "JS终结计划课程方法论（clean-room 重写）",
       "original_date": "多篇合集",
@@ -10525,10 +10525,10 @@
       "content_sha256": "4b1c99d2cb92a2929ee4386134142c4858a4c160fe4ce76119bf7d9332f0f73a"
     },
     {
-      "path": "web-reverse/web-reverse-products-index/google_recaptcha_v3.md",
+      "path": "web-reverse/products/google-recaptcha-v3.md",
       "kind": "nested",
       "category": "web-reverse",
-      "parent": "web-reverse/web-reverse-products-index.md",
+      "parent": "web-reverse/products.md",
       "title": "Google reCAPTCHA v3 / invisible",
       "source": "JS终结计划课程方法论（clean-room 重写）",
       "original_date": "多篇合集",
@@ -10547,32 +10547,10 @@
       "content_sha256": "dc038fbcbf8910cb36efb2dcf353ed9d9ac0e1bb5391f549067d1787f65f4175"
     },
     {
-      "path": "web-reverse/web-reverse-products-index/jd.md",
+      "path": "web-reverse/products/jd-daojia-websocket.md",
       "kind": "nested",
       "category": "web-reverse",
-      "parent": "web-reverse/web-reverse-products-index.md",
-      "title": "京东 h5st",
-      "source": "JS终结计划课程方法论（clean-room 重写）",
-      "original_date": "多篇合集",
-      "archive_date": "2026-08-11",
-      "summary": "京东 PC/Web 链路中 h5st、request_algo、tk03/tk06、fp 与业务风控参数链路的通用参考。",
-      "keywords": [],
-      "headings": [
-        "命中特征",
-        "常见链路",
-        "观察优先级",
-        "常见坑",
-        "验证口径"
-      ],
-      "bytes": 4138,
-      "lines": 57,
-      "content_sha256": "a4bc65ef731f2c7585e35806d6a28257f861c3c0b13ccb86d8ffeb230f182ce5"
-    },
-    {
-      "path": "web-reverse/web-reverse-products-index/jd_daojia_ws.md",
-      "kind": "nested",
-      "category": "web-reverse",
-      "parent": "web-reverse/web-reverse-products-index.md",
+      "parent": "web-reverse/products.md",
       "title": "京东到家 / 外卖商家 WebSocket",
       "source": "JS终结计划课程方法论（clean-room 重写）",
       "original_date": "多篇合集",
@@ -10591,10 +10569,32 @@
       "content_sha256": "49c183b5bb8d08d766becfb6c683d9e360a98cbc31ba7fcf591bf45566fcc963"
     },
     {
-      "path": "web-reverse/web-reverse-products-index/jd_jcap.md",
+      "path": "web-reverse/products/jd-h5st.md",
       "kind": "nested",
       "category": "web-reverse",
-      "parent": "web-reverse/web-reverse-products-index.md",
+      "parent": "web-reverse/products.md",
+      "title": "京东 h5st",
+      "source": "JS终结计划课程方法论（clean-room 重写）",
+      "original_date": "多篇合集",
+      "archive_date": "2026-08-11",
+      "summary": "京东 PC/Web 链路中 h5st、request_algo、tk03/tk06、fp 与业务风控参数链路的通用参考。",
+      "keywords": [],
+      "headings": [
+        "命中特征",
+        "常见链路",
+        "观察优先级",
+        "常见坑",
+        "验证口径"
+      ],
+      "bytes": 4138,
+      "lines": 57,
+      "content_sha256": "a4bc65ef731f2c7585e35806d6a28257f861c3c0b13ccb86d8ffeb230f182ce5"
+    },
+    {
+      "path": "web-reverse/products/jd-jcap-captcha.md",
+      "kind": "nested",
+      "category": "web-reverse",
+      "parent": "web-reverse/products.md",
       "title": "京东 JCAP 图形验证码",
       "source": "JS终结计划课程方法论（clean-room 重写）",
       "original_date": "多篇合集",
@@ -10614,10 +10614,10 @@
       "content_sha256": "f6a53927d9e04091fc6359b524153b277efccaba01403cf4207faa43d8bb7490"
     },
     {
-      "path": "web-reverse/web-reverse-products-index/jd_jcap_slider.md",
+      "path": "web-reverse/products/jd-jcap-slider.md",
       "kind": "nested",
       "category": "web-reverse",
-      "parent": "web-reverse/web-reverse-products-index.md",
+      "parent": "web-reverse/products.md",
       "title": "京东 JCAP 滑块专项（tp=30 滑块 / tp=26 旋转）",
       "source": "JS终结计划课程方法论（clean-room 重写）",
       "original_date": "多篇合集",
@@ -10637,10 +10637,10 @@
       "content_sha256": "2cbb7f5bd5c918f27b64f07e37fd6e33d8ca3ff42e1b3cc0593a54b864e2786a"
     },
     {
-      "path": "web-reverse/web-reverse-products-index/kasada.md",
+      "path": "web-reverse/products/kasada.md",
       "kind": "nested",
       "category": "web-reverse",
-      "parent": "web-reverse/web-reverse-products-index.md",
+      "parent": "web-reverse/products.md",
       "title": "Kasada KPSDK",
       "source": "JS终结计划课程方法论（clean-room 重写）",
       "original_date": "多篇合集",
@@ -10659,10 +10659,10 @@
       "content_sha256": "d61dd8b005ce298c14b114bcb2b1d8ff7aaf4b44493ad6fb71dcb803a8b99498"
     },
     {
-      "path": "web-reverse/web-reverse-products-index/mt_waimai_ws.md",
+      "path": "web-reverse/products/meituan-waimai-websocket.md",
       "kind": "nested",
       "category": "web-reverse",
-      "parent": "web-reverse/web-reverse-products-index.md",
+      "parent": "web-reverse/products.md",
       "title": "美团外卖商家 WebSocket",
       "source": "JS终结计划课程方法论（clean-room 重写）",
       "original_date": "多篇合集",
@@ -10681,10 +10681,10 @@
       "content_sha256": "0875a10c243372e54df1e327527a88bd21010db01d52a214594437de95b19451"
     },
     {
-      "path": "web-reverse/web-reverse-products-index/perimeterx_px.md",
+      "path": "web-reverse/products/perimeterx.md",
       "kind": "nested",
       "category": "web-reverse",
-      "parent": "web-reverse/web-reverse-products-index.md",
+      "parent": "web-reverse/products.md",
       "title": "PerimeterX / HUMAN Security PX",
       "source": "JS终结计划课程方法论（clean-room 重写）",
       "original_date": "多篇合集",
@@ -10704,10 +10704,10 @@
       "content_sha256": "4d3120f4e706c0ea44f2e7ccdc4a0759538e1e938b046949ff6a6eb96d8f7015"
     },
     {
-      "path": "web-reverse/web-reverse-products-index/reese84.md",
+      "path": "web-reverse/products/reese84.md",
       "kind": "nested",
       "category": "web-reverse",
-      "parent": "web-reverse/web-reverse-products-index.md",
+      "parent": "web-reverse/products.md",
       "title": "Reese84（Imperva / Incapsula）",
       "source": "JS终结计划课程方法论（clean-room 重写）",
       "original_date": "多篇合集",
@@ -10726,10 +10726,10 @@
       "content_sha256": "efd8fbb310de9d559916fef547501bfd79c75f951a5dff8df5c2aa5b30806517"
     },
     {
-      "path": "web-reverse/web-reverse-products-index/rs6.md",
+      "path": "web-reverse/products/ruishu-rs6-challenge.md",
       "kind": "nested",
       "category": "web-reverse",
-      "parent": "web-reverse/web-reverse-products-index.md",
+      "parent": "web-reverse/products.md",
       "title": "瑞数 RS6",
       "source": "JS终结计划课程方法论（clean-room 重写）",
       "original_date": "多篇合集",
@@ -10749,10 +10749,10 @@
       "content_sha256": "738b1d8fc70a851f83808f677d589bc8b9a0548c2959332fecfec8467425ed2a"
     },
     {
-      "path": "web-reverse/web-reverse-products-index/ruishu_rs6.md",
+      "path": "web-reverse/products/ruishu-rs6-hybrid.md",
       "kind": "nested",
       "category": "web-reverse",
-      "parent": "web-reverse/web-reverse-products-index.md",
+      "parent": "web-reverse/products.md",
       "title": "瑞数/瑞树 RS6 动态 JS（Firefox/Gecko 侧重）",
       "source": "JS终结计划课程方法论（clean-room 重写）",
       "original_date": "多篇合集",
@@ -10771,32 +10771,10 @@
       "content_sha256": "1307cfc0e7502d65bd6f3774426d92d1e177494332c088efb8e1114f69665034"
     },
     {
-      "path": "web-reverse/web-reverse-products-index/tongdun.md",
+      "path": "web-reverse/products/tencent-captcha.md",
       "kind": "nested",
       "category": "web-reverse",
-      "parent": "web-reverse/web-reverse-products-index.md",
-      "title": "同盾 / TrustDecision",
-      "source": "JS终结计划课程方法论（clean-room 重写）",
-      "original_date": "多篇合集",
-      "archive_date": "2026-08-11",
-      "summary": "同盾 / TrustDecision / TrustDeviceJs 指纹链路：fm.js、/web/v2 上报与 black_box 业务落点。",
-      "keywords": [],
-      "headings": [
-        "命中特征",
-        "常见链路",
-        "观察优先级",
-        "常见坑",
-        "验证口径"
-      ],
-      "bytes": 3816,
-      "lines": 62,
-      "content_sha256": "66edc3205a4b392005bb9681a7caaee20ead4ea8a9d7e41c667f0cff7f8f6eb2"
-    },
-    {
-      "path": "web-reverse/web-reverse-products-index/tx_captcha.md",
-      "kind": "nested",
-      "category": "web-reverse",
-      "parent": "web-reverse/web-reverse-products-index.md",
+      "parent": "web-reverse/products.md",
       "title": "腾讯 TCaptcha 滑块验证码",
       "source": "JS终结计划课程方法论（clean-room 重写）",
       "original_date": "多篇合集",
@@ -10814,6 +10792,28 @@
       "bytes": 4135,
       "lines": 67,
       "content_sha256": "5cdad66086b3c277299df7b8dfeff2b5822daf7c0aab617ae1a862cda5deef67"
+    },
+    {
+      "path": "web-reverse/products/tongdun.md",
+      "kind": "nested",
+      "category": "web-reverse",
+      "parent": "web-reverse/products.md",
+      "title": "同盾 / TrustDecision",
+      "source": "JS终结计划课程方法论（clean-room 重写）",
+      "original_date": "多篇合集",
+      "archive_date": "2026-08-11",
+      "summary": "同盾 / TrustDecision / TrustDeviceJs 指纹链路：fm.js、/web/v2 上报与 black_box 业务落点。",
+      "keywords": [],
+      "headings": [
+        "命中特征",
+        "常见链路",
+        "观察优先级",
+        "常见坑",
+        "验证口径"
+      ],
+      "bytes": 3816,
+      "lines": 62,
+      "content_sha256": "66edc3205a4b392005bb9681a7caaee20ead4ea8a9d7e41c667f0cff7f8f6eb2"
     },
     {
       "path": "web-reverse/yuanrenxue-web-reverse-compilation.md",

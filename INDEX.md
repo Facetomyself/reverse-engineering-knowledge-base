@@ -69,8 +69,8 @@
 | [anti-crawler-web-reverse-compilation.md](./web-reverse/anti-crawler-web-reverse-compilation.md) | — (公众号归档) | `Akamai`, `JSVMP`, `Babel AST`, `控制流平坦化`, `Chrome DevTools`, `Hook`, `反Hook` | Akamai 参数、JSVMP、AST 反混淆与 Chrome DevTools 调试对抗的 16 篇实战合集 |
 | [benru-web-reverse-compilation.md](./web-reverse/benru-web-reverse-compilation.md) | — (公众号归档) | `WBI签名`, `AST`, `JS混淆`, `Node补环境`, `mitmproxy`, `动态参数`, `Webpack RPC`, `Python还原` | 本如笔记 12 篇 Web 逆向与协议恢复实战，从参数定位、反混淆和补环境延伸到 RPC 与 Python 复现 |
 | [yuanrenxue-web-reverse-compilation.md](./web-reverse/yuanrenxue-web-reverse-compilation.md) | — (公众号归档) | `JS Cookie`, `参数加密`, `反调试`, `字符串混淆`, `控制流混淆`, `微信小程序`, `AI逆向` | 猿人学 7 篇 Web 与 JavaScript 逆向方法论，保留长期可复用的定位、调试和反混淆路径 |
-| [web-reverse-products-index.md](./web-reverse/web-reverse-products-index.md) | — (JS终结计划课程方法论) | `风控产品`, `验证码`, `签名`, `WAF`, `反爬`, `命中索引`, `DataDome`, `Akamai`, `Kasada`, `瑞数`, `reCAPTCHA`, `同盾`, `京东`, `抖音`, `阿里云验证码`, `腾讯验证码`, `F5`, `PerimeterX`, `reese84` | 安全产品强制命中索引：27 个 Web 风控产品（验证码/签名/状态型链）的命中特征 → 产品文档映射，含强制命中纪律与使用边界 |
-| [web-reverse-env-objects-reference.md](./web-reverse/web-reverse-env-objects-reference.md) | — (JS终结计划课程方法论) | `补环境`, `DOM/BOM`, `浏览器对象`, `WebAPI`, `指纹`, `Worker`, `MessagePort`, `Canvas`, `WebGL`, `navigator`, `crypto` | Web 补环境浏览器对象参考：20 个 DOM/BOM/Web API 对象的检测面、常见坑与观察优先级，五维度补环境纪律 |
+| [products.md](./web-reverse/products.md) | — (JS终结计划课程方法论) | `风控产品`, `验证码`, `签名`, `WAF`, `反爬`, `命中索引`, `DataDome`, `Akamai`, `Kasada`, `瑞数`, `reCAPTCHA`, `同盾`, `京东`, `抖音`, `阿里云验证码`, `腾讯验证码`, `F5`, `PerimeterX`, `reese84` | 安全产品强制命中索引：27 个 Web 风控产品（验证码/签名/状态型链）的命中特征 → 产品文档映射，含强制命中纪律与使用边界 |
+| [browser-env-objects.md](./web-reverse/browser-env-objects.md) | — (JS终结计划课程方法论) | `补环境`, `DOM/BOM`, `浏览器对象`, `WebAPI`, `指纹`, `Worker`, `MessagePort`, `Canvas`, `WebGL`, `navigator`, `crypto` | Web 补环境浏览器对象参考：20 个 DOM/BOM/Web API 对象的检测面、常见坑与观察优先级，五维度补环境纪律 |
 
 ---
 
@@ -111,9 +111,9 @@
 - **Canvas/WebGL 指纹**: [chromium-fingerprint-compilation](./anti-detection/chromium-fingerprint-compilation.md)
 - **SSL Pinning**: [app-reverse-global-map](./mobile-app-reverse/app-reverse-global-map.md), [app-reverse-environment-setup](./mobile-app-reverse/app-reverse-environment-setup.md)
 - **Root/Magisk 隐藏**: [app-reverse-environment-setup](./mobile-app-reverse/app-reverse-environment-setup.md)
-- **验证码与行为风控**: [anti-crawler-risk](./anti-detection/anti-crawler-risk-control-compilation.md), [products-index](./web-reverse/web-reverse-products-index.md)
-- **安全产品命中识别（DataDome/Akamai/Kasada/瑞数/reCAPTCHA/同盾/京东/抖音等 27 产品）**: [products-index](./web-reverse/web-reverse-products-index.md)
-- **补环境浏览器对象面（DOM/BOM/WebAPI/Worker/Canvas/WebGL）**: [env-objects](./web-reverse/web-reverse-env-objects-reference.md)
+- **验证码与行为风控**: [anti-crawler-risk](./anti-detection/anti-crawler-risk-control-compilation.md), [products](./web-reverse/products.md)
+- **安全产品命中识别（DataDome/Akamai/Kasada/瑞数/reCAPTCHA/同盾/京东/抖音等 27 产品）**: [products](./web-reverse/products.md)
+- **补环境浏览器对象面（DOM/BOM/WebAPI/Worker/Canvas/WebGL）**: [env-objects](./web-reverse/browser-env-objects.md)
 - **浏览器内核级指纹与自动化对抗**: [ruyi-browser](./anti-detection/ruyi-browser-anti-detection-compilation.md)
 - **Android Root/反调试/Frida 对抗**: [paopao-android](./mobile-app-reverse/paopao-android-reverse-compilation.md)
 - **curl_cffi/Selenium stealth/字体与验证码/Canvas**: [benru-anti](./anti-detection/benru-anti-detection-compilation.md)
@@ -130,13 +130,13 @@
 - **CSDN/w1101662433 (fivcan)**: [chromium-fingerprint-compilation](./anti-detection/chromium-fingerprint-compilation.md)
 - **Android/App 逆向**: [app-reverse-global-map](./mobile-app-reverse/app-reverse-global-map.md), [app-reverse-environment-setup](./mobile-app-reverse/app-reverse-environment-setup.md)
 - **macOS / NAS 采集交付**: [mac-nas-spool](./collection-engineering/reliable-mac-nas-spool-delivery.md)
-- **Akamai**: [anti-crawler-web](./web-reverse/anti-crawler-web-reverse-compilation.md), [products-index](./web-reverse/web-reverse-products-index.md)
-- **DataDome / Kasada / PerimeterX / F5 Shape / reese84 / Cloudflare 5s**: [products-index](./web-reverse/web-reverse-products-index.md)
-- **瑞数 RS6**: [products-index](./web-reverse/web-reverse-products-index.md)
-- **Google reCAPTCHA v3**: [products-index](./web-reverse/web-reverse-products-index.md)
-- **阿里（ACW/H5Sec/BxUA/验证码）**: [51job-anti-detection](./anti-detection/51job-anti-detection-analysis.md), [products-index](./web-reverse/web-reverse-products-index.md)
-- **腾讯（验证码/风控）**: [mmtls](./protocols/mmtls-protocol-analysis.md), [products-index](./web-reverse/web-reverse-products-index.md)
-- **同盾 / 京东（h5st/JCAP/到家）/ 抖音（a_bogus/IM/TicketGuard）/ 饿了么 / 美团**: [products-index](./web-reverse/web-reverse-products-index.md)
+- **Akamai**: [anti-crawler-web](./web-reverse/anti-crawler-web-reverse-compilation.md), [products](./web-reverse/products.md)
+- **DataDome / Kasada / PerimeterX / F5 Shape / reese84 / Cloudflare 5s**: [products](./web-reverse/products.md)
+- **瑞数 RS6**: [products](./web-reverse/products.md)
+- **Google reCAPTCHA v3**: [products](./web-reverse/products.md)
+- **阿里（ACW/H5Sec/BxUA/验证码）**: [51job-anti-detection](./anti-detection/51job-anti-detection-analysis.md), [products](./web-reverse/products.md)
+- **腾讯（验证码/风控）**: [mmtls](./protocols/mmtls-protocol-analysis.md), [products](./web-reverse/products.md)
+- **同盾 / 京东（h5st/JCAP/到家）/ 抖音（a_bogus/IM/TicketGuard）/ 饿了么 / 美团**: [products](./web-reverse/products.md)
 - **微信公众号技术归档（反爬破解社/如意私塾/泡泡以安/本如笔记/猿人学Python）**: [anti-crawler-web](./web-reverse/anti-crawler-web-reverse-compilation.md), [ruyi-browser](./anti-detection/ruyi-browser-anti-detection-compilation.md), [paopao-android](./mobile-app-reverse/paopao-android-reverse-compilation.md), [benru-web](./web-reverse/benru-web-reverse-compilation.md), [benru-anti](./anti-detection/benru-anti-detection-compilation.md), [yuanrenxue-web](./web-reverse/yuanrenxue-web-reverse-compilation.md), [yuanrenxue-app](./mobile-app-reverse/yuanrenxue-mobile-app-reverse-compilation.md), [yuanrenxue-anti](./anti-detection/yuanrenxue-anti-detection-compilation.md)
 
 ### 工具/方法
@@ -158,8 +158,8 @@
 - **trace 数据库 + MCP 证据回溯**: [ai-vmp-trace](./native-analysis/ai-assisted-vmp-trace-recovery.md)
 - **Chromium/Firefox/WebKit 内核定制**: [ruyi-browser](./anti-detection/ruyi-browser-anti-detection-compilation.md)
 - **AST/JS 混淆/Node 补环境/Webpack RPC**: [benru-web](./web-reverse/benru-web-reverse-compilation.md), [yuanrenxue-web](./web-reverse/yuanrenxue-web-reverse-compilation.md)
-- **风控产品强制命中分类（验证码/签名/状态型链）**: [products-index](./web-reverse/web-reverse-products-index.md)
-- **补环境对象级参考（检测面/常见坑/观察优先级）**: [env-objects](./web-reverse/web-reverse-env-objects-reference.md)
+- **风控产品强制命中分类（验证码/签名/状态型链）**: [products](./web-reverse/products.md)
+- **补环境对象级参考（检测面/常见坑/观察优先级）**: [env-objects](./web-reverse/browser-env-objects.md)
 - **mitmproxy/Charles/Frida/Protobuf/iOS/Flutter 工具链**: [benru-web](./web-reverse/benru-web-reverse-compilation.md), [yuanrenxue-app](./mobile-app-reverse/yuanrenxue-mobile-app-reverse-compilation.md)
 - **高并发采集控制面/AIMD/half-open**: [collector-control-plane](./collection-engineering/high-concurrency-http-collector-control-plane.md)
 - **SSD spool/NAS mirror/marker-ACK 重放**: [mac-nas-spool](./collection-engineering/reliable-mac-nas-spool-delivery.md)
