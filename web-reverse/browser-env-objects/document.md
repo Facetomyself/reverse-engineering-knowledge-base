@@ -44,3 +44,19 @@
 - cookie 读写与请求边界 header 同一 CookieJar，attributes 不丢失。
 - DOM 树操作维护 parent / children / ownerDocument 三向一致。
 - 未触达的工厂与查询路径不预建。
+
+## document.all 补环境要点
+
+`document.all` 是文档中历史遗留的 undetectable 对象,目标常以它作为环境检测点。
+
+- **V8 undetectable 底座思路**:`document.all` 是 HTML 规范的 undetectable 对象——存在但 typeof 与布尔化表现特殊。补环境底座优先用 V8 原生 undetectable 能力:`--allow-natives-syntax` 下用 `%GetUndetectable()` 生成真 undetectable 对象,避免用普通对象加代理伪造外观。
+- **检测点**:目标可能从三个方向检测 document.all:
+  - `typeof document.all` 为 `"undefined"`(即使对象本身存在);
+  - 布尔化:`if (document.all)` / `Boolean(document.all)` 为 false、`!document.all` 为 true;
+  - 属性访问:`length`、`[i]` 索引、`tags`、`item`、`namedItem` 等集合语义仍可用。
+- **集合语义**:document.all 是 DOM 全集索引,包含 documentElement、head、body 及所有后代元素;`length` 与 `[i]` 顺序应与其他集合(scripts/forms/images/links)同源一致。
+- **与 document 整体语义衔接**:document.all 属于集合来源,随 DOM 树操作(appendChild/removeChild/insertBefore)维护,不独立写死一份副本。
+- **常见坑**:普通对象加 typeof 覆写或 getter 无法同时满足「typeof 为 undefined 且对象可访问」;`%GetUndetectable()` 是同时满足两者的底座,属性和方法仍需按目标触达补齐。
+- **优先按证据还原**:先查浏览器证据中目标链路实际使用的检测方式(是 typeof 判断、布尔判断、属性访问还是组合),按证据补对应语义,不默认全量实现集合。
+- **验证要点**:补后对照浏览器证据核对三项——typeof 结果、布尔化结果、集合访问结果(长度、索引、tags)与目标链路一致;任一不一致即回查证据。
+- **证据不足记录缺口**:证据无法确认 document.all 的检测方式或行为细节时,记录缺口与当前假设,不凭猜测补;进入补环境前该缺口须有证据或明确标注。
