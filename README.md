@@ -1,6 +1,6 @@
 # 逆向工程知识库
 
-跨项目可复用的逆向分析文档。从 `workspace/` 中提取经过验证、具有通用参考价值的分析成果。
+跨项目可复用的逆向分析与采集工程文档。从 `workspace/` 中提取经过验证、具有通用参考价值的分析成果。
 
 ## 目录结构
 
@@ -18,6 +18,7 @@ article/
 ├── packing-bypass/                    # 加固/混淆绕过
 ├── native-analysis/                   # Native SO 分析
 ├── mobile-app-reverse/                # 移动 App 逆向方法/环境/流程
+├── collection-engineering/            # 代理并发、可恢复采集、spool/mirror 与生产可靠性
 └── web-reverse/                       # Web 逆向 (webpack/框架/JS)
 ```
 
@@ -43,6 +44,7 @@ article/
 - [x] 跨项目可复用的协议/算法/技术分析
 - [x] 有可验证证据和代码引用的深度分析
 - [x] 普适的逆向方法和技术模式
+- [x] 有运行时证据支撑的采集控制面、交付链与非侵入式运维模式
 - [ ] 单个项目的业务逻辑分析
 - [ ] 项目交付件 (report/triage/findings — 留在 workspace)
 

@@ -9,14 +9,15 @@
 | 分类 | canonical | 子文章 | 合计 |
 |------|----------:|-------:|-----:|
 | `anti-detection` | 6 | 161 | 167 |
+| `collection-engineering` | 2 | 0 | 2 |
 | `mobile-app-reverse` | 5 | 90 | 95 |
 | `native-analysis` | 2 | 0 | 2 |
 | `packing-bypass` | 1 | 0 | 1 |
 | `protocols` | 1 | 0 | 1 |
 | `signature-algorithms` | 1 | 0 | 1 |
-| `web-reverse` | 4 | 35 | 39 |
+| `web-reverse` | 6 | 82 | 88 |
 
-文章总数：306。
+文章总数：357。
 
 ## 逐篇目录
 
@@ -192,6 +193,13 @@
 | 子文 | 2019-12-30 | [写网络爬虫程序的四种难度](./anti-detection/yuanrenxue-anti-detection-compilation/yuanrenxue-anti-20191230-01.md) | [猿人学请求一致性与反检测合集](./anti-detection/yuanrenxue-anti-detection-compilation.md) | — |
 | 子文 | 2026-07-13 | [Akamai对抗的隐秘战线——TLS指纹](./anti-detection/yuanrenxue-anti-detection-compilation/yuanrenxue-anti-20260713-01.md) | [猿人学请求一致性与反检测合集](./anti-detection/yuanrenxue-anti-detection-compilation.md) | 背景科普 / 指纹检测的流程 / 0\. 版本信息 / 1\. wireshark抓包 |
 
+### `collection-engineering`
+
+| 类型 | 日期 | 文章 | 父合集 | 关键标题 |
+|------|------|------|--------|----------|
+| 主文 | 2026-08-02 | [高并发 HTTP 采集控制面：代理租约、AIMD 与故障恢复](./collection-engineering/high-concurrency-http-collector-control-plane.md) | — | 结论先行 / 证据与版本边界 / 调试时间线：每次提速都先推翻一个错误假设 / 从成功实验进入主线的准入清单 |
+| 主文 | 2026-08-02 | [Mac 热写与 NAS 交付：可重放 spool、mirror ACK 和非侵入式运维](./collection-engineering/reliable-mac-nas-spool-delivery.md) | — | 为什么 NAS 不应进入采集热路径 / 数据流 / 热写路径：批量输出后再生成 marker / 已验证边界 |
+
 ### `mobile-app-reverse`
 
 | 类型 | 日期 | 文章 | 父合集 | 关键标题 |
@@ -324,6 +332,8 @@
 | 主文 | 2026-07-03 | [51job Webpack 模块自吐分析](./web-reverse/51job-webpack-analysis.md) | — | 基本信息 / Webpack 架构 / 关键模块识别 / 加密 / 签名 |
 | 主文 | 多篇合集 | [反爬破解社 Web 逆向实战合集](./web-reverse/anti-crawler-web-reverse-compilation.md) | — | 收录说明 / 文章目录（16 篇） |
 | 主文 | 多篇合集 | [本如笔记 Web 逆向与协议恢复合集](./web-reverse/benru-web-reverse-compilation.md) | — | 收录说明 / 文章目录（12 篇） |
+| 主文 | 多篇合集 | [Web 补环境浏览器对象参考](./web-reverse/web-reverse-env-objects-reference.md) | — | 用途 / 补环境纪律 / 对象一览 / 使用边界 |
+| 主文 | 多篇合集 | [Web 安全产品强制命中索引](./web-reverse/web-reverse-products-index.md) | — | 用途 / 强制命中纪律 / 产品一览 / 使用边界 |
 | 主文 | 多篇合集 | [猿人学 Web 与 JavaScript 逆向合集](./web-reverse/yuanrenxue-web-reverse-compilation.md) | — | 收录说明 / 文章目录（7 篇） |
 | 子文 | 2025-09-21 | [扒一扒 VMP 反爬：从踩坑到破局的实战思路(Akamai)](./web-reverse/anti-crawler-web-reverse-compilation/anti-crawler-web-20250921-01.md) | [反爬破解社 Web 逆向实战合集](./web-reverse/anti-crawler-web-reverse-compilation.md) | 一、引言：谁还没被 VMP 坑过？ / 二、VMP 反爬：不是 “虚拟机” 那么简单！ / 2.1 看个真实案例：Akamai 的 VMP 套路 / 三、VMP 反爬核心原理：用实例拆穿它！ |
 | 子文 | 2025-09-23 | [Akamai难点第一弹：mst参数的vmp混淆解决思路](./web-reverse/anti-crawler-web-reverse-compilation/anti-crawler-web-20250923-01.md) | [反爬破解社 Web 逆向实战合集](./web-reverse/anti-crawler-web-reverse-compilation.md) | — |
@@ -353,6 +363,53 @@
 | 子文 | 2026-06-04 | [反混淆革命：当AI遇上AST，读懂"天书"再也不是梦](./web-reverse/benru-web-reverse-compilation/benru-web-20260604-01.md) | [本如笔记 Web 逆向与协议恢复合集](./web-reverse/benru-web-reverse-compilation.md) | AI正在怎样改写JS反混淆的规则 / AI 到底带来了什么？ / 2025-2026：不得不提的几项研究 / JSIMPLIFIER：学术界的里程碑 |
 | 子文 | 2026-06-12 | [一个Ajax请求，三层动态加密：m、x、r 逆向实战（反混淆→Python还原）](./web-reverse/benru-web-reverse-compilation/benru-web-20260612-01.md) | [本如笔记 Web 逆向与协议恢复合集](./web-reverse/benru-web-reverse-compilation.md) | 一、抓包与定位 / 调用栈分析 / 二、请求头参数 m 的生成逻辑 / 分析 window.eeee 函数 |
 | 子文 | 2026-06-18 | [还在Webpack里抠代码？RPC远程调用：让浏览器加密JS直接为你“打工”](./web-reverse/benru-web-reverse-compilation/benru-web-20260618-01.md) | [本如笔记 Web 逆向与协议恢复合集](./web-reverse/benru-web-reverse-compilation.md) | 一、RPC是什么？给浏览器“开一扇窗” / 二、工作原理：一条WebSocket“电话线” / 三、主流工具：JsRPC和Sekiro / JsRPC——轻量级入门首选 |
+| 子文 | 多篇合集 | [Audio 指纹对象参考](./web-reverse/web-reverse-env-objects-reference/audio-fingerprint.md) | [Web 补环境浏览器对象参考](./web-reverse/web-reverse-env-objects-reference.md) | 检测面 / 常见坑 / 观察优先级 / 补环境要点 |
+| 子文 | 多篇合集 | [Canvas / WebGL 对象参考](./web-reverse/web-reverse-env-objects-reference/canvas-webgl.md) | [Web 补环境浏览器对象参考](./web-reverse/web-reverse-env-objects-reference.md) | 检测面 / 常见坑 / 观察优先级 / 补环境要点 |
+| 子文 | 多篇合集 | [Crypto / 编码 / 二进制对象参考](./web-reverse/web-reverse-env-objects-reference/crypto-binary.md) | [Web 补环境浏览器对象参考](./web-reverse/web-reverse-env-objects-reference.md) | 检测面 / 常见坑 / 观察优先级 / 补环境要点 |
+| 子文 | 多篇合集 | [CSS / Layout / Font 对象参考](./web-reverse/web-reverse-env-objects-reference/css-layout-font.md) | [Web 补环境浏览器对象参考](./web-reverse/web-reverse-env-objects-reference.md) | 检测面 / 常见坑 / 观察优先级 / 补环境要点 |
+| 子文 | 多篇合集 | [document 对象参考](./web-reverse/web-reverse-env-objects-reference/document.md) | [Web 补环境浏览器对象参考](./web-reverse/web-reverse-env-objects-reference.md) | 检测面 / 常见坑 / 观察优先级 / 补环境要点 |
+| 子文 | 多篇合集 | [DOM 集合对象参考](./web-reverse/web-reverse-env-objects-reference/dom-collections.md) | [Web 补环境浏览器对象参考](./web-reverse/web-reverse-env-objects-reference.md) | 检测面 / 常见坑 / 观察优先级 / 补环境要点 |
+| 子文 | 多篇合集 | [DOM 节点与元素参考](./web-reverse/web-reverse-env-objects-reference/dom-node-element.md) | [Web 补环境浏览器对象参考](./web-reverse/web-reverse-env-objects-reference.md) | 检测面 / 常见坑 / 观察优先级 / 补环境要点 |
+| 子文 | 多篇合集 | [事件与输入设备参考](./web-reverse/web-reverse-env-objects-reference/event-input.md) | [Web 补环境浏览器对象参考](./web-reverse/web-reverse-env-objects-reference.md) | 检测面 / 常见坑 / 观察优先级 / 补环境要点 |
+| 子文 | 多篇合集 | [指纹内容总纲](./web-reverse/web-reverse-env-objects-reference/fingerprint-overview.md) | [Web 补环境浏览器对象参考](./web-reverse/web-reverse-env-objects-reference.md) | 检测面 / 常见坑 / 观察优先级 / 补环境要点 |
+| 子文 | 多篇合集 | [iframe / 子 realm 参考](./web-reverse/web-reverse-env-objects-reference/iframe.md) | [Web 补环境浏览器对象参考](./web-reverse/web-reverse-env-objects-reference.md) | 检测面 / 常见坑 / 观察优先级 / 补环境要点 |
+| 子文 | 多篇合集 | [location 对象参考](./web-reverse/web-reverse-env-objects-reference/location.md) | [Web 补环境浏览器对象参考](./web-reverse/web-reverse-env-objects-reference.md) | 检测面 / 常见坑 / 观察优先级 / 补环境要点 |
+| 子文 | 多篇合集 | [navigator 子对象参考](./web-reverse/web-reverse-env-objects-reference/navigator-subobjects.md) | [Web 补环境浏览器对象参考](./web-reverse/web-reverse-env-objects-reference.md) | 检测面 / 常见坑 / 观察优先级 / 补环境要点 |
+| 子文 | 多篇合集 | [navigator 对象参考](./web-reverse/web-reverse-env-objects-reference/navigator.md) | [Web 补环境浏览器对象参考](./web-reverse/web-reverse-env-objects-reference.md) | 检测面 / 常见坑 / 观察优先级 / 补环境要点 |
+| 子文 | 多篇合集 | [网络与请求对象参考](./web-reverse/web-reverse-env-objects-reference/network-fetch-xhr.md) | [Web 补环境浏览器对象参考](./web-reverse/web-reverse-env-objects-reference.md) | 检测面 / 常见坑 / 观察优先级 / 补环境要点 |
+| 子文 | 多篇合集 | [Performance / Timing / Observer 参考](./web-reverse/web-reverse-env-objects-reference/performance-timing.md) | [Web 补环境浏览器对象参考](./web-reverse/web-reverse-env-objects-reference.md) | 检测面 / 常见坑 / 观察优先级 / 补环境要点 |
+| 子文 | 多篇合集 | [权限 / 设备 / 环境探测参考](./web-reverse/web-reverse-env-objects-reference/permissions-device.md) | [Web 补环境浏览器对象参考](./web-reverse/web-reverse-env-objects-reference.md) | 检测面 / 常见坑 / 观察优先级 / 补环境要点 |
+| 子文 | 多篇合集 | [screen / visualViewport 参考](./web-reverse/web-reverse-env-objects-reference/screen.md) | [Web 补环境浏览器对象参考](./web-reverse/web-reverse-env-objects-reference.md) | 检测面 / 常见坑 / 观察优先级 / 补环境要点 |
+| 子文 | 多篇合集 | [storage / cookie 参考](./web-reverse/web-reverse-env-objects-reference/storage.md) | [Web 补环境浏览器对象参考](./web-reverse/web-reverse-env-objects-reference.md) | 检测面 / 常见坑 / 观察优先级 / 补环境要点 |
+| 子文 | 多篇合集 | [window / WindowProxy 参考](./web-reverse/web-reverse-env-objects-reference/window.md) | [Web 补环境浏览器对象参考](./web-reverse/web-reverse-env-objects-reference.md) | 检测面 / 常见坑 / 观察优先级 / 补环境要点 |
+| 子文 | 多篇合集 | [Worker / Message 参考](./web-reverse/web-reverse-env-objects-reference/worker-message.md) | [Web 补环境浏览器对象参考](./web-reverse/web-reverse-env-objects-reference.md) | 检测面 / 常见坑 / 观察优先级 / 补环境要点 |
+| 子文 | 多篇合集 | [Akamai（Bot Manager / BMP / CSC）](./web-reverse/web-reverse-products-index/akamai.md) | [Web 安全产品强制命中索引](./web-reverse/web-reverse-products-index.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
+| 子文 | 多篇合集 | [阿里 Baxia / AWSC bx-ua 与 fire_ua](./web-reverse/web-reverse-products-index/ali_bxua.md) | [Web 安全产品强制命中索引](./web-reverse/web-reverse-products-index.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
+| 子文 | 多篇合集 | [阿里 H5Sec / AWSC / Fireye（140/231/234 / x5sec）](./web-reverse/web-reverse-products-index/alibaba_h5sec_awsc_fireye.md) | [Web 安全产品强制命中索引](./web-reverse/web-reverse-products-index.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
+| 子文 | 多篇合集 | [阿里云验证码 / AWSC / noCaptcha（含 WAF 1036 / x5sec）](./web-reverse/web-reverse-products-index/aliyun_captcha.md) | [Web 安全产品强制命中索引](./web-reverse/web-reverse-products-index.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
+| 子文 | 多篇合集 | [阿里云验证码 v2（callback-proof 状态机）](./web-reverse/web-reverse-products-index/aliyun_captcha_v2.md) | [Web 安全产品强制命中索引](./web-reverse/web-reverse-products-index.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
+| 子文 | 多篇合集 | [阿里云验证码 V3（direct-verify / CHECK_BOX）](./web-reverse/web-reverse-products-index/aliyun_captcha_v3.md) | [Web 安全产品强制命中索引](./web-reverse/web-reverse-products-index.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
+| 子文 | 多篇合集 | [Cloudflare 5s / WAF Challenge](./web-reverse/web-reverse-products-index/cloudflare_5s.md) | [Web 安全产品强制命中索引](./web-reverse/web-reverse-products-index.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
+| 子文 | 多篇合集 | [DataDome](./web-reverse/web-reverse-products-index/datadome.md) | [Web 安全产品强制命中索引](./web-reverse/web-reverse-products-index.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
+| 子文 | 多篇合集 | [抖音 a_bogus](./web-reverse/web-reverse-products-index/dy_abgous.md) | [Web 安全产品强制命中索引](./web-reverse/web-reverse-products-index.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
+| 子文 | 多篇合集 | [抖音创作 IM 私信链路](./web-reverse/web-reverse-products-index/dy_creator_im.md) | [Web 安全产品强制命中索引](./web-reverse/web-reverse-products-index.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
+| 子文 | 多篇合集 | [抖音 / 字节 Ticket Guard 与 SecureSDK](./web-reverse/web-reverse-products-index/dy_ticket_guard.md) | [Web 安全产品强制命中索引](./web-reverse/web-reverse-products-index.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
+| 子文 | 多篇合集 | [抖音 VerifyCenter 滑块验证码](./web-reverse/web-reverse-products-index/dy_verifycenter_slide.md) | [Web 安全产品强制命中索引](./web-reverse/web-reverse-products-index.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
+| 子文 | 多篇合集 | [饿了么商家 ACCS / 钉钉 LWP WebSocket](./web-reverse/web-reverse-products-index/ele_accs_lwp.md) | [Web 安全产品强制命中索引](./web-reverse/web-reverse-products-index.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
+| 子文 | 多篇合集 | [F5 Shape / Shape Defense](./web-reverse/web-reverse-products-index/f5_shape.md) | [Web 安全产品强制命中索引](./web-reverse/web-reverse-products-index.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
+| 子文 | 多篇合集 | [Google reCAPTCHA v3 / invisible](./web-reverse/web-reverse-products-index/google_recaptcha_v3.md) | [Web 安全产品强制命中索引](./web-reverse/web-reverse-products-index.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
+| 子文 | 多篇合集 | [京东 h5st](./web-reverse/web-reverse-products-index/jd.md) | [Web 安全产品强制命中索引](./web-reverse/web-reverse-products-index.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
+| 子文 | 多篇合集 | [京东到家 / 外卖商家 WebSocket](./web-reverse/web-reverse-products-index/jd_daojia_ws.md) | [Web 安全产品强制命中索引](./web-reverse/web-reverse-products-index.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
+| 子文 | 多篇合集 | [京东 JCAP 图形验证码](./web-reverse/web-reverse-products-index/jd_jcap.md) | [Web 安全产品强制命中索引](./web-reverse/web-reverse-products-index.md) | 命中特征 / 核心边界 / 常见链路 / 观察优先级 |
+| 子文 | 多篇合集 | [京东 JCAP 滑块专项（tp=30 滑块 / tp=26 旋转）](./web-reverse/web-reverse-products-index/jd_jcap_slider.md) | [Web 安全产品强制命中索引](./web-reverse/web-reverse-products-index.md) | 命中特征 / 成功判定 / 常见链路 / 观察优先级 |
+| 子文 | 多篇合集 | [Kasada KPSDK](./web-reverse/web-reverse-products-index/kasada.md) | [Web 安全产品强制命中索引](./web-reverse/web-reverse-products-index.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
+| 子文 | 多篇合集 | [美团外卖商家 WebSocket](./web-reverse/web-reverse-products-index/mt_waimai_ws.md) | [Web 安全产品强制命中索引](./web-reverse/web-reverse-products-index.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
+| 子文 | 多篇合集 | [PerimeterX / HUMAN Security PX](./web-reverse/web-reverse-products-index/perimeterx_px.md) | [Web 安全产品强制命中索引](./web-reverse/web-reverse-products-index.md) | 命中特征 / 先判门再解 PX / 常见链路 / 观察优先级 |
+| 子文 | 多篇合集 | [Reese84（Imperva / Incapsula）](./web-reverse/web-reverse-products-index/reese84.md) | [Web 安全产品强制命中索引](./web-reverse/web-reverse-products-index.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
+| 子文 | 多篇合集 | [瑞数 RS6](./web-reverse/web-reverse-products-index/rs6.md) | [Web 安全产品强制命中索引](./web-reverse/web-reverse-products-index.md) | 命中特征 / 目标类型判定 / 常见链路 / 观察优先级 |
+| 子文 | 多篇合集 | [瑞数/瑞树 RS6 动态 JS（Firefox/Gecko 侧重）](./web-reverse/web-reverse-products-index/ruishu_rs6.md) | [Web 安全产品强制命中索引](./web-reverse/web-reverse-products-index.md) | 命中特征 / 标准流程 / 观察优先级 / 常见坑 |
+| 子文 | 多篇合集 | [同盾 / TrustDecision](./web-reverse/web-reverse-products-index/tongdun.md) | [Web 安全产品强制命中索引](./web-reverse/web-reverse-products-index.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
+| 子文 | 多篇合集 | [腾讯 TCaptcha 滑块验证码](./web-reverse/web-reverse-products-index/tx_captcha.md) | [Web 安全产品强制命中索引](./web-reverse/web-reverse-products-index.md) | 命中特征 / 核心边界 / 常见链路 / 观察优先级 |
 | 子文 | 2019-05-13 | [爬虫技巧：逆向破解js代码加密，代码混淆不是难事](./web-reverse/yuanrenxue-web-reverse-compilation/yuanrenxue-web-20190513-01.md) | [猿人学 Web 与 JavaScript 逆向合集](./web-reverse/yuanrenxue-web-reverse-compilation.md) | 第一步：观察网页加载了哪些js文件，猜猜哪个文件可能包含tk生成的代码。 / 第二步：了解“Sources”工具 / 第三步：调试JavaScript，探寻关键代码 / 扩展：如何不好好写程序 |
 | 子文 | 2019-07-01 | [写爬虫时常见的五种字符串加密特征](./web-reverse/yuanrenxue-web-reverse-compilation/yuanrenxue-web-20190701-01.md) | [猿人学 Web 与 JavaScript 逆向合集](./web-reverse/yuanrenxue-web-reverse-compilation.md) | — |
 | 子文 | 2019-07-11 | [写爬虫，免不了要研究JavaScript设置cookies的问题](./web-reverse/yuanrenxue-web-reverse-compilation/yuanrenxue-web-20190711-01.md) | [猿人学 Web 与 JavaScript 逆向合集](./web-reverse/yuanrenxue-web-reverse-compilation.md) | — |
