@@ -9,7 +9,7 @@
 | 分类 | canonical | 子文章 | 合计 |
 |------|----------:|-------:|-----:|
 | `anti-detection` | 6 | 161 | 167 |
-| `collection-engineering` | 2 | 0 | 2 |
+| `collection-engineering` | 3 | 0 | 3 |
 | `mobile-app-reverse` | 5 | 90 | 95 |
 | `native-analysis` | 2 | 0 | 2 |
 | `packing-bypass` | 1 | 0 | 1 |
@@ -17,7 +17,7 @@
 | `signature-algorithms` | 1 | 0 | 1 |
 | `web-reverse` | 6 | 82 | 88 |
 
-文章总数：357。
+文章总数：358。
 
 ## 逐篇目录
 
@@ -197,6 +197,7 @@
 
 | 类型 | 日期 | 文章 | 父合集 | 关键标题 |
 |------|------|------|--------|----------|
+| 主文 | 2026-08-12 | [浏览器采集器稳定性：ruyipage Firefox 断言崩溃与 OOM 连锁](./collection-engineering/browser-collector-stability.md) | — | 结论先行 / 崩溃证据链 / 根因链 / 已排除的假设（实测） |
 | 主文 | 2026-08-02 | [高并发 HTTP 采集控制面：代理租约、AIMD 与故障恢复](./collection-engineering/high-concurrency-http-collector-control-plane.md) | — | 结论先行 / 证据与版本边界 / 调试时间线：每次提速都先推翻一个错误假设 / 从成功实验进入主线的准入清单 |
 | 主文 | 2026-08-02 | [Mac 热写与 NAS 交付：可重放 spool、mirror ACK 和非侵入式运维](./collection-engineering/reliable-mac-nas-spool-delivery.md) | — | 为什么 NAS 不应进入采集热路径 / 数据流 / 热写路径：批量输出后再生成 marker / 已验证边界 |
 

@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "article_count": 357,
+  "article_count": 358,
   "category_counts": {
     "anti-detection": 167,
-    "collection-engineering": 2,
+    "collection-engineering": 3,
     "mobile-app-reverse": 95,
     "native-analysis": 2,
     "packing-bypass": 1,
@@ -4694,6 +4694,41 @@
       "bytes": 70260,
       "lines": 1230,
       "content_sha256": "453c0dd9b3478f8be1dd0b267032aea26bb0ee84aa7a74f199b50cf5592d0ff0"
+    },
+    {
+      "path": "collection-engineering/browser-collector-stability.md",
+      "kind": "canonical",
+      "category": "collection-engineering",
+      "parent": null,
+      "title": "浏览器采集器稳定性：ruyipage Firefox 断言崩溃与 OOM 连锁",
+      "source": "`workspace/radwell`",
+      "original_date": "2026-08-12",
+      "archive_date": "2026-08-12",
+      "summary": "从一次 44326 页 ruyipage Firefox 批量采集（采 39% 后因崩溃与 OOM 终止）中提炼： 真实浏览器采集器的稳定性边界 —— 定制 Firefox 的断言崩溃触发条件、单出口 IP 的 CF 风控有效窗口、多实例并发的崩溃放大效应，以及\"崩溃残留进程 → 内存耗尽\"的 OOM 连锁机制。重点不是某个站点的数字，而是为什么\"多开窗口\"在真实风控目标上 行不通，以及崩溃如何从单点故障演变成整机 OOM。",
+      "keywords": [
+        "ruyipage",
+        "Firefox 151",
+        "MOZ_ASSERT",
+        "0x80000003",
+        "孤儿 session",
+        "CF 软挑战",
+        "IP 风控窗口",
+        "OOM 连锁",
+        "BiDi",
+        "多进程并发",
+        "spawn 子进程"
+      ],
+      "headings": [
+        "结论先行",
+        "崩溃证据链",
+        "根因链",
+        "已排除的假设（实测）",
+        "稳定性改进清单（下次采集的执行规范）",
+        "关联阅读"
+      ],
+      "bytes": 5316,
+      "lines": 88,
+      "content_sha256": "d6550ff1f234a35181ebf9195982f88093c1cdebb6127fbae033149f566fc63c"
     },
     {
       "path": "collection-engineering/high-concurrency-http-collector-control-plane.md",
@@ -9853,11 +9888,12 @@
         "检测面",
         "常见坑",
         "观察优先级",
-        "补环境要点"
+        "补环境要点",
+        "document.all 补环境要点"
       ],
-      "bytes": 3351,
-      "lines": 46,
-      "content_sha256": "315dc3df02d42760df28e9cea9a1ec9d3519941f2e8bed584e289c0ae7e295e9"
+      "bytes": 5329,
+      "lines": 62,
+      "content_sha256": "4b36eae4601946d6f196b96c982c0d20370822cc5dd80f11e13e36db4b0ddd68"
     },
     {
       "path": "web-reverse/browser-env-objects/dom-collections.md",
