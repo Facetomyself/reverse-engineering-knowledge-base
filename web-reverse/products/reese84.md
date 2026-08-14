@@ -63,3 +63,10 @@
 - Cookie 合并后包含当前服务端新下发的反爬 Cookie
 - 业务页不再是 iframe block、短 HTML、验证码页或重定向页；业务接口返回正常业务 JSON，而不是空数据、风控结构或拦截 HTML
 - 多轮重新获取动态 src 后仍能稳定生成和验证
+
+## 案例参考
+
+- [imperva-reese84-canadiannorth.md](imperva-reese84-canadiannorth.md) — Canadian North
+  （Sabre 5TDX 航司订票站）纯算案例：curl_cffi 管线、Node vm 执行器契约（stdin 传本轮
+  challenge 脚本 + fetch hook 捕获 p POST + 占位 200 + 输出 actualPostUrl/actualPostBodyText
+  交接）、GraphQL 业务层（dcmcInit 的 execution 头回带）与实证坑

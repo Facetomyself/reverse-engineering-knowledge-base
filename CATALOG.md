@@ -15,9 +15,9 @@
 | `packing-bypass` | 1 | 0 | 1 |
 | `protocols` | 1 | 0 | 1 |
 | `signature-algorithms` | 1 | 0 | 1 |
-| `web-reverse` | 6 | 82 | 88 |
+| `web-reverse` | 6 | 83 | 89 |
 
-文章总数：358。
+文章总数：359。
 
 ## 逐篇目录
 
@@ -399,6 +399,7 @@
 | 子文 | 多篇合集 | [饿了么商家 ACCS / 钉钉 LWP WebSocket](./web-reverse/products/eleme-accs-lwp.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
 | 子文 | 多篇合集 | [F5 Shape / Shape Defense](./web-reverse/products/f5-shape.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
 | 子文 | 多篇合集 | [Google reCAPTCHA v3 / invisible](./web-reverse/products/google-recaptcha-v3.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
+| 子文 | 2026-08-14 | [Imperva Reese84 — Canadian North 案例](./web-reverse/products/imperva-reese84-canadiannorth.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 目标画像 / 完整链路（本案例实证） / vm 执行器契约（核心方法论点） / 风控 cookie 家族与业务头的对应 |
 | 子文 | 多篇合集 | [京东到家 / 外卖商家 WebSocket](./web-reverse/products/jd-daojia-websocket.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
 | 子文 | 多篇合集 | [京东 h5st](./web-reverse/products/jd-h5st.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
 | 子文 | 多篇合集 | [京东 JCAP 图形验证码](./web-reverse/products/jd-jcap-captcha.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 命中特征 / 核心边界 / 常见链路 / 观察优先级 |

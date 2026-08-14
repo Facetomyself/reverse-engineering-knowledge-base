@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "article_count": 358,
+  "article_count": 359,
   "category_counts": {
     "anti-detection": 167,
     "collection-engineering": 3,
@@ -9,7 +9,7 @@
     "packing-bypass": 1,
     "protocols": 1,
     "signature-algorithms": 1,
-    "web-reverse": 88
+    "web-reverse": 89
   },
   "records": [
     {
@@ -10583,6 +10583,29 @@
       "content_sha256": "dc038fbcbf8910cb36efb2dcf353ed9d9ac0e1bb5391f549067d1787f65f4175"
     },
     {
+      "path": "web-reverse/products/imperva-reese84-canadiannorth.md",
+      "kind": "nested",
+      "category": "web-reverse",
+      "parent": "web-reverse/products.md",
+      "title": "Imperva Reese84 — Canadian North 案例",
+      "source": "canadiannorth-imperva-v1 项目（84 纯算成品吸收）",
+      "original_date": "",
+      "archive_date": "2026-08-14",
+      "summary": "Imperva/Incapsula reese84 在 Canadian North（Sabre 5TDX 航司订票站）的纯算落地案例： curl_cffi 管线 + Node vm 执行器契约 + GraphQL 业务层验证。",
+      "keywords": [],
+      "headings": [
+        "目标画像",
+        "完整链路（本案例实证）",
+        "vm 执行器契约（核心方法论点）",
+        "风控 cookie 家族与业务头的对应",
+        "实证坑",
+        "验证口径"
+      ],
+      "bytes": 4942,
+      "lines": 84,
+      "content_sha256": "f552beeba3813e7e86e61b7c6c2301134ca12cf72e8f506f5bb91fae143b36cb"
+    },
+    {
       "path": "web-reverse/products/jd-daojia-websocket.md",
       "kind": "nested",
       "category": "web-reverse",
@@ -10755,11 +10778,12 @@
         "常见链路",
         "观察优先级",
         "常见坑",
-        "验证口径"
+        "验证口径",
+        "案例参考"
       ],
-      "bytes": 3630,
-      "lines": 65,
-      "content_sha256": "efd8fbb310de9d559916fef547501bfd79c75f951a5dff8df5c2aa5b30806517"
+      "bytes": 4031,
+      "lines": 72,
+      "content_sha256": "30cac2ad2a8efc39ce678ff3d5a72bd713ce7420192a75356a878b23db6124e8"
     },
     {
       "path": "web-reverse/products/ruishu-rs6-challenge.md",
