@@ -15,9 +15,9 @@
 | `packing-bypass` | 1 | 0 | 1 |
 | `protocols` | 1 | 0 | 1 |
 | `signature-algorithms` | 1 | 0 | 1 |
-| `web-reverse` | 6 | 83 | 89 |
+| `web-reverse` | 6 | 84 | 90 |
 
-文章总数：359。
+文章总数：360。
 
 ## 逐篇目录
 
@@ -390,6 +390,7 @@
 | 子文 | 多篇合集 | [阿里云验证码 v2（callback-proof 状态机）](./web-reverse/products/aliyun-captcha-v2.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
 | 子文 | 多篇合集 | [阿里云验证码 V3（direct-verify / CHECK_BOX）](./web-reverse/products/aliyun-captcha-v3.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
 | 子文 | 多篇合集 | [阿里云验证码 / AWSC / noCaptcha（含 WAF 1036 / x5sec）](./web-reverse/products/aliyun-captcha.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
+| 子文 | 未知 | [Arkose Labs / FunCaptcha](./web-reverse/products/arkose-funcaptcha.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 命中特征 / 状态链 / 动态输入 / 观察优先级 |
 | 子文 | 多篇合集 | [Cloudflare 5s / WAF Challenge](./web-reverse/products/cloudflare-5s-challenge.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
 | 子文 | 多篇合集 | [DataDome](./web-reverse/products/datadome.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
 | 子文 | 多篇合集 | [抖音 a_bogus](./web-reverse/products/douyin-a-bogus.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |

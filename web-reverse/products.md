@@ -29,12 +29,13 @@
 | Kasada | `kpsdk_ct` / `x-kpsdk-ct`、`kasada` 域、`kpxd`、bot 检测后 interstitial | [kasada.md](products/kasada.md) |
 | PerimeterX | `_px3` / `_pxhd` Cookie、`px-captcha` 域、`_pxff` / `_pxhd` 头 | [perimeterx.md](products/perimeterx.md) |
 | F5 Shape | `shape` / `__shape_` Cookie、`shape.com` 域、`f5_ca` 头、`si` 字段 | [f5-shape.md](products/f5-shape.md) |
-| reese84（网页端） | `reese84` Cookie、`r8` 参数、`.cdnreese84.com` 域、`r84` challenge 链 | [reese84.md](products/reese84.md) |
+| reese84（网页端） | `reese84` Cookie、`r8` 参数、`.cdnreese84.com` 域、`r84` challenge 链 | [reese84.md](products/reese84.md)、[Imperva CanadianNorth 专项](products/imperva-reese84-canadiannorth.md) |
 | 瑞数 RS6（challenge 面） | `FSSBBIl1UgzbN7N80S` 动态 Cookie、`__wd` 段、动态 JS 重新加载自身 | [ruishu-rs6-challenge.md](products/ruishu-rs6-challenge.md) |
 | 瑞数 RS6（hybrid 面） | 滑块验证码 `c` 参数、行为 proof、`R` 请求与业务参数绑定 | [ruishu-rs6-hybrid.md](products/ruishu-rs6-hybrid.md) |
 | 同盾 tongdun | `token` / `black_box`、`fingerprint.js`、`collect` 上报、`umid` | [tongdun.md](products/tongdun.md) |
 | 腾讯验证码 | `ticket` / `randstr`、`ssl.captcha.qq.com`、`captcha-type`、滑块/点选 | [tencent-captcha.md](products/tencent-captcha.md) |
 | Google reCAPTCHA v3 | `grecaptcha.execute`、`api2/anchor`、`api2/reload`、`rresp`、`g-recaptcha-response` | [google-recaptcha-v3.md](products/google-recaptcha-v3.md) |
+| Arkose Labs / FunCaptcha | `arkoselabs.com`、`/fc/gt2/public_key/`、`/fc/gfct/`、`/fc/ca/`、`session_token`、`game_token` | [arkose-funcaptcha.md](products/arkose-funcaptcha.md) |
 | 阿里云验证码（v1/v2/v3） | `aliyunCaptcha`、`nc_` 字段、`ic.getNcCode`、`appkey`、`scene` | [aliyun-captcha.md](products/aliyun-captcha.md)、[aliyun-captcha-v2.md](products/aliyun-captcha-v2.md)、[aliyun-captcha-v3.md](products/aliyun-captcha-v3.md) |
 | 阿里 H5Sec/ACW/火眼 | `acw_sc__v2`、`h5sec`、`aliyun.com` 验证头、`__ac_signature` | [alibaba-h5sec-awsc-fireye.md](products/alibaba-h5sec-awsc-fireye.md) |
 | 阿里 BxUA | `bx-ua` 头、`bXuaParams`、`bx.com.cn` 域 | [alibaba-bxua.md](products/alibaba-bxua.md) |

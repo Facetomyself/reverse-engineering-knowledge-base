@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "article_count": 359,
+  "article_count": 360,
   "category_counts": {
     "anti-detection": 167,
     "collection-engineering": 3,
@@ -9,7 +9,7 @@
     "packing-bypass": 1,
     "protocols": 1,
     "signature-algorithms": 1,
-    "web-reverse": 89
+    "web-reverse": 90
   },
   "records": [
     {
@@ -10232,6 +10232,8 @@
         "Kasada",
         "瑞数",
         "reCAPTCHA",
+        "Arkose Labs",
+        "FunCaptcha",
         "同盾",
         "京东",
         "抖音",
@@ -10248,9 +10250,9 @@
         "使用边界",
         "与主线工作流的衔接"
       ],
-      "bytes": 6572,
-      "lines": 62,
-      "content_sha256": "b40b6c982dbd5ef8ee115b0b36a0a6079f4e8385671c7844aa1cf6bb72b8ad5c"
+      "bytes": 6835,
+      "lines": 63,
+      "content_sha256": "3477d66515d8a0ad8f599df4c04b9039caf69066d22bf740f7f33fbbc5cfa2c9"
     },
     {
       "path": "web-reverse/products/akamai.md",
@@ -10383,6 +10385,29 @@
       "bytes": 3963,
       "lines": 69,
       "content_sha256": "6f38fff45c2edcdf97e4e2a9ab8ca93d0e93727681eae47d7b91d6b3c0879356"
+    },
+    {
+      "path": "web-reverse/products/arkose-funcaptcha.md",
+      "kind": "nested",
+      "category": "web-reverse",
+      "parent": "web-reverse/products.md",
+      "title": "Arkose Labs / FunCaptcha",
+      "source": "spider-skill-tzpnode 2026-08-19 增量（clean-room 重写）",
+      "original_date": "未知",
+      "archive_date": "2026-08-19",
+      "summary": "Arkose Labs / FunCaptcha 的产品识别、状态请求链、动态输入和业务读回验收边界。",
+      "keywords": [],
+      "headings": [
+        "命中特征",
+        "状态链",
+        "动态输入",
+        "观察优先级",
+        "常见坑",
+        "验证口径"
+      ],
+      "bytes": 3899,
+      "lines": 72,
+      "content_sha256": "5fa0bdc26a94e2cf9ebe426ca584ed9283051e1e369391415d358f6a74a1fce6"
     },
     {
       "path": "web-reverse/products/cloudflare-5s-challenge.md",

@@ -1,6 +1,6 @@
 # 逆向知识库文章索引
 
-> 更新于 2026-08-11 ｜ 来源: `article/`
+> 更新于 2026-08-19 ｜ 来源: `article/`
 >
 > 本文件维护 canonical 入口与技术标签；合集子文章详见 [CATALOG.md](./CATALOG.md)，机器读取使用 [`catalog.json`](./catalog.json)。
 >
@@ -70,7 +70,7 @@
 | [anti-crawler-web-reverse-compilation.md](./web-reverse/anti-crawler-web-reverse-compilation.md) | — (公众号归档) | `Akamai`, `JSVMP`, `Babel AST`, `控制流平坦化`, `Chrome DevTools`, `Hook`, `反Hook` | Akamai 参数、JSVMP、AST 反混淆与 Chrome DevTools 调试对抗的 16 篇实战合集 |
 | [benru-web-reverse-compilation.md](./web-reverse/benru-web-reverse-compilation.md) | — (公众号归档) | `WBI签名`, `AST`, `JS混淆`, `Node补环境`, `mitmproxy`, `动态参数`, `Webpack RPC`, `Python还原` | 本如笔记 12 篇 Web 逆向与协议恢复实战，从参数定位、反混淆和补环境延伸到 RPC 与 Python 复现 |
 | [yuanrenxue-web-reverse-compilation.md](./web-reverse/yuanrenxue-web-reverse-compilation.md) | — (公众号归档) | `JS Cookie`, `参数加密`, `反调试`, `字符串混淆`, `控制流混淆`, `微信小程序`, `AI逆向` | 猿人学 7 篇 Web 与 JavaScript 逆向方法论，保留长期可复用的定位、调试和反混淆路径 |
-| [products.md](./web-reverse/products.md) | — (JS终结计划课程方法论) | `风控产品`, `验证码`, `签名`, `WAF`, `反爬`, `命中索引`, `DataDome`, `Akamai`, `Kasada`, `瑞数`, `reCAPTCHA`, `同盾`, `京东`, `抖音`, `阿里云验证码`, `腾讯验证码`, `F5`, `PerimeterX`, `reese84` | 安全产品强制命中索引：27 个 Web 风控产品（验证码/签名/状态型链）的命中特征 → 产品文档映射，含强制命中纪律与使用边界 |
+| [products.md](./web-reverse/products.md) | — (JS终结计划课程方法论) | `风控产品`, `验证码`, `签名`, `WAF`, `反爬`, `命中索引`, `DataDome`, `Akamai`, `Kasada`, `瑞数`, `reCAPTCHA`, `Arkose Labs`, `FunCaptcha`, `同盾`, `京东`, `抖音`, `阿里云验证码`, `腾讯验证码`, `F5`, `PerimeterX`, `reese84` | 安全产品强制命中索引：28 个 Web 风控产品（验证码/签名/状态型链）的命中特征 → 产品文档映射，含强制命中纪律与使用边界 |
 | [browser-env-objects.md](./web-reverse/browser-env-objects.md) | — (JS终结计划课程方法论) | `补环境`, `DOM/BOM`, `浏览器对象`, `WebAPI`, `指纹`, `Worker`, `MessagePort`, `Canvas`, `WebGL`, `navigator`, `crypto` | Web 补环境浏览器对象参考：20 个 DOM/BOM/Web API 对象的检测面、常见坑与观察优先级，五维度补环境纪律 |
 
 ---
@@ -113,7 +113,7 @@
 - **SSL Pinning**: [app-reverse-global-map](./mobile-app-reverse/app-reverse-global-map.md), [app-reverse-environment-setup](./mobile-app-reverse/app-reverse-environment-setup.md)
 - **Root/Magisk 隐藏**: [app-reverse-environment-setup](./mobile-app-reverse/app-reverse-environment-setup.md)
 - **验证码与行为风控**: [anti-crawler-risk](./anti-detection/anti-crawler-risk-control-compilation.md), [products](./web-reverse/products.md)
-- **安全产品命中识别（DataDome/Akamai/Kasada/瑞数/reCAPTCHA/同盾/京东/抖音等 27 产品）**: [products](./web-reverse/products.md)
+- **安全产品命中识别（DataDome/Akamai/Kasada/瑞数/reCAPTCHA/Arkose/同盾/京东/抖音等 28 产品）**: [products](./web-reverse/products.md)
 - **补环境浏览器对象面（DOM/BOM/WebAPI/Worker/Canvas/WebGL）**: [env-objects](./web-reverse/browser-env-objects.md)
 - **浏览器内核级指纹与自动化对抗**: [ruyi-browser](./anti-detection/ruyi-browser-anti-detection-compilation.md)
 - **Android Root/反调试/Frida 对抗**: [paopao-android](./mobile-app-reverse/paopao-android-reverse-compilation.md)
