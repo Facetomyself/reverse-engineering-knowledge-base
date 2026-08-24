@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "article_count": 360,
+  "article_count": 361,
   "category_counts": {
     "anti-detection": 167,
     "collection-engineering": 3,
@@ -9,7 +9,7 @@
     "packing-bypass": 1,
     "protocols": 1,
     "signature-algorithms": 1,
-    "web-reverse": 90
+    "web-reverse": 91
   },
   "records": [
     {
@@ -10236,6 +10236,10 @@
         "FunCaptcha",
         "同盾",
         "京东",
+        "JCAP",
+        "tp=22",
+        "空间推理",
+        "h5st",
         "抖音",
         "阿里云验证码",
         "腾讯验证码",
@@ -10250,9 +10254,9 @@
         "使用边界",
         "与主线工作流的衔接"
       ],
-      "bytes": 6835,
-      "lines": 63,
-      "content_sha256": "3477d66515d8a0ad8f599df4c04b9039caf69066d22bf740f7f33fbbc5cfa2c9"
+      "bytes": 7081,
+      "lines": 64,
+      "content_sha256": "ffb629b29d97a6066f57bd62740891a5045803f1a1a49315b321147209607c81"
     },
     {
       "path": "web-reverse/products/akamai.md",
@@ -10668,11 +10672,12 @@
         "常见链路",
         "观察优先级",
         "常见坑",
-        "验证口径"
+        "验证口径",
+        "2026-08-22 search.jd.com 实测"
       ],
-      "bytes": 4138,
-      "lines": 57,
-      "content_sha256": "a4bc65ef731f2c7585e35806d6a28257f861c3c0b13ccb86d8ffeb230f182ce5"
+      "bytes": 5470,
+      "lines": 69,
+      "content_sha256": "b0979cc778385daf6b6f7640055ed7de33b66f73526c1831735e004584ebba32"
     },
     {
       "path": "web-reverse/products/jd-jcap-captcha.md",
@@ -10693,9 +10698,9 @@
         "常见坑",
         "验证口径"
       ],
-      "bytes": 4184,
-      "lines": 61,
-      "content_sha256": "f6a53927d9e04091fc6359b524153b277efccaba01403cf4207faa43d8bb7490"
+      "bytes": 4720,
+      "lines": 62,
+      "content_sha256": "eb4c28e9de70d30386e73bfe8d699969e16ef59d17ce799e0d673d9e9365613a"
     },
     {
       "path": "web-reverse/products/jd-jcap-slider.md",
@@ -10716,9 +10721,31 @@
         "常见坑",
         "验证口径"
       ],
-      "bytes": 3723,
-      "lines": 60,
-      "content_sha256": "2cbb7f5bd5c918f27b64f07e37fd6e33d8ca3ff42e1b3cc0593a54b864e2786a"
+      "bytes": 3980,
+      "lines": 61,
+      "content_sha256": "9ce4b64f5441f995b7a8ac591759530d6c6db7de50c32e05c823c57a5888e278"
+    },
+    {
+      "path": "web-reverse/products/jd-jcap-spatial.md",
+      "kind": "nested",
+      "category": "web-reverse",
+      "parent": "web-reverse/products.md",
+      "title": "京东 JCAP 空间推理（tp=22）",
+      "source": "reverse_ENV 实测（`jd-slider-v1`）",
+      "original_date": "2026-08-22",
+      "archive_date": "2026-08-22",
+      "summary": "京东 PC 登录 JCAP 的空间推理题型。服务端用 tp=22 下发题面，与滑块 tp=30 / 旋转 tp=26 不是同一条交互链。",
+      "keywords": [],
+      "headings": [
+        "命中特征",
+        "常见链路",
+        "观察优先级",
+        "常见坑",
+        "验证口径"
+      ],
+      "bytes": 2666,
+      "lines": 53,
+      "content_sha256": "be379f331f047cbde1761efb953f35085d94649648026a1589c93d7c974ab4dd"
     },
     {
       "path": "web-reverse/products/kasada.md",
@@ -10736,11 +10763,13 @@
         "常见链路",
         "观察优先级",
         "常见坑",
-        "验证口径"
+        "验证口径",
+        "2026-08-22 realtor.com 实测",
+        "2026-08-23 RuyiDOM 主线对照"
       ],
-      "bytes": 3481,
-      "lines": 61,
-      "content_sha256": "d61dd8b005ce298c14b114bcb2b1d8ff7aaf4b44493ad6fb71dcb803a8b99498"
+      "bytes": 5696,
+      "lines": 85,
+      "content_sha256": "c59089578827a37ec83c32022be439d381a399a89353b263ee75f02ed73b612a"
     },
     {
       "path": "web-reverse/products/meituan-waimai-websocket.md",

@@ -43,8 +43,9 @@
 | 美团外卖 WS | `mt_waimai_ws` 域、WebSocket 心跳/ack、`sensor_data`、`wmspider` | [meituan-waimai-websocket.md](products/meituan-waimai-websocket.md) |
 | 京东 h5st | `h5st`、`_stk`、`request_algo`、`tk03`、`x-rp-client` | [jd-h5st.md](products/jd-h5st.md) |
 | 京东到家 WS | `wss://ws1-dd.jd.com/`、`dsm.o2o.order` 接口、`waiterPin` | [jd-daojia-websocket.md](products/jd-daojia-websocket.md) |
-| 京东 JCAP（验证码） | `jcap` / `c-4` 字段、`captcha.jd.com`、`validate`、`vt` 凭证 | [jd-jcap-captcha.md](products/jd-jcap-captcha.md) |
-| 京东 JCAP 滑块 | `jcap` 滑块、`acToken`、`fp`、`gid`、行为 proof 上报 | [jd-jcap-slider.md](products/jd-jcap-slider.md) |
+| 京东 JCAP（验证码） | `jcap` / `c-4` 字段、`captcha.jd.com`、`validate`、`vt` 凭证、`tp` 题型（含 `tp=22` 空间推理） | [jd-jcap-captcha.md](products/jd-jcap-captcha.md) |
+| 京东 JCAP 空间推理 | `tp=22`、登录页空间推理题、fp `tp=9`、无 `vt`、脚本有 jdSlide 但不是滑块 | [jd-jcap-spatial.md](products/jd-jcap-spatial.md) |
+| 京东 JCAP 滑块 | `jcap` 滑块 `tp=30`、旋转 `tp=26`、`acToken`、`fp`、`gid`、行为 proof 上报 | [jd-jcap-slider.md](products/jd-jcap-slider.md) |
 | 抖音 a_bogus | `a_bogus`、`msToken`、`verifyFp`、`webmssdk`、`sdk-glue`、`SecureSDK` | [douyin-a-bogus.md](products/douyin-a-bogus.md) |
 | 抖音创作 IM | `imapi.douyin.com`、`bd-ticket-guard-client-data`、`identity_security_token` | [douyin-creator-im.md](products/douyin-creator-im.md) |
 | 抖音 TicketGuard | `bd-ticket-guard-*` 头族、`ticket` 动态 token、`re-verify` 链 | [douyin-ticket-guard.md](products/douyin-ticket-guard.md) |

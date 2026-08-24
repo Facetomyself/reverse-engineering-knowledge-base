@@ -41,7 +41,8 @@
 2. `/tl` 由 XHR、fetch 还是 sendBeacon 发出；body 是 ArrayBuffer、Uint8Array、Blob、form 还是字符串
 3. 哪些 x-kpsdk-* Header 由脚本生成，哪些来自服务端响应；KP_UIDz 与 /tl body 是否绑定当前会话
 4. 环境面：UA/plugins/mimeTypes/iframe/postMessage/performance/canvas/WebGL/audio/事件；二进制处理能力（ArrayBuffer、Uint8Array、Blob、TextEncoder）
-5. 本地输出与浏览器样本的 /tl body 长度、类型、字节内容对照
+5. 本地输出与浏览器样本的 /tl body 长度、类型、字节内容对照；若本地改发 `/r` 或长度差一个数量级，继续宿主面，不要拆 opcode
+6. `x-kpsdk-r` 拒绝标记先做 D3，再判断是仪器化、绑定还是 IP/指纹
 
 ## 常见坑
 
@@ -50,6 +51,7 @@
 - 只看 /tl 返回 token，不验证业务接口是否放行
 - 忽略 /tl body 与当前 Cookie、Header、脚本版本和 iframe 上下文的同轮关系
 - 把二进制 body 当字符串处理，导致长度、编码或字节内容变化
+- 本地发出 `POST /r` 短包（完整性失败）却把浏览器 `POST /tl` octet-stream 当成已对齐，转去拆 VM handler
 - 本地长期保留大范围 VM tracer、全局 Proxy 或解释器插桩
 - 过早暴露不完整的 canvas、webgl、audio、iframe 或 postMessage 能力，反而改变 /tl body
 - 忽略 Header 大小写、顺序、Content-Type、Origin、Referer、UA 和 Cookie 合并细节
@@ -59,3 +61,25 @@
 - 当前 /fp、ips.js、KP_UIDz、x-kpsdk-* 与 /tl body 同轮对应；/tl body 字节长度和类型与浏览器一致
 - /tl 响应返回当前可用的 x-kpsdk-ct 与通过状态；带 token 后业务接口返回正常业务数据，而非 403、429、空数据或二次 challenge
 - 多轮重新获取动态脚本后仍能稳定生成和验证
+
+## 2026-08-22 realtor.com 实测
+
+公开首页 `https://www.realtor.com/`（课程线索，未复制历史 `ips.js`/`code.js`）：
+
+- Flow 1 首页即 429：CloudFront HTML 先建 `window.KPSDK` / `KPSDK.now`，再加载 UUID 路径 `ips.js`
+- `GET .../ips.js` 200，脚本约 320 KiB；`POST .../tl` 200，`Content-Type: application/octet-stream`，body 19802 字节
+- 响应头出现 `x-kpsdk-ct`、`x-kpsdk-r=1-AA`（指纹或 IP 拒绝标记）、`x-kpsdk-cr=true`、`x-kpsdk-st`；请求头出现 `x-kpsdk-im` / `x-kpsdk-dt`
+- 同轮未观察到首页从 429 恢复为业务 200。Node 加载本轮 `ips.js` 能跑到 `KPSDK.scriptStart`，随后拼出 `/tl` URL 却改发 `POST /r` 156B（完整性失败上报），浏览器走 `POST /tl` 19802B
+- `/tl` vs `/r` 是请求边界宿主缺口，不是 opcode 内部题；禁止因此做 VM handler 提升
+- `x-kpsdk-r=1-AA` 先做 D3（仪器化 vs 绑定 vs IP/指纹拒绝），不要默认当成「只能自动化」
+- 残留 throw 仍可能是宿主面：`performance.memory.jsHeapSizeLimit`、timer `this`、`Function.prototype.toString` 的 this、`undefined.get`/`match`/`app`。miss 目录变空不是停止条件
+- 该 case 未跑 RuyiDOM；主线应先最小 Gecko runner，再 Node 降级
+- 证据 run `rt_20260822112906_c588a3b562` receipt integrity pass，rootSha256 `3d1849fff74a8b433c6be22e9ff3a0762657c8ace8586d6b0f0faf056b61de1a`
+
+## 2026-08-23 RuyiDOM 主线对照
+
+`workspace/kasada-ruyidom-demo` 同一站点、不复制历史 ips.js：
+
+- Node/v8 路径（kasada-v1）走到 `POST /r` 156B；RuyiDOM 黑盒走到 `POST /tl`（本轮 bodyBytes 约 74KiB），`hasR=false`
+- `/tl` 响应 200、`x-kpsdk-cr=true`；首页仍可能 429（`x-kpsdk-r` 拒绝标记）。请求边界对齐不等于 `serverAccepted`
+- 禁止因此拆 VM handler。`/tl` 响应头里的 `x-kpsdk-ct` 必须带到下一跳业务 GET，不能只看 cookie jar

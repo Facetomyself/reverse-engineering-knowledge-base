@@ -55,3 +55,15 @@
 - 详情/列表接口返回正常业务数据；记录 functionId、appid、x-rp-client、tk03 来源与刷新条件、eid-token 与 Cookie 同轮一致性
 - 分层判断：403 空 body + 下发 X-Rp-Sdtoken 优先查算法链、h5st、fp、cookie/eid 绑定、TLS/HTTP 指纹；200 但业务码错误优先查摘要、字段顺序、body 编码、t/fp/token 新鲜度
 - 不同请求客户端（标准客户端与浏览器指纹客户端）表现不同时，先区分 JS 算法错误、会话/eid/sdtoken 失效、TLS/HTTP2/JA3/Header 顺序、参数序列化四类
+
+## 2026-08-22 search.jd.com 实测
+
+公开搜索页 `https://search.jd.com/Search?keyword=usb&enc=utf-8`（不走登录验证码）：
+
+- 脚本：`js_security_v3_0.1.6.js` 把构造器挂到 `window.ParamsSign`；搜索 bundle 调用 `window.PSign.sign`；另有 `js-security-v3-rac.js`、`js_security_v3_main.js`、`sha256-new.js`
+- 签名入参：`appid=search-pc-java`、`functionId`（如 `pc_search_searchWare`）、`client=pc`、`clientVersion=1.0.0`、`t`；`body` 先 `JSON.stringify` 再 `window.SHA256`
+- `POST cactus.jd.com/request_algo` version `5.3`、appId `f06cc`：请求 `localTk` 为 `tk06`，响应 `data.result.tk` 为 `tk03`
+- 业务 `h5st` 10 段：时间、16 位 fp、5 位 appId、`tk06` 或 `tk03`（len=92）、hex64、版本 `5.3`、毫秒时间、环境密文、hex64、尾段
+- 同轮先发出带 `tk06` 的 `pc_search_searchWare`，后发出带 `tk03` 的同接口；两次均 **HTTP 403 空 body**，响应带 `X-Rp-Sdtoken`、`server: jfe`
+- RuyiTrace Firefox 155 已生成完整 h5st 仍 403，优先按指纹/TLS/HTTP 层排查，不要先当「没算出 h5st」
+- 证据 run `rt_20260822111135_db15120748`：Firefox 约 3 分钟意外退出（`BROWSER_EXIT_UNEXPECTED`），事后 index/receipt 仍 integrity pass，rootSha256 `0378bb2edad556b850624c51127fdfa936224628a6c33f4cf744c0afd9206c49`

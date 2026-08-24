@@ -15,6 +15,7 @@
 - proof 对象中出现 `ht/wt/bw/sw/mw/list/ii` 或 `bw/sw/track/list/ii`
 - 提交失败返回 `code=16807`、`s_code=16130`、`msg=验证失败，请重新验证`
 - 任务是判断动态生成是否成立，而不是只重放成功样本
+- 2026-08-22 `passport.jd.com/uc/login` 交互轮未稳定下发 `tp=30`：同轮 JCAP 为 `tp=22`（空间推理）与 `fp tp=9`。本专项只覆盖滑块/旋转；空间推理不得套用 tp=30 轨迹模板，见 [jd-jcap-spatial.md](jd-jcap-spatial.md)
 
 ## 成功判定
 

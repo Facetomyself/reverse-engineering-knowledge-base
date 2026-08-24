@@ -13,11 +13,12 @@
 - 登录页或脚本出现 `requireCaptchaPc.js`、`jcap_*.js`、`window.jdCAP`、`jdCAP.captcha(info)`
 - 登录链出现 graphic/sessionId/refresh；登录提交体出现 `graphicCaptchaSessionId`、`graphicCaptchaJwtToken`、`graphicCaptchaVerifyToken`
 - JCAP 请求体出现 `si`、`ct`、`tk`、`cs`、`se`、`version`、`lang`、`client`；响应出现 `st`、`fp`、`tp`、`img`、`vt`
-- 滑块题面响应 `tp=30`，`img` 中包含背景图和滑块小图
+- 题型由服务端 `tp` 决定，不要写死滑块。已观测：`tp=9`（fp 指纹阶段）、`tp=22`（空间推理）、`tp=30`（滑块）、`tp=26`（旋转）
+- 2026-08-22 PC 登录现场 `fp` 返回 `tp=9`，`check`/`refresh` 返回 `tp=22`（操作者定性为空间推理），全程无 `vt`；`requireCaptchaPc` / `jdSlide` 脚本仍会加载，**不能当作滑块已出**。空间推理专项见 [jd-jcap-spatial.md](jd-jcap-spatial.md)，滑块专项见 [jd-jcap-slider.md](jd-jcap-slider.md)
 - 最终校验失败出现 `code=16807`、`s_code=16130`、`code=16808`、`msg=验证失败/验证未通过`
 - 后续登录提交同时出现 `h5st`、`_stk`、`aksParamsU`、`aksParamsB`
 
-同目标命中 h5st 链时同时按京东 h5st 产品处理；本文负责 JCAP 滑块与 vt，h5st 文档负责业务签名与风控判断。
+同目标命中 h5st 链时同时按京东 h5st 产品处理；本文负责 JCAP 题型分流与 vt，h5st 文档负责业务签名与风控判断。
 
 ## 核心边界
 
@@ -29,9 +30,9 @@
 登录页 → 读 hidden fields、cookie、eid/fp/uuid、public key
 → GET sessionId/refresh → sessionId/jwtToken/appId/status
 → 加载 requireCaptchaPc → jdCAP.captcha(info) 初始化 → factory(option) 创建实例
-→ POST /api/fp → fp/st
-→ 题面阶段 /api/check 或 /api/refresh → tp=30/img
-→ 生成滑块答案 A、touchList、records/fpt
+→ POST /api/fp → fp/st（常见 tp=9）
+→ 题面阶段 /api/check 或 /api/refresh → 按 tp 分流（22 空间推理 / 30 滑块 / 26 旋转）
+→ 按当前题型生成答案与 proof（不得跨题型套轨迹模板）
 → POST /api/check 提交答案证明 → code=0 且带 vt
 → 将 vt 写入 graphicCaptchaVerifyToken → 构造登录 body
 → ParamsSign 生成 h5st/_stk → 加密生成 aksParamsU/aksParamsB → POST 登录接口

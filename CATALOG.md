@@ -15,9 +15,9 @@
 | `packing-bypass` | 1 | 0 | 1 |
 | `protocols` | 1 | 0 | 1 |
 | `signature-algorithms` | 1 | 0 | 1 |
-| `web-reverse` | 6 | 84 | 90 |
+| `web-reverse` | 6 | 85 | 91 |
 
-文章总数：360。
+文章总数：361。
 
 ## 逐篇目录
 
@@ -405,6 +405,7 @@
 | 子文 | 多篇合集 | [京东 h5st](./web-reverse/products/jd-h5st.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
 | 子文 | 多篇合集 | [京东 JCAP 图形验证码](./web-reverse/products/jd-jcap-captcha.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 命中特征 / 核心边界 / 常见链路 / 观察优先级 |
 | 子文 | 多篇合集 | [京东 JCAP 滑块专项（tp=30 滑块 / tp=26 旋转）](./web-reverse/products/jd-jcap-slider.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 命中特征 / 成功判定 / 常见链路 / 观察优先级 |
+| 子文 | 2026-08-22 | [京东 JCAP 空间推理（tp=22）](./web-reverse/products/jd-jcap-spatial.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
 | 子文 | 多篇合集 | [Kasada KPSDK](./web-reverse/products/kasada.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
 | 子文 | 多篇合集 | [美团外卖商家 WebSocket](./web-reverse/products/meituan-waimai-websocket.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
 | 子文 | 多篇合集 | [PerimeterX / HUMAN Security PX](./web-reverse/products/perimeterx.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 命中特征 / 先判门再解 PX / 常见链路 / 观察优先级 |
