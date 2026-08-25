@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "article_count": 361,
+  "article_count": 362,
   "category_counts": {
     "anti-detection": 167,
     "collection-engineering": 3,
@@ -9,7 +9,7 @@
     "packing-bypass": 1,
     "protocols": 1,
     "signature-algorithms": 1,
-    "web-reverse": 91
+    "web-reverse": 92
   },
   "records": [
     {
@@ -10928,6 +10928,44 @@
       "bytes": 3816,
       "lines": 62,
       "content_sha256": "66edc3205a4b392005bb9681a7caaee20ead4ea8a9d7e41c667f0cff7f8f6eb2"
+    },
+    {
+      "path": "web-reverse/unpacked-mv3-native-updater.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "未上架 MV3 扩展的本机更新器架构",
+      "source": "`workspace/mouchenjie-ai-plugin`",
+      "original_date": "2026-08-24",
+      "archive_date": "2026-08-24",
+      "summary": "把「开发者模式加载已解压扩展 + 绿色更新器 EXE + 自定义 URL 协议唤醒」拆成可复用的五层打包合同，便于自有插件做 sideload 分发，而不是照抄 Chrome Web Store 上架流程。",
+      "keywords": [
+        "MV3",
+        "sideload",
+        "自定义协议",
+        "PyInstaller 更新器",
+        "加载已解压扩展",
+        "渠道 zip"
+      ],
+      "headings": [
+        "这篇解决什么问题",
+        "五层模型",
+        "渠道面：版本清单与 zip",
+        "本机更新面：绿色 EXE",
+        "协议唤醒与本机进度",
+        "扩展目录面：可 Load unpacked 的合同",
+        "账号面与安装面分离",
+        "给自己的插件：最小到完整",
+        "最小（只做第 3、4 层）",
+        "标准（加上第 1、2 层）",
+        "协议与目录命名",
+        "提取检查表",
+        "实例对照（谋臣界）",
+        "Quick Reference"
+      ],
+      "bytes": 11850,
+      "lines": 245,
+      "content_sha256": "88dc549ed90a8a87b34ded1a0284f8be9b395ed4c176b69707dd9782e7919595"
     },
     {
       "path": "web-reverse/yuanrenxue-web-reverse-compilation.md",

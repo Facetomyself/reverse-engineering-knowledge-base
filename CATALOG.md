@@ -15,9 +15,9 @@
 | `packing-bypass` | 1 | 0 | 1 |
 | `protocols` | 1 | 0 | 1 |
 | `signature-algorithms` | 1 | 0 | 1 |
-| `web-reverse` | 6 | 85 | 91 |
+| `web-reverse` | 7 | 85 | 92 |
 
-文章总数：361。
+文章总数：362。
 
 ## 逐篇目录
 
@@ -335,6 +335,7 @@
 | 主文 | 多篇合集 | [本如笔记 Web 逆向与协议恢复合集](./web-reverse/benru-web-reverse-compilation.md) | — | 收录说明 / 文章目录（12 篇） |
 | 主文 | 多篇合集 | [Web 补环境浏览器对象参考](./web-reverse/browser-env-objects.md) | — | 用途 / 补环境纪律 / 对象一览 / 使用边界 |
 | 主文 | 多篇合集 | [Web 安全产品强制命中索引](./web-reverse/products.md) | — | 用途 / 强制命中纪律 / 产品一览 / 使用边界 |
+| 主文 | 2026-08-24 | [未上架 MV3 扩展的本机更新器架构](./web-reverse/unpacked-mv3-native-updater.md) | — | 这篇解决什么问题 / 五层模型 / 渠道面：版本清单与 zip / 本机更新面：绿色 EXE |
 | 主文 | 多篇合集 | [猿人学 Web 与 JavaScript 逆向合集](./web-reverse/yuanrenxue-web-reverse-compilation.md) | — | 收录说明 / 文章目录（7 篇） |
 | 子文 | 2025-09-21 | [扒一扒 VMP 反爬：从踩坑到破局的实战思路(Akamai)](./web-reverse/anti-crawler-web-reverse-compilation/anti-crawler-web-20250921-01.md) | [反爬破解社 Web 逆向实战合集](./web-reverse/anti-crawler-web-reverse-compilation.md) | 一、引言：谁还没被 VMP 坑过？ / 二、VMP 反爬：不是 “虚拟机” 那么简单！ / 2.1 看个真实案例：Akamai 的 VMP 套路 / 三、VMP 反爬核心原理：用实例拆穿它！ |
 | 子文 | 2025-09-23 | [Akamai难点第一弹：mst参数的vmp混淆解决思路](./web-reverse/anti-crawler-web-reverse-compilation/anti-crawler-web-20250923-01.md) | [反爬破解社 Web 逆向实战合集](./web-reverse/anti-crawler-web-reverse-compilation.md) | — |
