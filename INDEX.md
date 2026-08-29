@@ -1,6 +1,6 @@
 # 逆向知识库文章索引
 
-> 更新于 2026-08-27 ｜ 来源: `article/`
+> 更新于 2026-08-29 ｜ 来源: `article/`
 >
 > 本文件维护 canonical 入口与技术标签；合集子文章详见 [CATALOG.md](./CATALOG.md)，机器读取使用 [`catalog.json`](./catalog.json)。
 >
@@ -44,6 +44,7 @@
 | 文章 | 来源项目 | 关键词 | 摘要 |
 |------|----------|--------|------|
 | [jiagu-bypass-analysis.md](./packing-bypass/jiagu-bypass-analysis.md) | qidian (起点读书) | `Jiagu`, `360加固`, `raise(9)`, `PR_SET_PTRACER`, `direct syscall`, `panda`, `whole-DEX`, `方法抽取`, `CodeItem`, `FART`, `JDex2`, `CDEX` | 360 Jiagu VIP 更新：区分进程存活与 Frida 持久会话，证明起点样本 DEX 原本明文，并记录 LDPlayer + panda 导出 13 DEX 的部分运行时恢复及方法抽取分流 |
+| [app-protectors.md](./packing-bypass/app-protectors.md) | ciweimao / douban-app-reverse / qidian | `Jiagu`, `Legu`, `SecNeo`, `NIS`, `libnesec`, `stub-wrapper`, `whole-dex`, `Gadget` | App 加固/wrapper 命中表：stub 明文 DEX 先官方 live，真加密才 dump；NIS abort 先看 tombstone |
 
 ### Native 分析 (`article/native-analysis/`)
 
@@ -97,7 +98,7 @@
 - **自定义应用帧**: [mmtls](./protocols/mmtls-protocol-analysis.md)
 - **自定义 URL 协议唤醒本机更新器**: [unpacked-mv3-updater](./web-reverse/unpacked-mv3-native-updater.md)
 - **HTTP DNS**: [mmtls](./protocols/mmtls-protocol-analysis.md)
-- **Protobuf/gRPC**: [paopao-android](./mobile-app-reverse/paopao-android-reverse-compilation.md)
+- **Protobuf/gRPC**: [paopao-android](./mobile-app-reverse/paopao-android-reverse-compilation.md), [yuanrenxue-app](./mobile-app-reverse/yuanrenxue-mobile-app-reverse-compilation.md)
 - **TLS/HTTP2 网络指纹**: [anti-crawler-risk](./anti-detection/anti-crawler-risk-control-compilation.md), [ruyi-browser](./anti-detection/ruyi-browser-anti-detection-compilation.md)
 - **WBI/Protobuf/TCP/mTLS 与认证协议**: [benru-web](./web-reverse/benru-web-reverse-compilation.md), [yuanrenxue-app](./mobile-app-reverse/yuanrenxue-mobile-app-reverse-compilation.md)
 - **Akamai JA3/JA4/HTTP2 指纹**: [yuanrenxue-anti](./anti-detection/yuanrenxue-anti-detection-compilation.md)
@@ -106,6 +107,7 @@
 - **WAF 绕过**: [51job-anti-detection](./anti-detection/51job-anti-detection-analysis.md)
 - **设备指纹**: [51job-anti-detection](./anti-detection/51job-anti-detection-analysis.md)
 - **加固绕过 / whole-DEX 分流**: [jiagu-bypass](./packing-bypass/jiagu-bypass-analysis.md)
+- **App 壳/wrapper 命中（Jiagu/Legu/SecNeo/NIS）**: [app-protectors](./packing-bypass/app-protectors.md)
 - **反调试 (ptrace/TracerPid)**: [jiagu-bypass](./packing-bypass/jiagu-bypass-analysis.md)
 - **Frida 终止链与 prctl 定位**: [jiagu-bypass](./packing-bypass/jiagu-bypass-analysis.md)
 - **方法抽取 / CodeItem 恢复**: [jiagu-bypass](./packing-bypass/jiagu-bypass-analysis.md)
@@ -130,7 +132,8 @@
 - **腾讯 (微信/应用宝)**: [mmtls](./protocols/mmtls-protocol-analysis.md)
 - **阅文 (起点)**: [qidian-fock](./signature-algorithms/qidian-fock-signature.md), [qidian-so](./native-analysis/qidian-so-analysis.md), [jiagu-bypass](./packing-bypass/jiagu-bypass-analysis.md)
 - **阿里 (ACW/飞林)**: [51job-anti-detection](./anti-detection/51job-anti-detection-analysis.md)
-- **360 (Jiagu)**: [jiagu-bypass](./packing-bypass/jiagu-bypass-analysis.md)
+- **360 (Jiagu)**: [jiagu-bypass](./packing-bypass/jiagu-bypass-analysis.md), [app-protectors](./packing-bypass/app-protectors.md)
+- **网易 NIS / 易盾加固（App）**: [app-protectors](./packing-bypass/app-protectors.md), [paopao-android](./mobile-app-reverse/paopao-android-reverse-compilation.md)
 - **51job**: [51job-anti-detection](./anti-detection/51job-anti-detection-analysis.md), [51job-webpack](./web-reverse/51job-webpack-analysis.md)
 - **CSDN/w1101662433 (fivcan)**: [chromium-fingerprint-compilation](./anti-detection/chromium-fingerprint-compilation.md)
 - **Android/App 逆向**: [app-reverse-global-map](./mobile-app-reverse/app-reverse-global-map.md), [app-reverse-environment-setup](./mobile-app-reverse/app-reverse-environment-setup.md)
@@ -154,6 +157,7 @@
 - **radare2 快速侦察**: [qidian-so](./native-analysis/qidian-so-analysis.md)
 - **Frida spawn / survival hook**: [jiagu-bypass](./packing-bypass/jiagu-bypass-analysis.md)
 - **panda whole-DEX**: [jiagu-bypass](./packing-bypass/jiagu-bypass-analysis.md)
+- **OkHttp 明文 Hook / 流量对齐**: [app-reverse-global-map](./mobile-app-reverse/app-reverse-global-map.md), [app-protectors](./packing-bypass/app-protectors.md)
 - **FART / JDex2 / FartFixer 分流**: [jiagu-bypass](./packing-bypass/jiagu-bypass-analysis.md)
 - **Chromium 源码编译与修改**: [chromium-fingerprint-compilation](./anti-detection/chromium-fingerprint-compilation.md)
 - **滑块缺口轮廓匹配（Canny 对洞，禁止灰度对纹理）**: [products](./web-reverse/products.md)

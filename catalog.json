@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "article_count": 363,
+  "article_count": 364,
   "category_counts": {
     "anti-detection": 167,
     "collection-engineering": 3,
     "mobile-app-reverse": 95,
     "native-analysis": 2,
-    "packing-bypass": 1,
+    "packing-bypass": 2,
     "protocols": 1,
     "signature-algorithms": 1,
     "web-reverse": 93
@@ -8791,6 +8791,37 @@
       "bytes": 8013,
       "lines": 148,
       "content_sha256": "d1b87822e5d6610788206aa06fb9421e4220b3d2311f67e23e06958a78ca5547"
+    },
+    {
+      "path": "packing-bypass/app-protectors.md",
+      "kind": "canonical",
+      "category": "packing-bypass",
+      "parent": null,
+      "title": "App 加固产品命中",
+      "source": "reverse_ENV App 主线（ciweimao / 豆瓣 / 起点）",
+      "original_date": "2026-08-29",
+      "archive_date": "2026-08-29",
+      "summary": "App 壳与 wrapper 的命中特征 → protectorKind → apk_case.py next。只做观察顺序，不替代当前样本的 DEX 计数、tombstone 和官方 live。",
+      "keywords": [
+        "Jiagu",
+        "Legu",
+        "SecNeo",
+        "NIS",
+        "libnesec",
+        "stub-wrapper",
+        "whole-dex",
+        "Gadget"
+      ],
+      "headings": [
+        "用途",
+        "命中纪律",
+        "产品一览",
+        "观察顺序",
+        "使用边界"
+      ],
+      "bytes": 2972,
+      "lines": 48,
+      "content_sha256": "16e90309894e884327edd29ee8dbba0165bce06aae81b1a0c49b05ba7fd3ab00"
     },
     {
       "path": "packing-bypass/jiagu-bypass-analysis.md",

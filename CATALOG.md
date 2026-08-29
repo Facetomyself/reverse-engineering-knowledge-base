@@ -12,12 +12,12 @@
 | `collection-engineering` | 3 | 0 | 3 |
 | `mobile-app-reverse` | 5 | 90 | 95 |
 | `native-analysis` | 2 | 0 | 2 |
-| `packing-bypass` | 1 | 0 | 1 |
+| `packing-bypass` | 2 | 0 | 2 |
 | `protocols` | 1 | 0 | 1 |
 | `signature-algorithms` | 1 | 0 | 1 |
 | `web-reverse` | 7 | 86 | 93 |
 
-文章总数：363。
+文章总数：364。
 
 ## 逐篇目录
 
@@ -312,6 +312,7 @@
 
 | 类型 | 日期 | 文章 | 父合集 | 关键标题 |
 |------|------|------|--------|----------|
+| 主文 | 2026-08-29 | [App 加固产品命中](./packing-bypass/app-protectors.md) | — | 用途 / 命中纪律 / 产品一览 / 观察顺序 |
 | 主文 | 2026-07-02 | [360 Jiagu VIP 绕过与脱壳能力更新](./packing-bypass/jiagu-bypass-analysis.md) | — | 技术摘要 / 一、libjiagu_vip.so 静态证据 / 1.1 ELF 结构 / 1.2 反检测面 |
 
 ### `protocols`
