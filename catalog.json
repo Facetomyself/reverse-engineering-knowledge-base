@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "article_count": 362,
+  "article_count": 363,
   "category_counts": {
     "anti-detection": 167,
     "collection-engineering": 3,
@@ -9,7 +9,7 @@
     "packing-bypass": 1,
     "protocols": 1,
     "signature-algorithms": 1,
-    "web-reverse": 92
+    "web-reverse": 93
   },
   "records": [
     {
@@ -10219,7 +10219,7 @@
       "source": "JS终结计划课程方法论（clean-room 重写）",
       "original_date": "多篇合集",
       "archive_date": "2026-08-11",
-      "summary": "面向 Web 逆向与风控请求链复现的安全产品特征索引。命中特征 → 映射产品 → 只读对应文档，是定位签名、验证码、状态型业务链时的第一道分类门。",
+      "summary": "面向 Web 逆向与风控请求链复现的安全产品特征索引。命中特征 → 映射产品 → 只读对应文档，是定位签名、验证码、状态型业务链时的第一道分类门。2026-08-27 增补网易易盾 Web captcha。",
       "keywords": [
         "风控产品",
         "验证码",
@@ -10243,6 +10243,8 @@
         "抖音",
         "阿里云验证码",
         "腾讯验证码",
+        "网易易盾",
+        "NECaptcha",
         "F5",
         "PerimeterX",
         "reese84"
@@ -10254,9 +10256,9 @@
         "使用边界",
         "与主线工作流的衔接"
       ],
-      "bytes": 7081,
-      "lines": 64,
-      "content_sha256": "ffb629b29d97a6066f57bd62740891a5045803f1a1a49315b321147209607c81"
+      "bytes": 7336,
+      "lines": 65,
+      "content_sha256": "9d68f5c71c329df09538038c445d611aa7e4607c0bbe8a98d79b6f1ff483a833"
     },
     {
       "path": "web-reverse/products/akamai.md",
@@ -10792,6 +10794,44 @@
       "bytes": 3083,
       "lines": 68,
       "content_sha256": "0875a10c243372e54df1e327527a88bd21010db01d52a214594437de95b19451"
+    },
+    {
+      "path": "web-reverse/products/netease-yidun-captcha.md",
+      "kind": "nested",
+      "category": "web-reverse",
+      "parent": "web-reverse/products.md",
+      "title": "网易易盾行为式验证码（Web jigsaw / NECaptcha）",
+      "source": "netease-yidun-jigsaw-v2285（trial 页 live compact-replay）",
+      "original_date": "2026-08-27",
+      "archive_date": "2026-08-27",
+      "summary": "网易易盾 Web 行为式验证码（NECaptcha / dun.163.com）：getconf → get → 题面 → check → validate。 以 SDK 2.28.5 滑块 type=2 为实证主链，整理风控分层、纯算方法论、缺口与 token 生命周期。 不要和 App 侧 NES 加固（libnesec / libpoison）混成同一个产品面。",
+      "keywords": [],
+      "headings": [
+        "命中特征",
+        "产品分层（不要混面）",
+        "核心边界",
+        "风控分层",
+        "常见链路",
+        "方法论",
+        "1. 先命中产品，再取证",
+        "2. 能纯算就不要补整页",
+        "3. 单变量实验，不要堆参数",
+        "4. 同轮绑定",
+        "观察优先级",
+        "技巧与细节",
+        "缺口：对洞，不对纹理",
+        "data 字段",
+        "fp",
+        "token 生命周期",
+        "JSONP 与 HTTP",
+        "轨迹形态",
+        "常见坑",
+        "验证口径",
+        "版本材料"
+      ],
+      "bytes": 14808,
+      "lines": 261,
+      "content_sha256": "48d7ea32c9c76738f44a8bc9a0cab68ff7494cd4e6f2743e5599e6185d9c3fdb"
     },
     {
       "path": "web-reverse/products/perimeterx.md",

@@ -15,9 +15,9 @@
 | `packing-bypass` | 1 | 0 | 1 |
 | `protocols` | 1 | 0 | 1 |
 | `signature-algorithms` | 1 | 0 | 1 |
-| `web-reverse` | 7 | 85 | 92 |
+| `web-reverse` | 7 | 86 | 93 |
 
-文章总数：362。
+文章总数：363。
 
 ## 逐篇目录
 
@@ -409,6 +409,7 @@
 | 子文 | 2026-08-22 | [京东 JCAP 空间推理（tp=22）](./web-reverse/products/jd-jcap-spatial.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
 | 子文 | 多篇合集 | [Kasada KPSDK](./web-reverse/products/kasada.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
 | 子文 | 多篇合集 | [美团外卖商家 WebSocket](./web-reverse/products/meituan-waimai-websocket.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
+| 子文 | 2026-08-27 | [网易易盾行为式验证码（Web jigsaw / NECaptcha）](./web-reverse/products/netease-yidun-captcha.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 命中特征 / 产品分层（不要混面） / 核心边界 / 风控分层 |
 | 子文 | 多篇合集 | [PerimeterX / HUMAN Security PX](./web-reverse/products/perimeterx.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 命中特征 / 先判门再解 PX / 常见链路 / 观察优先级 |
 | 子文 | 多篇合集 | [Reese84（Imperva / Incapsula）](./web-reverse/products/reese84.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
 | 子文 | 多篇合集 | [瑞数 RS6](./web-reverse/products/ruishu-rs6-challenge.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 命中特征 / 目标类型判定 / 常见链路 / 观察优先级 |

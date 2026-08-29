@@ -5,7 +5,7 @@
 > 归档日期: 2026-08-11
 > 分类: web-reverse
 >
-> 面向 Web 逆向与风控请求链复现的安全产品特征索引。命中特征 → 映射产品 → 只读对应文档，是定位签名、验证码、状态型业务链时的第一道分类门。
+> 面向 Web 逆向与风控请求链复现的安全产品特征索引。命中特征 → 映射产品 → 只读对应文档，是定位签名、验证码、状态型业务链时的第一道分类门。2026-08-27 增补网易易盾 Web captcha。
 
 ## 用途
 
@@ -34,6 +34,7 @@
 | 瑞数 RS6（hybrid 面） | 滑块验证码 `c` 参数、行为 proof、`R` 请求与业务参数绑定 | [ruishu-rs6-hybrid.md](products/ruishu-rs6-hybrid.md) |
 | 同盾 tongdun | `token` / `black_box`、`fingerprint.js`、`collect` 上报、`umid` | [tongdun.md](products/tongdun.md) |
 | 腾讯验证码 | `ticket` / `randstr`、`ssl.captcha.qq.com`、`captcha-type`、滑块/点选 | [tencent-captcha.md](products/tencent-captcha.md) |
+| 网易易盾（NECaptcha / jigsaw） | `c.dun.163.com`、`necaptcha`、`gdxidpyhxde`、`/api/v3/get`、`/api/v3/check`、`validate`、`type=2` | [netease-yidun-captcha.md](products/netease-yidun-captcha.md) |
 | Google reCAPTCHA v3 | `grecaptcha.execute`、`api2/anchor`、`api2/reload`、`rresp`、`g-recaptcha-response` | [google-recaptcha-v3.md](products/google-recaptcha-v3.md) |
 | Arkose Labs / FunCaptcha | `arkoselabs.com`、`/fc/gt2/public_key/`、`/fc/gfct/`、`/fc/ca/`、`session_token`、`game_token` | [arkose-funcaptcha.md](products/arkose-funcaptcha.md) |
 | 阿里云验证码（v1/v2/v3） | `aliyunCaptcha`、`nc_` 字段、`ic.getNcCode`、`appkey`、`scene` | [aliyun-captcha.md](products/aliyun-captcha.md)、[aliyun-captcha-v2.md](products/aliyun-captcha-v2.md)、[aliyun-captcha-v3.md](products/aliyun-captcha-v3.md) |
