@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
-  "article_count": 364,
+  "article_count": 369,
   "category_counts": {
     "anti-detection": 167,
     "collection-engineering": 3,
-    "mobile-app-reverse": 95,
+    "mobile-app-reverse": 96,
     "native-analysis": 2,
     "packing-bypass": 2,
     "protocols": 1,
     "signature-algorithms": 1,
-    "web-reverse": 93
+    "web-reverse": 97
   },
   "records": [
     {
@@ -5182,6 +5182,37 @@
       "content_sha256": "c65d8f6437a3334067604f69edbd27f74ce925160ac643a57c4c2490befb321a"
     },
     {
+      "path": "mobile-app-reverse/mtop-innersign-rpc.md",
+      "kind": "canonical",
+      "category": "mobile-app-reverse",
+      "parent": null,
+      "title": "MTOP InnerSignImpl Frida RPC",
+      "source": "`workspace/cv-cat`（XianyuAndroidApis 2026-04-13 只读对照）",
+      "original_date": "2026-04-13",
+      "archive_date": "2026-08-30",
+      "summary": "Web H5 MTOP 的 query sign 走 _m_h5_tk MD5，与本页 不能互换。本页只覆盖 Android 网关头族：x-sign、x-sgext、x-mini-wua、x-umt、x-wua / wua。",
+      "keywords": [
+        "MTOP",
+        "InnerSignImpl",
+        "getUnifiedSign",
+        "x-sign",
+        "x-sgext",
+        "x-mini-wua",
+        "Frida RPC",
+        "闲鱼"
+      ],
+      "headings": [
+        "适用边界",
+        "工作流",
+        "观察优先级",
+        "常见坑",
+        "验证口径"
+      ],
+      "bytes": 3366,
+      "lines": 61,
+      "content_sha256": "7cef5f1e6d35e5dd5f30600483f3dfa551960436d6e468cc14064d3d4f3b07c9"
+    },
+    {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation.md",
       "kind": "canonical",
       "category": "mobile-app-reverse",
@@ -10250,7 +10281,7 @@
       "source": "JS终结计划课程方法论（clean-room 重写）",
       "original_date": "多篇合集",
       "archive_date": "2026-08-11",
-      "summary": "面向 Web 逆向与风控请求链复现的安全产品特征索引。命中特征 → 映射产品 → 只读对应文档，是定位签名、验证码、状态型业务链时的第一道分类门。2026-08-27 增补网易易盾 Web captcha。",
+      "summary": "面向 Web 逆向与风控请求链复现的安全产品特征索引。命中特征 → 映射产品 → 只读对应文档，是定位签名、验证码、状态型业务链时的第一道分类门。2026-08-27 增补网易易盾 Web captcha。2026-08-30 增补小红书 xs、快手 NS 签名、阿里 MTOP H5。",
       "keywords": [
         "风控产品",
         "验证码",
@@ -10278,7 +10309,12 @@
         "NECaptcha",
         "F5",
         "PerimeterX",
-        "reese84"
+        "reese84",
+        "小红书",
+        "x-s",
+        "快手",
+        "__NS_sig3",
+        "MTOP"
       ],
       "headings": [
         "用途",
@@ -10287,9 +10323,9 @@
         "使用边界",
         "与主线工作流的衔接"
       ],
-      "bytes": 7336,
-      "lines": 65,
-      "content_sha256": "9d68f5c71c329df09538038c445d611aa7e4607c0bbe8a98d79b6f1ff483a833"
+      "bytes": 8113,
+      "lines": 69,
+      "content_sha256": "785a35151fc474177f77f5b03669baa651b074521cc1fcef81d4e2c4dccb9ed2"
     },
     {
       "path": "web-reverse/products/akamai.md",
@@ -10353,9 +10389,31 @@
         "常见坑",
         "验证口径"
       ],
-      "bytes": 3808,
-      "lines": 62,
-      "content_sha256": "3f775ead210925ae6effded20866f10a0b63c9378ab174905ca1e363eb6c0dbf"
+      "bytes": 3913,
+      "lines": 63,
+      "content_sha256": "2264fb4439d7f984830f32ce50e94375231b5c58dc6e14def2816ed3101afb16"
+    },
+    {
+      "path": "web-reverse/products/alibaba-mtop-h5.md",
+      "kind": "nested",
+      "category": "web-reverse",
+      "parent": "web-reverse/products.md",
+      "title": "阿里 MTOP H5 sign",
+      "source": "`workspace/cv-cat`（TaoBaoApis / XianYuApis 2026-08 只读对照）",
+      "original_date": "2026-08-18",
+      "archive_date": "2026-08-30",
+      "summary": "淘宝 / 闲鱼 Web 的 H5 MTOP 查询签名：_m_h5_tk、t、appKey、data 拼串后 MD5。与 App x-sign、H5Sec/AWSC/Fireye、tfstk 不是同一条链。",
+      "keywords": [],
+      "headings": [
+        "命中特征",
+        "常见链路",
+        "观察优先级",
+        "常见坑",
+        "验证口径"
+      ],
+      "bytes": 3537,
+      "lines": 69,
+      "content_sha256": "b80560db559cac895b32fce824e8acd35ac29f155644e1740e93807d49cb3c39"
     },
     {
       "path": "web-reverse/products/aliyun-captcha-v2.md",
@@ -10508,9 +10566,9 @@
         "常见坑",
         "验证口径"
       ],
-      "bytes": 3261,
-      "lines": 58,
-      "content_sha256": "b74c3ab9f3d7d36e24a574d9e3c22cb3c494421ca81150165291d763461a575d"
+      "bytes": 3415,
+      "lines": 59,
+      "content_sha256": "caffa4d71902ecb82f44cd82f399298da2c0add97c1f1367baca756b4d016999"
     },
     {
       "path": "web-reverse/products/douyin-creator-im.md",
@@ -10708,9 +10766,9 @@
         "验证口径",
         "2026-08-22 search.jd.com 实测"
       ],
-      "bytes": 5470,
-      "lines": 69,
-      "content_sha256": "b0979cc778385daf6b6f7640055ed7de33b66f73526c1831735e004584ebba32"
+      "bytes": 5596,
+      "lines": 70,
+      "content_sha256": "d30e9f10fb00d1b850ce4cf2b5b631184e573c8d57579db62661eda9804115db"
     },
     {
       "path": "web-reverse/products/jd-jcap-captcha.md",
@@ -10803,6 +10861,28 @@
       "bytes": 5696,
       "lines": 85,
       "content_sha256": "c59089578827a37ec83c32022be439d381a399a89353b263ee75f02ed73b612a"
+    },
+    {
+      "path": "web-reverse/products/kuaishou-ns-sig.md",
+      "kind": "nested",
+      "category": "web-reverse",
+      "parent": "web-reverse/products.md",
+      "title": "快手 NS_sig3 / hxfalcon / webweapon",
+      "source": "`workspace/cv-cat`（KuaiShou-Spider 2026-08-30 只读对照）",
+      "original_date": "2026-08-30",
+      "archive_date": "2026-08-30",
+      "summary": "产品名在对照实现里按站点隔离：www kuaishou-vision、CP onvideo-cp、Live PCLive、验证码 verification-captcha。三站票据不可合并。",
+      "keywords": [],
+      "headings": [
+        "命中特征",
+        "常见链路",
+        "观察优先级",
+        "常见坑",
+        "验证口径"
+      ],
+      "bytes": 3873,
+      "lines": 71,
+      "content_sha256": "ebbc81d139007f92d7ae36ac8f7c0a7ab94f6eef2482fbcb81b5cabaa7dc59cc"
     },
     {
       "path": "web-reverse/products/meituan-waimai-websocket.md",
@@ -10999,6 +11079,68 @@
       "bytes": 3816,
       "lines": 62,
       "content_sha256": "66edc3205a4b392005bb9681a7caaee20ead4ea8a9d7e41c667f0cff7f8f6eb2"
+    },
+    {
+      "path": "web-reverse/products/xiaohongshu-xs.md",
+      "kind": "nested",
+      "category": "web-reverse",
+      "parent": "web-reverse/products.md",
+      "title": "小红书 x-s / x-t / x-s-common",
+      "source": "`workspace/cv-cat`（Spider_XHS 2026-08-18 只读对照）",
+      "original_date": "2026-08-18",
+      "archive_date": "2026-08-30",
+      "summary": "算法权威在现行 xhs_core / xhs_pc / xhs_creator 分层。2026-04 的 execjs + xhs_main_260411.js 快照是旧 XsCommon（x8 静态 blob、无 x12=dsl），不能当现行签名。",
+      "keywords": [],
+      "headings": [
+        "命中特征",
+        "常见链路",
+        "观察优先级",
+        "常见坑",
+        "验证口径"
+      ],
+      "bytes": 4040,
+      "lines": 72,
+      "content_sha256": "7d6d970fc756a323d88e52b28a1ff5e453a8232ada727f825254ac2ea495b0d8"
+    },
+    {
+      "path": "web-reverse/sign-landing-methods.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "平台签名落地方法：纯算、黑盒与 RPC 分流",
+      "source": "`workspace/cv-cat`（GitHub cv-cat 公开仓 2026-08-30 只读对照）",
+      "original_date": "2026-08-30",
+      "archive_date": "2026-08-30",
+      "summary": "公开采集 SDK 的价值不在于「复制就能过」，而在于把一条业务请求拆成可独立验收的产品面，并给每种面选定落地方式。对照窗口是 2026-08；常数、档位和 SDK 版本会过期，方法不过期。",
+      "keywords": [
+        "纯算",
+        "Node vm",
+        "execjs",
+        "Frida RPC",
+        "a_bogus",
+        "x-s",
+        "__NS_sig3",
+        "h5st",
+        "provenance",
+        "canonical query"
+      ],
+      "headings": [
+        "落地四分法",
+        "产品切开，失败不要单归因",
+        "可复用方法",
+        "1. VMP 先钩宿主原语",
+        "2. 签完的 query 就是要发的 query",
+        "3. Cookie 与材料要记 provenance",
+        "4. 子域 / 端别常量表",
+        "5. 传输层单独验收",
+        "6. 能反编译就纯算，搬不动就预言机",
+        "7. App Native 签名优先实例 RPC",
+        "反面教材",
+        "与主线工作流"
+      ],
+      "bytes": 8016,
+      "lines": 107,
+      "content_sha256": "cccf1581628e0bef747d336836fea6c96b77a33b54e75e5a109dcacd4cba6e5e"
     },
     {
       "path": "web-reverse/unpacked-mv3-native-updater.md",

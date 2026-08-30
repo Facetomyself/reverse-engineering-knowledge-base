@@ -50,6 +50,7 @@
 - 用旧项目的 UA、宽高、语言、webid、ttwid、uifid、msToken 直接套新目标
 - 用浏览器跑出来的最终参数替代本地实现；用 VMP 探针或改写后执行结果当作值基准
 - 只验证参数能生成，不验证真实接口返回
+- 用 `X-Bogus`、随机 `msToken` 或 TicketGuard 失败来解释 `a_bogus` 链；产品切开见 [平台签名落地方法](../sign-landing-methods.md)
 
 ## 验证口径
 

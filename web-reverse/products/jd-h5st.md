@@ -49,6 +49,7 @@
 - body 在 h5st 摘要中一种序列化、实际请求另一种；忽略列表请求的重复参数
 - HTTP 403 只怀疑 cookie，忽略算法错误、fp/tk03 失效或客户端指纹差异
 - HTTP 200 但业务错误继续补环境，未先查 h5st 摘要、字段顺序、时间戳和 token 新鲜度
+- 把公开 execjs + jsdom 整包 `ParamsSign`、声称 h5st 4.2、无 `cactus.request_algo` 的实现当成现行 5.3 协议
 
 ## 验证口径
 

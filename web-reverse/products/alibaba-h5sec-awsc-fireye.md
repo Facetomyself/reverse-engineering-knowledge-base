@@ -24,6 +24,7 @@ H5Sec/AWSC/Fireye 140/231/234 = securityHeader / bx-ua=231!/234! / AsuraId / fir
 Baxia/x5sec punish = baxiaCommon / x5secdata / bxpunish / punish 标记
 1036/WAF    = refer__1036 / ssxmod_itna / ssxmod_itna2 / acw_tc / WAF HTML
 业务加密    = 站点自己的 req/res 加解密，不代表风控已通过
+MTOP H5 sign = h5api `_m_h5_tk` / query `sign` / `appKey`，见 alibaba-mtop-h5；不是本页 bx-ua 链
 ```
 
 ## 常见链路

@@ -5,7 +5,7 @@
 > 归档日期: 2026-08-11
 > 分类: web-reverse
 >
-> 面向 Web 逆向与风控请求链复现的安全产品特征索引。命中特征 → 映射产品 → 只读对应文档，是定位签名、验证码、状态型业务链时的第一道分类门。2026-08-27 增补网易易盾 Web captcha。
+> 面向 Web 逆向与风控请求链复现的安全产品特征索引。命中特征 → 映射产品 → 只读对应文档，是定位签名、验证码、状态型业务链时的第一道分类门。2026-08-27 增补网易易盾 Web captcha。2026-08-30 增补小红书 xs、快手 NS 签名、阿里 MTOP H5。
 
 ## 用途
 
@@ -51,6 +51,9 @@
 | 抖音创作 IM | `imapi.douyin.com`、`bd-ticket-guard-client-data`、`identity_security_token` | [douyin-creator-im.md](products/douyin-creator-im.md) |
 | 抖音 TicketGuard | `bd-ticket-guard-*` 头族、`ticket` 动态 token、`re-verify` 链 | [douyin-ticket-guard.md](products/douyin-ticket-guard.md) |
 | 抖音验证中心滑块 | `verifycenter` 域、`verifyFp`、滑块 proof、`verify_token` | [douyin-verifycenter-slide.md](products/douyin-verifycenter-slide.md) |
+| 小红书 xs | `x-s` / `x-t` / `x-s-common`、`XYS_`、`a1`、`web_session`、mns0101/0201/0301、`getdss` | [xiaohongshu-xs.md](products/xiaohongshu-xs.md) |
+| 快手 NS 签名 | `__NS_sig3`、`__NS_hxfalcon`、`kwfv1` / `kwscode`、`kww`、`gdfp.gifshow.com` | [kuaishou-ns-sig.md](products/kuaishou-ns-sig.md) |
+| 阿里 MTOP H5 | `h5api.m.taobao.com` / `h5api.m.goofish.com`、`_m_h5_tk`、query `sign`、`jsv`、`appKey` | [alibaba-mtop-h5.md](products/alibaba-mtop-h5.md) |
 
 ## 使用边界
 
@@ -63,3 +66,4 @@
 - 命中判定写入 `web-case.json` 的 challenge phase 与 `analysis-progress.md` 进展账本。
 - 验证码 / challenge 子链属于 `web-challenge` 的路由面；签名 / 加密参数属于 `web-reverse` → `web-env-patcher` / `protocol-recovery` 路由面。
 - 产品文档描述的补环境对象（iframe、Worker、MessagePort、canvas 等）参考 [browser-env-objects](./browser-env-objects.md)。
+- 签名落地选型（纯算 / 隔离黑盒 / execjs 整包 / 设备 RPC）参考 [平台签名落地方法](./sign-landing-methods.md)。App `x-sign` 参考 [InnerSignImpl RPC](../mobile-app-reverse/mtop-innersign-rpc.md)。

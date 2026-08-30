@@ -10,14 +10,14 @@
 |------|----------:|-------:|-----:|
 | `anti-detection` | 6 | 161 | 167 |
 | `collection-engineering` | 3 | 0 | 3 |
-| `mobile-app-reverse` | 5 | 90 | 95 |
+| `mobile-app-reverse` | 6 | 90 | 96 |
 | `native-analysis` | 2 | 0 | 2 |
 | `packing-bypass` | 2 | 0 | 2 |
 | `protocols` | 1 | 0 | 1 |
 | `signature-algorithms` | 1 | 0 | 1 |
-| `web-reverse` | 7 | 86 | 93 |
+| `web-reverse` | 8 | 89 | 97 |
 
-文章总数：364。
+文章总数：369。
 
 ## 逐篇目录
 
@@ -208,6 +208,7 @@
 | 主文 | 多篇合集 | [反爬破解社 App 逆向章节合集](./mobile-app-reverse/anti-crawler-app-reverse-series.md) | — | 收录说明 / 文章目录（6 篇） |
 | 主文 | 2026-07-06 | [App 逆向环境搭建](./mobile-app-reverse/app-reverse-environment-setup.md) | — | 模拟器 vs 真机 / 模拟器环境搭建 / 模拟器选择 / 雷电模拟器配置步骤 |
 | 主文 | 2026-07-05 | [App 逆向的全局视角](./mobile-app-reverse/app-reverse-global-map.md) | — | 一条 App 请求的完整生命周期 / 1. Activity / UI 层 / 2. Service / Presenter 业务层 / 3. OkHttp / Retrofit 网络层 |
+| 主文 | 2026-04-13 | [MTOP InnerSignImpl Frida RPC](./mobile-app-reverse/mtop-innersign-rpc.md) | — | 适用边界 / 工作流 / 观察优先级 / 常见坑 |
 | 主文 | 多篇合集 | [泡泡以安 Android 逆向技术合集](./mobile-app-reverse/paopao-android-reverse-compilation.md) | — | 收录说明 / 文章目录（67 篇） |
 | 主文 | 多篇合集 | [猿人学移动 App 逆向与抓包合集](./mobile-app-reverse/yuanrenxue-mobile-app-reverse-compilation.md) | — | 收录说明 / 文章目录（17 篇） |
 | 子文 | 2026-07-05 | [第1章：App逆向的全局视角](./mobile-app-reverse/anti-crawler-app-reverse-series/anti-crawler-app-20260705-01.md) | [反爬破解社 App 逆向章节合集](./mobile-app-reverse/anti-crawler-app-reverse-series.md) | 一、一条App请求的完整生命周期 / 1\. Activity / UI层 / 2\. Service / Presenter（业务层） / 3\. OkHttp / Retrofit（网络层） |
@@ -336,6 +337,7 @@
 | 主文 | 多篇合集 | [本如笔记 Web 逆向与协议恢复合集](./web-reverse/benru-web-reverse-compilation.md) | — | 收录说明 / 文章目录（12 篇） |
 | 主文 | 多篇合集 | [Web 补环境浏览器对象参考](./web-reverse/browser-env-objects.md) | — | 用途 / 补环境纪律 / 对象一览 / 使用边界 |
 | 主文 | 多篇合集 | [Web 安全产品强制命中索引](./web-reverse/products.md) | — | 用途 / 强制命中纪律 / 产品一览 / 使用边界 |
+| 主文 | 2026-08-30 | [平台签名落地方法：纯算、黑盒与 RPC 分流](./web-reverse/sign-landing-methods.md) | — | 落地四分法 / 产品切开，失败不要单归因 / 可复用方法 / 1. VMP 先钩宿主原语 |
 | 主文 | 2026-08-24 | [未上架 MV3 扩展的本机更新器架构](./web-reverse/unpacked-mv3-native-updater.md) | — | 这篇解决什么问题 / 五层模型 / 渠道面：版本清单与 zip / 本机更新面：绿色 EXE |
 | 主文 | 多篇合集 | [猿人学 Web 与 JavaScript 逆向合集](./web-reverse/yuanrenxue-web-reverse-compilation.md) | — | 收录说明 / 文章目录（7 篇） |
 | 子文 | 2025-09-21 | [扒一扒 VMP 反爬：从踩坑到破局的实战思路(Akamai)](./web-reverse/anti-crawler-web-reverse-compilation/anti-crawler-web-20250921-01.md) | [反爬破解社 Web 逆向实战合集](./web-reverse/anti-crawler-web-reverse-compilation.md) | 一、引言：谁还没被 VMP 坑过？ / 二、VMP 反爬：不是 “虚拟机” 那么简单！ / 2.1 看个真实案例：Akamai 的 VMP 套路 / 三、VMP 反爬核心原理：用实例拆穿它！ |
@@ -389,6 +391,7 @@
 | 子文 | 多篇合集 | [Akamai（Bot Manager / BMP / CSC）](./web-reverse/products/akamai.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
 | 子文 | 多篇合集 | [阿里 Baxia / AWSC bx-ua 与 fire_ua](./web-reverse/products/alibaba-bxua.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
 | 子文 | 多篇合集 | [阿里 H5Sec / AWSC / Fireye（140/231/234 / x5sec）](./web-reverse/products/alibaba-h5sec-awsc-fireye.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
+| 子文 | 2026-08-18 | [阿里 MTOP H5 sign](./web-reverse/products/alibaba-mtop-h5.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
 | 子文 | 多篇合集 | [阿里云验证码 v2（callback-proof 状态机）](./web-reverse/products/aliyun-captcha-v2.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
 | 子文 | 多篇合集 | [阿里云验证码 V3（direct-verify / CHECK_BOX）](./web-reverse/products/aliyun-captcha-v3.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
 | 子文 | 多篇合集 | [阿里云验证码 / AWSC / noCaptcha（含 WAF 1036 / x5sec）](./web-reverse/products/aliyun-captcha.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
@@ -409,6 +412,7 @@
 | 子文 | 多篇合集 | [京东 JCAP 滑块专项（tp=30 滑块 / tp=26 旋转）](./web-reverse/products/jd-jcap-slider.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 命中特征 / 成功判定 / 常见链路 / 观察优先级 |
 | 子文 | 2026-08-22 | [京东 JCAP 空间推理（tp=22）](./web-reverse/products/jd-jcap-spatial.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
 | 子文 | 多篇合集 | [Kasada KPSDK](./web-reverse/products/kasada.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
+| 子文 | 2026-08-30 | [快手 NS_sig3 / hxfalcon / webweapon](./web-reverse/products/kuaishou-ns-sig.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
 | 子文 | 多篇合集 | [美团外卖商家 WebSocket](./web-reverse/products/meituan-waimai-websocket.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
 | 子文 | 2026-08-27 | [网易易盾行为式验证码（Web jigsaw / NECaptcha）](./web-reverse/products/netease-yidun-captcha.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 命中特征 / 产品分层（不要混面） / 核心边界 / 风控分层 |
 | 子文 | 多篇合集 | [PerimeterX / HUMAN Security PX](./web-reverse/products/perimeterx.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 命中特征 / 先判门再解 PX / 常见链路 / 观察优先级 |
@@ -417,6 +421,7 @@
 | 子文 | 多篇合集 | [瑞数/瑞树 RS6 动态 JS（Firefox/Gecko 侧重）](./web-reverse/products/ruishu-rs6-hybrid.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 命中特征 / 标准流程 / 观察优先级 / 常见坑 |
 | 子文 | 多篇合集 | [腾讯 TCaptcha 滑块验证码](./web-reverse/products/tencent-captcha.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 命中特征 / 核心边界 / 常见链路 / 观察优先级 |
 | 子文 | 多篇合集 | [同盾 / TrustDecision](./web-reverse/products/tongdun.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
+| 子文 | 2026-08-18 | [小红书 x-s / x-t / x-s-common](./web-reverse/products/xiaohongshu-xs.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
 | 子文 | 2019-05-13 | [爬虫技巧：逆向破解js代码加密，代码混淆不是难事](./web-reverse/yuanrenxue-web-reverse-compilation/yuanrenxue-web-20190513-01.md) | [猿人学 Web 与 JavaScript 逆向合集](./web-reverse/yuanrenxue-web-reverse-compilation.md) | 第一步：观察网页加载了哪些js文件，猜猜哪个文件可能包含tk生成的代码。 / 第二步：了解“Sources”工具 / 第三步：调试JavaScript，探寻关键代码 / 扩展：如何不好好写程序 |
 | 子文 | 2019-07-01 | [写爬虫时常见的五种字符串加密特征](./web-reverse/yuanrenxue-web-reverse-compilation/yuanrenxue-web-20190701-01.md) | [猿人学 Web 与 JavaScript 逆向合集](./web-reverse/yuanrenxue-web-reverse-compilation.md) | — |
 | 子文 | 2019-07-11 | [写爬虫，免不了要研究JavaScript设置cookies的问题](./web-reverse/yuanrenxue-web-reverse-compilation/yuanrenxue-web-20190711-01.md) | [猿人学 Web 与 JavaScript 逆向合集](./web-reverse/yuanrenxue-web-reverse-compilation.md) | — |
