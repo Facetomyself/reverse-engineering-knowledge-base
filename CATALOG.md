@@ -10,14 +10,14 @@
 |------|----------:|-------:|-----:|
 | `anti-detection` | 6 | 161 | 167 |
 | `collection-engineering` | 3 | 0 | 3 |
-| `mobile-app-reverse` | 6 | 90 | 96 |
+| `mobile-app-reverse` | 7 | 90 | 97 |
 | `native-analysis` | 2 | 0 | 2 |
 | `packing-bypass` | 2 | 0 | 2 |
 | `protocols` | 1 | 0 | 1 |
 | `signature-algorithms` | 1 | 0 | 1 |
 | `web-reverse` | 8 | 89 | 97 |
 
-文章总数：369。
+文章总数：370。
 
 ## 逐篇目录
 
@@ -210,6 +210,7 @@
 | 主文 | 2026-07-05 | [App 逆向的全局视角](./mobile-app-reverse/app-reverse-global-map.md) | — | 一条 App 请求的完整生命周期 / 1. Activity / UI 层 / 2. Service / Presenter 业务层 / 3. OkHttp / Retrofit 网络层 |
 | 主文 | 2026-04-13 | [MTOP InnerSignImpl Frida RPC](./mobile-app-reverse/mtop-innersign-rpc.md) | — | 适用边界 / 工作流 / 观察优先级 / 常见坑 |
 | 主文 | 多篇合集 | [泡泡以安 Android 逆向技术合集](./mobile-app-reverse/paopao-android-reverse-compilation.md) | — | 收录说明 / 文章目录（67 篇） |
+| 主文 | 2026-09-03 | [App 纯协议 SDK 重建：从首次设备注册到可维护协议客户端](./mobile-app-reverse/pure-protocol-sdk-reconstruction.md) | — | 定位 / 总流程 / 1. 干净首次注册与 HAR 语料 / 1.1 刷到可复现的首次开机 |
 | 主文 | 多篇合集 | [猿人学移动 App 逆向与抓包合集](./mobile-app-reverse/yuanrenxue-mobile-app-reverse-compilation.md) | — | 收录说明 / 文章目录（17 篇） |
 | 子文 | 2026-07-05 | [第1章：App逆向的全局视角](./mobile-app-reverse/anti-crawler-app-reverse-series/anti-crawler-app-20260705-01.md) | [反爬破解社 App 逆向章节合集](./mobile-app-reverse/anti-crawler-app-reverse-series.md) | 一、一条App请求的完整生命周期 / 1\. Activity / UI层 / 2\. Service / Presenter（业务层） / 3\. OkHttp / Retrofit（网络层） |
 | 子文 | 2026-07-06 | [第2章：环境搭建——工欲善其事必先利其器](./mobile-app-reverse/anti-crawler-app-reverse-series/anti-crawler-app-20260706-01.md) | [反爬破解社 App 逆向章节合集](./mobile-app-reverse/anti-crawler-app-reverse-series.md) | 一、模拟器 vs 真机：先做选择 / 二、模拟器环境搭建（雷电模拟器为主） / 2.1 模拟器选择 / 2.2 配置步骤（雷电模拟器为例） |
