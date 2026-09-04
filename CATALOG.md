@@ -8,16 +8,16 @@
 
 | 分类 | canonical | 子文章 | 合计 |
 |------|----------:|-------:|-----:|
-| `anti-detection` | 6 | 161 | 167 |
+| `anti-detection` | 8 | 169 | 177 |
 | `collection-engineering` | 3 | 0 | 3 |
-| `mobile-app-reverse` | 7 | 90 | 97 |
-| `native-analysis` | 2 | 0 | 2 |
+| `mobile-app-reverse` | 10 | 156 | 166 |
+| `native-analysis` | 3 | 12 | 15 |
 | `packing-bypass` | 2 | 0 | 2 |
 | `protocols` | 1 | 0 | 1 |
-| `signature-algorithms` | 1 | 0 | 1 |
+| `signature-algorithms` | 2 | 19 | 21 |
 | `web-reverse` | 8 | 89 | 97 |
 
-文章总数：370。
+文章总数：482。
 
 ## 逐篇目录
 
@@ -26,10 +26,12 @@
 | 类型 | 日期 | 文章 | 父合集 | 关键标题 |
 |------|------|------|--------|----------|
 | 主文 | 2026-07-05 | [51job 风控检测面分析 & bypass 对抗设计](./anti-detection/51job-anti-detection-analysis.md) | — | 目标 / 风控架构回顾 / 检测向量清单 & 对抗矩阵 / V1: Function.prototype.toString 检测 |
+| 主文 | 2026-08-30 | [安卓 ACE deviceUniqueId 设备拉黑机制](./anti-detection/android-ace-deviceuniqueid.md) | — | 适用范围 / 1. 硬锚点 / 2. KeyBox 与对外形态 / 3. 取样到上报 |
 | 主文 | 多篇合集 | [反爬破解社风控与反检测合集](./anti-detection/anti-crawler-risk-control-compilation.md) | — | 收录说明 / 文章目录（10 篇） |
 | 主文 | 多篇合集 | [本如笔记反爬与反检测实战合集](./anti-detection/benru-anti-detection-compilation.md) | — | 收录说明 / 文章目录（8 篇） |
 | 主文 | 2026-07-06 | [Chromium 指纹浏览器编译系列](./anti-detection/chromium-fingerprint-compilation.md) | — | 技术概览 / 指纹伪装维度 / 反检测绕过 / 爬虫增强 |
 | 主文 | 多篇合集 | [如意私塾浏览器指纹与反检测合集](./anti-detection/ruyi-browser-anti-detection-compilation.md) | — | 收录说明 / 文章目录（97 篇） |
+| 主文 | 多篇合集 | [逆向学习交流设备指纹与风控合集](./anti-detection/xfq-device-fp-compilation.md) | — | 收录说明 / 文章目录（8 篇） |
 | 主文 | 多篇合集 | [猿人学请求一致性与反检测合集](./anti-detection/yuanrenxue-anti-detection-compilation.md) | — | 收录说明 / 文章目录（8 篇） |
 | 子文 | 2026-04-08 | [浏览器指纹的深度伪装与检测：从UserAgent到WebGL的全面攻防](./anti-detection/anti-crawler-risk-control-compilation/anti-crawler-risk-20260408-01.md) | [反爬破解社风控与反检测合集](./anti-detection/anti-crawler-risk-control-compilation.md) | 一、什么是浏览器指纹？为何它难以对抗？ / 二、指纹的7个层级：从易到难 / 层级1：基础信息 - 最容易伪装 / 层级2：API特性检测 - 需要逻辑一致 |
 | 子文 | 2026-04-15 | [基于深度学习的行为指纹识别对抗](./anti-detection/anti-crawler-risk-control-compilation/anti-crawler-risk-20260415-01.md) | [反爬破解社风控与反检测合集](./anti-detection/anti-crawler-risk-control-compilation.md) | 一、为何传统Selenium/Puppeteer越来越不行？理解防御方的AI杀器 / 二、攻击蓝图：从数据采集到模型训练的完整武器库 / 阶段一：高保真人类行为数据采集 / 阶段二：训练“行为克隆”模型（制造我们的AI替身） |
@@ -184,6 +186,14 @@
 | 子文 | 2026-07-01 | [ruyiTrace秒杀JD环境数组](./anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260701-01.md) | [如意私塾浏览器指纹与反检测合集](./anti-detection/ruyi-browser-anti-detection-compilation.md) | 一、评估结论 / 二、最短时序图 / 三、目标请求证据 / 四、账号/Cookie 绑定 |
 | 子文 | 2026-07-02 | [完整实现魔改Firefox火狐浏览器一个浏览器一个图标序号](./anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260702-01.md) | [如意私塾浏览器指纹与反检测合集](./anti-detection/ruyi-browser-anti-detection-compilation.md) | 目标 / 核心结论 / 相关文件总览 / 文件 1：browser/base/content/browser-init.js |
 | 子文 | 2026-07-05 | [ruyiTrace攻克F5 Shape-西南航空](./anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260705-01.md) | [如意私塾浏览器指纹与反检测合集](./anti-detection/ruyi-browser-anti-detection-compilation.md) | — |
+| 子文 | 2026-03-25 | [android住宅ip配置与链式代理工具推荐](./anti-detection/xfq-device-fp-compilation/xfq-20260325-01.md) | [逆向学习交流设备指纹与风控合集](./anti-detection/xfq-device-fp-compilation.md) | 正文 |
+| 子文 | 2026-05-06 | [文章推荐：Softard公众号](./anti-detection/xfq-device-fp-compilation/xfq-20260506-01.md) | [逆向学习交流设备指纹与风控合集](./anti-detection/xfq-device-fp-compilation.md) | 正文 |
+| 子文 | 2026-05-12 | [分享几本风控相关的电子书](./anti-detection/xfq-device-fp-compilation/xfq-20260512-01.md) | [逆向学习交流设备指纹与风控合集](./anti-detection/xfq-device-fp-compilation.md) | 正文 |
+| 子文 | 2026-06-08 | [风控中的伪随机数（讲义）](./anti-detection/xfq-device-fp-compilation/xfq-20260608-01.md) | [逆向学习交流设备指纹与风控合集](./anti-detection/xfq-device-fp-compilation.md) | 正文 / 真实人类的高随机性 / 具体表现 / 补量难点: |
+| 子文 | 2026-06-14 | [星友提问，我对风控的一点理解](./anti-detection/xfq-device-fp-compilation/xfq-20260614-01.md) | [逆向学习交流设备指纹与风控合集](./anti-detection/xfq-device-fp-compilation.md) | 正文 / ❓ 问题 / 💡 回答 |
+| 子文 | 2026-07-15 | [今天发现群里有人问怎么找设备指纹的一些信息,焚诀来了！](./anti-detection/xfq-device-fp-compilation/xfq-20260715-01.md) | [逆向学习交流设备指纹与风控合集](./anti-detection/xfq-device-fp-compilation.md) | 正文 |
+| 子文 | 2026-08-09 | [推荐文章：设备指纹系列](./anti-detection/xfq-device-fp-compilation/xfq-20260809-01.md) | [逆向学习交流设备指纹与风控合集](./anti-detection/xfq-device-fp-compilation.md) | 正文 |
+| 子文 | 2026-08-31 | [怎么用py纯协议写出跟真实sdk一样的设备注册/事件埋点，然后批量起来然后爬虫？](./anti-detection/xfq-device-fp-compilation/xfq-20260831-01.md) | [逆向学习交流设备指纹与风控合集](./anti-detection/xfq-device-fp-compilation.md) | 正文 |
 | 子文 | 2017-04-07 | [「运维」Linux单台机器配置多IP的squid3 http代理](./anti-detection/yuanrenxue-anti-detection-compilation/yuanrenxue-anti-20170407-01.md) | [猿人学请求一致性与反检测合集](./anti-detection/yuanrenxue-anti-detection-compilation.md) | 配置多 IP 地址 / 配置 Squid 多出口 |
 | 子文 | 2018-10-01 | [Python爬虫使用浏览器的cookies：browsercookie](./anti-detection/yuanrenxue-anti-detection-compilation/yuanrenxue-anti-20181001-01.md) | [猿人学请求一致性与反检测合集](./anti-detection/yuanrenxue-anti-detection-compilation.md) | 安装 / 使用方法 / 支持 |
 | 子文 | 2018-12-06 | [爬虫小偏方：绕开登陆和访问频率控制](./anti-detection/yuanrenxue-anti-detection-compilation/yuanrenxue-anti-20181206-01.md) | [猿人学请求一致性与反检测合集](./anti-detection/yuanrenxue-anti-detection-compilation.md) | — |
@@ -211,6 +221,9 @@
 | 主文 | 2026-04-13 | [MTOP InnerSignImpl Frida RPC](./mobile-app-reverse/mtop-innersign-rpc.md) | — | 适用边界 / 工作流 / 观察优先级 / 常见坑 |
 | 主文 | 多篇合集 | [泡泡以安 Android 逆向技术合集](./mobile-app-reverse/paopao-android-reverse-compilation.md) | — | 收录说明 / 文章目录（67 篇） |
 | 主文 | 2026-09-03 | [App 纯协议 SDK 重建：从首次设备注册到可维护协议客户端](./mobile-app-reverse/pure-protocol-sdk-reconstruction.md) | — | 定位 / 总流程 / 1. 干净首次注册与 HAR 语料 / 1.1 刷到可复现的首次开机 |
+| 主文 | 多篇合集 | [逆向学习交流安卓实战案例合集](./mobile-app-reverse/xfq-android-cases-compilation.md) | — | 收录说明 / 文章目录（11 篇） |
+| 主文 | 多篇合集 | [逆向学习交流 AOSP 与 ROM 笔记合集](./mobile-app-reverse/xfq-aosp-rom-compilation.md) | — | 收录说明 / 文章目录（13 篇） |
+| 主文 | 多篇合集 | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | — | 收录说明 / 文章目录（42 篇） |
 | 主文 | 多篇合集 | [猿人学移动 App 逆向与抓包合集](./mobile-app-reverse/yuanrenxue-mobile-app-reverse-compilation.md) | — | 收录说明 / 文章目录（17 篇） |
 | 子文 | 2026-07-05 | [第1章：App逆向的全局视角](./mobile-app-reverse/anti-crawler-app-reverse-series/anti-crawler-app-20260705-01.md) | [反爬破解社 App 逆向章节合集](./mobile-app-reverse/anti-crawler-app-reverse-series.md) | 一、一条App请求的完整生命周期 / 1\. Activity / UI层 / 2\. Service / Presenter（业务层） / 3\. OkHttp / Retrofit（网络层） |
 | 子文 | 2026-07-06 | [第2章：环境搭建——工欲善其事必先利其器](./mobile-app-reverse/anti-crawler-app-reverse-series/anti-crawler-app-20260706-01.md) | [反爬破解社 App 逆向章节合集](./mobile-app-reverse/anti-crawler-app-reverse-series.md) | 一、模拟器 vs 真机：先做选择 / 二、模拟器环境搭建（雷电模拟器为主） / 2.1 模拟器选择 / 2.2 配置步骤（雷电模拟器为例） |
@@ -285,6 +298,72 @@
 | 子文 | 2026-06-29 | [Frida学习笔记（二十四）：Stalker 指令级追踪](./mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260629-01.md) | [泡泡以安 Android 逆向技术合集](./mobile-app-reverse/paopao-android-reverse-compilation.md) | 一、Stalker 概述 / 1.1 什么是 Stalker / 1.2 底层原理 / 1.3 支持架构 |
 | 子文 | 2026-07-07 | [Frida学习笔记（二十五）：签名校验绕过](./mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260707-01.md) | [泡泡以安 Android 逆向技术合集](./mobile-app-reverse/paopao-android-reverse-compilation.md) | 一、签名机制：为什么必须重签 / 1.1 一个字节改动，为什么就要重新签名 / 1.2 keystore 生成 + apksigner 用法 / 1.3 但是——安装能过 ≠ App 就认 |
 | 子文 | 2026-07-08 | [Frida学习笔记（二十六）：DEX 脱壳实战](./mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260708-01.md) | [泡泡以安 Android 逆向技术合集](./mobile-app-reverse/paopao-android-reverse-compilation.md) | 一、加固壳的本质：理解它在保护什么 / 1.1 为什么 jadx 看不到真正的代码 / 1.2 壳的工作流程 / 1.3 加固壳的代际演进 |
+| 子文 | 2025-09-22 | [xxss直聘13.160（讲义）](./mobile-app-reverse/xfq-android-cases-compilation/xfq-20250922-01.md) | [逆向学习交流安卓实战案例合集](./mobile-app-reverse/xfq-android-cases-compilation.md) | 正文 / 1.1. apk扫描 / 1.2. 重要信息 / 2.1. reqable抓包 |
+| 子文 | 2025-09-23 | [x恋爱 笔记（讲义）](./mobile-app-reverse/xfq-android-cases-compilation/xfq-20250923-01.md) | [逆向学习交流安卓实战案例合集](./mobile-app-reverse/xfq-android-cases-compilation.md) | 正文 / 想恋爱 / 分析流程 / 抓包分析登录请求 |
+| 子文 | 2025-10-23 | [小黑盒_1.3.368（讲义）](./mobile-app-reverse/xfq-android-cases-compilation/xfq-20251023-01.md) | [逆向学习交流安卓实战案例合集](./mobile-app-reverse/xfq-android-cases-compilation.md) | 正文 / 1.1. apk扫描 / 1.2. 重要信息 / 2.1. 发送手机验证码 |
+| 子文 | 2025-12-05 | [微博绿洲 纯算分析（讲义）](./mobile-app-reverse/xfq-android-cases-compilation/xfq-20251205-01.md) | [逆向学习交流安卓实战案例合集](./mobile-app-reverse/xfq-android-cases-compilation.md) | 正文 / 2.1. 解决无法F5问题 / 2.2. 继续逆向 / 2.3. 解决sub_F6DC 没定位到hash的问题 |
+| 子文 | 2025-12-06 | [16. 最右（讲义）](./mobile-app-reverse/xfq-android-cases-compilation/xfq-20251206-01.md) | [逆向学习交流安卓实战案例合集](./mobile-app-reverse/xfq-android-cases-compilation.md) | 正文 / 前言 / unidbg辅助 算法分析 / md5代码进行对应修改 |
+| 子文 | 2025-12-14 | [18. 小猿口算 (2)（讲义）](./mobile-app-reverse/xfq-android-cases-compilation/xfq-20251214-01.md) | [逆向学习交流安卓实战案例合集](./mobile-app-reverse/xfq-android-cases-compilation.md) | 正文 / 3.1. 先让ai分析一波 / 3.2. 继续分析 / 3.3. 时间字符串 |
+| 子文 | 2026-01-12 | [18_南银法巴消金（讲义）](./mobile-app-reverse/xfq-android-cases-compilation/xfq-20260112-01.md) | [逆向学习交流安卓实战案例合集](./mobile-app-reverse/xfq-android-cases-compilation.md) | 正文 / 1.1. apk扫描 / 1.2. 脱壳 / 1.3. 抓包分析 |
+| 子文 | 2026-03-11 | [趣头条签名分析（讲义）](./mobile-app-reverse/xfq-android-cases-compilation/xfq-20260311-01.md) | [逆向学习交流安卓实战案例合集](./mobile-app-reverse/xfq-android-cases-compilation.md) | 正文 / 3.1. 发现hash特征 / 3.2. 多角度 hook寻找hash输入 / 3.2.1. update内部使用transform |
+| 子文 | 2026-04-18 | [航班管家 ai还原 全过程（讲义）](./mobile-app-reverse/xfq-android-cases-compilation/xfq-20260418-01.md) | [逆向学习交流安卓实战案例合集](./mobile-app-reverse/xfq-android-cases-compilation.md) | 正文 / 1. 分析目标 🔝 / 2. 我是怎么发现的(完整过程) 🔝 / 3. 这个算法到底魔改了什么 🔝 |
+| 子文 | 2026-07-23 | [不同渠道apk/xapk/apks下载 汇总](./mobile-app-reverse/xfq-android-cases-compilation/xfq-20260723-01.md) | [逆向学习交流安卓实战案例合集](./mobile-app-reverse/xfq-android-cases-compilation.md) | 正文 |
+| 子文 | 2026-08-28 | [聊聊ks的白盒](./mobile-app-reverse/xfq-android-cases-compilation/xfq-20260828-01.md) | [逆向学习交流安卓实战案例合集](./mobile-app-reverse/xfq-android-cases-compilation.md) | 正文 |
+| 子文 | 2026-01-17 | [MoveCertificate 二改模块，更优雅地管理证书](./mobile-app-reverse/xfq-aosp-rom-compilation/xfq-20260117-01.md) | [逆向学习交流 AOSP 与 ROM 笔记合集](./mobile-app-reverse/xfq-aosp-rom-compilation.md) | 正文 |
+| 子文 | 2026-02-05 | [root管理器的 常用shell命令，下面以狐妖面具为例，请看截图](./mobile-app-reverse/xfq-aosp-rom-compilation/xfq-20260205-01.md) | [逆向学习交流 AOSP 与 ROM 笔记合集](./mobile-app-reverse/xfq-aosp-rom-compilation.md) | 正文 |
+| 子文 | 2026-06-13 | [Wi-Fi 网络验证优化](./mobile-app-reverse/xfq-aosp-rom-compilation/xfq-20260613-01.md) | [逆向学习交流 AOSP 与 ROM 笔记合集](./mobile-app-reverse/xfq-aosp-rom-compilation.md) | 正文 / 问题 / 根因 / Captive Portal 误报 |
+| 子文 | 2026-06-14 | [Pixel 7 AOSP 开发者默认项与亮度默认值](./mobile-app-reverse/xfq-aosp-rom-compilation/xfq-20260614-01.md) | [逆向学习交流 AOSP 与 ROM 笔记合集](./mobile-app-reverse/xfq-aosp-rom-compilation.md) | 正文 / 需求 / 本次导出的 patch / 主要代码改动 |
+| 子文 | 2026-06-14 | [XF ROM 内置 CA 证书基础设施](./mobile-app-reverse/xfq-aosp-rom-compilation/xfq-20260614-02.md) | [逆向学习交流 AOSP 与 ROM 笔记合集](./mobile-app-reverse/xfq-aosp-rom-compilation.md) | 正文 / 一、整体目标 / 二、Part 1：内嵌 Reqable CA（编译期） / system/ca-certificates/xf/ |
+| 子文 | 2026-06-18 | [xf-rom 日志基建（log-infra + log-v2）](./mobile-app-reverse/xfq-aosp-rom-compilation/xfq-20260618-01.md) | [逆向学习交流 AOSP 与 ROM 笔记合集](./mobile-app-reverse/xfq-aosp-rom-compilation.md) | 正文 / 一、功能目标 / 二、改动文件清单 / 三、核心代码 |
+| 子文 | 2026-06-24 | [2026-06-24 user build adb RSA policy](./mobile-app-reverse/xfq-aosp-rom-compilation/xfq-20260624-01.md) | [逆向学习交流 AOSP 与 ROM 笔记合集](./mobile-app-reverse/xfq-aosp-rom-compilation.md) | 正文 / 需求 / 根因 / 改动 |
+| 子文 | 2026-06-26 | [20260626 WebView Debug ROM 控制与 Chromium 内核方案](./mobile-app-reverse/xfq-aosp-rom-compilation/xfq-20260626-01.md) | [逆向学习交流 AOSP 与 ROM 笔记合集](./mobile-app-reverse/xfq-aosp-rom-compilation.md) | 正文 / 0. 结论先写清楚 / 1. 需求介绍 / 2. 背景调研 |
+| 子文 | 2026-06-26 | [APatch / KernelPatch 集成总览（唯一入口）](./mobile-app-reverse/xfq-aosp-rom-compilation/xfq-20260626-02.md) | [逆向学习交流 AOSP 与 ROM 笔记合集](./mobile-app-reverse/xfq-aosp-rom-compilation.md) | 正文 / 目标 / 当前仓库状态 / Pixel 7 patch 目标 |
+| 子文 | 2026-06-30 | [20260630 GMS preload suite](./mobile-app-reverse/xfq-aosp-rom-compilation/xfq-20260630-01.md) | [逆向学习交流 AOSP 与 ROM 笔记合集](./mobile-app-reverse/xfq-aosp-rom-compilation.md) | 正文 / 目标 / 需求介绍 / 调研结论 |
+| 子文 | 2026-07-02 | [20260702 Pixel Launcher 预置与默认 HOME/Recents 切换](./mobile-app-reverse/xfq-aosp-rom-compilation/xfq-20260702-01.md) | [逆向学习交流 AOSP 与 ROM 笔记合集](./mobile-app-reverse/xfq-aosp-rom-compilation.md) | 正文 / 0. 结论先写清楚 / 1. 目录约定 / 2. 从原厂镜像定位 Pixel Launcher |
+| 子文 | 2026-07-10 | [屏幕采集 / 投屏黑屏绕过总览](./mobile-app-reverse/xfq-aosp-rom-compilation/xfq-20260710-01.md) | [逆向学习交流 AOSP 与 ROM 笔记合集](./mobile-app-reverse/xfq-aosp-rom-compilation.md) | 正文 / 一句话结论 / 当前状态 / 入口与配置 |
+| 子文 | 2026-07-11 | [aosp魔改笔记：bypass投屏/录屏黑屏保护、伪装 scrcpy/adb 点击事件](./mobile-app-reverse/xfq-aosp-rom-compilation/xfq-20260711-01.md) | [逆向学习交流 AOSP 与 ROM 笔记合集](./mobile-app-reverse/xfq-aosp-rom-compilation.md) | 正文 |
+| 子文 | 2025-11-06 | [lsp 拦截 系统账号写入](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-20251106-01.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 |
+| 子文 | 2025-11-23 | [jadx优化: 真一键frida脚本](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-20251123-01.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 |
+| 子文 | 2025-12-04 | [ai辅助逆向（讲义）](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-20251204-01.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 / 1.1. 调整好的mcp配置文件 / 1.2. ida-mcp / 1.2.1. 已有mcp插件 + mcp配置 |
+| 子文 | 2025-12-05 | [stdstring 内存结构详解](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-20251205-01.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 / 1.1. Android逆向中的痛点 / 1.2. 正确解析的效果图 / 1.3. 错误解析示例 |
+| 子文 | 2025-12-18 | [trace_natives_plus](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-20251218-01.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 |
+| 子文 | 2025-12-22 | [frida-server经典报错 not a function](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-20251222-01.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 |
+| 子文 | 2026-01-05 | [常见 证书安装 方案 与 对应常见问题](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-20260105-01.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 |
+| 子文 | 2026-01-12 | [binary ninja的mcp配置](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-20260112-01.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 |
+| 子文 | 2026-01-15 | [安卓9以上 lsp中发http包](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-20260115-01.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 |
+| 子文 | 2026-02-16 | [静态住宅ip 代理配置教程](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-20260216-01.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 |
+| 子文 | 2026-03-09 | [bug：某些手机在特定fridaserver运行的时候会出现下列报错](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-20260309-01.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 |
+| 子文 | 2026-03-18 | [WORD到底几个字节？为啥IDA是2字节，别的是4字节？](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-20260318-01.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 |
+| 子文 | 2026-03-18 | [最近一些开源trace工具](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-20260318-02.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 |
+| 子文 | 2026-03-21 | [webview部分参考文章](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-20260321-01.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 |
+| 子文 | 2026-03-22 | [webview深度分析(一)（讲义）](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-20260322-01.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 / 1. WebView 基础概念与内核演进 🔝 / 2. 安卓正向开发:WebView 全景指南 🔝 / 3. 官方 Web App 调试方案 🔝 |
+| 子文 | 2026-03-24 | [FinClip小程序 的三进程保护](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-20260324-01.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 |
+| 子文 | 2026-03-24 | [三进程保护demo逆向](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-20260324-02.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 |
+| 子文 | 2026-03-29 | [改系统语言设置的两种方案](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-20260329-01.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 |
+| 子文 | 2026-03-31 | [记录几篇支付宝小程序逆向的文章](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-20260331-01.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 |
+| 子文 | 2026-04-11 | [优酷抓包 js 脚本](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-20260411-01.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 |
+| 子文 | 2026-05-27 | [ccswitch使用](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-20260527-01.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 |
+| 子文 | 2026-05-28 | [xfQtrace 真机trace工具：极致的使用体验与优化](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-20260528-01.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 |
+| 子文 | 2026-06-08 | [利用uiautomator全自动点击隐私同意按钮](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-20260608-01.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 / 一、为什么选它 / 二、uiautomator 到底提供了什么 / 三、真正的点击是怎么完成的 |
+| 子文 | 2026-06-17 | [P2-A：ART/bionic JNI 插装](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-20260617-01.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 / 一、功能目标 / 二、改动文件清单 / 三、各插装点实现细节 |
+| 子文 | 2026-06-20 | [Java 算法 Hook：libcore 采集 + ROMManager 日志页](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-20260620-01.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 / 一、功能目标 / 二、改动文件清单 / 2.1 libcore / framework / native 基础设施 |
+| 子文 | 2026-06-25 | [xfqtrace v2.0：快速/稳定/全面/隐藏](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-20260625-01.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 |
+| 子文 | 2026-07-08 | [xfqtrace 2.1 修一些稳定性bug](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-20260708-01.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 |
+| 子文 | 2026-07-09 | [aosp魔改笔记：组合拳 无痕抓包](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-20260709-01.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 |
+| 子文 | 2026-07-10 | [frida-gadget（讲义）](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-20260710-01.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 / 一、啥是 Frida Gadget? / 二、注入方案简单科普 / 三、Gadget 配置解析 |
+| 子文 | 2026-07-11 | [scrcpy常用命令](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-20260711-01.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 |
+| 子文 | 2026-07-12 | [Reqable MCP 配置](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-20260712-01.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 |
+| 子文 | 2026-07-30 | [技巧分享：协议设备注册链路与真实抓包对比怎么做更优雅？](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-20260730-01.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 |
+| 子文 | 2026-08-14 | [xfqtrace v2.2 初步bypass一些检测](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-20260814-01.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 |
+| 子文 | 2026-08-18 | [算法推理是啥意思？](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-20260818-01.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 |
+| 子文 | 未知 | [flatbuf 基本结构解析](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-undated-01.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 |
+| 子文 | 未知 | [gadget_trace](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-undated-02.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 |
+| 子文 | 未知 | [hook frida检测](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-undated-03.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 |
+| 子文 | 未知 | [从抓包到纯 Python：Kimi device_register 接口完整还原](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-undated-04.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 / 一、最终结论 / 二、先分清五层数据 / 三、从抓包判断协议结构 |
+| 子文 | 未知 | [你要注入的 JS 脚本内容](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-undated-05.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 |
+| 子文 | 未知 | [函数花指令.js](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-undated-06.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 |
+| 子文 | 未知 | [用 uiautomator 全自动点击隐私同意按钮](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-undated-07.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 / 一、为什么选它 / 二、uiautomator 到底提供了什么 / 三、真正的点击是怎么完成的 |
+| 子文 | 未知 | [逗号表达式.js](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-undated-08.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 |
 | 子文 | 2019-05-16 | [让你的爬虫无障碍抓取上千万需登录的APP数据](./mobile-app-reverse/yuanrenxue-mobile-app-reverse-compilation/yuanrenxue-app-20190516-01.md) | [猿人学移动 App 逆向与抓包合集](./mobile-app-reverse/yuanrenxue-mobile-app-reverse-compilation.md) | — |
 | 子文 | 2019-05-20 | [爬虫技巧：使用Charles和requests模拟微博登录](./mobile-app-reverse/yuanrenxue-mobile-app-reverse-compilation/yuanrenxue-app-20190520-01.md) | [猿人学移动 App 逆向与抓包合集](./mobile-app-reverse/yuanrenxue-mobile-app-reverse-compilation.md) | 1\. 用Charles记录整个登录过程 / 2\. 分析登录过程 |
 | 子文 | 2019-11-13 | [不还原token算法抓取APP最简单的Hook方法](./mobile-app-reverse/yuanrenxue-mobile-app-reverse-compilation/yuanrenxue-app-20191113-01.md) | [猿人学移动 App 逆向与抓包合集](./mobile-app-reverse/yuanrenxue-mobile-app-reverse-compilation.md) | — |
@@ -309,6 +388,19 @@
 |------|------|------|--------|----------|
 | 主文 | unknown | [AI 复杂 VM 算法还原](./native-analysis/ai-assisted-vmp-trace-recovery.md) | — | KEY16 和 repeating-key XOR / "Saw" 明文误判 / HKDF / HMAC-PRF 候选 / 五段 SHA 输出 |
 | 主文 | 2026-06-27 | [Qidian Native SO 分析与结论纠偏](./native-analysis/qidian-so-analysis.md) | — | 技术摘要 / 文件清单 / QDSign 结论纠偏 / 已撤销的旧判断 |
+| 主文 | 多篇合集 | [逆向学习交流 Unidbg 与 Native 合集](./native-analysis/xfq-unidbg-native-compilation.md) | — | 收录说明 / 文章目录（12 篇） |
+| 子文 | 2025-12-05 | [ai 自动化调试unidbg](./native-analysis/xfq-unidbg-native-compilation/xfq-20251205-01.md) | [逆向学习交流 Unidbg 与 Native 合集](./native-analysis/xfq-unidbg-native-compilation.md) | 正文 |
+| 子文 | 2025-12-18 | [无限debugger原因一](./native-analysis/xfq-unidbg-native-compilation/xfq-20251218-01.md) | [逆向学习交流 Unidbg 与 Native 合集](./native-analysis/xfq-unidbg-native-compilation.md) | 正文 |
+| 子文 | 2026-01-15 | [unidbg 更稳定的打调用栈](./native-analysis/xfq-unidbg-native-compilation/xfq-20260115-01.md) | [逆向学习交流 Unidbg 与 Native 合集](./native-analysis/xfq-unidbg-native-compilation.md) | 正文 |
+| 子文 | 2026-03-09 | [unidbg的内存读写bug](./native-analysis/xfq-unidbg-native-compilation/xfq-20260309-01.md) | [逆向学习交流 Unidbg 与 Native 合集](./native-analysis/xfq-unidbg-native-compilation.md) | 正文 |
+| 子文 | 2026-04-17 | [修复unidbg签名数组为空的问题](./native-analysis/xfq-unidbg-native-compilation/xfq-20260417-01.md) | [逆向学习交流 Unidbg 与 Native 合集](./native-analysis/xfq-unidbg-native-compilation.md) | 正文 |
+| 子文 | 2026-05-06 | [文章推荐：泡泡以安公众号的 unidbg教程](./native-analysis/xfq-unidbg-native-compilation/xfq-20260506-01.md) | [逆向学习交流 Unidbg 与 Native 合集](./native-analysis/xfq-unidbg-native-compilation.md) | 正文 |
+| 子文 | 2026-06-22 | [xfinject SO 注入基座集成与 Arsylk/jnilog 实测](./native-analysis/xfq-unidbg-native-compilation/xfq-20260622-01.md) | [逆向学习交流 Unidbg 与 Native 合集](./native-analysis/xfq-unidbg-native-compilation.md) | 正文 / 一、需求背景 / 二、设计边界 / 2.1 xfinject 和 jnilog 的 UI 语义分开 |
+| 子文 | 2026-06-24 | [aiso魔改笔记:内置so注入基座与jnilog实测](./native-analysis/xfq-unidbg-native-compilation/xfq-20260624-01.md) | [逆向学习交流 Unidbg 与 Native 合集](./native-analysis/xfq-unidbg-native-compilation.md) | 正文 |
+| 子文 | 2026-07-10 | [gadget注入xfqtrace实现trace](./native-analysis/xfq-unidbg-native-compilation/xfq-20260710-01.md) | [逆向学习交流 Unidbg 与 Native 合集](./native-analysis/xfq-unidbg-native-compilation.md) | 正文 |
+| 子文 | 未知 | [04-追doCommandNative参数](./native-analysis/xfq-unidbg-native-compilation/xfq-undated-01.md) | [逆向学习交流 Unidbg 与 Native 合集](./native-analysis/xfq-unidbg-native-compilation.md) | 正文 |
+| 子文 | 未知 | [HashFinder.java](./native-analysis/xfq-unidbg-native-compilation/xfq-undated-02.md) | [逆向学习交流 Unidbg 与 Native 合集](./native-analysis/xfq-unidbg-native-compilation.md) | 正文 |
+| 子文 | 未知 | [rand-srand](./native-analysis/xfq-unidbg-native-compilation/xfq-undated-03.md) | [逆向学习交流 Unidbg 与 Native 合集](./native-analysis/xfq-unidbg-native-compilation.md) | 正文 |
 
 ### `packing-bypass`
 
@@ -328,6 +420,26 @@
 | 类型 | 日期 | 文章 | 父合集 | 关键标题 |
 |------|------|------|--------|----------|
 | 主文 | 2026-06-27 | [Qidian 请求签名与 Fock SDK 结论更新](./signature-algorithms/qidian-fock-signature.md) | — | 技术摘要 / 请求注入结构 / QDSign 已验证算法 / 字段与加密 |
+| 主文 | 多篇合集 | [逆向学习交流密码算法笔记合集](./signature-algorithms/xfq-crypto-notes-compilation.md) | — | 收录说明 / 文章目录（19 篇） |
+| 子文 | 2025-11-29 | [DES / 3DES 实现讲义](./signature-algorithms/xfq-crypto-notes-compilation/xfq-20251129-01.md) | [逆向学习交流密码算法笔记合集](./signature-algorithms/xfq-crypto-notes-compilation.md) | 正文 / 1. 密钥编排 / 1.1 密钥初始化置换 (PC-1) / 1.2 生成16轮子密钥 |
+| 子文 | 2025-12-03 | [AES 分组密码实现讲义](./signature-algorithms/xfq-crypto-notes-compilation/xfq-20251203-01.md) | [逆向学习交流密码算法笔记合集](./signature-algorithms/xfq-crypto-notes-compilation.md) | 正文 / 1.1. 密钥扩展 (Key Expansion) / 1.1.1. 密钥扩展流程 / 1.1.2. 轮密钥生成公式 |
+| 子文 | 2025-12-17 | [Blowfish 实现讲义](./signature-algorithms/xfq-crypto-notes-compilation/xfq-20251217-01.md) | [逆向学习交流密码算法笔记合集](./signature-algorithms/xfq-crypto-notes-compilation.md) | 正文 / 算法参数 / 1. 密钥扩展 / 1.1 初始化 P-array 和 S-box |
+| 子文 | 2026-02-13 | [Twofish 实现讲义](./signature-algorithms/xfq-crypto-notes-compilation/xfq-20260213-01.md) | [逆向学习交流密码算法笔记合集](./signature-algorithms/xfq-crypto-notes-compilation.md) | 正文 / 算法参数 / 1. 密钥扩展 / 2. PKCS#7 填充 |
+| 子文 | 2026-02-16 | [salsa20流密码实现（讲义）](./signature-algorithms/xfq-crypto-notes-compilation/xfq-20260216-01.md) | [逆向学习交流密码算法笔记合集](./signature-algorithms/xfq-crypto-notes-compilation.md) | 正文 / 算法背景 / 测试数据 / 1. 状态矩阵初始化 |
+| 子文 | 2026-02-16 | [流密码总结与rc4实现（讲义）](./signature-algorithms/xfq-crypto-notes-compilation/xfq-20260216-02.md) | [逆向学习交流密码算法笔记合集](./signature-algorithms/xfq-crypto-notes-compilation.md) | 正文 / 1.1 什么是流密码? / 1.2 流密码的核心思想 / 1.3 流密码与一次性密码本(OTP) |
+| 子文 | 2026-02-24 | [chacha20流密码实现（讲义）](./signature-algorithms/xfq-crypto-notes-compilation/xfq-20260224-01.md) | [逆向学习交流密码算法笔记合集](./signature-algorithms/xfq-crypto-notes-compilation.md) | 正文 / 算法背景 / 测试数据 / 1. 状态矩阵初始化 |
+| 子文 | 2026-02-24 | [rabbit流密码算法实现（讲义）](./signature-algorithms/xfq-crypto-notes-compilation/xfq-20260224-02.md) | [逆向学习交流密码算法笔记合集](./signature-algorithms/xfq-crypto-notes-compilation.md) | 正文 / 算法背景 / 测试数据 / 1. 密钥初始化 |
+| 子文 | 2026-03-18 | [ctr流密码模式实现（讲义）](./signature-algorithms/xfq-crypto-notes-compilation/xfq-20260318-01.md) | [逆向学习交流密码算法笔记合集](./signature-algorithms/xfq-crypto-notes-compilation.md) | 正文 / 1. 什么是 CTR 模式?它解决了什么痛点? 🔝 / 2. CTR 模式的核心结构:彻底搞懂 Nonce、Counter 与 IV 🔝 / 3. 代码测试数据 🔝 |
+| 子文 | 2026-03-18 | [gcm认证模式实现（讲义）](./signature-algorithms/xfq-crypto-notes-compilation/xfq-20260318-02.md) | [逆向学习交流密码算法笔记合集](./signature-algorithms/xfq-crypto-notes-compilation.md) | 正文 / 0. 前置:常见加密工作模式大盘点 🔝 / 1. GCM 解决了什么问题? 🔝 / 2. GCM 的完整流程 🔝 |
+| 子文 | 2026-04-14 | [shein的random参数魔改md5分析](./signature-algorithms/xfq-crypto-notes-compilation/xfq-20260414-01.md) | [逆向学习交流密码算法笔记合集](./signature-algorithms/xfq-crypto-notes-compilation.md) | 正文 |
+| 子文 | 2026-04-16 | [MD5 核心详解讲义](./signature-algorithms/xfq-crypto-notes-compilation/xfq-20260416-01.md) | [逆向学习交流密码算法笔记合集](./signature-algorithms/xfq-crypto-notes-compilation.md) | 正文 / 明文填充(Padding) 🔝 / 初始寄存器(ABCD) 🔝 / 64轮压缩流程 🔝 |
+| 子文 | 2026-04-17 | [SHA1 原理与实现讲义](./signature-algorithms/xfq-crypto-notes-compilation/xfq-20260417-01.md) | [逆向学习交流密码算法笔记合集](./signature-algorithms/xfq-crypto-notes-compilation.md) | 正文 / 来一份标准数据 🔝 / 先记住 SHA-1 的整体结构 🔝 / 明文填充 🔝 |
+| 子文 | 2026-04-17 | [mfw_trace_sha1_学习笔记](./signature-algorithms/xfq-crypto-notes-compilation/xfq-20260417-02.md) | [逆向学习交流密码算法笔记合集](./signature-algorithms/xfq-crypto-notes-compilation.md) | 正文 |
+| 子文 | 2026-04-19 | [unidbg插件-哈希-明文扫描](./signature-algorithms/xfq-crypto-notes-compilation/xfq-20260419-01.md) | [逆向学习交流密码算法笔记合集](./signature-algorithms/xfq-crypto-notes-compilation.md) | 正文 |
+| 子文 | 2026-04-24 | [菠萝包 轻小说 trace算法还原](./signature-algorithms/xfq-crypto-notes-compilation/xfq-20260424-01.md) | [逆向学习交流密码算法笔记合集](./signature-algorithms/xfq-crypto-notes-compilation.md) | 正文 |
+| 子文 | 2026-05-08 | [xtime是个啥意思？](./signature-algorithms/xfq-crypto-notes-compilation/xfq-20260508-01.md) | [逆向学习交流密码算法笔记合集](./signature-algorithms/xfq-crypto-notes-compilation.md) | 正文 |
+| 子文 | 2026-06-22 | [Java Crypto Hook UI 重设计](./signature-algorithms/xfq-crypto-notes-compilation/xfq-20260622-01.md) | [逆向学习交流密码算法笔记合集](./signature-algorithms/xfq-crypto-notes-compilation.md) | 正文 / 目标 / 新交互 / 开关模型 |
+| 子文 | 未知 | [mt19937伪随机.py](./signature-algorithms/xfq-crypto-notes-compilation/xfq-undated-01.md) | [逆向学习交流密码算法笔记合集](./signature-algorithms/xfq-crypto-notes-compilation.md) | 正文 |
 
 ### `web-reverse`
 
