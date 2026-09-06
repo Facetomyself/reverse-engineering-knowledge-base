@@ -5,19 +5,21 @@
 > 归档日期: 2026-09-04
 > 分类: mobile-app-reverse
 >
-> 快手白盒/NS_sig3、小黑盒 hkey、马蜂窝魔改 SHA1、AppsFlyer、安居客 nsign、趣头条等 App 签名与 unidbg 补环境案例。保留算法定位和复现路径，隐去附件与未脱敏抓包原文。
+> 快手白盒/NS_sig3、小黑盒 hkey、马蜂窝魔改 SHA1、AppsFlyer、安居客 nsign、陌陌 x-sign、趣头条等 App 签名与 unidbg 补环境案例。保留算法定位、hook 点和复现路径，隐去附件、设备字段与可直接跑的过检测脚本。
 
 ## 收录说明
 
 本合集只吸收具有逆向工程复用价值的技术稿。星球导航、评论头像、二维码、号池/续杯、破解版软件、附件 zip/PDF 与业务爬取脚本未纳入。
 
-## 文章目录（13 篇）
+## 文章目录（15 篇）
 
 | 日期 | 文章 |
 |------|------|
 | 2025-09-22 | [xxss直聘13.160（讲义）](xfq-android-cases-compilation/xfq-20250922-01.md) |
 | 2025-09-23 | [x恋爱 笔记（讲义）](xfq-android-cases-compilation/xfq-20250923-01.md) |
 | 2025-10-23 | [小黑盒_1.3.368（讲义）](xfq-android-cases-compilation/xfq-20251023-01.md) |
+| 2025-11 | [陌陌 x-sign 第一参 AES-CBC](xfq-android-cases-compilation/momo-x-sign-aes.md) |
+| 2025-11 | [马蜂窝 xPreAuthencode hook 窗口](xfq-android-cases-compilation/mafengwo-xpreauthencode-hook.md) |
 | 2025-11-22 | [安居客 17.28.1 nsign](xfq-android-cases-compilation/xfq-20251122-01.md) |
 | 2025-12-05 | [微博绿洲 纯算分析（讲义）](xfq-android-cases-compilation/xfq-20251205-01.md) |
 | 2025-12-06 | [16. 最右（讲义）](xfq-android-cases-compilation/xfq-20251206-01.md) |

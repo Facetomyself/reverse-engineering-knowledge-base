@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "article_count": 549,
+  "article_count": 556,
   "category_counts": {
     "anti-detection": 177,
     "collection-engineering": 4,
-    "mobile-app-reverse": 189,
+    "mobile-app-reverse": 196,
     "native-analysis": 15,
     "packing-bypass": 2,
     "protocols": 1,
@@ -8892,9 +8892,9 @@
         "udid",
         "边界"
       ],
-      "bytes": 2456,
+      "bytes": 2647,
       "lines": 45,
-      "content_sha256": "766a3437cf141d39b77de943060f865c551e1a15e7aa620bf53c4488e35443fb"
+      "content_sha256": "e3adc6f4ffc9ae1b5e82d0b513f1f6f44ca3eeb285c93adb0780cf5194aecb24"
     },
     {
       "path": "mobile-app-reverse/reversenotes-android-compilation/ewt360-aes-md5.md",
@@ -8939,6 +8939,118 @@
       "bytes": 2451,
       "lines": 63,
       "content_sha256": "81890645f64cc0d2586392c6be1714b801b42abf2b24ac1159011c6bf04d9486"
+    },
+    {
+      "path": "mobile-app-reverse/sdk-purecalc-compilation.md",
+      "kind": "canonical",
+      "category": "mobile-app-reverse",
+      "parent": null,
+      "title": "App SDK 纯算落盘：顶象 / 数美 / Qimei / wtoken",
+      "source": "workspace 吸收 `storage/sdk-storage`（已删原件）",
+      "original_date": "2026-08 至 2026-09 源码落盘",
+      "archive_date": "2026-09-06",
+      "summary": "四份已落到 workspace/ 的纯协议实现：海南航空 DXRisk riskToken 签发、小星空数美 deviceprofile/v4、腾讯 Qimei REGISTER、今彩萍乡 wtoken。本文只保留封装链和字段生命周期。密钥、真实画像、identity 和可直接打生产的脚本留在各 workspace source/。",
+      "keywords": [
+        "DXRisk",
+        "riskToken",
+        "数美",
+        "deviceprofile/v4",
+        "Qimei",
+        "snowflake",
+        "wtoken",
+        "XXTEA",
+        "纯协议"
+      ],
+      "headings": [
+        "收录说明",
+        "文章目录"
+      ],
+      "bytes": 1885,
+      "lines": 36,
+      "content_sha256": "ede1c75245e92d742be4e80ca51748e5ad0c30195f5f881cbc1a6ac51d250bd7"
+    },
+    {
+      "path": "mobile-app-reverse/sdk-purecalc-compilation/hnair-dingxiang-risktoken.md",
+      "kind": "nested",
+      "category": "mobile-app-reverse",
+      "parent": "mobile-app-reverse/sdk-purecalc-compilation.md",
+      "title": "顶象 DXRisk：riskToken 是签发请求不是本地拼串",
+      "source": "workspace/hnair-dingxiang-risktoken",
+      "original_date": "2026-08-14 源码",
+      "archive_date": "2026-09-06",
+      "summary": "海南航空 Android 接入顶象 DXRisk。客户端构造 /udid/m1 签发请求，token 在响应里。不收录 appKey、XXTEA key 和 189 项真实画像。",
+      "keywords": [],
+      "headings": [
+        "结论",
+        "ZIP 约束",
+        "画像",
+        "边界"
+      ],
+      "bytes": 1453,
+      "lines": 40,
+      "content_sha256": "c5f3df694f6e2bace5ce18698e0c081608674e54f74109ca4dfa72a33b36002a"
+    },
+    {
+      "path": "mobile-app-reverse/sdk-purecalc-compilation/jincai-pingxiang-wtoken.md",
+      "kind": "nested",
+      "category": "mobile-app-reverse",
+      "parent": "mobile-app-reverse/sdk-purecalc-compilation.md",
+      "title": "今彩萍乡 wtoken：0003_ 头 + 274 字节 blob",
+      "source": "workspace/jincai-pingxiang-wtoken",
+      "original_date": "源码落盘",
+      "archive_date": "2026-09-06",
+      "summary": "WTokenPure.vmpSign 生成带固定前后缀的 token。AES/HMAC 密钥、签名 MD5 和自测 token 不进本文。",
+      "keywords": [],
+      "headings": [
+        "格式",
+        "摘要链（形状）",
+        "边界"
+      ],
+      "bytes": 1134,
+      "lines": 34,
+      "content_sha256": "a63ecb32364bbedac3ebfaa3f158521dcc12941b8bf4284c76ebe950ad0b24fe"
+    },
+    {
+      "path": "mobile-app-reverse/sdk-purecalc-compilation/tencent-qimei-register.md",
+      "kind": "nested",
+      "category": "mobile-app-reverse",
+      "parent": "mobile-app-reverse/sdk-purecalc-compilation.md",
+      "title": "腾讯 Qimei REGISTER：route15 之后才是 ky/pms/sn",
+      "source": "workspace/tencent-qimei-pure",
+      "original_date": "2026-08-10 源码",
+      "archive_date": "2026-09-06",
+      "summary": "应用宝风控设备标识的纯协议 REGISTER。无 JAR、无 Frida、无执行 so。不收录 appKey、静态 AES、RSA 公钥、identity 和 zip 口令。",
+      "keywords": [],
+      "headings": [
+        "流程",
+        "外层加密（形状）",
+        "JCE 边界",
+        "边界"
+      ],
+      "bytes": 1725,
+      "lines": 45,
+      "content_sha256": "8e079027db1e0c63b8450d21edfffcc77d63c882d23aa23060bee4c33937aff0"
+    },
+    {
+      "path": "mobile-app-reverse/sdk-purecalc-compilation/xiaoxingkong-shumei-dpv4.md",
+      "kind": "nested",
+      "category": "mobile-app-reverse",
+      "parent": "mobile-app-reverse/sdk-purecalc-compilation.md",
+      "title": "数美 deviceprofile/v4：AES key 是 hexdigest 不是 raw MD5",
+      "source": "workspace/xiaoxingkong-shumei-dpv4",
+      "original_date": "2026-08-13 源码",
+      "archive_date": "2026-09-06",
+      "summary": "小星空启动时的数美 POST /deviceprofile/v4。四层模型：App 接入、Java a* 画像、Native 封装、HTTP。不收录 organization/appId、证书 PEM 和 Pixel 6 原值。",
+      "keywords": [],
+      "headings": [
+        "四层",
+        "外层字段",
+        "生命周期",
+        "边界"
+      ],
+      "bytes": 1735,
+      "lines": 50,
+      "content_sha256": "f9057003f34f567fe05694fc71f413c60e621a718bd68aedae023fc8bbca6938"
     },
     {
       "path": "mobile-app-reverse/softard-android-reverse-compilation.md",
@@ -9341,7 +9453,7 @@
       "source": "知识星球：逆向学习交流",
       "original_date": "多篇合集",
       "archive_date": "2026-09-04",
-      "summary": "快手白盒/NS_sig3、小黑盒 hkey、马蜂窝魔改 SHA1、AppsFlyer、安居客 nsign、趣头条等 App 签名与 unidbg 补环境案例。保留算法定位和复现路径，隐去附件与未脱敏抓包原文。",
+      "summary": "快手白盒/NS_sig3、小黑盒 hkey、马蜂窝魔改 SHA1、AppsFlyer、安居客 nsign、陌陌 x-sign、趣头条等 App 签名与 unidbg 补环境案例。保留算法定位、hook 点和复现路径，隐去附件、设备字段与可直接跑的过检测脚本。",
       "keywords": [
         "Unidbg",
         "NS_sig3",
@@ -9350,16 +9462,62 @@
         "趣头条",
         "AppsFlyer",
         "安居客 nsign",
+        "陌陌 x-sign",
         "纯算",
         "signature"
       ],
       "headings": [
         "收录说明",
-        "文章目录（13 篇）"
+        "文章目录（15 篇）"
       ],
-      "bytes": 1986,
-      "lines": 30,
-      "content_sha256": "321a981ba3adc3c6f3347c76d51b93c1a2460ac31e85b12f3ef4233251a2a3b5"
+      "bytes": 2251,
+      "lines": 32,
+      "content_sha256": "570367175665e8a3efa260c64ea554b086618c7516a28b8c3f3491a86baaae82"
+    },
+    {
+      "path": "mobile-app-reverse/xfq-android-cases-compilation/mafengwo-xpreauthencode-hook.md",
+      "kind": "nested",
+      "category": "mobile-app-reverse",
+      "parent": "mobile-app-reverse/xfq-android-cases-compilation.md",
+      "title": "马蜂窝 zzzghostsigh：xPreAuthencode hook 窗口",
+      "source": "知识星球：逆向学习交流（安居客/陌陌/马蜂窝附件笔记）",
+      "original_date": "附件笔记（随 2025 安卓案例索引）",
+      "archive_date": "2026-09-06",
+      "summary": "zzzghostsigh 的 Java 入口是 AuthorizeHelper.xPreAuthencode。动态注册在 libmfw.so。入参是 OAuth 风格 canonical 串加包名，出参 40 hex。魔改 SHA1 本身已在签名算法分类闭合，本篇只补 hook 点、JNI 签名和 unidbg 观察窗口。不收录未脱敏 query、设备字段和「改返回值跳过验签」的脚本。",
+      "keywords": [],
+      "headings": [
+        "收录说明",
+        "案例边界",
+        "Hook 窗口（只记点，不贴脚本）",
+        "unidbg 观察（不是绕过步骤）",
+        "边界"
+      ],
+      "bytes": 3176,
+      "lines": 63,
+      "content_sha256": "27e81e53a5003c4d965427a6e23974b5f50ddfb0c97f12eaa4c46587fc6b3b2b"
+    },
+    {
+      "path": "mobile-app-reverse/xfq-android-cases-compilation/momo-x-sign-aes.md",
+      "kind": "nested",
+      "category": "mobile-app-reverse",
+      "parent": "mobile-app-reverse/xfq-android-cases-compilation.md",
+      "title": "陌陌 x-sign 第一参：AES-CBC 与 SHA1 拼接",
+      "source": "知识星球：逆向学习交流（安居客/陌陌/马蜂窝附件笔记）",
+      "original_date": "附件笔记（随 2025 安卓案例索引）",
+      "archive_date": "2026-09-06",
+      "summary": "陌陌 x-sign 的第一参不是整包自定义算法。Java 入口 com.immomo.momoenc.e.a 先把一段 JSON 明文送进 Coded.aesEncode，底层落到 libcoded.so → libmmcrypto.so 的 AES-128-CBC；密文再 Base64。x-sign 本体另走标准 SHA1（明文后拼 8 字节）。本篇只记 hook 点、缓冲区形状和派生规则。不收录设备 JSON、主动调用字节数组和可直接跑的 invoke 脚本。",
+      "keywords": [],
+      "headings": [
+        "收录说明",
+        "案例边界",
+        "Hook 窗口（只记点，不贴脚本）",
+        "派生规则",
+        "x-sign 本体与 map_id",
+        "边界"
+      ],
+      "bytes": 3870,
+      "lines": 73,
+      "content_sha256": "45bc03d456493d2cb39b41892afaee8224f6859c7247b42e607dc518ada97a37"
     },
     {
       "path": "mobile-app-reverse/xfq-android-cases-compilation/xfq-20250922-01.md",
@@ -9458,21 +9616,23 @@
       "source": "知识星球：逆向学习交流",
       "original_date": "2025-11-22",
       "archive_date": "2026-09-06",
-      "summary": "安居客 com.anjuke.android.app 17.28.1 的 nsign 在 libsignutil.so 静态注册的 SignUtil.getSign0。输出 56 字符：固定 1000 + 改写后的 32 位 MD5 + 12 位长度/计数 nibble + str3 UUID 前 8 位。MD5 是标准压缩函数，只改写 digest[0] 指向的那一字节。附件 hook 脚本、未脱敏 deviceId 与 zip 未收录。",
+      "summary": "安居客 com.anjuke.android.app 17.28.1 的 nsign 在 libsignutil.so 静态注册的 SignUtil.getSign0。输出 56 字符：固定 1000 + 改写后的 32 位 MD5 + 12 位长度/计数 nibble + str3 UUID 前 8 位。MD5 是标准压缩函数，只改写 digest[0] 指向的那一字节。本篇补 Java/Native hook 点与参数形状；RVA 按当前 SO 重核。不收录设备字段、抓包原文和可直接跑的过检测脚本。",
       "keywords": [],
       "headings": [
         "收录说明",
         "案例边界",
+        "Hook 窗口（只记点，不贴脚本）",
         "四段结构",
         "1. 前缀 1000",
         "2. 标准 MD5 后改一位",
         "3. 12 位 nibble",
         "4. UUID 前 8 位",
+        "MSA 观察窗口（不是绕过步骤）",
         "边界"
       ],
-      "bytes": 2564,
-      "lines": 68,
-      "content_sha256": "db5e61482bbbe07961252d2c5af785253c3dfa0324947f0c20a4fa2aa2c9245d"
+      "bytes": 4575,
+      "lines": 98,
+      "content_sha256": "2f333518da39d221b7ed874ef36ed60cf7557ff80679df7b40edaa3900fd3079"
     },
     {
       "path": "mobile-app-reverse/xfq-android-cases-compilation/xfq-20251205-01.md",

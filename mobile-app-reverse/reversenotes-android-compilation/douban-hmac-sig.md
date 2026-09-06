@@ -23,7 +23,7 @@
 - 先确认闪退是否对齐某个 SO 的 leave 缺失
 - 再决定换低版本对照，还是只做静态/低版本 hook
 
-不要把「换 7.0.1」写成 7.98.0 已过检测。
+不要把「换 7.0.1」写成 7.98.0 已过检测。安居客 17.28.1 同族观察窗口（`call_constructors` + `pthread_create` RVA）见 [安居客 nsign](../xfq-android-cases-compilation/xfq-20251122-01.md)，同样不收录替换脚本。
 
 ## sig
 
