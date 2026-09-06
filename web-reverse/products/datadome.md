@@ -60,3 +60,7 @@ captcha 滑块链：
 
 - interstitial 返回 `view:"redirect"` 或 captcha/check 返回 `datadome` Cookie 只是保护链中间口径
 - 最终成功口径：带返回的 `datadome` Cookie 请求原页面或原业务接口，不再返回 DataDome challenge，返回正常业务内容
+
+## 延伸
+
+无感 interstitial 的 jsdom/vm 补环境、iframe Realm、Worker/OffscreenCanvas 与 VM 第一处分叉，见 [DataDome 无感验证补环境](../datadome-env-patch.md)。产品索引只负责命中与观察优先级，不替代该文的执行细节。

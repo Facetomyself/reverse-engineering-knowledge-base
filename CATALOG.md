@@ -10,14 +10,14 @@
 |------|----------:|-------:|-----:|
 | `anti-detection` | 8 | 169 | 177 |
 | `collection-engineering` | 3 | 0 | 3 |
-| `mobile-app-reverse` | 10 | 156 | 166 |
+| `mobile-app-reverse` | 11 | 156 | 167 |
 | `native-analysis` | 3 | 12 | 15 |
 | `packing-bypass` | 2 | 0 | 2 |
 | `protocols` | 1 | 0 | 1 |
 | `signature-algorithms` | 2 | 19 | 21 |
-| `web-reverse` | 8 | 89 | 97 |
+| `web-reverse` | 11 | 126 | 137 |
 
-文章总数：482。
+文章总数：523。
 
 ## 逐篇目录
 
@@ -218,6 +218,7 @@
 | 主文 | 多篇合集 | [反爬破解社 App 逆向章节合集](./mobile-app-reverse/anti-crawler-app-reverse-series.md) | — | 收录说明 / 文章目录（6 篇） |
 | 主文 | 2026-07-06 | [App 逆向环境搭建](./mobile-app-reverse/app-reverse-environment-setup.md) | — | 模拟器 vs 真机 / 模拟器环境搭建 / 模拟器选择 / 雷电模拟器配置步骤 |
 | 主文 | 2026-07-05 | [App 逆向的全局视角](./mobile-app-reverse/app-reverse-global-map.md) | — | 一条 App 请求的完整生命周期 / 1. Activity / UI 层 / 2. Service / Presenter 业务层 / 3. OkHttp / Retrofit 网络层 |
+| 主文 | unknown | [从抓包到纯 Python：Kimi device_register 与 ttEncrypt 还原](./mobile-app-reverse/kimi-device-register-ttencrypt.md) | — | 正文 / 一、最终结论 / 二、先分清五层数据 / 三、从抓包判断协议结构 |
 | 主文 | 2026-04-13 | [MTOP InnerSignImpl Frida RPC](./mobile-app-reverse/mtop-innersign-rpc.md) | — | 适用边界 / 工作流 / 观察优先级 / 常见坑 |
 | 主文 | 多篇合集 | [泡泡以安 Android 逆向技术合集](./mobile-app-reverse/paopao-android-reverse-compilation.md) | — | 收录说明 / 文章目录（67 篇） |
 | 主文 | 2026-09-03 | [App 纯协议 SDK 重建：从首次设备注册到可维护协议客户端](./mobile-app-reverse/pure-protocol-sdk-reconstruction.md) | — | 定位 / 总流程 / 1. 干净首次注册与 HAR 语料 / 1.1 刷到可复现的首次开机 |
@@ -446,13 +447,36 @@
 | 类型 | 日期 | 文章 | 父合集 | 关键标题 |
 |------|------|------|--------|----------|
 | 主文 | 2026-07-03 | [51job Webpack 模块自吐分析](./web-reverse/51job-webpack-analysis.md) | — | 基本信息 / Webpack 架构 / 关键模块识别 / 加密 / 签名 |
+| 主文 | 多篇合集 | [AI辅助逆向手记 Web 逆向合集](./web-reverse/ai-assisted-web-reverse-compilation.md) | — | 收录说明 / 文章目录（20 篇） |
 | 主文 | 多篇合集 | [反爬破解社 Web 逆向实战合集](./web-reverse/anti-crawler-web-reverse-compilation.md) | — | 收录说明 / 文章目录（16 篇） |
 | 主文 | 多篇合集 | [本如笔记 Web 逆向与协议恢复合集](./web-reverse/benru-web-reverse-compilation.md) | — | 收录说明 / 文章目录（12 篇） |
 | 主文 | 多篇合集 | [Web 补环境浏览器对象参考](./web-reverse/browser-env-objects.md) | — | 用途 / 补环境纪律 / 对象一览 / 使用边界 |
+| 主文 | unknown | [DataDome 无感验证补环境](./web-reverse/datadome-env-patch.md) | — | 正文 / 前言 / 目标网站 / 抓包分析 |
+| 主文 | 多篇合集 | [零基础爬虫第一天 逆向笔记合集](./web-reverse/koohai-reverse-notes-compilation.md) | — | 收录说明 / 文章目录（17 篇） |
 | 主文 | 多篇合集 | [Web 安全产品强制命中索引](./web-reverse/products.md) | — | 用途 / 强制命中纪律 / 产品一览 / 使用边界 |
 | 主文 | 2026-08-30 | [平台签名落地方法：纯算、黑盒与 RPC 分流](./web-reverse/sign-landing-methods.md) | — | 落地四分法 / 产品切开，失败不要单归因 / 可复用方法 / 1. VMP 先钩宿主原语 |
 | 主文 | 2026-08-24 | [未上架 MV3 扩展的本机更新器架构](./web-reverse/unpacked-mv3-native-updater.md) | — | 这篇解决什么问题 / 五层模型 / 渠道面：版本清单与 zip / 本机更新面：绿色 EXE |
 | 主文 | 多篇合集 | [猿人学 Web 与 JavaScript 逆向合集](./web-reverse/yuanrenxue-web-reverse-compilation.md) | — | 收录说明 / 文章目录（7 篇） |
+| 子文 | 2026-07-27 | [md51038逆向记录](./web-reverse/ai-assisted-web-reverse-compilation/ai-assisted-20260727-01.md) | [AI辅助逆向手记 Web 逆向合集](./web-reverse/ai-assisted-web-reverse-compilation.md) | 正文 / 环境 / 工具:vmtrace / 第一次误判:当成国密签名算法 |
+| 子文 | 2026-07-28 | [X-Gnarly升级到5.3.0](./web-reverse/ai-assisted-web-reverse-compilation/ai-assisted-20260728-01.md) | [AI辅助逆向手记 Web 逆向合集](./web-reverse/ai-assisted-web-reverse-compilation.md) | 正文 / 环境 / 工具:vmtrace / 加密流程 |
+| 子文 | 2026-07-29 | [某东 h5st v5.3逆向复现](./web-reverse/ai-assisted-web-reverse-compilation/ai-assisted-20260729-01.md) | [AI辅助逆向手记 Web 逆向合集](./web-reverse/ai-assisted-web-reverse-compilation.md) | 正文 / 环境 / 加密流程 / 整体结构 |
+| 子文 | 2026-07-30 | [yuanrenxue match10 m签名逆向复现](./web-reverse/ai-assisted-web-reverse-compilation/ai-assisted-20260730-01.md) | [AI辅助逆向手记 Web 逆向合集](./web-reverse/ai-assisted-web-reverse-compilation.md) | 正文 / 环境 / 工具:vmtrace / 站点的反调试与反重放 |
+| 子文 | 2026-07-31 | [fangdi rs6 P-cookie逆向:从412挑战到离线签名的完整链路](./web-reverse/ai-assisted-web-reverse-compilation/ai-assisted-20260731-01.md) | [AI辅助逆向手记 Web 逆向合集](./web-reverse/ai-assisted-web-reverse-compilation.md) | 正文 / 环境 / 工具 / 加密流程 |
+| 子文 | 2026-08-01 | [fangdi rs6逆向:确定性LCG置换与Huffman codebook](./web-reverse/ai-assisted-web-reverse-compilation/ai-assisted-20260801-01.md) | [AI辅助逆向手记 Web 逆向合集](./web-reverse/ai-assisted-web-reverse-compilation.md) | 正文 / 工具 / 加密流程 / LCG与Fisher-Yates置换 |
+| 子文 | 2026-08-02 | [fangdi rs6 codeUid逆向:两行CRC32公式](./web-reverse/ai-assisted-web-reverse-compilation/ai-assisted-20260802-01.md) | [AI辅助逆向手记 Web 逆向合集](./web-reverse/ai-assisted-web-reverse-compilation.md) | 正文 / 工具 / 加密流程 / 整体公式 |
+| 子文 | 2026-08-03 | [fangdi rs6 basearr逆向:150字节结构化字段](./web-reverse/ai-assisted-web-reverse-compilation/ai-assisted-20260803-01.md) | [AI辅助逆向手记 Web 逆向合集](./web-reverse/ai-assisted-web-reverse-compilation.md) | 正文 / 工具 / 决定性发现:雪崩混淆其实是字段序列化 / 加密流程 |
+| 子文 | 2026-08-04 | [yuanrenxue match28逆向:RSA-1024填充写死0x01](./web-reverse/ai-assisted-web-reverse-compilation/ai-assisted-20260804-01.md) | [AI辅助逆向手记 Web 逆向合集](./web-reverse/ai-assisted-web-reverse-compilation.md) | 正文 / 环境 / 工具 / 加密流程 |
+| 子文 | 2026-08-05 | [某音乐平台的response,加密强度约等于没加](./web-reverse/ai-assisted-web-reverse-compilation/ai-assisted-20260805-01.md) | [AI辅助逆向手记 Web 逆向合集](./web-reverse/ai-assisted-web-reverse-compilation.md) | 正文 / 环境 / 工具 / 加密流程 |
+| 子文 | 2026-08-07 | [某短视频平台a_bogus逆向:真正的门禁!?](./web-reverse/ai-assisted-web-reverse-compilation/ai-assisted-20260807-01.md) | [AI辅助逆向手记 Web 逆向合集](./web-reverse/ai-assisted-web-reverse-compilation.md) | 正文 / 环境 / 工具 / 加密流程 |
+| 子文 | 2026-08-10 | [一文讲透：什么时候该逐 opcode 逆 JSVMP，什么时候该直接反混淆](./web-reverse/ai-assisted-web-reverse-compilation/ai-assisted-20260810-01.md) | [AI辅助逆向手记 Web 逆向合集](./web-reverse/ai-assisted-web-reverse-compilation.md) | 正文 / 一、判据：算法编进 opcode 了吗 / 二、案例：一个 64-hex 的 token / 三、VM 形态：table 型，40 个 opcode |
+| 子文 | 2026-08-11 | [RSA 签名题的通用突破口：拿公钥 DER 前缀当内容锚](./web-reverse/ai-assisted-web-reverse-compilation/ai-assisted-20260811-01.md) | [AI辅助逆向手记 Web 逆向合集](./web-reverse/ai-assisted-web-reverse-compilation.md) | 正文 / 一、通用锚：公钥 DER 的 AlgorithmIdentifier / ★ 用中间那段，别用开头 / 如果脚本存的是 base64 |
+| 子文 | 2026-08-17 | [某书 x-s 拆解（一）](./web-reverse/ai-assisted-web-reverse-compilation/ai-assisted-20260817-01.md) | [AI辅助逆向手记 Web 逆向合集](./web-reverse/ai-assisted-web-reverse-compilation.md) | 正文 / 一、先看它长什么样 / 二、换回标准字母表，它就是一段 JSON / 那张字母表怎么拿 |
+| 子文 | 2026-08-18 | [某书 x-s 拆解（二）](./web-reverse/ai-assisted-web-reverse-compilation/ai-assisted-20260818-01.md) | [AI辅助逆向手记 Web 逆向合集](./web-reverse/ai-assisted-web-reverse-compilation.md) | 正文 / 一、先把三个字段的依赖关系画清楚 / 二、nonce：本地生成，可固定 / 三、ssk：它不在本地，是服务端给的 |
+| 子文 | 2026-08-20 | [某书 x-s 拆解（三）](./web-reverse/ai-assisted-web-reverse-compilation/ai-assisted-20260820-01.md) | [AI辅助逆向手记 Web 逆向合集](./web-reverse/ai-assisted-web-reverse-compilation.md) | 正文 / 一、x3 是什么 / 那个前缀不是固定的：它是版本号 / 二、加密藏在哪：运行时才生成的代码 |
+| 子文 | 2026-08-21 | [某书 x-s-common 拆解（一）](./web-reverse/ai-assisted-web-reverse-compilation/ai-assisted-20260821-01.md) | [AI辅助逆向手记 Web 逆向合集](./web-reverse/ai-assisted-web-reverse-compilation.md) | 正文 / 一、外层：还是那套自定义 base64 / 二、拆开一看：一堆常量 / 三、关键结论：b1 固定后，什么加密都不剩 |
+| 子文 | 2026-08-24 | [某书 x-s-common 拆解（三·完）](./web-reverse/ai-assisted-web-reverse-compilation/ai-assisted-20260824-01.md) | [AI辅助逆向手记 Web 逆向合集](./web-reverse/ai-assisted-web-reverse-compilation.md) | 正文 / 一、b1 的五步编码链 / 二、reverse 一个真 b1，看清里面是什么 / 三、RC4 那个 key |
+| 子文 | 2026-08-26 | [某 sheinX 主签名 x-gw-auth](./web-reverse/ai-assisted-web-reverse-compilation/ai-assisted-20260826-01.md) | [AI辅助逆向手记 Web 逆向合集](./web-reverse/ai-assisted-web-reverse-compilation.md) | 正文 / 一、x-gw-auth 长什么样 / 二、第一道坎：签名函数根本钩不到 / 三、d 和 e 的语义，以及一个我判错又纠回来的地方 |
+| 子文 | 2026-09-01 | [某 dewuX web 签名逆向](./web-reverse/ai-assisted-web-reverse-compilation/ai-assisted-20260901-01.md) | [AI辅助逆向手记 Web 逆向合集](./web-reverse/ai-assisted-web-reverse-compilation.md) | 正文 / 一、一页纸 / 二、sign 和 hsn：签名套签名 / 三、重定位：grep 0 命中，不代表字符串每次重编码 |
 | 子文 | 2025-09-21 | [扒一扒 VMP 反爬：从踩坑到破局的实战思路(Akamai)](./web-reverse/anti-crawler-web-reverse-compilation/anti-crawler-web-20250921-01.md) | [反爬破解社 Web 逆向实战合集](./web-reverse/anti-crawler-web-reverse-compilation.md) | 一、引言：谁还没被 VMP 坑过？ / 二、VMP 反爬：不是 “虚拟机” 那么简单！ / 2.1 看个真实案例：Akamai 的 VMP 套路 / 三、VMP 反爬核心原理：用实例拆穿它！ |
 | 子文 | 2025-09-23 | [Akamai难点第一弹：mst参数的vmp混淆解决思路](./web-reverse/anti-crawler-web-reverse-compilation/anti-crawler-web-20250923-01.md) | [反爬破解社 Web 逆向实战合集](./web-reverse/anti-crawler-web-reverse-compilation.md) | — |
 | 子文 | 2025-09-25 | [Akamai难点第二弹：ajr参数得混淆解密](./web-reverse/anti-crawler-web-reverse-compilation/anti-crawler-web-20250925-01.md) | [反爬破解社 Web 逆向实战合集](./web-reverse/anti-crawler-web-reverse-compilation.md) | — |
@@ -501,6 +525,23 @@
 | 子文 | 多篇合集 | [storage / cookie 参考](./web-reverse/browser-env-objects/storage.md) | [Web 补环境浏览器对象参考](./web-reverse/browser-env-objects.md) | 检测面 / 常见坑 / 观察优先级 / 补环境要点 |
 | 子文 | 多篇合集 | [window / WindowProxy 参考](./web-reverse/browser-env-objects/window.md) | [Web 补环境浏览器对象参考](./web-reverse/browser-env-objects.md) | 检测面 / 常见坑 / 观察优先级 / 补环境要点 |
 | 子文 | 多篇合集 | [Worker / Message 参考](./web-reverse/browser-env-objects/worker-message.md) | [Web 补环境浏览器对象参考](./web-reverse/browser-env-objects.md) | 检测面 / 常见坑 / 观察优先级 / 补环境要点 |
+| 子文 | 2023-10-08 | [某麦小程序sign解密](./web-reverse/koohai-reverse-notes-compilation/koohai-20231008-01.md) | [零基础爬虫第一天 逆向笔记合集](./web-reverse/koohai-reverse-notes-compilation.md) | 正文 |
+| 子文 | 2024-01-08 | [基础篇-webview调试及源码修改](./web-reverse/koohai-reverse-notes-compilation/koohai-20240108-01.md) | [零基础爬虫第一天 逆向笔记合集](./web-reverse/koohai-reverse-notes-compilation.md) | 正文 |
+| 子文 | 2024-01-09 | [fart源码分析以及改进](./web-reverse/koohai-reverse-notes-compilation/koohai-20240109-01.md) | [零基础爬虫第一天 逆向笔记合集](./web-reverse/koohai-reverse-notes-compilation.md) | 正文 |
+| 子文 | 2024-06-23 | [md5在ida中的识别及使用方法](./web-reverse/koohai-reverse-notes-compilation/koohai-20240623-01.md) | [零基础爬虫第一天 逆向笔记合集](./web-reverse/koohai-reverse-notes-compilation.md) | 正文 / 数值类型转换 |
+| 子文 | 2026-01-05 | [node源码-8：node源码接入jsdom](./web-reverse/koohai-reverse-notes-compilation/koohai-20260105-01.md) | [零基础爬虫第一天 逆向笔记合集](./web-reverse/koohai-reverse-notes-compilation.md) | 正文 / 一、整体流程总览 / 二、JS 侧：jsdom 与 KhBox 的准备工作 / 三、node_contextify.cc：VM 全局属性拦截与三级查找 |
+| 子文 | 2026-01-12 | [khbox补环境-3：原型链与 Illegal Invocation 保护机制](./web-reverse/koohai-reverse-notes-compilation/koohai-20260112-01.md) | [零基础爬虫第一天 逆向笔记合集](./web-reverse/koohai-reverse-notes-compilation.md) | 正文 / 原型链 核心挑战 / 1\. 原型链继承 / 2\. Native Code 伪装 |
+| 子文 | 2026-01-25 | [khbox补环境-5：addon补环境 v0版完成](./web-reverse/koohai-reverse-notes-compilation/koohai-20260125-01.md) | [零基础爬虫第一天 逆向笔记合集](./web-reverse/koohai-reverse-notes-compilation.md) | 正文 / Node.js 浏览器环境模拟：从 Addon 再到纯 Node / 方案一：Node.js C++ Addon（已跑通但有局限） / 效果展示 |
+| 子文 | 2026-02-05 | [khbox-6：V0.1 功能实现](./web-reverse/koohai-reverse-notes-compilation/koohai-20260205-01.md) | [零基础爬虫第一天 逆向笔记合集](./web-reverse/koohai-reverse-notes-compilation.md) | 正文 / ✅ 已实现功能 / ✅ 待实现功能 |
+| 子文 | 2026-02-09 | [khbox-7：v1完善](./web-reverse/koohai-reverse-notes-compilation/koohai-20260209-01.md) | [零基础爬虫第一天 逆向笔记合集](./web-reverse/koohai-reverse-notes-compilation.md) | 正文 |
+| 子文 | 2026-02-25 | [khbox-9：KhBox node版重构](./web-reverse/koohai-reverse-notes-compilation/koohai-20260225-01.md) | [零基础爬虫第一天 逆向笔记合集](./web-reverse/koohai-reverse-notes-compilation.md) | 正文 / 核心方案：内部绑定而非 .node 插件 / 重构前的问题 / 重构后的目录结构 |
+| 子文 | 2026-03-03 | [khbox-11：Canvas 指纹对抗解析](./web-reverse/koohai-reverse-notes-compilation/koohai-20260303-01.md) | [零基础爬虫第一天 逆向笔记合集](./web-reverse/koohai-reverse-notes-compilation.md) | 正文 / 一、Canvas 指纹检测原理 / 二、风控检测了什么（ jsdom_canvas.js 分析） / 检测项一： fillText 原生代码检测（-30分） |
+| 子文 | 2026-03-05 | [最短路径把khbox代码编译进 Node.js](./web-reverse/koohai-reverse-notes-compilation/koohai-20260305-01.md) | [零基础爬虫第一天 逆向笔记合集](./web-reverse/koohai-reverse-notes-compilation.md) | 正文 / 改动只涉及四个文件 / 1\. node.gyp — 把 khBox 的源文件纳入编译 / 2\. src/node_binding.cc — 注册 khBox 为内置模块 |
+| 子文 | 2026-03-08 | [详解 BrowserLeaks - JavaScript 检测及api分析](./web-reverse/koohai-reverse-notes-compilation/koohai-20260308-01.md) | [零基础爬虫第一天 逆向笔记合集](./web-reverse/koohai-reverse-notes-compilation.md) | 正文 / 一、 chrome检测结果概览 / 1\. Screen Object (屏幕对象) / API 含义 |
+| 子文 | 2026-03-13 | [khbox1.2更新](./web-reverse/koohai-reverse-notes-compilation/koohai-20260313-01.md) | [零基础爬虫第一天 逆向笔记合集](./web-reverse/koohai-reverse-notes-compilation.md) | 正文 / bot.sannysoft.com 的fingerprint / 某数环境（仅流程出值） / 近期更新 |
+| 子文 | 2026-03-15 | [从AST到JSVMP（入坑记录）](./web-reverse/koohai-reverse-notes-compilation/koohai-20260315-01.md) | [零基础爬虫第一天 逆向笔记合集](./web-reverse/koohai-reverse-notes-compilation.md) | 正文 |
+| 子文 | 2026-03-18 | [vmp-1：rs-while的构造器初探](./web-reverse/koohai-reverse-notes-compilation/koohai-20260318-01.md) | [零基础爬虫第一天 逆向笔记合集](./web-reverse/koohai-reverse-notes-compilation.md) | 正文 / rs-while的构造器 / 第一步：定义变量字典 / 第二步：构造生成器的“字节码” |
+| 子文 | 2026-04-02 | [khbox补环境案例-2：yrx2内存爆破分析](./web-reverse/koohai-reverse-notes-compilation/koohai-20260402-01.md) | [零基础爬虫第一天 逆向笔记合集](./web-reverse/koohai-reverse-notes-compilation.md) | 正文 / 先让ai还原一下 / 反调试bypass / khbox fix |
 | 子文 | 多篇合集 | [Akamai（Bot Manager / BMP / CSC）](./web-reverse/products/akamai.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
 | 子文 | 多篇合集 | [阿里 Baxia / AWSC bx-ua 与 fire_ua](./web-reverse/products/alibaba-bxua.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
 | 子文 | 多篇合集 | [阿里 H5Sec / AWSC / Fireye（140/231/234 / x5sec）](./web-reverse/products/alibaba-h5sec-awsc-fireye.md) | [Web 安全产品强制命中索引](./web-reverse/products.md) | 命中特征 / 常见链路 / 观察优先级 / 常见坑 |
