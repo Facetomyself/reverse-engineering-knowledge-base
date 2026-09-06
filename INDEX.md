@@ -21,6 +21,7 @@
 | [high-concurrency-http-collector-control-plane.md](./collection-engineering/high-concurrency-http-collector-control-plane.md) | psa | `代理租约`, `Sticky SID`, `Cookie 隔离`, `连接池`, `AIMD`, `congestion epoch`, `Retry-After`, `half-open`, `item deadline`, `checkpoint` | 高并发 HTTP 采集控制面：统一代理身份与连接生命周期，分离 429/403/transport 反馈，并用有界队列、分层 deadline、连接池 circuit 和固定窗口 canary 收敛长跑故障 |
 | [reliable-mac-nas-spool-delivery.md](./collection-engineering/reliable-mac-nas-spool-delivery.md) | psa | `Mac mini`, `SSD spool`, `NAS mirror`, `marker`, `ACK`, `at-least-once`, `幂等`, `launchd`, `非侵入式巡检`, `GC` | Mac 热写与 NAS 交付链：本地 spool、SSH tar staging、pending/GC/ACK 重放、supervisor 完成门、安全发布与 process-crash/power-loss 边界 |
 | [browser-collector-stability.md](./collection-engineering/browser-collector-stability.md) | radwell | `ruyipage`, `Firefox 151`, `MOZ_ASSERT`, `0x80000003`, `孤儿 session`, `CF 软挑战`, `IP 风控窗口`, `OOM 连锁`, `BiDi`, `多进程并发`, `spawn 子进程` | 浏览器采集器稳定性：ruyipage 定制 Firefox 断言崩溃（0x80000003）的触发条件与证据链、单出口 IP 的 CF 风控有效窗口、"崩溃残留进程累积 → 整机 OOM"的连锁机制，及 8 条并发/自愈/内存护栏改进规范 |
+| [mihomo-dialer-proxy-chain.md](./collection-engineering/mihomo-dialer-proxy-chain.md) | — (GitHub 归档) | `Clash Verge`, `Mihomo`, `dialer-proxy`, `relay`, `Chain-Front`, `TUN fake-ip`, `preproxy`, `mihomo_fanout` | Mihomo 链式代理：`dialer-proxy` 替代已废弃 `relay`、Clash Verge 全局脚本的日常分流模型，以及它与采集器 `--preproxy` / 隔离 sidecar 的合同边界 |
 
 ### 反检测/风控对抗 (`article/anti-detection/`)
 
@@ -41,6 +42,8 @@
 |------|----------|--------|------|
 | [qidian-fock-signature.md](./signature-algorithms/qidian-fock-signature.md) | qidian (起点读书) | `QDSign`, `Fock SDK`, `3DES-CBC`, `PKCS#7`, `QIMEI`, `certificate MD5`, `请求 canonicalization`, `重放验证`, `7大签名头` | 起点读书 QDSign 结论更新：126/126 样本验证 3DES-CBC 管道字段，纠正旧 RSA/HMAC 推测，并区分排行榜 endpoint 的头部校验边界 |
 | [xfq-crypto-notes-compilation.md](./signature-algorithms/xfq-crypto-notes-compilation.md) | — (知识星球归档) | `AES`, `DES`, `3DES`, `MD5`, `SHA1`, `RC4`, `ChaCha20`, `GCM`, `魔改哈希`, `trace` | 逆向学习交流 19 篇密码算法笔记：AES/DES/流密码实现、魔改 MD5/SHA1 还原与 Java Crypto Hook，保留公式和步骤不收录附件 zip |
+| [boluobao-sfsecurity-trace.md](./signature-algorithms/boluobao-sfsecurity-trace.md) | — (语雀归档) | `SFSecurity`, `mt19937`, `UUID v4`, `nonce`, `自定义编码`, `MD5`, `HashFinder`, `libsfdata.so` | 菠萝包轻小说 5.1.54：`/dev/urandom` 经 mt19937 生成 UUID v4 nonce，四段自定义编码后标准 MD5 得 `sign`；5.2.x 算法进匿名内存，不能再按映射 SO 偏移收工 |
+| [mafengwo-modified-sha1-trace.md](./signature-algorithms/mafengwo-modified-sha1-trace.md) | — (语雀归档) | `SHA-1`, `HashFinder`, `Ch`, `Parity`, `Maj`, `feed-forward`, `libmfw.so` | 马蜂窝魔改 SHA1 练习稿：用 `0x80` 扫描和逐轮 `a_new` 对照找出 Ch/Parity/Maj 错位分段；闭合四类魔改（含 H2/H3 对调）见合集笔记 |
 | [hangban-laes-encrypt.md](./signature-algorithms/hangban-laes-encrypt.md) | — (PDF 归档) | `LAES`, `ECB`, `PKCS7`, `T-box`, `JNI`, `libhbgjbangbang_crypto_tool.so`, `航班管家` | 航班管家 `laesEncryptStringWithBase64`：key 前 4 字节是模式头，轮密钥滚动异或，AddRoundKey 改 nibble 查表，S-box/T-box 均非标准 AES；纯算回放对齐 JNI Base64 |
 
 ### 加固绕过 (`article/packing-bypass/`)
@@ -69,7 +72,8 @@
 | [yuanrenxue-mobile-app-reverse-compilation.md](./mobile-app-reverse/yuanrenxue-mobile-app-reverse-compilation.md) | — (公众号归档) | `Token Hook`, `TCP抓包`, `Protobuf`, `双向认证`, `Android`, `iOS`, `Flutter`, `Jailbreak检测` | 猿人学 17 篇移动 App 逆向资料，覆盖认证协议、Native 参数、抓包对抗、跨平台运行时与越狱检测 |
 | [mtop-innersign-rpc.md](./mobile-app-reverse/mtop-innersign-rpc.md) | cv-cat | `MTOP`, `InnerSignImpl`, `getUnifiedSign`, `x-sign`, `x-sgext`, `x-mini-wua`, `Frida RPC`, `闲鱼` | 阿里系 App 网关签名默认走 InnerSignImpl 实例 RPC：Hook 一次即摘、设备参数成套、与 Web H5 `_m_h5_tk` MD5 不能互换 |
 | [pure-protocol-sdk-reconstruction.md](./mobile-app-reverse/pure-protocol-sdk-reconstruction.md) | — (方法论整理) | `纯协议`, `设备注册`, `HAR 语料`, `Interceptor`, `algorithms`, `指纹语义`, `TLS/JA3`, `SDK 状态机`, `发送顺序` | App 纯协议 SDK 重建：干净首次注册 HAR、一参数一文件算法、拦截器式 apis/interceptors、多环境指纹对照，以及传输指纹 / 依赖 DAG / SDK 状态机三层注册完备性 |
-| [xfq-android-cases-compilation.md](./mobile-app-reverse/xfq-android-cases-compilation.md) | — (知识星球归档) | `Unidbg`, `NS_sig3`, `白盒AES`, `小黑盒`, `趣头条`, `纯算`, `signature` | 逆向学习交流 11 篇安卓实战：快手白盒、小黑盒 hkey、马蜂窝/趣头条签名与 unidbg 补环境，隐去附件和未脱敏抓包 |
+| [xfq-android-cases-compilation.md](./mobile-app-reverse/xfq-android-cases-compilation.md) | — (知识星球归档) | `Unidbg`, `NS_sig3`, `白盒AES`, `小黑盒`, `趣头条`, `AppsFlyer`, `安居客 nsign`, `纯算`, `signature` | 逆向学习交流 13 篇安卓实战：快手白盒、小黑盒 hkey、马蜂窝/趣头条/安居客 nsign、AppsFlyer 与 unidbg 补环境，隐去附件和未脱敏抓包 |
+| [reversenotes-android-compilation.md](./mobile-app-reverse/reversenotes-android-compilation.md) | — (GitHub 归档) | `buvid`, `deviceid`, `HMAC-SHA1`, `AES-CBC`, `AES-ECB`, `libmsaoaidsec`, `B站`, `豆瓣`, `韩小圈` | 星球索引所称 GitHub 小号 reverseNotes：B 站设备信封、韩小圈 AES 头、豆瓣 HMAC sig、升学e网通 AES-ECB；不含付费课与敏感样本 |
 | [xfq-aosp-rom-compilation.md](./mobile-app-reverse/xfq-aosp-rom-compilation.md) | — (知识星球归档) | `AOSP`, `APatch`, `WebView`, `系统CA`, `GMS`, `adb`, `ROM` | 逆向学习交流 13 篇 AOSP/ROM 笔记：预置 CA、APatch、WebView 调试、GMS 与 adb RSA，只保留可复用改造路径 |
 | [xfq-tools-debug-compilation.md](./mobile-app-reverse/xfq-tools-debug-compilation.md) | — (知识星球归档) | `xfqtrace`, `Frida`, `Gadget`, `jadx`, `抓包`, `WebView`, `MCP` | 逆向学习交流 42 篇工具调试：xfqtrace/Frida/jadx、证书、WebView Hook 与 MCP，已去掉号池/续杯/破解版 |
 | [kimi-device-register-ttencrypt.md](./mobile-app-reverse/kimi-device-register-ttencrypt.md) | — (独立分析归档) | `device_register`, `ttEncrypt`, `tt_info`, `AES-128-CBC`, `SHA512`, `volces`, `Kimi`, `JNI` | 字节系 Kimi `device_register`：query `tt_info` 与二进制 body 共用 MAGIC\|\|seed\|\|AES 封装，key/IV 由明文 seed 派生，属可逆协议封装并给出 Python 复现 |
@@ -104,9 +108,15 @@
 - **ECDHE (P-256)**: [mmtls](./protocols/mmtls-protocol-analysis.md)
 - **HKDF**: [mmtls](./protocols/mmtls-protocol-analysis.md)
 - **SM4 (国密)**: [51job-webpack](./web-reverse/51job-webpack-analysis.md)
-- **AES/RSA/TEA/DES/MD5（Android 实战）**: [paopao-android](./mobile-app-reverse/paopao-android-reverse-compilation.md), [xfq-crypto](./signature-algorithms/xfq-crypto-notes-compilation.md)
+- **AES/RSA/TEA/DES/MD5（Android 实战）**: [paopao-android](./mobile-app-reverse/paopao-android-reverse-compilation.md), [xfq-crypto](./signature-algorithms/xfq-crypto-notes-compilation.md), [reversenotes-android](./mobile-app-reverse/reversenotes-android-compilation.md)
+- **PBKDF2-SHA1 + AES-128-CBC（AppsFlyer androidevent）**: [xfq-android-cases](./mobile-app-reverse/xfq-android-cases-compilation.md)
+- **MD5 一位改写 / nsign 四段拼接（安居客）**: [xfq-android-cases](./mobile-app-reverse/xfq-android-cases-compilation.md)
+- **HMAC-SHA1 → Base64 → URL-encode（豆瓣 sig）**: [reversenotes-android](./mobile-app-reverse/reversenotes-android-compilation.md)
+- **AES-CBC 由 uid MD5 对半作 key/iv（韩小圈 sign）**: [reversenotes-android](./mobile-app-reverse/reversenotes-android-compilation.md)
 - **RC4/Salsa20/ChaCha20/GCM 流密码实现**: [xfq-crypto](./signature-algorithms/xfq-crypto-notes-compilation.md)
-- **魔改 MD5/SHA1 与 Java Crypto Hook**: [xfq-crypto](./signature-algorithms/xfq-crypto-notes-compilation.md)
+- **魔改 MD5/SHA1 与 Java Crypto Hook**: [xfq-crypto](./signature-algorithms/xfq-crypto-notes-compilation.md), [mafengwo-sha1](./signature-algorithms/mafengwo-modified-sha1-trace.md)
+- **mt19937 + UUID v4 nonce + 自定义编码 MD5（SFSecurity）**: [boluobao-sfsecurity](./signature-algorithms/boluobao-sfsecurity-trace.md)
+- **SHA-1 轮函数错位分段 / HashFinder 0x80 扫描**: [mafengwo-sha1](./signature-algorithms/mafengwo-modified-sha1-trace.md), [xfq-crypto](./signature-algorithms/xfq-crypto-notes-compilation.md)
 - **AES-256-CBC + HMAC-SHA256**: [ai-vmp-trace](./native-analysis/ai-assisted-vmp-trace-recovery.md)
 - **AES-128-CBC + SHA512 KDF（ttEncrypt / device_register）**: [kimi-ttencrypt](./mobile-app-reverse/kimi-device-register-ttencrypt.md)
 - **魔改 AES-like / 自定义 T-box / nibble Mix（LAES ECB）**: [hangban-laes](./signature-algorithms/hangban-laes-encrypt.md)
@@ -123,8 +133,10 @@
 - **自定义 URL 协议唤醒本机更新器**: [unpacked-mv3-updater](./web-reverse/unpacked-mv3-native-updater.md)
 - **HTTP DNS**: [mmtls](./protocols/mmtls-protocol-analysis.md)
 - **Protobuf/gRPC**: [paopao-android](./mobile-app-reverse/paopao-android-reverse-compilation.md), [yuanrenxue-app](./mobile-app-reverse/yuanrenxue-mobile-app-reverse-compilation.md)
-- **App 设备注册 / 拦截器式纯协议客户端**: [pure-protocol-sdk](./mobile-app-reverse/pure-protocol-sdk-reconstruction.md), [kimi-ttencrypt](./mobile-app-reverse/kimi-device-register-ttencrypt.md)
+- **App 设备注册 / 拦截器式纯协议客户端**: [pure-protocol-sdk](./mobile-app-reverse/pure-protocol-sdk-reconstruction.md), [kimi-ttencrypt](./mobile-app-reverse/kimi-device-register-ttencrypt.md), [reversenotes-android](./mobile-app-reverse/reversenotes-android-compilation.md)
+- **B 站 buvid / deviceid RSA+AES 信封 / fp_local**: [reversenotes-android](./mobile-app-reverse/reversenotes-android-compilation.md)
 - **字节 volces `device_register` / `tt_info` / `ttEncrypt`**: [kimi-ttencrypt](./mobile-app-reverse/kimi-device-register-ttencrypt.md)
+- **SFSecurity（nonce/timestamp/devicetoken/sign）**: [boluobao-sfsecurity](./signature-algorithms/boluobao-sfsecurity-trace.md)
 - **TLS/HTTP2 网络指纹**: [anti-crawler-risk](./anti-detection/anti-crawler-risk-control-compilation.md), [ruyi-browser](./anti-detection/ruyi-browser-anti-detection-compilation.md)
 - **WBI/Protobuf/TCP/mTLS 与认证协议**: [benru-web](./web-reverse/benru-web-reverse-compilation.md), [yuanrenxue-app](./mobile-app-reverse/yuanrenxue-mobile-app-reverse-compilation.md)
 - **钉钉 LWP WebSocket（淘宝/闲鱼 IM）**: [alibaba-mtop-h5](./web-reverse/products/alibaba-mtop-h5.md)
@@ -132,7 +144,8 @@
 
 ### 反检测/对抗
 - **WAF 绕过**: [51job-anti-detection](./anti-detection/51job-anti-detection-analysis.md)
-- **设备指纹**: [51job-anti-detection](./anti-detection/51job-anti-detection-analysis.md), [pure-protocol-sdk](./mobile-app-reverse/pure-protocol-sdk-reconstruction.md), [ace-deviceuniqueid](./anti-detection/android-ace-deviceuniqueid.md), [xfq-device-fp](./anti-detection/xfq-device-fp-compilation.md)
+- **设备指纹**: [51job-anti-detection](./anti-detection/51job-anti-detection-analysis.md), [pure-protocol-sdk](./mobile-app-reverse/pure-protocol-sdk-reconstruction.md), [ace-deviceuniqueid](./anti-detection/android-ace-deviceuniqueid.md), [xfq-device-fp](./anti-detection/xfq-device-fp-compilation.md), [reversenotes-android](./mobile-app-reverse/reversenotes-android-compilation.md)
+- **libmsaoaidsec 加载期检测（leave 缺失）**: [reversenotes-android](./mobile-app-reverse/reversenotes-android-compilation.md)
 - **风控熵源 / 伪随机 / 协议指纹演进**: [xfq-device-fp](./anti-detection/xfq-device-fp-compilation.md)
 - **Widevine / deviceUniqueId / Key Attestation / Play Integrity**: [ace-deviceuniqueid](./anti-detection/android-ace-deviceuniqueid.md)
 - **加固绕过 / whole-DEX 分流**: [jiagu-bypass](./packing-bypass/jiagu-bypass-analysis.md)
@@ -158,6 +171,7 @@
 - **curl_cffi/Selenium stealth/字体与验证码/Canvas**: [benru-anti](./anti-detection/benru-anti-detection-compilation.md)
 - **Cookie/Referer/代理/DNS/TLS 请求一致性**: [yuanrenxue-anti](./anti-detection/yuanrenxue-anti-detection-compilation.md)
 - **代理租约/Sticky 会话/429 自适应并发**: [collector-control-plane](./collection-engineering/high-concurrency-http-collector-control-plane.md)
+- **Clash/Mihomo 链式代理与出口身份分离**: [mihomo-dialer-proxy](./collection-engineering/mihomo-dialer-proxy-chain.md)
 - **Flutter/iOS Jailbreak 与抓包对抗**: [yuanrenxue-app](./mobile-app-reverse/yuanrenxue-mobile-app-reverse-compilation.md)
 
 ### 厂商/平台
@@ -169,11 +183,17 @@
 - **网易 NIS / 易盾加固（App）**: [app-protectors](./packing-bypass/app-protectors.md), [paopao-android](./mobile-app-reverse/paopao-android-reverse-compilation.md)
 - **51job**: [51job-anti-detection](./anti-detection/51job-anti-detection-analysis.md), [51job-webpack](./web-reverse/51job-webpack-analysis.md)
 - **CSDN/w1101662433 (fivcan)**: [chromium-fingerprint-compilation](./anti-detection/chromium-fingerprint-compilation.md)
-- **Android/App 逆向**: [app-reverse-global-map](./mobile-app-reverse/app-reverse-global-map.md), [app-reverse-environment-setup](./mobile-app-reverse/app-reverse-environment-setup.md), [pure-protocol-sdk](./mobile-app-reverse/pure-protocol-sdk-reconstruction.md), [ace-deviceuniqueid](./anti-detection/android-ace-deviceuniqueid.md), [xfq-android-cases](./mobile-app-reverse/xfq-android-cases-compilation.md)
+- **Android/App 逆向**: [app-reverse-global-map](./mobile-app-reverse/app-reverse-global-map.md), [app-reverse-environment-setup](./mobile-app-reverse/app-reverse-environment-setup.md), [pure-protocol-sdk](./mobile-app-reverse/pure-protocol-sdk-reconstruction.md), [ace-deviceuniqueid](./anti-detection/android-ace-deviceuniqueid.md), [xfq-android-cases](./mobile-app-reverse/xfq-android-cases-compilation.md), [reversenotes-android](./mobile-app-reverse/reversenotes-android-compilation.md)
 - **AOSP / ROM 改造（CA/APatch/WebView）**: [xfq-aosp-rom](./mobile-app-reverse/xfq-aosp-rom-compilation.md)
-- **知识星球：逆向学习交流**: [xfq-crypto](./signature-algorithms/xfq-crypto-notes-compilation.md), [xfq-android-cases](./mobile-app-reverse/xfq-android-cases-compilation.md), [xfq-unidbg](./native-analysis/xfq-unidbg-native-compilation.md), [xfq-aosp-rom](./mobile-app-reverse/xfq-aosp-rom-compilation.md), [xfq-device-fp](./anti-detection/xfq-device-fp-compilation.md), [xfq-tools](./mobile-app-reverse/xfq-tools-debug-compilation.md)
+- **知识星球：逆向学习交流**: [xfq-crypto](./signature-algorithms/xfq-crypto-notes-compilation.md), [xfq-android-cases](./mobile-app-reverse/xfq-android-cases-compilation.md), [xfq-unidbg](./native-analysis/xfq-unidbg-native-compilation.md), [xfq-aosp-rom](./mobile-app-reverse/xfq-aosp-rom-compilation.md), [xfq-device-fp](./anti-detection/xfq-device-fp-compilation.md), [xfq-tools](./mobile-app-reverse/xfq-tools-debug-compilation.md), [reversenotes-android](./mobile-app-reverse/reversenotes-android-compilation.md)
+- **语雀 xiaofeng777/android_example**: [boluobao-sfsecurity](./signature-algorithms/boluobao-sfsecurity-trace.md), [mafengwo-sha1](./signature-algorithms/mafengwo-modified-sha1-trace.md)
+- **菠萝包 / SFACG**: [boluobao-sfsecurity](./signature-algorithms/boluobao-sfsecurity-trace.md)
+- **马蜂窝**: [mafengwo-sha1](./signature-algorithms/mafengwo-modified-sha1-trace.md), [xfq-crypto](./signature-algorithms/xfq-crypto-notes-compilation.md)
+- **GitHub xfxfxiaofeng/reverseNotes**: [reversenotes-android](./mobile-app-reverse/reversenotes-android-compilation.md)
+- **哔哩哔哩 / 豆瓣 / 韩小圈 / 升学e网通 / 安居客 / AppsFlyer**: [reversenotes-android](./mobile-app-reverse/reversenotes-android-compilation.md), [xfq-android-cases](./mobile-app-reverse/xfq-android-cases-compilation.md)
 - **macOS / NAS 采集交付**: [mac-nas-spool](./collection-engineering/reliable-mac-nas-spool-delivery.md)
 - **浏览器采集器稳定性（ruyipage/Firefox 崩溃/OOM）**: [browser-collector-stability](./collection-engineering/browser-collector-stability.md)
+- **Clash Verge Rev / Mihomo**: [mihomo-dialer-proxy](./collection-engineering/mihomo-dialer-proxy-chain.md)
 - **Akamai**: [anti-crawler-web](./web-reverse/anti-crawler-web-reverse-compilation.md), [products](./web-reverse/products.md)
 - **DataDome / Kasada / PerimeterX / F5 Shape / reese84 / Cloudflare 5s**: [products](./web-reverse/products.md), [datadome-env-patch](./web-reverse/datadome-env-patch.md)
 - **Kimi / 字节 volces applog**: [kimi-ttencrypt](./mobile-app-reverse/kimi-device-register-ttencrypt.md)
@@ -210,7 +230,10 @@
 - **Charles/jadx/Frida 工具链**: [app-reverse-environment-setup](./mobile-app-reverse/app-reverse-environment-setup.md)
 - **Babel AST/控制流反混淆**: [anti-crawler-web](./web-reverse/anti-crawler-web-reverse-compilation.md)
 - **Chrome DevTools 断点/Hook/反Hook**: [anti-crawler-web](./web-reverse/anti-crawler-web-reverse-compilation.md)
-- **Frida/Unidbg/Stalker/Native Hook**: [paopao-android](./mobile-app-reverse/paopao-android-reverse-compilation.md), [xfq-unidbg](./native-analysis/xfq-unidbg-native-compilation.md), [xfq-tools](./mobile-app-reverse/xfq-tools-debug-compilation.md)
+- **Frida/Unidbg/Stalker/Native Hook**: [paopao-android](./mobile-app-reverse/paopao-android-reverse-compilation.md), [xfq-unidbg](./native-analysis/xfq-unidbg-native-compilation.md), [xfq-tools](./mobile-app-reverse/xfq-tools-debug-compilation.md), [reversenotes-android](./mobile-app-reverse/reversenotes-android-compilation.md)
+- **HashFinder / Merkle-Damgård 0x80 明文扫描**: [boluobao-sfsecurity](./signature-algorithms/boluobao-sfsecurity-trace.md), [mafengwo-sha1](./signature-algorithms/mafengwo-modified-sha1-trace.md), [xfq-crypto](./signature-algorithms/xfq-crypto-notes-compilation.md)
+- **逐轮差分排除魔改哈希（first mismatch round）**: [mafengwo-sha1](./signature-algorithms/mafengwo-modified-sha1-trace.md)
+- **JNI_OnLoad 偏移表 / Map+StringBuilder 定位 sign**: [reversenotes-android](./mobile-app-reverse/reversenotes-android-compilation.md)
 - **xfqtrace / Gadget / jadx 一键 Hook**: [xfq-tools](./mobile-app-reverse/xfq-tools-debug-compilation.md), [xfq-unidbg](./native-analysis/xfq-unidbg-native-compilation.md)
 - **uiautomator dump + adb input tap（隐私协议/权限弹窗）**: [uiautomator-consent](./mobile-app-reverse/uiautomator-privacy-consent-tap.md)
 - **ELF Section vs Segment / ART ArtMethod / Smali patch**: [softard-android](./mobile-app-reverse/softard-android-reverse-compilation.md)
@@ -232,6 +255,7 @@
 - **未上架 MV3 / sideload / 自定义协议本机更新器**: [unpacked-mv3-updater](./web-reverse/unpacked-mv3-native-updater.md)
 - **mitmproxy/Charles/Frida/Protobuf/iOS/Flutter 工具链**: [benru-web](./web-reverse/benru-web-reverse-compilation.md), [yuanrenxue-app](./mobile-app-reverse/yuanrenxue-mobile-app-reverse-compilation.md)
 - **高并发采集控制面/AIMD/half-open**: [collector-control-plane](./collection-engineering/high-concurrency-http-collector-control-plane.md)
+- **Mihomo dialer-proxy / curl --preproxy / 隔离 sidecar**: [mihomo-dialer-proxy](./collection-engineering/mihomo-dialer-proxy-chain.md)
 - **SSD spool/NAS mirror/marker-ACK 重放**: [mac-nas-spool](./collection-engineering/reliable-mac-nas-spool-delivery.md)
 
 ---

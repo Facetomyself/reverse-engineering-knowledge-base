@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
-  "article_count": 539,
+  "article_count": 549,
   "category_counts": {
     "anti-detection": 177,
-    "collection-engineering": 3,
-    "mobile-app-reverse": 182,
+    "collection-engineering": 4,
+    "mobile-app-reverse": 189,
     "native-analysis": 15,
     "packing-bypass": 2,
     "protocols": 1,
-    "signature-algorithms": 22,
+    "signature-algorithms": 24,
     "web-reverse": 137
   },
   "records": [
@@ -5004,6 +5004,44 @@
       "content_sha256": "cc889f77b3d72eaa970f7b9f08e1cf27d22b8024f343b2ce065eaf1b0c4c57a0"
     },
     {
+      "path": "collection-engineering/mihomo-dialer-proxy-chain.md",
+      "kind": "canonical",
+      "category": "collection-engineering",
+      "parent": null,
+      "title": "Mihomo 链式代理：dialer-proxy、全局脚本与采集器前置链",
+      "source": "— (GitHub 归档)",
+      "original_date": "2026-08-13",
+      "archive_date": "2026-09-06",
+      "summary": "从 Clash Verge Rev 全局脚本与 Mihomo 官方 dialer-proxy 文档提炼：内核链式代理、已废弃的 relay 组、TUN fake-ip 排除坑，以及它和采集器 curl --preproxy / 隔离 sidecar 为什么不是同一条合同。",
+      "keywords": [
+        "Clash Verge",
+        "Mihomo",
+        "dialer-proxy",
+        "relay",
+        "Chain-Front",
+        "TUN fake-ip",
+        "preproxy",
+        "mihomo_fanout"
+      ],
+      "headings": [
+        "结论先行",
+        "来源与证据边界",
+        "内核链：谁看见谁",
+        "多跳怎么叠",
+        "relay 为什么不要再用",
+        "落地协议限制",
+        "全局脚本实际改了什么",
+        "TUN 直连超时：不要排除 fake-ip",
+        "三种链式平面，不要混合同",
+        "对 reverse_ENV 现行用法的判定",
+        "唯一可选的「改」",
+        "速查"
+      ],
+      "bytes": 10755,
+      "lines": 157,
+      "content_sha256": "2608d6b669b40f9437ba9cf7a6682d0f9b99b2bac6e59748572f4d0ec2189592"
+    },
+    {
       "path": "collection-engineering/reliable-mac-nas-spool-delivery.md",
       "kind": "canonical",
       "category": "collection-engineering",
@@ -8784,6 +8822,125 @@
       "content_sha256": "207b520861dbb5781009b856c81c8b6e428103927759b488c608c54c6a9e206b"
     },
     {
+      "path": "mobile-app-reverse/reversenotes-android-compilation.md",
+      "kind": "canonical",
+      "category": "mobile-app-reverse",
+      "parent": null,
+      "title": "reverseNotes 早期安卓案例合集",
+      "source": "GitHub xfxfxiaofeng/reverseNotes（知识星球「逆向学习交流」索引所称 GitHub 小号）",
+      "original_date": "2025-04 至 2025-07",
+      "archive_date": "2026-09-06",
+      "summary": "星球索引 安卓逆向实战案例 文章索引 写明：2025 年 4–7 月 B 站案例曾放 GitHub，后因侵权风险下架，改存小号。本合集只吸收该仓库里作者原创、算法已闭合的笔记，隐去联系方式、付费课复刻、成人/政务样本和未脱敏抓包。",
+      "keywords": [
+        "buvid",
+        "deviceid",
+        "HMAC-SHA1",
+        "AES-CBC",
+        "AES-ECB",
+        "libmsaoaidsec",
+        "B站",
+        "豆瓣",
+        "韩小圈"
+      ],
+      "headings": [
+        "收录说明",
+        "文章目录（4 篇）",
+        "索引里提到但本批不收的条目"
+      ],
+      "bytes": 2547,
+      "lines": 41,
+      "content_sha256": "8c9f90475890cc5aceb966f5c6ceb785ad28a4684b464b3a74320359098134eb"
+    },
+    {
+      "path": "mobile-app-reverse/reversenotes-android-compilation/bilibili-device-sign.md",
+      "kind": "nested",
+      "category": "mobile-app-reverse",
+      "parent": "mobile-app-reverse/reversenotes-android-compilation.md",
+      "title": "哔哩哔哩：buvid、deviceid 信封、fp_local 与 sign",
+      "source": "GitHub xfxfxiaofeng/reverseNotes",
+      "original_date": "2025-06（观察版本 6.28.0 / 6.68.0 / 8.48.0）",
+      "archive_date": "2026-09-06",
+      "summary": "B 站 Android 设备身份不是单一哈希。buvid 是前缀加 MD5 抽位；deviceid 是随机 AES 密钥经 RSA-PKCS#1 v1.5 包裹后再 AES 加密注册明文；fp_local 本地拼 MD5+时间+随机+校验和，fp_remote 由 fingerprint 接口回写；sign 在 libbili.so JNI 里对已填 ts 的 map 做加盐 MD5。盐值只在截图，正文未导出。",
+      "keywords": [],
+      "headings": [
+        "案例边界",
+        "buvid",
+        "deviceid",
+        "fp_local / fp_remote",
+        "sign",
+        "边界"
+      ],
+      "bytes": 3005,
+      "lines": 63,
+      "content_sha256": "14d3e8ee2d02d14b9b787a8143dc99a08d5eb5e2138d3eb86b0db530ea03df3f"
+    },
+    {
+      "path": "mobile-app-reverse/reversenotes-android-compilation/douban-hmac-sig.md",
+      "kind": "nested",
+      "category": "mobile-app-reverse",
+      "parent": "mobile-app-reverse/reversenotes-android-compilation.md",
+      "title": "豆瓣：HMAC-SHA1 sig、udid 与 MSA 定位",
+      "source": "GitHub xfxfxiaofeng/reverseNotes",
+      "original_date": "2025-06（观察版本 7.98.0 / 对照 7.0.1）",
+      "archive_date": "2026-09-06",
+      "summary": "豆瓣 com.douban.frodo 短评接口的 sig 先像 Base64，解码后 20 字节，是 HMAC-SHA1 再 URL-encode，不是裸 SHA1(时间戳)。7.98.0 对加密 hook 会在 libmsaoaidsec.so 加载期闪退，作者改用 7.0.1 对照把 HMAC 明文钩出来。udid 是对 UUID（或任意串）做 SHA1 再 hex。本篇只归档检测面定位和签名结构，不收录替换检测函数的脚本。",
+      "keywords": [],
+      "headings": [
+        "案例边界",
+        "MSA 定位（不是绕过步骤）",
+        "sig",
+        "udid",
+        "边界"
+      ],
+      "bytes": 2456,
+      "lines": 45,
+      "content_sha256": "766a3437cf141d39b77de943060f865c551e1a15e7aa620bf53c4488e35443fb"
+    },
+    {
+      "path": "mobile-app-reverse/reversenotes-android-compilation/ewt360-aes-md5.md",
+      "kind": "nested",
+      "category": "mobile-app-reverse",
+      "parent": "mobile-app-reverse/reversenotes-android-compilation.md",
+      "title": "升学e网通：共享 AES-ECB 与时间戳加盐 MD5",
+      "source": "GitHub xfxfxiaofeng/reverseNotes",
+      "original_date": "2025-07（观察版本 11.2.1）",
+      "archive_date": "2026-09-06",
+      "summary": "升学e网通 登录请求头签名是 MD5(timestamp_ms || salt) 再转大写；userName / password / deviceToken / deviceName 共用 EncryptUtils 里的同一组 AES/ECB/PKCS7Padding。作者写明还有 x 加密的 Frida 检测，且未建号，不知道 Flutter 侧是否另有参数。本篇只锁这两条算法，不写检测绕过。",
+      "keywords": [],
+      "headings": [
+        "案例边界",
+        "sign",
+        "登录字段",
+        "边界"
+      ],
+      "bytes": 1774,
+      "lines": 46,
+      "content_sha256": "6afca6406179c3a81de4177f551f869cbc32d3d0560ea1ca6fb063dd757c9165"
+    },
+    {
+      "path": "mobile-app-reverse/reversenotes-android-compilation/hanxiaoquan-aes-sign.md",
+      "kind": "nested",
+      "category": "mobile-app-reverse",
+      "parent": "mobile-app-reverse/reversenotes-android-compilation.md",
+      "title": "韩小圈：AES-CBC sign、uk 与响应 data",
+      "source": "GitHub xfxfxiaofeng/reverseNotes",
+      "original_date": "2025-06（观察版本 6.5.3）",
+      "archive_date": "2026-09-06",
+      "summary": "com.babycloud.hanju 搜索接口请求头只有会变的 sign 与 uk。sign 是 AES/CBC/PKCS5，key/iv 由 uid 的 MD5 对半切开；uk 是同一 uid 再经另一组固定 AES 得到。清数据后三套值一起变。响应 data 的解密 key 是 MD5(uid || 响应 ts)。uid 生成式未还原，作者用 20 位 [0-9A-Za-z] 随机串做了服务端抽检。",
+      "keywords": [],
+      "headings": [
+        "案例边界",
+        "sign",
+        "uk",
+        "uid",
+        "响应 data",
+        "边界"
+      ],
+      "bytes": 2451,
+      "lines": 63,
+      "content_sha256": "81890645f64cc0d2586392c6be1714b801b42abf2b24ac1159011c6bf04d9486"
+    },
+    {
       "path": "mobile-app-reverse/softard-android-reverse-compilation.md",
       "kind": "canonical",
       "category": "mobile-app-reverse",
@@ -9184,23 +9341,25 @@
       "source": "知识星球：逆向学习交流",
       "original_date": "多篇合集",
       "archive_date": "2026-09-04",
-      "summary": "快手白盒/NS_sig3、小黑盒 hkey、马蜂窝魔改 SHA1、AppsFlyer、趣头条等 App 签名与 unidbg 补环境案例。保留算法定位和复现路径，隐去附件与未脱敏抓包原文。",
+      "summary": "快手白盒/NS_sig3、小黑盒 hkey、马蜂窝魔改 SHA1、AppsFlyer、安居客 nsign、趣头条等 App 签名与 unidbg 补环境案例。保留算法定位和复现路径，隐去附件与未脱敏抓包原文。",
       "keywords": [
         "Unidbg",
         "NS_sig3",
         "白盒AES",
         "小黑盒",
         "趣头条",
+        "AppsFlyer",
+        "安居客 nsign",
         "纯算",
         "signature"
       ],
       "headings": [
         "收录说明",
-        "文章目录（11 篇）"
+        "文章目录（13 篇）"
       ],
-      "bytes": 1768,
-      "lines": 28,
-      "content_sha256": "e755d8a77cd958990255cf6f9d4a55ad228a7f11e56393862548dc43f3da500f"
+      "bytes": 1986,
+      "lines": 30,
+      "content_sha256": "321a981ba3adc3c6f3347c76d51b93c1a2460ac31e85b12f3ef4233251a2a3b5"
     },
     {
       "path": "mobile-app-reverse/xfq-android-cases-compilation/xfq-20250922-01.md",
@@ -9289,6 +9448,31 @@
       "bytes": 69256,
       "lines": 2110,
       "content_sha256": "50a6b86752d952fbb66121ea91e073bc604f49db029f0f03bd950bd6b69082f4"
+    },
+    {
+      "path": "mobile-app-reverse/xfq-android-cases-compilation/xfq-20251122-01.md",
+      "kind": "nested",
+      "category": "mobile-app-reverse",
+      "parent": "mobile-app-reverse/xfq-android-cases-compilation.md",
+      "title": "安居客 17.28.1 nsign：MD5 一位改写与四段拼接",
+      "source": "知识星球：逆向学习交流",
+      "original_date": "2025-11-22",
+      "archive_date": "2026-09-06",
+      "summary": "安居客 com.anjuke.android.app 17.28.1 的 nsign 在 libsignutil.so 静态注册的 SignUtil.getSign0。输出 56 字符：固定 1000 + 改写后的 32 位 MD5 + 12 位长度/计数 nibble + str3 UUID 前 8 位。MD5 是标准压缩函数，只改写 digest[0] 指向的那一字节。附件 hook 脚本、未脱敏 deviceId 与 zip 未收录。",
+      "keywords": [],
+      "headings": [
+        "收录说明",
+        "案例边界",
+        "四段结构",
+        "1. 前缀 1000",
+        "2. 标准 MD5 后改一位",
+        "3. 12 位 nibble",
+        "4. UUID 前 8 位",
+        "边界"
+      ],
+      "bytes": 2564,
+      "lines": 68,
+      "content_sha256": "db5e61482bbbe07961252d2c5af785253c3dfa0324947f0c20a4fa2aa2c9245d"
     },
     {
       "path": "mobile-app-reverse/xfq-android-cases-compilation/xfq-20251205-01.md",
@@ -9434,6 +9618,26 @@
       "bytes": 16506,
       "lines": 652,
       "content_sha256": "bf18a667226178b08910476c969d15ef0919fc2443d6262b83ca950dc96d69f2"
+    },
+    {
+      "path": "mobile-app-reverse/xfq-android-cases-compilation/xfq-20260523-01.md",
+      "kind": "nested",
+      "category": "mobile-app-reverse",
+      "parent": "mobile-app-reverse/xfq-android-cases-compilation.md",
+      "title": "AppsFlyer androidevent：PBKDF2 + AES-CBC 纯算",
+      "source": "知识星球：逆向学习交流",
+      "original_date": "2026-05-23",
+      "archive_date": "2026-09-06",
+      "summary": "广告 SDK AppsFlyer 的 androidevent 请求体不是整包 AES。固定盐与 app 侧 devKey 做 PBKDF2-SHA1（10000 次、16 字节）得到 AES-128 key；密文布局是 ciphertext || IV(16) || unused(8)，解密后再去 PKCS#7。附件脚本和未脱敏抓包未收录。",
+      "keywords": [],
+      "headings": [
+        "收录说明",
+        "算法",
+        "边界"
+      ],
+      "bytes": 1549,
+      "lines": 32,
+      "content_sha256": "17e0927bbbe548d9705a08a9736f47f18d01fe3687949b2d5d1ca7331fa291bd"
     },
     {
       "path": "mobile-app-reverse/xfq-android-cases-compilation/xfq-20260723-01.md",
@@ -11690,6 +11894,41 @@
       "content_sha256": "a20aa5e37bc0a843bc589a58789ca9e8f4db1d63c924e59c3e6d1f426f138975"
     },
     {
+      "path": "signature-algorithms/boluobao-sfsecurity-trace.md",
+      "kind": "canonical",
+      "category": "signature-algorithms",
+      "parent": null,
+      "title": "菠萝包轻小说 SFSecurity：mt19937 nonce 与自定义编码 MD5",
+      "source": "语雀 xiaofeng777/android_example",
+      "original_date": "2026-04-24",
+      "archive_date": "2026-09-06",
+      "summary": "菠萝包轻小说（com.sfacg）请求头 SFSecurity 在 5.1.54 上可离线还原：/dev/urandom 种子经 mt19937 生成 UUID v4 nonce，再对 nonce / timestamp / deviceToken / 固定 key 做自定义编码后拼成 93 字节，标准 MD5 即 sign。5.2.x 把算法放进匿名内存，unidbg 需要先过自定义 linker，不能再按映射 SO 偏移当完成。",
+      "keywords": [
+        "SFSecurity",
+        "mt19937",
+        "UUID v4",
+        "nonce",
+        "自定义编码",
+        "MD5",
+        "HashFinder",
+        "libsfdata.so"
+      ],
+      "headings": [
+        "收录说明",
+        "案例边界",
+        "5.1.54 出参形状",
+        "用 Merkle-Damgård 特征抓明文",
+        "明文四段",
+        "36 字节段：nonce 的自定义编码",
+        "13 字节段：时间戳 + nonce 偏移",
+        "nonce：mt19937 出 UUID v4",
+        "完整管道"
+      ],
+      "bytes": 7253,
+      "lines": 150,
+      "content_sha256": "2a401c9ce6ee4cc6106640a594c530795178823144e53869a86a8ede11302101"
+    },
+    {
       "path": "signature-algorithms/hangban-laes-encrypt.md",
       "kind": "canonical",
       "category": "signature-algorithms",
@@ -11725,6 +11964,37 @@
       "bytes": 5797,
       "lines": 159,
       "content_sha256": "9c913b7604d9a795dd902e9fbc47a7d0a7dfb408e2f9d680a0540bafc5f6553d"
+    },
+    {
+      "path": "signature-algorithms/mafengwo-modified-sha1-trace.md",
+      "kind": "canonical",
+      "category": "signature-algorithms",
+      "parent": null,
+      "title": "马蜂窝魔改 SHA1：从 HashFinder 到轮函数分段",
+      "source": "语雀 xiaofeng777/android_example",
+      "original_date": "2026-04-18",
+      "archive_date": "2026-09-06",
+      "summary": "马蜂窝 libmfw.so 对输入 123456 给出 40 位 hex。语雀练习稿用 HashFinder 的 0x80 扫描和逐轮 a_new 对照，把压缩函数从标准 SHA-1 的 20 轮一段改成 Ch / Parity / Maj 错位分段。更完整的四类魔改（含 feed-forward H2/H3 对调）以知识星球笔记为准，不要停在「40–59 改成 Ch 就跑通」。",
+      "keywords": [
+        "SHA-1",
+        "HashFinder",
+        "Ch",
+        "Parity",
+        "Maj",
+        "feed-forward",
+        "libmfw.so"
+      ],
+      "headings": [
+        "收录说明",
+        "样本与锚点",
+        "先分清 feed-forward 和真实 IV",
+        "HashFinder：第一个 0x80 不一定是业务输入",
+        "逐轮只改一个点",
+        "可复用打法"
+      ],
+      "bytes": 4933,
+      "lines": 104,
+      "content_sha256": "662dc06107c0df90f72fcfd3e63b5509274480ad96f9d0002cecce7dc5a3e024"
     },
     {
       "path": "signature-algorithms/qidian-fock-signature.md",
