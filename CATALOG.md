@@ -10,14 +10,14 @@
 |------|----------:|-------:|-----:|
 | `anti-detection` | 8 | 169 | 177 |
 | `collection-engineering` | 3 | 0 | 3 |
-| `mobile-app-reverse` | 11 | 156 | 167 |
+| `mobile-app-reverse` | 13 | 169 | 182 |
 | `native-analysis` | 3 | 12 | 15 |
 | `packing-bypass` | 2 | 0 | 2 |
 | `protocols` | 1 | 0 | 1 |
-| `signature-algorithms` | 2 | 19 | 21 |
+| `signature-algorithms` | 3 | 19 | 22 |
 | `web-reverse` | 11 | 126 | 137 |
 
-文章总数：523。
+文章总数：539。
 
 ## 逐篇目录
 
@@ -222,6 +222,8 @@
 | 主文 | 2026-04-13 | [MTOP InnerSignImpl Frida RPC](./mobile-app-reverse/mtop-innersign-rpc.md) | — | 适用边界 / 工作流 / 观察优先级 / 常见坑 |
 | 主文 | 多篇合集 | [泡泡以安 Android 逆向技术合集](./mobile-app-reverse/paopao-android-reverse-compilation.md) | — | 收录说明 / 文章目录（67 篇） |
 | 主文 | 2026-09-03 | [App 纯协议 SDK 重建：从首次设备注册到可维护协议客户端](./mobile-app-reverse/pure-protocol-sdk-reconstruction.md) | — | 定位 / 总流程 / 1. 干净首次注册与 HAR 语料 / 1.1 刷到可复现的首次开机 |
+| 主文 | 多篇合集 | [Softard Android 逆向笔记合集](./mobile-app-reverse/softard-android-reverse-compilation.md) | — | 收录说明 / 文章目录（13 篇） |
+| 主文 | unknown | [用 uiautomator 自动点击隐私同意按钮](./mobile-app-reverse/uiautomator-privacy-consent-tap.md) | — | 正文 / 一、为什么选它 / 二、uiautomator 到底提供了什么 / 三、真正的点击是怎么完成的 |
 | 主文 | 多篇合集 | [逆向学习交流安卓实战案例合集](./mobile-app-reverse/xfq-android-cases-compilation.md) | — | 收录说明 / 文章目录（11 篇） |
 | 主文 | 多篇合集 | [逆向学习交流 AOSP 与 ROM 笔记合集](./mobile-app-reverse/xfq-aosp-rom-compilation.md) | — | 收录说明 / 文章目录（13 篇） |
 | 主文 | 多篇合集 | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | — | 收录说明 / 文章目录（42 篇） |
@@ -299,6 +301,19 @@
 | 子文 | 2026-06-29 | [Frida学习笔记（二十四）：Stalker 指令级追踪](./mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260629-01.md) | [泡泡以安 Android 逆向技术合集](./mobile-app-reverse/paopao-android-reverse-compilation.md) | 一、Stalker 概述 / 1.1 什么是 Stalker / 1.2 底层原理 / 1.3 支持架构 |
 | 子文 | 2026-07-07 | [Frida学习笔记（二十五）：签名校验绕过](./mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260707-01.md) | [泡泡以安 Android 逆向技术合集](./mobile-app-reverse/paopao-android-reverse-compilation.md) | 一、签名机制：为什么必须重签 / 1.1 一个字节改动，为什么就要重新签名 / 1.2 keystore 生成 + apksigner 用法 / 1.3 但是——安装能过 ≠ App 就认 |
 | 子文 | 2026-07-08 | [Frida学习笔记（二十六）：DEX 脱壳实战](./mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260708-01.md) | [泡泡以安 Android 逆向技术合集](./mobile-app-reverse/paopao-android-reverse-compilation.md) | 一、加固壳的本质：理解它在保护什么 / 1.1 为什么 jadx 看不到真正的代码 / 1.2 壳的工作流程 / 1.3 加固壳的代际演进 |
+| 子文 | 2019-01-14 | [Android Framework 权限底层实现概览](./mobile-app-reverse/softard-android-reverse-compilation/softard-20190114-01.md) | [Softard Android 逆向笔记合集](./mobile-app-reverse/softard-android-reverse-compilation.md) | 正文 / 0000 / 0001 Overview / Linux File Permission |
+| 子文 | 2019-11-18 | [Android 权限系统一](./mobile-app-reverse/softard-android-reverse-compilation/softard-20191118-01.md) | [Softard Android 逆向笔记合集](./mobile-app-reverse/softard-android-reverse-compilation.md) | 正文 / 权限的性质 / 申请权限 / 权限管理 |
+| 子文 | 2025-12-31 | [DEX string_ids_off 崩溃：用汇编对齐 string_data_off](./mobile-app-reverse/softard-android-reverse-compilation/softard-20251231-01.md) | [Softard Android 逆向笔记合集](./mobile-app-reverse/softard-android-reverse-compilation.md) | 正文 / 359b0 / 日志分析 / Dex分析 |
+| 子文 | 2026-04-29 | [某厂安全研发的逆向笔记（三）：SO 文件剖析——必须搞懂的 ELF 格式](./mobile-app-reverse/softard-android-reverse-compilation/softard-20260429-01.md) | [Softard Android 逆向笔记合集](./mobile-app-reverse/softard-android-reverse-compilation.md) | 正文 / 一、SO 文件也是有身份证的 / 二、文件头：SO 的身份证 / 三、Segments：加载器的地图 |
+| 子文 | 2026-05-01 | [某厂安全研发的逆向笔记（5）：ART 虚拟机，你的代码到底怎么跑的](./mobile-app-reverse/softard-android-reverse-compilation/softard-20260501-01.md) | [Softard Android 逆向笔记合集](./mobile-app-reverse/softard-android-reverse-compilation.md) | 正文 / ART 不是一个简单的解释器 / 每个 Java 方法背后都有一张"身份证" / 手机开机后发生了什么 |
+| 子文 | 2026-05-04 | [某厂安全研发的逆向笔记（7）：读懂 Smali，就是读懂 Android 的"汇编"](./mobile-app-reverse/softard-android-reverse-compilation/softard-20260504-01.md) | [Softard Android 逆向笔记合集](./mobile-app-reverse/softard-android-reverse-compilation.md) | 正文 / 为什么不直接看 jadx 反编译的 Java / Smali 是什么 / 寄存器：v 和 p |
+| 子文 | 2026-05-06 | [某厂安全研发的逆向笔记（8）：新手村实战2，改 Smali 绕过 root 检测，顺便讲点别人不讲的](./mobile-app-reverse/softard-android-reverse-compilation/softard-20260506-01.md) | [Softard Android 逆向笔记合集](./mobile-app-reverse/softard-android-reverse-compilation.md) | 正文 / 第一步：拆包 / 第二步：找到并修改 root 检测逻辑 / 修改：反转跳转条件 |
+| 子文 | 2026-05-11 | [某厂安全研发的逆向笔记（9）：新手村实战3，刚出村遇见一只拦路猫](./mobile-app-reverse/softard-android-reverse-compilation/softard-20260511-01.md) | [Softard Android 逆向笔记合集](./mobile-app-reverse/softard-android-reverse-compilation.md) | 正文 / 准备 / 第一步：用 jadx 找入口 / 第二步：使用IDA64 打开 arm64-v8a的SO |
+| 子文 | 2026-05-19 | [某厂安全研发的逆向笔记（10）：看不懂伪 C？试试直接读汇编](./mobile-app-reverse/softard-android-reverse-compilation/softard-20260519-01.md) | [Softard Android 逆向笔记合集](./mobile-app-reverse/softard-android-reverse-compilation.md) | 正文 / 一、先搞清楚有哪些"格子"可以用：寄存器 |
+| 子文 | 2026-05-26 | [某厂安全研发的逆向笔记（11）：IDA 里的"幻觉"——认识代码混淆Ollvm](./mobile-app-reverse/softard-android-reverse-compilation/softard-20260526-01.md) | [Softard Android 逆向笔记合集](./mobile-app-reverse/softard-android-reverse-compilation.md) | 正文 / 一、基础概念：什么是基本块 / 二、控制流平坦化（CFF） / 三、虚假控制流（BCF） |
+| 子文 | 2026-06-01 | [某厂安全研发的逆向笔记（11.1）：更多混淆手法与对抗工具](./mobile-app-reverse/softard-android-reverse-compilation/softard-20260601-01.md) | [Softard Android 逆向笔记合集](./mobile-app-reverse/softard-android-reverse-compilation.md) | 正文 / 一、基本块调度 / 二、分裂基本块 / 三、控制流间接化 |
+| 子文 | 2026-06-04 | [某厂安全研发的逆向笔记（12）：IDA 逆向 SO 算法的路径](./mobile-app-reverse/softard-android-reverse-compilation/softard-20260604-01.md) | [Softard Android 逆向笔记合集](./mobile-app-reverse/softard-android-reverse-compilation.md) | 正文 / 一、为什么要识别算法 / 二、findcrypt3 插件 / 三、常见特征常量 |
+| 子文 | 2026-06-06 | [某厂安全研发的逆向笔记（12.1）：对抗算法特征检索的简单攻防](./mobile-app-reverse/softard-android-reverse-compilation/softard-20260606-01.md) | [Softard Android 逆向笔记合集](./mobile-app-reverse/softard-android-reverse-compilation.md) | 正文 / 一、运行时计算 / 二、静态加密 / 三、时机对抗 |
 | 子文 | 2025-09-22 | [xxss直聘13.160（讲义）](./mobile-app-reverse/xfq-android-cases-compilation/xfq-20250922-01.md) | [逆向学习交流安卓实战案例合集](./mobile-app-reverse/xfq-android-cases-compilation.md) | 正文 / 1.1. apk扫描 / 1.2. 重要信息 / 2.1. reqable抓包 |
 | 子文 | 2025-09-23 | [x恋爱 笔记（讲义）](./mobile-app-reverse/xfq-android-cases-compilation/xfq-20250923-01.md) | [逆向学习交流安卓实战案例合集](./mobile-app-reverse/xfq-android-cases-compilation.md) | 正文 / 想恋爱 / 分析流程 / 抓包分析登录请求 |
 | 子文 | 2025-10-23 | [小黑盒_1.3.368（讲义）](./mobile-app-reverse/xfq-android-cases-compilation/xfq-20251023-01.md) | [逆向学习交流安卓实战案例合集](./mobile-app-reverse/xfq-android-cases-compilation.md) | 正文 / 1.1. apk扫描 / 1.2. 重要信息 / 2.1. 发送手机验证码 |
@@ -420,6 +435,7 @@
 
 | 类型 | 日期 | 文章 | 父合集 | 关键标题 |
 |------|------|------|--------|----------|
+| 主文 | 2026-04-17 | [航班管家 laesEncryptStringWithBase64：魔改 AES-like 纯算还原](./signature-algorithms/hangban-laes-encrypt.md) | — | 分析目标 / 发现过程 / 1. trace 先钉输入输出 / 2. IDA 函数关系 |
 | 主文 | 2026-06-27 | [Qidian 请求签名与 Fock SDK 结论更新](./signature-algorithms/qidian-fock-signature.md) | — | 技术摘要 / 请求注入结构 / QDSign 已验证算法 / 字段与加密 |
 | 主文 | 多篇合集 | [逆向学习交流密码算法笔记合集](./signature-algorithms/xfq-crypto-notes-compilation.md) | — | 收录说明 / 文章目录（19 篇） |
 | 子文 | 2025-11-29 | [DES / 3DES 实现讲义](./signature-algorithms/xfq-crypto-notes-compilation/xfq-20251129-01.md) | [逆向学习交流密码算法笔记合集](./signature-algorithms/xfq-crypto-notes-compilation.md) | 正文 / 1. 密钥编排 / 1.1 密钥初始化置换 (PC-1) / 1.2 生成16轮子密钥 |
