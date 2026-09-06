@@ -10,14 +10,14 @@
 |------|----------:|-------:|-----:|
 | `anti-detection` | 8 | 169 | 177 |
 | `collection-engineering` | 4 | 0 | 4 |
-| `mobile-app-reverse` | 15 | 181 | 196 |
+| `mobile-app-reverse` | 16 | 181 | 197 |
 | `native-analysis` | 3 | 12 | 15 |
 | `packing-bypass` | 2 | 0 | 2 |
 | `protocols` | 1 | 0 | 1 |
 | `signature-algorithms` | 5 | 19 | 24 |
 | `web-reverse` | 11 | 126 | 137 |
 
-文章总数：556。
+文章总数：557。
 
 ## 逐篇目录
 
@@ -222,6 +222,7 @@
 | 主文 | unknown | [从抓包到纯 Python：Kimi device_register 与 ttEncrypt 还原](./mobile-app-reverse/kimi-device-register-ttencrypt.md) | — | 正文 / 一、最终结论 / 二、先分清五层数据 / 三、从抓包判断协议结构 |
 | 主文 | 2026-04-13 | [MTOP InnerSignImpl Frida RPC](./mobile-app-reverse/mtop-innersign-rpc.md) | — | 适用边界 / 工作流 / 观察优先级 / 常见坑 |
 | 主文 | 多篇合集 | [泡泡以安 Android 逆向技术合集](./mobile-app-reverse/paopao-android-reverse-compilation.md) | — | 收录说明 / 文章目录（67 篇） |
+| 主文 | 2026-09-06 | [App 协议准入四关：设备、签名、主机、传输](./mobile-app-reverse/protocol-admission-four-gates.md) | — | 定位 / 完成门（先于四关） / 四关（并联，不是流水线） / 关 1 — 设备：同行，不编造 |
 | 主文 | 2026-09-03 | [App 纯协议 SDK 重建：从首次设备注册到可维护协议客户端](./mobile-app-reverse/pure-protocol-sdk-reconstruction.md) | — | 定位 / 总流程 / 1. 干净首次注册与 HAR 语料 / 1.1 刷到可复现的首次开机 |
 | 主文 | 2025-04 至 2025-07 | [reverseNotes 早期安卓案例合集](./mobile-app-reverse/reversenotes-android-compilation.md) | — | 收录说明 / 文章目录（4 篇） / 索引里提到但本批不收的条目 |
 | 主文 | 2026-08 至 2026-09 源码落盘 | [App SDK 纯算落盘：顶象 / 数美 / Qimei / wtoken](./mobile-app-reverse/sdk-purecalc-compilation.md) | — | 收录说明 / 文章目录 |

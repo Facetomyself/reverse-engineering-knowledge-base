@@ -9,7 +9,7 @@
 
 ## 定位
 
-[App 逆向全局地图](./app-reverse-global-map.md) 把一次请求拆成 UI、业务、OkHttp、Interceptor、JNI、SO、TLS 七层，终点停在「模拟请求能通」。本文接在那之后：当目标不是调通一个接口，而是用 Python 写出一套跟真实 SDK 同构的设备注册、公共参数和事件上报时，缺的是目录合同、证据语料和完备性门，不是再搜一遍 `addInterceptor`。
+[App 逆向全局地图](./app-reverse-global-map.md) 把一次请求拆成 UI、业务、OkHttp、Interceptor、JNI、SO、TLS 七层，终点停在「模拟请求能通」。空壳、错机房、未激活设备要先过 [协议准入四关](./protocol-admission-four-gates.md)，再进入本文：当目标不是调通一个接口，而是用 Python 写出一套跟真实 SDK 同构的设备注册、公共参数和事件上报时，缺的是目录合同、证据语料和完备性门，不是再搜一遍 `addInterceptor`。
 
 本文只讨论 **App 纯协议客户端**。它和 Web 侧的纯算 / 补环境 / V8 RPC / 自动化落地不是同一条链：
 
@@ -18,6 +18,7 @@
 | Web JS 参数落地 | `docs/web-reverse-landing.md`、[sign-landing-methods.md](../web-reverse/sign-landing-methods.md) | 否 |
 | HTTP 采集控制面 | [high-concurrency-http-collector-control-plane.md](../collection-engineering/high-concurrency-http-collector-control-plane.md) | 只引用节奏与身份隔离，不写生产并发数字 |
 | App 请求生命周期 | [app-reverse-global-map.md](./app-reverse-global-map.md) | 前置地图 |
+| App 协议准入（空壳诊断） | [protocol-admission-four-gates.md](./protocol-admission-four-gates.md) | 先过四关再重建客户端 |
 | 真机刷机与身份门 | [app-reverse-environment-setup.md](./app-reverse-environment-setup.md)、Pixel 6 刷机文档 | 只要求干净首次开机，不重复刷机步骤 |
 
 完成门槛也要分开写：

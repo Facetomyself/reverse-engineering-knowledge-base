@@ -77,6 +77,7 @@
 | [xfq-aosp-rom-compilation.md](./mobile-app-reverse/xfq-aosp-rom-compilation.md) | — (知识星球归档) | `AOSP`, `APatch`, `WebView`, `系统CA`, `GMS`, `adb`, `ROM` | 逆向学习交流 13 篇 AOSP/ROM 笔记：预置 CA、APatch、WebView 调试、GMS 与 adb RSA，只保留可复用改造路径 |
 | [xfq-tools-debug-compilation.md](./mobile-app-reverse/xfq-tools-debug-compilation.md) | — (知识星球归档) | `xfqtrace`, `Frida`, `Gadget`, `jadx`, `抓包`, `WebView`, `MCP` | 逆向学习交流 42 篇工具调试：xfqtrace/Frida/jadx、证书、WebView Hook 与 MCP，已去掉号池/续杯/破解版 |
 | [kimi-device-register-ttencrypt.md](./mobile-app-reverse/kimi-device-register-ttencrypt.md) | — (独立分析归档) | `device_register`, `ttEncrypt`, `tt_info`, `AES-128-CBC`, `SHA512`, `volces`, `Kimi`, `JNI` | 字节系 Kimi `device_register`：query `tt_info` 与二进制 body 共用 MAGIC\|\|seed\|\|AES 封装，key/IV 由明文 seed 派生，属可逆协议封装并给出 Python 复现 |
+| [protocol-admission-four-gates.md](./mobile-app-reverse/protocol-admission-four-gates.md) | tiktok-four-gate-source-study | `协议准入`, `四关`, `设备画像`, `签名拦截器`, `主机路由`, `TLS指纹`, `空成功`, `激活调用`, `registrationComplete`, `hardware-fp` | App 协议准入四关：同行设备、签名切面、主机/引导、传输指纹必须并联闭合；HTTP 200 空壳不是 serverAccepted，注册签发不等于激活。供后续纯协议 case 复用，TikTok 三源只作推导语料 |
 | [sdk-purecalc-compilation.md](./mobile-app-reverse/sdk-purecalc-compilation.md) | hnair-dingxiang-risktoken / xiaoxingkong-shumei-dpv4 / tencent-qimei-pure / jincai-pingxiang-wtoken | `DXRisk`, `riskToken`, `数美`, `deviceprofile/v4`, `Qimei`, `snowflake`, `wtoken`, `XXTEA`, `纯协议` | storage SDK 落盘提炼：顶象签发请求、数美 v4 封装、腾讯 Qimei REGISTER、今彩萍乡 wtoken；不含密钥、画像原值和可直接打生产的脚本 |
 | [softard-android-reverse-compilation.md](./mobile-app-reverse/softard-android-reverse-compilation.md) | — (公众号归档) | `Android权限`, `ELF`, `ART`, `Smali`, `OLLVM`, `IDA`, `UnCrackable`, `DEX string_ids` | Softard 13 篇：权限模型、ELF/SO、ART、Smali patch、OLLVM 与 IDA 追 native 算法；不含订阅/会员推广 |
 | [uiautomator-privacy-consent-tap.md](./mobile-app-reverse/uiautomator-privacy-consent-tap.md) | — (公众号归档) | `uiautomator`, `adb input tap`, `隐私协议`, `pm clear`, `设备注册`, `UI dump` | 首次启动隐私/权限弹窗：uiautomator dump 解析 bounds，对「同意/允许」中心点 `input tap`；界面问题不必先 Frida |
@@ -139,12 +140,14 @@
 - **自定义 URL 协议唤醒本机更新器**: [unpacked-mv3-updater](./web-reverse/unpacked-mv3-native-updater.md)
 - **HTTP DNS**: [mmtls](./protocols/mmtls-protocol-analysis.md)
 - **Protobuf/gRPC**: [paopao-android](./mobile-app-reverse/paopao-android-reverse-compilation.md), [yuanrenxue-app](./mobile-app-reverse/yuanrenxue-mobile-app-reverse-compilation.md)
-- **App 设备注册 / 拦截器式纯协议客户端**: [pure-protocol-sdk](./mobile-app-reverse/pure-protocol-sdk-reconstruction.md), [kimi-ttencrypt](./mobile-app-reverse/kimi-device-register-ttencrypt.md), [reversenotes-android](./mobile-app-reverse/reversenotes-android-compilation.md), [sdk-purecalc](./mobile-app-reverse/sdk-purecalc-compilation.md)
+- **App 设备注册 / 拦截器式纯协议客户端**: [protocol-admission](./mobile-app-reverse/protocol-admission-four-gates.md), [pure-protocol-sdk](./mobile-app-reverse/pure-protocol-sdk-reconstruction.md), [kimi-ttencrypt](./mobile-app-reverse/kimi-device-register-ttencrypt.md), [reversenotes-android](./mobile-app-reverse/reversenotes-android-compilation.md), [sdk-purecalc](./mobile-app-reverse/sdk-purecalc-compilation.md)
 - **顶象 DXRisk `/udid/m1` riskToken 签发**: [sdk-purecalc](./mobile-app-reverse/sdk-purecalc-compilation.md)
 - **数美 `deviceprofile/v4` data/tn/ep**: [sdk-purecalc](./mobile-app-reverse/sdk-purecalc-compilation.md)
 - **腾讯 snowflake Qimei REGISTER `/ola/v2`**: [sdk-purecalc](./mobile-app-reverse/sdk-purecalc-compilation.md)
 - **B 站 buvid / deviceid RSA+AES 信封 / fp_local**: [reversenotes-android](./mobile-app-reverse/reversenotes-android-compilation.md)
 - **字节 volces `device_register` / `tt_info` / `ttEncrypt`**: [kimi-ttencrypt](./mobile-app-reverse/kimi-device-register-ttencrypt.md)
+- **App 协议准入四关（设备/签名/主机/传输 + 空壳完成门 + 引导激活）**: [protocol-admission](./mobile-app-reverse/protocol-admission-four-gates.md)
+- **TikTok / TTNet `device_register` / `X-Argus` / `*-boot`（四关推导语料）**: [protocol-admission](./mobile-app-reverse/protocol-admission-four-gates.md)
 - **SFSecurity（nonce/timestamp/devicetoken/sign）**: [boluobao-sfsecurity](./signature-algorithms/boluobao-sfsecurity-trace.md)
 - **TLS/HTTP2 网络指纹**: [anti-crawler-risk](./anti-detection/anti-crawler-risk-control-compilation.md), [ruyi-browser](./anti-detection/ruyi-browser-anti-detection-compilation.md)
 - **WBI/Protobuf/TCP/mTLS 与认证协议**: [benru-web](./web-reverse/benru-web-reverse-compilation.md), [yuanrenxue-app](./mobile-app-reverse/yuanrenxue-mobile-app-reverse-compilation.md)
@@ -153,7 +156,7 @@
 
 ### 反检测/对抗
 - **WAF 绕过**: [51job-anti-detection](./anti-detection/51job-anti-detection-analysis.md)
-- **设备指纹**: [51job-anti-detection](./anti-detection/51job-anti-detection-analysis.md), [pure-protocol-sdk](./mobile-app-reverse/pure-protocol-sdk-reconstruction.md), [ace-deviceuniqueid](./anti-detection/android-ace-deviceuniqueid.md), [xfq-device-fp](./anti-detection/xfq-device-fp-compilation.md), [reversenotes-android](./mobile-app-reverse/reversenotes-android-compilation.md), [sdk-purecalc](./mobile-app-reverse/sdk-purecalc-compilation.md)
+- **设备指纹**: [51job-anti-detection](./anti-detection/51job-anti-detection-analysis.md), [pure-protocol-sdk](./mobile-app-reverse/pure-protocol-sdk-reconstruction.md), [ace-deviceuniqueid](./anti-detection/android-ace-deviceuniqueid.md), [xfq-device-fp](./anti-detection/xfq-device-fp-compilation.md), [reversenotes-android](./mobile-app-reverse/reversenotes-android-compilation.md), [sdk-purecalc](./mobile-app-reverse/sdk-purecalc-compilation.md), [protocol-admission](./mobile-app-reverse/protocol-admission-four-gates.md)
 - **数美 Java a* / Native b* 画像生命周期**: [sdk-purecalc](./mobile-app-reverse/sdk-purecalc-compilation.md)
 - **腾讯 Qimei 设备注册纯协议**: [sdk-purecalc](./mobile-app-reverse/sdk-purecalc-compilation.md), [xfq-device-fp](./anti-detection/xfq-device-fp-compilation.md)
 - **libmsaoaidsec 加载期检测（leave 缺失 / call_constructors 观察窗）**: [reversenotes-android](./mobile-app-reverse/reversenotes-android-compilation.md), [xfq-android-cases](./mobile-app-reverse/xfq-android-cases-compilation.md)
@@ -166,7 +169,8 @@
 - **方法抽取 / CodeItem 恢复**: [jiagu-bypass](./packing-bypass/jiagu-bypass-analysis.md)
 - **WebDriver/CDP 检测**: [51job-anti-detection](./anti-detection/51job-anti-detection-analysis.md), [chromium-fingerprint-compilation](./anti-detection/chromium-fingerprint-compilation.md)
 - **Chromium 源码修改/指纹浏览器**: [chromium-fingerprint-compilation](./anti-detection/chromium-fingerprint-compilation.md)
-- **TLS/JA3/JA4 指纹**: [chromium-fingerprint-compilation](./anti-detection/chromium-fingerprint-compilation.md), [pure-protocol-sdk](./mobile-app-reverse/pure-protocol-sdk-reconstruction.md)
+- **TLS/JA3/JA4 指纹**: [chromium-fingerprint-compilation](./anti-detection/chromium-fingerprint-compilation.md), [pure-protocol-sdk](./mobile-app-reverse/pure-protocol-sdk-reconstruction.md), [protocol-admission](./mobile-app-reverse/protocol-admission-four-gates.md)
+- **空成功 / HTTP 200 空壳 / 注册后激活 / 指纹与鉴权融合**: [protocol-admission](./mobile-app-reverse/protocol-admission-four-gates.md)
 - **Canvas/WebGL 指纹**: [chromium-fingerprint-compilation](./anti-detection/chromium-fingerprint-compilation.md)
 - **SSL Pinning**: [app-reverse-global-map](./mobile-app-reverse/app-reverse-global-map.md), [app-reverse-environment-setup](./mobile-app-reverse/app-reverse-environment-setup.md)
 - **Root/Magisk 隐藏**: [app-reverse-environment-setup](./mobile-app-reverse/app-reverse-environment-setup.md)
@@ -194,7 +198,7 @@
 - **网易 NIS / 易盾加固（App）**: [app-protectors](./packing-bypass/app-protectors.md), [paopao-android](./mobile-app-reverse/paopao-android-reverse-compilation.md)
 - **51job**: [51job-anti-detection](./anti-detection/51job-anti-detection-analysis.md), [51job-webpack](./web-reverse/51job-webpack-analysis.md)
 - **CSDN/w1101662433 (fivcan)**: [chromium-fingerprint-compilation](./anti-detection/chromium-fingerprint-compilation.md)
-- **Android/App 逆向**: [app-reverse-global-map](./mobile-app-reverse/app-reverse-global-map.md), [app-reverse-environment-setup](./mobile-app-reverse/app-reverse-environment-setup.md), [pure-protocol-sdk](./mobile-app-reverse/pure-protocol-sdk-reconstruction.md), [ace-deviceuniqueid](./anti-detection/android-ace-deviceuniqueid.md), [xfq-android-cases](./mobile-app-reverse/xfq-android-cases-compilation.md), [reversenotes-android](./mobile-app-reverse/reversenotes-android-compilation.md), [sdk-purecalc](./mobile-app-reverse/sdk-purecalc-compilation.md)
+- **Android/App 逆向**: [app-reverse-global-map](./mobile-app-reverse/app-reverse-global-map.md), [app-reverse-environment-setup](./mobile-app-reverse/app-reverse-environment-setup.md), [pure-protocol-sdk](./mobile-app-reverse/pure-protocol-sdk-reconstruction.md), [ace-deviceuniqueid](./anti-detection/android-ace-deviceuniqueid.md), [xfq-android-cases](./mobile-app-reverse/xfq-android-cases-compilation.md), [reversenotes-android](./mobile-app-reverse/reversenotes-android-compilation.md), [sdk-purecalc](./mobile-app-reverse/sdk-purecalc-compilation.md), [protocol-admission](./mobile-app-reverse/protocol-admission-four-gates.md)
 - **AOSP / ROM 改造（CA/APatch/WebView）**: [xfq-aosp-rom](./mobile-app-reverse/xfq-aosp-rom-compilation.md)
 - **知识星球：逆向学习交流**: [xfq-crypto](./signature-algorithms/xfq-crypto-notes-compilation.md), [xfq-android-cases](./mobile-app-reverse/xfq-android-cases-compilation.md), [xfq-unidbg](./native-analysis/xfq-unidbg-native-compilation.md), [xfq-aosp-rom](./mobile-app-reverse/xfq-aosp-rom-compilation.md), [xfq-device-fp](./anti-detection/xfq-device-fp-compilation.md), [xfq-tools](./mobile-app-reverse/xfq-tools-debug-compilation.md), [reversenotes-android](./mobile-app-reverse/reversenotes-android-compilation.md)
 - **语雀 xiaofeng777/android_example**: [boluobao-sfsecurity](./signature-algorithms/boluobao-sfsecurity-trace.md), [mafengwo-sha1](./signature-algorithms/mafengwo-modified-sha1-trace.md)
@@ -209,6 +213,7 @@
 - **Akamai**: [anti-crawler-web](./web-reverse/anti-crawler-web-reverse-compilation.md), [products](./web-reverse/products.md)
 - **DataDome / Kasada / PerimeterX / F5 Shape / reese84 / Cloudflare 5s**: [products](./web-reverse/products.md), [datadome-env-patch](./web-reverse/datadome-env-patch.md)
 - **Kimi / 字节 volces applog**: [kimi-ttencrypt](./mobile-app-reverse/kimi-device-register-ttencrypt.md)
+- **TikTok / ByteDance musically / TTNet / metasec**: [protocol-admission](./mobile-app-reverse/protocol-admission-four-gates.md)
 - **微信公众号：ai辅助逆向手记**: [ai-assisted-web](./web-reverse/ai-assisted-web-reverse-compilation.md)
 - **微信公众号：零基础爬虫第一天**: [koohai-notes](./web-reverse/koohai-reverse-notes-compilation.md)
 - **微信公众号：Softard（Wossoneri）**: [softard-android](./mobile-app-reverse/softard-android-reverse-compilation.md), [uiautomator-consent](./mobile-app-reverse/uiautomator-privacy-consent-tap.md)
@@ -243,6 +248,7 @@
 - **App 逆向三步法**: [app-reverse-global-map](./mobile-app-reverse/app-reverse-global-map.md)
 - **OkHttp/Interceptor 定位**: [app-reverse-global-map](./mobile-app-reverse/app-reverse-global-map.md), [pure-protocol-sdk](./mobile-app-reverse/pure-protocol-sdk-reconstruction.md)
 - **App 纯协议 SDK 重建（HAR 语料 / algorithms / 拦截器链 / 注册完备性）**: [pure-protocol-sdk](./mobile-app-reverse/pure-protocol-sdk-reconstruction.md)
+- **App 协议准入四关 / 空壳诊断顺序 / 全量静态普查 / 同名算法先看 MAGIC**: [protocol-admission](./mobile-app-reverse/protocol-admission-four-gates.md)
 - **SDK 纯算落盘（顶象/数美/Qimei/wtoken 封装链）**: [sdk-purecalc](./mobile-app-reverse/sdk-purecalc-compilation.md)
 - **Android 逆向环境搭建**: [app-reverse-environment-setup](./mobile-app-reverse/app-reverse-environment-setup.md)
 - **Charles/jadx/Frida 工具链**: [app-reverse-environment-setup](./mobile-app-reverse/app-reverse-environment-setup.md)
