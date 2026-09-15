@@ -14,10 +14,10 @@
 | `native-analysis` | 4 | 12 | 16 |
 | `packing-bypass` | 2 | 0 | 2 |
 | `protocols` | 3 | 0 | 3 |
-| `signature-algorithms` | 5 | 19 | 24 |
+| `signature-algorithms` | 6 | 19 | 25 |
 | `web-reverse` | 11 | 126 | 137 |
 
-文章总数：569。
+文章总数：570。
 
 ## 逐篇目录
 
@@ -467,6 +467,7 @@
 | 主文 | 2026-04-17 | [航班管家 laesEncryptStringWithBase64：魔改 AES-like 纯算还原](./signature-algorithms/hangban-laes-encrypt.md) | — | 分析目标 / 发现过程 / 1. trace 先钉输入输出 / 2. IDA 函数关系 |
 | 主文 | 2026-04-18 | [马蜂窝魔改 SHA1：从 HashFinder 到轮函数分段](./signature-algorithms/mafengwo-modified-sha1-trace.md) | — | 收录说明 / 样本与锚点 / 先分清 feed-forward 和真实 IV / HashFinder：第一个 0x80 不一定是业务输入 |
 | 主文 | 2026-06-27 | [Qidian 请求签名与 Fock SDK 结论更新](./signature-algorithms/qidian-fock-signature.md) | — | 技术摘要 / 请求注入结构 / QDSign 已验证算法 / 字段与加密 |
+| 主文 | 2026-03-22 | [Shopee SHPSSDK requestDefense：x-sap-ri 与四键签名](./signature-algorithms/shopee-shpssdk-request-defense.md) | — | 收录说明 / 案例边界 / 字段速查 / 复现顺序 |
 | 主文 | 多篇合集 | [逆向学习交流密码算法笔记合集](./signature-algorithms/xfq-crypto-notes-compilation.md) | — | 收录说明 / 文章目录（19 篇） |
 | 子文 | 2025-11-29 | [DES / 3DES 实现讲义](./signature-algorithms/xfq-crypto-notes-compilation/xfq-20251129-01.md) | [逆向学习交流密码算法笔记合集](./signature-algorithms/xfq-crypto-notes-compilation.md) | 正文 / 1. 密钥编排 / 1.1 密钥初始化置换 (PC-1) / 1.2 生成16轮子密钥 |
 | 子文 | 2025-12-03 | [AES 分组密码实现讲义](./signature-algorithms/xfq-crypto-notes-compilation/xfq-20251203-01.md) | [逆向学习交流密码算法笔记合集](./signature-algorithms/xfq-crypto-notes-compilation.md) | 正文 / 1.1. 密钥扩展 (Key Expansion) / 1.1.1. 密钥扩展流程 / 1.1.2. 轮密钥生成公式 |

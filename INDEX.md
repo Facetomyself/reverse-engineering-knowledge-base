@@ -48,6 +48,7 @@
 | [boluobao-sfsecurity-trace.md](./signature-algorithms/boluobao-sfsecurity-trace.md) | — (语雀归档) | `SFSecurity`, `mt19937`, `UUID v4`, `nonce`, `自定义编码`, `MD5`, `HashFinder`, `libsfdata.so` | 菠萝包轻小说 5.1.54：`/dev/urandom` 经 mt19937 生成 UUID v4 nonce，四段自定义编码后标准 MD5 得 `sign`；5.2.x 算法进匿名内存，不能再按映射 SO 偏移收工 |
 | [mafengwo-modified-sha1-trace.md](./signature-algorithms/mafengwo-modified-sha1-trace.md) | — (语雀归档) | `SHA-1`, `HashFinder`, `Ch`, `Parity`, `Maj`, `feed-forward`, `libmfw.so` | 马蜂窝魔改 SHA1 练习稿：用 `0x80` 扫描和逐轮 `a_new` 对照找出 Ch/Parity/Maj 错位分段；闭合四类魔改（含 H2/H3 对调）见合集笔记 |
 | [hangban-laes-encrypt.md](./signature-algorithms/hangban-laes-encrypt.md) | — (PDF 归档) | `LAES`, `ECB`, `PKCS7`, `T-box`, `JNI`, `libhbgjbangbang_crypto_tool.so`, `航班管家` | 航班管家 `laesEncryptStringWithBase64`：key 前 4 字节是模式头，轮密钥滚动异或，AddRoundKey 改 nibble 查表，S-box/T-box 均非标准 AES；纯算回放对齐 JNI Base64 |
+| [shopee-shpssdk-request-defense.md](./signature-algorithms/shopee-shpssdk-request-defense.md) | — (语雀归档) | `x-sap-ri`, `SHPSSDK`, `libshpssdk.so`, `ChaCha20`, `Salsa20`, `RC6`, `xxhash`, `mmh3`, `unidbg` | Shopee 33731 `requestDefense`：`libshpssdk.so!0x995dc` 产出 `x-sap-ri` 与四变化键；时间戳小端、九套短键、ChaCha20/RC6/Salsa20、xxhash 与自定义 Base64；截图已本地化，长值另三分支待验证 |
 
 ### 加固绕过 (`article/packing-bypass/`)
 
@@ -121,7 +122,8 @@
 - **AES-128-CBC + SHA1 拼接（陌陌 x-sign 第一参）**: [xfq-android-cases](./mobile-app-reverse/xfq-android-cases-compilation.md)
 - **HMAC-SHA1 → Base64 → URL-encode（豆瓣 sig）**: [reversenotes-android](./mobile-app-reverse/reversenotes-android-compilation.md)
 - **AES-CBC 由 uid MD5 对半作 key/iv（韩小圈 sign）**: [reversenotes-android](./mobile-app-reverse/reversenotes-android-compilation.md)
-- **RC4/Salsa20/ChaCha20/GCM 流密码实现**: [xfq-crypto](./signature-algorithms/xfq-crypto-notes-compilation.md)
+- **RC4/Salsa20/ChaCha20/GCM 流密码实现**: [xfq-crypto](./signature-algorithms/xfq-crypto-notes-compilation.md), [shopee-shpssdk](./signature-algorithms/shopee-shpssdk-request-defense.md)
+- **RC6 / xxhash32 / mmh3 / 自定义 SHA-256 / 自定义 Base64（Shopee SHPSSDK）**: [shopee-shpssdk](./signature-algorithms/shopee-shpssdk-request-defense.md)
 - **魔改 MD5/SHA1 与 Java Crypto Hook**: [xfq-crypto](./signature-algorithms/xfq-crypto-notes-compilation.md), [mafengwo-sha1](./signature-algorithms/mafengwo-modified-sha1-trace.md)
 - **mt19937 + UUID v4 nonce + 自定义编码 MD5（SFSecurity）**: [boluobao-sfsecurity](./signature-algorithms/boluobao-sfsecurity-trace.md)
 - **SHA-1 轮函数错位分段 / HashFinder 0x80 扫描**: [mafengwo-sha1](./signature-algorithms/mafengwo-modified-sha1-trace.md), [xfq-crypto](./signature-algorithms/xfq-crypto-notes-compilation.md)
@@ -160,6 +162,7 @@
 - **App 协议准入四关（设备/签名/主机/传输 + 空壳完成门 + 引导激活）**: [protocol-admission](./mobile-app-reverse/protocol-admission-four-gates.md)
 - **TikTok / TTNet `device_register` / `X-Argus` / `*-boot`（四关推导语料）**: [protocol-admission](./mobile-app-reverse/protocol-admission-four-gates.md)
 - **SFSecurity（nonce/timestamp/devicetoken/sign）**: [boluobao-sfsecurity](./signature-algorithms/boluobao-sfsecurity-trace.md)
+- **Shopee `x-sap-ri` / SHPSSDK requestDefense 四键头**: [shopee-shpssdk](./signature-algorithms/shopee-shpssdk-request-defense.md)
 - **TLS/HTTP2 网络指纹**: [anti-crawler-risk](./anti-detection/anti-crawler-risk-control-compilation.md), [ruyi-browser](./anti-detection/ruyi-browser-anti-detection-compilation.md)
 - **WBI/Protobuf/TCP/mTLS 与认证协议**: [benru-web](./web-reverse/benru-web-reverse-compilation.md), [yuanrenxue-app](./mobile-app-reverse/yuanrenxue-mobile-app-reverse-compilation.md)
 - **钉钉 LWP WebSocket（淘宝/闲鱼 IM）**: [alibaba-mtop-h5](./web-reverse/products/alibaba-mtop-h5.md)
@@ -215,6 +218,8 @@
 - **AOSP / ROM 改造（CA/APatch/WebView）**: [xfq-aosp-rom](./mobile-app-reverse/xfq-aosp-rom-compilation.md)
 - **知识星球：逆向学习交流**: [xfq-crypto](./signature-algorithms/xfq-crypto-notes-compilation.md), [xfq-android-cases](./mobile-app-reverse/xfq-android-cases-compilation.md), [xfq-unidbg](./native-analysis/xfq-unidbg-native-compilation.md), [xfq-aosp-rom](./mobile-app-reverse/xfq-aosp-rom-compilation.md), [xfq-device-fp](./anti-detection/xfq-device-fp-compilation.md), [xfq-tools](./mobile-app-reverse/xfq-tools-debug-compilation.md), [reversenotes-android](./mobile-app-reverse/reversenotes-android-compilation.md)
 - **语雀 xiaofeng777/android_example**: [boluobao-sfsecurity](./signature-algorithms/boluobao-sfsecurity-trace.md), [mafengwo-sha1](./signature-algorithms/mafengwo-modified-sha1-trace.md)
+- **语雀 xiayutian23/htolhb**: [shopee-shpssdk](./signature-algorithms/shopee-shpssdk-request-defense.md)
+- **Shopee / SHPSSDK**: [shopee-shpssdk](./signature-algorithms/shopee-shpssdk-request-defense.md)
 - **菠萝包 / SFACG**: [boluobao-sfsecurity](./signature-algorithms/boluobao-sfsecurity-trace.md)
 - **马蜂窝**: [mafengwo-sha1](./signature-algorithms/mafengwo-modified-sha1-trace.md), [xfq-crypto](./signature-algorithms/xfq-crypto-notes-compilation.md), [xfq-android-cases](./mobile-app-reverse/xfq-android-cases-compilation.md)
 - **陌陌**: [xfq-android-cases](./mobile-app-reverse/xfq-android-cases-compilation.md)
@@ -277,6 +282,7 @@
 - **ELF Section vs Segment / ART ArtMethod / Smali patch**: [softard-android](./mobile-app-reverse/softard-android-reverse-compilation.md)
 - **OLLVM 控制流平坦化识别**: [softard-android](./mobile-app-reverse/softard-android-reverse-compilation.md)
 - **自定义 T-box 提表后纯算（LAES）**: [hangban-laes](./signature-algorithms/hangban-laes-encrypt.md)
+- **unidbg RandomFileIO 钉随机 / SearchData / memcpy + traceWrite（Shopee）**: [shopee-shpssdk](./signature-algorithms/shopee-shpssdk-request-defense.md)
 - **AOSP 预置 CA / APatch / WebView 调试 ROM**: [xfq-aosp-rom](./mobile-app-reverse/xfq-aosp-rom-compilation.md)
 - **trace 数据库 + MCP 证据回溯**: [ai-vmp-trace](./native-analysis/ai-assisted-vmp-trace-recovery.md)
 - **Chromium/Firefox/WebKit 内核定制**: [ruyi-browser](./anti-detection/ruyi-browser-anti-detection-compilation.md)
