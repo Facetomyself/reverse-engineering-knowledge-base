@@ -11,6 +11,8 @@
 
 Web H5 MTOP 的 query `sign` 走 [_m_h5_tk MD5](../web-reverse/products/alibaba-mtop-h5.md)，与本页 **不能互换**。本页只覆盖 Android 网关头族：`x-sign`、`x-sgext`、`x-mini-wua`、`x-umt`、`x-wua` / `wua`。
 
+未知 SG 版本或缺会话画像时，默认仍走本页 RPC。`SG doCommandNative 70102` 已闭合、且手里有 `key24` / `phase2` / 模板 / 计数时，才走 [四头纯算](../signature-algorithms/alibaba-mtop-four-headers.md)。纯算不能从任意新设备字段凭空生成会话；一加捕获只是 byte-exact 夹具。
+
 出现这些标记时走本页：
 
 - 包内 `mtopsdk.security.InnerSignImpl`

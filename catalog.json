@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
-  "article_count": 570,
+  "article_count": 574,
   "category_counts": {
-    "anti-detection": 177,
+    "anti-detection": 179,
     "collection-engineering": 7,
-    "mobile-app-reverse": 203,
+    "mobile-app-reverse": 204,
     "native-analysis": 16,
     "packing-bypass": 2,
     "protocols": 3,
-    "signature-algorithms": 25,
+    "signature-algorithms": 26,
     "web-reverse": 137
   },
   "records": [
@@ -1495,6 +1495,42 @@
       "bytes": 3036,
       "lines": 86,
       "content_sha256": "cc1bd229a303b18729318f523c2cca12b4966bc6a44a93bf9e6cb43282305a8c"
+    },
+    {
+      "path": "anti-detection/device-fingerprint-consistency-modeling.md",
+      "kind": "canonical",
+      "category": "anti-detection",
+      "parent": null,
+      "title": "设备指纹一致性建模：联合分布、时间间隔与生命周期",
+      "source": "方法论整理（设备指纹一致性建模）",
+      "original_date": "2026-09-15",
+      "archive_date": "2026-09-15",
+      "summary": "服务端审查设备指纹，看的不是某几个字段单独像不像，而是字段之间的联合分布、时间间隔的统计形态，以及多次采集之间的状态演化。把真实指纹拿来抖动几个字段，联合分布和时序一对照就会露馅。本文只整理识别面与建模原则，不收录生成代码、设备 ID 原值或可打生产的改机脚本。",
+      "keywords": [
+        "设备指纹",
+        "一致性建模",
+        "联合分布",
+        "泊松分布",
+        "对数正态",
+        "多次采集",
+        "APK版本",
+        "生命周期"
+      ],
+      "headings": [
+        "定位",
+        "核心判断",
+        "1. 联合分布，不是单字段真假",
+        "2. APK 自身也是指纹面",
+        "3. 时间间隔用右偏分布",
+        "4. 静态字段之外的动态信号",
+        "5. 指纹是有状态对象",
+        "6. 分层装配的概念方案",
+        "边界",
+        "速查"
+      ],
+      "bytes": 12241,
+      "lines": 178,
+      "content_sha256": "116c69eca61f7f04350eefbbc36182053ea820d9372ded78ed9319b60da2ca08"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation.md",
@@ -4548,6 +4584,40 @@
       "content_sha256": "f748bf79e449a556927f251f7ccfee49027f3247e5e77cfb9d25c419392aebff"
     },
     {
+      "path": "anti-detection/shuzilm-libdu-fingerprint.md",
+      "kind": "canonical",
+      "category": "anti-detection",
+      "parent": null,
+      "title": "数盟 libdu.so 指纹对照表（知乎 11.4.0）",
+      "source": "知乎 11.4.0 / `libdu.so` SDK v8.4.0 独立分析（rizin + HAR；Pixel 5 实验室样本）",
+      "original_date": "2026-09",
+      "archive_date": "2026-09-15",
+      "summary": "注册本身就是那 20–30 个顶层 key 加上 vB2 里那一大团设备画像。拿到 cdd 之后，后续业务只带 x-ms-id。trace 入口：0x2d860 顶层、0x1b9bc 身份、0x27148 vB2；vB2 字符串在 0x543ec。",
+      "keywords": [
+        "数盟",
+        "数字联盟",
+        "libdu.so",
+        "x-ms-id",
+        "cdd",
+        "d2api",
+        "vB2",
+        "AYk",
+        "deviceUniqueId"
+      ],
+      "headings": [
+        "怎么用这篇",
+        "1. 签发",
+        "2. 口径：258 vs 366",
+        "3. 两张枚举",
+        "4. 采集公式（这几条最容易看错）",
+        "5. 每个 key",
+        "6. 未完全钉死的项"
+      ],
+      "bytes": 65545,
+      "lines": 487,
+      "content_sha256": "340107b94266ff2f9ba7700c41a34db5ab869f9b1fa90a24c85a67928ecfd6f2"
+    },
+    {
       "path": "anti-detection/xfq-device-fp-compilation.md",
       "kind": "canonical",
       "category": "anti-detection",
@@ -5616,9 +5686,9 @@
         "常见坑",
         "验证口径"
       ],
-      "bytes": 3427,
-      "lines": 61,
-      "content_sha256": "b7a9ab329f8960274591265e32d537dc9ecae87b08d8b9fe2da2069d589560ac"
+      "bytes": 3701,
+      "lines": 63,
+      "content_sha256": "09804ec4e0dd91d812d91a0f11cbe1c30e8668c82aba41301a36ea7c91b0ed1f"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation.md",
@@ -8876,9 +8946,48 @@
         "推导语料（TikTok 三源，不是模板常量）",
         "速查"
       ],
-      "bytes": 12397,
-      "lines": 233,
-      "content_sha256": "2353a2f3805cfa5dbb13c1ad472e035d0c68464739f5f98027e3eb6e3fff4b02"
+      "bytes": 13467,
+      "lines": 240,
+      "content_sha256": "cefaaae1e592903c1bab28cff52bb37850b29e94407306afe8918f0f35d15f4b"
+    },
+    {
+      "path": "mobile-app-reverse/protocol-register-packet-order.md",
+      "kind": "canonical",
+      "category": "mobile-app-reverse",
+      "parent": null,
+      "title": "App 设备注册包顺序：事件驱动、前置身份与 SDK 同构",
+      "source": "方法论整理（纯协议补注册包顺序）",
+      "original_date": "2026-09-09",
+      "archive_date": "2026-09-09",
+      "summary": "纯协议补设备注册时，包顺序不是把 HAR 时间线串行重放，而是按真实 App 的线程、事件和信号来发。事件包与日志包走独立通道，云端身份是后续包的前置条件；要接近真机，就扣核心 SDK 做成同构实现，而不是手写一条「看起来完整」的注册脚本。",
+      "keywords": [
+        "纯协议",
+        "设备注册",
+        "发送顺序",
+        "事件包",
+        "日志包",
+        "多线程",
+        "SDK 状态机",
+        "前置身份",
+        "自动化",
+        "AppsFlyer"
+      ],
+      "headings": [
+        "定位",
+        "核心判断",
+        "1. 注册环节不是串行时间线",
+        "2. 事件包：一条一条，或凑阈值再发",
+        "3. 日志包：生命周期信号，不是装饰",
+        "4. 前置条件：云端身份还没落到状态里，后面的包不能发",
+        "5. 保真度：尽可能像，但承认还不是真机",
+        "6. 纯协议和自动化各自贵在哪",
+        "7. 上量失败，多半是风控认知不够",
+        "8. 跟真机接近：扣核心 SDK，靠同构而不是靠猜顺序",
+        "速查"
+      ],
+      "bytes": 15842,
+      "lines": 224,
+      "content_sha256": "8900c90330460cf892d46c9d7f800a2d4654706869f2b46c45f99aa443a313f6"
     },
     {
       "path": "mobile-app-reverse/pure-protocol-sdk-reconstruction.md",
@@ -8930,9 +9039,9 @@
         "目录合同与验收",
         "速查"
       ],
-      "bytes": 23392,
-      "lines": 404,
-      "content_sha256": "38ff97969a6e691e2996f148a62c1b28d335e17391815a46407b11705a001577"
+      "bytes": 23680,
+      "lines": 406,
+      "content_sha256": "65cd8605c9132bd20e4f1803295f1d94a1a3aaa1056a5fc4ffae1a9dc5e4aac3"
     },
     {
       "path": "mobile-app-reverse/reversenotes-android-compilation.md",
@@ -12203,9 +12312,9 @@
         "观察顺序",
         "使用边界"
       ],
-      "bytes": 3020,
-      "lines": 48,
-      "content_sha256": "f88015b0d91b71babb1199d5d6b93ba9d9cd52a2c27874dd95a38863da79097c"
+      "bytes": 3069,
+      "lines": 49,
+      "content_sha256": "eb7ef50395a8fed6770e2b0728fcbff01bd4c57196a32198f8c2a407fcea3f72"
     },
     {
       "path": "packing-bypass/jiagu-bypass-analysis.md",
@@ -12410,6 +12519,41 @@
       "bytes": 9273,
       "lines": 132,
       "content_sha256": "67538d62087a591e63bfef0f4eef70b764a90d1d03c99b7cfa35dc9197109391"
+    },
+    {
+      "path": "signature-algorithms/alibaba-mtop-four-headers.md",
+      "kind": "canonical",
+      "category": "signature-algorithms",
+      "parent": null,
+      "title": "阿里 SG 70102 四头纯算",
+      "source": "`workspace/alibaba-mtop-four-headers`（吸收 `storage/ali-algorithms.zip`）",
+      "original_date": "2026-09-10",
+      "archive_date": "2026-09-15",
+      "summary": "阿里 App 网关四头 x-sign / x-sgext / x-mini-wua / x-umt 可以纯算，但输入是一份会话画像加 data2sign，不是只喂请求体。一加捕获只是目前唯一 byte-exact 样本；算法层通用，不能凭空生成新会话。",
+      "keywords": [
+        "MTOP",
+        "x-sign",
+        "x-sgext",
+        "x-mini-wua",
+        "x-umt",
+        "SG 70102",
+        "DES-ECB",
+        "libsgmainso"
+      ],
+      "headings": [
+        "适用边界",
+        "四个文件",
+        "为什么会出现一加",
+        "输入与输出",
+        "算法骨架",
+        "验证口径",
+        "与 RPC 的关系",
+        "禁区",
+        "速查"
+      ],
+      "bytes": 5363,
+      "lines": 112,
+      "content_sha256": "1c4a145603f3c3b32ca3ad13a357fc04244662a2002ed55afc489497585a585b"
     },
     {
       "path": "signature-algorithms/boluobao-sfsecurity-trace.md",
@@ -15603,9 +15747,9 @@
         "使用边界",
         "与主线工作流的衔接"
       ],
-      "bytes": 8182,
+      "bytes": 8304,
       "lines": 69,
-      "content_sha256": "01b55095d27190c39d7e4706bd91ca8c8fdf4da862906350cead269f91cc7279"
+      "content_sha256": "281d1b69028f19851f4820338de140c1dd328a1f6f072965701b77052794eb38"
     },
     {
       "path": "web-reverse/products/akamai.md",
@@ -15691,9 +15835,9 @@
         "常见坑",
         "验证口径"
       ],
-      "bytes": 3606,
+      "bytes": 3656,
       "lines": 69,
-      "content_sha256": "69185ff52b54507fde954f0c562300bcf0fedf03f1c10958a13a56141edba094"
+      "content_sha256": "78ff42c128a696b4af5da5e33f66b2c6ea9b648fba035c5a44041bc45353f43b"
     },
     {
       "path": "web-reverse/products/aliyun-captcha-v2.md",
@@ -15977,11 +16121,16 @@
         "常见链路",
         "观察优先级",
         "常见坑",
-        "验证口径"
+        "验证口径",
+        "请求链（可复用）",
+        "参数谱系",
+        "风控面",
+        "Node 补环境落点",
+        "2026-09-08 Weverse SIGNIN 实测"
       ],
-      "bytes": 3658,
-      "lines": 60,
-      "content_sha256": "1946d132d8cf69f021882d8ea9925bd76f0ea1f8d05cc0be97ea0276c6a4653f"
+      "bytes": 8432,
+      "lines": 137,
+      "content_sha256": "da91ab13a7795c33b7d6b345a809476a15b3c83bb7dda8193993885014fea074"
     },
     {
       "path": "web-reverse/products/imperva-reese84-canadiannorth.md",
@@ -16419,9 +16568,9 @@
         "反面教材",
         "与主线工作流"
       ],
-      "bytes": 8123,
+      "bytes": 8266,
       "lines": 107,
-      "content_sha256": "2dad485404ac5635757fecd0e86bfda536ed8c1570588701e94d77ee63b323f9"
+      "content_sha256": "741c14b82b34abdeb51d76eb536aaef5e0a8b4e6c05f3ff06dd4b7fd26e7f6dc"
     },
     {
       "path": "web-reverse/unpacked-mv3-native-updater.md",

@@ -85,7 +85,7 @@ HTTP 200 空 body、挑战页、passport decision、bdturing 类响应，要翻�
 
 ### 7. App Native 签名优先实例 RPC
 
-MTOP `InnerSignImpl.getUnifiedSign` 是标准路径：spawn → 枚举 ClassLoader → hook 一次抓住实例 → 立刻摘 hook → RPC 出 `x-sign` / `x-sgext` / `x-mini-wua`。版本、`ttid`、`app_ver` 一变就要重适配。这不是纯算完成，也不是「已经还原 SG」。
+MTOP `InnerSignImpl.getUnifiedSign` 是标准路径：spawn → 枚举 ClassLoader → hook 一次抓住实例 → 立刻摘 hook → RPC 出 `x-sign` / `x-sgext` / `x-mini-wua`。版本、`ttid`、`app_ver` 一变就要重适配。这不是纯算完成，也不是「已经还原 SG」。`SG 70102` 四头有一份 byte-exact 纯算，但必须先有会话画像（`key24` / `phase2` / 模板 / 计数），不能凭空换机；见 [阿里 SG 70102 四头](../signature-algorithms/alibaba-mtop-four-headers.md)。未知版本仍走 RPC。
 
 ## 反面教材
 

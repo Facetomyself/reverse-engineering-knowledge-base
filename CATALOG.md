@@ -8,16 +8,16 @@
 
 | 分类 | canonical | 子文章 | 合计 |
 |------|----------:|-------:|-----:|
-| `anti-detection` | 8 | 169 | 177 |
+| `anti-detection` | 10 | 169 | 179 |
 | `collection-engineering` | 5 | 2 | 7 |
-| `mobile-app-reverse` | 17 | 186 | 203 |
+| `mobile-app-reverse` | 18 | 186 | 204 |
 | `native-analysis` | 4 | 12 | 16 |
 | `packing-bypass` | 2 | 0 | 2 |
 | `protocols` | 3 | 0 | 3 |
-| `signature-algorithms` | 6 | 19 | 25 |
+| `signature-algorithms` | 7 | 19 | 26 |
 | `web-reverse` | 11 | 126 | 137 |
 
-文章总数：570。
+文章总数：574。
 
 ## 逐篇目录
 
@@ -30,7 +30,9 @@
 | 主文 | 多篇合集 | [反爬破解社风控与反检测合集](./anti-detection/anti-crawler-risk-control-compilation.md) | — | 收录说明 / 文章目录（10 篇） |
 | 主文 | 多篇合集 | [本如笔记反爬与反检测实战合集](./anti-detection/benru-anti-detection-compilation.md) | — | 收录说明 / 文章目录（8 篇） |
 | 主文 | 2026-07-06 | [Chromium 指纹浏览器编译系列](./anti-detection/chromium-fingerprint-compilation.md) | — | 技术概览 / 指纹伪装维度 / 反检测绕过 / 爬虫增强 |
+| 主文 | 2026-09-15 | [设备指纹一致性建模：联合分布、时间间隔与生命周期](./anti-detection/device-fingerprint-consistency-modeling.md) | — | 定位 / 核心判断 / 1. 联合分布，不是单字段真假 / 2. APK 自身也是指纹面 |
 | 主文 | 多篇合集 | [如意私塾浏览器指纹与反检测合集](./anti-detection/ruyi-browser-anti-detection-compilation.md) | — | 收录说明 / 文章目录（97 篇） |
+| 主文 | 2026-09 | [数盟 libdu.so 指纹对照表（知乎 11.4.0）](./anti-detection/shuzilm-libdu-fingerprint.md) | — | 怎么用这篇 / 1. 签发 / 2. 口径：258 vs 366 / 3. 两张枚举 |
 | 主文 | 多篇合集 | [逆向学习交流设备指纹与风控合集](./anti-detection/xfq-device-fp-compilation.md) | — | 收录说明 / 文章目录（8 篇） |
 | 主文 | 多篇合集 | [猿人学请求一致性与反检测合集](./anti-detection/yuanrenxue-anti-detection-compilation.md) | — | 收录说明 / 文章目录（8 篇） |
 | 子文 | 2026-04-08 | [浏览器指纹的深度伪装与检测：从UserAgent到WebGL的全面攻防](./anti-detection/anti-crawler-risk-control-compilation/anti-crawler-risk-20260408-01.md) | [反爬破解社风控与反检测合集](./anti-detection/anti-crawler-risk-control-compilation.md) | 一、什么是浏览器指纹？为何它难以对抗？ / 二、指纹的7个层级：从易到难 / 层级1：基础信息 - 最容易伪装 / 层级2：API特性检测 - 需要逻辑一致 |
@@ -226,6 +228,7 @@
 | 主文 | 2026-04-13 | [MTOP InnerSignImpl Frida RPC](./mobile-app-reverse/mtop-innersign-rpc.md) | — | 适用边界 / 工作流 / 观察优先级 / 常见坑 |
 | 主文 | 多篇合集 | [泡泡以安 Android 逆向技术合集](./mobile-app-reverse/paopao-android-reverse-compilation.md) | — | 收录说明 / 文章目录（67 篇） |
 | 主文 | 2026-09-06 | [App 协议准入四关：设备、签名、主机、传输](./mobile-app-reverse/protocol-admission-four-gates.md) | — | 定位 / 完成门（先于四关） / 四关（并联，不是流水线） / 关 1 — 设备：同行，不编造 |
+| 主文 | 2026-09-09 | [App 设备注册包顺序：事件驱动、前置身份与 SDK 同构](./mobile-app-reverse/protocol-register-packet-order.md) | — | 定位 / 核心判断 / 1. 注册环节不是串行时间线 / 2. 事件包：一条一条，或凑阈值再发 |
 | 主文 | 2026-09-03 | [App 纯协议 SDK 重建：从首次设备注册到可维护协议客户端](./mobile-app-reverse/pure-protocol-sdk-reconstruction.md) | — | 定位 / 总流程 / 1. 干净首次注册与 HAR 语料 / 1.1 刷到可复现的首次开机 |
 | 主文 | 2025-04 至 2025-07 | [reverseNotes 早期安卓案例合集](./mobile-app-reverse/reversenotes-android-compilation.md) | — | 收录说明 / 文章目录（4 篇） / 索引里提到但本批不收的条目 |
 | 主文 | 2026-08 至 2026-09 源码落盘 | [App SDK 纯算落盘：顶象 / 数美 / Qimei / wtoken](./mobile-app-reverse/sdk-purecalc-compilation.md) | — | 收录说明 / 文章目录 |
@@ -463,6 +466,7 @@
 
 | 类型 | 日期 | 文章 | 父合集 | 关键标题 |
 |------|------|------|--------|----------|
+| 主文 | 2026-09-10 | [阿里 SG 70102 四头纯算](./signature-algorithms/alibaba-mtop-four-headers.md) | — | 适用边界 / 四个文件 / 为什么会出现一加 / 输入与输出 |
 | 主文 | 2026-04-24 | [菠萝包轻小说 SFSecurity：mt19937 nonce 与自定义编码 MD5](./signature-algorithms/boluobao-sfsecurity-trace.md) | — | 收录说明 / 案例边界 / 5.1.54 出参形状 / 用 Merkle-Damgård 特征抓明文 |
 | 主文 | 2026-04-17 | [航班管家 laesEncryptStringWithBase64：魔改 AES-like 纯算还原](./signature-algorithms/hangban-laes-encrypt.md) | — | 分析目标 / 发现过程 / 1. trace 先钉输入输出 / 2. IDA 函数关系 |
 | 主文 | 2026-04-18 | [马蜂窝魔改 SHA1：从 HashFinder 到轮函数分段](./signature-algorithms/mafengwo-modified-sha1-trace.md) | — | 收录说明 / 样本与锚点 / 先分清 feed-forward 和真实 IV / HashFinder：第一个 0x80 不一定是业务输入 |

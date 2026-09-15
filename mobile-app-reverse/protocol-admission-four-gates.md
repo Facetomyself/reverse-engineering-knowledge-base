@@ -16,6 +16,7 @@
 | [App 逆向全局地图](./app-reverse-global-map.md) | 一次请求经过哪些层 | 知道从哪一层下手 |
 | **本文（准入四关）** | 为什么「参数像了」仍没有业务数据 | 四关并联闭合，才能看 readback |
 | [纯协议 SDK 重建](./pure-protocol-sdk-reconstruction.md) | 客户端目录、HAR、拦截器、注册完备性怎么建 | 可维护的协议客户端 |
+| [设备注册包顺序](./protocol-register-packet-order.md) | 注册环节这些包为什么不能按 HAR 串行 | 事件/日志通道、前置身份、SDK 同构 |
 
 后续新 case 默认顺序：
 
@@ -61,13 +62,18 @@ SDK 状态机（register → 引导/激活 → 配置 → 业务）
 
 ### 关 1 — 设备：同行，不编造
 
-目标是 **catalog 行一致**，不是热门机型字符串。
+目标是 **联合分布一致**，不是热门机型字符串，也不是把真实指纹抖动几个字段。
+`hardware-fp` catalog 行是必要层，不是关 1 完成。执行细则在 `app-protocol-sdk` `admission-loop.md`；方法论见 [设备指纹一致性建模](../anti-detection/device-fingerprint-consistency-modeling.md)。
 
 | 要一致的簇 | 做法 | 禁止 |
 |------------|------|------|
 | Build / SoC / GPU / 内存 / 核数 / 分辨率 / Android 版本 | `hardware-fp` 锁同一行 | hybrid 拼装 |
+| 硬件 ↔ ROM | 同一硬件的 ROM 族（1:N，含 OTA）；SoC 世代对得上 `build` 时间 | 旗舰 SoC 配上古 ROM；跨机型借 ROM |
+| APK 自身 | `versionCode`、证书、渠道、OkHttp 等依赖、核心安全 SDK 沿同一升级路径 | 包很新、安全 SDK 停在两年前 |
+| 开机 / 安装 / 注册时间 | `开机 < 安装 < 注册`；间隔右偏，不是均匀随机 | 开机后几十秒走完下载安装注册 |
 | 运营商 / MCC-MNC / 蜂窝能力 | 与 SIM 实验对照；空值也是合法形态 | 随手填一个运营商名 |
-| 传感器 / 电池 / 屏幕等 native 可读项 | 多 HAR 聚类：谁随硬件变、谁随安装变 | 把分析机上的 Frida/VPN 伪影写进生成器 |
+| 传感器 / 电池 / 屏幕等 native 可读项 | 多 HAR 聚类：谁随硬件变、谁随安装变；动态信号要曲线语料 | 把分析机上的 Frida/VPN 伪影写进生成器；静态表太干净 |
+| 多次采集 | 有状态演化：硬件不变、uptime 单调、APK 只允许合理升级 | 每次采集重随机一套 |
 | 持久标识 | 只使用目标自己签发或设备本地生成的值 | 编造 IMEI、serial、Android ID、MAC、Widevine `deviceUniqueId` |
 
 指纹能加密，不等于知道该长什么样。注册失败或低权限接口异常，优先怀疑这一关，而不是签名。
@@ -190,7 +196,8 @@ Python 默认 `requests` / 系统 OpenSSL，和 App 里的 OkHttp、Cronet、自
 
 新样本按此打勾，缺项写进 `triage.md`，不要先写采集器。
 
-- [ ] `hardware-fp` 锁 catalog 行（关 1）
+- [ ] `hardware-fp` 锁 catalog 行（关 1 硬件层）
+- [ ] 关 1 联合分布：ROM 绑定、APK 版本面、右偏时间间隔、多次采集演化；不是抖动真实指纹
 - [ ] 干净首次开机 HAR，含冷启动到业务读的时间线（状态机）
 - [ ] 签名切面拆成 algorithms/interceptors，公开实现只当假说
 - [ ] 主机按层配置，静态能力宇宙与运行时拨打分开
@@ -224,7 +231,7 @@ Python 默认 `requests` / 系统 OpenSSL，和 App 里的 OkHttp、Cronet、自
 | 主题 | 笔记 |
 |------|------|
 | 空壳 | 先完成门，再四关，最后才改算法 |
-| 设备 | `hardware-fp` 同行；不编造硬件绑定 ID |
+| 设备 | `hardware-fp` 同行只是硬件层；联合分布见 [一致性建模](../anti-detection/device-fingerprint-consistency-modeling.md)；不编造硬件绑定 ID |
 | 签名 | 切面文件化；冲突实现对拍；RPC 不是还原 |
 | 主机 | 层 > 名单；boot 独立于业务 API |
 | 传输 | 目标引擎的 TLS，不是 UA |

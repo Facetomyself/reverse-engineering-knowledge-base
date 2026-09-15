@@ -36,7 +36,8 @@ Web 风控产品走 `article/web-reverse/products.md`。本表只覆盖 Android 
 ## 观察顺序
 
 1. `fingerprint.sh`：壳 marker、DEX 数、ABI（32-bit-only 记 `apkAbi32Only`）。
-2. `decode.ps1`：目标族拦截器/签名是否已在 jadx。
+2. `asc.py probe`：静态 DEX 是否已有 Interceptor/sign（主线查询，不是脱壳）。
+3. `decode.ps1`：目标族拦截器/签名是否已在 jadx。
 3. 进程能活则先该族官方 live；TLS 解不了用 `okhttp-plain.js`。
 4. 闪退：tombstone pc/lr，不要把 `libnesec` 映射写成直接 abort。
 5. 族缺失再 dump；设备目录有 DEX 仍要 panda，除非 `deviceDexComplete`。

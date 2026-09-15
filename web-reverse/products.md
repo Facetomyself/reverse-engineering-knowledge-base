@@ -35,7 +35,7 @@
 | 同盾 tongdun | `token` / `black_box`、`fingerprint.js`、`collect` 上报、`umid` | [tongdun.md](products/tongdun.md) |
 | 腾讯验证码 | `ticket` / `randstr`、`ssl.captcha.qq.com`、`captcha-type`、滑块/点选 | [tencent-captcha.md](products/tencent-captcha.md) |
 | 网易易盾（NECaptcha / jigsaw） | `c.dun.163.com`、`necaptcha`、`gdxidpyhxde`、`/api/v3/get`、`/api/v3/check`、`validate`、`type=2` | [netease-yidun-captcha.md](products/netease-yidun-captcha.md) |
-| Google reCAPTCHA v3 | `grecaptcha.execute`、`api2/anchor`、`api2/reload`、`rresp`、`g-recaptcha-response` | [google-recaptcha-v3.md](products/google-recaptcha-v3.md) |
+| Google reCAPTCHA v3 | `grecaptcha.execute`、`api2/anchor`、`api2/reload`、`rresp`、`g-recaptcha-response` | [google-recaptcha-v3.md](products/google-recaptcha-v3.md)（含请求链、参数谱系、风控面与 2026-09-08 Node reload 实测） |
 | Arkose Labs / FunCaptcha | `arkoselabs.com`、`/fc/gt2/public_key/`、`/fc/gfct/`、`/fc/ca/`、`session_token`、`game_token` | [arkose-funcaptcha.md](products/arkose-funcaptcha.md) |
 | 阿里云验证码（v1/v2/v3） | `aliyunCaptcha`、`nc_` 字段、`ic.getNcCode`、`appkey`、`scene` | [aliyun-captcha.md](products/aliyun-captcha.md)、[aliyun-captcha-v2.md](products/aliyun-captcha-v2.md)、[aliyun-captcha-v3.md](products/aliyun-captcha-v3.md) |
 | 阿里 H5Sec/ACW/火眼 | `acw_sc__v2`、`h5sec`、`aliyun.com` 验证头、`__ac_signature` | [alibaba-h5sec-awsc-fireye.md](products/alibaba-h5sec-awsc-fireye.md) |
@@ -66,4 +66,4 @@
 - 命中判定写入 `web-case.json` 的 challenge phase 与 `analysis-progress.md` 进展账本。
 - 验证码 / challenge 子链属于 `web-challenge` 的路由面；签名 / 加密参数属于 `web-reverse` → `web-env-patcher` / `protocol-recovery` 路由面。
 - 产品文档描述的补环境对象（iframe、Worker、MessagePort、canvas 等）参考 [browser-env-objects](./browser-env-objects.md)。
-- 签名落地选型（纯算 / 隔离黑盒 / execjs 整包 / 设备 RPC）参考 [平台签名落地方法](./sign-landing-methods.md)。App `x-sign` 参考 [InnerSignImpl RPC](../mobile-app-reverse/mtop-innersign-rpc.md)。
+- 签名落地选型（纯算 / 隔离黑盒 / execjs 整包 / 设备 RPC）参考 [平台签名落地方法](./sign-landing-methods.md)。App `x-sign` 默认参考 [InnerSignImpl RPC](../mobile-app-reverse/mtop-innersign-rpc.md)；`SG 70102` 会话画像齐了再看 [四头纯算](../signature-algorithms/alibaba-mtop-four-headers.md)。

@@ -15,7 +15,7 @@
 - IM 走钉钉 LWP WebSocket：`wss://wss-cntaobao.dingtalk.com/` 或 `wss://wss-goofish.dingtalk.com/`，帧 `/reg`、`/!` 心跳、`/r/MessageSend/...`
 - 登录失效时 `_m_h5_tk` 刷新，旧 `sign` 立即失败
 
-这不是 [阿里 H5Sec / AWSC / Fireye](./alibaba-h5sec-awsc-fireye.md) 的 `bx-ua` 链，也不是 [InnerSignImpl RPC](../../mobile-app-reverse/mtop-innersign-rpc.md) 的 App 网关。出现 `FAIL_SYS_USER_VALIDATE` / `x5secdata` 时先走 H5Sec 文档。
+这不是 [阿里 H5Sec / AWSC / Fireye](./alibaba-h5sec-awsc-fireye.md) 的 `bx-ua` 链，也不是 App 网关四头。App 默认走 [InnerSignImpl RPC](../../mobile-app-reverse/mtop-innersign-rpc.md)；`SG 70102` 已闭合时走 [四头纯算](../../signature-algorithms/alibaba-mtop-four-headers.md)。出现 `FAIL_SYS_USER_VALIDATE` / `x5secdata` 时先走 H5Sec 文档。
 
 ## 常见链路
 
