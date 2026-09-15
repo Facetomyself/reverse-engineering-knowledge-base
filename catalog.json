@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "article_count": 557,
+  "article_count": 569,
   "category_counts": {
     "anti-detection": 177,
-    "collection-engineering": 4,
-    "mobile-app-reverse": 197,
-    "native-analysis": 15,
+    "collection-engineering": 7,
+    "mobile-app-reverse": 203,
+    "native-analysis": 16,
     "packing-bypass": 2,
-    "protocols": 1,
+    "protocols": 3,
     "signature-algorithms": 24,
     "web-reverse": 137
   },
@@ -5091,6 +5091,77 @@
       "content_sha256": "3669c651d01f91ffcc1dc8e8876b819a97e7a5f5a16a81166de2f33ba71b1f69"
     },
     {
+      "path": "collection-engineering/weixin-http-archive-runtime.md",
+      "kind": "canonical",
+      "category": "collection-engineering",
+      "parent": null,
+      "title": "HTTP 归档运行时：文章身份、SQLite claim 与 MCP job",
+      "source": "`workspace/weixin_download` 落地实现",
+      "original_date": "2026-07-16 至 2026-07-17",
+      "archive_date": "2026-09-15",
+      "summary": "公众号这类「短时会话 + 逐篇落盘」的 HTTP 归档，控制面不是 AIMD 并发，而是身份主键、短事务 claim、durable retry 和与文章状态分离的 MCP job。凭证不得进入队列或 job payload。进程还活着、job 标 completed，不等于文章 canonical 成功。",
+      "keywords": [
+        "SQLite",
+        "BEGIN IMMEDIATE",
+        "claim_token",
+        "heartbeat",
+        "durable retry",
+        "MCP job",
+        "stdio",
+        "Streamable HTTP"
+      ],
+      "headings": [
+        "和 PSA 高并发文的分工",
+        "文章目录",
+        "结论先行"
+      ],
+      "bytes": 2095,
+      "lines": 32,
+      "content_sha256": "07967b26cc2ad488ef9c7014ebe80cc537fd145159017574ff173bf6d4dedc87"
+    },
+    {
+      "path": "collection-engineering/weixin-http-archive-runtime/headless-mcp-jobs.md",
+      "kind": "nested",
+      "category": "collection-engineering",
+      "parent": "collection-engineering/weixin-http-archive-runtime.md",
+      "title": "MCP job 与文章状态分离",
+      "source": "`workspace/weixin_download` `weixin_job_manager.py` / `weixin_mcp_server.py`",
+      "original_date": "2026-07-17",
+      "archive_date": "2026-09-15",
+      "summary": "沿用官方 Python SDK 的 initialize / tools/list / tools/call contract，用真实 client 做 smoke，不要只测函数 import。",
+      "keywords": [],
+      "headings": [
+        "Transport",
+        "Job 状态机",
+        "假成功陷阱（必修）",
+        "和文章 claim 的关系"
+      ],
+      "bytes": 3008,
+      "lines": 64,
+      "content_sha256": "bf09f9456fe348511f350573de15c59b4be9c1790c9dec7274da0d598b68549f"
+    },
+    {
+      "path": "collection-engineering/weixin-http-archive-runtime/sqlite-claim-retry.md",
+      "kind": "nested",
+      "category": "collection-engineering",
+      "parent": "collection-engineering/weixin-http-archive-runtime.md",
+      "title": "SQLite 文章 claim 与 durable retry",
+      "source": "`workspace/weixin_download` `weixin_download_state.py`",
+      "original_date": "2026-07-17",
+      "archive_date": "2026-09-15",
+      "summary": "本地 SQLite WAL 上用短 BEGIN IMMEDIATE 做文章占有：协议主键、owner token、heartbeat、缺文件重试、durable queue。网络请求不持有写锁。队列里的 URL 要剥掉临时凭证参数。",
+      "keywords": [],
+      "headings": [
+        "身份",
+        "Claim",
+        "重试分层",
+        "可抄的不变量"
+      ],
+      "bytes": 2633,
+      "lines": 50,
+      "content_sha256": "6205b123bdcca34ce0e29710d6da9ccce2de7ccecc171b56ce6cfc7737710f2b"
+    },
+    {
       "path": "mobile-app-reverse/anti-crawler-app-reverse-series.md",
       "kind": "canonical",
       "category": "mobile-app-reverse",
@@ -8805,9 +8876,9 @@
         "推导语料（TikTok 三源，不是模板常量）",
         "速查"
       ],
-      "bytes": 12164,
+      "bytes": 12397,
       "lines": 233,
-      "content_sha256": "6fbbf747f0962637331399bc63fec355ea690318295584f40e9b676dd15c51ef"
+      "content_sha256": "2353a2f3805cfa5dbb13c1ad472e035d0c68464739f5f98027e3eb6e3fff4b02"
     },
     {
       "path": "mobile-app-reverse/pure-protocol-sdk-reconstruction.md",
@@ -9485,6 +9556,148 @@
       "bytes": 25850,
       "lines": 874,
       "content_sha256": "18f2086cb63ceaf335c9d205782e4b3c1da6a0aeb154e372dea0061c606f0a56"
+    },
+    {
+      "path": "mobile-app-reverse/wechat-mp-oss-landscape.md",
+      "kind": "canonical",
+      "category": "mobile-app-reverse",
+      "parent": null,
+      "title": "微信公众号开源库对照：按会话平面读仓库",
+      "source": "`workspace/weixin_download` 开源库对照（2026-07 至 2026-09）",
+      "original_date": "2026-07-16 至 2026-09-13",
+      "archive_date": "2026-09-15",
+      "summary": "把公开微信公众号下载器、RSS、协议号和 H5 调试箱钉到五套会话上，记录接口形状、停更节点和可复用工程模式。不收录凭证、不 vendoring 闭源协议栈、不把死接口写成当前可用。平面定义见 微信公众号五套会话。",
+      "keywords": [
+        "wechatDownload",
+        "list_ex",
+        "wechrss",
+        "weread-omni",
+        "GetA8Key",
+        "WeChat-H5-DevTools",
+        "__biz",
+        "mid",
+        "idx"
+      ],
+      "headings": [
+        "怎么读一个新仓库",
+        "文章目录",
+        "仓库总表（2026-09-13 源码审查）",
+        "身份与状态（跨平面复用）",
+        "证据等级",
+        "不收录",
+        "和 App 纯协议文档的关系"
+      ],
+      "bytes": 6496,
+      "lines": 79,
+      "content_sha256": "a6d685cf31eb88c8c91aefd2a84afb97c0bcd5a1ef11f7e1698c62384422f8ad"
+    },
+    {
+      "path": "mobile-app-reverse/wechat-mp-oss-landscape/geta8key-native-cgi.md",
+      "kind": "nested",
+      "category": "mobile-app-reverse",
+      "parent": "mobile-app-reverse/wechat-mp-oss-landscape.md",
+      "title": "GetA8Key 发证器，不是历史 API",
+      "source": "`workspace/weixin_download` 2026-09-13 iPad 协议审查",
+      "original_date": "2026-09-13",
+      "archive_date": "2026-09-15",
+      "summary": "iPad/Android 协议号能调一部分公众号 CGI，但主业是关注、收推送、刷阅读。唯一可能接到 getmsg 的是 GetA8Key / MpGetA8Key：对 mp.weixin.qq.com URL 签发 uin/key/pass_ticket。type 10039「历史推送」没有 general_msg_list，不能当完整翻页。Gewechat 已停；商业栈闭源，最多本机 sidecar。",
+      "keywords": [],
+      "headings": [
+        "协议号是什么、不是什么",
+        "和公众号相关的 CGI（文档反复出现）",
+        "可规划形状（未 live）",
+        "工程边界"
+      ],
+      "bytes": 3731,
+      "lines": 64,
+      "content_sha256": "d1e8f32f0912adab89b7443d4ff6729faaaac4457f100a09a9796b9e16c6a7ea"
+    },
+    {
+      "path": "mobile-app-reverse/wechat-mp-oss-landscape/getmsg-webview-issuance.md",
+      "kind": "nested",
+      "category": "mobile-app-reverse",
+      "parent": "mobile-app-reverse/wechat-mp-oss-landscape.md",
+      "title": "getmsg WebView 发证与短时 key",
+      "source": "`workspace/weixin_download` 对照 qiye45/wechatDownload、wxdown-service",
+      "original_date": "2026-07-16 / 2026-08-16 / 2026-08-23",
+      "archive_date": "2026-09-15",
+      "summary": "profile_ext?action=getmsg 的 uin/key/pass_ticket 只在内置浏览器访问 mp.weixin.qq.com 时签发。PC/手机登录态不会自动出现这组参数。原工具 4.7 仍靠人打开链接再扫缓存；MITM 服务只收证、不触发微信。",
+      "keywords": [],
+      "headings": [
+        "这条路是什么",
+        "对照仓库",
+        "字段与失败码",
+        "手机 / 原生时间线不能绕过",
+        "可复用合同",
+        "未验证"
+      ],
+      "bytes": 3681,
+      "lines": 69,
+      "content_sha256": "d47c428dde77b61e1234766bcc75efd75f614f68537f1f3fa76e9e58362464ce"
+    },
+    {
+      "path": "mobile-app-reverse/wechat-mp-oss-landscape/mp-backend-list-ex.md",
+      "kind": "nested",
+      "category": "mobile-app-reverse",
+      "parent": "mobile-app-reverse/wechat-mp-oss-landscape.md",
+      "title": "MP 后台跨号列表与 2026-07-30 收紧",
+      "source": "`workspace/weixin_download` 对照 wechat-article-exporter、EasyWechatDownload、we-mp-rss、wechat-download-api",
+      "original_date": "2026-07-16 / 2026-07-30 / 2026-08-23",
+      "archive_date": "2026-09-15",
+      "summary": "公众号后台扫码会话曾被用来 searchbiz + appmsgpublish list_ex 跨号枚举。2026-07-30 上游关闭、多项目 ret=200013，默认 fail-closed。free_publish 是本号已发表列表，不是任意 biz 历史。操作者必须具备后台登录资格。",
+      "keywords": [],
+      "headings": [
+        "这条路是什么",
+        "2026-07-30 之后",
+        "可复用的（仍然有效）",
+        "不要做的"
+      ],
+      "bytes": 3225,
+      "lines": 49,
+      "content_sha256": "7aa4ea07dc5ec2727b5decf4da940ed6c8f79f5403293e5edf219ccd23496dcc"
+    },
+    {
+      "path": "mobile-app-reverse/wechat-mp-oss-landscape/weread-mp-chapters.md",
+      "kind": "nested",
+      "category": "mobile-app-reverse",
+      "parent": "mobile-app-reverse/wechat-mp-oss-landscape.md",
+      "title": "微信读书公众号列表与 RefreshToken",
+      "source": "`workspace/weixin_download` 对照 weread-omni、wechrss、we-mp-rss、wewe-rss",
+      "original_date": "2026-08-23 / 2026-09-13",
+      "archive_date": "2026-09-15",
+      "summary": "短链 https://mp.weixin.qq.com/s/<token> 不含 biz。开源路径：",
+      "keywords": [],
+      "headings": [
+        "身份映射",
+        "登录与续期",
+        "列表协议",
+        "反面：wewe-rss",
+        "覆盖边界"
+      ],
+      "bytes": 3960,
+      "lines": 76,
+      "content_sha256": "dd7a93d8304a3dbca4b3cc156124abd19e63b5e4c00a7dc1425366412b04a49e"
+    },
+    {
+      "path": "mobile-app-reverse/wechat-mp-oss-landscape/wmpf-h5-debug-plane.md",
+      "kind": "nested",
+      "category": "mobile-app-reverse",
+      "parent": "mobile-app-reverse/wechat-mp-oss-landscape.md",
+      "title": "WMPF H5 调试面与 WeixinJSBridge Mock",
+      "source": "GitHub 对照 xuange520/WeChat-H5-DevTools、WMPFDebugger 族；对照 `workspace/weixin_download` 发证审计",
+      "original_date": "2026-09-15",
+      "archive_date": "2026-09-15",
+      "summary": "微信 4.x 关掉内置浏览器物理 F12 后，开源工具用 Frida / 透明代理 / JSBridge Mock 做 H5 调试。这是观察面，不是 getmsg 发证面。外部 Chrome 注入 30+ WeixinJSBridge 只能过「请在微信客户端打开」的 JS 门，签发不了真 uin/key。小程序 CDP（wechat-miniapp-re-mcp / flue.dll）与公众号 H5 不要混成一个入口。",
+      "keywords": [],
+      "headings": [
+        "工具分面",
+        "4.x 内核事实（避免套 3.9 偏移）",
+        "Mock ≠ 签发",
+        "和归档仓的衔接"
+      ],
+      "bytes": 4054,
+      "lines": 58,
+      "content_sha256": "73fb3bc312985c61a6b87e08d2771f61dbf62fae38f67b42a0c467d93a5bba8e"
     },
     {
       "path": "mobile-app-reverse/xfq-android-cases-compilation.md",
@@ -11624,6 +11837,36 @@
       "content_sha256": "b4fd3094b54df00565211ab7e69d9da52fb22237c39886fd843615c669bd80b6"
     },
     {
+      "path": "native-analysis/nuitka-onefile-payload-recovery.md",
+      "kind": "canonical",
+      "category": "native-analysis",
+      "parent": null,
+      "title": "Nuitka onefile：外层 payload 与第二层 native 主程序",
+      "source": "`workspace/weixin_download` 样本取证",
+      "original_date": "2026-07-08 至 2026-07-16",
+      "archive_date": "2026-09-15",
+      "summary": "Windows Nuitka onefile 不是 PyInstaller PYZ。外层 EXE 用 RT_RCDATA 高熵 blob（本样本前缀 KAY + Zstandard）放出第二层 native Python 主程序；内层仍链 python3xx.dll，没有可 uncompyle6 的 .pyc 全集。后续只做 constants / 协议字符串 / 定向 xref，不宣称无损恢复源码。",
+      "keywords": [
+        "Nuitka",
+        "onefile",
+        "RT_RCDATA",
+        "KAY",
+        "Zstandard",
+        "python310.dll",
+        "constants"
+      ],
+      "headings": [
+        "适用与不适用",
+        "外层：onefile bootstrap",
+        "内层：仍然是 Nuitka native",
+        "不要做的",
+        "和后续落地的关系"
+      ],
+      "bytes": 3623,
+      "lines": 72,
+      "content_sha256": "42f51a33147b3a1bd1469ac14c0acfb9ea0da21216ae1cc09e037144ecc5adc2"
+    },
+    {
       "path": "native-analysis/qidian-so-analysis.md",
       "kind": "canonical",
       "category": "native-analysis",
@@ -11960,9 +12203,9 @@
         "观察顺序",
         "使用边界"
       ],
-      "bytes": 2972,
+      "bytes": 3020,
       "lines": 48,
-      "content_sha256": "16e90309894e884327edd29ee8dbba0165bce06aae81b1a0c49b05ba7fd3ab00"
+      "content_sha256": "f88015b0d91b71babb1199d5d6b93ba9d9cd52a2c27874dd95a38863da79097c"
     },
     {
       "path": "packing-bypass/jiagu-bypass-analysis.md",
@@ -12094,6 +12337,79 @@
       "bytes": 45123,
       "lines": 1090,
       "content_sha256": "a20aa5e37bc0a843bc589a58789ca9e8f4db1d63c924e59c3e6d1f426f138975"
+    },
+    {
+      "path": "protocols/wechat-mp-http-surface.md",
+      "kind": "canonical",
+      "category": "protocols",
+      "parent": null,
+      "title": "微信公众号 HTTP 接口面：getmsg / 统计 / 评论 / 合集",
+      "source": "`workspace/weixin_download` Nuitka constants 恢复 + 协议复现",
+      "original_date": "2026-07-16",
+      "archive_date": "2026-09-15",
+      "summary": "公众号 Web 归档不是一个接口。历史列表是 profile_ext?action=getmsg，阅读量是 POST getappmsgext，评论是 appmsg_comment，合集是 appmsgalbum?action=getalbum。公开文章 URL 无登录可拉正文。会话平面见 五套会话；本文只保留已实现的 HTTPS 形状和完成门。",
+      "keywords": [
+        "getmsg",
+        "general_msg_list",
+        "getappmsgext",
+        "appmsg_comment",
+        "getalbum",
+        "__biz",
+        "mid",
+        "idx",
+        "scene=124"
+      ],
+      "headings": [
+        "定位",
+        "biz 提取（公开页）",
+        "历史：getmsg",
+        "统计：getappmsgext",
+        "评论：appmsg_comment",
+        "合集：getalbum",
+        "公开正文",
+        "实现边界（写进复用合同）"
+      ],
+      "bytes": 4905,
+      "lines": 103,
+      "content_sha256": "fb7dc7ee81a4d110de74be80e62b3cfc044656997603e03009c9c4809d078c1e"
+    },
+    {
+      "path": "protocols/wechat-mp-session-planes.md",
+      "kind": "canonical",
+      "category": "protocols",
+      "parent": null,
+      "title": "微信公众号五套会话：登录态不是 getmsg",
+      "source": "`workspace/weixin_download` 开源库与协议对照",
+      "original_date": "2026-07-16 至 2026-09-13",
+      "archive_date": "2026-09-15",
+      "summary": "微信客户端在线、公众号 WebView、公众号后台、微信读书、原生 CGI（GetA8Key）是五套互不续期的会话。公开 GitHub 下载器失败的第一原因是把它们当成同一个 Cookie。本文只保留平面划分、字段边界和完成门；凭证原值与可执行客户端不收录。",
+      "keywords": [
+        "getmsg",
+        "profile_ext",
+        "pass_ticket",
+        "list_ex",
+        "GetA8Key",
+        "微信读书",
+        "MP_WXS_",
+        "uin/key",
+        "公众号会话"
+      ],
+      "headings": [
+        "定位",
+        "五套会话",
+        "完成门（先于选库）",
+        "平面 2：WebView getmsg",
+        "平面 3：MP 后台",
+        "平面 4：微信读书",
+        "平面 5：GetA8Key",
+        "调试平面不是第六套会话",
+        "禁止混用的对照",
+        "证据边界",
+        "速查"
+      ],
+      "bytes": 9273,
+      "lines": 132,
+      "content_sha256": "67538d62087a591e63bfef0f4eef70b764a90d1d03c99b7cfa35dc9197109391"
     },
     {
       "path": "signature-algorithms/boluobao-sfsecurity-trace.md",
@@ -15244,9 +15560,9 @@
         "使用边界",
         "与主线工作流的衔接"
       ],
-      "bytes": 8113,
+      "bytes": 8182,
       "lines": 69,
-      "content_sha256": "785a35151fc474177f77f5b03669baa651b074521cc1fcef81d4e2c4dccb9ed2"
+      "content_sha256": "01b55095d27190c39d7e4706bd91ca8c8fdf4da862906350cead269f91cc7279"
     },
     {
       "path": "web-reverse/products/akamai.md",
@@ -15620,9 +15936,9 @@
         "常见坑",
         "验证口径"
       ],
-      "bytes": 3598,
+      "bytes": 3658,
       "lines": 60,
-      "content_sha256": "dc038fbcbf8910cb36efb2dcf353ed9d9ac0e1bb5391f549067d1787f65f4175"
+      "content_sha256": "1946d132d8cf69f021882d8ea9925bd76f0ea1f8d05cc0be97ea0276c6a4653f"
     },
     {
       "path": "web-reverse/products/imperva-reese84-canadiannorth.md",

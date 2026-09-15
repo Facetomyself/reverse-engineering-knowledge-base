@@ -9,15 +9,15 @@
 | 分类 | canonical | 子文章 | 合计 |
 |------|----------:|-------:|-----:|
 | `anti-detection` | 8 | 169 | 177 |
-| `collection-engineering` | 4 | 0 | 4 |
-| `mobile-app-reverse` | 16 | 181 | 197 |
-| `native-analysis` | 3 | 12 | 15 |
+| `collection-engineering` | 5 | 2 | 7 |
+| `mobile-app-reverse` | 17 | 186 | 203 |
+| `native-analysis` | 4 | 12 | 16 |
 | `packing-bypass` | 2 | 0 | 2 |
-| `protocols` | 1 | 0 | 1 |
+| `protocols` | 3 | 0 | 3 |
 | `signature-algorithms` | 5 | 19 | 24 |
 | `web-reverse` | 11 | 126 | 137 |
 
-文章总数：557。
+文章总数：569。
 
 ## 逐篇目录
 
@@ -211,6 +211,9 @@
 | 主文 | 2026-08-02 | [高并发 HTTP 采集控制面：代理租约、AIMD 与故障恢复](./collection-engineering/high-concurrency-http-collector-control-plane.md) | — | 结论先行 / 证据与版本边界 / 调试时间线：每次提速都先推翻一个错误假设 / 从成功实验进入主线的准入清单 |
 | 主文 | 2026-08-13 | [Mihomo 链式代理：dialer-proxy、全局脚本与采集器前置链](./collection-engineering/mihomo-dialer-proxy-chain.md) | — | 结论先行 / 来源与证据边界 / 内核链：谁看见谁 / 多跳怎么叠 |
 | 主文 | 2026-08-02 | [Mac 热写与 NAS 交付：可重放 spool、mirror ACK 和非侵入式运维](./collection-engineering/reliable-mac-nas-spool-delivery.md) | — | 为什么 NAS 不应进入采集热路径 / 数据流 / 热写路径：批量输出后再生成 marker / 已验证边界 |
+| 主文 | 2026-07-16 至 2026-07-17 | [HTTP 归档运行时：文章身份、SQLite claim 与 MCP job](./collection-engineering/weixin-http-archive-runtime.md) | — | 和 PSA 高并发文的分工 / 文章目录 / 结论先行 |
+| 子文 | 2026-07-17 | [MCP job 与文章状态分离](./collection-engineering/weixin-http-archive-runtime/headless-mcp-jobs.md) | [HTTP 归档运行时：文章身份、SQLite claim 与 MCP job](./collection-engineering/weixin-http-archive-runtime.md) | Transport / Job 状态机 / 假成功陷阱（必修） / 和文章 claim 的关系 |
+| 子文 | 2026-07-17 | [SQLite 文章 claim 与 durable retry](./collection-engineering/weixin-http-archive-runtime/sqlite-claim-retry.md) | [HTTP 归档运行时：文章身份、SQLite claim 与 MCP job](./collection-engineering/weixin-http-archive-runtime.md) | 身份 / Claim / 重试分层 / 可抄的不变量 |
 
 ### `mobile-app-reverse`
 
@@ -228,6 +231,7 @@
 | 主文 | 2026-08 至 2026-09 源码落盘 | [App SDK 纯算落盘：顶象 / 数美 / Qimei / wtoken](./mobile-app-reverse/sdk-purecalc-compilation.md) | — | 收录说明 / 文章目录 |
 | 主文 | 多篇合集 | [Softard Android 逆向笔记合集](./mobile-app-reverse/softard-android-reverse-compilation.md) | — | 收录说明 / 文章目录（13 篇） |
 | 主文 | unknown | [用 uiautomator 自动点击隐私同意按钮](./mobile-app-reverse/uiautomator-privacy-consent-tap.md) | — | 正文 / 一、为什么选它 / 二、uiautomator 到底提供了什么 / 三、真正的点击是怎么完成的 |
+| 主文 | 2026-07-16 至 2026-09-13 | [微信公众号开源库对照：按会话平面读仓库](./mobile-app-reverse/wechat-mp-oss-landscape.md) | — | 怎么读一个新仓库 / 文章目录 / 仓库总表（2026-09-13 源码审查） / 身份与状态（跨平面复用） |
 | 主文 | 多篇合集 | [逆向学习交流安卓实战案例合集](./mobile-app-reverse/xfq-android-cases-compilation.md) | — | 收录说明 / 文章目录（15 篇） |
 | 主文 | 多篇合集 | [逆向学习交流 AOSP 与 ROM 笔记合集](./mobile-app-reverse/xfq-aosp-rom-compilation.md) | — | 收录说明 / 文章目录（13 篇） |
 | 主文 | 多篇合集 | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | — | 收录说明 / 文章目录（42 篇） |
@@ -326,6 +330,11 @@
 | 子文 | 2026-06-01 | [某厂安全研发的逆向笔记（11.1）：更多混淆手法与对抗工具](./mobile-app-reverse/softard-android-reverse-compilation/softard-20260601-01.md) | [Softard Android 逆向笔记合集](./mobile-app-reverse/softard-android-reverse-compilation.md) | 正文 / 一、基本块调度 / 二、分裂基本块 / 三、控制流间接化 |
 | 子文 | 2026-06-04 | [某厂安全研发的逆向笔记（12）：IDA 逆向 SO 算法的路径](./mobile-app-reverse/softard-android-reverse-compilation/softard-20260604-01.md) | [Softard Android 逆向笔记合集](./mobile-app-reverse/softard-android-reverse-compilation.md) | 正文 / 一、为什么要识别算法 / 二、findcrypt3 插件 / 三、常见特征常量 |
 | 子文 | 2026-06-06 | [某厂安全研发的逆向笔记（12.1）：对抗算法特征检索的简单攻防](./mobile-app-reverse/softard-android-reverse-compilation/softard-20260606-01.md) | [Softard Android 逆向笔记合集](./mobile-app-reverse/softard-android-reverse-compilation.md) | 正文 / 一、运行时计算 / 二、静态加密 / 三、时机对抗 |
+| 子文 | 2026-09-13 | [GetA8Key 发证器，不是历史 API](./mobile-app-reverse/wechat-mp-oss-landscape/geta8key-native-cgi.md) | [微信公众号开源库对照：按会话平面读仓库](./mobile-app-reverse/wechat-mp-oss-landscape.md) | 协议号是什么、不是什么 / 和公众号相关的 CGI（文档反复出现） / 可规划形状（未 live） / 工程边界 |
+| 子文 | 2026-07-16 / 2026-08-16 / 2026-08-23 | [getmsg WebView 发证与短时 key](./mobile-app-reverse/wechat-mp-oss-landscape/getmsg-webview-issuance.md) | [微信公众号开源库对照：按会话平面读仓库](./mobile-app-reverse/wechat-mp-oss-landscape.md) | 这条路是什么 / 对照仓库 / 字段与失败码 / 手机 / 原生时间线不能绕过 |
+| 子文 | 2026-07-16 / 2026-07-30 / 2026-08-23 | [MP 后台跨号列表与 2026-07-30 收紧](./mobile-app-reverse/wechat-mp-oss-landscape/mp-backend-list-ex.md) | [微信公众号开源库对照：按会话平面读仓库](./mobile-app-reverse/wechat-mp-oss-landscape.md) | 这条路是什么 / 2026-07-30 之后 / 可复用的（仍然有效） / 不要做的 |
+| 子文 | 2026-08-23 / 2026-09-13 | [微信读书公众号列表与 RefreshToken](./mobile-app-reverse/wechat-mp-oss-landscape/weread-mp-chapters.md) | [微信公众号开源库对照：按会话平面读仓库](./mobile-app-reverse/wechat-mp-oss-landscape.md) | 身份映射 / 登录与续期 / 列表协议 / 反面：wewe-rss |
+| 子文 | 2026-09-15 | [WMPF H5 调试面与 WeixinJSBridge Mock](./mobile-app-reverse/wechat-mp-oss-landscape/wmpf-h5-debug-plane.md) | [微信公众号开源库对照：按会话平面读仓库](./mobile-app-reverse/wechat-mp-oss-landscape.md) | 工具分面 / 4.x 内核事实（避免套 3.9 偏移） / Mock ≠ 签发 / 和归档仓的衔接 |
 | 子文 | 附件笔记（随 2025 安卓案例索引） | [马蜂窝 zzzghostsigh：xPreAuthencode hook 窗口](./mobile-app-reverse/xfq-android-cases-compilation/mafengwo-xpreauthencode-hook.md) | [逆向学习交流安卓实战案例合集](./mobile-app-reverse/xfq-android-cases-compilation.md) | 收录说明 / 案例边界 / Hook 窗口（只记点，不贴脚本） / unidbg 观察（不是绕过步骤） |
 | 子文 | 附件笔记（随 2025 安卓案例索引） | [陌陌 x-sign 第一参：AES-CBC 与 SHA1 拼接](./mobile-app-reverse/xfq-android-cases-compilation/momo-x-sign-aes.md) | [逆向学习交流安卓实战案例合集](./mobile-app-reverse/xfq-android-cases-compilation.md) | 收录说明 / 案例边界 / Hook 窗口（只记点，不贴脚本） / 派生规则 |
 | 子文 | 2025-09-22 | [xxss直聘13.160（讲义）](./mobile-app-reverse/xfq-android-cases-compilation/xfq-20250922-01.md) | [逆向学习交流安卓实战案例合集](./mobile-app-reverse/xfq-android-cases-compilation.md) | 正文 / 1.1. apk扫描 / 1.2. 重要信息 / 2.1. reqable抓包 |
@@ -419,6 +428,7 @@
 | 类型 | 日期 | 文章 | 父合集 | 关键标题 |
 |------|------|------|--------|----------|
 | 主文 | unknown | [AI 复杂 VM 算法还原](./native-analysis/ai-assisted-vmp-trace-recovery.md) | — | KEY16 和 repeating-key XOR / "Saw" 明文误判 / HKDF / HMAC-PRF 候选 / 五段 SHA 输出 |
+| 主文 | 2026-07-08 至 2026-07-16 | [Nuitka onefile：外层 payload 与第二层 native 主程序](./native-analysis/nuitka-onefile-payload-recovery.md) | — | 适用与不适用 / 外层：onefile bootstrap / 内层：仍然是 Nuitka native / 不要做的 |
 | 主文 | 2026-06-27 | [Qidian Native SO 分析与结论纠偏](./native-analysis/qidian-so-analysis.md) | — | 技术摘要 / 文件清单 / QDSign 结论纠偏 / 已撤销的旧判断 |
 | 主文 | 多篇合集 | [逆向学习交流 Unidbg 与 Native 合集](./native-analysis/xfq-unidbg-native-compilation.md) | — | 收录说明 / 文章目录（12 篇） |
 | 子文 | 2025-12-05 | [ai 自动化调试unidbg](./native-analysis/xfq-unidbg-native-compilation/xfq-20251205-01.md) | [逆向学习交流 Unidbg 与 Native 合集](./native-analysis/xfq-unidbg-native-compilation.md) | 正文 |
@@ -446,6 +456,8 @@
 | 类型 | 日期 | 文章 | 父合集 | 关键标题 |
 |------|------|------|--------|----------|
 | 主文 | 2026-07-05 | [mmtls 协议深度分析](./protocols/mmtls-protocol-analysis.md) | — | 目录 / 1. 架构总览 / 2. Record 层 — 帧格式 / 2.1 Record 结构 |
+| 主文 | 2026-07-16 | [微信公众号 HTTP 接口面：getmsg / 统计 / 评论 / 合集](./protocols/wechat-mp-http-surface.md) | — | 定位 / biz 提取（公开页） / 历史：getmsg / 统计：getappmsgext |
+| 主文 | 2026-07-16 至 2026-09-13 | [微信公众号五套会话：登录态不是 getmsg](./protocols/wechat-mp-session-planes.md) | — | 定位 / 五套会话 / 完成门（先于选库） / 平面 2：WebView getmsg |
 
 ### `signature-algorithms`
 

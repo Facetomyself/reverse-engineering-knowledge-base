@@ -1,6 +1,6 @@
 # 逆向知识库文章索引
 
-> 更新于 2026-09-06 ｜ 来源: `article/`
+> 更新于 2026-09-15 ｜ 来源: `article/`
 >
 > 本文件维护 canonical 入口与技术标签；合集子文章详见 [CATALOG.md](./CATALOG.md)，机器读取使用 [`catalog.json`](./catalog.json)。
 >
@@ -13,6 +13,8 @@
 | 文章 | 来源项目 | 关键词 | 摘要 |
 |------|----------|--------|------|
 | [mmtls-protocol-analysis.md](./protocols/mmtls-protocol-analysis.md) | yyb (应用宝) | `mmtls`, `TLS 1.3`, `ECDHE`, `PSK 0-RTT`, `AES-GCM`, `HKDF`, `腾讯私有协议`, `ShortLink`, `iLink`, `NewDNS` | 腾讯 mmtls 协议完整逆向：Record 层帧格式、ECDHE 握手、PSK 0-RTT 快速重连、密码学细节（HKDF/AES-GCM）、ShortLink 应用帧层、iLink 业务层、NewDNS 服务发现 |
+| [wechat-mp-session-planes.md](./protocols/wechat-mp-session-planes.md) | weixin_download | `getmsg`, `profile_ext`, `pass_ticket`, `list_ex`, `GetA8Key`, `微信读书`, `MP_WXS_`, `uin/key`, `公众号会话` | 微信公众号五套互不续期的会话：客户端 mmtls 登录、WebView 短时 getmsg、MP 后台、微信读书 RefreshToken、原生 GetA8Key；钉错平面会把 ret=-3/验证页当成 0 篇成功 |
+| [wechat-mp-http-surface.md](./protocols/wechat-mp-http-surface.md) | weixin_download | `getmsg`, `general_msg_list`, `getappmsgext`, `appmsg_comment`, `getalbum`, `__biz`, `mid`, `idx`, `scene=124` | 公众号 HTTPS 接口面：getmsg 分页与多图文 flatten、POST 阅读量、评论、合集游标；公开 URL 无登录；ret!=0 与验证页不得当成功 |
 
 ### 采集工程 (`article/collection-engineering/`)
 
@@ -22,6 +24,7 @@
 | [reliable-mac-nas-spool-delivery.md](./collection-engineering/reliable-mac-nas-spool-delivery.md) | psa | `Mac mini`, `SSD spool`, `NAS mirror`, `marker`, `ACK`, `at-least-once`, `幂等`, `launchd`, `非侵入式巡检`, `GC` | Mac 热写与 NAS 交付链：本地 spool、SSH tar staging、pending/GC/ACK 重放、supervisor 完成门、安全发布与 process-crash/power-loss 边界 |
 | [browser-collector-stability.md](./collection-engineering/browser-collector-stability.md) | radwell | `ruyipage`, `Firefox 151`, `MOZ_ASSERT`, `0x80000003`, `孤儿 session`, `CF 软挑战`, `IP 风控窗口`, `OOM 连锁`, `BiDi`, `多进程并发`, `spawn 子进程` | 浏览器采集器稳定性：ruyipage 定制 Firefox 断言崩溃（0x80000003）的触发条件与证据链、单出口 IP 的 CF 风控有效窗口、"崩溃残留进程累积 → 整机 OOM"的连锁机制，及 8 条并发/自愈/内存护栏改进规范 |
 | [mihomo-dialer-proxy-chain.md](./collection-engineering/mihomo-dialer-proxy-chain.md) | — (GitHub 归档) | `Clash Verge`, `Mihomo`, `dialer-proxy`, `relay`, `Chain-Front`, `TUN fake-ip`, `preproxy`, `mihomo_fanout` | Mihomo 链式代理：`dialer-proxy` 替代已废弃 `relay`、Clash Verge 全局脚本的日常分流模型，以及它与采集器 `--preproxy` / 隔离 sidecar 的合同边界 |
+| [weixin-http-archive-runtime.md](./collection-engineering/weixin-http-archive-runtime.md) | weixin_download | `SQLite`, `BEGIN IMMEDIATE`, `claim_token`, `heartbeat`, `durable retry`, `MCP job`, `stdio`, `Streamable HTTP` | 短时会话 HTTP 归档运行时：协议主键、短事务 claim、durable retry 不含凭证、MCP job 与文章状态分离；job completed 不等于文章成功 |
 
 ### 反检测/风控对抗 (`article/anti-detection/`)
 
@@ -60,6 +63,7 @@
 | [qidian-so-analysis.md](./native-analysis/qidian-so-analysis.md) | qidian (起点读书) | `libfock.so`, `libfockrt.so`, `ARM64`, `JNI动态注册`, `3DES-CBC`, `AES-256-CBC`, `QuickJS`, `Unicorn`, `结论纠偏` | 起点读书 Native SO 结论纠偏：126 条 QDSign 推翻 RSA/AES 归因，保留 libfock 算法能力、QuickJS runtime、Jiagu 与 DEX/SO 分工的证据边界 |
 | [ai-assisted-vmp-trace-recovery.md](./native-analysis/ai-assisted-vmp-trace-recovery.md) | — (公众号归档) | `ARM64 trace`, `VMP`, `tracedb`, `MCP`, `数据流回溯`, `AES-256-CBC`, `HMAC-SHA256`, `Adjust nSign` | 以固定宽度 trace 数据库和自定义 MCP 驱动 AI，从 196GB 指令轨迹中闭合 nSign 算法证据链 |
 | [xfq-unidbg-native-compilation.md](./native-analysis/xfq-unidbg-native-compilation.md) | — (知识星球归档) | `Unidbg`, `JNI`, `Gadget`, `xfqtrace`, `ELF`, `so注入`, `jnilog` | 逆向学习交流 12 篇 Unidbg/Native 笔记：调用栈、内存读写坑、JNI 注入与 xfqtrace/Gadget，不收录未开源工具本体 |
+| [nuitka-onefile-payload-recovery.md](./native-analysis/nuitka-onefile-payload-recovery.md) | weixin_download | `Nuitka`, `onefile`, `RT_RCDATA`, `KAY`, `Zstandard`, `python310.dll`, `constants` | Windows Nuitka onefile：外层 RCDATA 高熵 payload（本样本 KAY+zstd）放出第二层 native 主程序；无 PYC 全集，只做 constants/协议字符串，不宣称还原源码 |
 
 ### 移动 App 逆向 (`article/mobile-app-reverse/`)
 
@@ -81,6 +85,7 @@
 | [sdk-purecalc-compilation.md](./mobile-app-reverse/sdk-purecalc-compilation.md) | hnair-dingxiang-risktoken / xiaoxingkong-shumei-dpv4 / tencent-qimei-pure / jincai-pingxiang-wtoken | `DXRisk`, `riskToken`, `数美`, `deviceprofile/v4`, `Qimei`, `snowflake`, `wtoken`, `XXTEA`, `纯协议` | storage SDK 落盘提炼：顶象签发请求、数美 v4 封装、腾讯 Qimei REGISTER、今彩萍乡 wtoken；不含密钥、画像原值和可直接打生产的脚本 |
 | [softard-android-reverse-compilation.md](./mobile-app-reverse/softard-android-reverse-compilation.md) | — (公众号归档) | `Android权限`, `ELF`, `ART`, `Smali`, `OLLVM`, `IDA`, `UnCrackable`, `DEX string_ids` | Softard 13 篇：权限模型、ELF/SO、ART、Smali patch、OLLVM 与 IDA 追 native 算法；不含订阅/会员推广 |
 | [uiautomator-privacy-consent-tap.md](./mobile-app-reverse/uiautomator-privacy-consent-tap.md) | — (公众号归档) | `uiautomator`, `adb input tap`, `隐私协议`, `pm clear`, `设备注册`, `UI dump` | 首次启动隐私/权限弹窗：uiautomator dump 解析 bounds，对「同意/允许」中心点 `input tap`；界面问题不必先 Frida |
+| [wechat-mp-oss-landscape.md](./mobile-app-reverse/wechat-mp-oss-landscape.md) | weixin_download | `wechatDownload`, `list_ex`, `wechrss`, `weread-omni`, `GetA8Key`, `WeChat-H5-DevTools`, `__biz`, `mid`, `idx` | 公众号开源库按会话平面对照：getmsg 内置浏览器发证、MP list_ex 2026-07-30 收紧、读书 /mp/chapters 与 RefreshToken、GetA8Key sidecar、WMPF H5 调试面；不收录凭证与闭源协议栈 |
 
 ### Web 逆向 (`article/web-reverse/`)
 
@@ -136,6 +141,12 @@
 - **TLS 1.3 变体**: [mmtls](./protocols/mmtls-protocol-analysis.md)
 - **PSK 0-RTT**: [mmtls](./protocols/mmtls-protocol-analysis.md)
 - **自定义应用帧**: [mmtls](./protocols/mmtls-protocol-analysis.md)
+- **微信公众号五套会话（WebView getmsg / MP 后台 / 微信读书 / GetA8Key / 客户端 mmtls）**: [wechat-mp-sessions](./protocols/wechat-mp-session-planes.md), [wechat-mp-oss](./mobile-app-reverse/wechat-mp-oss-landscape.md)
+- **`profile_ext/getmsg` 短时 `uin/key/pass_ticket`**: [wechat-mp-sessions](./protocols/wechat-mp-session-planes.md), [wechat-mp-http](./protocols/wechat-mp-http-surface.md), [wechat-mp-oss](./mobile-app-reverse/wechat-mp-oss-landscape.md)
+- **`getappmsgext` / `appmsg_comment` / `appmsgalbum getalbum`**: [wechat-mp-http](./protocols/wechat-mp-http-surface.md)
+- **MP 后台 `searchbiz` / `appmsgpublish list_ex` / `free_publish`**: [wechat-mp-oss](./mobile-app-reverse/wechat-mp-oss-landscape.md)
+- **微信读书 `i.weread.qq.com/mp/chapters` / `MP_WXS_` / RefreshToken**: [wechat-mp-oss](./mobile-app-reverse/wechat-mp-oss-landscape.md)
+- **`GetA8Key` / `MpGetA8Key` / `X-WECHAT-KEY`**: [wechat-mp-sessions](./protocols/wechat-mp-session-planes.md), [wechat-mp-oss](./mobile-app-reverse/wechat-mp-oss-landscape.md)
 - **ACE UDP 加密上报（tss_sdk_encryptpacket）**: [ace-deviceuniqueid](./anti-detection/android-ace-deviceuniqueid.md)
 - **自定义 URL 协议唤醒本机更新器**: [unpacked-mv3-updater](./web-reverse/unpacked-mv3-native-updater.md)
 - **HTTP DNS**: [mmtls](./protocols/mmtls-protocol-analysis.md)
@@ -171,6 +182,7 @@
 - **Chromium 源码修改/指纹浏览器**: [chromium-fingerprint-compilation](./anti-detection/chromium-fingerprint-compilation.md)
 - **TLS/JA3/JA4 指纹**: [chromium-fingerprint-compilation](./anti-detection/chromium-fingerprint-compilation.md), [pure-protocol-sdk](./mobile-app-reverse/pure-protocol-sdk-reconstruction.md), [protocol-admission](./mobile-app-reverse/protocol-admission-four-gates.md)
 - **空成功 / HTTP 200 空壳 / 注册后激活 / 指纹与鉴权融合**: [protocol-admission](./mobile-app-reverse/protocol-admission-four-gates.md)
+- **公众号 `getmsg ret=-3` / 验证页 / `list_ex ret=200013` 不得当 0 篇成功**: [wechat-mp-sessions](./protocols/wechat-mp-session-planes.md)
 - **Canvas/WebGL 指纹**: [chromium-fingerprint-compilation](./anti-detection/chromium-fingerprint-compilation.md)
 - **SSL Pinning**: [app-reverse-global-map](./mobile-app-reverse/app-reverse-global-map.md), [app-reverse-environment-setup](./mobile-app-reverse/app-reverse-environment-setup.md)
 - **Root/Magisk 隐藏**: [app-reverse-environment-setup](./mobile-app-reverse/app-reverse-environment-setup.md)
@@ -190,7 +202,8 @@
 - **Flutter/iOS Jailbreak 与抓包对抗**: [yuanrenxue-app](./mobile-app-reverse/yuanrenxue-mobile-app-reverse-compilation.md)
 
 ### 厂商/平台
-- **腾讯 (微信/应用宝)**: [mmtls](./protocols/mmtls-protocol-analysis.md)
+- **腾讯 (微信/应用宝)**: [mmtls](./protocols/mmtls-protocol-analysis.md), [wechat-mp-sessions](./protocols/wechat-mp-session-planes.md), [wechat-mp-oss](./mobile-app-reverse/wechat-mp-oss-landscape.md)
+- **微信公众号 / mp.weixin.qq.com / 微信读书 / WMPF 内置浏览器 H5**: [wechat-mp-sessions](./protocols/wechat-mp-session-planes.md), [wechat-mp-http](./protocols/wechat-mp-http-surface.md), [wechat-mp-oss](./mobile-app-reverse/wechat-mp-oss-landscape.md), [weixin-archive-runtime](./collection-engineering/weixin-http-archive-runtime.md)
 - **腾讯 ACE / Widevine DRM / libtersafe**: [ace-deviceuniqueid](./anti-detection/android-ace-deviceuniqueid.md)
 - **阅文 (起点)**: [qidian-fock](./signature-algorithms/qidian-fock-signature.md), [qidian-so](./native-analysis/qidian-so-analysis.md), [jiagu-bypass](./packing-bypass/jiagu-bypass-analysis.md)
 - **阿里 (ACW/飞林)**: [51job-anti-detection](./anti-detection/51job-anti-detection-analysis.md)
@@ -282,6 +295,12 @@
 - **高并发采集控制面/AIMD/half-open**: [collector-control-plane](./collection-engineering/high-concurrency-http-collector-control-plane.md)
 - **Mihomo dialer-proxy / curl --preproxy / 隔离 sidecar**: [mihomo-dialer-proxy](./collection-engineering/mihomo-dialer-proxy-chain.md)
 - **SSD spool/NAS mirror/marker-ACK 重放**: [mac-nas-spool](./collection-engineering/reliable-mac-nas-spool-delivery.md)
+- **微信公众号开源库按会话平面分流（禁止混用 Cookie）**: [wechat-mp-sessions](./protocols/wechat-mp-session-planes.md), [wechat-mp-oss](./mobile-app-reverse/wechat-mp-oss-landscape.md)
+- **内置浏览器 MITM/vConsole 收证（不触发微信）**: [wechat-mp-oss](./mobile-app-reverse/wechat-mp-oss-landscape.md)
+- **WMPF 4.x H5 调试 / WeixinJSBridge Mock ≠ A8Key 签发**: [wechat-mp-oss](./mobile-app-reverse/wechat-mp-oss-landscape.md)
+- **Nuitka onefile RCDATA payload / 第二层 native constants**: [nuitka-onefile](./native-analysis/nuitka-onefile-payload-recovery.md)
+- **SQLite 短事务 claim / durable retry / 凭证不进队列**: [weixin-archive-runtime](./collection-engineering/weixin-http-archive-runtime.md)
+- **Headless MCP stdio/Streamable HTTP 与 job 假成功**: [weixin-archive-runtime](./collection-engineering/weixin-http-archive-runtime.md)
 
 ---
 
