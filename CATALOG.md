@@ -10,14 +10,15 @@
 |------|----------:|-------:|-----:|
 | `anti-detection` | 10 | 169 | 179 |
 | `collection-engineering` | 5 | 2 | 7 |
-| `mobile-app-reverse` | 18 | 186 | 204 |
+| `drm-content-acquisition` | 1 | 0 | 1 |
+| `mobile-app-reverse` | 19 | 186 | 205 |
 | `native-analysis` | 4 | 12 | 16 |
 | `packing-bypass` | 2 | 0 | 2 |
 | `protocols` | 3 | 0 | 3 |
 | `signature-algorithms` | 7 | 19 | 26 |
-| `web-reverse` | 11 | 126 | 137 |
+| `web-reverse` | 12 | 126 | 138 |
 
-文章总数：574。
+文章总数：577。
 
 ## 逐篇目录
 
@@ -217,6 +218,12 @@
 | 子文 | 2026-07-17 | [MCP job 与文章状态分离](./collection-engineering/weixin-http-archive-runtime/headless-mcp-jobs.md) | [HTTP 归档运行时：文章身份、SQLite claim 与 MCP job](./collection-engineering/weixin-http-archive-runtime.md) | Transport / Job 状态机 / 假成功陷阱（必修） / 和文章 claim 的关系 |
 | 子文 | 2026-07-17 | [SQLite 文章 claim 与 durable retry](./collection-engineering/weixin-http-archive-runtime/sqlite-claim-retry.md) | [HTTP 归档运行时：文章身份、SQLite claim 与 MCP job](./collection-engineering/weixin-http-archive-runtime.md) | 身份 / Claim / 重试分层 / 可抄的不变量 |
 
+### `drm-content-acquisition`
+
+| 类型 | 日期 | 文章 | 父合集 | 关键标题 |
+|------|------|------|--------|----------|
+| 主文 | 2026-09-22 | [Widevine L3 视频下载工程：CDM 自提取、license 重放与解密管道](./drm-content-acquisition/widevine-l3-video-download.md) | — | 结论先行 / 七步管道 / [1] 播放链路定位 / [2] manifest 分析 |
+
 ### `mobile-app-reverse`
 
 | 类型 | 日期 | 文章 | 父合集 | 关键标题 |
@@ -224,6 +231,7 @@
 | 主文 | 多篇合集 | [反爬破解社 App 逆向章节合集](./mobile-app-reverse/anti-crawler-app-reverse-series.md) | — | 收录说明 / 文章目录（6 篇） |
 | 主文 | 2026-07-06 | [App 逆向环境搭建](./mobile-app-reverse/app-reverse-environment-setup.md) | — | 模拟器 vs 真机 / 模拟器环境搭建 / 模拟器选择 / 雷电模拟器配置步骤 |
 | 主文 | 2026-07-05 | [App 逆向的全局视角](./mobile-app-reverse/app-reverse-global-map.md) | — | 一条 App 请求的完整生命周期 / 1. Activity / UI 层 / 2. Service / Presenter 业务层 / 3. OkHttp / Retrofit 网络层 |
+| 主文 | 2026-09-16 | [JVM 思维导图（文本版）](./mobile-app-reverse/jvm-mindmap.md) | — | 一、类加载器子系统（ClassLoader） / 1. 加载（Loading） / 2. 链接（Linking） / 3. 初始化（Initialization） |
 | 主文 | unknown | [从抓包到纯 Python：Kimi device_register 与 ttEncrypt 还原](./mobile-app-reverse/kimi-device-register-ttencrypt.md) | — | 正文 / 一、最终结论 / 二、先分清五层数据 / 三、从抓包判断协议结构 |
 | 主文 | 2026-04-13 | [MTOP InnerSignImpl Frida RPC](./mobile-app-reverse/mtop-innersign-rpc.md) | — | 适用边界 / 工作流 / 观察优先级 / 常见坑 |
 | 主文 | 多篇合集 | [泡泡以安 Android 逆向技术合集](./mobile-app-reverse/paopao-android-reverse-compilation.md) | — | 收录说明 / 文章目录（67 篇） |
@@ -499,6 +507,7 @@
 |------|------|------|--------|----------|
 | 主文 | 2026-07-03 | [51job Webpack 模块自吐分析](./web-reverse/51job-webpack-analysis.md) | — | 基本信息 / Webpack 架构 / 关键模块识别 / 加密 / 签名 |
 | 主文 | 多篇合集 | [AI辅助逆向手记 Web 逆向合集](./web-reverse/ai-assisted-web-reverse-compilation.md) | — | 收录说明 / 文章目录（20 篇） |
+| 主文 | 2026-09-18 | [爱给网 safe-search 票据链：响应体藏票据的翻页 403 根因](./web-reverse/aigei-safe-search-ticket-chain.md) | — | 摘要 / 现象与排除实验 / 根因：safe-search 票据链 / 采集侧附带发现（同项目） |
 | 主文 | 多篇合集 | [反爬破解社 Web 逆向实战合集](./web-reverse/anti-crawler-web-reverse-compilation.md) | — | 收录说明 / 文章目录（16 篇） |
 | 主文 | 多篇合集 | [本如笔记 Web 逆向与协议恢复合集](./web-reverse/benru-web-reverse-compilation.md) | — | 收录说明 / 文章目录（12 篇） |
 | 主文 | 多篇合集 | [Web 补环境浏览器对象参考](./web-reverse/browser-env-objects.md) | — | 用途 / 补环境纪律 / 对象一览 / 使用边界 |

@@ -1,6 +1,6 @@
 # 逆向知识库文章索引
 
-> 更新于 2026-09-15 ｜ 来源: `article/`
+> 更新于 2026-09-18 ｜ 来源: `article/`
 >
 > 本文件维护 canonical 入口与技术标签；合集子文章详见 [CATALOG.md](./CATALOG.md)，机器读取使用 [`catalog.json`](./catalog.json)。
 >
@@ -75,6 +75,7 @@
 |------|----------|--------|------|
 | [app-reverse-global-map.md](./mobile-app-reverse/app-reverse-global-map.md) | — (PDF 归档) | `App逆向`, `Android请求生命周期`, `OkHttp`, `Interceptor`, `JNI`, `SO层`, `Frida`, `SSL Pinning`, `设备指纹`, `VMP` | App 逆向全局地图：从 UI/业务/网络/加密/JNI/SO/网络发送七层拆解请求生命周期，总结定位加密点、还原算法、模拟请求三步法和常见防御手段 |
 | [app-reverse-environment-setup.md](./mobile-app-reverse/app-reverse-environment-setup.md) | — (PDF 归档) | `App逆向环境`, `Android`, `LDPlayer`, `MuMu`, `Magisk`, `LSPosed`, `JustTrustMe`, `Charles`, `jadx-gui`, `APKTool`, `Frida`, `证书安装` | App 逆向环境搭建：模拟器与真机选型、Root/Magisk/LSPosed、证书安装与代理配置、抓包/反编译/动态调试工具链和常见问题排查 |
+| [jvm-mindmap.md](./mobile-app-reverse/jvm-mindmap.md) | — (方法论整理) | `JVM`, `ClassLoader`, `双亲委派`, `Runtime Data Area`, `PermGen`, `Metaspace`, `Heap`, `JIT`, `JNI`, `volatile` | HotSpot JVM 四块地图：类加载（加载/链接/初始化）、运行时数据区线程共享与私有划分、解释器+JIT（C1/C2）、JNI；校正原图笔误，JDK 8 PermGen→Metaspace |
 | [anti-crawler-app-reverse-series.md](./mobile-app-reverse/anti-crawler-app-reverse-series.md) | — (公众号归档) | `App逆向`, `jadx`, `Frida`, `JNI`, `SO层`, `密码算法`, `Python复现` | 从全局视角到 SO 层还原的 6 章 App 逆向入门系列 |
 | [paopao-android-reverse-compilation.md](./mobile-app-reverse/paopao-android-reverse-compilation.md) | — (公众号归档) | `Frida`, `Unidbg`, `ARM64`, `JNI`, `Stalker`, `SSL Pinning`, `Protobuf`, `DEX脱壳`, `Root检测` | 67 篇 Android 抓包、密码算法、Native 模拟、Hook、反检测与脱壳系统合集 |
 | [yuanrenxue-mobile-app-reverse-compilation.md](./mobile-app-reverse/yuanrenxue-mobile-app-reverse-compilation.md) | — (公众号归档) | `Token Hook`, `TCP抓包`, `Protobuf`, `双向认证`, `Android`, `iOS`, `Flutter`, `Jailbreak检测` | 猿人学 17 篇移动 App 逆向资料，覆盖认证协议、Native 参数、抓包对抗、跨平台运行时与越狱检测 |
@@ -92,6 +93,12 @@
 | [uiautomator-privacy-consent-tap.md](./mobile-app-reverse/uiautomator-privacy-consent-tap.md) | — (公众号归档) | `uiautomator`, `adb input tap`, `隐私协议`, `pm clear`, `设备注册`, `UI dump` | 首次启动隐私/权限弹窗：uiautomator dump 解析 bounds，对「同意/允许」中心点 `input tap`；界面问题不必先 Frida |
 | [wechat-mp-oss-landscape.md](./mobile-app-reverse/wechat-mp-oss-landscape.md) | weixin_download | `wechatDownload`, `list_ex`, `wechrss`, `weread-omni`, `GetA8Key`, `WeChat-H5-DevTools`, `__biz`, `mid`, `idx` | 公众号开源库按会话平面对照：getmsg 内置浏览器发证、MP list_ex 2026-07-30 收紧、读书 /mp/chapters 与 RefreshToken、GetA8Key sidecar、WMPF H5 调试面；不收录凭证与闭源协议栈 |
 
+### DRM 内容获取 (`article/drm-content-acquisition/`)
+
+| 文章 | 来源项目 | 关键词 | 摘要 |
+|------|----------|--------|------|
+| [widevine-l3-video-download.md](./drm-content-acquisition/widevine-l3-video-download.md) | ktv-smart-jp-download | `Widevine`, `L3 CDM`, `KeyDive`, `pywidevine`, `license 重放`, `PSSH`, `mp4decrypt`, `shaka-player`, `videomarket`, `CENC` | Widevine L3 视频下载七步管道：播放链路定位、manifest/PSSH 按 system ID 甄别、Android 真机 L3 CDM 自提取、pywidevine license 重放、Bento4/ffmpeg 解密合并；桌面 Firefox CDM 4.10.3050 无现成 dumper，真机自提 5 分钟闭环 |
+
 ### Web 逆向 (`article/web-reverse/`)
 
 | 文章 | 来源项目 | 关键词 | 摘要 |
@@ -107,6 +114,7 @@
 | [datadome-env-patch.md](./web-reverse/datadome-env-patch.md) | — (公众号归档) | `DataDome`, `plv3`, `payload`, `iframe Realm`, `OffscreenCanvas`, `jsdom`, `VM 分叉` | DataDome 无感 interstitial 补环境：jsdom+vm 跑原脚本出参，按 Realm 生命周期、Worker 异步链和 VM 第一处分叉对齐；成功口径是 redirect 后新 Session 业务 200 |
 | [ai-assisted-web-reverse-compilation.md](./web-reverse/ai-assisted-web-reverse-compilation.md) | — (公众号归档) | `h5st`, `a_bogus`, `x-s`, `x-s-common`, `JSVMP`, `RSA`, `fangdir`, `X-Gnarly`, `Shein`, `Dewu`, `md5__1038` | AI辅助逆向手记 20 篇：京东 h5st v5.3、瑞数 fangdir、抖音 a_bogus、小红书 xs、Shein/得物签名与 JSVMP/RSA 方法论，目标已脱敏 |
 | [koohai-reverse-notes-compilation.md](./web-reverse/koohai-reverse-notes-compilation.md) | — (公众号归档) | `KhBox`, `补环境`, `Illegal invocation`, `Canvas`, `jsdom`, `JSVMP`, `FART`, `WebView`, `IDA MD5` | 零基础爬虫第一天 17 篇：KhBox 补环境与 Node 编译、BrowserLeaks、AST/JSVMP，以及 FART/WebView/IDA 识别 MD5 |
+| [aigei-safe-search-ticket-chain.md](./web-reverse/aigei-safe-search-ticket-chain.md) | aigei | `safe-search 票据链`, `icon.png 藏票据`, `搜索权限门`, `AES-ECB cnkierjj`, `N@32`, `响应体数据流`, `request-parameter-lineage`, `companion_response_audit`, `403 权限不足`, `vcode-normal` | 爱给网筛选列表翻页 403 根因：带 term 列表每页须走 icon.png 签发票据 → /f/d → 列表的搜索授权链，票据藏响应体 base64 尾部且按页绑定；边界已对齐仍非 200 时先做伴随请求响应体数据流审计 |
 
 ---
 
@@ -124,6 +132,7 @@
 - **PBKDF2-SHA1 + AES-128-CBC（AppsFlyer androidevent）**: [xfq-android-cases](./mobile-app-reverse/xfq-android-cases-compilation.md)
 - **MD5 一位改写 / nsign 四段拼接（安居客）**: [xfq-android-cases](./mobile-app-reverse/xfq-android-cases-compilation.md)
 - **AES-128-CBC + SHA1 拼接（陌陌 x-sign 第一参）**: [xfq-android-cases](./mobile-app-reverse/xfq-android-cases-compilation.md)
+- **AES-ECB `cnkierjj` N 轮 + N@32（爱给网 /f/d v 与 icon token 同构）**: [aigei-safe-search](./web-reverse/aigei-safe-search-ticket-chain.md)
 - **HMAC-SHA1 → Base64 → URL-encode（豆瓣 sig）**: [reversenotes-android](./mobile-app-reverse/reversenotes-android-compilation.md)
 - **SHA1(android_id) 切 g0:g2:g1（数盟 AYk） / XOR+zlib d2api 信封**: [shuzilm-libdu](./anti-detection/shuzilm-libdu-fingerprint.md)
 - **AES-CBC 由 uid MD5 对半作 key/iv（韩小圈 sign）**: [reversenotes-android](./mobile-app-reverse/reversenotes-android-compilation.md)
@@ -159,6 +168,7 @@
 - **`GetA8Key` / `MpGetA8Key` / `X-WECHAT-KEY`**: [wechat-mp-sessions](./protocols/wechat-mp-session-planes.md), [wechat-mp-oss](./mobile-app-reverse/wechat-mp-oss-landscape.md)
 - **ACE UDP 加密上报（tss_sdk_encryptpacket）**: [ace-deviceuniqueid](./anti-detection/android-ace-deviceuniqueid.md)
 - **自定义 URL 协议唤醒本机更新器**: [unpacked-mv3-updater](./web-reverse/unpacked-mv3-native-updater.md)
+- **safe-search 票据链 / icon.png 响应体藏票据 / 按页绑定搜索授权**: [aigei-safe-search](./web-reverse/aigei-safe-search-ticket-chain.md)
 - **HTTP DNS**: [mmtls](./protocols/mmtls-protocol-analysis.md)
 - **Protobuf/gRPC**: [paopao-android](./mobile-app-reverse/paopao-android-reverse-compilation.md), [yuanrenxue-app](./mobile-app-reverse/yuanrenxue-mobile-app-reverse-compilation.md)
 - **App 设备注册 / 拦截器式纯协议客户端**: [protocol-admission](./mobile-app-reverse/protocol-admission-four-gates.md), [pure-protocol-sdk](./mobile-app-reverse/pure-protocol-sdk-reconstruction.md), [protocol-register-order](./mobile-app-reverse/protocol-register-packet-order.md), [kimi-ttencrypt](./mobile-app-reverse/kimi-device-register-ttencrypt.md), [reversenotes-android](./mobile-app-reverse/reversenotes-android-compilation.md), [sdk-purecalc](./mobile-app-reverse/sdk-purecalc-compilation.md)
@@ -204,7 +214,8 @@
 - **Canvas/WebGL 指纹**: [chromium-fingerprint-compilation](./anti-detection/chromium-fingerprint-compilation.md)
 - **SSL Pinning**: [app-reverse-global-map](./mobile-app-reverse/app-reverse-global-map.md), [app-reverse-environment-setup](./mobile-app-reverse/app-reverse-environment-setup.md)
 - **Root/Magisk 隐藏**: [app-reverse-environment-setup](./mobile-app-reverse/app-reverse-environment-setup.md)
-- **验证码与行为风控**: [anti-crawler-risk](./anti-detection/anti-crawler-risk-control-compilation.md), [products](./web-reverse/products.md), [google-recaptcha-v3](./web-reverse/products/google-recaptcha-v3.md), [pure-protocol-sdk](./mobile-app-reverse/pure-protocol-sdk-reconstruction.md)
+- **验证码与行为风控**: [anti-crawler-risk](./anti-detection/anti-crawler-risk-control-compilation.md)
+- **响应体藏数据 / Content-Type 语义不符 / 搜索权限门 403**: [aigei-safe-search](./web-reverse/aigei-safe-search-ticket-chain.md), [products](./web-reverse/products.md), [google-recaptcha-v3](./web-reverse/products/google-recaptcha-v3.md), [pure-protocol-sdk](./mobile-app-reverse/pure-protocol-sdk-reconstruction.md)
 - **安全产品命中识别（DataDome/Akamai/Kasada/瑞数/reCAPTCHA/Arkose/同盾/京东/抖音/易盾/小红书/快手/MTOP 等）**: [products](./web-reverse/products.md)
 - **DataDome 无感 interstitial 补环境（payload/plv3 / iframe Realm / VM 分叉）**: [datadome-env-patch](./web-reverse/datadome-env-patch.md)
 - **瑞数 fangdir P-cookie / LCG / Huffman / CRC32**: [ai-assisted-web](./web-reverse/ai-assisted-web-reverse-compilation.md)
@@ -229,7 +240,8 @@
 - **网易 NIS / 易盾加固（App）**: [app-protectors](./packing-bypass/app-protectors.md), [paopao-android](./mobile-app-reverse/paopao-android-reverse-compilation.md)
 - **51job**: [51job-anti-detection](./anti-detection/51job-anti-detection-analysis.md), [51job-webpack](./web-reverse/51job-webpack-analysis.md)
 - **CSDN/w1101662433 (fivcan)**: [chromium-fingerprint-compilation](./anti-detection/chromium-fingerprint-compilation.md)
-- **Android/App 逆向**: [app-reverse-global-map](./mobile-app-reverse/app-reverse-global-map.md), [app-reverse-environment-setup](./mobile-app-reverse/app-reverse-environment-setup.md), [pure-protocol-sdk](./mobile-app-reverse/pure-protocol-sdk-reconstruction.md), [protocol-register-order](./mobile-app-reverse/protocol-register-packet-order.md), [ace-deviceuniqueid](./anti-detection/android-ace-deviceuniqueid.md), [fp-consistency](./anti-detection/device-fingerprint-consistency-modeling.md), [shuzilm-libdu](./anti-detection/shuzilm-libdu-fingerprint.md), [xfq-android-cases](./mobile-app-reverse/xfq-android-cases-compilation.md), [reversenotes-android](./mobile-app-reverse/reversenotes-android-compilation.md), [sdk-purecalc](./mobile-app-reverse/sdk-purecalc-compilation.md), [protocol-admission](./mobile-app-reverse/protocol-admission-four-gates.md)
+- **Android/App 逆向**: [app-reverse-global-map](./mobile-app-reverse/app-reverse-global-map.md), [app-reverse-environment-setup](./mobile-app-reverse/app-reverse-environment-setup.md), [jvm-mindmap](./mobile-app-reverse/jvm-mindmap.md), [pure-protocol-sdk](./mobile-app-reverse/pure-protocol-sdk-reconstruction.md), [protocol-register-order](./mobile-app-reverse/protocol-register-packet-order.md), [ace-deviceuniqueid](./anti-detection/android-ace-deviceuniqueid.md), [fp-consistency](./anti-detection/device-fingerprint-consistency-modeling.md), [shuzilm-libdu](./anti-detection/shuzilm-libdu-fingerprint.md), [xfq-android-cases](./mobile-app-reverse/xfq-android-cases-compilation.md), [reversenotes-android](./mobile-app-reverse/reversenotes-android-compilation.md), [sdk-purecalc](./mobile-app-reverse/sdk-purecalc-compilation.md), [protocol-admission](./mobile-app-reverse/protocol-admission-four-gates.md)
+- **HotSpot / JDK 8 Metaspace**: [jvm-mindmap](./mobile-app-reverse/jvm-mindmap.md)
 - **AOSP / ROM 改造（CA/APatch/WebView）**: [xfq-aosp-rom](./mobile-app-reverse/xfq-aosp-rom-compilation.md)
 - **知识星球：逆向学习交流**: [xfq-crypto](./signature-algorithms/xfq-crypto-notes-compilation.md), [xfq-android-cases](./mobile-app-reverse/xfq-android-cases-compilation.md), [xfq-unidbg](./native-analysis/xfq-unidbg-native-compilation.md), [xfq-aosp-rom](./mobile-app-reverse/xfq-aosp-rom-compilation.md), [xfq-device-fp](./anti-detection/xfq-device-fp-compilation.md), [xfq-tools](./mobile-app-reverse/xfq-tools-debug-compilation.md), [reversenotes-android](./mobile-app-reverse/reversenotes-android-compilation.md)
 - **语雀 xiaofeng777/android_example**: [boluobao-sfsecurity](./signature-algorithms/boluobao-sfsecurity-trace.md), [mafengwo-sha1](./signature-algorithms/mafengwo-modified-sha1-trace.md)
@@ -252,6 +264,7 @@
 - **微信公众号：Softard（Wossoneri）**: [softard-android](./mobile-app-reverse/softard-android-reverse-compilation.md), [uiautomator-consent](./mobile-app-reverse/uiautomator-privacy-consent-tap.md)
 - **航班管家 / hbgjbangbang LAES**: [hangban-laes](./signature-algorithms/hangban-laes-encrypt.md)
 - **瑞数 RS6**: [products](./web-reverse/products.md)
+- **爱给网（aigei.com / fd.aigei.com / GeiFileLocalStore）**: [aigei-safe-search](./web-reverse/aigei-safe-search-ticket-chain.md)
 - **Google reCAPTCHA v3 / invisible reload/rresp / Node 请求面**: [google-recaptcha-v3](./web-reverse/products/google-recaptcha-v3.md), [products](./web-reverse/products.md)
 - **阿里（ACW/H5Sec/BxUA/验证码/MTOP H5 / App 四头）**: [51job-anti-detection](./anti-detection/51job-anti-detection-analysis.md), [products](./web-reverse/products.md), [alibaba-mtop-h5](./web-reverse/products/alibaba-mtop-h5.md), [alibaba-mtop-four-headers](./signature-algorithms/alibaba-mtop-four-headers.md)
 - **腾讯（验证码/风控）**: [mmtls](./protocols/mmtls-protocol-analysis.md), [products](./web-reverse/products.md)
@@ -282,6 +295,11 @@
 - **FART / JDex2 / FartFixer 分流**: [jiagu-bypass](./packing-bypass/jiagu-bypass-analysis.md)
 - **Chromium 源码编译与修改**: [chromium-fingerprint-compilation](./anti-detection/chromium-fingerprint-compilation.md)
 - **滑块缺口轮廓匹配（Canny 对洞，禁止灰度对纹理）**: [products](./web-reverse/products.md)
+- **JVM 类加载 / 双亲委派 / 验证-准备-解析**: [jvm-mindmap](./mobile-app-reverse/jvm-mindmap.md)
+- **JVM 运行时数据区（堆/方法区/栈/PC）**: [jvm-mindmap](./mobile-app-reverse/jvm-mindmap.md)
+- **PermGen → Metaspace（JDK 8）**: [jvm-mindmap](./mobile-app-reverse/jvm-mindmap.md)
+- **JIT C1/C2 / volatile 与指令重排序**: [jvm-mindmap](./mobile-app-reverse/jvm-mindmap.md)
+- **JNI / Native Method Stack**: [jvm-mindmap](./mobile-app-reverse/jvm-mindmap.md)
 - **App 逆向三步法**: [app-reverse-global-map](./mobile-app-reverse/app-reverse-global-map.md)
 - **OkHttp/Interceptor 定位**: [app-reverse-global-map](./mobile-app-reverse/app-reverse-global-map.md), [pure-protocol-sdk](./mobile-app-reverse/pure-protocol-sdk-reconstruction.md)
 - **App 纯协议 SDK 重建（HAR 语料 / algorithms / 拦截器链 / 注册完备性）**: [pure-protocol-sdk](./mobile-app-reverse/pure-protocol-sdk-reconstruction.md)
@@ -319,7 +337,8 @@
 - **canonical query 与 Cookie provenance**: [sign-landing](./web-reverse/sign-landing-methods.md)
 - **补环境对象级参考（检测面/常见坑/观察优先级）**: [env-objects](./web-reverse/browser-env-objects.md)
 - **未上架 MV3 / sideload / 自定义协议本机更新器**: [unpacked-mv3-updater](./web-reverse/unpacked-mv3-native-updater.md)
-- **mitmproxy/Charles/Frida/Protobuf/iOS/Flutter 工具链**: [benru-web](./web-reverse/benru-web-reverse-compilation.md), [yuanrenxue-app](./mobile-app-reverse/yuanrenxue-mobile-app-reverse-compilation.md)
+- **mitmproxy/Charles/Frida/Protobuf/iOS/Flutter 工具链**: [benru-web](./web-reverse/benru-web-reverse-compilation.md)
+- **伴随请求响应体数据流审计 / companion_response_audit / 参数谱系 sourceKind 溯源**: [aigei-safe-search](./web-reverse/aigei-safe-search-ticket-chain.md), [yuanrenxue-app](./mobile-app-reverse/yuanrenxue-mobile-app-reverse-compilation.md)
 - **高并发采集控制面/AIMD/half-open**: [collector-control-plane](./collection-engineering/high-concurrency-http-collector-control-plane.md)
 - **Mihomo dialer-proxy / curl --preproxy / 隔离 sidecar**: [mihomo-dialer-proxy](./collection-engineering/mihomo-dialer-proxy-chain.md)
 - **SSD spool/NAS mirror/marker-ACK 重放**: [mac-nas-spool](./collection-engineering/reliable-mac-nas-spool-delivery.md)
@@ -329,6 +348,7 @@
 - **Nuitka onefile RCDATA payload / 第二层 native constants**: [nuitka-onefile](./native-analysis/nuitka-onefile-payload-recovery.md)
 - **SQLite 短事务 claim / durable retry / 凭证不进队列**: [weixin-archive-runtime](./collection-engineering/weixin-http-archive-runtime.md)
 - **Headless MCP stdio/Streamable HTTP 与 job 假成功**: [weixin-archive-runtime](./collection-engineering/weixin-http-archive-runtime.md)
+- **Widevine L3 视频下载 / CDM 自提取 / license 重放 / mp4decrypt**: [widevine-l3-video-download](./drm-content-acquisition/widevine-l3-video-download.md)
 
 ---
 

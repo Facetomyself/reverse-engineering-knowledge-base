@@ -1,15 +1,16 @@
 {
   "schema_version": 1,
-  "article_count": 574,
+  "article_count": 577,
   "category_counts": {
     "anti-detection": 179,
     "collection-engineering": 7,
-    "mobile-app-reverse": 204,
+    "drm-content-acquisition": 1,
+    "mobile-app-reverse": 205,
     "native-analysis": 16,
     "packing-bypass": 2,
     "protocols": 3,
     "signature-algorithms": 26,
-    "web-reverse": 137
+    "web-reverse": 138
   },
   "records": [
     {
@@ -5232,6 +5233,44 @@
       "content_sha256": "6205b123bdcca34ce0e29710d6da9ccce2de7ccecc171b56ce6cfc7737710f2b"
     },
     {
+      "path": "drm-content-acquisition/widevine-l3-video-download.md",
+      "kind": "canonical",
+      "category": "drm-content-acquisition",
+      "parent": null,
+      "title": "Widevine L3 视频下载工程：CDM 自提取、license 重放与解密管道",
+      "source": "`workspace/ktv-smart-jp-download`",
+      "original_date": "2026-09-22",
+      "archive_date": "2026-09-22",
+      "summary": "从一次日本 VOD 站点（videomarket / カンテレドーガ）租赁剧集的本地化下载中提炼： 浏览器播放链路定位、Android 真机 L3 CDM 自提取、pywidevine license 重放、Bento4/ffmpeg 解密合并的完整可复用管道。工具全部为公开 DRM 研究/测试工具（KeyDive、pywidevine、 mp4decrypt），适用边界是自有账号已付费租赁内容的个人备份与 DRM 安全研究， 不得用于未授权内容的获取与分发。",
+      "keywords": [
+        "Widevine",
+        "L3 CDM",
+        "KeyDive",
+        "pywidevine",
+        "license 重放",
+        "PSSH",
+        "mp4decrypt",
+        "shaka-player",
+        "videomarket",
+        "CENC"
+      ],
+      "headings": [
+        "结论先行",
+        "七步管道",
+        "[1] 播放链路定位",
+        "[2] manifest 分析",
+        "[3] L3 CDM 自提取（KeyDive + Android 真机）",
+        "[4] license 重放（pywidevine）",
+        "[5]-[7] 下载、解密、合并",
+        "videomarket（カンテレドーガ）案例速查",
+        "工具版本（2026-09 实测）",
+        "与既有知识的关系"
+      ],
+      "bytes": 9987,
+      "lines": 199,
+      "content_sha256": "5ec175d67144105c1c8acd9b7688451ce6b534068228e8cd8edeebf66f117d40"
+    },
+    {
       "path": "mobile-app-reverse/anti-crawler-app-reverse-series.md",
       "kind": "canonical",
       "category": "mobile-app-reverse",
@@ -5581,6 +5620,47 @@
       "bytes": 8256,
       "lines": 181,
       "content_sha256": "815339dccc58cd538114052adcfa7338251fb7454e2dc2bcc7ad7b382455fdef"
+    },
+    {
+      "path": "mobile-app-reverse/jvm-mindmap.md",
+      "kind": "canonical",
+      "category": "mobile-app-reverse",
+      "parent": null,
+      "title": "JVM 思维导图（文本版）",
+      "source": "方法论整理（JVM 思维导图文本校正）",
+      "original_date": "2026-09-16",
+      "archive_date": "2026-09-16",
+      "summary": "已校正原图笔误（如 Runtime Date Area、voliate、PerGen、火板、解析误标为 Preparation 等），并尽量保留原图结构。",
+      "keywords": [
+        "JVM",
+        "ClassLoader",
+        "双亲委派",
+        "Runtime Data Area",
+        "PermGen",
+        "Metaspace",
+        "Heap",
+        "JIT",
+        "JNI",
+        "volatile"
+      ],
+      "headings": [
+        "一、类加载器子系统（ClassLoader）",
+        "1. 加载（Loading）",
+        "2. 链接（Linking）",
+        "3. 初始化（Initialization）",
+        "二、运行时数据区（Runtime Data Area）",
+        "1. 方法区（Method Area）",
+        "2. 堆（Heap）",
+        "3. 虚拟机栈（JVM Stack）",
+        "4. 本地方法栈（Native Method Stack）",
+        "5. 程序计数器（Program Counter Register）",
+        "三、执行引擎（Execution Engine）",
+        "四、本地方法接口（JNI，Java Native Interface）",
+        "阅读提示"
+      ],
+      "bytes": 6920,
+      "lines": 161,
+      "content_sha256": "747f97ef59003db40f1e151247af7aa89fd71f5fe88c32c6d19b1c8f6711fb96"
     },
     {
       "path": "mobile-app-reverse/kimi-device-register-ttencrypt.md",
@@ -13978,6 +14058,40 @@
       "bytes": 12155,
       "lines": 187,
       "content_sha256": "2bed674134f74151583cb8a3076511ca20d62db9c1567042feb18be978f81c08"
+    },
+    {
+      "path": "web-reverse/aigei-safe-search-ticket-chain.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "爱给网 safe-search 票据链：响应体藏票据的翻页 403 根因",
+      "source": "`workspace/aigei`",
+      "original_date": "2026-09-18",
+      "archive_date": "2026-09-18",
+      "summary": "爱给网（aigei.com）3dsmax 人物模型筛选列表：同一 URL（/3d/max/character_models_2?term=sizem_0_3&page=N）在浏览器 200，在 Python 客户端无 term 200、带 term 恒 403「权限不足」（errorCode=forbidden JSON）。根因不是风控、不是 SESSION、不是 TLS/HTTP2：带 term 的列表走搜索权限门，每页必须先完成 safe-search 票据链——GET /search/icon.png（签名请求）返回藏在响应体 base64 尾部的授权票据，票据值构造 POST /f/d 的 v，列表才放行；且票据按页绑定。这",
+      "keywords": [
+        "safe-search 票据链",
+        "icon.png 藏票据",
+        "搜索权限门",
+        "AES-ECB cnkierjj",
+        "N@32",
+        "响应体数据流",
+        "request-parameter-lineage",
+        "companion_response_audit",
+        "403 权限不足",
+        "vcode-normal"
+      ],
+      "headings": [
+        "摘要",
+        "现象与排除实验",
+        "根因：safe-search 票据链",
+        "采集侧附带发现（同项目）",
+        "方法论教训",
+        "复现要点"
+      ],
+      "bytes": 6086,
+      "lines": 72,
+      "content_sha256": "16282825d8c6f974f5008a4e2d77d37530c054ca9812a014e92fbb2e2163c5e0"
     },
     {
       "path": "web-reverse/anti-crawler-web-reverse-compilation.md",

@@ -19,6 +19,7 @@ article/
 ├── native-analysis/                   # Native SO 分析
 ├── mobile-app-reverse/                # 移动 App 逆向方法/环境/流程
 ├── collection-engineering/            # 代理并发、可恢复采集、spool/mirror 与生产可靠性
+├── drm-content-acquisition/           # DRM 内容获取工程（L3 CDM 提取、license 重放、解密管道）
 └── web-reverse/                       # Web 逆向 (webpack/框架/JS)
 ```
 
