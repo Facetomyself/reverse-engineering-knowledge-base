@@ -105,3 +105,39 @@ MTOP `InnerSignImpl.getUnifiedSign` 是标准路径：spawn → 枚举 ClassLoad
 4. `test.py` 业务读回才是 `serverAccepted`。RuyiDOM / Node vm 出参只是 `localReproduced`。
 
 对照仓刷新后只更新本页的「窗口日期」与产品文档的命中特征，不把新盐写进知识库。
+
+## 方法论与技巧
+
+按站案例只证明某条调用链。下面几篇把跨站可复用的判断步骤单独写出，伪代码和真实流程都在文内。
+
+| 篇 | 解决什么 |
+|----|----------|
+| [VMP 先钩宿主原语](./vmp-host-primitive-to-purecalc.md) | stack VM 何时停、盐和会话怎么探针、纯算完成门 |
+| [材料出处账本](./material-provenance-ledger.md) | 本地可造、服务端下发、隔离程序、设备绑定；失败不随机 |
+| [请求面切开与失败翻译](./request-plane-failure-translation.md) | 同名参数不同面；空 body / 200 翻译到哪一条链 |
+| [纯算与预言机成本账](./purecalc-vs-oracle-cost.md) | 什么时候移植，什么时候跑官方脚本并写明原因 |
+| [缺字段失败与完成门](./fail-closed-completion-gate.md) | 不回填抓包；`localReproduced` 与 `serverAccepted` 分开 |
+| [薄封装与纯算的完成度](./thin-wrapper-vs-purecalc.md) | execjs 整包、双写、边界壳各自能断言什么 |
+| [端别常量表](./endpoint-constant-table.md) | aid / appKey / version 按接口填，不为统一抹平 |
+| [会话材料双写](./session-binding-double-write.md) | Cookie 再写到头，并绑对 origin |
+| [隔离 Node 运行器合同](./isolated-node-runner-contract.md) | stdin、形状门、超时、日志不回显秘密 |
+| [抓包对齐偏差](./capture-alignment-traps.md) | 空值、同名键、`$`、排序、冻结头 |
+| [签完即线上](./signed-query-wire-contract.md) | 编码一次，按签完的字节发送 |
+
+## 2026-09-23 案例索引
+
+同一批公开仓的按站装配案例。每篇有真实调用链和伪代码，常数仍以源码对照为准，不在这里重复盐和字母表。
+
+| 站点 | 案例 |
+|------|------|
+| 抖音 | [请求面](./douyin-web-request-planes.md)、[webSign](./douyin-secsdk-websign-case.md)、[会话材料](./douyin-session-materials-case.md) |
+| TikTok | [HTTP 签名面](./tiktok-web-signing-planes.md)、[frontier / ticket / Shop](./tiktok-frontier-ticket-shop-case.md) |
+| 小红书 | [装配合同](./xiaohongshu-assembly-case.md) |
+| 快手 | [资料接口 hxfalcon](./kuaishou-landing-case.md) |
+| B 站 | [WBI / 极验 / correspond](./bilibili-wbi-geetest-case.md) |
+| 京东 | [h5st 5.3 运行时](./jd-h5st-runtime-case.md) |
+| 淘宝 H5 / 闲鱼 Web / 闲鱼 App | [淘宝](./taobao-h5-mtop-lwp-case.md)、[闲鱼 Web](./xianyu-web-mtop-case.md)、[闲鱼 App](./xianyu-android-sign-rpc-case.md) |
+| 知乎 / 微博 / 头条 / 西瓜 | [知乎](./zhihu-xzse96-execjs-case.md)、[微博](./weibo-request-planes-case.md)、[头条](./toutiao-abogus-execjs-case.md)、[西瓜](./xigua-unsigned-query-case.md) |
+| 币安 / 领英 / Instagram / X | [币安](./binance-cms-header-case.md)、[领英](./linkedin-voyager-csrf-case.md)、[Instagram](./instagram-doc-id-case.md)、[X](./x-twitter-graphql-case.md) |
+| 飞书 / 公众号后台 / 汽车之家 / 百家号 | [飞书](./feishu-csrf-frontier-case.md)、[公众号后台](./wechat-oa-mp-cgi-case.md)、[汽车之家](./autohome-cookie-boundary-case.md)、[百家号](./baijiahao-runtime-header-case.md) |
+| 跨站写回 | [签完即线上](./signed-query-wire-contract.md) |

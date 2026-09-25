@@ -8,7 +8,7 @@
 
 | 分类 | canonical | 子文章 | 合计 |
 |------|----------:|-------:|-----:|
-| `anti-detection` | 10 | 169 | 179 |
+| `anti-detection` | 11 | 169 | 180 |
 | `collection-engineering` | 5 | 2 | 7 |
 | `drm-content-acquisition` | 1 | 0 | 1 |
 | `mobile-app-reverse` | 19 | 186 | 205 |
@@ -16,9 +16,9 @@
 | `packing-bypass` | 2 | 0 | 2 |
 | `protocols` | 3 | 0 | 3 |
 | `signature-algorithms` | 7 | 19 | 26 |
-| `web-reverse` | 12 | 126 | 138 |
+| `web-reverse` | 47 | 126 | 173 |
 
-文章总数：577。
+文章总数：613。
 
 ## 逐篇目录
 
@@ -31,6 +31,7 @@
 | 主文 | 多篇合集 | [反爬破解社风控与反检测合集](./anti-detection/anti-crawler-risk-control-compilation.md) | — | 收录说明 / 文章目录（10 篇） |
 | 主文 | 多篇合集 | [本如笔记反爬与反检测实战合集](./anti-detection/benru-anti-detection-compilation.md) | — | 收录说明 / 文章目录（8 篇） |
 | 主文 | 2026-07-06 | [Chromium 指纹浏览器编译系列](./anti-detection/chromium-fingerprint-compilation.md) | — | 技术概览 / 指纹伪装维度 / 反检测绕过 / 爬虫增强 |
+| 主文 | 2026-09-24 | [CloakBrowser humanize 轨迹：包装层三次贝塞尔计划器](./anti-detection/cloakbrowser-humanize-trajectory.md) | — | 定位 / 点击链 / 曲线 / 滚动与键盘 |
 | 主文 | 2026-09-15 | [设备指纹一致性建模：联合分布、时间间隔与生命周期](./anti-detection/device-fingerprint-consistency-modeling.md) | — | 定位 / 核心判断 / 1. 联合分布，不是单字段真假 / 2. APK 自身也是指纹面 |
 | 主文 | 多篇合集 | [如意私塾浏览器指纹与反检测合集](./anti-detection/ruyi-browser-anti-detection-compilation.md) | — | 收录说明 / 文章目录（97 篇） |
 | 主文 | 2026-09 | [数盟 libdu.so 指纹对照表（知乎 11.4.0）](./anti-detection/shuzilm-libdu-fingerprint.md) | — | 怎么用这篇 / 1. 签发 / 2. 口径：258 vs 366 / 3. 两张枚举 |
@@ -509,14 +510,49 @@
 | 主文 | 多篇合集 | [AI辅助逆向手记 Web 逆向合集](./web-reverse/ai-assisted-web-reverse-compilation.md) | — | 收录说明 / 文章目录（20 篇） |
 | 主文 | 2026-09-18 | [爱给网 safe-search 票据链：响应体藏票据的翻页 403 根因](./web-reverse/aigei-safe-search-ticket-chain.md) | — | 摘要 / 现象与排除实验 / 根因：safe-search 票据链 / 采集侧附带发现（同项目） |
 | 主文 | 多篇合集 | [反爬破解社 Web 逆向实战合集](./web-reverse/anti-crawler-web-reverse-compilation.md) | — | 收录说明 / 文章目录（16 篇） |
+| 主文 | 2026-08-18 | [汽车之家案例：Cookie 加 JSONP，没有本地 sign](./web-reverse/autohome-cookie-boundary-case.md) | — | 案例：帖子详情 / 失败怎么读 / 证据边界 |
+| 主文 | 2026-08-18 | [百家号案例：页面 runtime 供 uk，Cookie 供 Tenger-Mhor](./web-reverse/baijiahao-runtime-header-case.md) | — | 案例：作者页与列表 / 可复用点 / 证据边界 |
 | 主文 | 多篇合集 | [本如笔记 Web 逆向与协议恢复合集](./web-reverse/benru-web-reverse-compilation.md) | — | 收录说明 / 文章目录（12 篇） |
+| 主文 | 2026-09-13 | [B 站案例：WBI 原序写回、极验本地载荷、correspondPath](./web-reverse/bilibili-wbi-geetest-case.md) | — | 案例：WBI / 案例：极验 v3 的边界 / 案例：correspondPath 是续期入场券 / 传输 |
+| 主文 | 2026-08-18 | [币安案例：公告列表的设备头，不是交易签名](./web-reverse/binance-cms-header-case.md) | — | 案例：一页公告 / 落地判断 / 证据边界 |
 | 主文 | 多篇合集 | [Web 补环境浏览器对象参考](./web-reverse/browser-env-objects.md) | — | 用途 / 补环境纪律 / 对象一览 / 使用边界 |
+| 主文 | 2026-09-23 | [技巧：抓包对齐时容易自己引入的偏差](./web-reverse/capture-alignment-traps.md) | — | 表 / 对齐流程 / 伪代码：空值与同名键 |
 | 主文 | unknown | [DataDome 无感验证补环境](./web-reverse/datadome-env-patch.md) | — | 正文 / 前言 / 目标网站 / 抓包分析 |
+| 主文 | 2026-08-16 | [抖音 webSign：钩宿主 MD5，再纯算规范化 query](./web-reverse/douyin-secsdk-websign-case.md) | — | 案例怎么定位到 MD5 / 规范化规则 / 策略表决定谁要加签 / 真实接入 |
+| 主文 | 2026-09-20 | [抖音会话材料：msToken、票据、dtrait、acrawler](./web-reverse/douyin-session-materials-case.md) | — | 材料出处 / 案例：msToken 是签发值，不是随机串 / 案例：只读票据和写入票据不是同一组头 / 案例：dtrait 按 path 重算，第一段会话内复用 |
+| 主文 | 2026-09-20 | [抖音 Web 请求面：七条链的真实装配](./web-reverse/douyin-web-request-planes.md) | — | 链怎么切开 / 案例 A：作品详情，签完的 URL 才是要发的 URL / 案例 B：评论列表，只读票据，允许 params 重编码 / 案例 C：直播电商，host 绑定 a_bogus，空 body 不是签名错误 |
+| 主文 | 2026-09-23 | [技巧：端别常量表，按抓包填，不为统一抹平](./web-reverse/endpoint-constant-table.md) | — | 怎么建表 / 真实流程 / 同名常量的三层 / 过期 |
+| 主文 | 2026-09-23 | [方法论：缺字段失败，成功口径分开写](./web-reverse/fail-closed-completion-gate.md) | — | 失败要发生在发送之前 / 三层完成门 / 伪代码：验收记录 |
+| 主文 | 2026-08-18 | [飞书案例：HTTP CSRF 与 frontier WebSocket 分链](./web-reverse/feishu-csrf-frontier-case.md) | — | 案例：CSRF 再取用户 / 案例：frontier 长连 / 落地判断 / 证据边界 |
+| 主文 | 2026-08-18 | [Instagram 案例：HTML 抽 app_id 与 doc_id](./web-reverse/instagram-doc-id-case.md) | — | 案例：从用户名到时间线 / csrf 辅助函数没有接上主路径 / 伪代码 / 证据边界 |
+| 主文 | 2026-09-23 | [技巧：隔离 Node 运行器的进程合同](./web-reverse/isolated-node-runner-contract.md) | — | 合同表 / 伪代码 / 和 execjs 整包的差别 |
+| 主文 | 2026-09-19 | [京东案例：h5st 5.3 运行时、body 预哈希、JCAP 分链](./web-reverse/jd-h5st-runtime-case.md) | — | 三段运行时 / 案例：搜索 searchWare / 登录路径 / 和旧仓的差分 |
 | 主文 | 多篇合集 | [零基础爬虫第一天 逆向笔记合集](./web-reverse/koohai-reverse-notes-compilation.md) | — | 收录说明 / 文章目录（17 篇） |
+| 主文 | 2026-08-30 | [快手案例：资料接口的 hxfalcon 装配](./web-reverse/kuaishou-landing-case.md) | — | 案例：GET /rest/v/profile/get / CP 与直播 / 成本判断在代码里的位置 / 证据边界 |
+| 主文 | 2026-08-18 | [领英案例：JSESSIONID 双写与页面 queryId](./web-reverse/linkedin-voyager-csrf-case.md) | — | 案例：资料卡 / 可复用点 / 证据边界 |
+| 主文 | 2026-09-23 | [方法论：签名材料出处账本](./web-reverse/material-provenance-ledger.md) | — | 四类出处 / 真实记账 / 账本伪代码 / 怎么给新字段归类 |
 | 主文 | 多篇合集 | [Web 安全产品强制命中索引](./web-reverse/products.md) | — | 用途 / 强制命中纪律 / 产品一览 / 使用边界 |
+| 主文 | 2026-09-23 | [方法论：纯算还是预言机，先写成本账](./web-reverse/purecalc-vs-oracle-cost.md) | — | 成本账怎么填 / 预言机也有验收 / 伪代码 / 账本里要写的一句 |
+| 主文 | 2026-09-23 | [方法论：请求面切开，失败按面翻译](./web-reverse/request-plane-failure-translation.md) | — | 画法 / 真实翻译 / 伪代码 / 同名不同面 |
+| 主文 | 2026-09-23 | [技巧：会话材料双写，并且绑源](./web-reverse/session-binding-double-write.md) | — | 双写对照 / 绑源的真实失误 / 不是双写的头 |
 | 主文 | 2026-08-30 | [平台签名落地方法：纯算、黑盒与 RPC 分流](./web-reverse/sign-landing-methods.md) | — | 落地四分法 / 产品切开，失败不要单归因 / 可复用方法 / 1. VMP 先钩宿主原语 |
+| 主文 | 2026-09-23 | [签完即线上：query、头序与 HTTP/2 Cookie](./web-reverse/signed-query-wire-contract.md) | — | 四条写回规则 / 案例：抖音两条编码函数不能混 / 案例：TikTok 与小红书 / 传输层单独验收 |
+| 主文 | 2026-08-18 | [淘宝 H5 案例：MTOP sign 与钉钉 LWP 分链](./web-reverse/taobao-h5-mtop-lwp-case.md) | — | 落地形态 / 案例：拿 IM token / 案例：私信是 LWP，不是再签一次 MTOP / 脏边界 |
+| 主文 | 2026-09-23 | [方法论：薄封装、整包 execjs、纯算，三种完成度](./web-reverse/thin-wrapper-vs-purecalc.md) | — | 五档 / 判定流程 / 薄封装仍然有用的三件事 / 伪代码：完成度标签 |
+| 主文 | 2026-09-23 | [TikTok 旁路签名：frontierSign、ticket-guard、Shop BSID](./web-reverse/tiktok-frontier-ticket-shop-case.md) | — | 案例：frontierSign 是独立 Node 进程 / 案例：ticket-guard 只重算，不复放五头 / 案例：Shop BSID 是第三套 Node runner / 三条旁路对照 |
+| 主文 | 2026-09-23 | [TikTok Web 签名面：端点合同、两代 SDK、fail-closed](./web-reverse/tiktok-web-signing-planes.md) | — | 路由 / 案例：legacy Web 的 X-Bogus 是字面量 1 / 案例：Creator project 吃整段 query，并且要重算 ticket / 写回：API 不使用 signer 内部拼好的 URL |
+| 主文 | 2026-08-18 | [头条案例：a_bogus 与 _signature 是两包 execjs](./web-reverse/toutiao-abogus-execjs-case.md) | — | 两个入口 / 案例：信息流 / 和抖音纯算的边界 / 证据边界 |
 | 主文 | 2026-08-24 | [未上架 MV3 扩展的本机更新器架构](./web-reverse/unpacked-mv3-native-updater.md) | — | 这篇解决什么问题 / 五层模型 / 渠道面：版本清单与 zip / 本机更新面：绿色 EXE |
+| 主文 | 2026-08-16 | [方法论：VMP 先钩宿主原语，再决定要不要纯算](./web-reverse/vmp-host-primitive-to-purecalc.md) | — | 何时用 / 真实流程：抖音 webSign / 探针表 / 完成门 |
+| 主文 | 2026-08-18 | [公众号后台案例：token 透传，不是 mmtls](./web-reverse/wechat-oa-mp-cgi-case.md) | — | 案例：搜号再拉发表列表 / 文章 HTML 是另一面 / 证据边界 |
+| 主文 | 2026-08-18 | [微博案例：PC、移动、创作者上传三条面](./web-reverse/weibo-request-planes-case.md) | — | 三条面 / 案例：图片/视频上传参数 / 落地判断 / 证据边界 |
+| 主文 | 2026-08-18 | [X 案例：Bearer、ct0 双写与写死的 GraphQL features](./web-reverse/x-twitter-graphql-case.md) | — | 案例：搜索 / 证据边界 |
+| 主文 | 2026-04-13 | [闲鱼 Android 案例：InnerSignImpl 实例 RPC](./web-reverse/xianyu-android-sign-rpc-case.md) | — | 案例流程 / 和 Web 的边界 / 伪代码 |
+| 主文 | 2026-08-18 | [闲鱼 Web 案例：H5 sign、空 sign 换票、tfstk](./web-reverse/xianyu-web-mtop-case.md) | — | 和淘宝的同构与分叉 / 案例：空 sign 换 _m_h5_tk / 案例：业务 get_token / 不能和 App x-sign 互换 |
+| 主文 | 2026-09-08 | [小红书装配案例：材料六桶、签完即发、端别切开](./web-reverse/xiaohongshu-assembly-case.md) | — | 材料六桶 / 案例：一次 PC 业务请求 / 四条端别 / 伪代码：provenance 门 |
+| 主文 | 2026-08-18 | [西瓜案例：签名位是空占位，播放解密另算](./web-reverse/xigua-unsigned-query-case.md) | — | 案例：作品列表 query / 播放解密函数的形状 / 证据边界 |
 | 主文 | 多篇合集 | [猿人学 Web 与 JavaScript 逆向合集](./web-reverse/yuanrenxue-web-reverse-compilation.md) | — | 收录说明 / 文章目录（7 篇） |
+| 主文 | 2026-08-18 | [知乎案例：x-zse-96 走整包 execjs](./web-reverse/zhihu-xzse96-execjs-case.md) | — | 案例：评论头 / 落地判断 / 误用 |
 | 子文 | 2026-07-27 | [md51038逆向记录](./web-reverse/ai-assisted-web-reverse-compilation/ai-assisted-20260727-01.md) | [AI辅助逆向手记 Web 逆向合集](./web-reverse/ai-assisted-web-reverse-compilation.md) | 正文 / 环境 / 工具:vmtrace / 第一次误判:当成国密签名算法 |
 | 子文 | 2026-07-28 | [X-Gnarly升级到5.3.0](./web-reverse/ai-assisted-web-reverse-compilation/ai-assisted-20260728-01.md) | [AI辅助逆向手记 Web 逆向合集](./web-reverse/ai-assisted-web-reverse-compilation.md) | 正文 / 环境 / 工具:vmtrace / 加密流程 |
 | 子文 | 2026-07-29 | [某东 h5st v5.3逆向复现](./web-reverse/ai-assisted-web-reverse-compilation/ai-assisted-20260729-01.md) | [AI辅助逆向手记 Web 逆向合集](./web-reverse/ai-assisted-web-reverse-compilation.md) | 正文 / 环境 / 加密流程 / 整体结构 |

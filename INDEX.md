@@ -1,6 +1,6 @@
 # 逆向知识库文章索引
 
-> 更新于 2026-09-18 ｜ 来源: `article/`
+> 更新于 2026-09-24 ｜ 来源: `article/`
 >
 > 本文件维护 canonical 入口与技术标签；合集子文章详见 [CATALOG.md](./CATALOG.md)，机器读取使用 [`catalog.json`](./catalog.json)。
 >
@@ -40,6 +40,7 @@
 | [xfq-device-fp-compilation.md](./anti-detection/xfq-device-fp-compilation.md) | — (知识星球归档) | `设备指纹`, `设备注册`, `熵源`, `伪随机`, `TLS指纹`, `风控SO`, `QIMEI` | 逆向学习交流 8 篇设备指纹与风控方法论：纯协议注册思路、熵源/伪随机、协议指纹演进和风控 so 上手，不收录设备 ID 清单 |
 | [device-fingerprint-consistency-modeling.md](./anti-detection/device-fingerprint-consistency-modeling.md) | — (方法论整理) | `设备指纹`, `一致性建模`, `联合分布`, `泊松分布`, `对数正态`, `多次采集`, `APK版本`, `生命周期` | 设备指纹关键是一致性建模不是随机抖动：联合分布交叉印证、APK 自身版本面、右偏时间间隔、动态物理信号，以及多次采集的有状态演化；不收录生成代码 |
 | [shuzilm-libdu-fingerprint.md](./anti-detection/shuzilm-libdu-fingerprint.md) | — (知乎 11.4.0 / libdu.so 独立分析) | `数盟`, `数字联盟`, `libdu.so`, `x-ms-id`, `cdd`, `d2api`, `vB2`, `AYk`, `deviceUniqueId` | 数盟可信 ID：注册顶层约 20–30 key、`vB2` 再嵌套到合计约 258 key，`d2api` 回 `cdd` 即业务 `x-ms-id`；对照表 366 key 含其它采集点，偏移只对知乎 11.4.0 / SDK v8.4.0 |
+| [cloakbrowser-humanize-trajectory.md](./anti-detection/cloakbrowser-humanize-trajectory.md) | CloakHQ/CloakBrowser | `humanize`, `三次贝塞尔`, `ease-in-out`, `鼠标轨迹`, `过冲`, `CloakBrowser`, `Playwright` | 包装层 humanize 在进程内用三次贝塞尔、法线控制点和 burst 停顿生成鼠标样本；本机 Pro chrome.dll 不含该符号；可调用计划器在主仓 tools/cloakbrowser_human |
 
 ### 签名算法 (`article/signature-algorithms/`)
 
@@ -109,6 +110,41 @@
 | [yuanrenxue-web-reverse-compilation.md](./web-reverse/yuanrenxue-web-reverse-compilation.md) | — (公众号归档) | `JS Cookie`, `参数加密`, `反调试`, `字符串混淆`, `控制流混淆`, `微信小程序`, `AI逆向` | 猿人学 7 篇 Web 与 JavaScript 逆向方法论，保留长期可复用的定位、调试和反混淆路径 |
 | [products.md](./web-reverse/products.md) | — (JS终结计划课程方法论) | `风控产品`, `验证码`, `签名`, `WAF`, `反爬`, `命中索引`, `DataDome`, `Akamai`, `Kasada`, `瑞数`, `reCAPTCHA`, `Arkose Labs`, `FunCaptcha`, `同盾`, `京东`, `JCAP`, `tp=22`, `空间推理`, `h5st`, `抖音`, `阿里云验证码`, `腾讯验证码`, `网易易盾`, `NECaptcha`, `F5`, `PerimeterX`, `reese84`, `小红书`, `x-s`, `快手`, `__NS_sig3`, `MTOP` | 安全产品强制命中索引：验证码/签名/状态型链的命中特征 → 产品文档映射，含京东 JCAP `tp` 题型分流、网易易盾 jigsaw，以及小红书 xs、快手 NS 签名与阿里 MTOP H5 |
 | [sign-landing-methods.md](./web-reverse/sign-landing-methods.md) | cv-cat | `纯算`, `Node vm`, `execjs`, `Frida RPC`, `a_bogus`, `x-s`, `__NS_sig3`, `h5st`, `provenance`, `canonical query` | 平台签名落地选型：宿主原语可钩则纯算，字节码 VM 用隔离出参，App Native 走实例 RPC；产品切开验收，不把 Cookie 随机串当成 serverAccepted |
+| [vmp-host-primitive-to-purecalc.md](./web-reverse/vmp-host-primitive-to-purecalc.md) | cv-cat | `stack VM`, `CryptoJS.MD5`, `宿主原语`, `盐探针`, `webSignUrl` | VMP 方法论：先钩 MD5/SM3/SubtleCrypto 读明文，换 Cookie 区分常量池和会话，只移植闭合边界 |
+| [material-provenance-ledger.md](./web-reverse/material-provenance-ledger.md) | cv-cat | `provenance`, `server_issued`, `unproven_synthetic`, `TTL`, `状态机` | 材料出处账本：本地可造、服务端下发、隔离程序、设备绑定；缺字段失败或回缓存，不随机占位 |
+| [request-plane-failure-translation.md](./web-reverse/request-plane-failure-translation.md) | cv-cat | `请求面`, `bdturing`, `空 body`, `status_code`, `同名参数` | 一条平台请求拆成签名/会话/完整性/设备/传输；HTTP 200 和空 body 按面翻译，不同生产函数不算同一参数 |
+| [purecalc-vs-oracle-cost.md](./web-reverse/purecalc-vs-oracle-cost.md) | cv-cat | `预言机`, `Brook`, `canary`, `js_security`, `53KB` | 纯算与预言机成本账：明文闭合就纯算；大段字节码跑官方脚本并写明不移植的原因，出参不得标 purecalc |
+| [fail-closed-completion-gate.md](./web-reverse/fail-closed-completion-gate.md) | cv-cat | `fail-closed`, `SignerError`, `localReproduced`, `serverAccepted`, `tk03` | 缺字段、长度不对、抓包回放都在发送前失败；业务 JSON 读回才是 serverAccepted |
+| [thin-wrapper-vs-purecalc.md](./web-reverse/thin-wrapper-vs-purecalc.md) | cv-cat | `execjs`, `整包`, `双写`, `完成度`, `boundary_known` | 五档完成度：边界壳、Cookie 双写、execjs 整包、隔离运行器、纯算/RPC；整包只证明参数名 |
+| [endpoint-constant-table.md](./web-reverse/endpoint-constant-table.md) | cv-cat | `aid`, `page_id`, `appKey`, `version_code`, `常量表` | 端别常量表按 host 和接口填行；创作者三个 aid、直播与主站 version 不为统一抹平 |
+| [session-binding-double-write.md](./web-reverse/session-binding-double-write.md) | cv-cat | `XSRF-TOKEN`, `JSESSIONID`, `ct0`, `swp_csrf_token`, `uifid` | 会话材料双写：头等于 Cookie 源字段，去掉引号或取半段，并绑对 origin |
+| [isolated-node-runner-contract.md](./web-reverse/isolated-node-runner-contract.md) | cv-cat | `stdin JSON`, `形状门`, `timeout`, `不回显`, `vm.runInThisContext` | 隔离 Node 运行器合同：最后一行 JSON、长度或前缀、显式时钟、失败日志不带 Cookie |
+| [capture-alignment-traps.md](./web-reverse/capture-alignment-traps.md) | cv-cat | `空值字段`, `同名 t`, `parse_qsl`, `$HE_`, `排序只用于签名` | 抓包对齐偏差：空值、同名键、保留 $ 和 Base64 填充、排序不改线上顺序、冻结头不被 Set-Cookie 覆盖 |
+| [douyin-web-request-planes.md](./web-reverse/douyin-web-request-planes.md) | cv-cat | `a_bogus`, `host`, `aid`, `page_id`, `signed_url`, `bd-ticket-guard`, `check_risk_response` | 抖音 Web 七条链的真实装配：受保护 path 必须发 sign_url，评论只读票据，直播空 body 不是签名错误，创作者三个 aid 不能合并 |
+| [douyin-secsdk-websign-case.md](./web-reverse/douyin-secsdk-websign-case.md) | cv-cat | `webSignUrl`, `CryptoJS.MD5`, `canonical query`, `encodeURIComponent`, `x-secsdk-web-signature` | stack VM 先钩宿主 MD5 再纯算规范化 query：原序、value 重编码、key 只解码、timestamp 追加，签完的 URL 才是线上 URL |
+| [douyin-session-materials-case.md](./web-reverse/douyin-session-materials-case.md) | cv-cat | `msToken`, `x-ms-token`, `bd-ticket-guard`, `x-tt-session-dtrait`, `__ac_signature`, `provenance` | 抖音会话材料四链：mssdk 签发 msToken、只读/写入票据、按 path 重算 dtrait、acrawler 失败不写随机 Cookie |
+| [tiktok-web-signing-planes.md](./web-reverse/tiktok-web-signing-planes.md) | cv-cat | `X-Bogus`, `X-Gnarly`, `X-Dynosaur`, `msToken`, `fail-closed`, `5.3.2`, `5.1.0` | TikTok HTTP 按 path 分无签、Creator 三字段和 legacy 四字段；legacy X-Bogus 是字面量 1，缺字段不回填抓包签名 |
+| [tiktok-frontier-ticket-shop-case.md](./web-reverse/tiktok-frontier-ticket-shop-case.md) | cv-cat | `frontierSign`, `tt-ticket-guard`, `Shop BSID`, `oec_lucifer`, `ECDSA` | TikTok 三条旁路：16 字符 frontierSign、只重算不复放的 ticket-guard、Shop 预签 URL 必须保留 Base64 填充 |
+| [xiaohongshu-assembly-case.md](./web-reverse/xiaohongshu-assembly-case.md) | cv-cat | `parameter_sources`, `HostCookieStore`, `ordered_wire_headers`, `websectiga`, `_dsf` | 小红书现行装配：六桶 provenance、DS 失败用缓存不随机、PC/Creator/蒲公英/千帆切开，body 定形后不再 json= |
+| [signed-query-wire-contract.md](./web-reverse/signed-query-wire-contract.md) | cv-cat | `canonical query`, `default_headers`, `HTTP/2 cookie`, `duplicate t`, `quote` | 签完即线上：抖音两套编码、TikTok to_query、京东同名 t、快手保留 $、curl_cffi 关掉默认头 |
+| [taobao-h5-mtop-lwp-case.md](./web-reverse/taobao-h5-mtop-lwp-case.md) | cv-cat | `MTOP`, `_m_h5_tk`, `12574478`, `JSONP`, `LWP`, `cntaobao` | 淘宝 H5 sign 是 token&t&appKey&data 的 MD5；私信是钉钉 LWP，仓内 goofish URL 是拷贝残留 |
+| [xianyu-web-mtop-case.md](./web-reverse/xianyu-web-mtop-case.md) | cv-cat | `34839810`, `goofish`, `tfstk`, `空 sign`, `_m_h5_tk` | 闲鱼 Web 与淘宝同形 MD5，但 appKey、POST 和空 sign 换票不同；tfstk 是 Node vm，不能填进 App x-sign |
+| [xianyu-android-sign-rpc-case.md](./web-reverse/xianyu-android-sign-rpc-case.md) | cv-cat | `InnerSignImpl`, `getUnifiedSign`, `21407387`, `ttid`, `g-acs` | 闲鱼 App：spawn 后 hook 一次即摘，六参 overload 出 x-sign 族；ttid/appKey 必须与被 hook 进程同源 |
+| [bilibili-wbi-geetest-case.md](./web-reverse/bilibili-wbi-geetest-case.md) | cv-cat | `WBI`, `w_rid`, `wts`, `mixin`, `correspondPath`, `极验` | B 站 WBI 排序只用于签名、线上保原序；极验 w 本地算、点选另层；correspondPath 是 RSA-OAEP 续期入场券 |
+| [jd-h5st-runtime-case.md](./web-reverse/jd-h5st-runtime-case.md) | cv-cat | `h5st 5.3`, `tk03`, `request_algo`, `js_security`, `searchWare`, `SHA-256` | 京东搜索：常驻 Node 跑未改 js_security，body 先 SHA-256 再签，h5st 第 4 段必须 tk03，同名 t 用键值列表发送 |
+| [kuaishou-landing-case.md](./web-reverse/kuaishou-landing-case.md) | cv-cat | `__NS_hxfalcon`, `kww`, `caver`, `weapon_oracle`, `__NS_sig3` | 快手资料接口：冻结 kww、白名单 hxfalcon、query 保留 $；kwf/kws 留 Node oracle，400002 走滑块 |
+| [zhihu-xzse96-execjs-case.md](./web-reverse/zhihu-xzse96-execjs-case.md) | cv-cat | `x-zse-96`, `x-zse-93`, `d_c0`, `execjs`, `tv` | 知乎评论头：整包 zhihu.js 的 tv 吃 URL 和 d_c0，x-zse-96 为 2.0_ 加 signature，不能标纯算 |
+| [weibo-request-planes-case.md](./web-reverse/weibo-request-planes-case.md) | cv-cat | `XSRF-TOKEN`, `x-xsrf-token`, `X-Up-Auth`, `CRC` | 微博 PC 是 Cookie 双写，移动是另一套头，创作者上传另算文件 MD5 和自定义 CRC；weibo.js 未接入运行时 |
+| [toutiao-abogus-execjs-case.md](./web-reverse/toutiao-abogus-execjs-case.md) | cv-cat | `a_bogus`, `_signature`, `get_ab`, `aid=24`, `execjs` | 头条 a_bogus 与 _signature 来自两包 execjs，feed aid=24，不是抖音 ab_pure |
+| [xigua-unsigned-query-case.md](./web-reverse/xigua-unsigned-query-case.md) | cv-cat | `aid=1768`, `msToken`, `X-Bogus`, `AES-CBC` | 西瓜列表把 msToken/X-Bogus/_signature 留空；播放 AES-CBC 函数未被列表 API 调用 |
+| [binance-cms-header-case.md](./web-reverse/binance-cms-header-case.md) | cv-cat | `fvideo-id`, `fvideo-token`, `csrftoken`, `BNC_FV_KEY`, `device-info` | 币安公告列表：fvideo-id 来自 Cookie，fvideo-token 吃另一个 Cookie 字段，csrftoken 为本地 md5 空串 |
+| [linkedin-voyager-csrf-case.md](./web-reverse/linkedin-voyager-csrf-case.md) | cv-cat | `JSESSIONID`, `csrf-token`, `queryId`, `voyager` | 领英 csrf-token 是 JSESSIONID 去引号双写，GraphQL queryId 从当前页面 define 提取 |
+| [instagram-doc-id-case.md](./web-reverse/instagram-doc-id-case.md) | cv-cat | `doc_id`, `x-ig-app-id`, `web_profile_info`, `graphql` | Instagram 从用户页 HTML 抽 app_id 和 doc_id；时间线主路径未挂 x-csrftoken 模板 |
+| [x-twitter-graphql-case.md](./web-reverse/x-twitter-graphql-case.md) | cv-cat | `ct0`, `x-csrf-token`, `Bearer`, `features`, `GraphQL` | X 搜索：调用方 Bearer 加 ct0 双写，features 是写死快照，仓内无 guest 刷新和本地签名 |
+| [feishu-csrf-frontier-case.md](./web-reverse/feishu-csrf-frontier-case.md) | cv-cat | `swp_csrf_token`, `x-csrf-token`, `access_key`, `msg-frontier` | 飞书网页 CSRF 与 frontier 长连分链：swp_csrf_token 来自 accounts/csrf，access_key 来自页面 JS |
+| [wechat-oa-mp-cgi-case.md](./web-reverse/wechat-oa-mp-cgi-case.md) | cv-cat | `searchbiz`, `appmsgpublish`, `token`, `fakeid`, `list_ex` | 公众号后台 CGI：token 与 Cookie 外置透传，ret!=0 不是成功；公开文章 HTML 不带 token |
+| [autohome-cookie-boundary-case.md](./web-reverse/autohome-cookie-boundary-case.md) | cv-cat | `JSONP`, `jsonprv`, `clubajax`, `_appid` | 汽车之家详情是 Cookie 加 JSONP 剥壳，没有本地 sign；创作者面只有时间戳和 _appid |
+| [baijiahao-runtime-header-case.md](./web-reverse/baijiahao-runtime-header-case.md) | cv-cat | `window.runtime`, `uk`, `Tenger-Mhor`, `Hmery-Time`, `JSONP` | 百家号 uk 来自页面 runtime，Tenger-Mhor 等于 Cookie Hmery-Time，仓内无 gtoken 实现 |
 | [browser-env-objects.md](./web-reverse/browser-env-objects.md) | — (JS终结计划课程方法论) | `补环境`, `DOM/BOM`, `浏览器对象`, `WebAPI`, `指纹`, `Worker`, `MessagePort`, `Canvas`, `WebGL`, `navigator`, `crypto` | Web 补环境浏览器对象参考：20 个 DOM/BOM/Web API 对象的检测面、常见坑与观察优先级，五维度补环境纪律 |
 | [unpacked-mv3-native-updater.md](./web-reverse/unpacked-mv3-native-updater.md) | mouchenjie-ai-plugin | `MV3`, `sideload`, `自定义协议`, `PyInstaller 更新器`, `加载已解压扩展`, `渠道 zip` | 未上架 Chrome MV3 的本机更新器架构：渠道清单 + 对象存储 zip、HKCU 协议唤醒、本机进度口和打包合同，可复用到自有插件 sideload 分发 |
 | [datadome-env-patch.md](./web-reverse/datadome-env-patch.md) | — (公众号归档) | `DataDome`, `plv3`, `payload`, `iframe Realm`, `OffscreenCanvas`, `jsdom`, `VM 分叉` | DataDome 无感 interstitial 补环境：jsdom+vm 跑原脚本出参，按 Realm 生命周期、Worker 异步链和 VM 第一处分叉对齐；成功口径是 redirect 后新 Session 业务 200 |
@@ -150,6 +186,11 @@
 - **魔改 AES-like / 自定义 T-box / nibble Mix（LAES ECB）**: [hangban-laes](./signature-algorithms/hangban-laes-encrypt.md)
 - **DES-ECB（x-mini-wua 15 个 8 字节块）**: [alibaba-mtop-four-headers](./signature-algorithms/alibaba-mtop-four-headers.md)
 - **MD5 state1 + SHA1 x-sign / Park-Miller 交替键（SG 70102）**: [alibaba-mtop-four-headers](./signature-algorithms/alibaba-mtop-four-headers.md)
+- **MD5(uifid_ts_VM_CONST_canonical_query)（抖音 webSign）**: [douyin-secsdk](./web-reverse/douyin-secsdk-websign-case.md)
+- **WBI md5(sorted query + mixin) / correspondPath RSA-OAEP-SHA256**: [bilibili-wbi](./web-reverse/bilibili-wbi-geetest-case.md)
+- **MTOP H5 md5(token&t&appKey&data)**: [taobao-h5](./web-reverse/taobao-h5-mtop-lwp-case.md), [xianyu-web](./web-reverse/xianyu-web-mtop-case.md)
+- **ECDSA P-256 ticket-guard / AES-GCM encrypt_ticket**: [tiktok-frontier](./web-reverse/tiktok-frontier-ticket-shop-case.md), [douyin-session](./web-reverse/douyin-session-materials-case.md)
+- **h5st body 预 SHA-256**: [jd-h5st-runtime](./web-reverse/jd-h5st-runtime-case.md)
 - **RSA-1024 固定 0x01 填充 / 公钥 DER 锚**: [ai-assisted-web](./web-reverse/ai-assisted-web-reverse-compilation.md)
 - **WBI/Base64/常见哈希与动态参数识别**: [benru-web](./web-reverse/benru-web-reverse-compilation.md), [yuanrenxue-web](./web-reverse/yuanrenxue-web-reverse-compilation.md), [yuanrenxue-app](./mobile-app-reverse/yuanrenxue-mobile-app-reverse-compilation.md)
 - **MTOP H5 `_m_h5_tk` MD5 sign**: [alibaba-mtop-h5](./web-reverse/products/alibaba-mtop-h5.md), [sign-landing](./web-reverse/sign-landing-methods.md)
@@ -187,6 +228,11 @@
 - **WBI/Protobuf/TCP/mTLS 与认证协议**: [benru-web](./web-reverse/benru-web-reverse-compilation.md), [yuanrenxue-app](./mobile-app-reverse/yuanrenxue-mobile-app-reverse-compilation.md)
 - **钉钉 LWP WebSocket（淘宝/闲鱼 IM）**: [alibaba-mtop-h5](./web-reverse/products/alibaba-mtop-h5.md)
 - **阿里 App MTOP 四头（SG 70102 / 会话画像 + data2sign）**: [alibaba-mtop-four-headers](./signature-algorithms/alibaba-mtop-four-headers.md)
+- **淘宝/闲鱼 H5 MTOP sign 与钉钉 LWP 分链**: [taobao-h5](./web-reverse/taobao-h5-mtop-lwp-case.md), [xianyu-web](./web-reverse/xianyu-web-mtop-case.md), [alibaba-mtop-h5](./web-reverse/products/alibaba-mtop-h5.md)
+- **TikTok Web 签名面 / frontierSign / Shop BSID**: [tiktok-planes](./web-reverse/tiktok-web-signing-planes.md), [tiktok-frontier](./web-reverse/tiktok-frontier-ticket-shop-case.md)
+- **B 站 WBI / bili_ticket / correspondPath**: [bilibili-wbi](./web-reverse/bilibili-wbi-geetest-case.md)
+- **飞书 accounts/csrf 与 msg-frontier**: [feishu-csrf](./web-reverse/feishu-csrf-frontier-case.md)
+- **公众号后台 searchbiz / appmsgpublish（token 透传）**: [wechat-oa-cgi](./web-reverse/wechat-oa-mp-cgi-case.md), [wechat-mp-sessions](./protocols/wechat-mp-session-planes.md)
 - **Akamai JA3/JA4/HTTP2 指纹**: [yuanrenxue-anti](./anti-detection/yuanrenxue-anti-detection-compilation.md)
 
 ### 反检测/对抗
@@ -215,6 +261,7 @@
 - **SSL Pinning**: [app-reverse-global-map](./mobile-app-reverse/app-reverse-global-map.md), [app-reverse-environment-setup](./mobile-app-reverse/app-reverse-environment-setup.md)
 - **Root/Magisk 隐藏**: [app-reverse-environment-setup](./mobile-app-reverse/app-reverse-environment-setup.md)
 - **验证码与行为风控**: [anti-crawler-risk](./anti-detection/anti-crawler-risk-control-compilation.md)
+- **CloakBrowser humanize 鼠标轨迹 / 包装层贝塞尔**: [cloakbrowser-humanize](./anti-detection/cloakbrowser-humanize-trajectory.md)
 - **响应体藏数据 / Content-Type 语义不符 / 搜索权限门 403**: [aigei-safe-search](./web-reverse/aigei-safe-search-ticket-chain.md), [products](./web-reverse/products.md), [google-recaptcha-v3](./web-reverse/products/google-recaptcha-v3.md), [pure-protocol-sdk](./mobile-app-reverse/pure-protocol-sdk-reconstruction.md)
 - **安全产品命中识别（DataDome/Akamai/Kasada/瑞数/reCAPTCHA/Arkose/同盾/京东/抖音/易盾/小红书/快手/MTOP 等）**: [products](./web-reverse/products.md)
 - **DataDome 无感 interstitial 补环境（payload/plv3 / iframe Realm / VM 分叉）**: [datadome-env-patch](./web-reverse/datadome-env-patch.md)
@@ -258,7 +305,8 @@
 - **Akamai**: [anti-crawler-web](./web-reverse/anti-crawler-web-reverse-compilation.md), [products](./web-reverse/products.md)
 - **DataDome / Kasada / PerimeterX / F5 Shape / reese84 / Cloudflare 5s**: [products](./web-reverse/products.md), [datadome-env-patch](./web-reverse/datadome-env-patch.md)
 - **Kimi / 字节 volces applog**: [kimi-ttencrypt](./mobile-app-reverse/kimi-device-register-ttencrypt.md)
-- **TikTok / ByteDance musically / TTNet / metasec**: [protocol-admission](./mobile-app-reverse/protocol-admission-four-gates.md)
+- **TikTok / ByteDance musically / TTNet / metasec**: [protocol-admission](./mobile-app-reverse/protocol-admission-four-gates.md), [tiktok-planes](./web-reverse/tiktok-web-signing-planes.md), [tiktok-frontier](./web-reverse/tiktok-frontier-ticket-shop-case.md)
+- **抖音 Web 请求面 / webSign / 会话材料**: [douyin-planes](./web-reverse/douyin-web-request-planes.md), [douyin-secsdk](./web-reverse/douyin-secsdk-websign-case.md), [douyin-session](./web-reverse/douyin-session-materials-case.md), [products](./web-reverse/products.md)
 - **微信公众号：ai辅助逆向手记**: [ai-assisted-web](./web-reverse/ai-assisted-web-reverse-compilation.md)
 - **微信公众号：零基础爬虫第一天**: [koohai-notes](./web-reverse/koohai-reverse-notes-compilation.md)
 - **微信公众号：Softard（Wossoneri）**: [softard-android](./mobile-app-reverse/softard-android-reverse-compilation.md), [uiautomator-consent](./mobile-app-reverse/uiautomator-privacy-consent-tap.md)
@@ -272,15 +320,22 @@
 - **顶象 DXRisk**: [sdk-purecalc](./mobile-app-reverse/sdk-purecalc-compilation.md)
 - **数美 / 小星空**: [sdk-purecalc](./mobile-app-reverse/sdk-purecalc-compilation.md)
 - **数盟 / 数字联盟 / libdu.so**: [shuzilm-libdu](./anti-detection/shuzilm-libdu-fingerprint.md)
-- **知乎**: [shuzilm-libdu](./anti-detection/shuzilm-libdu-fingerprint.md)
+- **知乎**: [shuzilm-libdu](./anti-detection/shuzilm-libdu-fingerprint.md), [zhihu-xzse96](./web-reverse/zhihu-xzse96-execjs-case.md)
 - **海南航空**: [sdk-purecalc](./mobile-app-reverse/sdk-purecalc-compilation.md)
 - **今彩萍乡**: [sdk-purecalc](./mobile-app-reverse/sdk-purecalc-compilation.md)
 - **网易易盾（Web NECaptcha / App NES 加固分面）**: [products](./web-reverse/products.md), [paopao-android](./mobile-app-reverse/paopao-android-reverse-compilation.md)
-- **同盾 / 京东（h5st/JCAP 滑块与 tp=22 空间推理/到家）/ 抖音（a_bogus/IM/TicketGuard）/ 饿了么 / 美团 / 小红书 xs / 快手 NS / 阿里 MTOP H5**: [products](./web-reverse/products.md)
-- **闲鱼 / 淘宝 App InnerSignImpl**: [mtop-innersign-rpc](./mobile-app-reverse/mtop-innersign-rpc.md)
+- **同盾 / 京东（h5st/JCAP 滑块与 tp=22 空间推理/到家）/ 抖音（a_bogus/IM/TicketGuard）/ 饿了么 / 美团 / 小红书 xs / 快手 NS / 阿里 MTOP H5**: [products](./web-reverse/products.md), [jd-h5st-runtime](./web-reverse/jd-h5st-runtime-case.md), [kuaishou-landing](./web-reverse/kuaishou-landing-case.md), [xiaohongshu-assembly](./web-reverse/xiaohongshu-assembly-case.md)
+- **闲鱼 / 淘宝 App InnerSignImpl**: [mtop-innersign-rpc](./mobile-app-reverse/mtop-innersign-rpc.md), [xianyu-android](./web-reverse/xianyu-android-sign-rpc-case.md)
+- **闲鱼 Web / 淘宝 H5**: [xianyu-web](./web-reverse/xianyu-web-mtop-case.md), [taobao-h5](./web-reverse/taobao-h5-mtop-lwp-case.md)
+- **B 站 WBI / 极验 / correspondPath**: [bilibili-wbi](./web-reverse/bilibili-wbi-geetest-case.md)
+- **微博 / 头条 / 西瓜**: [weibo-planes](./web-reverse/weibo-request-planes-case.md), [toutiao-execjs](./web-reverse/toutiao-abogus-execjs-case.md), [xigua-unsigned](./web-reverse/xigua-unsigned-query-case.md)
+- **币安公告头 / 领英 Voyager / Instagram doc_id / X GraphQL**: [binance-cms](./web-reverse/binance-cms-header-case.md), [linkedin-csrf](./web-reverse/linkedin-voyager-csrf-case.md), [instagram-doc](./web-reverse/instagram-doc-id-case.md), [x-graphql](./web-reverse/x-twitter-graphql-case.md)
+- **飞书 CSRF / frontier**: [feishu-csrf](./web-reverse/feishu-csrf-frontier-case.md)
+- **汽车之家 JSONP / 百家号 runtime 头**: [autohome-boundary](./web-reverse/autohome-cookie-boundary-case.md), [baijiahao-runtime](./web-reverse/baijiahao-runtime-header-case.md)
 - **豌豆荚 / 阿里 SG 70102 四头纯算**: [alibaba-mtop-four-headers](./signature-algorithms/alibaba-mtop-four-headers.md)
 - **微信公众号技术归档（反爬破解社/如意私塾/泡泡以安/本如笔记/猿人学Python/ai辅助逆向手记/零基础爬虫第一天/Softard）**: [anti-crawler-web](./web-reverse/anti-crawler-web-reverse-compilation.md), [ruyi-browser](./anti-detection/ruyi-browser-anti-detection-compilation.md), [paopao-android](./mobile-app-reverse/paopao-android-reverse-compilation.md), [benru-web](./web-reverse/benru-web-reverse-compilation.md), [benru-anti](./anti-detection/benru-anti-detection-compilation.md), [yuanrenxue-web](./web-reverse/yuanrenxue-web-reverse-compilation.md), [yuanrenxue-app](./mobile-app-reverse/yuanrenxue-mobile-app-reverse-compilation.md), [yuanrenxue-anti](./anti-detection/yuanrenxue-anti-detection-compilation.md), [ai-assisted-web](./web-reverse/ai-assisted-web-reverse-compilation.md), [koohai-notes](./web-reverse/koohai-reverse-notes-compilation.md), [softard-android](./mobile-app-reverse/softard-android-reverse-compilation.md)
 - **谋臣界 / 未上架 MV3 更新器**: [unpacked-mv3-updater](./web-reverse/unpacked-mv3-native-updater.md)
+- **CloakBrowser / CloakHQ humanize**: [cloakbrowser-humanize](./anti-detection/cloakbrowser-humanize-trajectory.md)
 
 ### 工具/方法
 - **Webpack 模块自吐**: [51job-webpack](./web-reverse/51job-webpack-analysis.md)
@@ -305,6 +360,7 @@
 - **App 纯协议 SDK 重建（HAR 语料 / algorithms / 拦截器链 / 注册完备性）**: [pure-protocol-sdk](./mobile-app-reverse/pure-protocol-sdk-reconstruction.md)
 - **注册包事件驱动顺序 / 扣核心 SDK 同构**: [protocol-register-order](./mobile-app-reverse/protocol-register-packet-order.md), [pure-protocol-sdk](./mobile-app-reverse/pure-protocol-sdk-reconstruction.md)
 - **设备指纹一致性建模 / 联合分布 / 右偏时间间隔 / 有状态演化**: [fp-consistency](./anti-detection/device-fingerprint-consistency-modeling.md)
+- **CloakBrowser humanize 轨迹纯算（三次贝塞尔计划器）**: [cloakbrowser-humanize](./anti-detection/cloakbrowser-humanize-trajectory.md)
 - **App 协议准入四关 / 空壳诊断顺序 / 全量静态普查 / 同名算法先看 MAGIC**: [protocol-admission](./mobile-app-reverse/protocol-admission-four-gates.md)
 - **SDK 纯算落盘（顶象/数美/Qimei/wtoken 封装链）**: [sdk-purecalc](./mobile-app-reverse/sdk-purecalc-compilation.md)
 - **Android 逆向环境搭建**: [app-reverse-environment-setup](./mobile-app-reverse/app-reverse-environment-setup.md)
@@ -331,7 +387,21 @@
 - **FART 源码改进 / WebView 调试 / IDA 识别 MD5**: [koohai-notes](./web-reverse/koohai-reverse-notes-compilation.md), [jiagu-bypass](./packing-bypass/jiagu-bypass-analysis.md)
 - **JSVMP 是否拆 opcode 的分流**: [ai-assisted-web](./web-reverse/ai-assisted-web-reverse-compilation.md)
 - **风控产品强制命中分类（验证码/签名/状态型链）**: [products](./web-reverse/products.md)
-- **平台签名落地分流（纯算 / Node vm / execjs 整包 / Frida RPC）**: [sign-landing](./web-reverse/sign-landing-methods.md)
+- **平台签名落地分流（纯算 / Node vm / execjs 整包 / Frida RPC）**: [sign-landing](./web-reverse/sign-landing-methods.md), [thin-wrapper](./web-reverse/thin-wrapper-vs-purecalc.md)
+- **VMP 钩宿主原语 / 换 Cookie 盐探针**: [vmp-host-primitive](./web-reverse/vmp-host-primitive-to-purecalc.md), [douyin-secsdk](./web-reverse/douyin-secsdk-websign-case.md)
+- **材料出处账本（本地 / 服务端 / runtime / 设备）**: [provenance-ledger](./web-reverse/material-provenance-ledger.md)
+- **请求面切开与失败翻译**: [plane-translation](./web-reverse/request-plane-failure-translation.md), [douyin-planes](./web-reverse/douyin-web-request-planes.md)
+- **纯算 vs 预言机成本账 / navigator 与布局 canary**: [oracle-cost](./web-reverse/purecalc-vs-oracle-cost.md)
+- **fail-closed 完成门（localReproduced / serverAccepted）**: [completion-gate](./web-reverse/fail-closed-completion-gate.md)
+- **端别常量表（aid / appKey / version_code）**: [endpoint-constants](./web-reverse/endpoint-constant-table.md)
+- **会话材料双写与 origin 绑定**: [double-write](./web-reverse/session-binding-double-write.md)
+- **隔离 Node 运行器进程合同**: [node-runner](./web-reverse/isolated-node-runner-contract.md)
+- **抓包对齐偏差（空值 / 同名键 / 编码 / 冻结头）**: [alignment-traps](./web-reverse/capture-alignment-traps.md), [signed-wire](./web-reverse/signed-query-wire-contract.md)
+- **VMP 钩宿主 MD5 再纯算规范化 query**: [douyin-secsdk](./web-reverse/douyin-secsdk-websign-case.md)
+- **签完即线上 / 头序 / HTTP/2 Cookie 拆分 / 同名键列表**: [signed-wire](./web-reverse/signed-query-wire-contract.md)
+- **端点签名面 fail-closed（缺字段不回填抓包）**: [tiktok-planes](./web-reverse/tiktok-web-signing-planes.md)
+- **材料 provenance 六桶 / host-only Cookie**: [xiaohongshu-assembly](./web-reverse/xiaohongshu-assembly-case.md), [douyin-session](./web-reverse/douyin-session-materials-case.md)
+- **cv-cat 按站装配案例**: [sign-landing](./web-reverse/sign-landing-methods.md)
 - **MTOP InnerSignImpl 实例 RPC（Hook 一次即摘）**: [mtop-innersign-rpc](./mobile-app-reverse/mtop-innersign-rpc.md)
 - **会话画像 + data2sign byte-exact 对拍（SG 70102 四头）**: [alibaba-mtop-four-headers](./signature-algorithms/alibaba-mtop-four-headers.md)
 - **canonical query 与 Cookie provenance**: [sign-landing](./web-reverse/sign-landing-methods.md)

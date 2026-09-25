@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "article_count": 577,
+  "article_count": 613,
   "category_counts": {
-    "anti-detection": 179,
+    "anti-detection": 180,
     "collection-engineering": 7,
     "drm-content-acquisition": 1,
     "mobile-app-reverse": 205,
@@ -10,7 +10,7 @@
     "packing-bypass": 2,
     "protocols": 3,
     "signature-algorithms": 26,
-    "web-reverse": 138
+    "web-reverse": 173
   },
   "records": [
     {
@@ -1496,6 +1496,38 @@
       "bytes": 3036,
       "lines": 86,
       "content_sha256": "cc1bd229a303b18729318f523c2cca12b4966bc6a44a93bf9e6cb43282305a8c"
+    },
+    {
+      "path": "anti-detection/cloakbrowser-humanize-trajectory.md",
+      "kind": "canonical",
+      "category": "anti-detection",
+      "parent": null,
+      "title": "CloakBrowser humanize 轨迹：包装层三次贝塞尔计划器",
+      "source": "CloakHQ/CloakBrowser MIT 包装层 `cloakbrowser/human`（https://github.com/CloakHQ/CloakBrowser）",
+      "original_date": "2026-09-24",
+      "archive_date": "2026-09-24",
+      "summary": "鼠标曲线在官方 Python/JS 包装进程里算完，再交给 Playwright 原来的 mouse.move。本机 Pro chrome.dll 没有 humanize / trajectory 符号。可调用实现在主仓 tools/cloakbrowser_human，只产出样本，不挂页面、不发 CDP。",
+      "keywords": [
+        "humanize",
+        "三次贝塞尔",
+        "ease-in-out",
+        "鼠标轨迹",
+        "过冲",
+        "CloakBrowser",
+        "Playwright"
+      ],
+      "headings": [
+        "定位",
+        "点击链",
+        "曲线",
+        "滚动与键盘",
+        "默认可调区间",
+        "可调用模块",
+        "边界"
+      ],
+      "bytes": 6356,
+      "lines": 95,
+      "content_sha256": "fdcb7b136f7d5244b7592654a0eec840d9e285f17b800b1bef86807afb654d9d"
     },
     {
       "path": "anti-detection/device-fingerprint-consistency-modeling.md",
@@ -14486,6 +14518,57 @@
       "content_sha256": "f61b6d5409a79ae5181057d9acbf35eecc3181e8f2f2a87e501d9d5ac609bb3b"
     },
     {
+      "path": "web-reverse/autohome-cookie-boundary-case.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "汽车之家案例：Cookie 加 JSONP，没有本地 sign",
+      "source": "`workspace/cv-cat`（AutohomeApis，HEAD 日期 2026-08-18，只读对照）",
+      "original_date": "2026-08-18",
+      "archive_date": "2026-09-23",
+      "summary": "汽车之家在这份对照仓里没有签名函数。详情接口是带 Cookie 的 JSONP，创作者接口只追加时间戳和 _appid。案例价值是把「没有算法」写成明确的请求边界，避免以后把空响应误判成签名缺失。",
+      "keywords": [
+        "JSONP",
+        "jsonprv",
+        "clubajax",
+        "_appid"
+      ],
+      "headings": [
+        "案例：帖子详情",
+        "失败怎么读",
+        "证据边界"
+      ],
+      "bytes": 1959,
+      "lines": 39,
+      "content_sha256": "37dda42ecab7fac57eb7cb02e5cbe388850af6ea52fc36635834f4191875a84c"
+    },
+    {
+      "path": "web-reverse/baijiahao-runtime-header-case.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "百家号案例：页面 runtime 供 uk，Cookie 供 Tenger-Mhor",
+      "source": "`workspace/cv-cat`（BaijiaApis，HEAD 日期 2026-08-18，只读对照）",
+      "original_date": "2026-08-18",
+      "archive_date": "2026-09-23",
+      "summary": "百家号/百度网页在这份对照仓里没有 gtoken 或 sign 的本地实现。uk 来自页面 window.runtime，请求头 Tenger-Mhor 直接等于 Cookie Hmery-Time。传输用 curl_cffi 的 chrome101 profile。",
+      "keywords": [
+        "window.runtime",
+        "uk",
+        "Tenger-Mhor",
+        "Hmery-Time",
+        "JSONP"
+      ],
+      "headings": [
+        "案例：作者页与列表",
+        "可复用点",
+        "证据边界"
+      ],
+      "bytes": 1818,
+      "lines": 34,
+      "content_sha256": "6bf24dec3df22a50dae4fb86edd26f96db1d73688124b5cc47d6c199f651cf79"
+    },
+    {
       "path": "web-reverse/benru-web-reverse-compilation.md",
       "kind": "canonical",
       "category": "web-reverse",
@@ -14848,6 +14931,61 @@
       "bytes": 7347,
       "lines": 163,
       "content_sha256": "1bb7e920d1185b5c9842e606f15c021d99da7d19928554b37e80d5e0f1426166"
+    },
+    {
+      "path": "web-reverse/bilibili-wbi-geetest-case.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "B 站案例：WBI 原序写回、极验本地载荷、correspondPath",
+      "source": "`workspace/cv-cat`（BilibiliApis，HEAD 日期 2026-09-13，只读对照）",
+      "original_date": "2026-09-13",
+      "archive_date": "2026-09-23",
+      "summary": "这份对照仓已经去掉整包 static/bili.js。WBI、票据和 correspondPath 在 Python 里闭合；极验 v3 的 w 载荷本地计算，点选识别是另一层。排序只用于算 w_rid，发出去的 query 保持原序。",
+      "keywords": [
+        "WBI",
+        "w_rid",
+        "wts",
+        "mixin",
+        "correspondPath",
+        "极验"
+      ],
+      "headings": [
+        "案例：WBI",
+        "案例：极验 v3 的边界",
+        "案例：correspondPath 是续期入场券",
+        "传输",
+        "证据边界"
+      ],
+      "bytes": 3693,
+      "lines": 61,
+      "content_sha256": "e7bb98bc1f1f1044b3de4c6e4a60a79f1e44dd50c0a120c86e044eeb83a6bb87"
+    },
+    {
+      "path": "web-reverse/binance-cms-header-case.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "币安案例：公告列表的设备头，不是交易签名",
+      "source": "`workspace/cv-cat`（BinanceApis，HEAD 日期 2026-08-18，只读对照）",
+      "original_date": "2026-08-18",
+      "archive_date": "2026-09-23",
+      "summary": "这份对照仓轮询的是公开 CMS 公告列表，不是交易 API 的 HMAC。本地 JS 填 csrftoken、设备指纹和 fvideo-token；fvideo-id 直接来自 Cookie。",
+      "keywords": [
+        "fvideo-id",
+        "fvideo-token",
+        "csrftoken",
+        "BNC_FV_KEY",
+        "device-info"
+      ],
+      "headings": [
+        "案例：一页公告",
+        "落地判断",
+        "证据边界"
+      ],
+      "bytes": 2568,
+      "lines": 49,
+      "content_sha256": "9bc62299fc673646f541890a30c2ce3b1d51c7c4a31d93af252087a257daa1ab"
     },
     {
       "path": "web-reverse/browser-env-objects.md",
@@ -15304,6 +15442,32 @@
       "content_sha256": "22ac6a3a62ecbf73e9221eac77780177f922aecbe49c99161fac5a8fe834bfee"
     },
     {
+      "path": "web-reverse/capture-alignment-traps.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "技巧：抓包对齐时容易自己引入的偏差",
+      "source": "`workspace/cv-cat`（DouYin_Spider、BilibiliApis、JdApis、KuaiShou-Spider、TiktokApis 源码注释里的已踩坑）",
+      "original_date": "2026-09-23",
+      "archive_date": "2026-09-24",
+      "summary": "这些偏差不是算法没还原，而是对照实现自己把抓包形态改掉了。每条都有源码里的真实失误或防护。复用时先对这张表，再改签名。",
+      "keywords": [
+        "空值字段",
+        "同名 t",
+        "parse_qsl",
+        "$HE_",
+        "排序只用于签名"
+      ],
+      "headings": [
+        "表",
+        "对齐流程",
+        "伪代码：空值与同名键"
+      ],
+      "bytes": 3914,
+      "lines": 63,
+      "content_sha256": "34d9138dc0b4fafc822267f769ede3ba8cdaba09526cb8c351e9401c66a8fc1c"
+    },
+    {
       "path": "web-reverse/datadome-env-patch.md",
       "kind": "canonical",
       "category": "web-reverse",
@@ -15342,6 +15506,261 @@
       "bytes": 10254,
       "lines": 260,
       "content_sha256": "b5ed5d8c02d600703ae1fa8ea72a2b0f1cd2b1db29a81840671f4027b99089bc"
+    },
+    {
+      "path": "web-reverse/douyin-secsdk-websign-case.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "抖音 webSign：钩宿主 MD5，再纯算规范化 query",
+      "source": "`workspace/cv-cat`（DouYin_Spider `utils/secsdk_web_sign.py`，注释中的逆向窗口 2026-08-16）",
+      "original_date": "2026-08-16",
+      "archive_date": "2026-09-23",
+      "summary": "stack VM 的 opcode 读不动时，先在宿主哈希入口读明文，再只复刻规范化规则。抖音 x-secsdk-web-signature 是这条方法的完整案例：签名是 MD5，真正容易错的是 query 规范化，以及签完之后不能再编码。",
+      "keywords": [
+        "webSignUrl",
+        "CryptoJS.MD5",
+        "canonical query",
+        "encodeURIComponent",
+        "x-secsdk-web-signature"
+      ],
+      "headings": [
+        "案例怎么定位到 MD5",
+        "规范化规则",
+        "策略表决定谁要加签",
+        "真实接入",
+        "源码自己的回归，以及本库没有重跑的部分",
+        "可复用探针",
+        "误用"
+      ],
+      "bytes": 5630,
+      "lines": 113,
+      "content_sha256": "1e2c30fcf91be3b426db8e983a4c304b2baff331ddee86b17cdcd7fd25711c18"
+    },
+    {
+      "path": "web-reverse/douyin-session-materials-case.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "抖音会话材料：msToken、票据、dtrait、acrawler",
+      "source": "`workspace/cv-cat`（DouYin_Spider，本地镜像只读对照）",
+      "original_date": "2026-09-20",
+      "archive_date": "2026-09-23",
+      "summary": "a_bogus 算对之后，请求仍会因材料出处错误失败。本篇按源码把四条材料链分开：服务端签发的 msToken、票据 HMAC/ECDSA、按 path 重算的 dtrait、页面 VM 写出的 ac_signature。随机串不能占这些位置。",
+      "keywords": [
+        "msToken",
+        "x-ms-token",
+        "bd-ticket-guard",
+        "x-tt-session-dtrait",
+        "__ac_signature",
+        "provenance"
+      ],
+      "headings": [
+        "材料出处",
+        "案例：msToken 是签发值，不是随机串",
+        "案例：只读票据和写入票据不是同一组头",
+        "案例：dtrait 按 path 重算，第一段会话内复用",
+        "案例：acrawler 失败不能写成随机 Cookie",
+        "直播 signature 不是这些材料",
+        "创作者上传的另一条签",
+        "伪代码：材料就绪门"
+      ],
+      "bytes": 6894,
+      "lines": 117,
+      "content_sha256": "b87994201b58adab7fc44866a170af96b581fd50811916554b37f836ae183dec"
+    },
+    {
+      "path": "web-reverse/douyin-web-request-planes.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "抖音 Web 请求面：七条链的真实装配",
+      "source": "`workspace/cv-cat`（DouYin_Spider，本地镜像只读对照，抓包窗口约 2026-08）",
+      "original_date": "2026-09-20",
+      "archive_date": "2026-09-23",
+      "summary": "抖音一条「业务请求」同时叠了查询签名、会话 token、URL 完整性、票据、设备头和传输层。本篇用 DouYin_Spider 的真实调用点说明每条链在哪一步接上、哪一步必须停手，不收录字母表、盐或可执行签名器。",
+      "keywords": [
+        "a_bogus",
+        "host",
+        "aid",
+        "page_id",
+        "signed_url",
+        "bd-ticket-guard",
+        "check_risk_response"
+      ],
+      "headings": [
+        "链怎么切开",
+        "案例 A：作品详情，签完的 URL 才是要发的 URL",
+        "案例 B：评论列表，只读票据，允许 params 重编码",
+        "案例 C：直播电商，host 绑定 a_bogus，空 body 不是签名错误",
+        "案例 D：创作者发布，材料不齐就不发",
+        "失败怎么读",
+        "装配器伪代码",
+        "证据边界"
+      ],
+      "bytes": 9061,
+      "lines": 133,
+      "content_sha256": "922d9c129b44c98ca07772b105d47b480540698298da0c1315ac094ee690e5f6"
+    },
+    {
+      "path": "web-reverse/endpoint-constant-table.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "技巧：端别常量表，按抓包填，不为统一抹平",
+      "source": "`workspace/cv-cat`（DouYin_Spider `HOST_APP_IDS` / `with_platform`、MTOP appKey、头条与西瓜 aid）",
+      "original_date": "2026-09-23",
+      "archive_date": "2026-09-24",
+      "summary": "同一算法常嵌入 aid、page_id、appKey、version_code。这些数按 host 和接口变化。为了「公共参数统一」抹平差异，会在强校验接口上被判成人机，或签到错误的网关。常量表来自抓包，会过期，但「签名函数必须吃端别」这条不过期。",
+      "keywords": [
+        "aid",
+        "page_id",
+        "appKey",
+        "version_code",
+        "常量表"
+      ],
+      "headings": [
+        "怎么建表",
+        "真实流程",
+        "同名常量的三层",
+        "过期"
+      ],
+      "bytes": 3175,
+      "lines": 64,
+      "content_sha256": "e00ecf27a3b6b32237d5657b3029fdf90201d7b2ff842c0a5f240ec66eb12ead"
+    },
+    {
+      "path": "web-reverse/fail-closed-completion-gate.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "方法论：缺字段失败，成功口径分开写",
+      "source": "`workspace/cv-cat`（TiktokApis `SignerError`、DouYin_Spider acrawler/create_v2、Spider_XHS 签参、JdApis tk03）",
+      "original_date": "2026-09-23",
+      "archive_date": "2026-09-24",
+      "summary": "签名器缺材料时应该失败，而不是补一个长度对的随机串或回放抓包。HTTP 200、进程退出码 0、oracle 有输出，各自都不是 serverAccepted。完成门要写成业务读回，并标明哪一层只是 localReproduced。",
+      "keywords": [
+        "fail-closed",
+        "SignerError",
+        "localReproduced",
+        "serverAccepted",
+        "tk03"
+      ],
+      "headings": [
+        "失败要发生在发送之前",
+        "三层完成门",
+        "伪代码：验收记录"
+      ],
+      "bytes": 3659,
+      "lines": 71,
+      "content_sha256": "076a6b78e3b12675426b1c9c4430bd29edd400154e54f108df3528c5a0131130"
+    },
+    {
+      "path": "web-reverse/feishu-csrf-frontier-case.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "飞书案例：HTTP CSRF 与 frontier WebSocket 分链",
+      "source": "`workspace/cv-cat`（OpenFeiShuApis，HEAD 日期 2026-08-18，只读对照）",
+      "original_date": "2026-08-18",
+      "archive_date": "2026-09-23",
+      "summary": "这份对照仓不是开放平台的 tenant_access_token。网页会话分成两条：HTTP 用 accounts/csrf 换 swp_csrf_token，长连用 JS 算出的 access_key 加 frontier ticket 去连 msg-frontier。",
+      "keywords": [
+        "swp_csrf_token",
+        "x-csrf-token",
+        "access_key",
+        "msg-frontier"
+      ],
+      "headings": [
+        "案例：CSRF 再取用户",
+        "案例：frontier 长连",
+        "落地判断",
+        "证据边界"
+      ],
+      "bytes": 2334,
+      "lines": 46,
+      "content_sha256": "f4958f0aadb4b1cc52803ca9efc8d480a401b91296d8597f8e78ae73f14b36f5"
+    },
+    {
+      "path": "web-reverse/instagram-doc-id-case.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "Instagram 案例：HTML 抽 app_id 与 doc_id",
+      "source": "`workspace/cv-cat`（InstagramApis，HEAD 日期 2026-08-18，只读对照）",
+      "original_date": "2026-08-18",
+      "archive_date": "2026-09-23",
+      "summary": "这份对照仓没有本地签名器。用户页 HTML 提供 user_id、app_id 和首页 GraphQL doc_id；后续请求把 doc_id 和 Cookie 一起发出。x-csrftoken 辅助函数存在，但资料和时间线调用点没有用它。",
+      "keywords": [
+        "doc_id",
+        "x-ig-app-id",
+        "web_profile_info",
+        "graphql"
+      ],
+      "headings": [
+        "案例：从用户名到时间线",
+        "csrf 辅助函数没有接上主路径",
+        "伪代码",
+        "证据边界"
+      ],
+      "bytes": 2151,
+      "lines": 49,
+      "content_sha256": "8903dd055a68a438d9b1ebaaea13d1af22da9412029c67e8ce9b7dfec43b4d8a"
+    },
+    {
+      "path": "web-reverse/isolated-node-runner-contract.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "技巧：隔离 Node 运行器的进程合同",
+      "source": "`workspace/cv-cat`（acrawler、TikTok frontier/Shop、京东 h5st server、小红书 websectiga、闲鱼 tfstk）",
+      "original_date": "2026-09-23",
+      "archive_date": "2026-09-24",
+      "summary": "预言机不是 execjs.compile 整包然后叫一个函数名。对照仓里能复用的是进程合同：输入怎么送、成功长什么样、失败时日志不回显秘密、超时和形状不对都算失败。",
+      "keywords": [
+        "stdin JSON",
+        "形状门",
+        "timeout",
+        "不回显",
+        "vm.runInThisContext"
+      ],
+      "headings": [
+        "合同表",
+        "伪代码",
+        "和 execjs 整包的差别"
+      ],
+      "bytes": 3102,
+      "lines": 50,
+      "content_sha256": "14a64e18acb97fa7020fc1dfcae745e3dcd7582d1997854ddebd62e11b801adf"
+    },
+    {
+      "path": "web-reverse/jd-h5st-runtime-case.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "京东案例：h5st 5.3 运行时、body 预哈希、JCAP 分链",
+      "source": "`workspace/cv-cat`（JdApis，HEAD 日期 2026-09-19，只读对照）",
+      "original_date": "2026-09-19",
+      "archive_date": "2026-09-23",
+      "summary": "京东 PC 搜索在这份对照仓里不是 execjs 喂整包 JD.js。它是常驻 Node：环境、未改的 js_security 库、一行协议的签名服务。业务 h5st 要等 cactus 返回 tk03。登录验证码是另一条 JCAP 链。",
+      "keywords": [
+        "h5st 5.3",
+        "tk03",
+        "request_algo",
+        "js_security",
+        "searchWare",
+        "SHA-256"
+      ],
+      "headings": [
+        "三段运行时",
+        "案例：搜索 searchWare",
+        "登录路径",
+        "和旧仓的差分",
+        "证据边界"
+      ],
+      "bytes": 3927,
+      "lines": 64,
+      "content_sha256": "5d9dce1368480d89ca98a222286165e3b2db764c15f65616c0a9c5efbddb6c41"
     },
     {
       "path": "web-reverse/koohai-reverse-notes-compilation.md",
@@ -15809,6 +16228,86 @@
       "bytes": 14941,
       "lines": 108,
       "content_sha256": "e6dd816a4d5523be9cf88eb5dc263adacba482f1ba243c4f9b2407ae28bb25bb"
+    },
+    {
+      "path": "web-reverse/kuaishou-landing-case.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "快手案例：资料接口的 hxfalcon 装配",
+      "source": "`workspace/cv-cat`（KuaiShou-Spider，HEAD 日期 2026-08-30，只读对照）",
+      "original_date": "2026-08-30",
+      "archive_date": "2026-09-23",
+      "summary": "快手 www 资料接口把 webweapon 会话、冻结的 kww 头和 NS_hxfalcon 焊在同一次 GET 上。CP 发布改走 NS_sig3。滑块和签名失败不是同一条链。命中特征见 快手 NS 签名。本篇写一条真实 API 的装配，不抄 $encode 表。",
+      "keywords": [
+        "__NS_hxfalcon",
+        "kww",
+        "caver",
+        "weapon_oracle",
+        "__NS_sig3"
+      ],
+      "headings": [
+        "案例：GET /rest/v/profile/get",
+        "CP 与直播",
+        "成本判断在代码里的位置",
+        "证据边界"
+      ],
+      "bytes": 3132,
+      "lines": 50,
+      "content_sha256": "424c4e8afaea60a5cbbb0355890c3189d8d54bb63e42f1d34304c58a22f2f0b7"
+    },
+    {
+      "path": "web-reverse/linkedin-voyager-csrf-case.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "领英案例：JSESSIONID 双写与页面 queryId",
+      "source": "`workspace/cv-cat`（LinkedinApis，HEAD 日期 2026-08-18，只读对照）",
+      "original_date": "2026-08-18",
+      "archive_date": "2026-09-23",
+      "summary": "领英 Voyager 在这份对照仓里没有独立签名算法。鉴权是 Cookie 里的 JSESSIONID 去掉引号后双写到 csrf-token，GraphQL 的 queryId 从当前页面 JS 里抠。",
+      "keywords": [
+        "JSESSIONID",
+        "csrf-token",
+        "queryId",
+        "voyager"
+      ],
+      "headings": [
+        "案例：资料卡",
+        "可复用点",
+        "证据边界"
+      ],
+      "bytes": 2036,
+      "lines": 36,
+      "content_sha256": "3aa930b00ab408d9d32ff66cc8a657d0daacb11472e62d5ab3616fecfb879234"
+    },
+    {
+      "path": "web-reverse/material-provenance-ledger.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "方法论：签名材料出处账本",
+      "source": "`workspace/cv-cat`（DouYin_Spider、Spider_XHS、KuaiShou-Spider、XianYuApis 的材料分类）",
+      "original_date": "2026-09-23",
+      "archive_date": "2026-09-24",
+      "summary": "一个字段能算出来，只说明算法边界闭合。它能不能本地造，要先记账：本地状态机、服务端下发、隔离程序、设备绑定。缺了就失败或用缓存，不用随机串占位。随机串只能标 unproven_synthetic。",
+      "keywords": [
+        "provenance",
+        "server_issued",
+        "unproven_synthetic",
+        "TTL",
+        "状态机"
+      ],
+      "headings": [
+        "四类出处",
+        "真实记账",
+        "账本伪代码",
+        "怎么给新字段归类",
+        "完成门"
+      ],
+      "bytes": 5085,
+      "lines": 84,
+      "content_sha256": "7538dbc46fab4b0e957701393078d77a1aaf0f75fe8572402aae6a2d162fbfca"
     },
     {
       "path": "web-reverse/products.md",
@@ -16647,6 +17146,86 @@
       "content_sha256": "7d6d970fc756a323d88e52b28a1ff5e453a8232ada727f825254ac2ea495b0d8"
     },
     {
+      "path": "web-reverse/purecalc-vs-oracle-cost.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "方法论：纯算还是预言机，先写成本账",
+      "source": "`workspace/cv-cat`（KuaiShou-Spider `weapon_oracle.py`、JdApis h5st 三段式、TiktokApis frontier/Shop、DouYin_Spider acrawler）",
+      "original_date": "2026-09-23",
+      "archive_date": "2026-09-24",
+      "summary": "能在请求边界读到明文和标准原语，就纯算。字节码大、变体多、或出参只在 cookie 边界闭合，就用隔离程序当预言机，并在账本上写明为什么不移植。预言机出参的 provenance 是 runtime，不能标 purecalc。",
+      "keywords": [
+        "预言机",
+        "Brook",
+        "canary",
+        "js_security",
+        "53KB"
+      ],
+      "headings": [
+        "成本账怎么填",
+        "预言机也有验收",
+        "伪代码",
+        "账本里要写的一句"
+      ],
+      "bytes": 4010,
+      "lines": 68,
+      "content_sha256": "f897593bed9485bcc94ddcd2dcb116a23582a1addb50fa99c85106ef6d2e6246"
+    },
+    {
+      "path": "web-reverse/request-plane-failure-translation.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "方法论：请求面切开，失败按面翻译",
+      "source": "`workspace/cv-cat`（DouYin_Spider、TiktokApis、KuaiShou-Spider、JdApis、TaoBaoApis 的失败分链）",
+      "original_date": "2026-09-23",
+      "archive_date": "2026-09-24",
+      "summary": "一条「平台请求」通常叠了查询签名、会话材料、完整性头、设备头和传输。一个组件正确不能解释整站失败。先画面，再把 HTTP 200、空 body、业务码翻译到具体的面，而不是统一归到签名算错。",
+      "keywords": [
+        "请求面",
+        "bdturing",
+        "空 body",
+        "status_code",
+        "同名参数"
+      ],
+      "headings": [
+        "画法",
+        "真实翻译",
+        "伪代码",
+        "同名不同面"
+      ],
+      "bytes": 4378,
+      "lines": 87,
+      "content_sha256": "78dbfea6ae8c4bdf7fd5c0224ea9b2a5d05379e4850885640eda020a009b8ec8"
+    },
+    {
+      "path": "web-reverse/session-binding-double-write.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "技巧：会话材料双写，并且绑源",
+      "source": "`workspace/cv-cat`（微博 XSRF、领英 JSESSIONID、X 的 ct0、飞书 swp_csrf_token、抖音 uifid / creator CSRF）",
+      "original_date": "2026-09-23",
+      "archive_date": "2026-09-24",
+      "summary": "不少「签名头」只是把同一会话材料再写到一个头或 query 里。技巧是找出源字段、去掉包装、绑到正确的 origin。源变了，副本必须一起变。本地哈希出的另一串不能拿来填这个头。",
+      "keywords": [
+        "XSRF-TOKEN",
+        "JSESSIONID",
+        "ct0",
+        "swp_csrf_token",
+        "uifid"
+      ],
+      "headings": [
+        "双写对照",
+        "绑源的真实失误",
+        "不是双写的头"
+      ],
+      "bytes": 2742,
+      "lines": 48,
+      "content_sha256": "50cfb1d277abd9c84cfe6555ee4b4f5335fcd521bb59250e167950cf6c245453"
+    },
+    {
       "path": "web-reverse/sign-landing-methods.md",
       "kind": "canonical",
       "category": "web-reverse",
@@ -16680,11 +17259,183 @@
         "6. 能反编译就纯算，搬不动就预言机",
         "7. App Native 签名优先实例 RPC",
         "反面教材",
-        "与主线工作流"
+        "与主线工作流",
+        "方法论与技巧",
+        "2026-09-23 案例索引"
       ],
-      "bytes": 8266,
-      "lines": 107,
-      "content_sha256": "741c14b82b34abdeb51d76eb536aaef5e0a8b4e6c05f3ff06dd4b7fd26e7f6dc"
+      "bytes": 11471,
+      "lines": 143,
+      "content_sha256": "7f9e1eba5b8ae5b567d63f356d6378ed8d912ad6613befb20abd0d0101883dbe"
+    },
+    {
+      "path": "web-reverse/signed-query-wire-contract.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "签完即线上：query、头序与 HTTP/2 Cookie",
+      "source": "`workspace/cv-cat`（DouYin_Spider、TiktokApis、Spider_XHS、JdApis、KuaiShou-Spider 的 HTTP 出口对照）",
+      "original_date": "2026-09-23",
+      "archive_date": "2026-09-23",
+      "summary": "签名算在某一串字节上，服务端也按收到的字节校验。把 dict 再交给 HTTP 客户端，会改顺序、改编码、合并同名键。本篇把各仓已经踩过的写回合同收成一条可复用流程。",
+      "keywords": [
+        "canonical query",
+        "default_headers",
+        "HTTP/2 cookie",
+        "duplicate t",
+        "quote"
+      ],
+      "headings": [
+        "四条写回规则",
+        "案例：抖音两条编码函数不能混",
+        "案例：TikTok 与小红书",
+        "传输层单独验收",
+        "伪代码"
+      ],
+      "bytes": 4387,
+      "lines": 70,
+      "content_sha256": "47a95f8b3ca2eb3f6049c4c499edbf571dd31620e650b9383ac5a1cdd9c67645"
+    },
+    {
+      "path": "web-reverse/taobao-h5-mtop-lwp-case.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "淘宝 H5 案例：MTOP sign 与钉钉 LWP 分链",
+      "source": "`workspace/cv-cat`（TaoBaoApis，HEAD 日期 2026-08-18，只读对照）",
+      "original_date": "2026-08-18",
+      "archive_date": "2026-09-23",
+      "summary": "淘宝 H5 的 sign 是 Cookie 半段、时间戳、appKey 和 data 的 MD5。实时私信是另一条钉钉 LWP WebSocket，不再带这个 sign。仓里残留的闲鱼 URL 不能当成淘宝网关。",
+      "keywords": [
+        "MTOP",
+        "_m_h5_tk",
+        "12574478",
+        "JSONP",
+        "LWP",
+        "cntaobao"
+      ],
+      "headings": [
+        "落地形态",
+        "案例：拿 IM token",
+        "案例：私信是 LWP，不是再签一次 MTOP",
+        "脏边界",
+        "证据边界"
+      ],
+      "bytes": 3328,
+      "lines": 60,
+      "content_sha256": "0bb9eed8658864706217ce470fc4a70a493fc70c2c8cccac672bdc7dfacd3adc"
+    },
+    {
+      "path": "web-reverse/thin-wrapper-vs-purecalc.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "方法论：薄封装、整包 execjs、纯算，三种完成度",
+      "source": "`workspace/cv-cat` 各仓 README 与调用点（2026-08 至 2026-09 对照）",
+      "original_date": "2026-09-23",
+      "archive_date": "2026-09-24",
+      "summary": "公开仓看起来都是「Python API + static/*.js」。落地完成度要按调用点分：没有签名、execjs 整包、隔离运行器、纯算、设备 RPC。整包出参只能说明参数名和请求边界，不能写成纯算完成。",
+      "keywords": [
+        "execjs",
+        "整包",
+        "双写",
+        "完成度",
+        "boundary_known"
+      ],
+      "headings": [
+        "五档",
+        "判定流程",
+        "薄封装仍然有用的三件事",
+        "伪代码：完成度标签"
+      ],
+      "bytes": 3638,
+      "lines": 67,
+      "content_sha256": "abe143d39c7cc2f3636e8274b8d7c8f16cc61eeeac0a4b40ca162f83371e2cf0"
+    },
+    {
+      "path": "web-reverse/tiktok-frontier-ticket-shop-case.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "TikTok 旁路签名：frontierSign、ticket-guard、Shop BSID",
+      "source": "`workspace/cv-cat`（TiktokApis `signing/ticket_guard.py`、`builder/signer.py`、`signing/shop_bsid.py`）",
+      "original_date": "2026-09-23",
+      "archive_date": "2026-09-23",
+      "summary": "HTTP 查询签名闭合之后，直播/私信、Creator 写请求和 Shop 仍各有一条独立签名面。三条都不接受「把抓到的签名再贴回去」。本篇写进程合同和信封形状，不收录口令、盐、canvas 原值和 Cookie。",
+      "keywords": [
+        "frontierSign",
+        "tt-ticket-guard",
+        "Shop BSID",
+        "oec_lucifer",
+        "ECDSA"
+      ],
+      "headings": [
+        "案例：frontierSign 是独立 Node 进程",
+        "案例：ticket-guard 只重算，不复放五头",
+        "案例：Shop BSID 是第三套 Node runner",
+        "三条旁路对照",
+        "伪代码"
+      ],
+      "bytes": 5364,
+      "lines": 110,
+      "content_sha256": "6afd3644c9d28ebff113da80a19feb5b06d7d49163cd3967a72c522dd9fc2129"
+    },
+    {
+      "path": "web-reverse/tiktok-web-signing-planes.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "TikTok Web 签名面：端点合同、两代 SDK、fail-closed",
+      "source": "`workspace/cv-cat`（TiktokApis，本地镜像只读对照，仓说明写明 2026-09-23 去掉整包 execjs）",
+      "original_date": "2026-09-23",
+      "archive_date": "2026-09-23",
+      "summary": "TikTok HTTP 签名按 path 选择字段集和编码器。Creator Studio 5.1.0 与公开 Web 5.3.2 不能混用。缺 msToken、空 header、长度不匹配都直接失败，抓包签名不能回填。本篇只写路由和写回合同，不收录轮函数、字母表和 canvas 原值。",
+      "keywords": [
+        "X-Bogus",
+        "X-Gnarly",
+        "X-Dynosaur",
+        "msToken",
+        "fail-closed",
+        "5.3.2",
+        "5.1.0"
+      ],
+      "headings": [
+        "路由",
+        "案例：legacy Web 的 X-Bogus 是字面量 1",
+        "案例：Creator project 吃整段 query，并且要重算 ticket",
+        "写回：API 不使用 signer 内部拼好的 URL",
+        "伪代码",
+        "证据边界"
+      ],
+      "bytes": 6361,
+      "lines": 117,
+      "content_sha256": "09b9f49ce0dd18cf323f695b5cb07abd31320d3ec30eec0335689019580c2a51"
+    },
+    {
+      "path": "web-reverse/toutiao-abogus-execjs-case.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "头条案例：a_bogus 与 _signature 是两包 execjs",
+      "source": "`workspace/cv-cat`（HeadlineApis，HEAD 日期 2026-08-18，只读对照）",
+      "original_date": "2026-08-18",
+      "archive_date": "2026-09-23",
+      "summary": "头条信息流在这份对照仓里同时带 a_bogus 和 _signature。它们来自两个 JS 包，而且都不是抖音 DouYin_Spider 的 Python 纯算。feed 的 aid 是 24。",
+      "keywords": [
+        "a_bogus",
+        "_signature",
+        "get_ab",
+        "aid=24",
+        "execjs"
+      ],
+      "headings": [
+        "两个入口",
+        "案例：信息流",
+        "和抖音纯算的边界",
+        "证据边界"
+      ],
+      "bytes": 2270,
+      "lines": 52,
+      "content_sha256": "4baf1e530e646bae35efd518958177400b6d93b49a007894f2e0f758aa7e7b9b"
     },
     {
       "path": "web-reverse/unpacked-mv3-native-updater.md",
@@ -16723,6 +17474,218 @@
       "bytes": 11850,
       "lines": 245,
       "content_sha256": "88dc549ed90a8a87b34ded1a0284f8be9b395ed4c176b69707dd9782e7919595"
+    },
+    {
+      "path": "web-reverse/vmp-host-primitive-to-purecalc.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "方法论：VMP 先钩宿主原语，再决定要不要纯算",
+      "source": "`workspace/cv-cat`（DouYin_Spider `secsdk_web_sign.py` 的定位路径，对照窗口 2026-08-16）",
+      "original_date": "2026-08-16",
+      "archive_date": "2026-09-24",
+      "summary": "认定目标是 stack VM 之后，先在哈希、编码和 WebCrypto 入口读明文，用换 Cookie 探针把常量池和会话材料分开，只移植已经闭合的边界。opcode 解释不是完成门。抖音 webSignUrl 是这条方法的完整工作样例。",
+      "keywords": [
+        "stack VM",
+        "CryptoJS.MD5",
+        "宿主原语",
+        "盐探针",
+        "webSignUrl"
+      ],
+      "headings": [
+        "何时用",
+        "真实流程：抖音 webSign",
+        "探针表",
+        "完成门",
+        "反面"
+      ],
+      "bytes": 4258,
+      "lines": 74,
+      "content_sha256": "242b8b77f493112e94af35ffc029148c11cb99bd6274ed0e1e62e14c0a1e8b18"
+    },
+    {
+      "path": "web-reverse/wechat-oa-mp-cgi-case.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "公众号后台案例：token 透传，不是 mmtls",
+      "source": "`workspace/cv-cat`（WechatOAApis，HEAD 日期 2026-08-18，只读对照）",
+      "original_date": "2026-08-18",
+      "archive_date": "2026-09-23",
+      "summary": "这份对照仓打的是已登录的 mp.weixin.qq.com 后台 CGI。token 和 Cookie 由调用方从开发者工具复制，仓内不登录、不刷新、不算 fingerprint。它不是微信客户端 mmtls，也不是内置浏览器的 getmsg。",
+      "keywords": [
+        "searchbiz",
+        "appmsgpublish",
+        "token",
+        "fakeid",
+        "list_ex"
+      ],
+      "headings": [
+        "案例：搜号再拉发表列表",
+        "文章 HTML 是另一面",
+        "证据边界"
+      ],
+      "bytes": 2541,
+      "lines": 42,
+      "content_sha256": "e95e9916de446afefae339378db73b0e58e507183a75572a8f7257dfe353f9cb"
+    },
+    {
+      "path": "web-reverse/weibo-request-planes-case.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "微博案例：PC、移动、创作者上传三条面",
+      "source": "`workspace/cv-cat`（WeiboApis，HEAD 日期 2026-08-18，只读对照）",
+      "original_date": "2026-08-18",
+      "archive_date": "2026-09-23",
+      "summary": "这份对照仓没有一个全站签名函数。PC 接口把 Cookie 里的 XSRF-TOKEN 双写到头，移动接口换一套 m.weibo 头，创作者上传另算文件 MD5 和自定义 CRC。static/weibo.js 不在 Python 运行时里。",
+      "keywords": [
+        "XSRF-TOKEN",
+        "x-xsrf-token",
+        "X-Up-Auth",
+        "CRC"
+      ],
+      "headings": [
+        "三条面",
+        "案例：图片/视频上传参数",
+        "落地判断",
+        "证据边界"
+      ],
+      "bytes": 2472,
+      "lines": 52,
+      "content_sha256": "e8f5d3db5ddc3ff20949a0d1ddfd3d29566f38f2b6c2715f3db944c64028401a"
+    },
+    {
+      "path": "web-reverse/x-twitter-graphql-case.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "X 案例：Bearer、ct0 双写与写死的 GraphQL features",
+      "source": "`workspace/cv-cat`（XApis，HEAD 日期 2026-08-18，只读对照）",
+      "original_date": "2026-08-18",
+      "archive_date": "2026-09-23",
+      "summary": "这份对照仓不计算 X 的签名，也不刷新 guest token。调用方传入 Bearer 和 ct0，头里把 ct0 双写成 x-csrf-token。搜索参数里的 operation 特征和 features JSON 是源码里的快照。",
+      "keywords": [
+        "ct0",
+        "x-csrf-token",
+        "Bearer",
+        "features",
+        "GraphQL"
+      ],
+      "headings": [
+        "案例：搜索",
+        "证据边界"
+      ],
+      "bytes": 1884,
+      "lines": 39,
+      "content_sha256": "8b38ef0c5a5eb291454eb9ac1a61ced81a04adec3194ab6d5ce65cb22980e01b"
+    },
+    {
+      "path": "web-reverse/xianyu-android-sign-rpc-case.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "闲鱼 Android 案例：InnerSignImpl 实例 RPC",
+      "source": "`workspace/cv-cat`（XianyuAndroidApis，HEAD 日期 2026-04-13，只读对照）",
+      "original_date": "2026-04-13",
+      "archive_date": "2026-09-23",
+      "summary": "闲鱼 App 的网关签名走设备上的 InnerSignImpl.getUnifiedSign。对照仓的做法是 spawn 后等类加载、hook 一次抓住实例、立刻摘 hook，再按六参 overload 重放。这不是还原 SO，也不是 Web H5 sign。",
+      "keywords": [
+        "InnerSignImpl",
+        "getUnifiedSign",
+        "21407387",
+        "ttid",
+        "g-acs"
+      ],
+      "headings": [
+        "案例流程",
+        "和 Web 的边界",
+        "伪代码"
+      ],
+      "bytes": 3391,
+      "lines": 65,
+      "content_sha256": "15bf37e783bb4f507c8ecd10c5f9085b7cfd924975f3e2da9aa3c515edb701f9"
+    },
+    {
+      "path": "web-reverse/xianyu-web-mtop-case.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "闲鱼 Web 案例：H5 sign、空 sign 换票、tfstk",
+      "source": "`workspace/cv-cat`（XianYuApis，HEAD 日期 2026-08-18，只读对照）",
+      "original_date": "2026-08-18",
+      "archive_date": "2026-09-23",
+      "summary": "闲鱼 Web 和淘宝 H5 共用 token&t&appKey&data 的 MD5 形状，但 appKey、域名、HTTP 方法和 _m_h5_tk 的来源都不同。Web sign 不能填进 App 的 x-sign。",
+      "keywords": [
+        "34839810",
+        "goofish",
+        "tfstk",
+        "空 sign",
+        "_m_h5_tk"
+      ],
+      "headings": [
+        "和淘宝的同构与分叉",
+        "案例：空 sign 换 _m_h5_tk",
+        "案例：业务 get_token",
+        "不能和 App x-sign 互换",
+        "证据边界"
+      ],
+      "bytes": 3371,
+      "lines": 67,
+      "content_sha256": "64e349ccbb346f5be5429241db0db60b8c46e7e47b622486b56d205a9f55db8d"
+    },
+    {
+      "path": "web-reverse/xiaohongshu-assembly-case.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "小红书装配案例：材料六桶、签完即发、端别切开",
+      "source": "`workspace/cv-cat`（Spider_XHS 现行 `xhs_core` / `xhs_pc` / `xhs_creator`，只读对照）",
+      "original_date": "2026-09-08",
+      "archive_date": "2026-09-23",
+      "summary": "小红书签名头族的命中特征见 x-s 产品文。本篇补现行代码里的装配合同：参数按出处分桶、签参失败不降级、PC / Creator / 蒲公英 / 千帆切开，以及签完的 body 不再交给 HTTP 客户端重编码。不收录 mns keystream、字母表和 AES 材料。",
+      "keywords": [
+        "parameter_sources",
+        "HostCookieStore",
+        "ordered_wire_headers",
+        "websectiga",
+        "_dsf"
+      ],
+      "headings": [
+        "材料六桶",
+        "案例：一次 PC 业务请求",
+        "四条端别",
+        "伪代码：provenance 门",
+        "证据边界"
+      ],
+      "bytes": 4544,
+      "lines": 76,
+      "content_sha256": "4a38ab36ac7d3252dfb048a63d26778820dfb5057be86c675d8453ba3f97fbb5"
+    },
+    {
+      "path": "web-reverse/xigua-unsigned-query-case.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "西瓜案例：签名位是空占位，播放解密另算",
+      "source": "`workspace/cv-cat`（XiguaApis，HEAD 日期 2026-08-18，只读对照）",
+      "original_date": "2026-08-18",
+      "archive_date": "2026-09-23",
+      "summary": "西瓜视频在这份对照仓里没有计算 msToken、X-Bogus 或 _signature。列表和评论把这三个键留空，aid 固定为 1768。播放地址解密是另一段 AES-CBC，而且当前 API 路径没有调用它。",
+      "keywords": [
+        "aid=1768",
+        "msToken",
+        "X-Bogus",
+        "AES-CBC"
+      ],
+      "headings": [
+        "案例：作品列表 query",
+        "播放解密函数的形状",
+        "证据边界"
+      ],
+      "bytes": 2077,
+      "lines": 46,
+      "content_sha256": "f647eccc6814aa9a6d8ba4c122201b34dae898bf66ed4c08a2979c05d1c52adf"
     },
     {
       "path": "web-reverse/yuanrenxue-web-reverse-compilation.md",
@@ -16884,6 +17847,32 @@
       "bytes": 33845,
       "lines": 269,
       "content_sha256": "c4869f554431df753cc2127aded0960e2f2b252d8160a6f4ebfe93d6a4b7b841"
+    },
+    {
+      "path": "web-reverse/zhihu-xzse96-execjs-case.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "知乎案例：x-zse-96 走整包 execjs",
+      "source": "`workspace/cv-cat`（ZhihuApis，HEAD 日期 2026-08-18，只读对照）",
+      "original_date": "2026-08-18",
+      "archive_date": "2026-09-23",
+      "summary": "知乎评论接口的鉴权头在这份对照仓里不是纯算。Python 编译整包 static/zhihu.js，把 URL 和 Cookie 里的 d_c0 交给导出函数 tv，再给返回的 signature 加上 2.0_ 前缀。",
+      "keywords": [
+        "x-zse-96",
+        "x-zse-93",
+        "d_c0",
+        "execjs",
+        "tv"
+      ],
+      "headings": [
+        "案例：评论头",
+        "落地判断",
+        "误用"
+      ],
+      "bytes": 2301,
+      "lines": 45,
+      "content_sha256": "625ab9e2d8ccb7cf824620bdba8b36120d6a86ad2c84a56cd3595e35bdb0cedb"
     }
   ]
 }
