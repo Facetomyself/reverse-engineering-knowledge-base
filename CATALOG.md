@@ -16,9 +16,9 @@
 | `packing-bypass` | 2 | 0 | 2 |
 | `protocols` | 3 | 0 | 3 |
 | `signature-algorithms` | 7 | 19 | 26 |
-| `web-reverse` | 48 | 126 | 174 |
+| `web-reverse` | 49 | 126 | 175 |
 
-文章总数：615。
+文章总数：616。
 
 ## 逐篇目录
 
@@ -510,6 +510,7 @@
 | 主文 | 2026-07-03 | [51job Webpack 模块自吐分析](./web-reverse/51job-webpack-analysis.md) | — | 基本信息 / Webpack 架构 / 关键模块识别 / 加密 / 签名 |
 | 主文 | 多篇合集 | [AI辅助逆向手记 Web 逆向合集](./web-reverse/ai-assisted-web-reverse-compilation.md) | — | 收录说明 / 文章目录（20 篇） |
 | 主文 | 2026-09-18 | [爱给网 safe-search 票据链：响应体藏票据的翻页 403 根因](./web-reverse/aigei-safe-search-ticket-chain.md) | — | 摘要 / 现象与排除实验 / 根因：safe-search 票据链 / 采集侧附带发现（同项目） |
+| 主文 | 2026-09-23 | [阿里云验证码 V3 登录滑块：InitCaptchaV3 / Log2 / VerifyCaptchaV3 参数链](./web-reverse/aliyun-captcha-v3-login-slider.md) | — | 收录说明 |
 | 主文 | 多篇合集 | [反爬破解社 Web 逆向实战合集](./web-reverse/anti-crawler-web-reverse-compilation.md) | — | 收录说明 / 文章目录（16 篇） |
 | 主文 | 2026-08-18 | [汽车之家案例：Cookie 加 JSONP，没有本地 sign](./web-reverse/autohome-cookie-boundary-case.md) | — | 案例：帖子详情 / 失败怎么读 / 证据边界 |
 | 主文 | 2026-08-18 | [百家号案例：页面 runtime 供 uk，Cookie 供 Tenger-Mhor](./web-reverse/baijiahao-runtime-header-case.md) | — | 案例：作者页与列表 / 可复用点 / 证据边界 |

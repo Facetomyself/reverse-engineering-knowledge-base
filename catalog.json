@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "article_count": 615,
+  "article_count": 616,
   "category_counts": {
     "anti-detection": 181,
     "collection-engineering": 7,
@@ -10,7 +10,7 @@
     "packing-bypass": 2,
     "protocols": 3,
     "signature-algorithms": 26,
-    "web-reverse": 174
+    "web-reverse": 175
   },
   "records": [
     {
@@ -14191,6 +14191,37 @@
       "bytes": 6086,
       "lines": 72,
       "content_sha256": "16282825d8c6f974f5008a4e2d77d37530c054ca9812a014e92fbb2e2163c5e0"
+    },
+    {
+      "path": "web-reverse/aliyun-captcha-v3-login-slider.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "阿里云验证码 V3 登录滑块：InitCaptchaV3 / Log2 / VerifyCaptchaV3 参数链",
+      "source": "微信公众号：搞窜窜学逆向（[原文](https://mp.weixin.qq.com/s/XtZHmacv8Nr2jcBafZ4GXw)）",
+      "original_date": "2026-09-23",
+      "archive_date": "2026-09-26",
+      "summary": "原文标题「逆向分析：阿里v3 登录滑块」，2026-09-23 21:36（UTC+8）发布，公众号标注原创，摘要「阿里v3登录滑块逆向分析」。归档时用公开文章 URL 纯 HTTP 拉取（桌面 Chrome UA，无需登录、未遇验证页），#js_content 转 Markdown。原文以截图为主，45 张图已从 mmbiz CDN 下载到 web-reverse/aliyun-captcha-v3-login-slider/，不再依赖外链。正文文字按原样保留，包括作者的分节编号（两处「3.」）和口语表述。",
+      "keywords": [
+        "阿里云验证码",
+        "InitCaptchaV3",
+        "VerifyCaptchaV3",
+        "Log2",
+        "DeviceData",
+        "Signature",
+        "HmacSHA1",
+        "AES",
+        "FeiLin",
+        "CaptchaVerifyParam",
+        "deviceToken",
+        "滑块轨迹"
+      ],
+      "headings": [
+        "收录说明"
+      ],
+      "bytes": 7978,
+      "lines": 203,
+      "content_sha256": "dd8f239c67a305641324a1b0810f033c4a2472e7cd3da3be3df35f514bfbfd22"
     },
     {
       "path": "web-reverse/anti-crawler-web-reverse-compilation.md",

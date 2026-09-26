@@ -150,6 +150,7 @@
 | [unpacked-mv3-native-updater.md](./web-reverse/unpacked-mv3-native-updater.md) | mouchenjie-ai-plugin | `MV3`, `sideload`, `自定义协议`, `PyInstaller 更新器`, `加载已解压扩展`, `渠道 zip` | 未上架 Chrome MV3 的本机更新器架构：渠道清单 + 对象存储 zip、HKCU 协议唤醒、本机进度口和打包合同，可复用到自有插件 sideload 分发 |
 | [datadome-env-patch.md](./web-reverse/datadome-env-patch.md) | — (公众号归档) | `DataDome`, `plv3`, `payload`, `iframe Realm`, `OffscreenCanvas`, `jsdom`, `VM 分叉` | DataDome 无感 interstitial 补环境：jsdom+vm 跑原脚本出参，按 Realm 生命周期、Worker 异步链和 VM 第一处分叉对齐；成功口径是 redirect 后新 Session 业务 200 |
 | [iv8-python-v8-browser-env.md](./web-reverse/iv8-python-v8-browser-env.md) | — (公众号归档) | `iv8`, `V8`, `补环境`, `page.load`, `eventLoop`, `logical time`, `wrapNative`, `isTrusted`, `DevTools`, `netLog`, `environment`, `Isolate`, `WebAssembly` | 爬虫逆向技术栈「iv8库使用手册」：Python 内嵌 V8 + C++ 浏览器壳单进程补环境；page.load 灌 html/baseURL/resources、虚拟时间推进、vdebugger/watch_apis 找缺失 API、wrapNative 与 isTrusted 事件、离线网络与多 Isolate；WASM streaming 不可用 |
+| [aliyun-captcha-v3-login-slider.md](./web-reverse/aliyun-captcha-v3-login-slider.md) | — (公众号归档) | `阿里云验证码`, `InitCaptchaV3`, `VerifyCaptchaV3`, `Log2`, `DeviceData`, `Signature`, `HmacSHA1`, `AES`, `FeiLin`, `CaptchaVerifyParam`, `deviceToken`, `滑块轨迹` | 搞窜窜学逆向「阿里v3 登录滑块」：五包只需 Init/Log2/Verify；DeviceData 固定 key/iv AES、Signature 为 & 拼接 HmacSHA1、响应 AES 解出 FeiLin 动态脚本；Log2 指纹段补环境，CaptchaVerifyParam 的 deviceToken AES+MD5、轨迹压缩后加密 btoa；45 张截图已本地化，密钥未公开 |
 | [ai-assisted-web-reverse-compilation.md](./web-reverse/ai-assisted-web-reverse-compilation.md) | — (公众号归档) | `h5st`, `a_bogus`, `x-s`, `x-s-common`, `JSVMP`, `RSA`, `fangdir`, `X-Gnarly`, `Shein`, `Dewu`, `md5__1038` | AI辅助逆向手记 20 篇：京东 h5st v5.3、瑞数 fangdir、抖音 a_bogus、小红书 xs、Shein/得物签名与 JSVMP/RSA 方法论，目标已脱敏 |
 | [koohai-reverse-notes-compilation.md](./web-reverse/koohai-reverse-notes-compilation.md) | — (公众号归档) | `KhBox`, `补环境`, `Illegal invocation`, `Canvas`, `jsdom`, `JSVMP`, `FART`, `WebView`, `IDA MD5` | 零基础爬虫第一天 17 篇：KhBox 补环境与 Node 编译、BrowserLeaks、AST/JSVMP，以及 FART/WebView/IDA 识别 MD5 |
 | [aigei-safe-search-ticket-chain.md](./web-reverse/aigei-safe-search-ticket-chain.md) | aigei | `safe-search 票据链`, `icon.png 藏票据`, `搜索权限门`, `AES-ECB cnkierjj`, `N@32`, `响应体数据流`, `request-parameter-lineage`, `companion_response_audit`, `403 权限不足`, `vcode-normal` | 爱给网筛选列表翻页 403 根因：带 term 列表每页须走 icon.png 签发票据 → /f/d → 列表的搜索授权链，票据藏响应体 base64 尾部且按页绑定；边界已对齐仍非 200 时先做伴随请求响应体数据流审计 |
@@ -198,6 +199,7 @@
 - **WBI/Base64/常见哈希与动态参数识别**: [benru-web](./web-reverse/benru-web-reverse-compilation.md), [yuanrenxue-web](./web-reverse/yuanrenxue-web-reverse-compilation.md), [yuanrenxue-app](./mobile-app-reverse/yuanrenxue-mobile-app-reverse-compilation.md)
 - **MTOP H5 `_m_h5_tk` MD5 sign**: [alibaba-mtop-h5](./web-reverse/products/alibaba-mtop-h5.md), [sign-landing](./web-reverse/sign-landing-methods.md)
 - **阿里 App MTOP 四头（x-sign / x-sgext / x-mini-wua / x-umt，SG 70102）**: [alibaba-mtop-four-headers](./signature-algorithms/alibaba-mtop-four-headers.md), [mtop-innersign-rpc](./mobile-app-reverse/mtop-innersign-rpc.md)
+- **阿里云验证码 V3 Signature（& 拼接 HmacSHA1）/ DeviceData 与响应 AES / deviceToken AES+MD5**: [aliyun-captcha-v3-slider](./web-reverse/aliyun-captcha-v3-login-slider.md), [aliyun-captcha-v3](./web-reverse/products/aliyun-captcha-v3.md)
 - **易盾自定义 xor-b64 / 非标准 AES / 47 维轨迹特征**: [products](./web-reverse/products.md)
 
 ### 协议
@@ -273,6 +275,7 @@
 - **DataDome 无感 interstitial 补环境（payload/plv3 / iframe Realm / VM 分叉）**: [datadome-env-patch](./web-reverse/datadome-env-patch.md)
 - **瑞数 fangdir P-cookie / LCG / Huffman / CRC32**: [ai-assisted-web](./web-reverse/ai-assisted-web-reverse-compilation.md)
 - **KhBox / Illegal invocation / Canvas 指纹补环境**: [koohai-notes](./web-reverse/koohai-reverse-notes-compilation.md)
+- **阿里云验证码 V3 登录滑块（InitCaptchaV3 → Log2 FeiLin 补环境 → VerifyCaptchaV3 轨迹）**: [aliyun-captcha-v3-slider](./web-reverse/aliyun-captcha-v3-login-slider.md), [aliyun-captcha-v3](./web-reverse/products/aliyun-captcha-v3.md), [products](./web-reverse/products.md)
 - **网易易盾 Web 滑块（NECaptcha / validate / 同轮 token）**: [products](./web-reverse/products.md)
 - **补环境浏览器对象面（DOM/BOM/WebAPI/Worker/Canvas/WebGL）**: [env-objects](./web-reverse/browser-env-objects.md)
 - **浏览器内核级指纹与自动化对抗**: [ruyi-browser](./anti-detection/ruyi-browser-anti-detection-compilation.md)
@@ -316,12 +319,13 @@
 - **微信公众号：ai辅助逆向手记**: [ai-assisted-web](./web-reverse/ai-assisted-web-reverse-compilation.md)
 - **微信公众号：零基础爬虫第一天**: [koohai-notes](./web-reverse/koohai-reverse-notes-compilation.md)
 - **微信公众号：爬虫逆向技术栈 / iv8**: [iv8-python-v8](./web-reverse/iv8-python-v8-browser-env.md)
+- **微信公众号：搞窜窜学逆向 / 阿里云验证码 V3 滑块**: [aliyun-captcha-v3-slider](./web-reverse/aliyun-captcha-v3-login-slider.md)
 - **微信公众号：Softard（Wossoneri）**: [softard-android](./mobile-app-reverse/softard-android-reverse-compilation.md), [uiautomator-consent](./mobile-app-reverse/uiautomator-privacy-consent-tap.md)
 - **航班管家 / hbgjbangbang LAES**: [hangban-laes](./signature-algorithms/hangban-laes-encrypt.md)
 - **瑞数 RS6**: [products](./web-reverse/products.md)
 - **爱给网（aigei.com / fd.aigei.com / GeiFileLocalStore）**: [aigei-safe-search](./web-reverse/aigei-safe-search-ticket-chain.md)
 - **Google reCAPTCHA v3 / invisible reload/rresp / Node 请求面**: [google-recaptcha-v3](./web-reverse/products/google-recaptcha-v3.md), [products](./web-reverse/products.md)
-- **阿里（ACW/H5Sec/BxUA/验证码/MTOP H5 / App 四头）**: [51job-anti-detection](./anti-detection/51job-anti-detection-analysis.md), [products](./web-reverse/products.md), [alibaba-mtop-h5](./web-reverse/products/alibaba-mtop-h5.md), [alibaba-mtop-four-headers](./signature-algorithms/alibaba-mtop-four-headers.md)
+- **阿里（ACW/H5Sec/BxUA/验证码/MTOP H5 / App 四头）**: [51job-anti-detection](./anti-detection/51job-anti-detection-analysis.md), [products](./web-reverse/products.md), [aliyun-captcha-v3-slider](./web-reverse/aliyun-captcha-v3-login-slider.md), [alibaba-mtop-h5](./web-reverse/products/alibaba-mtop-h5.md), [alibaba-mtop-four-headers](./signature-algorithms/alibaba-mtop-four-headers.md)
 - **腾讯（验证码/风控）**: [mmtls](./protocols/mmtls-protocol-analysis.md), [products](./web-reverse/products.md)
 - **腾讯 Qimei / 应用宝设备标识**: [sdk-purecalc](./mobile-app-reverse/sdk-purecalc-compilation.md)
 - **顶象 DXRisk**: [sdk-purecalc](./mobile-app-reverse/sdk-purecalc-compilation.md)
