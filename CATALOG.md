@@ -16,9 +16,9 @@
 | `packing-bypass` | 2 | 0 | 2 |
 | `protocols` | 3 | 0 | 3 |
 | `signature-algorithms` | 7 | 19 | 26 |
-| `web-reverse` | 49 | 126 | 175 |
+| `web-reverse` | 52 | 126 | 178 |
 
-文章总数：616。
+文章总数：619。
 
 ## 逐篇目录
 
@@ -530,6 +530,7 @@
 | 主文 | 2026-09-23 | [技巧：隔离 Node 运行器的进程合同](./web-reverse/isolated-node-runner-contract.md) | — | 合同表 / 伪代码 / 和 execjs 整包的差别 |
 | 主文 | 2026-09-24 | [iv8 使用手册：Python 内嵌 V8 的浏览器补环境运行时](./web-reverse/iv8-python-v8-browser-env.md) | — | 收录说明 / 1. iv8 是什么、有什么作用 / 1.1 与传统方案的本质区别 / 1.2 核心 API（先记这几个） |
 | 主文 | 2026-09-19 | [京东案例：h5st 5.3 运行时、body 预哈希、JCAP 分链](./web-reverse/jd-h5st-runtime-case.md) | — | 三段运行时 / 案例：搜索 searchWare / 登录路径 / 和旧仓的差分 |
+| 主文 | 2026-08-26 | [京东 JCAP tp:30 变速曲线滑块：si → vt 纯协议参数链与曲线反查](./web-reverse/jd-jcap-tp30-curve-slider.md) | — | 收录说明 / 摘要 / 一、完整协议链过程： / 二、按照协议顺序解决每一个困难参数 |
 | 主文 | 多篇合集 | [零基础爬虫第一天 逆向笔记合集](./web-reverse/koohai-reverse-notes-compilation.md) | — | 收录说明 / 文章目录（17 篇） |
 | 主文 | 2026-08-30 | [快手案例：资料接口的 hxfalcon 装配](./web-reverse/kuaishou-landing-case.md) | — | 案例：GET /rest/v/profile/get / CP 与直播 / 成本判断在代码里的位置 / 证据边界 |
 | 主文 | 2026-08-18 | [领英案例：JSESSIONID 双写与页面 queryId](./web-reverse/linkedin-voyager-csrf-case.md) | — | 案例：资料卡 / 可复用点 / 证据边界 |
@@ -538,9 +539,11 @@
 | 主文 | 2026-09-23 | [方法论：纯算还是预言机，先写成本账](./web-reverse/purecalc-vs-oracle-cost.md) | — | 成本账怎么填 / 预言机也有验收 / 伪代码 / 账本里要写的一句 |
 | 主文 | 2026-09-23 | [方法论：请求面切开，失败按面翻译](./web-reverse/request-plane-failure-translation.md) | — | 画法 / 真实翻译 / 伪代码 / 同名不同面 |
 | 主文 | 2026-09-23 | [技巧：会话材料双写，并且绑源](./web-reverse/session-binding-double-write.md) | — | 双写对照 / 绑源的真实失误 / 不是双写的头 |
+| 主文 | 2026-09-05 | [拼图打乱重排型滑块纯协议：loc 重排、length+9 与错误码分流](./web-reverse/shuffled-jigsaw-slider-protocol.md) | — | 收录说明 / 缺口检测全面失败：它根本不是普通滑块 / length 坐标系 & 合成事件两道坎 / 真实 op 轨迹：四条全猜错 |
 | 主文 | 2026-08-30 | [平台签名落地方法：纯算、黑盒与 RPC 分流](./web-reverse/sign-landing-methods.md) | — | 落地四分法 / 产品切开，失败不要单归因 / 可复用方法 / 1. VMP 先钩宿主原语 |
 | 主文 | 2026-09-23 | [签完即线上：query、头序与 HTTP/2 Cookie](./web-reverse/signed-query-wire-contract.md) | — | 四条写回规则 / 案例：抖音两条编码函数不能混 / 案例：TikTok 与小红书 / 传输层单独验收 |
 | 主文 | 2026-08-18 | [淘宝 H5 案例：MTOP sign 与钉钉 LWP 分链](./web-reverse/taobao-h5-mtop-lwp-case.md) | — | 落地形态 / 案例：拿 IM token / 案例：私信是 LWP，不是再签一次 MTOP / 脏边界 |
+| 主文 | 2026-08-13 | [腾讯 TDC 滑块半纯算：jsvmp 插桩还原 XTEA 与动态 key 提取](./web-reverse/tencent-tdc-slider-xtea-purecalc.md) | — | 收录说明 / 插桩大法——妖魔鬼怪快离开 / 函数调用处 / 方法调用处 |
 | 主文 | 2026-09-23 | [方法论：薄封装、整包 execjs、纯算，三种完成度](./web-reverse/thin-wrapper-vs-purecalc.md) | — | 五档 / 判定流程 / 薄封装仍然有用的三件事 / 伪代码：完成度标签 |
 | 主文 | 2026-09-23 | [TikTok 旁路签名：frontierSign、ticket-guard、Shop BSID](./web-reverse/tiktok-frontier-ticket-shop-case.md) | — | 案例：frontierSign 是独立 Node 进程 / 案例：ticket-guard 只重算，不复放五头 / 案例：Shop BSID 是第三套 Node runner / 三条旁路对照 |
 | 主文 | 2026-09-23 | [TikTok Web 签名面：端点合同、两代 SDK、fail-closed](./web-reverse/tiktok-web-signing-planes.md) | — | 路由 / 案例：legacy Web 的 X-Bogus 是字面量 1 / 案例：Creator project 吃整段 query，并且要重算 ticket / 写回：API 不使用 signer 内部拼好的 URL |
