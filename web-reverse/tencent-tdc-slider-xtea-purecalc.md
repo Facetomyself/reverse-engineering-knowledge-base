@@ -23,6 +23,8 @@
 | AI 辅助 Web 逆向（JSVMP 是否拆 opcode） | [ai-assisted-web-reverse-compilation.md](./ai-assisted-web-reverse-compilation.md) |
 | 魔改哈希与 TEA 家族密码笔记 | [xfq-crypto-notes-compilation.md](../signature-algorithms/xfq-crypto-notes-compilation.md) |
 | 补环境浏览器对象面 | [browser-env-objects.md](./browser-env-objects.md) |
+| 無色逆向腾讯滑块 vmp 上篇（cap_union 三接口 / 补环境检测点） | [tencent-tdc-slider-vmp-part1-env-patch.md](./tencent-tdc-slider-vmp-part1-env-patch.md) |
+| 無色逆向腾讯滑块 vmp 下篇（CHAOS_VM 插桩 / 魔改 TEA collect / pow） | [tencent-tdc-slider-vmp-part2-tea-collect-pow.md](./tencent-tdc-slider-vmp-part2-tea-collect-pow.md) |
 
 > 断断续续弄了一个月，但是感觉之前写的文章太烂了，没好意思接着写，重新开一篇，希望大家多多关注多多点赞，让作者开心一下（乐）。
 

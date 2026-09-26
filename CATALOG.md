@@ -16,9 +16,9 @@
 | `packing-bypass` | 2 | 0 | 2 |
 | `protocols` | 3 | 0 | 3 |
 | `signature-algorithms` | 7 | 19 | 26 |
-| `web-reverse` | 55 | 126 | 181 |
+| `web-reverse` | 61 | 126 | 187 |
 
-文章总数：622。
+文章总数：628。
 
 ## 逐篇目录
 
@@ -515,6 +515,7 @@
 | 主文 | 2026-09-23 | [阿里云验证码 V3 登录滑块：InitCaptchaV3 / Log2 / VerifyCaptchaV3 参数链](./web-reverse/aliyun-captcha-v3-login-slider.md) | — | 收录说明 |
 | 主文 | 多篇合集 | [反爬破解社 Web 逆向实战合集](./web-reverse/anti-crawler-web-reverse-compilation.md) | — | 收录说明 / 文章目录（16 篇） |
 | 主文 | 2026-08-18 | [汽车之家案例：Cookie 加 JSONP，没有本地 sign](./web-reverse/autohome-cookie-boundary-case.md) | — | 案例：帖子详情 / 失败怎么读 / 证据边界 |
+| 主文 | 2026-01-21 | [亚马逊 AWS WAF aws-waf-token 纯算：checksum CRC32、Present AES-GCM 与 solution SHA256 PoW](./web-reverse/aws-waf-token-challenge-purecalc.md) | — | 收录说明 / 前言 / AWS WAF令牌简介 / 逆向目标 |
 | 主文 | 2026-08-18 | [百家号案例：页面 runtime 供 uk，Cookie 供 Tenger-Mhor](./web-reverse/baijiahao-runtime-header-case.md) | — | 案例：作者页与列表 / 可复用点 / 证据边界 |
 | 主文 | 多篇合集 | [本如笔记 Web 逆向与协议恢复合集](./web-reverse/benru-web-reverse-compilation.md) | — | 收录说明 / 文章目录（12 篇） |
 | 主文 | 2026-09-13 | [B 站案例：WBI 原序写回、极验本地载荷、correspondPath](./web-reverse/bilibili-wbi-geetest-case.md) | — | 案例：WBI / 案例：极验 v3 的边界 / 案例：correspondPath 是续期入场券 / 传输 |
@@ -529,6 +530,7 @@
 | 主文 | 2026-09-23 | [技巧：端别常量表，按抓包填，不为统一抹平](./web-reverse/endpoint-constant-table.md) | — | 怎么建表 / 真实流程 / 同名常量的三层 / 过期 |
 | 主文 | 2026-09-23 | [方法论：缺字段失败，成功口径分开写](./web-reverse/fail-closed-completion-gate.md) | — | 失败要发生在发送之前 / 三层完成门 / 伪代码：验收记录 |
 | 主文 | 2026-08-18 | [飞书案例：HTTP CSRF 与 frontier WebSocket 分链](./web-reverse/feishu-csrf-frontier-case.md) | — | 案例：CSRF 再取用户 / 案例：frontier 长连 / 落地判断 / 证据边界 |
+| 主文 | 2026-01-14 | [hCaptcha 无感验证补环境：hsw.js / WASM 出 n 值的入口定位与环境检测点](./web-reverse/hcaptcha-invisible-hsw-env-patch.md) | — | 收录说明 / 声明 / 前言 / hCaptcha简介 |
 | 主文 | 2026-08-18 | [Instagram 案例：HTML 抽 app_id 与 doc_id](./web-reverse/instagram-doc-id-case.md) | — | 案例：从用户名到时间线 / csrf 辅助函数没有接上主路径 / 伪代码 / 证据边界 |
 | 主文 | 2026-09-23 | [技巧：隔离 Node 运行器的进程合同](./web-reverse/isolated-node-runner-contract.md) | — | 合同表 / 伪代码 / 和 execjs 整包的差别 |
 | 主文 | 2026-09-24 | [iv8 使用手册：Python 内嵌 V8 的浏览器补环境运行时](./web-reverse/iv8-python-v8-browser-env.md) | — | 收录说明 / 1. iv8 是什么、有什么作用 / 1.1 与传统方案的本质区别 / 1.2 核心 API（先记这几个） |
@@ -546,13 +548,17 @@
 | 主文 | 2026-08-30 | [平台签名落地方法：纯算、黑盒与 RPC 分流](./web-reverse/sign-landing-methods.md) | — | 落地四分法 / 产品切开，失败不要单归因 / 可复用方法 / 1. VMP 先钩宿主原语 |
 | 主文 | 2026-09-23 | [签完即线上：query、头序与 HTTP/2 Cookie](./web-reverse/signed-query-wire-contract.md) | — | 四条写回规则 / 案例：抖音两条编码函数不能混 / 案例：TikTok 与小红书 / 传输层单独验收 |
 | 主文 | 2026-08-18 | [淘宝 H5 案例：MTOP sign 与钉钉 LWP 分链](./web-reverse/taobao-h5-mtop-lwp-case.md) | — | 落地形态 / 案例：拿 IM token / 案例：私信是 LWP，不是再签一次 MTOP / 脏边界 |
+| 主文 | 2025-12-23 | [腾讯滑块 TDC vmp（上）：cap_union 三接口与 collect 补环境检测点](./web-reverse/tencent-tdc-slider-vmp-part1-env-patch.md) | — | 收录说明 / 声明 / 前言 / 目标网站 |
+| 主文 | 2025-12-24 | [腾讯滑块 TDC vmp（下）：TENCENT_CHAOS_VM 插桩还原魔改 TEA collect 与 pow 工作量证明](./web-reverse/tencent-tdc-slider-vmp-part2-tea-collect-pow.md) | — | 收录说明 / 声明 / 前言 / VMP结构剖析 |
 | 主文 | 2026-08-13 | [腾讯 TDC 滑块半纯算：jsvmp 插桩还原 XTEA 与动态 key 提取](./web-reverse/tencent-tdc-slider-xtea-purecalc.md) | — | 收录说明 / 插桩大法——妖魔鬼怪快离开 / 函数调用处 / 方法调用处 |
 | 主文 | 2026-09-23 | [方法论：薄封装、整包 execjs、纯算，三种完成度](./web-reverse/thin-wrapper-vs-purecalc.md) | — | 五档 / 判定流程 / 薄封装仍然有用的三件事 / 伪代码：完成度标签 |
 | 主文 | 2026-09-23 | [TikTok 旁路签名：frontierSign、ticket-guard、Shop BSID](./web-reverse/tiktok-frontier-ticket-shop-case.md) | — | 案例：frontierSign 是独立 Node 进程 / 案例：ticket-guard 只重算，不复放五头 / 案例：Shop BSID 是第三套 Node runner / 三条旁路对照 |
 | 主文 | 2026-09-23 | [TikTok Web 签名面：端点合同、两代 SDK、fail-closed](./web-reverse/tiktok-web-signing-planes.md) | — | 路由 / 案例：legacy Web 的 X-Bogus 是字面量 1 / 案例：Creator project 吃整段 query，并且要重算 ticket / 写回：API 不使用 signer 内部拼好的 URL |
+| 主文 | 2025-10-31 | [TikTok Web 评论接口 X-Bogus / X-Gnarly / msToken：webmssdk.js 补环境导出与 strData 定位](./web-reverse/tiktok-xbogus-xgnarly-mstoken-env-patch.md) | — | 收录说明 / 声明 / 前言 / 逆向目标 |
 | 主文 | 2026-08-18 | [头条案例：a_bogus 与 _signature 是两包 execjs](./web-reverse/toutiao-abogus-execjs-case.md) | — | 两个入口 / 案例：信息流 / 和抖音纯算的边界 / 证据边界 |
 | 主文 | 2026-08-24 | [未上架 MV3 扩展的本机更新器架构](./web-reverse/unpacked-mv3-native-updater.md) | — | 这篇解决什么问题 / 五层模型 / 渠道面：版本清单与 zip / 本机更新面：绿色 EXE |
 | 主文 | 2026-08-16 | [方法论：VMP 先钩宿主原语，再决定要不要纯算](./web-reverse/vmp-host-primitive-to-purecalc.md) | — | 何时用 / 真实流程：抖音 webSign / 探针表 / 完成门 |
+| 主文 | 2026-03-26 | [招投标公告电话字段 WASM 解密：抠 JS 同步加载 WASM 与一句话让 AI 还原 SM2 + SM4 链](./web-reverse/wasm-decrypt-ai-one-prompt-recovery.md) | — | 收录说明 / 声明 / 前言 / WASM简介 |
 | 主文 | 2026-08-18 | [公众号后台案例：token 透传，不是 mmtls](./web-reverse/wechat-oa-mp-cgi-case.md) | — | 案例：搜号再拉发表列表 / 文章 HTML 是另一面 / 证据边界 |
 | 主文 | 2026-08-18 | [微博案例：PC、移动、创作者上传三条面](./web-reverse/weibo-request-planes-case.md) | — | 三条面 / 案例：图片/视频上传参数 / 落地判断 / 证据边界 |
 | 主文 | 2026-08-18 | [X 案例：Bearer、ct0 双写与写死的 GraphQL features](./web-reverse/x-twitter-graphql-case.md) | — | 案例：搜索 / 证据边界 |
