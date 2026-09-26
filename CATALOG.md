@@ -16,9 +16,9 @@
 | `packing-bypass` | 2 | 0 | 2 |
 | `protocols` | 3 | 0 | 3 |
 | `signature-algorithms` | 7 | 19 | 26 |
-| `web-reverse` | 47 | 126 | 173 |
+| `web-reverse` | 48 | 126 | 174 |
 
-文章总数：614。
+文章总数：615。
 
 ## 逐篇目录
 
@@ -527,6 +527,7 @@
 | 主文 | 2026-08-18 | [飞书案例：HTTP CSRF 与 frontier WebSocket 分链](./web-reverse/feishu-csrf-frontier-case.md) | — | 案例：CSRF 再取用户 / 案例：frontier 长连 / 落地判断 / 证据边界 |
 | 主文 | 2026-08-18 | [Instagram 案例：HTML 抽 app_id 与 doc_id](./web-reverse/instagram-doc-id-case.md) | — | 案例：从用户名到时间线 / csrf 辅助函数没有接上主路径 / 伪代码 / 证据边界 |
 | 主文 | 2026-09-23 | [技巧：隔离 Node 运行器的进程合同](./web-reverse/isolated-node-runner-contract.md) | — | 合同表 / 伪代码 / 和 execjs 整包的差别 |
+| 主文 | 2026-09-24 | [iv8 使用手册：Python 内嵌 V8 的浏览器补环境运行时](./web-reverse/iv8-python-v8-browser-env.md) | — | 收录说明 / 1. iv8 是什么、有什么作用 / 1.1 与传统方案的本质区别 / 1.2 核心 API（先记这几个） |
 | 主文 | 2026-09-19 | [京东案例：h5st 5.3 运行时、body 预哈希、JCAP 分链](./web-reverse/jd-h5st-runtime-case.md) | — | 三段运行时 / 案例：搜索 searchWare / 登录路径 / 和旧仓的差分 |
 | 主文 | 多篇合集 | [零基础爬虫第一天 逆向笔记合集](./web-reverse/koohai-reverse-notes-compilation.md) | — | 收录说明 / 文章目录（17 篇） |
 | 主文 | 2026-08-30 | [快手案例：资料接口的 hxfalcon 装配](./web-reverse/kuaishou-landing-case.md) | — | 案例：GET /rest/v/profile/get / CP 与直播 / 成本判断在代码里的位置 / 证据边界 |

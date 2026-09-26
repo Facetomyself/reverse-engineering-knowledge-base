@@ -149,6 +149,7 @@
 | [browser-env-objects.md](./web-reverse/browser-env-objects.md) | — (JS终结计划课程方法论) | `补环境`, `DOM/BOM`, `浏览器对象`, `WebAPI`, `指纹`, `Worker`, `MessagePort`, `Canvas`, `WebGL`, `navigator`, `crypto` | Web 补环境浏览器对象参考：20 个 DOM/BOM/Web API 对象的检测面、常见坑与观察优先级，五维度补环境纪律 |
 | [unpacked-mv3-native-updater.md](./web-reverse/unpacked-mv3-native-updater.md) | mouchenjie-ai-plugin | `MV3`, `sideload`, `自定义协议`, `PyInstaller 更新器`, `加载已解压扩展`, `渠道 zip` | 未上架 Chrome MV3 的本机更新器架构：渠道清单 + 对象存储 zip、HKCU 协议唤醒、本机进度口和打包合同，可复用到自有插件 sideload 分发 |
 | [datadome-env-patch.md](./web-reverse/datadome-env-patch.md) | — (公众号归档) | `DataDome`, `plv3`, `payload`, `iframe Realm`, `OffscreenCanvas`, `jsdom`, `VM 分叉` | DataDome 无感 interstitial 补环境：jsdom+vm 跑原脚本出参，按 Realm 生命周期、Worker 异步链和 VM 第一处分叉对齐；成功口径是 redirect 后新 Session 业务 200 |
+| [iv8-python-v8-browser-env.md](./web-reverse/iv8-python-v8-browser-env.md) | — (公众号归档) | `iv8`, `V8`, `补环境`, `page.load`, `eventLoop`, `logical time`, `wrapNative`, `isTrusted`, `DevTools`, `netLog`, `environment`, `Isolate`, `WebAssembly` | 爬虫逆向技术栈「iv8库使用手册」：Python 内嵌 V8 + C++ 浏览器壳单进程补环境；page.load 灌 html/baseURL/resources、虚拟时间推进、vdebugger/watch_apis 找缺失 API、wrapNative 与 isTrusted 事件、离线网络与多 Isolate；WASM streaming 不可用 |
 | [ai-assisted-web-reverse-compilation.md](./web-reverse/ai-assisted-web-reverse-compilation.md) | — (公众号归档) | `h5st`, `a_bogus`, `x-s`, `x-s-common`, `JSVMP`, `RSA`, `fangdir`, `X-Gnarly`, `Shein`, `Dewu`, `md5__1038` | AI辅助逆向手记 20 篇：京东 h5st v5.3、瑞数 fangdir、抖音 a_bogus、小红书 xs、Shein/得物签名与 JSVMP/RSA 方法论，目标已脱敏 |
 | [koohai-reverse-notes-compilation.md](./web-reverse/koohai-reverse-notes-compilation.md) | — (公众号归档) | `KhBox`, `补环境`, `Illegal invocation`, `Canvas`, `jsdom`, `JSVMP`, `FART`, `WebView`, `IDA MD5` | 零基础爬虫第一天 17 篇：KhBox 补环境与 Node 编译、BrowserLeaks、AST/JSVMP，以及 FART/WebView/IDA 识别 MD5 |
 | [aigei-safe-search-ticket-chain.md](./web-reverse/aigei-safe-search-ticket-chain.md) | aigei | `safe-search 票据链`, `icon.png 藏票据`, `搜索权限门`, `AES-ECB cnkierjj`, `N@32`, `响应体数据流`, `request-parameter-lineage`, `companion_response_audit`, `403 权限不足`, `vcode-normal` | 爱给网筛选列表翻页 403 根因：带 term 列表每页须走 icon.png 签发票据 → /f/d → 列表的搜索授权链，票据藏响应体 base64 尾部且按页绑定；边界已对齐仍非 200 时先做伴随请求响应体数据流审计 |
@@ -268,6 +269,7 @@
 - **CloakBrowser humanize 鼠标轨迹 / 包装层贝塞尔**: [cloakbrowser-humanize](./anti-detection/cloakbrowser-humanize-trajectory.md)
 - **响应体藏数据 / Content-Type 语义不符 / 搜索权限门 403**: [aigei-safe-search](./web-reverse/aigei-safe-search-ticket-chain.md), [products](./web-reverse/products.md), [google-recaptcha-v3](./web-reverse/products/google-recaptcha-v3.md), [pure-protocol-sdk](./mobile-app-reverse/pure-protocol-sdk-reconstruction.md)
 - **安全产品命中识别（DataDome/Akamai/Kasada/瑞数/reCAPTCHA/Arkose/同盾/京东/抖音/易盾/小红书/快手/MTOP 等）**: [products](./web-reverse/products.md)
+- **iv8 Python 内嵌 V8 补环境（page.load / 虚拟时间 / wrapNative / isTrusted 事件 / environment 画像）**: [iv8-python-v8](./web-reverse/iv8-python-v8-browser-env.md), [env-objects](./web-reverse/browser-env-objects.md)
 - **DataDome 无感 interstitial 补环境（payload/plv3 / iframe Realm / VM 分叉）**: [datadome-env-patch](./web-reverse/datadome-env-patch.md)
 - **瑞数 fangdir P-cookie / LCG / Huffman / CRC32**: [ai-assisted-web](./web-reverse/ai-assisted-web-reverse-compilation.md)
 - **KhBox / Illegal invocation / Canvas 指纹补环境**: [koohai-notes](./web-reverse/koohai-reverse-notes-compilation.md)
@@ -313,6 +315,7 @@
 - **抖音 Web 请求面 / webSign / 会话材料**: [douyin-planes](./web-reverse/douyin-web-request-planes.md), [douyin-secsdk](./web-reverse/douyin-secsdk-websign-case.md), [douyin-session](./web-reverse/douyin-session-materials-case.md), [products](./web-reverse/products.md)
 - **微信公众号：ai辅助逆向手记**: [ai-assisted-web](./web-reverse/ai-assisted-web-reverse-compilation.md)
 - **微信公众号：零基础爬虫第一天**: [koohai-notes](./web-reverse/koohai-reverse-notes-compilation.md)
+- **微信公众号：爬虫逆向技术栈 / iv8**: [iv8-python-v8](./web-reverse/iv8-python-v8-browser-env.md)
 - **微信公众号：Softard（Wossoneri）**: [softard-android](./mobile-app-reverse/softard-android-reverse-compilation.md), [uiautomator-consent](./mobile-app-reverse/uiautomator-privacy-consent-tap.md)
 - **航班管家 / hbgjbangbang LAES**: [hangban-laes](./signature-algorithms/hangban-laes-encrypt.md)
 - **瑞数 RS6**: [products](./web-reverse/products.md)
@@ -387,6 +390,7 @@
 - **trace 数据库 + MCP 证据回溯**: [ai-vmp-trace](./native-analysis/ai-assisted-vmp-trace-recovery.md)
 - **Chromium/Firefox/WebKit 内核定制**: [ruyi-browser](./anti-detection/ruyi-browser-anti-detection-compilation.md)
 - **AST/JS 混淆/Node 补环境/Webpack RPC**: [benru-web](./web-reverse/benru-web-reverse-compilation.md), [yuanrenxue-web](./web-reverse/yuanrenxue-web-reverse-compilation.md), [koohai-notes](./web-reverse/koohai-reverse-notes-compilation.md)
+- **iv8 单进程补环境运行时（DevTools inspector / vdebugger / watch_apis 缺失 API / 多 Isolate + GIL / 离线 add_resource）**: [iv8-python-v8](./web-reverse/iv8-python-v8-browser-env.md)
 - **jsdom + vm 对齐浏览器 VM 第一处分叉**: [datadome-env-patch](./web-reverse/datadome-env-patch.md)
 - **h5st / a_bogus / x-s / x-s-common / X-Gnarly 签名定位**: [ai-assisted-web](./web-reverse/ai-assisted-web-reverse-compilation.md), [products](./web-reverse/products.md)
 - **FART 源码改进 / WebView 调试 / IDA 识别 MD5**: [koohai-notes](./web-reverse/koohai-reverse-notes-compilation.md), [jiagu-bypass](./packing-bypass/jiagu-bypass-analysis.md)
