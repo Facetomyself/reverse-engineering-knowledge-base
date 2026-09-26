@@ -8,7 +8,7 @@
 
 | 分类 | canonical | 子文章 | 合计 |
 |------|----------:|-------:|-----:|
-| `anti-detection` | 11 | 169 | 180 |
+| `anti-detection` | 12 | 169 | 181 |
 | `collection-engineering` | 5 | 2 | 7 |
 | `drm-content-acquisition` | 1 | 0 | 1 |
 | `mobile-app-reverse` | 19 | 186 | 205 |
@@ -18,7 +18,7 @@
 | `signature-algorithms` | 7 | 19 | 26 |
 | `web-reverse` | 47 | 126 | 173 |
 
-文章总数：613。
+文章总数：614。
 
 ## 逐篇目录
 
@@ -36,6 +36,7 @@
 | 主文 | 多篇合集 | [如意私塾浏览器指纹与反检测合集](./anti-detection/ruyi-browser-anti-detection-compilation.md) | — | 收录说明 / 文章目录（97 篇） |
 | 主文 | 2026-09 | [数盟 libdu.so 指纹对照表（知乎 11.4.0）](./anti-detection/shuzilm-libdu-fingerprint.md) | — | 怎么用这篇 / 1. 签发 / 2. 口径：258 vs 366 / 3. 两张枚举 |
 | 主文 | 多篇合集 | [逆向学习交流设备指纹与风控合集](./anti-detection/xfq-device-fp-compilation.md) | — | 收录说明 / 文章目录（8 篇） |
+| 主文 | 2026-09-24 | [闲鱼 EEID 风控体系完全揭秘](./anti-detection/xianyu-eeid-risk-control.md) | — | 收录说明 / 📋 文档说明 / 一、EEID 风控体系概述 / 1.1 什么是 EEID？ |
 | 主文 | 多篇合集 | [猿人学请求一致性与反检测合集](./anti-detection/yuanrenxue-anti-detection-compilation.md) | — | 收录说明 / 文章目录（8 篇） |
 | 子文 | 2026-04-08 | [浏览器指纹的深度伪装与检测：从UserAgent到WebGL的全面攻防](./anti-detection/anti-crawler-risk-control-compilation/anti-crawler-risk-20260408-01.md) | [反爬破解社风控与反检测合集](./anti-detection/anti-crawler-risk-control-compilation.md) | 一、什么是浏览器指纹？为何它难以对抗？ / 二、指纹的7个层级：从易到难 / 层级1：基础信息 - 最容易伪装 / 层级2：API特性检测 - 需要逻辑一致 |
 | 子文 | 2026-04-15 | [基于深度学习的行为指纹识别对抗](./anti-detection/anti-crawler-risk-control-compilation/anti-crawler-risk-20260415-01.md) | [反爬破解社风控与反检测合集](./anti-detection/anti-crawler-risk-control-compilation.md) | 一、为何传统Selenium/Puppeteer越来越不行？理解防御方的AI杀器 / 二、攻击蓝图：从数据采集到模型训练的完整武器库 / 阶段一：高保真人类行为数据采集 / 阶段二：训练“行为克隆”模型（制造我们的AI替身） |

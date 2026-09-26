@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "article_count": 613,
+  "article_count": 614,
   "category_counts": {
-    "anti-detection": 180,
+    "anti-detection": 181,
     "collection-engineering": 7,
     "drm-content-acquisition": 1,
     "mobile-app-reverse": 205,
@@ -57,9 +57,9 @@
         "vs v2 (stealth 初版)",
         "未完全解决的残留风险"
       ],
-      "bytes": 12167,
+      "bytes": 11988,
       "lines": 189,
-      "content_sha256": "cb21e96013d3f24cb688e3a81725957725dd9cc62ec3392b6691228d62e0416a"
+      "content_sha256": "00124e02c473f679bf568be4666859b9d755d70ea3c9c7c7ea2f83a8f751ad24"
     },
     {
       "path": "anti-detection/android-ace-deviceuniqueid.md",
@@ -100,9 +100,9 @@
         "参考",
         "速查"
       ],
-      "bytes": 13130,
+      "bytes": 12897,
       "lines": 233,
-      "content_sha256": "ecd95047f3f6d3726f00514e961c2cce357a03cbac095e0eccef4385a19988db"
+      "content_sha256": "56ce3af2354dd60daad9b0f463ed8fce6c8b427678de45b422fd4a66aa4d9b80"
     },
     {
       "path": "anti-detection/anti-crawler-risk-control-compilation.md",
@@ -127,9 +127,9 @@
         "收录说明",
         "文章目录（10 篇）"
       ],
-      "bytes": 2254,
+      "bytes": 2227,
       "lines": 27,
-      "content_sha256": "831754a1c2079eb65551a0514fd9fa2c909ddb8868c2242552499a2341ae3d03"
+      "content_sha256": "d48b9edf493a193aa2e5ab8c7310348b168d7f17dcbad6a3596d602685bc3e9b"
     },
     {
       "path": "anti-detection/anti-crawler-risk-control-compilation/anti-crawler-risk-20260408-01.md",
@@ -159,9 +159,9 @@
         "总结",
         "码字不易，如果真的有帮助可以顺手点个赞，你们的喜欢就是我更新的动力！"
       ],
-      "bytes": 31846,
+      "bytes": 31531,
       "lines": 315,
-      "content_sha256": "19faf7f6984ea336e869c7c606e359bc3a0f23adc0ba7974dff0b8947c4e0455"
+      "content_sha256": "a3eedfb01e453e9f23799a6f12d238427b4297c9f325dbf8b50e08af50072617"
     },
     {
       "path": "anti-detection/anti-crawler-risk-control-compilation/anti-crawler-risk-20260415-01.md",
@@ -190,9 +190,9 @@
         "八、未来趋势预测",
         "九、总结"
       ],
-      "bytes": 66533,
+      "bytes": 66114,
       "lines": 419,
-      "content_sha256": "f3f433da4da00fee94a1c343751e4bf4bb0c955283f7140a30a7eccd2531819f"
+      "content_sha256": "b41d55ff23a63d9bbfec24c9ce70a283c1615b4243953b00a0f95a9324af628a"
     },
     {
       "path": "anti-detection/anti-crawler-risk-control-compilation/anti-crawler-risk-20260418-01.md",
@@ -215,9 +215,9 @@
         "七、总结与最佳实践",
         "码字不易，如果真的有帮助可以顺手点个赞，你们的喜欢就是我更新的动力！"
       ],
-      "bytes": 69589,
+      "bytes": 69340,
       "lines": 249,
-      "content_sha256": "7b46f0a204c9b736af0725a542cdce9455e4e6374c7c100542eb98a490c193be"
+      "content_sha256": "fc96d747f86d286a90769332371179563cc95dda1a1e89e2186bce631be4cfdc"
     },
     {
       "path": "anti-detection/anti-crawler-risk-control-compilation/anti-crawler-risk-20260424-01.md",
@@ -251,9 +251,9 @@
         "5.3 推荐的第三方工具",
         "码字不易，如果真的有帮助可以顺手点个赞，你们的喜欢就是我更新的动力！"
       ],
-      "bytes": 35340,
+      "bytes": 35120,
       "lines": 220,
-      "content_sha256": "702fc374a18c386be90d6fa9484e2c63a14c4441504c03202533acb849eaa0ff"
+      "content_sha256": "019bfeeb57c24dbcc4bbb905eba476750637a49ab2ffb95caba481ca32707fca"
     },
     {
       "path": "anti-detection/anti-crawler-risk-control-compilation/anti-crawler-risk-20260428-01.md",
@@ -291,9 +291,9 @@
         "7.2 最佳实践建议",
         "码字不易，如果真的有帮助可以顺手点个赞，你们的喜欢就是我更新的动力！"
       ],
-      "bytes": 57562,
+      "bytes": 57313,
       "lines": 249,
-      "content_sha256": "8052bb858027cfe2d097e0fcf12d68fb1fa47cf6cb5ea1e457dd2a58fb1cebd5"
+      "content_sha256": "c703b68738fb54a86200c8a90531a6acd250b4ff96a97e02206612be8058a442"
     },
     {
       "path": "anti-detection/anti-crawler-risk-control-compilation/anti-crawler-risk-20260520-01.md",
@@ -337,9 +337,9 @@
         "5\\. 多模态融合型",
         "码字不易，如果真的有帮助可以顺手点个赞，你们的喜欢就是我更新的动力！"
       ],
-      "bytes": 60065,
+      "bytes": 59790,
       "lines": 275,
-      "content_sha256": "fe59e93f64b93719b908cb4b90b561900f20aee69c5a36d9b43f562ec5575a1a"
+      "content_sha256": "44f1bb9cb787276b5a52caa24951bf37e774987e98714821b704a9f154f8c724"
     },
     {
       "path": "anti-detection/anti-crawler-risk-control-compilation/anti-crawler-risk-20260630-01.md",
@@ -374,9 +374,9 @@
         "6.3 自建方案",
         "结语"
       ],
-      "bytes": 29765,
+      "bytes": 29587,
       "lines": 178,
-      "content_sha256": "63ed23979a21704771d99da2f027bcae26f788578f42282837990fd120746971"
+      "content_sha256": "d87157dc564af5b7ade4196d4240df757a57fcda20f30c4d6c97f5660c837416"
     },
     {
       "path": "anti-detection/anti-crawler-risk-control-compilation/anti-crawler-risk-20260701-01.md",
@@ -408,9 +408,9 @@
         "五、实战检查清单",
         "六、方案选型速查"
       ],
-      "bytes": 14148,
+      "bytes": 13862,
       "lines": 286,
-      "content_sha256": "f0734e94a57ecd605cf13bf392b23ed5886edcbe5af6545bcc0e2dc4d0fd0ce0"
+      "content_sha256": "2df49b4f2cee6c284e04c4e5474fe53b3796cb25fa67dec2a8eb06c9950a7b24"
     },
     {
       "path": "anti-detection/anti-crawler-risk-control-compilation/anti-crawler-risk-20260703-01.md",
@@ -443,9 +443,9 @@
         "八、风控行为检测的常见陷阱与对策",
         "九、注意事项"
       ],
-      "bytes": 17967,
+      "bytes": 17788,
       "lines": 179,
-      "content_sha256": "b1a4561b4040c40920d8809ec63d771395a582917c1ee9198710cf6f4b0d6582"
+      "content_sha256": "71f794ffa522cf6db451c0fedf4eaf477f8de389b4aa8d7cc69162677fc0eca2"
     },
     {
       "path": "anti-detection/anti-crawler-risk-control-compilation/anti-crawler-risk-20260704-01.md",
@@ -470,9 +470,9 @@
         "五、合规声明",
         "六、总结"
       ],
-      "bytes": 20345,
+      "bytes": 20240,
       "lines": 105,
-      "content_sha256": "d53b54e1e8c14750d3ff598ad8a8b68413eca85c73a3030e286d9c8899775555"
+      "content_sha256": "235246ed4dcbfc624d9e618a87e9ca8d2b3e67597349b7f96956ea050346339b"
     },
     {
       "path": "anti-detection/benru-anti-detection-compilation.md",
@@ -770,9 +770,9 @@
         "相关资源",
         "关键词"
       ],
-      "bytes": 10760,
+      "bytes": 10610,
       "lines": 150,
-      "content_sha256": "8e750211241b7b489c2cfa9b776a584c37845d9713665c7d4c6f74f71798c704"
+      "content_sha256": "c43a761b6bbfc011e452ad2f49566358f5851223e14842881af4743fd1ed03c7"
     },
     {
       "path": "anti-detection/chromium-fingerprint-compilation/01-基础/01-chromium-compilation-guide.md",
@@ -795,9 +795,9 @@
         "七、下载源码",
         "八、构建与编译"
       ],
-      "bytes": 3480,
+      "bytes": 3371,
       "lines": 109,
-      "content_sha256": "d8eef4c9884ff53d31276adab2fd0202acb0d141097b595b53106f80a326b80e"
+      "content_sha256": "8744ba6b5b26a17906e0e0350d9608e50dd6fb94a5a1174bb0829d9a5c951769"
     },
     {
       "path": "anti-detection/chromium-fingerprint-compilation/01-基础/02-canvas-fingerprint-randomization.md",
@@ -811,9 +811,9 @@
       "summary": "getRandomIntForFoo4Modern()函数是在0-2之间取一个随机数 系统每次调用fillText时加上随机偏移，偏移不宜太大，会导致图形混乱。",
       "keywords": [],
       "headings": [],
-      "bytes": 6332,
+      "bytes": 6150,
       "lines": 182,
-      "content_sha256": "72bbc57850b3d581cc3edaf1237b199e55feca1c3e6e1a927bcd205a3baa5923"
+      "content_sha256": "6ff884a45fdf0428aa661236ee686abe7fd9710b23d0f898bcb4402c6d9f2a5d"
     },
     {
       "path": "anti-detection/chromium-fingerprint-compilation/01-基础/03-webgl-fingerprint-randomization.md",
@@ -827,9 +827,9 @@
       "summary": "可以看到，获取webGL指纹的关键函数就是getSupportedExtensions,返回当前WebGL上下文对象支持的所有扩展名称的列表。 我们将返回列表打乱随机，js收集的指纹信息hash自然每次都不一样啦。",
       "keywords": [],
       "headings": [],
-      "bytes": 4969,
+      "bytes": 4822,
       "lines": 147,
-      "content_sha256": "3574b8c12e707af41f89aa152d7564da5701da5ceef44afb20e7f9d812b7947d"
+      "content_sha256": "c61adeaaf962d79a91bc2cb6dbe17645580afd5c0ac72a8b2c50cc10eaf0bfa1"
     },
     {
       "path": "anti-detection/chromium-fingerprint-compilation/01-基础/04-fonts-fingerprint-randomization.md",
@@ -849,9 +849,9 @@
         "四、编译随机fonts指纹",
         "五、太low了？"
       ],
-      "bytes": 8031,
+      "bytes": 7824,
       "lines": 207,
-      "content_sha256": "3fe51860b73953d27b32bd22af9a983ba9311f0c7b90496caa857cc2b47b2950"
+      "content_sha256": "98daf77f038ed85861579233fbc6c76f2c22812df57fa31402c51c2d94c33533"
     },
     {
       "path": "anti-detection/chromium-fingerprint-compilation/01-基础/05-webrtc-ip-randomization.md",
@@ -869,9 +869,9 @@
         "二、webRTC指纹原理",
         "三、通过webRTC获取自己的局域网ip"
       ],
-      "bytes": 4203,
+      "bytes": 4086,
       "lines": 117,
-      "content_sha256": "d8613204c6870a079fbaf9663892f6202c6b7c433c7994af72613f0cd430bbbb"
+      "content_sha256": "a700ac4d9427821988492e19092aa81bcdd376fe57625f83bd9fd59a3d2e371e"
     },
     {
       "path": "anti-detection/chromium-fingerprint-compilation/01-基础/06-audio-fingerprint-randomization.md",
@@ -890,9 +890,9 @@
         "三、编译随机audio指纹",
         "四、在线指纹验证网站："
       ],
-      "bytes": 4495,
+      "bytes": 4371,
       "lines": 124,
-      "content_sha256": "e9267c8b8d627fb77081e1d55f0ad5e46e78463188b93f0c138c966e65313d85"
+      "content_sha256": "792067f53fa79520fd31f4d54fca49ee30c6523ce1d4060f03b3e0cc0c155ef9"
     },
     {
       "path": "anti-detection/chromium-fingerprint-compilation/01-基础/07-plugins-fingerprint-randomization.md",
@@ -911,9 +911,9 @@
         "三、chromium编译-随机plugins指纹",
         "四、在线指纹验证网站："
       ],
-      "bytes": 3858,
+      "bytes": 3739,
       "lines": 119,
-      "content_sha256": "5c141942bfe5625bd2f5f1714b21fc7c6a9544ea51873c2d8b3d8d73bcbd25cf"
+      "content_sha256": "ed7e67518a9d4eec8c4b84372f2a365387578616981df6924ad152980fc4a9b7"
     },
     {
       "path": "anti-detection/chromium-fingerprint-compilation/01-基础/08-tls-ja3-fingerprint-randomization.md",
@@ -931,9 +931,9 @@
         "二、如何在线获取自己的tls指纹",
         "三、chromium编译-随机tls指纹"
       ],
-      "bytes": 3698,
+      "bytes": 3603,
       "lines": 95,
-      "content_sha256": "33bc1ff4ead67b36d68697a8a0fae273bfc821d75cc05e3b600cb89ff0a72d60"
+      "content_sha256": "2040c2335a1af801117b9251d23478adc79d3eecbf80d77780430ba1cd6593ab"
     },
     {
       "path": "anti-detection/chromium-fingerprint-compilation/01-基础/09-headless-detection-bypass.md",
@@ -952,9 +952,9 @@
         "三、修改Notification.permission",
         "四、修改user-agent"
       ],
-      "bytes": 3614,
+      "bytes": 3486,
       "lines": 128,
-      "content_sha256": "24d754c33deaa2864aeffced170b6d454c811341af8914e06bf481aefd0f386b"
+      "content_sha256": "2485c699d717868d4ef2e4a423218991a9c081980af780678c6c3510f07394e3"
     },
     {
       "path": "anti-detection/chromium-fingerprint-compilation/01-基础/10-disable-webrtc.md",
@@ -968,9 +968,9 @@
       "summary": "原理就是将webrtc的正常运行逻辑强行打断，无法正确返回。",
       "keywords": [],
       "headings": [],
-      "bytes": 2095,
+      "bytes": 2026,
       "lines": 69,
-      "content_sha256": "269b75081ac45a3db64976862517a7ae054f0a7a3b75f55bc61bbcb716d1c740"
+      "content_sha256": "382d86687cf8945918066acfc54137d2a342d434e2fb2d9220483b494244084e"
     },
     {
       "path": "anti-detection/chromium-fingerprint-compilation/01-基础/11-canvas-fingerprint-v2.md",
@@ -984,9 +984,9 @@
       "summary": "所以这里巧妙的运用了rand()，同一时间点生成的随机数是相同的，完美绕过。",
       "keywords": [],
       "headings": [],
-      "bytes": 7815,
+      "bytes": 7576,
       "lines": 239,
-      "content_sha256": "4f8000b17eb343469c2c6b7a9cf5f9c0836ffff547be937dbea3cd6d89e1b5c8"
+      "content_sha256": "67cc632096e0fe8a3311429de3f1be4856cbbb50cd0252c734b11630465fbb83"
     },
     {
       "path": "anti-detection/chromium-fingerprint-compilation/01-基础/12-fingerprint-parameter-fixation.md",
@@ -1000,9 +1000,9 @@
       "summary": "由于要所有的类型的指纹都实现固定，工作量太大，这里我只用plugins指纹作为示例。",
       "keywords": [],
       "headings": [],
-      "bytes": 3415,
+      "bytes": 3307,
       "lines": 108,
-      "content_sha256": "ea1dfe5a643f40f470d5069106e7d2c556678d465471fcf79452fdf52608c442"
+      "content_sha256": "aa611c37ea89e0e830d309ff61a40a6e49610a1c258f4197933da9821f42ec61"
     },
     {
       "path": "anti-detection/chromium-fingerprint-compilation/01-基础/13-webgl-fingerprint-v2.md",
@@ -1016,9 +1016,9 @@
       "summary": "",
       "keywords": [],
       "headings": [],
-      "bytes": 8705,
+      "bytes": 8452,
       "lines": 253,
-      "content_sha256": "40f82ed5955990a63751049160a59c44268de3e2edcc5dfc9dccb9cbfa7633e2"
+      "content_sha256": "e9e87770354077269dc05031b874cf1d0939a9429e1ef49d2428a84a9f85040a"
     },
     {
       "path": "anti-detection/chromium-fingerprint-compilation/01-基础/14-cdp-detection-bypass.md",
@@ -1032,9 +1032,9 @@
       "summary": "",
       "keywords": [],
       "headings": [],
-      "bytes": 3332,
+      "bytes": 3214,
       "lines": 118,
-      "content_sha256": "ca5a1bd58d63e622f14c9cb13f721fd916a4abfa7e5005819f1bbf583cf90d02"
+      "content_sha256": "84020b5fbbe63cf19108c8fb679e774c689719ff49af31d50abb18031199f968"
     },
     {
       "path": "anti-detection/chromium-fingerprint-compilation/01-基础/15-ja4-fingerprint-randomization.md",
@@ -1052,9 +1052,9 @@
         "二、如何在线获取自己的ja4指纹",
         "三、chromium编译-随机tls指纹"
       ],
-      "bytes": 2008,
+      "bytes": 1946,
       "lines": 62,
-      "content_sha256": "7d599e202bd5b513851b23b39c5cec5d0fdb0a315f29525ac7a3bb26331aa06d"
+      "content_sha256": "5e3abd6d40c0182f69c5363f3f06e73be3502fe8578d35fcf8cdf5c2cb6e4365"
     },
     {
       "path": "anti-detection/chromium-fingerprint-compilation/01-基础/16-fingerprint-parameter-fixation-v2.md",
@@ -1068,9 +1068,9 @@
       "summary": "之前发现字体指纹的检测方式特别多，这里搞了个偷懒方式，一招全部解决。。",
       "keywords": [],
       "headings": [],
-      "bytes": 19881,
+      "bytes": 19503,
       "lines": 378,
-      "content_sha256": "b2fb1a2353165da97eaeb9a7bfad1194f2a1339fd549bcd91e9c13b7555b12d3"
+      "content_sha256": "807c3cb2ed292055439ba171fae9837292deef31c3c0e2b1c560fef2cb1b484d"
     },
     {
       "path": "anti-detection/chromium-fingerprint-compilation/01-基础/17-ua-gpu-version-modification.md",
@@ -1084,9 +1084,9 @@
       "summary": "打开 \\third_party\\blink\\renderer\\modules\\webgl\\webgl_rendering_context_base.cc",
       "keywords": [],
       "headings": [],
-      "bytes": 5131,
+      "bytes": 4978,
       "lines": 153,
-      "content_sha256": "3580ceea9a99f413bc7e60e9a7c380e2a15af497d6463bb7cfae62439b69c47a"
+      "content_sha256": "020972ece60a95ae426f522442551da514f75359d08e4e50f30e2f671436d100"
     },
     {
       "path": "anti-detection/chromium-fingerprint-compilation/01-基础/18-major-version-modification.md",
@@ -1105,9 +1105,9 @@
         "三、看creepjs源码",
         "四、总结："
       ],
-      "bytes": 10502,
+      "bytes": 10333,
       "lines": 169,
-      "content_sha256": "e8d07e02ff5327963c5a70a106d924fb5ea989b78c3115510925c89d57fc77fb"
+      "content_sha256": "6aac38e29a92ef0d9556862d5ff65254a419d0d9f229c9e21faf632ec43981b9"
     },
     {
       "path": "anti-detection/chromium-fingerprint-compilation/01-基础/19-disable-image-loading.md",
@@ -1123,9 +1123,9 @@
       "headings": [
         "20250521 追加更新"
       ],
-      "bytes": 6122,
+      "bytes": 5934,
       "lines": 188,
-      "content_sha256": "d4d65d32cc114bc2b13c24fc29f37a48155bdedda7500437c5a33ae718fed17e"
+      "content_sha256": "01b7aea3cc78446db3de2a4391b48b4e7886c12bf88c2216d1ac12d6086b2932"
     },
     {
       "path": "anti-detection/chromium-fingerprint-compilation/01-基础/20-clientrects-fingerprint.md",
@@ -1145,9 +1145,9 @@
         "四、在线指纹验证网站：",
         "五、感谢"
       ],
-      "bytes": 3346,
+      "bytes": 3248,
       "lines": 98,
-      "content_sha256": "431ba9b92497dff5e98d83179f8f820f44d2105f8eb964916d98c79fa54ed7f3"
+      "content_sha256": "762c8cfae4f5b96ba08b6c29b33c343c410e7d4fb66358c144cf895d10194a64"
     },
     {
       "path": "anti-detection/chromium-fingerprint-compilation/01-基础/21-chromedriver-selenium-bypass.md",
@@ -1167,9 +1167,9 @@
         "四、编译crhomedriver.exe",
         "五、验证"
       ],
-      "bytes": 4816,
+      "bytes": 4690,
       "lines": 126,
-      "content_sha256": "7b362ae46aa1c83b0356e549163bed9ee013dcd70ee3683853174967ecdc4dee"
+      "content_sha256": "55c4a885e0d1b66f63713c322f677679a3265f9031d524c6022b96f68e22b0a7"
     },
     {
       "path": "anti-detection/chromium-fingerprint-compilation/01-基础/22-bypass-infinite-debugger.md",
@@ -1188,9 +1188,9 @@
         "三、新增debuggel关键字",
         "四、效果"
       ],
-      "bytes": 3430,
+      "bytes": 3316,
       "lines": 114,
-      "content_sha256": "2b68abd73bc0d10f53adf11d4d36cb8099fadd8b594e98843a75b7de78d8cd56"
+      "content_sha256": "8b79588971280fd4985696ffd621651ef7702fd43545a494d8551ff4dd9bb8a4"
     },
     {
       "path": "anti-detection/chromium-fingerprint-compilation/01-基础/23-screen-size-modification.md",
@@ -1210,9 +1210,9 @@
         "四、反反检测",
         "五、还需要优化"
       ],
-      "bytes": 5594,
+      "bytes": 5397,
       "lines": 197,
-      "content_sha256": "925453f704d2e8e4fde3de9abde88f2eb4454c1ec551e54c85215f03d1494097"
+      "content_sha256": "7914af8b4b04d217983d21f4e07fe8a83127e5ee9e9c0864b92c0942faa40f88"
     },
     {
       "path": "anti-detection/chromium-fingerprint-compilation/01-基础/24-webgpu-fingerprint.md",
@@ -1226,9 +1226,9 @@
       "summary": "二、什么是WebGPU指纹 -------------",
       "keywords": [],
       "headings": [],
-      "bytes": 5660,
+      "bytes": 5498,
       "lines": 162,
-      "content_sha256": "622b5901c3db4a9cd2ffd787b264439ff2ee31912f02d1842ac9d759a08a2e85"
+      "content_sha256": "1352addb3aeca30dd6e188f7b813011ab6613d187584c701db0cb3201bcd6496"
     },
     {
       "path": "anti-detection/chromium-fingerprint-compilation/01-基础/25-headless-detection-bypass-v2.md",
@@ -1248,9 +1248,9 @@
         "五、无头userAgent",
         "六、结语："
       ],
-      "bytes": 6217,
+      "bytes": 6048,
       "lines": 169,
-      "content_sha256": "ae89521adf612b5f5db692770bffddd1224c3c2815789a1afee7359d87ae4139"
+      "content_sha256": "182b3a91bacced54af6d5ef61c206738022a59a3ab3060d9e3f11d1debc5a514"
     },
     {
       "path": "anti-detection/chromium-fingerprint-compilation/01-基础/26-language-and-timezone.md",
@@ -1268,9 +1268,9 @@
         "三、更改语言：",
         "四、2025-01-22追加：通过读文件方式获取时区参数"
       ],
-      "bytes": 4748,
+      "bytes": 4594,
       "lines": 154,
-      "content_sha256": "22d52598b89b697f8156e91f208b754f54a87d520d656fc5b1e7751a79d5e0ba"
+      "content_sha256": "013f8c0674ac70fc1b3b75a16d967739c522b5088156182e5e8936c74e6fefe1"
     },
     {
       "path": "anti-detection/chromium-fingerprint-compilation/01-基础/27-shadow-dom-closed-access.md",
@@ -1290,9 +1290,9 @@
         "四、还可以优化",
         "五、追加：给Element追加shadowRoot2属性"
       ],
-      "bytes": 4433,
+      "bytes": 4310,
       "lines": 123,
-      "content_sha256": "8a26023eb7bcb7946006bf90843eef76ba7196b1f75822eb4a8ed6c65fce858c"
+      "content_sha256": "8396fd5547fceaa3f268d62c87f71f43d9f3b8d261cd627b0044604f6a04d717"
     },
     {
       "path": "anti-detection/chromium-fingerprint-compilation/01-基础/28-cross-origin-iframe-access.md",
@@ -1311,9 +1311,9 @@
         "三、如何获取跨域iframe的#document里的内容",
         "四、风险"
       ],
-      "bytes": 2308,
+      "bytes": 2237,
       "lines": 71,
-      "content_sha256": "40048ded108e5ee3773571234b51fc60d7be800285142e3152f7ad5a82856b86"
+      "content_sha256": "8172367b07713b90b63fe13f64af1fecb90cae8604e5304057095896f714d88d"
     },
     {
       "path": "anti-detection/chromium-fingerprint-compilation/01-基础/29-windows-os-version-spoof.md",
@@ -1331,9 +1331,9 @@
         "二、js是如何获取 windows 系统版本：",
         "三、修改源码："
       ],
-      "bytes": 3019,
+      "bytes": 2919,
       "lines": 100,
-      "content_sha256": "248fd27373694b6bf378870aad5c3b6feaadce89cc4010f48c0c6435269e94f1"
+      "content_sha256": "5a08448c3200463d2b6762fc9529933673736e23bb915a959381adc6eac6b2ab"
     },
     {
       "path": "anti-detection/chromium-fingerprint-compilation/01-基础/30-product-overview.md",
@@ -1347,9 +1347,9 @@
       "summary": "每次启动chrome.exe时， 浏览器 随机生成一个新指纹。",
       "keywords": [],
       "headings": [],
-      "bytes": 1305,
+      "bytes": 1257,
       "lines": 48,
-      "content_sha256": "2bbb4b115c383b312a955319ab9da114cf8c864596c5dacc5f0e622930d09bdb"
+      "content_sha256": "e35d3c2e6fd3cd37a1965f8c7ce799d5718a8ed92bc3554dec5864d201499ac7"
     },
     {
       "path": "anti-detection/chromium-fingerprint-compilation/02-进阶/01-webrtc-ip-browserscan-bypass.md",
@@ -1363,9 +1363,9 @@
       "summary": "1. 如何改ip过browserleaks: https://blog.csdn.net/w1101662433/article/details/138001797 2. 如何禁用webrtc: https://blog.csdn.net/w1101662433/article/details/139476789",
       "keywords": [],
       "headings": [],
-      "bytes": 9985,
+      "bytes": 9685,
       "lines": 300,
-      "content_sha256": "91beab3c570ddfc3c19326723b9b74e15fd4ab7fbec193615c635a653ea73345"
+      "content_sha256": "1dd50360bdba4433ec4ac088292f80b6a0b910e8e06635eb3d94c2e50486706c"
     },
     {
       "path": "anti-detection/chromium-fingerprint-compilation/02-进阶/02-macos-platform-spoof.md",
@@ -1379,9 +1379,9 @@
       "summary": "二、js如何判断操作系统是否为Mac ------------------",
       "keywords": [],
       "headings": [],
-      "bytes": 11882,
+      "bytes": 11494,
       "lines": 388,
-      "content_sha256": "1d0ba38a57d485ffc639d792af02fa2e8adce65b709d34953a4f3b2b2ef33e6e"
+      "content_sha256": "e3a1beeaeb1d66175d7af0316eaf39826601bd123dbb8e9dd04127bb052d3ceb"
     },
     {
       "path": "anti-detection/chromium-fingerprint-compilation/02-进阶/03-disable-css-animation-canvas.md",
@@ -1402,9 +1402,9 @@
         "五、检测：",
         "六、如何禁用canvas"
       ],
-      "bytes": 4804,
+      "bytes": 4640,
       "lines": 164,
-      "content_sha256": "0c7d5f5b1b4647ec2dfb137f1243318f010440416bf7aee284139a235a0e7e61"
+      "content_sha256": "2ad555dc478f033106484b361506f273c23f9858b8bcd6df7863dc5db9ff3f27"
     },
     {
       "path": "anti-detection/chromium-fingerprint-compilation/02-进阶/04-startup-cookie-injection.md",
@@ -1423,9 +1423,9 @@
         "三、修改chromium源码",
         "四、检测："
       ],
-      "bytes": 4555,
+      "bytes": 4441,
       "lines": 114,
-      "content_sha256": "d77ffd82f848e3dd15096c82c3adfce04abd2629e99da914cbecb629aea79dee"
+      "content_sha256": "6bd1ea312e6c82106982a4c468e97b3ff88c999ed698b8f99caa306c6e346c4b"
     },
     {
       "path": "anti-detection/chromium-fingerprint-compilation/02-进阶/05-jwt-startup-validation.md",
@@ -1445,9 +1445,9 @@
         "四、安装jwt-cpp",
         "五、更改chromium 源码 ："
       ],
-      "bytes": 3360,
+      "bytes": 3205,
       "lines": 155,
-      "content_sha256": "b427ff5b207d0237f91b5b7dd322778bdec5ffd024d0dbe9624d0c8c5cfd5cbc"
+      "content_sha256": "c226763040fe824da3cb39d5567324a5ab5761fcbd026ea3b9189cfa4650b589"
     },
     {
       "path": "anti-detection/chromium-fingerprint-compilation/02-进阶/06-taskbar-badge-icon.md",
@@ -1461,9 +1461,9 @@
       "summary": "阅读此篇博客前，请确保已具备chromium编译基础。",
       "keywords": [],
       "headings": [],
-      "bytes": 10488,
+      "bytes": 10194,
       "lines": 294,
-      "content_sha256": "75273ecf2720bba7b220b1a8bd10c71d682c312948583eddb233fab441179cdf"
+      "content_sha256": "8dd68ab57fb0315b6cf2806de8ac5e005d3fcd0ea8bdcd5ade4111e442e552dd"
     },
     {
       "path": "anti-detection/chromium-fingerprint-compilation/02-进阶/07-cookie-plaintext-storage.md",
@@ -1477,9 +1477,9 @@
       "summary": "阅读此篇博客前，请确保已具备chromium编译基础。",
       "keywords": [],
       "headings": [],
-      "bytes": 5371,
+      "bytes": 5223,
       "lines": 148,
-      "content_sha256": "4ba0def58119e6063f2e793d994427d14ead2a7181ae4d3c485e88ab36ce2783"
+      "content_sha256": "3df40a5ab4bf56c250928ce45a7891687af0ba4ca491eb6b234bcf0c193a9aa3"
     },
     {
       "path": "anti-detection/chromium-fingerprint-compilation/02-进阶/08-cookie-persistent-storage.md",
@@ -1493,9 +1493,9 @@
       "summary": "阅读此篇博客前，请确保已具备chromium编译基础。",
       "keywords": [],
       "headings": [],
-      "bytes": 3036,
+      "bytes": 2950,
       "lines": 86,
-      "content_sha256": "cc1bd229a303b18729318f523c2cca12b4966bc6a44a93bf9e6cb43282305a8c"
+      "content_sha256": "e978dec5aaca17e5293974508543f04943c741e578ada348a76c5abee7814387"
     },
     {
       "path": "anti-detection/cloakbrowser-humanize-trajectory.md",
@@ -1592,9 +1592,9 @@
         "收录说明",
         "文章目录（97 篇）"
       ],
-      "bytes": 16249,
+      "bytes": 16135,
       "lines": 114,
-      "content_sha256": "e7a775725474b1b0308957becb076a702f17605f69e045360653815baff7b5a6"
+      "content_sha256": "9e6e10299c0eb3c76f9f5f48dd69347d133f7999bff723a9c8fb4142b883bc52"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20250420-01.md",
@@ -1611,9 +1611,9 @@
         "1.1.1 VMware 安装配置",
         "1.1.2 Windows 11 虚拟机的创建"
       ],
-      "bytes": 6270,
+      "bytes": 6167,
       "lines": 103,
-      "content_sha256": "2b50e8d38f8c4216e4567550298f695396032f245108733d14e68dec8a3b533c"
+      "content_sha256": "bc92ef43556bade137e81621cafd39f25f0740efc1ab42dd31474769b1e9e9cb"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20250421-01.md",
@@ -1632,9 +1632,9 @@
         "2.3.3 Blink 目录结构",
         "2.3.4 Blink 线程创建"
       ],
-      "bytes": 12055,
+      "bytes": 11895,
       "lines": 160,
-      "content_sha256": "5980a44d82cfe0243fe62e1dfdc8dbc35f5200ee90e1ac454011b71bd8e14d05"
+      "content_sha256": "30c2f750493b360e702fbdc99aa8e81b26333888e172f588ae13fa187b892ca9"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20250422-01.md",
@@ -1648,9 +1648,9 @@
       "summary": "日后，网络爬虫也好，数据采集也好，自动化必然是主流。因此，笔者未雨绸缪，在此研究各类自动化源码，希望能够赶上时代，做出一套实用的自动化框架。",
       "keywords": [],
       "headings": [],
-      "bytes": 9430,
+      "bytes": 9345,
       "lines": 85,
-      "content_sha256": "ba28d13a86337b6e5d71d21d99eaa4faef8f601640f439c6489b60f306a1f3a3"
+      "content_sha256": "5bf09de6768e666164c529c54866bb86c2a6057e07accb80103aa396aa622f0e"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20250429-01.md",
@@ -1668,9 +1668,9 @@
         "WebGL 指纹获取",
         "WebGL 指纹修改"
       ],
-      "bytes": 9524,
+      "bytes": 9310,
       "lines": 214,
-      "content_sha256": "dc9342c8c28694a54b96ee23c7859c0bd9bc4f4d2373b058c161b9c40216ff0a"
+      "content_sha256": "e3418403bb79711c2c39ebdb56224b389c74509c75d5404fcabf141670250b7d"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20251014-01.md",
@@ -1689,9 +1689,9 @@
         "|浏览器改造方案",
         ""
       ],
-      "bytes": 3871,
+      "bytes": 3821,
       "lines": 50,
-      "content_sha256": "cc9ecd2f1ad6c3514737fd210a4dbb68523cb903b1b58bb3b5214c86f6055ad6"
+      "content_sha256": "8bb639bbec1c9e1bae005824fe742362d95cc4be8ff4618c4300bf3548727fc9"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20251015-01.md",
@@ -1714,9 +1714,9 @@
         "|反爬虫风控系统其实更在意一致性和拟人性",
         ""
       ],
-      "bytes": 5929,
+      "bytes": 5786,
       "lines": 143,
-      "content_sha256": "b5ae53a3759865f3ee7b46bb41ae3bb1c170eb3068fcacfd8562a99858334903"
+      "content_sha256": "740b7d7f38f1922b2ad919ac8f1206ae63c802e2709bc7c038dab568ef0bb5a9"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20251019-01.md",
@@ -1750,9 +1750,9 @@
         "补充：用 Visual Studio 打开代码并调试（重要）",
         ""
       ],
-      "bytes": 8354,
+      "bytes": 8055,
       "lines": 299,
-      "content_sha256": "926c7aac62570000625c3d1cff1e959d22a901eca281367aa399fbd43775cefa"
+      "content_sha256": "fdd21f34e27c40782476bcdbe794db9e22d36ebc8fcb1b812c324b297ed7f798"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20251022-01.md",
@@ -1776,9 +1776,9 @@
         "",
         "|JS逆向不会消亡，只会式微"
       ],
-      "bytes": 5759,
+      "bytes": 5651,
       "lines": 108,
-      "content_sha256": "89a1bac9bf83ab2bb1de4da132f8347bf3d0c4581d86aad3642b61e254409edb"
+      "content_sha256": "8d161c67d69eb8a31d8cd86dff36820629103cd4efea12309ead491d2520d278"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20251025-01.md",
@@ -1799,9 +1799,9 @@
         "|具体修改",
         ""
       ],
-      "bytes": 3838,
+      "bytes": 3758,
       "lines": 80,
-      "content_sha256": "fd5fe8f5af6d97f655efaa161ef61ad0f6d1a587807c7d0fd74a08f2de537757"
+      "content_sha256": "00d933929f8ae6e7df4fe46fdf1648fb5d3e807b96c13af27bd8e3f863939a3b"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20251028-01.md",
@@ -1821,9 +1821,9 @@
         "",
         "在看到chromium源码中使用它后，我们可以学习起来，在日常编码中引入Fiber，比如用户态主动使用Fiber进行指纹开发，"
       ],
-      "bytes": 6202,
+      "bytes": 6109,
       "lines": 93,
-      "content_sha256": "2c9ebae07acf54ed93fcdbb6a74242d5e69f9eba350ebbab4ee4b852f5f9c081"
+      "content_sha256": "e716177374436b13465cba5f39208f3482ab50078dd56bf5987a55d7f8318651"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20251030-01.md",
@@ -1847,9 +1847,9 @@
         "",
         "| 方案六：内嵌协议层注入（Network / JS 层）"
       ],
-      "bytes": 7220,
+      "bytes": 7031,
       "lines": 189,
-      "content_sha256": "e7062f83546c95539c79d24e9c103b4da6abf1c14df0f469a400c70c3cb8724d"
+      "content_sha256": "51cbabb50824bd14a74914960d9cf01fc187d6fd9819d40fff5bfada1a2df4f3"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20251105-01.md",
@@ -1867,9 +1867,9 @@
         "",
         "|编译流程"
       ],
-      "bytes": 3880,
+      "bytes": 3791,
       "lines": 89,
-      "content_sha256": "afd44625bb156c9ac237a333fdc5fd6355b7b61518e71faee43ebbd9275c293a"
+      "content_sha256": "02a5af87edaa95788670ddfa7502059ed68b560b2b8321c89a125f366b5d4826"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20251110-01.md",
@@ -1886,9 +1886,9 @@
         "|firefox的内核编译环境构建",
         ""
       ],
-      "bytes": 2289,
+      "bytes": 2240,
       "lines": 49,
-      "content_sha256": "9d84f17f629e3eea0c900df7f695790addc2dd84cda427b7b88761e377dc6645"
+      "content_sha256": "c48e57e4e32c07e34754fa13aef2d3ab424df14d26a863844219477665b34c66"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20251112-01.md",
@@ -1918,9 +1918,9 @@
         "五、如意对风控和检测的思考（Anti-Fraud & Fingerprint Evasion）",
         "六、总结"
       ],
-      "bytes": 7479,
+      "bytes": 7304,
       "lines": 175,
-      "content_sha256": "3d12dde2aaab3cdd675763eebfb4ba1a9778033be0de68adb8af7940c796e642"
+      "content_sha256": "41658766b4c6f06b9317b2cbea9331c96a2a08350a2d200f15a5459a3d852531"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20251117-01.md",
@@ -1938,9 +1938,9 @@
         "",
         "| IPC / Mojo 消息传递"
       ],
-      "bytes": 3851,
+      "bytes": 3753,
       "lines": 98,
-      "content_sha256": "c327fdb3b3627a868e6d89db46b2b4df62a6f36731629df9e18917505d132160"
+      "content_sha256": "3331a5db83047031821a883bed8f42fd8978a32cd7d22c21915d6e6cdd0a2389"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20251119-01.md",
@@ -1958,9 +1958,9 @@
         "Chromium内核教程 | Mojo多进程通信编程（一）",
         ""
       ],
-      "bytes": 5104,
+      "bytes": 5017,
       "lines": 87,
-      "content_sha256": "50d5137c6b179dfb3498bed6786ddc283e4fce577059361e2fd1a8c7496a3b63"
+      "content_sha256": "b09c3c0d87ed7f197d0728ffa46e458f57c0c01e114ff99e348330729106c48d"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20251120-01.md",
@@ -1998,9 +1998,9 @@
         "五、如意对风控和检测的思考",
         "六、总结"
       ],
-      "bytes": 8324,
+      "bytes": 8057,
       "lines": 267,
-      "content_sha256": "0029af023f77cb04dd650637e9965dcc7cb995453f2fd8e0df877c8dea491d25"
+      "content_sha256": "803d1753e2bf1b000c380e177817c0f2fa0c072eb153edf07b774f8de5e4f88b"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20251129-01.md",
@@ -2038,9 +2038,9 @@
         "3）自动化浏览器开发者",
         "4）未来趋势"
       ],
-      "bytes": 8015,
+      "bytes": 7769,
       "lines": 246,
-      "content_sha256": "30640b3745b20589bead15a7358724ea92f90584aabb98380ad2f0440789f2af"
+      "content_sha256": "70dfd569ff4fc9d9554aa867717a3cd445e57129b341b51a4fbeb6d1a123870b"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20251218-01.md",
@@ -2057,9 +2057,9 @@
         "|自制框架",
         ""
       ],
-      "bytes": 1272,
+      "bytes": 1239,
       "lines": 33,
-      "content_sha256": "2aeb0cba205594398e84a40c33663816914e33bb0c98777a0eb8e3ba1b99e4c2"
+      "content_sha256": "0297b5b2bb1424c4753d0bc01e9d1a5586839ef289d0a9c046b217775e3f3fee"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20251226-01.md",
@@ -2075,9 +2075,9 @@
       "headings": [
         ""
       ],
-      "bytes": 6804,
+      "bytes": 6642,
       "lines": 162,
-      "content_sha256": "2a5d9cf2ef3ccae2725b013e2df7a7bd2bc6afe9f563f18821e324df2bf64e45"
+      "content_sha256": "9da2df197c51d17e4f990ab3cde540322e249d4554d0a79e9c06581570d77189"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260106-01.md",
@@ -2093,9 +2093,9 @@
       "headings": [
         ""
       ],
-      "bytes": 4145,
+      "bytes": 4100,
       "lines": 45,
-      "content_sha256": "051f42832eba0c2429954c1fb4005ea29f4806ac970e31c6ded51156a6b1e7e0"
+      "content_sha256": "0aaeb5847044ee94786d04cc2704087c008fa15dd4205c3e266d0f076a4f4868"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260114-01.md",
@@ -2111,9 +2111,9 @@
       "headings": [
         "能力概述"
       ],
-      "bytes": 604,
+      "bytes": 590,
       "lines": 14,
-      "content_sha256": "3ae7f5eca801120bfd13426175c29cb32c4333c6db5bc5148610bc987b65c7fb"
+      "content_sha256": "e62b21753b22387efe16371de43a7fa82f555663d4c1b5c84b7dbc72091838d2"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260207-01.md",
@@ -2153,9 +2153,9 @@
         "对做指纹浏览器的启示",
         "对做风控的启示"
       ],
-      "bytes": 11239,
+      "bytes": 10952,
       "lines": 287,
-      "content_sha256": "644e14de2ed25c9af48924e7485527d20e77ed32084c14cc3e2469d473f35b5d"
+      "content_sha256": "a2867086780f5e2fd09e453a4c3d02f7c4da57187f44a391b75430ac4440e910"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260213-01.md",
@@ -2193,9 +2193,9 @@
         "九、核心结论",
         "十、延伸思考"
       ],
-      "bytes": 14596,
+      "bytes": 14329,
       "lines": 267,
-      "content_sha256": "84be672a5e785418fd55e9c33e87871df2fe90408ab35c0ff962a5dcdf4b93da"
+      "content_sha256": "ac23fdb771bd038806176cf6e068ebd54df449f6fd9e09e188e4e15524114a1b"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260214-01.md",
@@ -2241,9 +2241,9 @@
         "八、论文的附录：完整的指纹属性监控列表",
         "九、核心结论"
       ],
-      "bytes": 21343,
+      "bytes": 21037,
       "lines": 306,
-      "content_sha256": "6d8d609e8b94a4ea9b4a7f909fde989a7e49718cef235cc7ec9ebed8f43bd2a2"
+      "content_sha256": "56e33a96cdf43f0e9b1d0dc279f3102129354fcbcebfa92d31076389e63026d8"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260215-01.md",
@@ -2288,9 +2288,9 @@
         "6.3 对爬虫/自动化开发者",
         "七、核心结论"
       ],
-      "bytes": 19557,
+      "bytes": 19285,
       "lines": 272,
-      "content_sha256": "6d1d3f639a305cdd875fb973ae1cc4249d27e4d465a446b712bc4cdf1641d276"
+      "content_sha256": "4a9ee500b42a0181714f17b2e3a7e960f0e8e78c17b6f43f01d40738011e54b1"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260216-01.md",
@@ -2331,9 +2331,9 @@
         "8.3 对指纹产品开发者",
         "九、核心结论"
       ],
-      "bytes": 23508,
+      "bytes": 23260,
       "lines": 248,
-      "content_sha256": "ad6b950980eda7fd0562ab63a2a24d67f0794fb9cf7c8cdc94ae091023d9609d"
+      "content_sha256": "62a4fe1f05cf10b8a11e65c0ce6b7d34b83820be445abec5c9165271ecfc2af6"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260220-01.md",
@@ -2369,9 +2369,9 @@
         "六、 实战建议",
         "一句话总结"
       ],
-      "bytes": 34580,
+      "bytes": 34278,
       "lines": 302,
-      "content_sha256": "4fbc10fcff329d277424aa939ce0866f2bb2aaf953298a6d3af656ace6dad3e0"
+      "content_sha256": "3be4843a0a4d1eb6f63166e1c37c2e0e064136000684c94be6da1349f92a8a9b"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260223-01.md",
@@ -2390,9 +2390,9 @@
         "例子1：",
         "例子2："
       ],
-      "bytes": 1582,
+      "bytes": 1533,
       "lines": 49,
-      "content_sha256": "31c5c43d917fd0e955155cd2e73cbf45404bef8aaf764d4a561769549f4af4ca"
+      "content_sha256": "dace398a87acc1b72baa7a784c13450325bef62dd5fd687e371bd7200c081516"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260224-01.md",
@@ -2422,9 +2422,9 @@
         "给安全架构师（4条）",
         "一句话总结"
       ],
-      "bytes": 16251,
+      "bytes": 16036,
       "lines": 215,
-      "content_sha256": "fcf26b7773888d0edc116c114960faffdc54d6555fe6736c6cb6ffa1cf15bb03"
+      "content_sha256": "a3453f4bac23217f56cda680e8046533cb2f1a551218a4cc28b77948437c5fea"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260225-01.md",
@@ -2445,9 +2445,9 @@
         "五、 对风控和检测的思考",
         "一句话总结"
       ],
-      "bytes": 10980,
+      "bytes": 10710,
       "lines": 270,
-      "content_sha256": "5e6905e63a719dc4617309d3df1a2d793635b94925889c8ed4c0a6cb848b4c28"
+      "content_sha256": "b963cd0da5e702f0d1a2ab30c739a2712fc02a26fa1986c223deba6dd545cb98"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260226-01.md",
@@ -2479,9 +2479,9 @@
         "给安全架构师/CISO",
         "一句话总结"
       ],
-      "bytes": 17443,
+      "bytes": 17274,
       "lines": 169,
-      "content_sha256": "e11efd17086ea959ce443dd90da39f5c5e0336e8a4b94f104f360a665fd1eeee"
+      "content_sha256": "d02e53eec8bd754b5d595c82b4b19bd20de197966becc393a0acfc5675ada8e8"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260227-01.md",
@@ -2511,9 +2511,9 @@
         "给安全架构师",
         "一句话总结"
       ],
-      "bytes": 18166,
+      "bytes": 17996,
       "lines": 170,
-      "content_sha256": "fd038b5837ed2fb96c181b736b40b499d156e2eb9920650b6e29697e078764cb"
+      "content_sha256": "6dd85c88e00ca445097b5b61f41339d5a00ccbfad41004b5395fea313a863031"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260228-01.md",
@@ -2545,9 +2545,9 @@
         "四、局限性",
         "一句话总结"
       ],
-      "bytes": 19171,
+      "bytes": 18993,
       "lines": 178,
-      "content_sha256": "1a6a4d7c2891b5c0c37dd6838156b6748d54a55b839e73dc99f1acaea8cffb01"
+      "content_sha256": "c320f97eab87b6c090a96fe99fcbba18661505890dfb9eb774c986a2fdc74b78"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260301-01.md",
@@ -2583,9 +2583,9 @@
         "六、论文局限",
         "一句话总结"
       ],
-      "bytes": 20976,
+      "bytes": 20755,
       "lines": 221,
-      "content_sha256": "4db69d857a25ef4ca9459a774acb97dd5b575e5362f3a8679e20ec13d7eb88ad"
+      "content_sha256": "f7bb70597a1b143a742a514d35a9f25b8c9e5812b026b28fee6fa9847cd87972"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260302-01.md",
@@ -2620,9 +2620,9 @@
         "六、论文局限",
         "一句话总结"
       ],
-      "bytes": 16825,
+      "bytes": 16635,
       "lines": 190,
-      "content_sha256": "0625ae42311ce75d8337f306027cfd9926c608079d277fb8ab3905941cf4e4d4"
+      "content_sha256": "f18f5683ca69413578f06f69064fb8956d2965fa37d6263f057b603acc1b1094"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260303-01.md",
@@ -2655,9 +2655,9 @@
         "给指纹追踪服务商/攻击者（攻击方视角）",
         "给浏览器厂商和标准制定者"
       ],
-      "bytes": 20919,
+      "bytes": 20615,
       "lines": 304,
-      "content_sha256": "73bebdc2628806067e3f53a1d774e775cf869940af01c659bfa0fa03ce8aca53"
+      "content_sha256": "39d2048594a4075866c6180df56b729cf757b3016b19ec1753339eada87668f1"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260304-01.md",
@@ -2690,9 +2690,9 @@
         "给小程序开发者和商家",
         "给研究者和隐私倡导者"
       ],
-      "bytes": 20127,
+      "bytes": 19803,
       "lines": 324,
-      "content_sha256": "80d653231b6bb9b8ba76b0a94d2d73c086f8d64d536cde904bab98aa021850ee"
+      "content_sha256": "d3a1d47d6b3077f702291819d752f7079d74d9577fe60e0dfc74f9aac4e1852e"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260305-01.md",
@@ -2725,9 +2725,9 @@
         "给网站指纹攻击的研究者：这个攻击框架还有很大的改进空间",
         "总结"
       ],
-      "bytes": 24179,
+      "bytes": 23861,
       "lines": 318,
-      "content_sha256": "0c05407cab17cf800ae2cb5da253329aef8451cb459508b61828cdd1ecf95996"
+      "content_sha256": "5507ebe73c882abf7aa218a805e311af93b38a1b2c70480dad5fd263ffac1a0e"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260306-01.md",
@@ -2758,9 +2758,9 @@
         "这个工作的局限",
         "对爬虫和安全开发者意味着什么"
       ],
-      "bytes": 12733,
+      "bytes": 12538,
       "lines": 195,
-      "content_sha256": "1c0a52fc98f9c4a830ac7f95090bd80143d22fa1ef1f95b3afc9eb2c91780ccc"
+      "content_sha256": "be6d13b1ab22ec20a2fb6b08a79c855ad7d2fce390dadfa79ba954cc79b14d33"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260310-01.md",
@@ -2791,9 +2791,9 @@
         "对爬虫和安全开发者意味着什么",
         "论文的GitHub仓库和数据集"
       ],
-      "bytes": 14965,
+      "bytes": 14744,
       "lines": 221,
-      "content_sha256": "c3fd95ee51164571a905f77f26701b2858a21a839d9a657b9f54b47716f90b41"
+      "content_sha256": "95d95715fa22a41b6ccbc461e73eb777d958c93478c5d14b509d033bcbaf4228"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260319-01.md",
@@ -2832,9 +2832,9 @@
         "做浏览器指纹/风控的人",
         "做WebGPU应用的人"
       ],
-      "bytes": 15346,
+      "bytes": 15084,
       "lines": 262,
-      "content_sha256": "31ad7ca85982e5d1ad0622add8a00162d66ce9595da8cfa2b6f30dab1d871676"
+      "content_sha256": "f6b9d09892d91e1d6750032e0c630de480bb192900b368698b7bb612729791b6"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260321-01.md",
@@ -2878,9 +2878,9 @@
         "做政策研究的",
         "数据集和代码"
       ],
-      "bytes": 23250,
+      "bytes": 22911,
       "lines": 339,
-      "content_sha256": "af27216a6d58d4da9c2235785e7574d77b85c6c50e4f90faf52137d065067e1b"
+      "content_sha256": "09e5f1c35d4947cd9401fc39ff1be97a7154d53e231d5cc13a3e89f755988fa5"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260322-01.md",
@@ -2917,9 +2917,9 @@
         "做爬虫/自动化的",
         "做浏览器指纹/安全研究的"
       ],
-      "bytes": 19701,
+      "bytes": 19360,
       "lines": 341,
-      "content_sha256": "ded16cad7f8080253700bfdba43478b296fd04ed5f2156c0f3928f7ab2746483"
+      "content_sha256": "931c991958d4e375d7e8d5e9239b97926f65b5d49f68b84b8da7325fe150feb4"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260323-01.md",
@@ -2964,9 +2964,9 @@
         "和其他时间/硬件指纹技术的对比",
         "论文信息"
       ],
-      "bytes": 22006,
+      "bytes": 21651,
       "lines": 355,
-      "content_sha256": "e0fc78a4eaff31c1da3fff391a54eaaa63a1547e8589177c62b3db14ff0879fc"
+      "content_sha256": "9a697dafd239d5a9bdcc1f2817cf8b691f96ed97372fcc92577d251f40d67471"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260325-01.md",
@@ -3010,9 +3010,9 @@
         "做风控/设备指纹的",
         "做爬虫/自动化的"
       ],
-      "bytes": 18278,
+      "bytes": 17912,
       "lines": 366,
-      "content_sha256": "8043197d53efaa2612beb840e3ceb2c47c10ce2db36fafbb648051aabbca47eb"
+      "content_sha256": "6489d6f5e4acab79696ce8706bdcb4c1a1f815d0218fb9618f3b5f07ded2e3e2"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260327-01.md",
@@ -3063,9 +3063,9 @@
         "做爬虫/自动化的",
         "做浏览器安全/隐私的"
       ],
-      "bytes": 21950,
+      "bytes": 21603,
       "lines": 347,
-      "content_sha256": "27d7b9ac1311537f09dfe301e4e5c820a11ac9fc09f908f4f11fecd79b9dd6cb"
+      "content_sha256": "e8bc12c228d31dbd30096cd541c94a17319db45caf5e420015d9fb23ec7c7d03"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260330-01.md",
@@ -3103,9 +3103,9 @@
         "做爬虫/自动化的",
         "做浏览器指纹研究的"
       ],
-      "bytes": 20014,
+      "bytes": 19731,
       "lines": 283,
-      "content_sha256": "78524839367e18e487d989ba608715e6433396f2df05c2363ba2d4a0f073ad6f"
+      "content_sha256": "e2ef20ad01e001105ce153c3a2dd651344e51beed7e0ce44b76f61817f168bf7"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260401-01.md",
@@ -3141,9 +3141,9 @@
         "做浏览器安全/无障碍的",
         "一句话总结"
       ],
-      "bytes": 13502,
+      "bytes": 13281,
       "lines": 221,
-      "content_sha256": "695467c29ba4816fa779680e19c432dbe8bc2bf8340d357a1601d96471ebef4d"
+      "content_sha256": "7248bda8d1304ac30dfb41708452143e3c3ce40cd8690bf5fc38463ec6ae532b"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260403-01.md",
@@ -3185,9 +3185,9 @@
         "做CAPTCHA产品的",
         "一句话总结"
       ],
-      "bytes": 21056,
+      "bytes": 20753,
       "lines": 303,
-      "content_sha256": "e4bfac8abb74499f227586fd6d2a40ded4c468223bec7f31773791fd6091e8e8"
+      "content_sha256": "7010311c7075ffca82f64e28a4c12b07c08e976a045f9093bdbfeccb1dce6b61"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260404-01.md",
@@ -3227,9 +3227,9 @@
         "做爬虫/自动化的",
         "一句话总结"
       ],
-      "bytes": 17351,
+      "bytes": 17081,
       "lines": 270,
-      "content_sha256": "3bd04e87071270ff8fb5e26cd624706682760a999982335d5d16776f47e2b8ba"
+      "content_sha256": "f96a6ff77c203baf6253028ce5d0a278c633ca07c25e9c69c28b4306cc913e49"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260407-01.md",
@@ -3247,9 +3247,9 @@
         "基础配置",
         "1\\. 最简单启动"
       ],
-      "bytes": 2265,
+      "bytes": 2200,
       "lines": 65,
-      "content_sha256": "9f61d937a02c8ba3497e53d64831d71a72801154d3e1a4eaddb3e7936813bfbc"
+      "content_sha256": "cf41230eda528274b5435f8fcc120f161b79d7b3022d05d8b7999d7ef42b0b11"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260408-01.md",
@@ -3266,9 +3266,9 @@
         "安装",
         "过copilot定制5s盾（需要IP纯净，否则弹窗都失败）"
       ],
-      "bytes": 5955,
+      "bytes": 5885,
       "lines": 70,
-      "content_sha256": "c435e956cea0b0870732b0f7cc010a3ace2742f2d6a390e28921206fa1ab2ba4"
+      "content_sha256": "c1fc6186f9f86065dfa61700d7b89c4ff83a88ba4f70e3d58625a54ab833cbe8"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260409-01.md",
@@ -3285,9 +3285,9 @@
         "安装",
         "如果想要 接管任意指纹浏览器自动化 ，以ads为例，需要打开火狐："
       ],
-      "bytes": 3681,
+      "bytes": 3636,
       "lines": 45,
-      "content_sha256": "2c9ccbc2900f5cea37625970e2f61f91b5551047e983c2ceb45730e4169fab12"
+      "content_sha256": "ae74218d79ff51bf387e55c8eab2e1ebab9414902c6d3b5921a976d8f6957afb"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260410-01.md",
@@ -3304,9 +3304,9 @@
         "安装",
         "如果要注册邮箱，第一IP纯净（海外IP可找如意合作购买），第二行为用我的不用JS的，第三用ruyiPage配套火狐浏览器"
       ],
-      "bytes": 1461,
+      "bytes": 1423,
       "lines": 38,
-      "content_sha256": "8c4c21e746449d65ef0b3f631874af09da4ffa686f7df957f7bf2969eb20e2fe"
+      "content_sha256": "bbe5002aa9bdefba10a026747465fbf40627913e5b8031f27c870e674698d617"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260412-01.md",
@@ -3322,9 +3322,9 @@
       "headings": [
         "安装"
       ],
-      "bytes": 1923,
+      "bytes": 1877,
       "lines": 46,
-      "content_sha256": "749ed607203cd4dadc192f12960992cd84940fd5e7c3545098e790f8df53896a"
+      "content_sha256": "74f7fbf3ad065c9b44e18ab07dbfa4dd2116203be08ee3f25f687c49544041dd"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260413-01.md",
@@ -3366,9 +3366,9 @@
         "六、论文的局限",
         "七、一句话总结"
       ],
-      "bytes": 21887,
+      "bytes": 21459,
       "lines": 428,
-      "content_sha256": "b93504b54309a40767b91a60e058da7cea67495cf35925461b6e2bdd27e72f71"
+      "content_sha256": "c64db7ed1fa81d57e20e46667bb87a1d61567eb381b835e0b8fc988e135ee7e3"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260414-01.md",
@@ -3408,9 +3408,9 @@
         "七、论文的局限",
         "八、一句话总结"
       ],
-      "bytes": 21243,
+      "bytes": 20796,
       "lines": 447,
-      "content_sha256": "638d78209112f5b6a2da7d89677c947ede7f2cc0a96c0b2539365c6bb00a48f6"
+      "content_sha256": "9cbafcfbab8d3d0e3bdd69aac15562f626f510067718d3bfd6dc3c8a8b234951"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260415-01.md",
@@ -3426,9 +3426,9 @@
       "headings": [
         "安装"
       ],
-      "bytes": 2997,
+      "bytes": 2949,
       "lines": 48,
-      "content_sha256": "800e133632b6ed929ad92737fa97023e537b8fdf5e9723d5ab24e4611afb7d5d"
+      "content_sha256": "c84e5b5ab71ffca4460fc30bd9e43f0c86293c1fd3888750add9d6a1f9198229"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260421-01.md",
@@ -3491,9 +3491,9 @@
         "十二、相关文件清单",
         "一句话总结"
       ],
-      "bytes": 41102,
+      "bytes": 40591,
       "lines": 511,
-      "content_sha256": "c93f080c62329b2c959374a23a89d833a87258a52841b937690237a26a9a76a8"
+      "content_sha256": "dfb528e948702cf122f46e6b1ef922f502877deef26f1b1f7ba6eace82617679"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260424-01.md",
@@ -3537,9 +3537,9 @@
         "VM 保护机制分析",
         "反编译难点"
       ],
-      "bytes": 30643,
+      "bytes": 30231,
       "lines": 412,
-      "content_sha256": "387f28d55c97ca1952062d5fa59c6554b88e3717804a1c8fcf4872c89e819696"
+      "content_sha256": "583caa2549b6fd4c88fdf3e0ff91492bc8a173f46a4d7d8c53fbb737b8f1e880"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260425-01.md",
@@ -3590,9 +3590,9 @@
         "十二、服务端可能的风控点",
         "十三、总结"
       ],
-      "bytes": 34222,
+      "bytes": 33659,
       "lines": 563,
-      "content_sha256": "c9fe0f37eb3154d8c36a1362f166c9973bb52de126c54ac47cd3b9d616d06312"
+      "content_sha256": "c220cee785f1c3545f61ad999f33220ad61fca7575da2b2f7789093f4170b0c5"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260428-01.md",
@@ -3632,9 +3632,9 @@
         "给做爬虫/自动化的",
         "给做浏览器/隐私工具的"
       ],
-      "bytes": 22640,
+      "bytes": 22247,
       "lines": 393,
-      "content_sha256": "404a43f759d9ccd65763a8d787094f24aa19743e599b567842482fb797fce07c"
+      "content_sha256": "8cf83efe9f682ed22acf07c10a1fd19808cab7bdaaa89de4aaa4563d826991cf"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260429-01.md",
@@ -3658,9 +3658,9 @@
         "七、论文局限",
         "一句话总结"
       ],
-      "bytes": 21036,
+      "bytes": 20797,
       "lines": 239,
-      "content_sha256": "bc03f3da2e08d12510df81dcaac9247599560225b67f0f4bf66daa7d1be59636"
+      "content_sha256": "fc117b1f62cc2a04b05447a14eec5d3d8e37b0f56d0a9a6e66871fc7459892d7"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260430-01.md",
@@ -3683,9 +3683,9 @@
         "七、防御建议——针对你的读者群展开",
         "一句话总结"
       ],
-      "bytes": 34355,
+      "bytes": 34019,
       "lines": 336,
-      "content_sha256": "dc481f9bd3915011f9ac36436d778d10b0bec8497b70093c4f922638cbeade8a"
+      "content_sha256": "0311334126448e5dc67d002b863d3379c3ea158c6b0d72ef40372a5b917a6513"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260501-01.md",
@@ -3711,9 +3711,9 @@
         "九、论文局限",
         "一句话总结"
       ],
-      "bytes": 23491,
+      "bytes": 23211,
       "lines": 280,
-      "content_sha256": "548a38cb836403cd6bd53f92fc87b8fda3b9d69d0525f538dc453841897fed40"
+      "content_sha256": "39bd8fdbeec004e6588a9f1d89ea9230c51712f658683d74ca6d480cd6108831"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260504-01.md",
@@ -3727,9 +3727,9 @@
       "summary": "爬虫风控日志工具-记录知晓一切网页指纹检测行为 。",
       "keywords": [],
       "headings": [],
-      "bytes": 2134,
+      "bytes": 2097,
       "lines": 37,
-      "content_sha256": "c88478669525a02945768d327afed926afbcae25c98329c8b04eba869c52c2ac"
+      "content_sha256": "d13d1295b824e38067a3d9d8f909d36a1c2972b09856072c7d82f492e79ebd64"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260506-01.md",
@@ -3745,9 +3745,9 @@
       "headings": [
         "安装"
       ],
-      "bytes": 4434,
+      "bytes": 4362,
       "lines": 72,
-      "content_sha256": "014cc6061f2de9996d871214b7723be7670b98cf8a0a1cbfe1f640d70229e07d"
+      "content_sha256": "f0f1c1295cfa9f3f08a1fdcfed0b5ed0c1a26c6dadc97f4c203a624af641ae01"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260507-01.md",
@@ -3761,9 +3761,9 @@
       "summary": "如意最近又肝了一个补环境工具，核心是把 浏览器的JS引擎+全部的DOM环境拿了下来 ，再用对应的浏览器网络库请求即可。",
       "keywords": [],
       "headings": [],
-      "bytes": 11439,
+      "bytes": 11390,
       "lines": 49,
-      "content_sha256": "9039f13d8b899595f55e1d6f5762270b9f6a6ab4441d4ba08395a76ffd264af1"
+      "content_sha256": "d91f75a4db3b53328d0be5463f06f2975dc60ece39b7af9f36d0ae08ebcfc1fc"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260511-01.md",
@@ -3818,9 +3818,9 @@
         "3）做DNS/隐私保护的人",
         "一句话总结"
       ],
-      "bytes": 19049,
+      "bytes": 18413,
       "lines": 636,
-      "content_sha256": "70fffb76095a11bd8278a7dafc3f88df4ba23e71fb4c6d52007a8898137a5dba"
+      "content_sha256": "c3185e827b2e8cdf60da7675131ce216f8040a8866683c82980e2c6d97cc2531"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260513-01.md",
@@ -3852,9 +3852,9 @@
         "对做隐私协议的人",
         "一句话总结"
       ],
-      "bytes": 18089,
+      "bytes": 17771,
       "lines": 318,
-      "content_sha256": "d347b4d47008a4a4c35b940c1e898cb21d173ca91b00c6c07e838817e7a6c5a3"
+      "content_sha256": "0fcc727183a428b5448d0b6efe21ac124c16a6798d109e1a9825d69d6b6fd4af"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260514-01.md",
@@ -3889,9 +3889,9 @@
         "十六、论文局限",
         "一句话总结"
       ],
-      "bytes": 25311,
+      "bytes": 24859,
       "lines": 452,
-      "content_sha256": "fb014a51d094d3e3e7a5e393d7224dab10e967189a69899ce85ded3d9192c753"
+      "content_sha256": "d9e46d5991c6787ea82c45788569551569f0ed0ec36fc95685885478370a45d7"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260515-01.md",
@@ -3923,9 +3923,9 @@
         "十五、论文局限",
         "一句话总结"
       ],
-      "bytes": 19330,
+      "bytes": 18961,
       "lines": 369,
-      "content_sha256": "5352c1df34cff8c63bbff6503a9f450fb4e6ebacced1d634cf94affbca4a622e"
+      "content_sha256": "9484505d664e59a3124f0473b712e819424946f887187844dce095d8506f9583"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260517-01.md",
@@ -3944,9 +3944,9 @@
         "安装",
         "项目地址："
       ],
-      "bytes": 3292,
+      "bytes": 3186,
       "lines": 106,
-      "content_sha256": "3d553c6315db4bfba692b000a826c623d015972b06bbd2bd85c238f8184820b5"
+      "content_sha256": "be285accc8a71c15851a9405d7c3a9343dfd494abdce3bb71f37c4e9855dafc5"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260518-01.md",
@@ -3975,9 +3975,9 @@
         "十二、论文局限",
         "一句话总结"
       ],
-      "bytes": 18459,
+      "bytes": 18144,
       "lines": 315,
-      "content_sha256": "c0ac2dcaac81a8225c49d846310ca57493f2d4e00e9aad857daaf929ba104e28"
+      "content_sha256": "c6b6fc9d83d755d6f5ba701d9a8efa040178c35d81b84610ffc2a6e7e9bf9249"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260520-01.md",
@@ -4007,9 +4007,9 @@
         "十三、对普通用户意味着什么",
         "一句话总结"
       ],
-      "bytes": 20394,
+      "bytes": 20036,
       "lines": 358,
-      "content_sha256": "7aec197a0a8b12648719e6c68428265a0491b96796eda26df768ff49fcf28245"
+      "content_sha256": "01c1677ef47f04763d942e0392781bff7c8fd63e71503da5e0a9192cf4dd94e4"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260521-01.md",
@@ -4035,9 +4035,9 @@
         "九、这篇对代理IP检测有什么意义？",
         "一句话总结"
       ],
-      "bytes": 18621,
+      "bytes": 18269,
       "lines": 352,
-      "content_sha256": "93dc04c4995c434be0a0ae714ba0197e59e00c1ab952c825b3b8621d2eef6b90"
+      "content_sha256": "0156dc35716f50eadc1b6cd31b03837e5821142188151e12fc0f9390f65c83ae"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260524-01.md",
@@ -4056,9 +4056,9 @@
         "安装",
         "项目地址："
       ],
-      "bytes": 5938,
+      "bytes": 5825,
       "lines": 113,
-      "content_sha256": "d3af30eae072175fa586fae5589cd844a335bc4e4868e30b58c74152475e10a0"
+      "content_sha256": "91b6dd66b5a2b7f9d5de705fbd19ab7af10793be79d56d244bcb9b7385263b28"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260526-01.md",
@@ -4085,9 +4085,9 @@
         "五、分析 WASM 的环境依赖",
         "5.1 WASM 读取 favicon URL"
       ],
-      "bytes": 5921,
+      "bytes": 5743,
       "lines": 178,
-      "content_sha256": "c7db18cafae5fafc8f74327c173bcda9626f6f2a2ea4e870953f06d0cf20add5"
+      "content_sha256": "068ad7e30ab4ff1e72b7f206859289070e1892328c1643679776c2ba7987d8fa"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260527-01.md",
@@ -4105,9 +4105,9 @@
         "安装",
         "框架地址："
       ],
-      "bytes": 993,
+      "bytes": 939,
       "lines": 54,
-      "content_sha256": "e2a98a6bda7528cdedfa473ba9a3d5860357db4a91d04172e02eac4751995461"
+      "content_sha256": "904daa05cb4d52585437ba94c437ba211aa961be2ccf6592349ef386c7a60c5c"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260528-01.md",
@@ -4141,9 +4141,9 @@
         "编译命令",
         "注意事项"
       ],
-      "bytes": 5476,
+      "bytes": 5263,
       "lines": 213,
-      "content_sha256": "73893cf58aed4fc3b917877871d25d8603e7f45a4e394f7e04a9f6ae8fa21f5a"
+      "content_sha256": "7f8b18d127b8f1f286a031a52674d9de1a7ed450ed2a1c07a36f4279df48f9d5"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260601-01.md",
@@ -4174,9 +4174,9 @@
         "一致性原则",
         "已知边界"
       ],
-      "bytes": 15157,
+      "bytes": 14710,
       "lines": 447,
-      "content_sha256": "724e8bb602ed2a3a60c7c3e9d3ae22996b5d8c68556a9a86634f584ee2a06aa5"
+      "content_sha256": "7947681fb7474c38c10ae367a43e7a759ae24737aa2b04f8f9deb82c97b89b55"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260602-01.md",
@@ -4205,9 +4205,9 @@
         "为什么不直接把密码放在 URL 里",
         "为什么要同时处理 AuthenticationChallenge"
       ],
-      "bytes": 6450,
+      "bytes": 6197,
       "lines": 253,
-      "content_sha256": "e58b3ae9d2ba477f2890502f1c859d10a14473febc12ede2ff789bd5238934ea"
+      "content_sha256": "e1d3fae95cccfbafb02b5c3d3e6325a7757ddfc7e7091513151b806d805706e7"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260604-01.md",
@@ -4229,9 +4229,9 @@
         "1.5 SOCKS5 认证路径",
         "1.6 HTTP 密码代理兼容"
       ],
-      "bytes": 5605,
+      "bytes": 5434,
       "lines": 171,
-      "content_sha256": "e6ec90a8df3e20766517fb7dd05fa974abc30690e65466c96c4e250dea46efc3"
+      "content_sha256": "be0e6358adbb3c94e719677e29652fb91e15820cf39b691a2e8a7ccfb5aed1d2"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260607-01.md",
@@ -4262,9 +4262,9 @@
         "完整逆向还原伪代码",
         "与 DOM Trace 的闭环验证"
       ],
-      "bytes": 21764,
+      "bytes": 21264,
       "lines": 500,
-      "content_sha256": "7567a7e10c57ee26a5be6eb3ed5577cab3fc6c64c44cddfc15787dbb14f1623c"
+      "content_sha256": "55dfe45fb3f565579757b83a57733e85a56d0ed92a55594afb14b42e067a2a27"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260609-01.md",
@@ -4289,9 +4289,9 @@
         "纯算边界",
         "canvas_fp_pure.js 用法"
       ],
-      "bytes": 9568,
+      "bytes": 9341,
       "lines": 227,
-      "content_sha256": "ea703c38530e04edaf98437206f9d0af6e8d47e55813f23292110e8c91d14965"
+      "content_sha256": "83a8d453e0f3680bd605b6da4bd3a3d3d6a3277c7b3a03f409516799ce260e5a"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260610-01.md",
@@ -4322,9 +4322,9 @@
         "7\\. 验证命令",
         "最终判断"
       ],
-      "bytes": 13684,
+      "bytes": 13394,
       "lines": 290,
-      "content_sha256": "b49a76298b717a5d1581603130018088ddfdc2f746f86103d2072b6f48166c3c"
+      "content_sha256": "28b3af5dde4ecab853cceadf9003a2f625fe0a42109cd1dcb3e54354ea51f1f3"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260611-01.md",
@@ -4358,9 +4358,9 @@
         "raw74",
         "property57 编码"
       ],
-      "bytes": 11002,
+      "bytes": 10612,
       "lines": 390,
-      "content_sha256": "e29ccb1bc178954f5831586659f64045da7945004e526df3a912c5555d406d45"
+      "content_sha256": "5a251fb9d9b5bf31086478f6796dd231aa7182273747868ea198108ab8767d08"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260615-01.md",
@@ -4386,9 +4386,9 @@
         "Trace 证明点",
         "fpfile 改写后的站点可见结果"
       ],
-      "bytes": 12132,
+      "bytes": 11895,
       "lines": 237,
-      "content_sha256": "f6178e7df17948102ee7aa5f2db72214ab7e544d176aeed4f0fdcd7bd3ee9c2b"
+      "content_sha256": "1301fcf15130eed9ab6e3d946fcbd4d40384547b197675788f27d31b6c761eec"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260618-01.md",
@@ -4416,9 +4416,9 @@
         "参数敏感性实验",
         "本地纯算实现"
       ],
-      "bytes": 26908,
+      "bytes": 26355,
       "lines": 553,
-      "content_sha256": "c3ccc9f33d1d81ade0b5a7fd5b8d3894040b5869ca759a9ec746270731d3d503"
+      "content_sha256": "1e19dba0bf377b072c935d028b3d40be5b21f164041b9bca560dd5b76531f31b"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260622-01.md",
@@ -4458,9 +4458,9 @@
         "5.2 目标设备要求",
         "5.3 常用环境变量"
       ],
-      "bytes": 17718,
+      "bytes": 17116,
       "lines": 602,
-      "content_sha256": "0bb71a5cd77b0ee2626c425eeca0a5e545a9bc9762301d7d8b2b3da0b2891192"
+      "content_sha256": "6df56d185cc2029697fb54b032bfb9c729323eb40dd5a32d12e1db2b2a2681af"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260623-01.md",
@@ -4474,9 +4474,9 @@
       "summary": "爬虫风控日志工具-记录知晓一切网页指纹检测行为 。",
       "keywords": [],
       "headings": [],
-      "bytes": 3059,
+      "bytes": 2988,
       "lines": 71,
-      "content_sha256": "919cd33a80e8494e5b4cec70b5730cdb259ccf19dfca07eb3b20fdc9148a4fc1"
+      "content_sha256": "729dca59df71a822f6e31d678885d12e335bdd331138e44d6b7393413535a3a6"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260624-01.md",
@@ -4496,9 +4496,9 @@
         "4\\. 三条路线与结论",
         "5\\. RuyiTrace 为什么是正解"
       ],
-      "bytes": 4687,
+      "bytes": 4614,
       "lines": 73,
-      "content_sha256": "475a129fb60fbafc1c40993213fd565cdbda5cb25fdd9d5d20cd103f1af8e625"
+      "content_sha256": "f8d3fd7c33141860e750964ff72dd4a6f55122a9feda9534a3e9bee43f9718aa"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260626-01.md",
@@ -4512,9 +4512,9 @@
       "summary": "JS逆向终结计划-如意最新web风控爬虫日志工具-攻克一切站点 。",
       "keywords": [],
       "headings": [],
-      "bytes": 751,
+      "bytes": 735,
       "lines": 16,
-      "content_sha256": "8126839aacc944456b98a684ddd7eb241318d5ff0a812f00a5951b8775eb2a92"
+      "content_sha256": "aa5198b0ad67063ad6cbf49168422eef468876f19e16484cc5ed732aa9a520ce"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260701-01.md",
@@ -4540,9 +4540,9 @@
         "十、后续排查优先级",
         "十一、当前文件相对原版风控.txt 的补强点"
       ],
-      "bytes": 35866,
+      "bytes": 34910,
       "lines": 956,
-      "content_sha256": "3f58ee69b7eab381ad488dae82b8fd2b7711a0ad600b9cdbf1ce58683b2a93d9"
+      "content_sha256": "e3c23aa75bc99dd3e952cbc4bfa16ed4d26a20224ae952e787006f07d87a9acc"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260702-01.md",
@@ -4596,9 +4596,9 @@
         "运行时完整流程",
         "本功能最终效果"
       ],
-      "bytes": 15064,
+      "bytes": 14527,
       "lines": 537,
-      "content_sha256": "c77245f58ccaead2ba581cb1bb03d489d901b13803ad09b104d36833b27e3864"
+      "content_sha256": "ca656574fd04e72a40ccf94ece7628274e4654126fbfab4802980c1bda6f467d"
     },
     {
       "path": "anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260705-01.md",
@@ -4612,9 +4612,9 @@
       "summary": "JS逆向终结计划-如意最新web风控爬虫日志工具-攻克一切站点 。",
       "keywords": [],
       "headings": [],
-      "bytes": 2326,
+      "bytes": 2270,
       "lines": 56,
-      "content_sha256": "f748bf79e449a556927f251f7ccfee49027f3247e5e77cfb9d25c419392aebff"
+      "content_sha256": "0a4960676843c7ac63deae9e915b82053f210ee5e59d390d039287c836919f14"
     },
     {
       "path": "anti-detection/shuzilm-libdu-fingerprint.md",
@@ -4828,6 +4828,73 @@
       "bytes": 7956,
       "lines": 49,
       "content_sha256": "9ded373a572958ba3d9f05bed3ea7d38035a34ae8925276d78a4196c43c3948d"
+    },
+    {
+      "path": "anti-detection/xianyu-eeid-risk-control.md",
+      "kind": "canonical",
+      "category": "anti-detection",
+      "parent": null,
+      "title": "闲鱼 EEID 风控体系完全揭秘",
+      "source": "闲鱼 7.28.30（`com.taobao.idlefish`，versionCode 520）/ SecurityGuard 6.7.260202 独立分析（Redmi K20 Pro，Android 11）",
+      "original_date": "2026-09-24",
+      "archive_date": "2026-09-26",
+      "summary": "闲鱼 EEID（Extended Equipment ID）是 SecurityGuard 在客户端采集 Mini 探针（7 字节布尔段 + 11 字节半字节段）、ET 探针（本包实采 55 个）、SGEXT 45 字段、PL 测量、BI/CS 上报后，由 ACS-MUM 服务端签发的设备扩展标识。本文按原文结构归档探针位定义、SG 文件（.s/ 目录、.sg mtime → SGEXT fields[4]）、UTDID 持久化、EEID 注册/验证协议与签名参数关系；服务端评分与 EEID 生成算法为原文推测。",
+      "keywords": [
+        "EEID",
+        "SecurityGuard",
+        "Mini 探针",
+        "ET 探针",
+        "SGEXT",
+        "UTDID",
+        "SG 文件",
+        "ACS-MUM",
+        "x-eeid",
+        "闲鱼"
+      ],
+      "headings": [
+        "收录说明",
+        "📋 文档说明",
+        "一、EEID 风控体系概述",
+        "1.1 什么是 EEID？",
+        "1.2 EEID 的核心特点",
+        "1.3 EEID 在风控体系中的位置",
+        "二、EEID 风控参数体系",
+        "2.1 参数分类总览",
+        "2.2 核心风控点详解",
+        "三、EEID 协议流程分析",
+        "3.1 初始化阶段",
+        "3.2 EEID 注册协议",
+        "3.3 EEID 验证协议",
+        "3.4 协议时序图",
+        "3.5 协议安全机制",
+        "3.6 协议特性分析",
+        "四、SG 文件系统详解",
+        "4.1 SG 文件目录结构",
+        "4.2 核心文件详解",
+        "4.3 SG 文件的风控重要性",
+        "五、签名参数与 EEID 关系",
+        "5.1 签名参数体系",
+        "5.2 INPUT 参数组成（22 个字段）",
+        "5.3 签名计算流程",
+        "5.4 签名与 EEID 的关系",
+        "5.5 为什么需要签名 + EEID 双重保护？",
+        "六、风控对抗分析",
+        "6.1 常见对抗手段与检测",
+        "6.2 风控强度评估",
+        "6.3 理论上的完全绕过方案（仅供研究）",
+        "七、总结与建议",
+        "7.1 EEID 风控体系核心要点",
+        "7.2 对不同角色的建议",
+        "7.3 未来趋势",
+        "7.4 法律声明",
+        "八、参考资料",
+        "8.1 项目文件",
+        "8.2 技术文档",
+        "8.3 工具"
+      ],
+      "bytes": 65501,
+      "lines": 1910,
+      "content_sha256": "d6ace0a8a674efea95c19ca04827898dfcf018f2c4654e02d24dcc3c12cc4a37"
     },
     {
       "path": "anti-detection/yuanrenxue-anti-detection-compilation.md",
@@ -5140,9 +5207,9 @@
         "唯一可选的「改」",
         "速查"
       ],
-      "bytes": 10755,
+      "bytes": 10598,
       "lines": 157,
-      "content_sha256": "2608d6b669b40f9437ba9cf7a6682d0f9b99b2bac6e59748572f4d0ec2189592"
+      "content_sha256": "b41ee8ccbd529ae77068d2c3df8413068b35387743b9980c4f8c1648d13b1f4a"
     },
     {
       "path": "collection-engineering/reliable-mac-nas-spool-delivery.md",
@@ -5325,9 +5392,9 @@
         "收录说明",
         "文章目录（6 篇）"
       ],
-      "bytes": 1429,
+      "bytes": 1406,
       "lines": 23,
-      "content_sha256": "63378edfd233def0c690d34b97006aaa83903261ffc87c8cb28cfcb0e8933053"
+      "content_sha256": "b356af90328c6fa33abf300548de2a5d2bfdb0ff961875a792cc8ec64bb1ebac"
     },
     {
       "path": "mobile-app-reverse/anti-crawler-app-reverse-series/anti-crawler-app-20260705-01.md",
@@ -5362,9 +5429,9 @@
         "6\\. VMP（虚拟机保护）",
         "四、本章目标：建立你的逆向地图"
       ],
-      "bytes": 8760,
+      "bytes": 8550,
       "lines": 210,
-      "content_sha256": "42d7341c32a0f655ea7a2566ba8cde2e34ba9e304bc6c3349e6c808df4878f73"
+      "content_sha256": "77cd86ba0dd1fb0cfc75a4c242b974f78d74b09ba1f020f1569ea8bb82e6842f"
     },
     {
       "path": "mobile-app-reverse/anti-crawler-app-reverse-series/anti-crawler-app-20260706-01.md",
@@ -5401,9 +5468,9 @@
         "七、本章小结",
         "风险提示"
       ],
-      "bytes": 11480,
+      "bytes": 11207,
       "lines": 273,
-      "content_sha256": "6ab5de42577294d415aedfd0b39465be53856741bfb5b4879cd1a75de7458fcd"
+      "content_sha256": "0d2e662f8b870e5e70917aeaf33f47352f7625015e0cf42934c4223b596741fc"
     },
     {
       "path": "mobile-app-reverse/anti-crawler-app-reverse-series/anti-crawler-app-20260709-01.md",
@@ -5440,9 +5507,9 @@
         "五、本章小结",
         "风险提示"
       ],
-      "bytes": 12920,
+      "bytes": 12618,
       "lines": 302,
-      "content_sha256": "e36cfcceda1f995d33d04efd1a7ff1c7fd2000d50a376e78778967c633615969"
+      "content_sha256": "62114f416703019a6a54befb409a21111c777829686fd6f29075336539521afa"
     },
     {
       "path": "mobile-app-reverse/anti-crawler-app-reverse-series/anti-crawler-app-20260710-01.md",
@@ -5463,9 +5530,9 @@
         "五、Frida Stalker：跟踪指令执行",
         "本章小结"
       ],
-      "bytes": 11560,
+      "bytes": 11350,
       "lines": 210,
-      "content_sha256": "54481e759e588db1b9ffe6f9342735499130f33ffe5f701c1c0a5b4ffda6cf7e"
+      "content_sha256": "e8bae3a75520c97e0244982c45909eec5bc0fc6fe4c03ca0fff2298f2de92a85"
     },
     {
       "path": "mobile-app-reverse/anti-crawler-app-reverse-series/anti-crawler-app-20260711-01.md",
@@ -5509,9 +5576,9 @@
         "六、本章小结",
         "风险提示"
       ],
-      "bytes": 14166,
+      "bytes": 13877,
       "lines": 289,
-      "content_sha256": "d373dd327cba7f6005098fc9ee3a5c7cec9ed3066e0e44b24d69544dbea9ff97"
+      "content_sha256": "f4e5071c6879af477d16ddbf0d97360db29f76eeb4d62f9ea5870e5eb4b4f279"
     },
     {
       "path": "mobile-app-reverse/anti-crawler-app-reverse-series/anti-crawler-app-20260712-01.md",
@@ -5549,9 +5616,9 @@
         "六、本章小结",
         "风险提示"
       ],
-      "bytes": 16602,
+      "bytes": 16300,
       "lines": 302,
-      "content_sha256": "202ffaa7d24f8f3e13621690746c033f4ba193d59ec23cc59a8860275fc3ba0f"
+      "content_sha256": "87c9985d1f28be17ab512c05668fa5cd57b17859ff677f1d820396b7e171cdd6"
     },
     {
       "path": "mobile-app-reverse/app-reverse-environment-setup.md",
@@ -5601,9 +5668,9 @@
         "本章小结",
         "风险提示"
       ],
-      "bytes": 10588,
+      "bytes": 10350,
       "lines": 238,
-      "content_sha256": "3e549b9c2cd0b28718ae17da57b31d510f2d8e5b377d3a1e1242ab625ef2167e"
+      "content_sha256": "78efa7ef4f6dce568c6e32ff495c75efbc326dc7fe0d05fefb27deffeae6a0df"
     },
     {
       "path": "mobile-app-reverse/app-reverse-global-map.md",
@@ -5649,9 +5716,9 @@
         "6. VMP 虚拟机保护",
         "逆向地图速查"
       ],
-      "bytes": 8256,
+      "bytes": 8075,
       "lines": 181,
-      "content_sha256": "815339dccc58cd538114052adcfa7338251fb7454e2dc2bcc7ad7b382455fdef"
+      "content_sha256": "f7e9a4d53bde8e22e3b73a5986d77cd749ed97f08dd0d954009d824abb856ce4"
     },
     {
       "path": "mobile-app-reverse/jvm-mindmap.md",
@@ -5827,9 +5894,9 @@
         "收录说明",
         "文章目录（67 篇）"
       ],
-      "bytes": 10087,
+      "bytes": 10003,
       "lines": 84,
-      "content_sha256": "cb6523f2f5af497e8d869f77894cfe1dfb698c7790fb90e227fde6823de16fcc"
+      "content_sha256": "7f8f1003d036f4ef7014664e76c4c63a89347566b06abb151d44dbdd029224b9"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260302-01.md",
@@ -5868,9 +5935,9 @@
         "4.5 媒体设备",
         "4.6 GamePad"
       ],
-      "bytes": 58233,
+      "bytes": 57076,
       "lines": 1157,
-      "content_sha256": "5c31cf8efc2ad32fd89806570d04ab106cf07a58510b2a261b346200913e59f3"
+      "content_sha256": "b0edf181b930e5c2d117376efa7b95550ad7323a19d433095127a4e974dc3bc7"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260303-01.md",
@@ -5899,9 +5966,9 @@
         "A.2 某短视频 APP 的 SSL Pinning 实现特点",
         "A.3 常见绕过思路对比"
       ],
-      "bytes": 9303,
+      "bytes": 9127,
       "lines": 176,
-      "content_sha256": "11c81a1a065b6460b41d7f221e1382676a550aff1f31759693c8688b6b98771d"
+      "content_sha256": "5297d729649187675afaf39e0681b709c993bfd6392460ec485b9ca0068f1faa"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260303-02.md",
@@ -5930,9 +5997,9 @@
         "Task 3：响应数据解密",
         "五、Python 模拟请求框架（待补全）"
       ],
-      "bytes": 15361,
+      "bytes": 15032,
       "lines": 329,
-      "content_sha256": "dcea26ccfc6ecdf32a0b875f42b67047f4ed70fd9ce26b79001815f2ebc92007"
+      "content_sha256": "e364d8c85f7c6726e2ea6a4f7eb8a9dd7cc8486b9843531fd5a7ebafc1906727"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260304-01.md",
@@ -5959,9 +6026,9 @@
         "2.3 静态分析 libmusic_core.so.fix.so",
         "本篇小结"
       ],
-      "bytes": 19570,
+      "bytes": 19127,
       "lines": 443,
-      "content_sha256": "f975058210dac9e3fb8e50d4f43bc70871ada017634ed5ab552a1cdf2bef8a2c"
+      "content_sha256": "3301a0e8c87d459ffa055b51553bbc25bbf328ea7c2a24102eb31bc539ee5510"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260305-01.md",
@@ -5989,9 +6056,9 @@
         "附录：caesarson 与标准 AES-GCM 对比",
         "输出结构图"
       ],
-      "bytes": 35205,
+      "bytes": 34370,
       "lines": 835,
-      "content_sha256": "0824f89aa4acd1343406099a477e9118e7dcb6e6d37fc2db314b0818a9a6d20c"
+      "content_sha256": "50271d7af587318616d718fea87c5daa238658bfeab88473b2e3438b0ba4c412"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260310-01.md",
@@ -6021,9 +6088,9 @@
         "2.6.3、后变基模式",
         "2.7、独占内存访问指令"
       ],
-      "bytes": 16013,
+      "bytes": 15582,
       "lines": 431,
-      "content_sha256": "b24c4e9282641b1792b2ca2018f66248f13a20417f6fa3c6c5ea518039d4f744"
+      "content_sha256": "b4253ea474a3b11fa027afda656fa04d041d7d17ae862ab9147cb462a6dc067b"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260311-01.md",
@@ -6054,9 +6121,9 @@
         "3.5、SUBS 指令",
         "3.6、SBC 指令"
       ],
-      "bytes": 17682,
+      "bytes": 17201,
       "lines": 481,
-      "content_sha256": "3f70bf7059fd05aff709a14efffe4e1b7820096f04ce4da849f1cd0c29ef4626"
+      "content_sha256": "4a5e0b89adbda3e149792384d84301add51258f784f9b0dbe1496649bf5f4bb9"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260312-01.md",
@@ -6085,9 +6152,9 @@
         "4.1、位段插入操作指令",
         "4.2、位段提取操作指令"
       ],
-      "bytes": 10868,
+      "bytes": 10470,
       "lines": 398,
-      "content_sha256": "bf89f69769eca37813e7e22f4e94f7da6b9211be342f4e5773723a00999bf150"
+      "content_sha256": "dc1098ed551822aebe0b14c3fb007127b03c65aa27634ef1bf187d84eb0eb3c2"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260313-01.md",
@@ -6112,9 +6179,9 @@
         "3.2、内存独占访问指令",
         "3.3、异常处理指令"
       ],
-      "bytes": 10765,
+      "bytes": 10500,
       "lines": 265,
-      "content_sha256": "5adce4e039eedfe8b76ff18f18dedc2ff18bc762c8c7e0f4105b2adced25ac82"
+      "content_sha256": "1b2ec3a4130646f233886cfa8437f2765a78133b2933c34ee469919d79d367cd"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260316-01.md",
@@ -6161,9 +6228,9 @@
         "5.2 工具链说明",
         "5.3 关于 libcrypto_kg.so"
       ],
-      "bytes": 38471,
+      "bytes": 37505,
       "lines": 966,
-      "content_sha256": "8d1e5dbaf7d2426311af113541c753f55bbcce470ad409773f3a2b9c24cbebac"
+      "content_sha256": "8a5227273faf9d2219b6d3d88c4cecb38529bfb16c2794ac9b47ed77b0026dae"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260317-01.md",
@@ -6230,9 +6297,9 @@
         "9.4 魔改 AES（Custom S-Box AES）",
         "9.5 SM4（类 AES 国密算法）"
       ],
-      "bytes": 35399,
+      "bytes": 34320,
       "lines": 1079,
-      "content_sha256": "672d11a019b011aff1aba4eb6f5c76b62937f51d48307f9acaa2846ddd18688b"
+      "content_sha256": "90dbdf2d2ef0d3f43eaa5b29c190fd6fb8e836eeea3bb552f67df7cc8da37629"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260318-01.md",
@@ -6297,9 +6364,9 @@
         "10.2 逆向分析流程总结",
         "10.3 核心经验"
       ],
-      "bytes": 62320,
+      "bytes": 60834,
       "lines": 1486,
-      "content_sha256": "f2d1602694e008b67f467d9e4a2020720af66824e143607c5933b573c12bbd7b"
+      "content_sha256": "d5089c734dc9244fb3d214532a4cffa562a869e036d2f4a55a64710371debd52"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260319-01.md",
@@ -6363,9 +6430,9 @@
         "结语",
         "关于 Claude Code 的一点感受"
       ],
-      "bytes": 34324,
+      "bytes": 33444,
       "lines": 880,
-      "content_sha256": "c8b43e3c9be04600a1717a8b038795afbf84ab9e761b06605ce799293654698d"
+      "content_sha256": "3b2b76abe1cb86b58dc5a920d4f55aabc6a2279b462b0e693eb64ba09cd25d9f"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260319-02.md",
@@ -6418,9 +6485,9 @@
         "9.3 大模型辅助逆向：效率与范式的变化",
         "9.4 后续研究方向"
       ],
-      "bytes": 30984,
+      "bytes": 30315,
       "lines": 669,
-      "content_sha256": "fa4534ba28c8fb573ee22cbbfbc7ec027b991942cbbc7694fba2e5f29271a4d2"
+      "content_sha256": "d0159ba070ed8b97b0040a58d85c6ab137c1c8abc8c0d96d6c9208a930be8070"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260320-01.md",
@@ -6495,9 +6562,9 @@
         "16.4 待完成工作",
         "十七、总结"
       ],
-      "bytes": 48688,
+      "bytes": 47635,
       "lines": 1053,
-      "content_sha256": "f1c27f40a4f411c4c676b729a713a91069dc0a6eeb545899fbcf8444c397bf21"
+      "content_sha256": "7b31317c62f2ca17587ae0f668b308e2bab52199bf9eeb77374fbf820ebafda0"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260323-01.md",
@@ -6546,9 +6613,9 @@
         "9.3 从 User 模式切换到 SVC 模式（通过 SVC）",
         "十、总结"
       ],
-      "bytes": 30411,
+      "bytes": 29742,
       "lines": 669,
-      "content_sha256": "d2fde143c30b0bb523b03efec306b3d5aaf44ed21ad287aa70c13c50b4bf8297"
+      "content_sha256": "992c208eddb7bfc97bda83393285b91cfdaa3c190bc22ae6b24a1ff426d25d59"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260324-01.md",
@@ -6623,9 +6690,9 @@
         "11.4 合规与红线警示",
         "工具与资源汇总"
       ],
-      "bytes": 82175,
+      "bytes": 80296,
       "lines": 1879,
-      "content_sha256": "7bc2ab39564cc32f51d60e861a7901ecca122c25bc095c9925b696c672a6bb75"
+      "content_sha256": "76980e6248ca5640c65519fe3fb6174f57138ca50c95f4ba710689c493fb6a30"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260325-01.md",
@@ -6694,9 +6761,9 @@
         "11.3 对逆向工程的启示",
         "12\\. TEA 与其他轻量级加密算法对比"
       ],
-      "bytes": 50244,
+      "bytes": 49051,
       "lines": 1193,
-      "content_sha256": "b0aa15bceb3b28e8ca2d38fdcc11782ca0647b0ddf6d6bd91a1ef9003a3417c0"
+      "content_sha256": "0916804753970141d23415f028a80481ac62b6b9355cae31ad524199ee21f2e2"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260326-01.md",
@@ -6723,9 +6790,9 @@
         "附录B：sub_1FF91E 函数反汇编代码",
         "附录C：sub_3203EC 函数反汇编代码"
       ],
-      "bytes": 32903,
+      "bytes": 32175,
       "lines": 728,
-      "content_sha256": "57b8e62744d482130c2467e525c082a673a2d71ea3f6c127c19665e7bab07e09"
+      "content_sha256": "9694244a6e3ed1c99d6d489cef761fa3b3a33b279d1f56b0e0105635b195a28e"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260327-01.md",
@@ -6790,9 +6857,9 @@
         "11.5 DES 与 AES 核心差异对比",
         "总结"
       ],
-      "bytes": 57388,
+      "bytes": 56178,
       "lines": 1210,
-      "content_sha256": "d6a374ab6d1f593d9baed75be6d5ef16ad2134abcaa5d3a58925965cf9c2b6b6"
+      "content_sha256": "a96f563ebdb45fcdbba917425bad279b939f28560cf8276a845ebea95fcecbb4"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260330-01.md",
@@ -6870,9 +6937,9 @@
         "核心要点",
         "参考资源"
       ],
-      "bytes": 84112,
+      "bytes": 82310,
       "lines": 1802,
-      "content_sha256": "93bc503d88167002dd36f21a76396c6d9c69a3cb2d8bf073c04fad9658150eee"
+      "content_sha256": "7101637fc8159612226320b37ed6136290776da12bc66c08c5915d450b386dde"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260331-01.md",
@@ -6915,9 +6982,9 @@
         "七、工具生态速查",
         "八、总结"
       ],
-      "bytes": 72472,
+      "bytes": 70955,
       "lines": 1517,
-      "content_sha256": "e799f9ac884ee04581ebe2f3be5e484db022bf1b1ab72419f6adb78571e8b937"
+      "content_sha256": "3271b18709ff0255f204f3e49ab974376bfb36ff590c7213ca52a356c74491db"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260401-01.md",
@@ -6948,9 +7015,9 @@
         "3.3 gRPC 识别",
         "小结与展望"
       ],
-      "bytes": 21942,
+      "bytes": 21486,
       "lines": 456,
-      "content_sha256": "96b21d91ecb1b40e0ae8d864c0a98ab67e6fb3b5c222165dccc35ff046b93b80"
+      "content_sha256": "75b96abb34c93324b9db2bb27f0c27b35970a9deaa1fdde8cd59c0d681b19abb"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260402-01.md",
@@ -6981,9 +7048,9 @@
         "5.6 protoc --descriptor_set_out 与反编译",
         "小结与展望"
       ],
-      "bytes": 33430,
+      "bytes": 32695,
       "lines": 735,
-      "content_sha256": "ac762a40beddf59d5f86026651807c43c88d72eb99d6ff07ec7ddcea63955d88"
+      "content_sha256": "b2ed86dd0c43089d827c629b769142a527c8e197fa07ca56f5972868b3af35e1"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260403-01.md",
@@ -7019,9 +7086,9 @@
         "附录：实战 Cheat Sheet",
         "系列总结"
       ],
-      "bytes": 32000,
+      "bytes": 31317,
       "lines": 683,
-      "content_sha256": "d0c3191324d59d1cba75a3ebbe9637f8d52139d5fd74a9144f06fb4d083285cf"
+      "content_sha256": "54be40a4aaf9b87f7de10171fa120f7546bb25b49c5cedfef29958413d11d418"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260408-01.md",
@@ -7078,9 +7145,9 @@
         "8.3 常用 openssl 命令速查",
         "附录：RSA 安全性与密钥长度建议"
       ],
-      "bytes": 49082,
+      "bytes": 47910,
       "lines": 1172,
-      "content_sha256": "f3fcab087fa7527182ed053949ee7bf9c658348e26eba2810a04126bff43bd8d"
+      "content_sha256": "080d5aa82c1b86f47825dbc1fe1bc2f8b8893e8fffce01ce3ca6240b21fa01ca"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260409-01.md",
@@ -7113,9 +7180,9 @@
         "Unidbg 的定位",
         "回到\"为什么\""
       ],
-      "bytes": 20086,
+      "bytes": 19747,
       "lines": 339,
-      "content_sha256": "306ae8d9ee75dd620cf02c2d2d4f978f87b3e977c5d6e5879943ffa709025e06"
+      "content_sha256": "0e67cc6ddeda3ec3b2e8b656c3d7a009fb4a30fb53da8314ef1271554d03aad8"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260410-01.md",
@@ -7152,9 +7219,9 @@
         "一张地图：哪些由 Unidbg 处理，哪些由你处理",
         "建立正确的心智模型"
       ],
-      "bytes": 25268,
+      "bytes": 24829,
       "lines": 439,
-      "content_sha256": "a9c88ca99107c6cac57e7debf97770655d8f656a28cb59b59af2af7b221484d1"
+      "content_sha256": "271a096331b8554068e1f7b358f3456aa823844d1c911d5ba3fc633bfcef7a9d"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260413-01.md",
@@ -7192,9 +7259,9 @@
         "3\\. 多线程行为差异",
         "总结：没有银弹，只有取舍"
       ],
-      "bytes": 21680,
+      "bytes": 21207,
       "lines": 473,
-      "content_sha256": "097ed00689af81ed0a6262e89bb3218117c9f3cef865228a3a4e485c1164e162"
+      "content_sha256": "d5c7d97343ecf999eae8ebddf9e1110f2cfdd9cc013e99875a6ff75fca276711"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260414-01.md",
@@ -7234,9 +7301,9 @@
         "3\\. 性能边界与 Backend 的关系",
         "总结：一个入口，五种来客"
       ],
-      "bytes": 22929,
+      "bytes": 22493,
       "lines": 436,
-      "content_sha256": "b948b3cb000cdb239c69f04bcb93f69a2cb07994f58bedd5a0b88eb7349d92ed"
+      "content_sha256": "b0be10447a4a10200f7ddfd4ca45e366ade4e7c82e7ae4b7518604618d010062"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260415-01.md",
@@ -7283,9 +7350,9 @@
         "原则 4：跑通之后立刻验证正确性",
         "总结：第一次跑通的本质"
       ],
-      "bytes": 33972,
+      "bytes": 33248,
       "lines": 724,
-      "content_sha256": "d479fe837120ea4dbbb518f8fa2552f00dd78020dfae011847459b68ac56c94e"
+      "content_sha256": "7ca5d534cdf0c350e44c75cb225441c26d93f9d948cbb5a91249e83fed06f169"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260416-01.md",
@@ -7323,9 +7390,9 @@
         "心智模型小结",
         "总结：从填空题到角色扮演"
       ],
-      "bytes": 22930,
+      "bytes": 22424,
       "lines": 506,
-      "content_sha256": "3af9b67d9c7f1406cc3474a8572eb4a55a2d7eef0c27f06d5aebd2a1eb341add"
+      "content_sha256": "236833c1ea093862d9f25a808c9b92ba175cd27c885e078d909febd5a27c716a"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260417-01.md",
@@ -7354,9 +7421,9 @@
         "验证闭环 — 跑通不等于跑对",
         "三维度拆解：为什么这个模型有效"
       ],
-      "bytes": 24252,
+      "bytes": 23737,
       "lines": 515,
-      "content_sha256": "048252d505a385b7f0f15a0ceacbcbc86bf3fb8c833b2d5532636abb24d3ed34"
+      "content_sha256": "f16f2c5c864981858ab948171ac214fbb8ba93872887c74a83edaa6cf81f704f"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260420-01.md",
@@ -7392,9 +7459,9 @@
         "验证闭环：怎么知道自己补对了",
         "总结：文件系统层的五条铁律"
       ],
-      "bytes": 31601,
+      "bytes": 30917,
       "lines": 684,
-      "content_sha256": "6b634821da007e957021fec8957591f3423e9d0bd70d5c352eba45963b415285"
+      "content_sha256": "39d22e928219abeed1c3b53264792c7fabf828292501b821ed21e9e0322e180e"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260421-01.md",
@@ -7424,9 +7491,9 @@
         "系统调用层的五条心法",
         "总结：四层响应模型走完了一半"
       ],
-      "bytes": 24261,
+      "bytes": 23707,
       "lines": 554,
-      "content_sha256": "ec6c152212a1581888382e4225044f7122a27fbf15efe2583003a757004a9350"
+      "content_sha256": "5d19ab7a1763160ca3744e0a7aa91f9678de35b28951a0f2e3127d2c2d5ade1d"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260424-01.md",
@@ -7465,9 +7532,9 @@
         "库函数层的五条心法",
         "总结：四层响应模型走完了"
       ],
-      "bytes": 26445,
+      "bytes": 25845,
       "lines": 600,
-      "content_sha256": "66fc65eb54aa029027d75d24fbb14af823443fdfda82d29c3c01824eddac1359"
+      "content_sha256": "817d0c637c4f359fda776e29ff86c65af11c7b75326fa07ad4e50efd937ea928"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260425-01.md",
@@ -7508,9 +7575,9 @@
         "一个更隐蔽的变体：初始化根本不在 SO 里",
         "总结"
       ],
-      "bytes": 25206,
+      "bytes": 24706,
       "lines": 500,
-      "content_sha256": "1478398b911cd91f06e5814f7104bfe0e301f3b342d16d40515b3848ea91c3aa"
+      "content_sha256": "3aff573a7cabeaa74f8d78a57e31e56fe1ded7463f7e9ede80b55ad283cefb35"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260427-01.md",
@@ -7551,9 +7618,9 @@
         "Backend 限制：只有 Unicorn 系列支持 Trace",
         "总结"
       ],
-      "bytes": 29589,
+      "bytes": 29012,
       "lines": 577,
-      "content_sha256": "1d21ead1b1da7752ab7c556d1199974ca57f0f8ffd9251f2a373257c31be6f77"
+      "content_sha256": "91003cd61aea7fe1e9544da185933b1b836c98678330185fdfd4a2ba716460f6"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260428-01.md",
@@ -7596,9 +7663,9 @@
         "坑 4：不要忘记 vDSO",
         "总结"
       ],
-      "bytes": 27773,
+      "bytes": 27135,
       "lines": 638,
-      "content_sha256": "a32095a64748de0c064933c4ba48ce3e6b46096445a4b98772491487de5e431b"
+      "content_sha256": "b2d3366c2011535d91d618a4f6408b0acd3cee7a846ec5ef0a95aa5a3517c5b6"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260429-01.md",
@@ -7638,9 +7705,9 @@
         "学习社区",
         "进阶阅读"
       ],
-      "bytes": 30067,
+      "bytes": 29584,
       "lines": 483,
-      "content_sha256": "1c3bdbee05455decfb851609d57a1561d2d4987fb28e0bf886f0fc987fd6b6de"
+      "content_sha256": "684d91782066a0e1dbc159343780301e2825e02c1d5d510e0563de80efd2c389"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260429-02.md",
@@ -7676,9 +7743,9 @@
         "HookZz ctx 范式：算法分步 hook 的工业级写法",
         "总结"
       ],
-      "bytes": 33465,
+      "bytes": 32807,
       "lines": 658,
-      "content_sha256": "607cb8a2c6cbcdd8a7fd912d7fe1f02fa0cb205d5f2f849802dd3131bd95fd79"
+      "content_sha256": "7648c00ba97bf1876a2e5ae64a52464ed62bc5a57fa89e9cb216fb9c10b07a83"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260429-03.md",
@@ -7719,9 +7786,9 @@
         "事故 3:GC pause 尖峰导致业务抖动",
         "总结"
       ],
-      "bytes": 33728,
+      "bytes": 33042,
       "lines": 686,
-      "content_sha256": "4c675e84838a679cf9f2fcb74f9941df5fa190667d64c9c9d05fcb74ef700177"
+      "content_sha256": "dae6f6de092f5b97774fc4a0270a47a414f3323034a3ffab064c3232b8a7ba4a"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260429-04.md",
@@ -7788,9 +7855,9 @@
         "误区 5：混淆了“看懂”和“还原”",
         "总结"
       ],
-      "bytes": 56923,
+      "bytes": 55986,
       "lines": 937,
-      "content_sha256": "de82ad7734cf27489a3c06749be3983753a2c9fe850ad785c9a9a550b4f670ac"
+      "content_sha256": "7063c89be8727fce4c04e604b7774d70ceb651c3a653d52478c41fbe7eb4b4e4"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260430-01.md",
@@ -7809,9 +7876,9 @@
         "附件阅读效果",
         "附件下载"
       ],
-      "bytes": 1866,
+      "bytes": 1814,
       "lines": 52,
-      "content_sha256": "8a3532594b7873f0ccd2c05c98d65a179a6819da4e58f173d877b67456f683a1"
+      "content_sha256": "36de77affadb3fb3a278e11c98a1d10dca7195cda337d015208c24d156e33ede"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260505-01.md",
@@ -7847,9 +7914,9 @@
         "7.3 Frida 与 Objection",
         "总结"
       ],
-      "bytes": 35550,
+      "bytes": 35050,
       "lines": 500,
-      "content_sha256": "2712e5e43a29acbba302e269b297e634f523d2cccc919fe60fffe39c2881b412"
+      "content_sha256": "d752d0883028df3b9dda79b6078b05d0ab2629bf03d54885ba089bb095852fc1"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260506-01.md",
@@ -7897,9 +7964,9 @@
         "7.2 快速 Hook 的 Shell 函数",
         "总结"
       ],
-      "bytes": 39502,
+      "bytes": 38661,
       "lines": 841,
-      "content_sha256": "e982b9a81e0d11efe6160fd2cc85eb9c4eae5802f07caeab687bb8abb4ef926b"
+      "content_sha256": "5f97e1e1f002a82b56a5cb53961fa8305a4898e6dadda5ef920615baa66c8aee"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260508-01.md",
@@ -7939,9 +8006,9 @@
         "6.3 一个优化过的堆栈工具函数",
         "总结"
       ],
-      "bytes": 39950,
+      "bytes": 39196,
       "lines": 754,
-      "content_sha256": "9ec8f72084f1d9abb2a35e48c5194f40fa43961f0726389631fe8f39ca0f1c7c"
+      "content_sha256": "eef629f919db415b2e43448f9ec508a138f63f0da7dc7033d022d8109f721f7d"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260509-01.md",
@@ -7990,9 +8057,9 @@
         "7.4 策略三：通过方法签名特征搜索",
         "总结"
       ],
-      "bytes": 56725,
+      "bytes": 55667,
       "lines": 1058,
-      "content_sha256": "f857e16ee4af12bb0e01eaa6ab6986a08e49b1bd490978d5e777b106f2fa4f2f"
+      "content_sha256": "27d47523c7d7e01f7222147fd815ae3b64be483a696a7719fc7d33cd6b0a4350"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260511-01.md",
@@ -8062,9 +8129,9 @@
         "13.3 核心 API 单行速查（13 条）",
         "总结"
       ],
-      "bytes": 93919,
+      "bytes": 91888,
       "lines": 2031,
-      "content_sha256": "fd8d9e86ddf4ccb237fb1ba5750504d31c57c7e5b367b5d4df477f83302d9a07"
+      "content_sha256": "3ff9a283c88419e69dd841417498eb31fb6b4fb3051d2dab3cdb9ff7d0acf2bc"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260512-01.md",
@@ -8124,9 +8191,9 @@
         "十一、实用速查：Native 层常用操作代码片段",
         "总结"
       ],
-      "bytes": 56965,
+      "bytes": 55689,
       "lines": 1276,
-      "content_sha256": "e85c6fb26665b7bea78541849481761bed8e1657b29035c791e33473b71886c7"
+      "content_sha256": "8b5173d6574d79dad93d7e428491eccd0f86209efcea0de283652bb3b2ac0333"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260513-01.md",
@@ -8176,9 +8243,9 @@
         "八、排错速查清单",
         "总结"
       ],
-      "bytes": 48819,
+      "bytes": 47605,
       "lines": 1214,
-      "content_sha256": "6e676dff50139e8545b7a6c460268815c0aa5b611670d8a7df81875397318715"
+      "content_sha256": "6afd2e9184b85c331bd82567120f2f475e9b8911159976b100a9c72401a52fc1"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260514-01.md",
@@ -8242,9 +8309,9 @@
         "十三、工具生态速查",
         "总结"
       ],
-      "bytes": 92132,
+      "bytes": 90433,
       "lines": 1699,
-      "content_sha256": "f8420f8403170f39be75fabcefdb64a594c58c4a2ea8f2b5b00a4fa180622ff5"
+      "content_sha256": "7aa00a7aa98b5ee7604db11a2f5a83df44ed8b715a2c7a98a2db5bcbe4711ccc"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260518-01.md",
@@ -8324,9 +8391,9 @@
         "11.3 工具速查",
         "小结"
       ],
-      "bytes": 99799,
+      "bytes": 97674,
       "lines": 2125,
-      "content_sha256": "87f5eee59d78e5d9d0f5ffe4d75fd0f17c8c168b11d02d79ce269b9d089bb437"
+      "content_sha256": "3b2c0765bb66f0226ebc6912451c3fcb0f3fdff3a648c85823344ccc05ff7f6d"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260519-01.md",
@@ -8368,9 +8435,9 @@
         "八、实战：综合系统监控脚本",
         "总结"
       ],
-      "bytes": 62451,
+      "bytes": 61239,
       "lines": 1212,
-      "content_sha256": "0d2b34277b41f434a6cabd334014af874c26675929de3151fabf5e77eb35ae57"
+      "content_sha256": "377b3ab10b7025172a435185d1a5eb28a715a9b3e24e5afaa1cbbb5cd9b44031"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260526-01.md",
@@ -8413,9 +8480,9 @@
         "总结",
         "获取本篇脚本"
       ],
-      "bytes": 63402,
+      "bytes": 62308,
       "lines": 1094,
-      "content_sha256": "fd8ec4d67f09b92a8f92d5af9c4eef78c4bc7972ed0d4c18a4f6d67e90e9cd50"
+      "content_sha256": "08117e13cb434e477bf83201478ce23f1b1b5e59d80e35bbfc5cf68905cdb95b"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260528-01.md",
@@ -8459,9 +8526,9 @@
         "总结",
         "获取本篇脚本"
       ],
-      "bytes": 79408,
+      "bytes": 78098,
       "lines": 1310,
-      "content_sha256": "8118f6f9dcec7607662d4c291cbcdeb61e19766045f6eaf52ebee9b6cc056fd8"
+      "content_sha256": "65282adbe3e5912e1787a0070df35e364531d81cf394649ee4be279496f9fac4"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260529-01.md",
@@ -8498,9 +8565,9 @@
         "总结",
         "获取本篇脚本"
       ],
-      "bytes": 56451,
+      "bytes": 55407,
       "lines": 1044,
-      "content_sha256": "21746bb1ba4303e17c328630c9ce548485e66fd93e1ee172d306810d293dacaa"
+      "content_sha256": "15b5e6c0c6dbc7301c93953e72434546fdbafe9ac026567b73da75d91adfd37f"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260604-01.md",
@@ -8530,9 +8597,9 @@
         "十、方法学沉淀",
         "获取本篇脚本"
       ],
-      "bytes": 35600,
+      "bytes": 35120,
       "lines": 480,
-      "content_sha256": "0a9de69b52442bba3c058bd93223d1f853609fbd7478a4665b022ea5a3291264"
+      "content_sha256": "a5f062ddcdac0c4e99a736460409e0544875cd48b916db0094fa70a36da7d5c4"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260605-01.md",
@@ -8576,9 +8643,9 @@
         "九、总结",
         "获取本篇脚本"
       ],
-      "bytes": 37243,
+      "bytes": 36656,
       "lines": 587,
-      "content_sha256": "402411e63c5b03111e2983aac26e5d02b639522dfbc0d0c1512c887eaccbd455"
+      "content_sha256": "89027faef1d56399754a9f2668b9b820eaaedbc6f0f91a1d693d1659e639a486"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260611-01.md",
@@ -8619,9 +8686,9 @@
         "7.3 总结",
         "获取本篇脚本"
       ],
-      "bytes": 32608,
+      "bytes": 32086,
       "lines": 522,
-      "content_sha256": "fe025d821174d7ad1b23e1f7a5ed5909fcc3c6516c56f87124dc257441d3d5e7"
+      "content_sha256": "a319b592f86404da116e337ed53440f1944301741a210d7531d32a034d52fade"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260615-01.md",
@@ -8666,9 +8733,9 @@
         "7.3 在 Frida 中检查当前架构",
         "总结"
       ],
-      "bytes": 19707,
+      "bytes": 19225,
       "lines": 482,
-      "content_sha256": "390de08b77114648a2d1c43bfac473a73fa3574333e486fd8d22a4ac6e7a5d43"
+      "content_sha256": "69a9423f52c8be539f54ee7ee433c2789b5be5246e0e9aedf1806a4889bb0c15"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260618-01.md",
@@ -8710,9 +8777,9 @@
         "十一、决策：什么时候用哪招",
         "总结"
       ],
-      "bytes": 37261,
+      "bytes": 36667,
       "lines": 594,
-      "content_sha256": "bbf0b873f9812c11d73f180a6474aba42788c278e232f07e0935e46ed932c89d"
+      "content_sha256": "acc719e478e3f7cc417290ada0cd2e925327cc1e5b5f1f1e9482e556d7b30cbe"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260625-01.md",
@@ -8746,9 +8813,9 @@
         "六、综合实战：追踪一个动态注册的加密 SO",
         "总结"
       ],
-      "bytes": 58004,
+      "bytes": 56989,
       "lines": 1015,
-      "content_sha256": "bcd943b910c19af5c8f424215f78ed2b81b82efd961ae5fa1f4280ac398dd752"
+      "content_sha256": "a2644f9f4e0fce33e9a659ad15c31fa357bb9df6f309645060a7cd1d085cc729"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260626-01.md",
@@ -8786,9 +8853,9 @@
         "6.5 从 24 行到通用工具：lasting-yang/frida_dump 的演进",
         "总结"
       ],
-      "bytes": 29073,
+      "bytes": 28511,
       "lines": 562,
-      "content_sha256": "7e2ba8c62a4075b12b7a5634df5dd45f576f0ddda23c7bcd308fe30dd6bc5e88"
+      "content_sha256": "f13259b15e02ffee29f64c4b48bd4c3bf6096159296f3535a5339095ff84fbbf"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260629-01.md",
@@ -8865,9 +8932,9 @@
         "核心要点",
         "下次再遇到一段 OLLVM 混淆 / 未知签名算法，推荐工作流"
       ],
-      "bytes": 104831,
+      "bytes": 102846,
       "lines": 1985,
-      "content_sha256": "41e5c553ba4df7d922a7bfe24801ebf3d4789b8480995a88c371d120e875c86b"
+      "content_sha256": "2ad4b42418e05982c7452827cfa3b2efb0cbb7dfbe577adcfa39595e05c0590d"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260707-01.md",
@@ -8941,9 +9008,9 @@
         "6.9 排障总纲",
         "七、总结"
       ],
-      "bytes": 165093,
+      "bytes": 161873,
       "lines": 3220,
-      "content_sha256": "53e68aa2c57841dabd642c380e4da35bb9ddc8cce42ff23b041de6f843f7f332"
+      "content_sha256": "156c6eae9623b68928e381cf55e275dcec7a2665d7eaaf4cdf0e667b8d6b2662"
     },
     {
       "path": "mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260708-01.md",
@@ -9016,9 +9083,9 @@
         "十、综合决策表",
         "总结"
       ],
-      "bytes": 90444,
+      "bytes": 88939,
       "lines": 1505,
-      "content_sha256": "f007d8fadb08e18cea0a7677130e1e2ba58a6d8db5313de72a0b68e960380dfc"
+      "content_sha256": "e264b64e86aa8ce47a06ed642af4344c96e35d1c15747cab03139f9eab03b933"
     },
     {
       "path": "mobile-app-reverse/protocol-admission-four-gates.md",
@@ -9151,9 +9218,9 @@
         "目录合同与验收",
         "速查"
       ],
-      "bytes": 23680,
+      "bytes": 23274,
       "lines": 406,
-      "content_sha256": "65cd8605c9132bd20e4f1803295f1d94a1a3aaa1056a5fc4ffae1a9dc5e4aac3"
+      "content_sha256": "403dfc0471a63b8aee7bbf0edd2d4e1897e128814f648b3122b5f0d252e7b6ca"
     },
     {
       "path": "mobile-app-reverse/reversenotes-android-compilation.md",
@@ -12053,9 +12120,9 @@
         "五段 SHA 输出",
         "自定义 byte-mixing VM"
       ],
-      "bytes": 25909,
+      "bytes": 25381,
       "lines": 528,
-      "content_sha256": "b4fd3094b54df00565211ab7e69d9da52fb22237c39886fd843615c669bd80b6"
+      "content_sha256": "313bb3e0b2111554e2cb1fbce1de6892e998ab51a655432629aeb58e71c52bb9"
     },
     {
       "path": "native-analysis/nuitka-onefile-payload-recovery.md",
@@ -12124,9 +12191,9 @@
         "后续验证",
         "关联资料"
       ],
-      "bytes": 8013,
+      "bytes": 7875,
       "lines": 148,
-      "content_sha256": "d1b87822e5d6610788206aa06fb9421e4220b3d2311f67e23e06958a78ca5547"
+      "content_sha256": "063d999d29431d18800fee2160ee3e7458110ecf401603e703419ab6b2122a3d"
     },
     {
       "path": "native-analysis/xfq-unidbg-native-compilation.md",
@@ -12472,9 +12539,9 @@
         "八、后续工作",
         "关联资料"
       ],
-      "bytes": 11468,
+      "bytes": 11274,
       "lines": 204,
-      "content_sha256": "d3d63aa66c939ed4f853c7c96ed647898f0f3219e36f744653a4ae744b13d366"
+      "content_sha256": "6c01f9bc399f730ebd1403b8af801c1627637869174506a4cb99a956f59a71c5"
     },
     {
       "path": "protocols/mmtls-protocol-analysis.md",
@@ -12555,9 +12622,9 @@
         "附录 B: HKDF Label 速查",
         "附录 C: 文件对照"
       ],
-      "bytes": 45123,
+      "bytes": 44041,
       "lines": 1090,
-      "content_sha256": "a20aa5e37bc0a843bc589a58789ca9e8f4db1d63c924e59c3e6d1f426f138975"
+      "content_sha256": "fd14bf87c9dce33e4c3fa38c32c6010bd687e2993c0bce9153a6695bb020b4f5"
     },
     {
       "path": "protocols/wechat-mp-http-surface.md",
@@ -12698,9 +12765,9 @@
         "nonce：mt19937 出 UUID v4",
         "完整管道"
       ],
-      "bytes": 7253,
+      "bytes": 7103,
       "lines": 150,
-      "content_sha256": "2a401c9ce6ee4cc6106640a594c530795178823144e53869a86a8ede11302101"
+      "content_sha256": "7298096118cf0c57cc112519d41e9335fe705195288bdb4b548fed3ccbde7e17"
     },
     {
       "path": "signature-algorithms/hangban-laes-encrypt.md",
@@ -12766,9 +12833,9 @@
         "逐轮只改一个点",
         "可复用打法"
       ],
-      "bytes": 4933,
+      "bytes": 4829,
       "lines": 104,
-      "content_sha256": "662dc06107c0df90f72fcfd3e63b5509274480ad96f9d0002cecce7dc5a3e024"
+      "content_sha256": "fd554731cb340a3d1d2aef1b616e3824ea85f421bea0e23f5473df06c584d70b"
     },
     {
       "path": "signature-algorithms/qidian-fock-signature.md",
@@ -12805,9 +12872,9 @@
         "结论矩阵",
         "关联资料"
       ],
-      "bytes": 6392,
+      "bytes": 6247,
       "lines": 155,
-      "content_sha256": "1955175b3fae75a840d54382b77ca948a2779d163620d2364ad0c7603e9c4195"
+      "content_sha256": "f0ffe448faa815ce5629258c60d09965165e380282535199695c04f8e96d09be"
     },
     {
       "path": "signature-algorithms/shopee-shpssdk-request-defense.md",
@@ -12878,9 +12945,9 @@
         "收录说明",
         "文章目录（19 篇）"
       ],
-      "bytes": 2575,
+      "bytes": 2539,
       "lines": 36,
-      "content_sha256": "7bc80b7e2e8d9c43dcbe3162b3d2be3332faadc721a350a2ecf6294650801d9f"
+      "content_sha256": "1fa790b40344f2bb514c8e60ae7e63070a4a6365f3ef2db28b0ae477ad8ef99b"
     },
     {
       "path": "signature-algorithms/xfq-crypto-notes-compilation/xfq-20251129-01.md",
@@ -13363,9 +13430,9 @@
       "headings": [
         "正文"
       ],
-      "bytes": 24843,
+      "bytes": 24201,
       "lines": 642,
-      "content_sha256": "fc4dbf4306f05e9c3f7c8d71c7dc01271f0e64d639c5f0558b2bc815ef7287dc"
+      "content_sha256": "e381eab07d21a0fde932afa89e495497a4b8802586ce07137359cdb2b6f7d2e1"
     },
     {
       "path": "signature-algorithms/xfq-crypto-notes-compilation/xfq-20260419-01.md",
@@ -13399,9 +13466,9 @@
       "headings": [
         "正文"
       ],
-      "bytes": 1784,
+      "bytes": 1767,
       "lines": 17,
-      "content_sha256": "16aeb809aebe0bfadf2505d95096f1c1d493228a0f0f0822d021c45ad5723c10"
+      "content_sha256": "62ff440036bfd1b7fb2bc76ec619506c4b4da659dd08de3ba2fa1708220c29f8"
     },
     {
       "path": "signature-algorithms/xfq-crypto-notes-compilation/xfq-20260508-01.md",
@@ -13498,9 +13565,9 @@
         "API 签名路径推断",
         "自吐方法"
       ],
-      "bytes": 4798,
+      "bytes": 4689,
       "lines": 119,
-      "content_sha256": "ca8cd9794f459f3b4cbc1c54e27ee90569bc0e056ab4358dafed67ff48180c5c"
+      "content_sha256": "cc46b61d6e0087eab4d95cbcd917217223e721f6a6a20ec5c937997288a7bb4a"
     },
     {
       "path": "web-reverse/ai-assisted-web-reverse-compilation.md",
@@ -14148,9 +14215,9 @@
         "收录说明",
         "文章目录（16 篇）"
       ],
-      "bytes": 2965,
+      "bytes": 2932,
       "lines": 33,
-      "content_sha256": "b87b2ac943cb419123ed174c1b0c989844c13b4f7f4c6043caa26be1606ae35a"
+      "content_sha256": "c84d1c99ea2d26a32b1b2f4fa842303b33577101685989aa6c9458444e59c1bd"
     },
     {
       "path": "web-reverse/anti-crawler-web-reverse-compilation/anti-crawler-web-20250921-01.md",
@@ -14178,9 +14245,9 @@
         "五、避坑指南：这些坑别踩！",
         "六、总结：VMP 没那么可怕！"
       ],
-      "bytes": 11660,
+      "bytes": 11491,
       "lines": 169,
-      "content_sha256": "46675815cbd59c31f13cd608318927e1da9a327556ca9beb5eed61ffdfa31923"
+      "content_sha256": "78e99e3a49dad459ea48454af1f499ac51ae1843e15e7c86dd1f21a5044cdbeb"
     },
     {
       "path": "web-reverse/anti-crawler-web-reverse-compilation/anti-crawler-web-20250923-01.md",
@@ -14194,9 +14261,9 @@
       "summary": "上一篇文章我们了解了Akamai的整体加密套路。 [ 被 Akamai 反爬虐到哭？Akamai 反爬 JS 逆向：从抓包到解密，四步拆穿加密套路！ ](https://mp.weixin.qq.com/s?biz=MzU2NTI5MTU5OA==&mid=2247483672&idx=1&sn=a59f56b139dd1a0db63389022a593d5。",
       "keywords": [],
       "headings": [],
-      "bytes": 11498,
+      "bytes": 11370,
       "lines": 128,
-      "content_sha256": "b42a95aaed874b0cb7be33880a2ce26fb539e730f02d490586150da1d17efc0b"
+      "content_sha256": "c2f4350e1660c73d055f34592f069728314fd0ed4bddb6398a01d8837c9cc12d"
     },
     {
       "path": "web-reverse/anti-crawler-web-reverse-compilation/anti-crawler-web-20250925-01.md",
@@ -14210,9 +14277,9 @@
       "summary": "上一篇我们完成了的dvc参数得解密。 Akamai难点第一弹：mst参数的vmp混淆解决思路 。",
       "keywords": [],
       "headings": [],
-      "bytes": 9248,
+      "bytes": 9154,
       "lines": 94,
-      "content_sha256": "639dbe6a808509098193abdf0c0eded595b8da73faf21d0bdd9064cc40aa7a7a"
+      "content_sha256": "1ceaa0329fdffa4627633c4a2aea3a9b13003ac492b58a356568c564fefc3d41"
     },
     {
       "path": "web-reverse/anti-crawler-web-reverse-compilation/anti-crawler-web-20250928-01.md",
@@ -14226,9 +14293,9 @@
       "summary": "上一篇我们完成了的ajr参数的解密。 Akamai难点第二弹：ajr参数得混淆解密 这一篇我。",
       "keywords": [],
       "headings": [],
-      "bytes": 5569,
+      "bytes": 5533,
       "lines": 36,
-      "content_sha256": "46a0ac3c9f1bcb58caa37c56c0ae38cd862b2124f777686f73e935b9451bc04c"
+      "content_sha256": "22f3ec55a161ed0083fdbf3e03de904dfa7042bad661e6155f654161c873006a"
     },
     {
       "path": "web-reverse/anti-crawler-web-reverse-compilation/anti-crawler-web-20250929-01.md",
@@ -14242,9 +14309,9 @@
       "summary": "之前我们分析了Akamai加密就是解析获取xCK字典， [ 被 Akamai 反爬虐到哭？Akamai 反爬 JS 逆向：从抓包到解密，四步拆穿加密套路！ ](https://mp.weixin.qq.com/s?biz=MzU2NTI5MTU5OA==&mid=2247483672&idx=1&sn=a59f56b139dd1a0db63389022a59。",
       "keywords": [],
       "headings": [],
-      "bytes": 8009,
+      "bytes": 7932,
       "lines": 77,
-      "content_sha256": "d945618b28e79e5ed9daf8d6b5497890fdcbd3616ddaedf4641379a44af19199"
+      "content_sha256": "dc7dba1b1727ffdb3e5cd20bb5075a6130afce127fedf29702ec299f028d9384"
     },
     {
       "path": "web-reverse/anti-crawler-web-reverse-compilation/anti-crawler-web-20251013-01.md",
@@ -14272,9 +14339,9 @@
         "4.2 实际场景的扩展：应对复杂混淆",
         "五、总结"
       ],
-      "bytes": 27845,
+      "bytes": 27629,
       "lines": 216,
-      "content_sha256": "868d93624308c3c89175e3724208a72a7eccd2645fce7cee1503679aaeafffdf"
+      "content_sha256": "bb2b7c1b44b3984922e8a138fc5b781b51c385b009628cb7d6ad954a46c62756"
     },
     {
       "path": "web-reverse/anti-crawler-web-reverse-compilation/anti-crawler-web-20251017-01.md",
@@ -14309,9 +14376,9 @@
         "总结：AST 如何 “破解” 这段混淆代码？",
         "四、实操建议：用 AST 工具批量处理混淆"
       ],
-      "bytes": 29323,
+      "bytes": 28884,
       "lines": 439,
-      "content_sha256": "f5fa7394fc30e76fb353b06b599ae2420da1436db26c240bdf48a45d8d9b48b3"
+      "content_sha256": "8c1de1f74aa7533a6fd5397c5fbf7ece3a6aa0d4ffc30092ad9afee7bd10ed5a"
     },
     {
       "path": "web-reverse/anti-crawler-web-reverse-compilation/anti-crawler-web-20251021-01.md",
@@ -14327,9 +14394,9 @@
       "headings": [
         "代码关键点说明"
       ],
-      "bytes": 6061,
+      "bytes": 5979,
       "lines": 82,
-      "content_sha256": "c0c68ed27e0aea3f4f07404b3670f24ba8fec5b451538acb59d88d81fcd043a0"
+      "content_sha256": "b8255bc8de28bdf4d9d722545a7563d26cd166a37c316f800938aa9caf095288"
     },
     {
       "path": "web-reverse/anti-crawler-web-reverse-compilation/anti-crawler-web-20251023-01.md",
@@ -14347,9 +14414,9 @@
         "代码核心逻辑说明",
         "使用示例："
       ],
-      "bytes": 10232,
+      "bytes": 10125,
       "lines": 107,
-      "content_sha256": "1ac26e033601837c5406982868d73580e1f15c1b37bc2b1898d3b03310ea5441"
+      "content_sha256": "1747232e32fb9daa08e608b95bdc3ba8d461f862f40e0817abfffb34bb9f96e3"
     },
     {
       "path": "web-reverse/anti-crawler-web-reverse-compilation/anti-crawler-web-20251026-01.md",
@@ -14371,9 +14438,9 @@
         "4\\. 节点插入：替换原复合语句",
         "使用示例："
       ],
-      "bytes": 9242,
+      "bytes": 9139,
       "lines": 103,
-      "content_sha256": "6b32f4b12d2d98c18b70903f0d9420fd025264c8322c8d29a8c0ad728ac42a6a"
+      "content_sha256": "2f2c81a66e36decb0431842052f0fff4b73afb276b2dea7106bc7089209f5685"
     },
     {
       "path": "web-reverse/anti-crawler-web-reverse-compilation/anti-crawler-web-20251101-01.md",
@@ -14395,9 +14462,9 @@
         "拆解效果：从 “天书” 到 “说明书”",
         "码字不易，如果真的有帮助可以顺手点个赞，你们的喜欢就是我更新的动力！"
       ],
-      "bytes": 10455,
+      "bytes": 10354,
       "lines": 101,
-      "content_sha256": "ae91e0abfbb50eceb1da310af91d89c8aebe271cc684e49a949d9a8abbb8a643"
+      "content_sha256": "e28bb811d08b441cf84072da3ba1508a1527d7b7633b327b64a757ab5b5b91b9"
     },
     {
       "path": "web-reverse/anti-crawler-web-reverse-compilation/anti-crawler-web-20260122-01.md",
@@ -14413,9 +14480,9 @@
       "headings": [
         "码字不易，如果真的有帮助可以顺手点个赞，你们的喜欢就是我更新的动力！"
       ],
-      "bytes": 12946,
+      "bytes": 12886,
       "lines": 60,
-      "content_sha256": "461213339ae49b9853f318504946e1027a51b332aca0a243500d8f5c39e961c2"
+      "content_sha256": "9c5e376ec8d76b0510edd3a64a6971456028452eeec816cc3f96bef6197f409e"
     },
     {
       "path": "web-reverse/anti-crawler-web-reverse-compilation/anti-crawler-web-20260129-01.md",
@@ -14429,9 +14496,9 @@
       "summary": "应大家的要求，今天先分享一下某宝无用分支的破解思路。 某宝的多层控制流平坦化也是国内数一数二知名的反爬手段了。之前140版本的时候哲哥大神写过一套ast源码，可以完美解决多层控制流平坦化，可以一键还原代码，还原成顺序执行的逻辑，加强阅读性。",
       "keywords": [],
       "headings": [],
-      "bytes": 3928,
+      "bytes": 3884,
       "lines": 44,
-      "content_sha256": "940df7d7a8b2eb0b958faf3aa727cbde9e908fbf04b0521a2fd1c2cf45ff1a43"
+      "content_sha256": "2104d2a09dd9e81167a2fff8784c415831ec9a3bbe306ff96e91c77fedb85b0b"
     },
     {
       "path": "web-reverse/anti-crawler-web-reverse-compilation/anti-crawler-web-20260323-01.md",
@@ -14453,9 +14520,9 @@
         "结语",
         "码字不易，如果真的有帮助可以顺手点个赞，你们的喜欢就是我更新的动力！"
       ],
-      "bytes": 10903,
+      "bytes": 10724,
       "lines": 179,
-      "content_sha256": "70eb8d2b1d838753cc74da25056fbb9d82d5be6abc9423759d7aa89767432316"
+      "content_sha256": "82fd35636d5629dd2796995d51b05eeb5bb1e87913283b0d0325291adf999d77"
     },
     {
       "path": "web-reverse/anti-crawler-web-reverse-compilation/anti-crawler-web-20260327-01.md",
@@ -14488,9 +14555,9 @@
         "五、新手避坑指南（重点提醒）",
         "码字不易，如果真的有帮助可以顺手点个赞，你们的喜欢就是我更新的动力！"
       ],
-      "bytes": 23303,
+      "bytes": 23006,
       "lines": 297,
-      "content_sha256": "e884f3349d4c731ff8e0b35b5a9a1295796d3a2df8e3de9bd8b3c5805b30aa4e"
+      "content_sha256": "6573481c30bb9cc1391a788362ebf552d18b498e62f34e1a1b87fe0b0fc91468"
     },
     {
       "path": "web-reverse/anti-crawler-web-reverse-compilation/anti-crawler-web-20260330-01.md",
@@ -14513,9 +14580,9 @@
         "五、 总结：从对抗到理解",
         "码字不易，如果真的有帮助可以顺手点个赞，你们的喜欢就是我更新的动力！"
       ],
-      "bytes": 27152,
+      "bytes": 26863,
       "lines": 289,
-      "content_sha256": "f61b6d5409a79ae5181057d9acbf35eecc3181e8f2f2a87e501d9d5ac609bb3b"
+      "content_sha256": "e79e0ec3b296e5bdc9788804d8bc9d9040beeb30c6bd8177a36290cc5283c53e"
     },
     {
       "path": "web-reverse/autohome-cookie-boundary-case.md",

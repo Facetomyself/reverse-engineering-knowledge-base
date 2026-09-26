@@ -1,6 +1,6 @@
 # 逆向知识库文章索引
 
-> 更新于 2026-09-24 ｜ 来源: `article/`
+> 更新于 2026-09-26 ｜ 来源: `article/`
 >
 > 本文件维护 canonical 入口与技术标签；合集子文章详见 [CATALOG.md](./CATALOG.md)，机器读取使用 [`catalog.json`](./catalog.json)。
 >
@@ -41,6 +41,7 @@
 | [device-fingerprint-consistency-modeling.md](./anti-detection/device-fingerprint-consistency-modeling.md) | — (方法论整理) | `设备指纹`, `一致性建模`, `联合分布`, `泊松分布`, `对数正态`, `多次采集`, `APK版本`, `生命周期` | 设备指纹关键是一致性建模不是随机抖动：联合分布交叉印证、APK 自身版本面、右偏时间间隔、动态物理信号，以及多次采集的有状态演化；不收录生成代码 |
 | [shuzilm-libdu-fingerprint.md](./anti-detection/shuzilm-libdu-fingerprint.md) | — (知乎 11.4.0 / libdu.so 独立分析) | `数盟`, `数字联盟`, `libdu.so`, `x-ms-id`, `cdd`, `d2api`, `vB2`, `AYk`, `deviceUniqueId` | 数盟可信 ID：注册顶层约 20–30 key、`vB2` 再嵌套到合计约 258 key，`d2api` 回 `cdd` 即业务 `x-ms-id`；对照表 366 key 含其它采集点，偏移只对知乎 11.4.0 / SDK v8.4.0 |
 | [cloakbrowser-humanize-trajectory.md](./anti-detection/cloakbrowser-humanize-trajectory.md) | CloakHQ/CloakBrowser | `humanize`, `三次贝塞尔`, `ease-in-out`, `鼠标轨迹`, `过冲`, `CloakBrowser`, `Playwright` | 包装层 humanize 在进程内用三次贝塞尔、法线控制点和 burst 停顿生成鼠标样本；本机 Pro chrome.dll 不含该符号；可调用计划器在主仓 tools/cloakbrowser_human |
+| [xianyu-eeid-risk-control.md](./anti-detection/xianyu-eeid-risk-control.md) | — (闲鱼 7.28.30 / SG 6.7.260202 独立分析) | `EEID`, `SecurityGuard`, `Mini 探针`, `ET 探针`, `SGEXT`, `UTDID`, `SG 文件`, `ACS-MUM`, `x-eeid`, `闲鱼` | 闲鱼 EEID：Mini 7+11 字节位图、ET 55 探针 tag、SGEXT 45 字段（`fields[4]`=`.sg` mtime）、PL CRC64 与 UTDID `Alvin2.xml`；服务端评分/EEID 生成为推测，`x-sign` HMAC-SHA1 说法与 SG 70102 四头冲突待验证 |
 
 ### 签名算法 (`article/signature-algorithms/`)
 
@@ -184,6 +185,7 @@
 - **双段 AES-CBC + RSA ky + ChaCha sn（腾讯 Qimei REGISTER）**: [sdk-purecalc](./mobile-app-reverse/sdk-purecalc-compilation.md)
 - **AES-CBC + HMAC-SHA256 + 自定义哈希（今彩萍乡 wtoken）**: [sdk-purecalc](./mobile-app-reverse/sdk-purecalc-compilation.md)
 - **魔改 AES-like / 自定义 T-box / nibble Mix（LAES ECB）**: [hangban-laes](./signature-algorithms/hangban-laes-encrypt.md)
+- **CRC64-ECMA PL.ck / TEA-XTEA ET 编码 / HMAC-SHA1 22 字段 INPUT（闲鱼 EEID，签名说法待验证）**: [xianyu-eeid](./anti-detection/xianyu-eeid-risk-control.md)
 - **DES-ECB（x-mini-wua 15 个 8 字节块）**: [alibaba-mtop-four-headers](./signature-algorithms/alibaba-mtop-four-headers.md)
 - **MD5 state1 + SHA1 x-sign / Park-Miller 交替键（SG 70102）**: [alibaba-mtop-four-headers](./signature-algorithms/alibaba-mtop-four-headers.md)
 - **MD5(uifid_ts_VM_CONST_canonical_query)（抖音 webSign）**: [douyin-secsdk](./web-reverse/douyin-secsdk-websign-case.md)
@@ -216,6 +218,7 @@
 - **设备注册包顺序 / 事件线程 / 日志通道 / 云端身份前置**: [protocol-register-order](./mobile-app-reverse/protocol-register-packet-order.md), [pure-protocol-sdk](./mobile-app-reverse/pure-protocol-sdk-reconstruction.md)
 - **顶象 DXRisk `/udid/m1` riskToken 签发**: [sdk-purecalc](./mobile-app-reverse/sdk-purecalc-compilation.md)
 - **数美 `deviceprofile/v4` data/tn/ep**: [sdk-purecalc](./mobile-app-reverse/sdk-purecalc-compilation.md)
+- **闲鱼 EEID 注册 / ACS-MUM 验证 / 后续请求 `x-eeid`**: [xianyu-eeid](./anti-detection/xianyu-eeid-risk-control.md)
 - **数盟 d2api/report / `cdd`=`x-ms-id` / `vB2` 画像**: [shuzilm-libdu](./anti-detection/shuzilm-libdu-fingerprint.md)
 - **腾讯 snowflake Qimei REGISTER `/ola/v2`**: [sdk-purecalc](./mobile-app-reverse/sdk-purecalc-compilation.md)
 - **B 站 buvid / deviceid RSA+AES 信封 / fp_local**: [reversenotes-android](./mobile-app-reverse/reversenotes-android-compilation.md)
@@ -237,7 +240,8 @@
 
 ### 反检测/对抗
 - **WAF 绕过**: [51job-anti-detection](./anti-detection/51job-anti-detection-analysis.md)
-- **设备指纹**: [51job-anti-detection](./anti-detection/51job-anti-detection-analysis.md), [pure-protocol-sdk](./mobile-app-reverse/pure-protocol-sdk-reconstruction.md), [protocol-register-order](./mobile-app-reverse/protocol-register-packet-order.md), [ace-deviceuniqueid](./anti-detection/android-ace-deviceuniqueid.md), [xfq-device-fp](./anti-detection/xfq-device-fp-compilation.md), [fp-consistency](./anti-detection/device-fingerprint-consistency-modeling.md), [shuzilm-libdu](./anti-detection/shuzilm-libdu-fingerprint.md), [reversenotes-android](./mobile-app-reverse/reversenotes-android-compilation.md), [sdk-purecalc](./mobile-app-reverse/sdk-purecalc-compilation.md), [protocol-admission](./mobile-app-reverse/protocol-admission-four-gates.md)
+- **设备指纹**: [51job-anti-detection](./anti-detection/51job-anti-detection-analysis.md), [pure-protocol-sdk](./mobile-app-reverse/pure-protocol-sdk-reconstruction.md), [protocol-register-order](./mobile-app-reverse/protocol-register-packet-order.md), [ace-deviceuniqueid](./anti-detection/android-ace-deviceuniqueid.md), [xfq-device-fp](./anti-detection/xfq-device-fp-compilation.md), [fp-consistency](./anti-detection/device-fingerprint-consistency-modeling.md), [shuzilm-libdu](./anti-detection/shuzilm-libdu-fingerprint.md), [reversenotes-android](./mobile-app-reverse/reversenotes-android-compilation.md), [sdk-purecalc](./mobile-app-reverse/sdk-purecalc-compilation.md), [protocol-admission](./mobile-app-reverse/protocol-admission-four-gates.md), [xianyu-eeid](./anti-detection/xianyu-eeid-risk-control.md)
+- **阿里 SecurityGuard EEID（Mini/ET 探针 / SGEXT / SG 文件 mtime / UTDID / sgcookie）**: [xianyu-eeid](./anti-detection/xianyu-eeid-risk-control.md)
 - **数盟 libdu.so 指纹对照 / `x-ms-id` 签发**: [shuzilm-libdu](./anti-detection/shuzilm-libdu-fingerprint.md)
 - **指纹一致性 / 联合分布 / 分层装配**: [fp-consistency](./anti-detection/device-fingerprint-consistency-modeling.md), [protocol-admission](./mobile-app-reverse/protocol-admission-four-gates.md), [xfq-device-fp](./anti-detection/xfq-device-fp-compilation.md)
 - **时间间隔分布（泊松 / 对数正态）与指纹生命周期**: [fp-consistency](./anti-detection/device-fingerprint-consistency-modeling.md)
@@ -326,6 +330,7 @@
 - **网易易盾（Web NECaptcha / App NES 加固分面）**: [products](./web-reverse/products.md), [paopao-android](./mobile-app-reverse/paopao-android-reverse-compilation.md)
 - **同盾 / 京东（h5st/JCAP 滑块与 tp=22 空间推理/到家）/ 抖音（a_bogus/IM/TicketGuard）/ 饿了么 / 美团 / 小红书 xs / 快手 NS / 阿里 MTOP H5**: [products](./web-reverse/products.md), [jd-h5st-runtime](./web-reverse/jd-h5st-runtime-case.md), [kuaishou-landing](./web-reverse/kuaishou-landing-case.md), [xiaohongshu-assembly](./web-reverse/xiaohongshu-assembly-case.md)
 - **闲鱼 / 淘宝 App InnerSignImpl**: [mtop-innersign-rpc](./mobile-app-reverse/mtop-innersign-rpc.md), [xianyu-android](./web-reverse/xianyu-android-sign-rpc-case.md)
+- **闲鱼 App EEID / 阿里 SecurityGuard 6.7 设备风控**: [xianyu-eeid](./anti-detection/xianyu-eeid-risk-control.md), [alibaba-mtop-four-headers](./signature-algorithms/alibaba-mtop-four-headers.md)
 - **闲鱼 Web / 淘宝 H5**: [xianyu-web](./web-reverse/xianyu-web-mtop-case.md), [taobao-h5](./web-reverse/taobao-h5-mtop-lwp-case.md)
 - **B 站 WBI / 极验 / correspondPath**: [bilibili-wbi](./web-reverse/bilibili-wbi-geetest-case.md)
 - **微博 / 头条 / 西瓜**: [weibo-planes](./web-reverse/weibo-request-planes-case.md), [toutiao-execjs](./web-reverse/toutiao-abogus-execjs-case.md), [xigua-unsigned](./web-reverse/xigua-unsigned-query-case.md)
