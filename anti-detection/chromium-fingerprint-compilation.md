@@ -66,26 +66,28 @@
 
 ## 系列文章目录
 
-### 01 — 基础篇 (30 篇)
+### 01 — 基础篇 (30 篇，合并后 26 个文件)
+
+> 第 11、13、16、25 篇（均为「（二）」续篇）已分别并入第 2、3、12、9 篇；为保持原编号，这 4 个编号保留为指向合并文件的占位条目，01-基础/ 目录中对应编号的文件已不存在。
 
 详见 [01-基础/](chromium-fingerprint-compilation/01-基础/)
 
 1. [Chromium 编译环境搭建指南](chromium-fingerprint-compilation/01-基础/01-chromium-compilation-guide.md)
-2. [Canvas 指纹随机化 — fillText 偏移法](chromium-fingerprint-compilation/01-基础/02-canvas-fingerprint-randomization.md)
-3. [WebGL 指纹随机化 — getSupportedExtensions 打乱](chromium-fingerprint-compilation/01-基础/03-webgl-fingerprint-randomization.md)
+2. [Chromium 源码随机 Canvas 指纹（一～二）：fillText 偏移与 setFillStyle 颜色微调](chromium-fingerprint-compilation/01-基础/02-canvas-fingerprint-randomization.md)
+3. [Chromium 源码随机 WebGL 指纹（一～二）：getSupportedExtensions 打乱与 ReadPixelsHelper / toDataURL](chromium-fingerprint-compilation/01-基础/03-webgl-fingerprint-randomization.md)
 4. [Fonts 指纹随机化 — offsetWidth/Height 偏移](chromium-fingerprint-compilation/01-基础/04-fonts-fingerprint-randomization.md)
 5. [WebRTC IP 随机化 — candidate() 篡改](chromium-fingerprint-compilation/01-基础/05-webrtc-ip-randomization.md)
 6. [Audio 指纹随机化 — sample_rate 偏移](chromium-fingerprint-compilation/01-基础/06-audio-fingerprint-randomization.md)
 7. [Plugins 指纹随机化 — description 追加](chromium-fingerprint-compilation/01-基础/07-plugins-fingerprint-randomization.md)
 8. [TLS/JA3 指纹随机化 — 加密套件打乱](chromium-fingerprint-compilation/01-基础/08-tls-ja3-fingerprint-randomization.md)
-9. [无头浏览器检测绕过](chromium-fingerprint-compilation/01-基础/09-headless-detection-bypass.md)
+9. [Chromium 无头检测绕过（一～二）](chromium-fingerprint-compilation/01-基础/09-headless-detection-bypass.md)
 10. [禁用 WebRTC](chromium-fingerprint-compilation/01-基础/10-disable-webrtc.md)
-11. [Canvas 指纹修改 (二) — setFillStyle 颜色微调 + creepjs 绕过](chromium-fingerprint-compilation/01-基础/11-canvas-fingerprint-v2.md)
-12. [传参固定指纹 — 基础实现](chromium-fingerprint-compilation/01-基础/12-fingerprint-parameter-fixation.md)
-13. [WebGL 指纹修改 (二) — ReadPixelsHelper + toDataURL](chromium-fingerprint-compilation/01-基础/13-webgl-fingerprint-v2.md)
+11. （已并入第 2 篇）[Canvas 指纹修改 (二) — setFillStyle 颜色微调 + creepjs 绕过](chromium-fingerprint-compilation/01-基础/02-canvas-fingerprint-randomization.md)
+12. [随机指纹 Chromium：传参固定指纹（一～二）](chromium-fingerprint-compilation/01-基础/12-fingerprint-parameter-fixation.md)
+13. （已并入第 3 篇）[WebGL 指纹修改 (二) — ReadPixelsHelper + toDataURL](chromium-fingerprint-compilation/01-基础/03-webgl-fingerprint-randomization.md)
 14. [CDP 检测绕过](chromium-fingerprint-compilation/01-基础/14-cdp-detection-bypass.md)
 15. [JA4 指纹随机化 — 加密算法随机增减](chromium-fingerprint-compilation/01-基础/15-ja4-fingerprint-randomization.md)
-16. [传参固定指纹 (二) — 全维度统一管理](chromium-fingerprint-compilation/01-基础/16-fingerprint-parameter-fixation-v2.md)
+16. （已并入第 12 篇）[传参固定指纹 (二) — 全维度统一管理](chromium-fingerprint-compilation/01-基础/12-fingerprint-parameter-fixation.md)
 17. [UA/GPU/小版本修改](chromium-fingerprint-compilation/01-基础/17-ua-gpu-version-modification.md)
 18. [大版本修改 + creepjs 反检测特征分析](chromium-fingerprint-compilation/01-基础/18-major-version-modification.md)
 19. [禁止图片加载](chromium-fingerprint-compilation/01-基础/19-disable-image-loading.md)
@@ -94,7 +96,7 @@
 22. [绕过无限 debugger — 关键字替换](chromium-fingerprint-compilation/01-基础/22-bypass-infinite-debugger.md)
 23. [屏幕尺寸信息修改 + matchMedia 反检测](chromium-fingerprint-compilation/01-基础/23-screen-size-modification.md)
 24. [WebGPU 指纹随机化](chromium-fingerprint-compilation/01-基础/24-webgpu-fingerprint.md)
-25. [无头检测绕过 (二) — WebGL Render/window.chrome/plugins/UA](chromium-fingerprint-compilation/01-基础/25-headless-detection-bypass-v2.md)
+25. （已并入第 9 篇）[无头检测绕过 (二) — WebGL Render/window.chrome/plugins/UA](chromium-fingerprint-compilation/01-基础/09-headless-detection-bypass.md)
 26. [语言和时区修改](chromium-fingerprint-compilation/01-基础/26-language-and-timezone.md)
 27. [Shadow DOM (closed) 内容访问 + shadowRoot2 属性](chromium-fingerprint-compilation/01-基础/27-shadow-dom-closed-access.md)
 28. [跨域 iframe 内容访问](chromium-fingerprint-compilation/01-基础/28-cross-origin-iframe-access.md)

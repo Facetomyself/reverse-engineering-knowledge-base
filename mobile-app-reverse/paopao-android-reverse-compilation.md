@@ -11,25 +11,17 @@
 
 本合集只吸收具有逆向工程复用价值的技术稿。平台导航、封面、二维码、头像、广告、招聘、抽奖和带货内容未纳入；同源的 DOCX、HTML、MHTML、PDF 重复导出件不重复保留。
 
-## 文章目录（67 篇）
+## 文章目录（67 篇，连载合并后 57 条）
 
 | 日期 | 文章 |
 |------|------|
 | 2026-03-02 | [风控对抗中的浏览器指纹技术（上）：协议层、应用层与行为检测](paopao-android-reverse-compilation/paopao-20260302-01.md) |
-| 2026-03-03 | [安卓端某音乐类 APP 逆向分享（一）：协议抓包](paopao-android-reverse-compilation/paopao-20260303-01.md) |
-| 2026-03-03 | [安卓端某音乐类 APP 逆向分享（二）：协议分析](paopao-android-reverse-compilation/paopao-20260303-02.md) |
-| 2026-03-04 | [安卓端某音乐类 APP 逆向分享（三）：params 参数加密分析——上](paopao-android-reverse-compilation/paopao-20260304-01.md) |
-| 2026-03-05 | [安卓端某音乐类 APP 逆向分享（五）：NMDI 参数加密分析](paopao-android-reverse-compilation/paopao-20260305-01.md) |
-| 2026-03-10 | [汇编基础介绍——ARMv8指令集（二）](paopao-android-reverse-compilation/paopao-20260310-01.md) |
-| 2026-03-11 | [汇编基础介绍——ARMv8指令集（三）](paopao-android-reverse-compilation/paopao-20260311-01.md) |
-| 2026-03-12 | [汇编基础介绍——ARMv8指令集（四）](paopao-android-reverse-compilation/paopao-20260312-01.md) |
-| 2026-03-13 | [汇编基础介绍——ARMv8指令集（五）](paopao-android-reverse-compilation/paopao-20260313-01.md) |
+| 2026-03-03 | [安卓端某音乐类 APP 逆向分享（一～五，缺四）：协议抓包、协议分析、params 与 NMDI 参数加密](paopao-android-reverse-compilation/paopao-20260303-01.md) |
+| 2026-03-10 | [汇编基础介绍——ARMv8指令集（二～五，缺一）](paopao-android-reverse-compilation/paopao-20260310-01.md) |
 | 2026-03-16 | [逆向某音乐 App：用 Frida + unidbg 还原 AES+RSA 混合加密的设备指纹 dfid](paopao-android-reverse-compilation/paopao-20260316-01.md) |
 | 2026-03-17 | [AES 加密算法详解：从原理到安卓逆向实战](paopao-android-reverse-compilation/paopao-20260317-01.md) |
 | 2026-03-18 | [深入MD5：逆向工程师如何识别和还原标准与魔改算法](paopao-android-reverse-compilation/paopao-20260318-01.md) |
-| 2026-03-19 | [某音乐 App 逆向（一）：加密通信全解析](paopao-android-reverse-compilation/paopao-20260319-01.md) |
-| 2026-03-19 | [某音乐 App 逆向（二）：calc签名算法深度逆向分析](paopao-android-reverse-compilation/paopao-20260319-02.md) |
-| 2026-03-20 | [某音乐 App 逆向（三）：calc签名算法完整还原](paopao-android-reverse-compilation/paopao-20260320-01.md) |
+| 2026-03-19 | [某音乐 App 逆向（一～三）：加密通信全解析与 calc 签名算法还原](paopao-android-reverse-compilation/paopao-20260319-01.md) |
 | 2026-03-23 | [ARM 汇编全解（八）：特权级与处理器模式](paopao-android-reverse-compilation/paopao-20260323-01.md) |
 | 2026-03-24 | [安卓 App 抓包实战指南：从基础原理到内核级对抗](paopao-android-reverse-compilation/paopao-20260324-01.md) |
 | 2026-03-25 | [TEA 加密算法逆向全攻略：从原理到实战密钥提取](paopao-android-reverse-compilation/paopao-20260325-01.md) |
@@ -37,9 +29,7 @@
 | 2026-03-27 | [DES 加密算法详解：从原理到安卓逆向实战](paopao-android-reverse-compilation/paopao-20260327-01.md) |
 | 2026-03-30 | [Frida进阶——指令级追踪工具 Stalker 使用教程](paopao-android-reverse-compilation/paopao-20260330-01.md) |
 | 2026-03-31 | [Frida进阶——安卓应用 9 种 SSL Pinning 绕过方案](paopao-android-reverse-compilation/paopao-20260331-01.md) |
-| 2026-04-01 | [Android 逆向视角下的 Protobuf 协议分析（上篇）：编码原理与流量识别](paopao-android-reverse-compilation/paopao-20260401-01.md) |
-| 2026-04-02 | [Android 逆向视角下的 Protobuf 协议分析（中篇）：解码与还原](paopao-android-reverse-compilation/paopao-20260402-01.md) |
-| 2026-04-03 | [Android 逆向视角下的 Protobuf 协议分析（下篇）：Frida Hook、对抗绕过与工具速查](paopao-android-reverse-compilation/paopao-20260403-01.md) |
+| 2026-04-01 | [Android 逆向视角下的 Protobuf 协议分析（上中下篇）：编码原理、解码还原与 Frida Hook 实战](paopao-android-reverse-compilation/paopao-20260401-01.md) |
 | 2026-04-08 | [RSA 加密算法详解：从原理到安卓逆向实战](paopao-android-reverse-compilation/paopao-20260408-01.md) |
 | 2026-04-09 | [Unidbg学习笔记（一）：为什么需要用户态模拟器](paopao-android-reverse-compilation/paopao-20260409-01.md) |
 | 2026-04-10 | [Unidbg学习笔记（二）：Unidbg 的世界观](paopao-android-reverse-compilation/paopao-20260410-01.md) |

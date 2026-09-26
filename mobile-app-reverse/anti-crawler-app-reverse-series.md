@@ -11,12 +11,14 @@
 
 本合集只吸收具有逆向工程复用价值的技术稿。平台导航、封面、二维码、头像、广告、招聘、抽奖和带货内容未纳入；同源的 DOCX、HTML、MHTML、PDF 重复导出件不重复保留。
 
+第1、2章与 PDF 归档的主文 [App 逆向的全局视角](app-reverse-global-map.md)、[App 逆向环境搭建](app-reverse-environment-setup.md) 是同一篇文章，2026-09-26 去重后只保留主文，下表第1、2章条目直接指向主文。
+
 ## 文章目录（6 篇）
 
 | 日期 | 文章 |
 |------|------|
-| 2026-07-05 | [第1章：App逆向的全局视角](anti-crawler-app-reverse-series/anti-crawler-app-20260705-01.md) |
-| 2026-07-06 | [第2章：环境搭建——工欲善其事必先利其器](anti-crawler-app-reverse-series/anti-crawler-app-20260706-01.md) |
+| 2026-07-05 | [第1章：App逆向的全局视角](app-reverse-global-map.md) |
+| 2026-07-06 | [第2章：环境搭建——工欲善其事必先利其器](app-reverse-environment-setup.md) |
 | 2026-07-09 | [第3章：静态分析——快速定位加密函数](anti-crawler-app-reverse-series/anti-crawler-app-20260709-01.md) |
 | 2026-07-10 | [第4章：Frida高级Hook——不止于打印参数](anti-crawler-app-reverse-series/anti-crawler-app-20260710-01.md) |
 | 2026-07-11 | [第5章：常见加密算法的精确还原](anti-crawler-app-reverse-series/anti-crawler-app-20260711-01.md) |

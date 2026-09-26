@@ -11,7 +11,9 @@
 
 本合集只吸收具有逆向工程复用价值的技术稿。星球导航、评论头像、二维码、号池/续杯、破解版软件、附件 zip/PDF 与业务爬取脚本未纳入。
 
-## 文章目录（42 篇）
+「利用uiautomator全自动点击隐私同意按钮」原有两份重复副本（2026-06-08 版与日期未知版），2026-09-26 去重后只保留主文 [uiautomator-privacy-consent-tap.md](uiautomator-privacy-consent-tap.md)，目录条目直接指向主文。
+
+## 文章目录（41 篇）
 
 | 日期 | 文章 |
 |------|------|
@@ -37,7 +39,7 @@
 | 2026-04-11 | [优酷抓包 js 脚本](xfq-tools-debug-compilation/xfq-20260411-01.md) |
 | 2026-05-27 | [ccswitch使用](xfq-tools-debug-compilation/xfq-20260527-01.md) |
 | 2026-05-28 | [xfQtrace 真机trace工具：极致的使用体验与优化](xfq-tools-debug-compilation/xfq-20260528-01.md) |
-| 2026-06-08 | [利用uiautomator全自动点击隐私同意按钮](xfq-tools-debug-compilation/xfq-20260608-01.md) |
+| 2026-06-08 | [利用uiautomator全自动点击隐私同意按钮](uiautomator-privacy-consent-tap.md) |
 | 2026-06-17 | [P2-A：ART/bionic JNI 插装](xfq-tools-debug-compilation/xfq-20260617-01.md) |
 | 2026-06-20 | [Java 算法 Hook：libcore 采集 + ROMManager 日志页](xfq-tools-debug-compilation/xfq-20260620-01.md) |
 | 2026-06-25 | [xfqtrace v2.0：快速/稳定/全面/隐藏](xfq-tools-debug-compilation/xfq-20260625-01.md) |
@@ -55,5 +57,4 @@
 | — | [从抓包到纯 Python：Kimi `device_register` 接口完整还原](xfq-tools-debug-compilation/xfq-undated-04.md) |
 | — | [你要注入的 JS 脚本内容](xfq-tools-debug-compilation/xfq-undated-05.md) |
 | — | [函数花指令.js](xfq-tools-debug-compilation/xfq-undated-06.md) |
-| — | [用 uiautomator 全自动点击隐私同意按钮](xfq-tools-debug-compilation/xfq-undated-07.md) |
 | — | [逗号表达式.js](xfq-tools-debug-compilation/xfq-undated-08.md) |

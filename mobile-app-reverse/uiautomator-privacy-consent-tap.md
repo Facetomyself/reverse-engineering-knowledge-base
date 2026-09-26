@@ -1,11 +1,21 @@
 # 用 uiautomator 自动点击隐私同意按钮
 
-> 来源: 微信公众号：Softard（Wossoneri）
-> 原始发布时间: unknown
+> 来源: 知识星球：逆向学习交流
+> 原始发布时间: 2026-06-08
 > 归档日期: 2026-09-06
 > 分类: mobile-app-reverse
 >
 > pm clear / 首次启动后的隐私协议与权限弹窗，用 uiautomator dump 解析 UI 树，按 text/content-desc 打分后对 bounds 中心做 adb input tap。这是界面问题，不必先 Frida/LSPosed；服务于设备注册或 native trace 前的无人值守。
+
+## 收录说明
+
+原标题「利用uiautomator全自动点击隐私同意按钮」，知识星球：逆向学习交流，2026-06-08。本文 2026-09-06 归档时来源误记为微信公众号 Softard（Wossoneri）、发布时间记为 unknown，2026-09-26 更正：
+
+- 正文作者说明需求来自「这几天我做 trace 工具让 ai 全自动修 bug」，脚本里的 dump 路径是 `/sdcard/xfqtrace_ui.xml`（`UIAUTOMATOR_DUMP_PATH`），xfqtrace 是逆向学习交流星球持续发布的 trace 工具（见 [工具与调试合集](./xfq-tools-debug-compilation.md) 中的 xfqtrace v2.x 系列）；
+- 星球归档中的 2026-06-08 版本还夹带作者本机 xfqtrace 项目 `docs/` 目录的 file:/// 导出路径；
+- Softard 合集的收录范围与文章目录里都没有这篇，也没有找到 Softard 发布过这篇的证据。
+
+同一篇文章在「逆向学习交流工具与调试合集」里曾有两份副本：`xfq-tools-debug-compilation/xfq-20260608-01.md`（2026-06-08，混入上述 file:/// 本地路径的导出噪声）和 `xfq-undated-07.md`（日期未知，全角标点版）。两份与本文逐段对照，除标点和导出噪声外没有额外内容，已删除；该合集 2026-06-08 条目现指向本文。
 
 ## 正文
 

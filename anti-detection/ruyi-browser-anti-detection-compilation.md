@@ -11,7 +11,7 @@
 
 本合集只吸收具有逆向工程复用价值的技术稿。平台导航、封面、二维码、头像、广告、招聘、抽奖和带货内容未纳入；同源的 DOCX、HTML、MHTML、PDF 重复导出件不重复保留。
 
-## 文章目录（97 篇）
+## 文章目录（97 篇，连载合并后 96 条）
 
 | 日期 | 文章 |
 |------|------|
@@ -29,8 +29,7 @@
 | 2025-11-05 | [safari内核教程 \| webkit的环境构建和编译](ruyi-browser-anti-detection-compilation/ruyi-20251105-01.md) |
 | 2025-11-10 | [firefox内核教程 \| Gecko的环境构建和编译](ruyi-browser-anti-detection-compilation/ruyi-20251110-01.md) |
 | 2025-11-12 | [浏览器指纹/风控国外论文研读 \| 基于WebAssembly的浏览器CPU架构层指纹识别](ruyi-browser-anti-detection-compilation/ruyi-20251112-01.md) |
-| 2025-11-17 | [Chromium内核教程 \| Mojo多进程通信编程（一）](ruyi-browser-anti-detection-compilation/ruyi-20251117-01.md) |
-| 2025-11-19 | [Chromium内核教程 \| Mojo多进程通信编程（二）](ruyi-browser-anti-detection-compilation/ruyi-20251119-01.md) |
+| 2025-11-17 | [Chromium内核教程 \| Mojo多进程通信编程（一～二）](ruyi-browser-anti-detection-compilation/ruyi-20251117-01.md) |
 | 2025-11-20 | [浏览器指纹/风控国外论文研读 \| 为什么基于扰动的canvas指纹伪装可以被100%识别--美国路易斯安那州立大学研究](ruyi-browser-anti-detection-compilation/ruyi-20251120-01.md) |
 | 2025-11-29 | [浏览器指纹/风控国外论文研读 \| 通过网络日志与鼠标行为生物识别来检测高级网络机器人--ACM期刊](ruyi-browser-anti-detection-compilation/ruyi-20251129-01.md) |
 | 2025-12-18 | [过检测 \| 自己制作的自动化框架+自己改的内核](ruyi-browser-anti-detection-compilation/ruyi-20251218-01.md) |
