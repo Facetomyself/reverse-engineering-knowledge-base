@@ -154,6 +154,8 @@
 | [jd-jcap-tp30-curve-slider.md](./web-reverse/jd-jcap-tp30-curve-slider.md) | — (公众号归档) | `JCAP`, `tp:30`, `si`, `vt`, `n1`, `se`, `st`, `ii`, `tk`, `ct`, `曲线映射`, `离散反函数`, `透明边距`, `京东` | GH2N「某东变速曲线滑块详解」：tp:30 拖箭头驱动拼块，n1 不提交却决定曲线映射；透明边距修正后在同版本曲线运行时枚举 argmin 求鼠标末点，完整回放取 ii；se 用最新 st，tk 对紧凑 JSON/URI 编码逐字节敏感；4 张图已本地化 |
 | [tencent-tdc-slider-xtea-purecalc.md](./web-reverse/tencent-tdc-slider-xtea-purecalc.md) | — (公众号归档) | `TCaptcha`, `TDC`, `tdc.js`, `jsvmp`, `插桩`, `XTEA`, `collect`, `eks`, `pow_answer`, `TM_CCOEFF_NORMED`, `腾讯` | 猿人学Python 投稿「某滑块纯算版全流程」：jsvmp handler 插桩判定 XTEA，明文 4 字符小端打包；动态 key 靠注入加法 handler 按 sum 值频率投票并 24 排列试解 "cd" 定序；指纹 cd/sd 与 eks 仍需 jsdom 现取（半纯算）；10 张图已本地化 |
 | [shuffled-jigsaw-slider-protocol.md](./web-reverse/shuffled-jigsaw-slider-protocol.md) | — (公众号归档) | `拼图滑块`, `loc 乱序`, `JSONP`, `capTicket`, `AES-128-CBC`, `length+9`, `op 轨迹`, `错误码分流`, `纯协议` | 让bug飞一会儿「拼图式滑块纯协议逆向」：背景 13px 竖条按 loc 打乱须先重排再检测，length=缺口+9；op 为页面绝对坐标、无 mouseup、约 110ms 节流；-1 换位置、105 换轨迹、111/112 换题；2 张图已本地化 |
+| [aliyun-captcha-v2-slider-part1-request-chain.md](./web-reverse/aliyun-captcha-v2-slider-part1-request-chain.md) | — (公众号归档) | `阿里云验证码`, `V2`, `InitCaptcha`, `Log2`, `Log3`, `DeviceData`, `SignatureNonce`, `Signature`, `HMAC`, `DeviceConfig`, `FeiLin`, `多重 AES`, `T001`, `u_asig`, `acw_sc__v2` | 無色逆向「阿里V2滑动验证码算法分析-上篇」：四次请求链；Signature 为 URL 编码 + HMAC + base64，DeviceConfig 固定 key/iv 解密后 # 首段 base64 即 Log2 Data 的 AES key，Data 为 feiling 环境对象多重 AES；在 AliyunCaptcha.js `decrypt:` 入口插桩看全部 key/iv；33 张图已本地化 |
+| [aliyun-captcha-v2-slider-part2-dynamic-keys.md](./web-reverse/aliyun-captcha-v2-slider-part2-dynamic-keys.md) | — (公众号归档) | `阿里云验证码`, `V2`, `FeiLin 动态 key`, `sg 动态 key`, `SessionId`, `异或`, `CaptchaVerifyParam`, `deviceToken`, `data`, `MD5`, `轨迹压缩`, `vmp`, `hook 定位` | 無色逆向「阿里V2滑动验证码算法分析-下篇」：FeiLin key = SessionId 与两个版本相关参数两次异或后 base64（从 t7 暴露）；sg key 以 `void 0` 锚点暴露；deviceToken = 环境 AES → 数组拼接 MD5 → base64，data = 轨迹转换 + 两个 vmp 值 → 压缩 → 固定密钥 vmp；16 张图已本地化 |
 | [ai-assisted-web-reverse-compilation.md](./web-reverse/ai-assisted-web-reverse-compilation.md) | — (公众号归档) | `h5st`, `a_bogus`, `x-s`, `x-s-common`, `JSVMP`, `RSA`, `fangdir`, `X-Gnarly`, `Shein`, `Dewu`, `md5__1038` | AI辅助逆向手记 20 篇：京东 h5st v5.3、瑞数 fangdir、抖音 a_bogus、小红书 xs、Shein/得物签名与 JSVMP/RSA 方法论，目标已脱敏 |
 | [koohai-reverse-notes-compilation.md](./web-reverse/koohai-reverse-notes-compilation.md) | — (公众号归档) | `KhBox`, `补环境`, `Illegal invocation`, `Canvas`, `jsdom`, `JSVMP`, `FART`, `WebView`, `IDA MD5` | 零基础爬虫第一天 17 篇：KhBox 补环境与 Node 编译、BrowserLeaks、AST/JSVMP，以及 FART/WebView/IDA 识别 MD5 |
 | [aigei-safe-search-ticket-chain.md](./web-reverse/aigei-safe-search-ticket-chain.md) | aigei | `safe-search 票据链`, `icon.png 藏票据`, `搜索权限门`, `AES-ECB cnkierjj`, `N@32`, `响应体数据流`, `request-parameter-lineage`, `companion_response_audit`, `403 权限不足`, `vcode-normal` | 爱给网筛选列表翻页 403 根因：带 term 列表每页须走 icon.png 签发票据 → /f/d → 列表的搜索授权链，票据藏响应体 base64 尾部且按页绑定；边界已对齐仍非 200 时先做伴随请求响应体数据流审计 |
@@ -205,6 +207,7 @@
 - **阿里云验证码 V3 Signature（& 拼接 HmacSHA1）/ DeviceData 与响应 AES / deviceToken AES+MD5**: [aliyun-captcha-v3-slider](./web-reverse/aliyun-captcha-v3-login-slider.md), [aliyun-captcha-v3](./web-reverse/products/aliyun-captcha-v3.md)
 - **XTEA（腾讯 tdc collect：4 字符小端打包 / 空格补齐 / base64+URL）+ 加法频率投票取动态 key**: [tencent-tdc-xtea](./web-reverse/tencent-tdc-slider-xtea-purecalc.md)
 - **AES-128-CBC key=iv 取自 capTicket 固定位置（拼图乱序滑块 op / validData）**: [shuffled-jigsaw](./web-reverse/shuffled-jigsaw-slider-protocol.md)
+- **阿里云验证码 V2 Signature（URL 编码 + HMAC + base64）/ DeviceConfig 固定 key/iv AES → Log2 Data 多重 AES / deviceToken AES+MD5+base64 / FeiLin key 异或**: [aliyun-v2-part1](./web-reverse/aliyun-captcha-v2-slider-part1-request-chain.md), [aliyun-v2-part2](./web-reverse/aliyun-captcha-v2-slider-part2-dynamic-keys.md), [aliyun-captcha-v2](./web-reverse/products/aliyun-captcha-v2.md)
 - **易盾自定义 xor-b64 / 非标准 AES / 47 维轨迹特征**: [products](./web-reverse/products.md)
 
 ### 协议
@@ -284,6 +287,7 @@
 - **京东 JCAP tp:30 变速曲线滑块（n1 曲线映射 / 离散反函数 endpoint / ii 事件实例 / tk 字节一致）**: [jd-jcap-tp30](./web-reverse/jd-jcap-tp30-curve-slider.md), [jd-jcap-slider](./web-reverse/products/jd-jcap-slider.md), [jd-jcap-captcha](./web-reverse/products/jd-jcap-captcha.md)
 - **腾讯 TCaptcha / TDC 滑块半纯算（collect XTEA / eks / pow_answer / 动态 tdc.js）**: [tencent-tdc-xtea](./web-reverse/tencent-tdc-slider-xtea-purecalc.md), [tencent-captcha](./web-reverse/products/tencent-captcha.md)
 - **拼图打乱重排滑块（loc 重排显示画布 / length+9 / 错误码 -1·105·111 分流）**: [shuffled-jigsaw](./web-reverse/shuffled-jigsaw-slider-protocol.md)
+- **阿里云验证码 V2 滑块（InitCaptcha → Log2/Log3 → CaptchaVerifyParam T001；FeiLin / sg 动态 key；acw_sc__v2 升级触发）**: [aliyun-v2-part1](./web-reverse/aliyun-captcha-v2-slider-part1-request-chain.md), [aliyun-v2-part2](./web-reverse/aliyun-captcha-v2-slider-part2-dynamic-keys.md), [aliyun-captcha-v2](./web-reverse/products/aliyun-captcha-v2.md)
 - **网易易盾 Web 滑块（NECaptcha / validate / 同轮 token）**: [products](./web-reverse/products.md)
 - **补环境浏览器对象面（DOM/BOM/WebAPI/Worker/Canvas/WebGL）**: [env-objects](./web-reverse/browser-env-objects.md)
 - **浏览器内核级指纹与自动化对抗**: [ruyi-browser](./anti-detection/ruyi-browser-anti-detection-compilation.md)
@@ -331,12 +335,13 @@
 - **微信公众号：GH2N / 京东 tp:30 曲线滑块**: [jd-jcap-tp30](./web-reverse/jd-jcap-tp30-curve-slider.md)
 - **微信公众号：猿人学Python（琴殇投稿）/ 腾讯 TDC 滑块**: [tencent-tdc-xtea](./web-reverse/tencent-tdc-slider-xtea-purecalc.md)
 - **微信公众号：让bug飞一会儿 / 拼图乱序滑块**: [shuffled-jigsaw](./web-reverse/shuffled-jigsaw-slider-protocol.md)
+- **微信公众号：無色逆向 / 阿里云验证码 V2 滑块（上下篇）**: [aliyun-v2-part1](./web-reverse/aliyun-captcha-v2-slider-part1-request-chain.md), [aliyun-v2-part2](./web-reverse/aliyun-captcha-v2-slider-part2-dynamic-keys.md)
 - **微信公众号：Softard（Wossoneri）**: [softard-android](./mobile-app-reverse/softard-android-reverse-compilation.md), [uiautomator-consent](./mobile-app-reverse/uiautomator-privacy-consent-tap.md)
 - **航班管家 / hbgjbangbang LAES**: [hangban-laes](./signature-algorithms/hangban-laes-encrypt.md)
 - **瑞数 RS6**: [products](./web-reverse/products.md)
 - **爱给网（aigei.com / fd.aigei.com / GeiFileLocalStore）**: [aigei-safe-search](./web-reverse/aigei-safe-search-ticket-chain.md)
 - **Google reCAPTCHA v3 / invisible reload/rresp / Node 请求面**: [google-recaptcha-v3](./web-reverse/products/google-recaptcha-v3.md), [products](./web-reverse/products.md)
-- **阿里（ACW/H5Sec/BxUA/验证码/MTOP H5 / App 四头）**: [51job-anti-detection](./anti-detection/51job-anti-detection-analysis.md), [products](./web-reverse/products.md), [aliyun-captcha-v3-slider](./web-reverse/aliyun-captcha-v3-login-slider.md), [alibaba-mtop-h5](./web-reverse/products/alibaba-mtop-h5.md), [alibaba-mtop-four-headers](./signature-algorithms/alibaba-mtop-four-headers.md)
+- **阿里（ACW/H5Sec/BxUA/验证码/MTOP H5 / App 四头）**: [51job-anti-detection](./anti-detection/51job-anti-detection-analysis.md), [products](./web-reverse/products.md), [aliyun-captcha-v3-slider](./web-reverse/aliyun-captcha-v3-login-slider.md), [alibaba-mtop-h5](./web-reverse/products/alibaba-mtop-h5.md), [alibaba-mtop-four-headers](./signature-algorithms/alibaba-mtop-four-headers.md), [aliyun-v2-part1](./web-reverse/aliyun-captcha-v2-slider-part1-request-chain.md), [aliyun-v2-part2](./web-reverse/aliyun-captcha-v2-slider-part2-dynamic-keys.md)
 - **腾讯（验证码/风控）**: [mmtls](./protocols/mmtls-protocol-analysis.md), [products](./web-reverse/products.md), [tencent-tdc-xtea](./web-reverse/tencent-tdc-slider-xtea-purecalc.md)
 - **腾讯 Qimei / 应用宝设备标识**: [sdk-purecalc](./mobile-app-reverse/sdk-purecalc-compilation.md)
 - **顶象 DXRisk**: [sdk-purecalc](./mobile-app-reverse/sdk-purecalc-compilation.md)
@@ -408,6 +413,7 @@
 - **iv8 单进程补环境运行时（DevTools inspector / vdebugger / watch_apis 缺失 API / 多 Isolate + GIL / 离线 add_resource）**: [iv8-python-v8](./web-reverse/iv8-python-v8-browser-env.md)
 - **jsvmp handler 插桩（函数 / 方法白名单 / 加法 / 常量载入）+ 魔数与轮结构判定 TEA 家族**: [tencent-tdc-xtea](./web-reverse/tencent-tdc-slider-xtea-purecalc.md), [ai-assisted-web](./web-reverse/ai-assisted-web-reverse-compilation.md)
 - **黑盒曲线函数逐点枚举求离散反函数 / 拼块透明边距与渲染尺寸换算**: [jd-jcap-tp30](./web-reverse/jd-jcap-tp30-curve-slider.md), [shuffled-jigsaw](./web-reverse/shuffled-jigsaw-slider-protocol.md)
+- **AES `decrypt:` 统一入口插桩打印 key/iv（WordArray 转字符串）/ hook JSON.stringify·TextEncoder·btoa 打栈定位混淆加密 / 正则补环境暴露动态 key**: [aliyun-v2-part1](./web-reverse/aliyun-captcha-v2-slider-part1-request-chain.md), [aliyun-v2-part2](./web-reverse/aliyun-captcha-v2-slider-part2-dynamic-keys.md)
 - **jsdom + vm 对齐浏览器 VM 第一处分叉**: [datadome-env-patch](./web-reverse/datadome-env-patch.md)
 - **h5st / a_bogus / x-s / x-s-common / X-Gnarly 签名定位**: [ai-assisted-web](./web-reverse/ai-assisted-web-reverse-compilation.md), [products](./web-reverse/products.md)
 - **FART 源码改进 / WebView 调试 / IDA 识别 MD5**: [koohai-notes](./web-reverse/koohai-reverse-notes-compilation.md), [jiagu-bypass](./packing-bypass/jiagu-bypass-analysis.md)
