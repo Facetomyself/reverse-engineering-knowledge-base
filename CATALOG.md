@@ -16,9 +16,9 @@
 | `packing-bypass` | 2 | 0 | 2 |
 | `protocols` | 3 | 0 | 3 |
 | `signature-algorithms` | 7 | 19 | 26 |
-| `web-reverse` | 54 | 126 | 180 |
+| `web-reverse` | 55 | 126 | 181 |
 
-文章总数：621。
+文章总数：622。
 
 ## 逐篇目录
 
@@ -521,6 +521,7 @@
 | 主文 | 2026-08-18 | [币安案例：公告列表的设备头，不是交易签名](./web-reverse/binance-cms-header-case.md) | — | 案例：一页公告 / 落地判断 / 证据边界 |
 | 主文 | 多篇合集 | [Web 补环境浏览器对象参考](./web-reverse/browser-env-objects.md) | — | 用途 / 补环境纪律 / 对象一览 / 使用边界 |
 | 主文 | 2026-09-23 | [技巧：抓包对齐时容易自己引入的偏差](./web-reverse/capture-alignment-traps.md) | — | 表 / 对齐流程 / 伪代码：空值与同名键 |
+| 主文 | 2026-07 | [Cloudflare 5s v2：/fo 与 form.submit 补环境](./web-reverse/cloudflare-5s-v2-fo-pipeline.md) | — | 完成门 / Python 与 Node / 状态机 / 两条成功形态 |
 | 主文 | unknown | [DataDome 无感验证补环境](./web-reverse/datadome-env-patch.md) | — | 正文 / 前言 / 目标网站 / 抓包分析 |
 | 主文 | 2026-08-16 | [抖音 webSign：钩宿主 MD5，再纯算规范化 query](./web-reverse/douyin-secsdk-websign-case.md) | — | 案例怎么定位到 MD5 / 规范化规则 / 策略表决定谁要加签 / 真实接入 |
 | 主文 | 2026-09-20 | [抖音会话材料：msToken、票据、dtrait、acrawler](./web-reverse/douyin-session-materials-case.md) | — | 材料出处 / 案例：msToken 是签发值，不是随机串 / 案例：只读票据和写入票据不是同一组头 / 案例：dtrait 按 path 重算，第一段会话内复用 |

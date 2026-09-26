@@ -149,6 +149,7 @@
 | [browser-env-objects.md](./web-reverse/browser-env-objects.md) | — (JS终结计划课程方法论) | `补环境`, `DOM/BOM`, `浏览器对象`, `WebAPI`, `指纹`, `Worker`, `MessagePort`, `Canvas`, `WebGL`, `navigator`, `crypto` | Web 补环境浏览器对象参考：20 个 DOM/BOM/Web API 对象的检测面、常见坑与观察优先级，五维度补环境纪律 |
 | [unpacked-mv3-native-updater.md](./web-reverse/unpacked-mv3-native-updater.md) | mouchenjie-ai-plugin | `MV3`, `sideload`, `自定义协议`, `PyInstaller 更新器`, `加载已解压扩展`, `渠道 zip` | 未上架 Chrome MV3 的本机更新器架构：渠道清单 + 对象存储 zip、HKCU 协议唤醒、本机进度口和打包合同，可复用到自有插件 sideload 分发 |
 | [datadome-env-patch.md](./web-reverse/datadome-env-patch.md) | — (公众号归档) | `DataDome`, `plv3`, `payload`, `iframe Realm`, `OffscreenCanvas`, `jsdom`, `VM 分叉` | DataDome 无感 interstitial 补环境：jsdom+vm 跑原脚本出参，按 Realm 生命周期、Worker 异步链和 VM 第一处分叉对齐；成功口径是 redirect 后新 Session 业务 200 |
+| [cloudflare-5s-v2-fo-pipeline.md](./web-reverse/cloudflare-5s-v2-fo-pipeline.md) | — (Firefox 151 ruyitrace 整理) | `Cloudflare 5s`, `/fo`, `_cf_chl_opt`, `cf_clearance`, `Turnstile`, `form.submit`, `orchestrate`, `Blob Worker`, `document.all` | Cloudflare 5s v2：Python 只发 HTTP，Node 跑 fresh orchestrate 自然出 `/fo` 与 3 hidden；主站与 Turnstile 子 `/fo` 按 host 分计；`cf_clearance` 和 `location.reload()` 都不是完成 |
 | [iv8-python-v8-browser-env.md](./web-reverse/iv8-python-v8-browser-env.md) | — (公众号归档) | `iv8`, `V8`, `补环境`, `page.load`, `eventLoop`, `logical time`, `wrapNative`, `isTrusted`, `DevTools`, `netLog`, `environment`, `Isolate`, `WebAssembly` | 爬虫逆向技术栈「iv8库使用手册」：Python 内嵌 V8 + C++ 浏览器壳单进程补环境；page.load 灌 html/baseURL/resources、虚拟时间推进、vdebugger/watch_apis 找缺失 API、wrapNative 与 isTrusted 事件、离线网络与多 Isolate；WASM streaming 不可用 |
 | [aliyun-captcha-v3-login-slider.md](./web-reverse/aliyun-captcha-v3-login-slider.md) | — (公众号归档) | `阿里云验证码`, `InitCaptchaV3`, `VerifyCaptchaV3`, `Log2`, `DeviceData`, `Signature`, `HmacSHA1`, `AES`, `FeiLin`, `CaptchaVerifyParam`, `deviceToken`, `滑块轨迹` | 搞窜窜学逆向「阿里v3 登录滑块」：五包只需 Init/Log2/Verify；DeviceData 固定 key/iv AES、Signature 为 & 拼接 HmacSHA1、响应 AES 解出 FeiLin 动态脚本；Log2 指纹段补环境，CaptchaVerifyParam 的 deviceToken AES+MD5、轨迹压缩后加密 btoa；45 张截图已本地化，密钥未公开 |
 | [jd-jcap-tp30-curve-slider.md](./web-reverse/jd-jcap-tp30-curve-slider.md) | — (公众号归档) | `JCAP`, `tp:30`, `si`, `vt`, `n1`, `se`, `st`, `ii`, `tk`, `ct`, `曲线映射`, `离散反函数`, `透明边距`, `京东` | GH2N「某东变速曲线滑块详解」：tp:30 拖箭头驱动拼块，n1 不提交却决定曲线映射；透明边距修正后在同版本曲线运行时枚举 argmin 求鼠标末点，完整回放取 ii；se 用最新 st，tk 对紧凑 JSON/URI 编码逐字节敏感；4 张图已本地化 |
@@ -281,6 +282,7 @@
 - **安全产品命中识别（DataDome/Akamai/Kasada/瑞数/reCAPTCHA/Arkose/同盾/京东/抖音/易盾/小红书/快手/MTOP 等）**: [products](./web-reverse/products.md)
 - **iv8 Python 内嵌 V8 补环境（page.load / 虚拟时间 / wrapNative / isTrusted 事件 / environment 画像）**: [iv8-python-v8](./web-reverse/iv8-python-v8-browser-env.md), [env-objects](./web-reverse/browser-env-objects.md)
 - **DataDome 无感 interstitial 补环境（payload/plv3 / iframe Realm / VM 分叉）**: [datadome-env-patch](./web-reverse/datadome-env-patch.md)
+- **Cloudflare 5s v2 `/fo`（主站与 Turnstile 分计 / form.submit 三 hidden / document.all 按表达式最小补）**: [cloudflare-5s-v2](./web-reverse/cloudflare-5s-v2-fo-pipeline.md), [cloudflare-5s](./web-reverse/products/cloudflare-5s-challenge.md)
 - **瑞数 fangdir P-cookie / LCG / Huffman / CRC32**: [ai-assisted-web](./web-reverse/ai-assisted-web-reverse-compilation.md)
 - **KhBox / Illegal invocation / Canvas 指纹补环境**: [koohai-notes](./web-reverse/koohai-reverse-notes-compilation.md)
 - **阿里云验证码 V3 登录滑块（InitCaptchaV3 → Log2 FeiLin 补环境 → VerifyCaptchaV3 轨迹）**: [aliyun-captcha-v3-slider](./web-reverse/aliyun-captcha-v3-login-slider.md), [aliyun-captcha-v3](./web-reverse/products/aliyun-captcha-v3.md), [products](./web-reverse/products.md)
@@ -324,7 +326,7 @@
 - **浏览器采集器稳定性（ruyipage/Firefox 崩溃/OOM）**: [browser-collector-stability](./collection-engineering/browser-collector-stability.md)
 - **Clash Verge Rev / Mihomo**: [mihomo-dialer-proxy](./collection-engineering/mihomo-dialer-proxy-chain.md)
 - **Akamai**: [anti-crawler-web](./web-reverse/anti-crawler-web-reverse-compilation.md), [products](./web-reverse/products.md)
-- **DataDome / Kasada / PerimeterX / F5 Shape / reese84 / Cloudflare 5s**: [products](./web-reverse/products.md), [datadome-env-patch](./web-reverse/datadome-env-patch.md)
+- **DataDome / Kasada / PerimeterX / F5 Shape / reese84 / Cloudflare 5s**: [products](./web-reverse/products.md), [datadome-env-patch](./web-reverse/datadome-env-patch.md), [cloudflare-5s-v2](./web-reverse/cloudflare-5s-v2-fo-pipeline.md)
 - **Kimi / 字节 volces applog**: [kimi-ttencrypt](./mobile-app-reverse/kimi-device-register-ttencrypt.md)
 - **TikTok / ByteDance musically / TTNet / metasec**: [protocol-admission](./mobile-app-reverse/protocol-admission-four-gates.md), [tiktok-planes](./web-reverse/tiktok-web-signing-planes.md), [tiktok-frontier](./web-reverse/tiktok-frontier-ticket-shop-case.md)
 - **抖音 Web 请求面 / webSign / 会话材料**: [douyin-planes](./web-reverse/douyin-web-request-planes.md), [douyin-secsdk](./web-reverse/douyin-secsdk-websign-case.md), [douyin-session](./web-reverse/douyin-session-materials-case.md), [products](./web-reverse/products.md)
@@ -415,6 +417,7 @@
 - **黑盒曲线函数逐点枚举求离散反函数 / 拼块透明边距与渲染尺寸换算**: [jd-jcap-tp30](./web-reverse/jd-jcap-tp30-curve-slider.md), [shuffled-jigsaw](./web-reverse/shuffled-jigsaw-slider-protocol.md)
 - **AES `decrypt:` 统一入口插桩打印 key/iv（WordArray 转字符串）/ hook JSON.stringify·TextEncoder·btoa 打栈定位混淆加密 / 正则补环境暴露动态 key**: [aliyun-v2-part1](./web-reverse/aliyun-captcha-v2-slider-part1-request-chain.md), [aliyun-v2-part2](./web-reverse/aliyun-captcha-v2-slider-part2-dynamic-keys.md)
 - **jsdom + vm 对齐浏览器 VM 第一处分叉**: [datadome-env-patch](./web-reverse/datadome-env-patch.md)
+- **Cloudflare orchestrate 按 trace 阶段补环境（XHR 回灌 / Worker 顺序 / srcdoc WindowProxy / form entry list）**: [cloudflare-5s-v2](./web-reverse/cloudflare-5s-v2-fo-pipeline.md)
 - **h5st / a_bogus / x-s / x-s-common / X-Gnarly 签名定位**: [ai-assisted-web](./web-reverse/ai-assisted-web-reverse-compilation.md), [products](./web-reverse/products.md)
 - **FART 源码改进 / WebView 调试 / IDA 识别 MD5**: [koohai-notes](./web-reverse/koohai-reverse-notes-compilation.md), [jiagu-bypass](./packing-bypass/jiagu-bypass-analysis.md)
 - **JSVMP 是否拆 opcode 的分流**: [ai-assisted-web](./web-reverse/ai-assisted-web-reverse-compilation.md)

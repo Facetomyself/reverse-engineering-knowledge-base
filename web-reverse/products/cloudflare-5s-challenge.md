@@ -17,7 +17,7 @@
 - 页面或子链加载 challenges.cloudflare.com 的 Turnstile 资源；出现 `sitekey`、`chlPageData`、`page_data`、`cData`、`action`
 - 业务响应头出现 `cf-mitigated: challenge`，失败时一直回到 challenge 页
 
-仅看到 Cloudflare CDN 响应头不等于命中 5s，必须有 challenge 页、`_cf_chl_opt`、flow/ov1、Turnstile 子链或 `cf_clearance` 类链路证据。
+仅看到 Cloudflare CDN 响应头不等于命中 5s，必须有 challenge 页、`_cf_chl_opt`、`flow/ov1` 或 `/fo/`、Turnstile 子链或 `cf_clearance` 类链路证据。
 
 ## 常见链路
 
@@ -34,6 +34,8 @@
 → POST 同类 flow 路径 → Set-Cookie: cf_clearance
 → 用同 UA、同代理、同 header/TLS 指纹回打原业务 URL
 ```
+
+`flow/ov1` 是课程材料里的一条版本路径。Firefox 151 上另一批 `cFPWv=g`、`cType=managed` 的 ruyitrace 走的是 `/cdn-cgi/challenge-platform/h/g/fo/<triple>/<cRay>/<cH>`，完成门是 orchestrate 自己 `form.submit` 出 3 个 hidden，而不是拿到 `cf_clearance` 后重放 GET。路径、host 分计和补环境阶段见 [cloudflare-5s-v2-fo-pipeline.md](../cloudflare-5s-v2-fo-pipeline.md)。
 
 三种成功口径必须分层：
 
