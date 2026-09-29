@@ -1,6 +1,6 @@
 # 逆向知识库文章索引
 
-> 更新于 2026-09-26 ｜ 来源: `article/`
+> 更新于 2026-09-27 ｜ 来源: `article/`
 >
 > 本文件维护 canonical 入口与技术标签；合集子文章详见 [CATALOG.md](./CATALOG.md)，机器读取使用 [`catalog.json`](./catalog.json)。
 >
@@ -20,6 +20,7 @@
 
 | 文章 | 来源项目 | 关键词 | 摘要 |
 |------|----------|--------|------|
+| [media-download-contract-drift.md](./collection-engineering/media-download-contract-drift.md) | cv-cat | `Referer`, `CDN`, `编码别名`, `备用 URL`, `raise_for_status`, `失败隔离` | 媒体失败分为请求上下文、候选流选择、HTTP 门与批次隔离；元数据成功不等于完整文件交付 |
 | [high-concurrency-http-collector-control-plane.md](./collection-engineering/high-concurrency-http-collector-control-plane.md) | psa | `代理租约`, `Sticky SID`, `Cookie 隔离`, `连接池`, `AIMD`, `congestion epoch`, `Retry-After`, `half-open`, `item deadline`, `checkpoint` | 高并发 HTTP 采集控制面：统一代理身份与连接生命周期，分离 429/403/transport 反馈，并用有界队列、分层 deadline、连接池 circuit 和固定窗口 canary 收敛长跑故障 |
 | [reliable-mac-nas-spool-delivery.md](./collection-engineering/reliable-mac-nas-spool-delivery.md) | psa | `Mac mini`, `SSD spool`, `NAS mirror`, `marker`, `ACK`, `at-least-once`, `幂等`, `launchd`, `非侵入式巡检`, `GC` | Mac 热写与 NAS 交付链：本地 spool、SSH tar staging、pending/GC/ACK 重放、supervisor 完成门、安全发布与 process-crash/power-loss 边界 |
 | [browser-collector-stability.md](./collection-engineering/browser-collector-stability.md) | radwell | `ruyipage`, `Firefox 151`, `MOZ_ASSERT`, `0x80000003`, `孤儿 session`, `CF 软挑战`, `IP 风控窗口`, `OOM 连锁`, `BiDi`, `多进程并发`, `spawn 子进程` | 浏览器采集器稳定性：ruyipage 定制 Firefox 断言崩溃（0x80000003）的触发条件与证据链、单出口 IP 的 CF 风控有效窗口、"崩溃残留进程累积 → 整机 OOM"的连锁机制，及 8 条并发/自愈/内存护栏改进规范 |
@@ -59,6 +60,7 @@
 
 | 文章 | 来源项目 | 关键词 | 摘要 |
 |------|----------|--------|------|
+| [windows-vmp-local-recovery-evidence.md](./packing-bypass/windows-vmp-local-recovery-evidence.md) | — (null119 方法资料提炼) | `Windows`, `VMProtect`, `OEP`, `IAT`, `handler`, `局部语义`, `证据边界` | 分开保护识别、可运行 dump 与局部语义恢复；限定工具适用范围，不把方法资料当作样本成功 |
 | [jiagu-bypass-analysis.md](./packing-bypass/jiagu-bypass-analysis.md) | qidian (起点读书) | `Jiagu`, `360加固`, `raise(9)`, `PR_SET_PTRACER`, `direct syscall`, `panda`, `whole-DEX`, `方法抽取`, `CodeItem`, `FART`, `JDex2`, `CDEX` | 360 Jiagu VIP 更新：区分进程存活与 Frida 持久会话，证明起点样本 DEX 原本明文，并记录 LDPlayer + panda 导出 13 DEX 的部分运行时恢复及方法抽取分流 |
 | [app-protectors.md](./packing-bypass/app-protectors.md) | ciweimao / douban-app-reverse / qidian | `Jiagu`, `Legu`, `SecNeo`, `NIS`, `libnesec`, `stub-wrapper`, `whole-dex`, `Gadget` | App 加固/wrapper 命中表：stub 明文 DEX 先官方 live，真加密才 dump；NIS abort 先看 tombstone |
 
@@ -105,6 +107,9 @@
 
 | 文章 | 来源项目 | 关键词 | 摘要 |
 |------|----------|--------|------|
+| [jsvmp-variant-failure-lineage.md](./web-reverse/jsvmp-variant-failure-lineage.md) | — (null119 会话静态提炼) | `JSVMP`, `动态版本`, `key builder`, `失败谱系`, `重试`, `兼容性` | 提取器漏覆盖槽位后异常转为可重试，不等于支持了失败变体；按资源版本保存反例与覆盖 |
+| [wasm-js-fallback-version-parity.md](./web-reverse/wasm-js-fallback-version-parity.md) | — (null119 会话静态提炼) | `WASM`, `JS fallback`, `版本绑定`, `编码`, `parity`, `wrapper` | 区分旧 JS、新 fallback 与 WASM 资源身份，从输入字节找首处分叉，不将同名导出当通用算法 |
+| [request-signing-vs-cookie-maintenance.md](./web-reverse/request-signing-vs-cookie-maintenance.md) | — (null119 会话静态提炼) | `signer`, `GET`, `Cookie 维护`, `调用面`, `业务码`, `单因子实验` | 同一 SDK 的 GET 签名与 Cookie 维护输入不同；保留会话纠偏链，HTTP 200 与本地出值不能替代业务读回 |
 | [51job-webpack-analysis.md](./web-reverse/51job-webpack-analysis.md) | 51job-web-reverse | `Webpack 4`, `Vue 2.7`, `模块自吐`, `加密定位`, `sign`, `AES`, `SM4`, `国密`, `webpackJsonp` | 51job Webpack 模块自吐分析：1634 个 factory 模块识别、加密/签名模块定位、Vue 组件反编译、chunk 加载机制 |
 | [anti-crawler-web-reverse-compilation.md](./web-reverse/anti-crawler-web-reverse-compilation.md) | — (公众号归档) | `Akamai`, `JSVMP`, `Babel AST`, `控制流平坦化`, `Chrome DevTools`, `Hook`, `反Hook` | Akamai 参数、JSVMP、AST 反混淆与 Chrome DevTools 调试对抗的 16 篇实战合集 |
 | [benru-web-reverse-compilation.md](./web-reverse/benru-web-reverse-compilation.md) | — (公众号归档) | `WBI签名`, `AST`, `JS混淆`, `Node补环境`, `mitmproxy`, `动态参数`, `Webpack RPC`, `Python还原` | 本如笔记 12 篇 Web 逆向与协议恢复实战，从参数定位、反混淆和补环境延伸到 RPC 与 Python 复现 |
@@ -141,7 +146,8 @@
 | [binance-cms-header-case.md](./web-reverse/binance-cms-header-case.md) | cv-cat | `fvideo-id`, `fvideo-token`, `csrftoken`, `BNC_FV_KEY`, `device-info` | 币安公告列表：fvideo-id 来自 Cookie，fvideo-token 吃另一个 Cookie 字段，csrftoken 为本地 md5 空串 |
 | [linkedin-voyager-csrf-case.md](./web-reverse/linkedin-voyager-csrf-case.md) | cv-cat | `JSESSIONID`, `csrf-token`, `queryId`, `voyager` | 领英 csrf-token 是 JSESSIONID 去引号双写，GraphQL queryId 从当前页面 define 提取 |
 | [instagram-doc-id-case.md](./web-reverse/instagram-doc-id-case.md) | cv-cat | `doc_id`, `x-ig-app-id`, `web_profile_info`, `graphql` | Instagram 从用户页 HTML 抽 app_id 和 doc_id；时间线主路径未挂 x-csrftoken 模板 |
-| [x-twitter-graphql-case.md](./web-reverse/x-twitter-graphql-case.md) | cv-cat | `ct0`, `x-csrf-token`, `Bearer`, `features`, `GraphQL` | X 搜索：调用方 Bearer 加 ct0 双写，features 是写死快照，仓内无 guest 刷新和本地签名 |
+| [x-twitter-graphql-case.md](./web-reverse/x-twitter-graphql-case.md) | cv-cat | `GraphQL 注册表`, `XCTID`, `ct0`, `fieldToggles`, `部分成功` | X 从旧透传壳升级为注册表和本地 XCTID：用户开关覆盖、请求子集、会话完成门与发布阶段恢复分开验收 |
+| [castle-profile-compression-parity.md](./web-reverse/castle-profile-compression-parity.md) | cv-cat | `Castle`, `Rl`, `CompressionStream`, `raw-DEFLATE`, `ctypes`, `parity` | 完整画像与本地封装分层，压缩可解码不等于字节一致；默认 Windows native 后端不等于跨平台纯 Python |
 | [feishu-csrf-frontier-case.md](./web-reverse/feishu-csrf-frontier-case.md) | cv-cat | `swp_csrf_token`, `x-csrf-token`, `access_key`, `msg-frontier` | 飞书网页 CSRF 与 frontier 长连分链：swp_csrf_token 来自 accounts/csrf，access_key 来自页面 JS |
 | [wechat-oa-mp-cgi-case.md](./web-reverse/wechat-oa-mp-cgi-case.md) | cv-cat | `searchbiz`, `appmsgpublish`, `token`, `fakeid`, `list_ex` | 公众号后台 CGI：token 与 Cookie 外置透传，ret!=0 不是成功；公开文章 HTML 不带 token |
 | [autohome-cookie-boundary-case.md](./web-reverse/autohome-cookie-boundary-case.md) | cv-cat | `JSONP`, `jsonprv`, `clubajax`, `_appid` | 汽车之家详情是 Cookie 加 JSONP 剥壳，没有本地 sign；创作者面只有时间戳和 _appid |
@@ -384,6 +390,10 @@
 - **CloakBrowser / CloakHQ humanize**: [cloakbrowser-humanize](./anti-detection/cloakbrowser-humanize-trajectory.md)
 
 ### 工具/方法
+- **Windows VMProtect / OEP / IAT / 局部语义证据**: [windows-vmp](./packing-bypass/windows-vmp-local-recovery-evidence.md)
+- **JSVMP 动态版本 / key builder / 重试与修复分离**: [jsvmp-variant](./web-reverse/jsvmp-variant-failure-lineage.md)
+- **WASM / JS fallback 版本绑定与输入 parity**: [wasm-fallback](./web-reverse/wasm-js-fallback-version-parity.md)
+- **signer 调用面 / GET 与 Cookie 维护 / 单因子纠偏**: [signer-planes](./web-reverse/request-signing-vs-cookie-maintenance.md)
 - **Webpack 模块自吐**: [51job-webpack](./web-reverse/51job-webpack-analysis.md)
 - **抓包+逐字节匹配**: [mmtls](./protocols/mmtls-protocol-analysis.md)
 - **IDA Pro 静态分析**: [qidian-so](./native-analysis/qidian-so-analysis.md), [jiagu-bypass](./packing-bypass/jiagu-bypass-analysis.md), [ace-deviceuniqueid](./anti-detection/android-ace-deviceuniqueid.md), [hangban-laes](./signature-algorithms/hangban-laes-encrypt.md), [softard-android](./mobile-app-reverse/softard-android-reverse-compilation.md)
@@ -456,6 +466,9 @@
 - **签完即线上 / 头序 / HTTP/2 Cookie 拆分 / 同名键列表**: [signed-wire](./web-reverse/signed-query-wire-contract.md)
 - **端点签名面 fail-closed（缺字段不回填抓包）**: [tiktok-planes](./web-reverse/tiktok-web-signing-planes.md)
 - **材料 provenance 六桶 / host-only Cookie**: [xiaohongshu-assembly](./web-reverse/xiaohongshu-assembly-case.md), [douyin-session](./web-reverse/douyin-session-materials-case.md)
+- **X GraphQL 注册表 / XCTID / fieldToggles 子集 / 发布部分成功**: [x-graphql](./web-reverse/x-twitter-graphql-case.md)
+- **Castle 完整画像 / CompressionStream 字节 parity / native 压缩依赖**: [castle-parity](./web-reverse/castle-profile-compression-parity.md)
+- **媒体 CDN 请求上下文 / 流字段漂移 / 单项下载失败隔离**: [media-download](./collection-engineering/media-download-contract-drift.md)
 - **cv-cat 按站装配案例**: [sign-landing](./web-reverse/sign-landing-methods.md)
 - **MTOP InnerSignImpl 实例 RPC（Hook 一次即摘）**: [mtop-innersign-rpc](./mobile-app-reverse/mtop-innersign-rpc.md)
 - **会话画像 + data2sign byte-exact 对拍（SG 70102 四头）**: [alibaba-mtop-four-headers](./signature-algorithms/alibaba-mtop-four-headers.md)

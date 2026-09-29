@@ -9,16 +9,16 @@
 | 分类 | canonical | 子文章 | 合计 |
 |------|----------:|-------:|-----:|
 | `anti-detection` | 12 | 162 | 174 |
-| `collection-engineering` | 5 | 2 | 7 |
+| `collection-engineering` | 6 | 2 | 8 |
 | `drm-content-acquisition` | 1 | 0 | 1 |
 | `mobile-app-reverse` | 19 | 172 | 191 |
 | `native-analysis` | 4 | 12 | 16 |
-| `packing-bypass` | 2 | 0 | 2 |
+| `packing-bypass` | 3 | 0 | 3 |
 | `protocols` | 3 | 0 | 3 |
 | `signature-algorithms` | 7 | 19 | 26 |
-| `web-reverse` | 61 | 109 | 170 |
+| `web-reverse` | 65 | 109 | 174 |
 
-文章总数：590。
+文章总数：596。
 
 ## 逐篇目录
 
@@ -207,6 +207,7 @@
 |------|------|------|--------|----------|
 | 主文 | 2026-08-12 | [浏览器采集器稳定性：ruyipage Firefox 断言崩溃与 OOM 连锁](./collection-engineering/browser-collector-stability.md) | — | 结论先行 / 崩溃证据链 / 根因链 / 已排除的假设（实测） |
 | 主文 | 2026-08-02 | [高并发 HTTP 采集控制面：代理租约、AIMD 与故障恢复](./collection-engineering/high-concurrency-http-collector-control-plane.md) | — | 结论先行 / 证据与版本边界 / 调试时间线：每次提速都先推翻一个错误假设 / 从成功实验进入主线的准入清单 |
+| 主文 | 2026-09-27 | [媒体下载故障分层：请求上下文、流选择与单项失败隔离](./collection-engineering/media-download-contract-drift.md) | — | 同样是“视频不能下”，根因可能不在同一层 / 先找候选流，再区分是否已经下载 / HTTP 检查要早，交付确认要晚 / 单项失败隔离不是“全批成功” |
 | 主文 | 2026-08-13 | [Mihomo 链式代理：dialer-proxy、全局脚本与采集器前置链](./collection-engineering/mihomo-dialer-proxy-chain.md) | — | 结论先行 / 来源与证据边界 / 内核链：谁看见谁 / 多跳怎么叠 |
 | 主文 | 2026-08-02 | [Mac 热写与 NAS 交付：可重放 spool、mirror ACK 和非侵入式运维](./collection-engineering/reliable-mac-nas-spool-delivery.md) | — | 为什么 NAS 不应进入采集热路径 / 数据流 / 热写路径：批量输出后再生成 marker / 已验证边界 |
 | 主文 | 2026-07-16 至 2026-07-17 | [HTTP 归档运行时：文章身份、SQLite claim 与 MCP job](./collection-engineering/weixin-http-archive-runtime.md) | — | 和 PSA 高并发文的分工 / 文章目录 / 结论先行 |
@@ -442,6 +443,7 @@
 |------|------|------|--------|----------|
 | 主文 | 2026-08-29 | [App 加固产品命中](./packing-bypass/app-protectors.md) | — | 用途 / 命中纪律 / 产品一览 / 观察顺序 |
 | 主文 | 2026-07-02 | [360 Jiagu VIP 绕过与脱壳能力更新](./packing-bypass/jiagu-bypass-analysis.md) | — | 技术摘要 / 一、libjiagu_vip.so 静态证据 / 1.1 ELF 结构 / 1.2 反检测面 |
+| 主文 | 未知 | [Windows VMProtect：局部语义恢复的证据边界](./packing-bypass/windows-vmp-local-recovery-evidence.md) | — | 来源能支持什么 / 三个不同问题 / 有界恢复应保留的状态 / 工具路线不是能力证明 |
 
 ### `protocols`
 
@@ -501,6 +503,7 @@
 | 主文 | 2026-08-18 | [币安案例：公告列表的设备头，不是交易签名](./web-reverse/binance-cms-header-case.md) | — | 案例：一页公告 / 落地判断 / 证据边界 |
 | 主文 | 多篇合集 | [Web 补环境浏览器对象参考](./web-reverse/browser-env-objects.md) | — | 用途 / 补环境纪律 / 对象一览 / 使用边界 |
 | 主文 | 2026-09-23 | [技巧：抓包对齐时容易自己引入的偏差](./web-reverse/capture-alignment-traps.md) | — | 表 / 对齐流程 / 伪代码：空值与同名键 |
+| 主文 | 2026-09-27（本轮源码对照窗口） | [Castle 对照：完整画像输入、压缩字节一致性与纯算边界](./web-reverse/castle-profile-compression-parity.md) | — | 将运行器与本地计算分成两个入口 / “完整输入”是合同，不是随手拼设备字段 / 压缩后能解开，仍可能没有字节 parity / “纯 Python”不能吞掉 native 平台限制 |
 | 主文 | 2026-07 | [Cloudflare 5s v2：/fo 与 form.submit 补环境](./web-reverse/cloudflare-5s-v2-fo-pipeline.md) | — | 完成门 / Python 与 Node / 状态机 / 两条成功形态 |
 | 主文 | unknown | [DataDome 无感验证补环境](./web-reverse/datadome-env-patch.md) | — | 正文 / 前言 / 目标网站 / 抓包分析 |
 | 主文 | 2026-08-16 | [抖音 webSign：钩宿主 MD5，再纯算规范化 query](./web-reverse/douyin-secsdk-websign-case.md) | — | 案例怎么定位到 MD5 / 规范化规则 / 策略表决定谁要加签 / 真实接入 |
@@ -515,6 +518,7 @@
 | 主文 | 2026-09-24 | [iv8 使用手册：Python 内嵌 V8 的浏览器补环境运行时](./web-reverse/iv8-python-v8-browser-env.md) | — | 收录说明 / 1. iv8 是什么、有什么作用 / 1.1 与传统方案的本质区别 / 1.2 核心 API（先记这几个） |
 | 主文 | 2026-09-19 | [京东案例：h5st 5.3 运行时、body 预哈希、JCAP 分链](./web-reverse/jd-h5st-runtime-case.md) | — | 三段运行时 / 案例：搜索 searchWare / 登录路径 / 和旧仓的差分 |
 | 主文 | 2026-08-26 | [京东 JCAP tp:30 变速曲线滑块：si → vt 纯协议参数链与曲线反查](./web-reverse/jd-jcap-tp30-curve-slider.md) | — | 收录说明 / 摘要 / 一、完整协议链过程： / 二、按照协议顺序解决每一个困难参数 |
+| 主文 | 2026-06-22（导出文件标注） | [JSVMP 动态版本：重试成功不等于提取器修复](./web-reverse/jsvmp-variant-failure-lineage.md) | — | 与已有 TDC 文章的区别 / 来源中发生了什么 / 失败谱系最小记录 / 真正修复的验收 |
 | 主文 | 多篇合集 | [零基础爬虫第一天 逆向笔记合集](./web-reverse/koohai-reverse-notes-compilation.md) | — | 收录说明 / 文章目录（17 篇） |
 | 主文 | 2026-08-30 | [快手案例：资料接口的 hxfalcon 装配](./web-reverse/kuaishou-landing-case.md) | — | 案例：GET /rest/v/profile/get / CP 与直播 / 成本判断在代码里的位置 / 证据边界 |
 | 主文 | 2026-08-18 | [领英案例：JSESSIONID 双写与页面 queryId](./web-reverse/linkedin-voyager-csrf-case.md) | — | 案例：资料卡 / 可复用点 / 证据边界 |
@@ -522,6 +526,7 @@
 | 主文 | 多篇合集 | [Web 安全产品强制命中索引](./web-reverse/products.md) | — | 用途 / 强制命中纪律 / 产品一览 / 使用边界 |
 | 主文 | 2026-09-23 | [方法论：纯算还是预言机，先写成本账](./web-reverse/purecalc-vs-oracle-cost.md) | — | 成本账怎么填 / 预言机也有验收 / 伪代码 / 账本里要写的一句 |
 | 主文 | 2026-09-23 | [方法论：请求面切开，失败按面翻译](./web-reverse/request-plane-failure-translation.md) | — | 画法 / 真实翻译 / 伪代码 / 同名不同面 |
+| 主文 | 2026-06-22（导出文件标注） | [同一个 signer 的两条调用面：请求签名与 Cookie 维护](./web-reverse/request-signing-vs-cookie-maintenance.md) | — | 来源中的转折 / 调用面表比函数名更重要 / 失败归因的正确顺序 / 可复用验收清单 |
 | 主文 | 2026-09-23 | [技巧：会话材料双写，并且绑源](./web-reverse/session-binding-double-write.md) | — | 双写对照 / 绑源的真实失误 / 不是双写的头 |
 | 主文 | 2026-09-05 | [拼图打乱重排型滑块纯协议：loc 重排、length+9 与错误码分流](./web-reverse/shuffled-jigsaw-slider-protocol.md) | — | 收录说明 / 缺口检测全面失败：它根本不是普通滑块 / length 坐标系 & 合成事件两道坎 / 真实 op 轨迹：四条全猜错 |
 | 主文 | 2026-08-30 | [平台签名落地方法：纯算、黑盒与 RPC 分流](./web-reverse/sign-landing-methods.md) | — | 落地四分法 / 产品切开，失败不要单归因 / 可复用方法 / 1. VMP 先钩宿主原语 |
@@ -538,9 +543,10 @@
 | 主文 | 2026-08-24 | [未上架 MV3 扩展的本机更新器架构](./web-reverse/unpacked-mv3-native-updater.md) | — | 这篇解决什么问题 / 五层模型 / 渠道面：版本清单与 zip / 本机更新面：绿色 EXE |
 | 主文 | 2026-08-16 | [方法论：VMP 先钩宿主原语，再决定要不要纯算](./web-reverse/vmp-host-primitive-to-purecalc.md) | — | 何时用 / 真实流程：抖音 webSign / 探针表 / 完成门 |
 | 主文 | 2026-03-26 | [招投标公告电话字段 WASM 解密：抠 JS 同步加载 WASM 与一句话让 AI 还原 SM2 + SM4 链](./web-reverse/wasm-decrypt-ai-one-prompt-recovery.md) | — | 收录说明 / 声明 / 前言 / WASM简介 |
+| 主文 | 2026-06-22（导出文件标注） | [WASM 与 JS fallback：先绑定版本，再谈算法一致](./web-reverse/wasm-js-fallback-version-parity.md) | — | 来源结论与本次核验 / 先建资源身份表 / 找到第一处差异 / 怎样表述结果 |
 | 主文 | 2026-08-18 | [公众号后台案例：token 透传，不是 mmtls](./web-reverse/wechat-oa-mp-cgi-case.md) | — | 案例：搜号再拉发表列表 / 文章 HTML 是另一面 / 证据边界 |
 | 主文 | 2026-08-18 | [微博案例：PC、移动、创作者上传三条面](./web-reverse/weibo-request-planes-case.md) | — | 三条面 / 案例：图片/视频上传参数 / 落地判断 / 证据边界 |
-| 主文 | 2026-08-18 | [X 案例：Bearer、ct0 双写与写死的 GraphQL features](./web-reverse/x-twitter-graphql-case.md) | — | 案例：搜索 / 证据边界 |
+| 主文 | 2026-09-27（本轮合并窗口） | [X 案例：GraphQL 注册表、XCTID 与会话状态分层](./web-reverse/x-twitter-graphql-case.md) | — | 版本边界：旧结论为什么失效 / GraphQL 注册表不是一张永久常量表 / 鉴权材料不能靠统一随机化补齐 / XCTID 的输入边界与缓存回退 |
 | 主文 | 2026-04-13 | [闲鱼 Android 案例：InnerSignImpl 实例 RPC](./web-reverse/xianyu-android-sign-rpc-case.md) | — | 案例流程 / 和 Web 的边界 / 伪代码 |
 | 主文 | 2026-08-18 | [闲鱼 Web 案例：H5 sign、空 sign 换票、tfstk](./web-reverse/xianyu-web-mtop-case.md) | — | 和淘宝的同构与分叉 / 案例：空 sign 换 _m_h5_tk / 案例：业务 get_token / 不能和 App x-sign 互换 |
 | 主文 | 2026-09-08 | [小红书装配案例：材料六桶、签完即发、端别切开](./web-reverse/xiaohongshu-assembly-case.md) | — | 材料六桶 / 案例：一次 PC 业务请求 / 四条端别 / 伪代码：provenance 门 |
