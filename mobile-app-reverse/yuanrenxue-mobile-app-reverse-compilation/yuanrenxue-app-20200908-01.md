@@ -1,9 +1,34 @@
+---
+schema_version: 2
+id: mobile-app-reverse-yuanrenxue-mobile-app-reverse-compilation-yuanrenxue-app-20200908-01
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 微信公众号：猿人学Python
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags: []
+original_date: '2020-09-08'
+archived_date: '2026-07-16'
+---
+
 # 某书新版登录流程逆向分析
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 微信公众号：猿人学Python
 > 原始发布时间: 2020-09-08
 > 归档日期: 2026-07-16
 > 分类: mobile-app-reverse
+</details>
 >
 > 某书网近些天，数据改成了只有登录才能查看。本以为登录轻轻松松就可以解决，没想到它竟然自己写了一段加密。所以写篇流程分享出来，希望能够帮助到大家；本文阅读前提，已悉知某数4代如何处理，而且网上还是有很多类似的教程，这里就不多加赘述了。
 

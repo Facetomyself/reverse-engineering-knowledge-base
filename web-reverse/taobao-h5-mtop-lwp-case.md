@@ -1,9 +1,40 @@
+---
+schema_version: 2
+id: web-reverse-taobao-h5-mtop-lwp-case
+document_type: archive
+scope:
+  targets:
+  - taobao
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: '`本地项目分析材料（定位不公开）`（TaoBaoApis，HEAD 日期 2026-08-18，只读对照）'
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags:
+- MTOP
+- _m_h5_tk
+- '12574478'
+- JSONP
+- LWP
+- cntaobao
+original_date: '2026-08-18'
+archived_date: '2026-09-23'
+---
+
 # 淘宝 H5 案例：MTOP sign 与钉钉 LWP 分链
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/cv-cat`（TaoBaoApis，HEAD 日期 2026-08-18，只读对照）
 > 原始发布时间: 2026-08-18
 > 归档日期: 2026-09-23
 > 分类: web-reverse
+</details>
 >
 > 淘宝 H5 的 `sign` 是 Cookie 半段、时间戳、appKey 和 data 的 MD5。实时私信是另一条钉钉 LWP WebSocket，不再带这个 sign。仓里残留的闲鱼 URL 不能当成淘宝网关。
 

@@ -1,9 +1,34 @@
+---
+schema_version: 2
+id: mobile-app-reverse-reversenotes-android-compilation-hanxiaoquan-aes-sign
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: GitHub xfxfxiaofeng/reverseNotes
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags: []
+original_date: 2025-06（观察版本 6.5.3）
+archived_date: '2026-09-06'
+---
+
 # 韩小圈：AES-CBC sign、uk 与响应 data
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: GitHub xfxfxiaofeng/reverseNotes
 > 原始发布时间: 2025-06（观察版本 6.5.3）
 > 归档日期: 2026-09-06
 > 分类: mobile-app-reverse
+</details>
 >
 > `com.babycloud.hanju` 搜索接口请求头只有会变的 `sign` 与 `uk`。`sign` 是 AES/CBC/PKCS5，key/iv 由 `uid` 的 MD5 对半切开；`uk` 是同一 `uid` 再经另一组固定 AES 得到。清数据后三套值一起变。响应 `data` 的解密 key 是 `MD5(uid || 响应 ts)`。`uid` 生成式未还原，作者用 20 位 `[0-9A-Za-z]` 随机串做了服务端抽检。
 

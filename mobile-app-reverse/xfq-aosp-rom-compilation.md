@@ -1,9 +1,41 @@
+---
+schema_version: 2
+id: mobile-app-reverse-xfq-aosp-rom-compilation
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 知识星球：逆向学习交流
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags:
+- AOSP
+- APatch
+- WebView
+- 系统CA
+- GMS
+- adb
+- ROM
+original_date: 多篇合集
+archived_date: '2026-09-04'
+---
+
 # 逆向学习交流 AOSP 与 ROM 笔记合集
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 知识星球：逆向学习交流
 > 原始发布时间: 多篇合集
 > 归档日期: 2026-09-04
 > 分类: mobile-app-reverse
+</details>
 >
 > AOSP 预置 CA、APatch、WebView 调试、GMS、adb RSA、投屏黑屏与 Java/Native 插桩笔记。只保留可复用的 ROM 改造路径，不写具体业务目标。
 

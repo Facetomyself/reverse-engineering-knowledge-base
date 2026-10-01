@@ -1,10 +1,48 @@
+---
+schema_version: 2
+id: web-reverse-aws-waf-token-challenge-purecalc
+document_type: archive
+scope:
+  targets:
+  - aws-waf
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: https://mp.weixin.qq.com/s/Ik7LgaFIpJR_KCWinc5y3w
+  basis: source-report
+source_completeness: unknown
+tags:
+- AWS WAF
+- aws-waf-token
+- challenge.compact.js
+- verify
+- inputs
+- checksum
+- CRC32
+- Present
+- AES-GCM
+- solution
+- SHA256 PoW
+- 纯算
+original_date: '2026-01-21'
+archived_date: '2026-09-26'
+---
+
 # 亚马逊 AWS WAF aws-waf-token 纯算：checksum CRC32、Present AES-GCM 与 solution SHA256 PoW
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 微信公众号：無色逆向（[原文](https://mp.weixin.qq.com/s/Ik7LgaFIpJR_KCWinc5y3w)）
+</details>
 > 作者: 無色逆向
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 原始发布时间: 2026-01-21
 > 归档日期: 2026-09-26
 > 分类: web-reverse
+</details>
 >
 > 某航司官网登录受 AWS WAF 保护：删掉 `aws-waf-token` Cookie 再登录返回 403，带有效 token、输错口令返回 401，据此判断 token 是否生效。token 由 `verify` 接口返回，请求体有 `challenge`（首次取自 `challenge.compact.js`，也可从 `inputs` 接口拿）和需要逆向的 `checksum` / `Present` / `solution`。全部逻辑都在 `challenge.compact.js`（多个大数组 ob 混淆）：异步采集环境指纹后，`encode` 即 CRC32 得 `checksum`，并与环境串拼接；`Present` = `base64(iv) + "::" + AES-GCM(checksum+环境)`，key 固定、iv 随机；`solution` 先把 `inputs` 与 `checksum` 相加，再做 SHA256 工作量证明，找使哈希前 8 个二进制位全为 0 的值。作者用 Python 纯算跑通，错误口令登录拿到 401。
 

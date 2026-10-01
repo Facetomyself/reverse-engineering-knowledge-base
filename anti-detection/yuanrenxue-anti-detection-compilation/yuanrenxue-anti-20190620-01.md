@@ -1,9 +1,34 @@
+---
+schema_version: 2
+id: anti-detection-yuanrenxue-anti-detection-compilation-yuanrenxue-anti-20190620-01
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 微信公众号：猿人学Python
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags: []
+original_date: '2019-06-20'
+archived_date: '2026-07-16'
+---
+
 # 大规模爬虫为什么要管理DNS缓存
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 微信公众号：猿人学Python
 > 原始发布时间: 2019-06-20
 > 归档日期: 2026-07-16
 > 分类: anti-detection
+</details>
 >
 > 10年前学爬虫看的第一个开源爬虫叫Larbin ，一个法国程序员用c++开发的，那时用Larbin简单配置一下，因为它能自动遍历抓取，一天几乎能镜像一个中型网站，感叹实在高效，但是那会不懂为什么爬虫要有一个dns模块，一是因为那会自己网络知识的匮乏，二是没有感受过超大规模抓取，对dns缓存节省的域名解析时间没有感觉。
 

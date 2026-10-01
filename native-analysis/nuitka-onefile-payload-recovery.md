@@ -1,9 +1,41 @@
+---
+schema_version: 2
+id: native-analysis-nuitka-onefile-payload-recovery
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: '`本地项目分析材料（定位不公开）` 样本取证'
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags:
+- Nuitka
+- onefile
+- RT_RCDATA
+- KAY
+- Zstandard
+- python310.dll
+- constants
+original_date: 2026-07-08 至 2026-07-16
+archived_date: '2026-09-15'
+---
+
 # Nuitka onefile：外层 payload 与第二层 native 主程序
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/weixin_download` 样本取证
 > 原始发布时间: 2026-07-08 至 2026-07-16
 > 归档日期: 2026-09-15
 > 分类: native-analysis
+</details>
 >
 > Windows Nuitka onefile 不是 PyInstaller PYZ。外层 EXE 用 `RT_RCDATA` 高熵 blob（本样本前缀 `KAY` + Zstandard）放出第二层 native Python 主程序；内层仍链 `python3xx.dll`，没有可 `uncompyle6` 的 `.pyc` 全集。后续只做 constants / 协议字符串 / 定向 xref，不宣称无损恢复源码。
 

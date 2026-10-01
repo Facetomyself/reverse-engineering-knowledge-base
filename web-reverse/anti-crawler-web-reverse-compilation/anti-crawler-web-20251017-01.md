@@ -1,9 +1,34 @@
+---
+schema_version: 2
+id: web-reverse-anti-crawler-web-reverse-compilation-anti-crawler-web-20251017-01
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 微信公众号：反爬破解社
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags: []
+original_date: 2025-10-17 ~ 2026-01-29（7 篇，逐篇日期见各节）
+archived_date: '2026-07-13'
+---
+
 # AST 语法树硬刚某宝（七篇）：原理、Babel 修复格式、多层三元拆解、提取控制器与无用分支
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 微信公众号：反爬破解社
 > 原始发布时间: 2025-10-17 ~ 2026-01-29（7 篇，逐篇日期见各节）
 > 归档日期: 2026-07-13
 > 分类: web-reverse
+</details>
 >
 > 本文合并同一作者的 7 篇连载：第一篇「AST 语法树硬刚某宝第一弹：先干原理」、第二篇「AST 语法树硬刚某宝第二弹：Babel修复格式（一）」、第三篇「AST 语法树硬刚某宝第二弹：Babel修复格式（二）」、第四篇「AST 语法树硬刚某宝第三弹：Babel修复格式（三）」、第五篇「AST 语法树硬刚某宝第四弹：多层三元表达式拆解」、第六篇「AST 语法树硬刚某宝：提取控制器」、第七篇「AST 语法树硬刚某宝：无用分支破解思路」。
 

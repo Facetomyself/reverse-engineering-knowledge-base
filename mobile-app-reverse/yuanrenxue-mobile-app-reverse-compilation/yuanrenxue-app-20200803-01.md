@@ -1,9 +1,34 @@
+---
+schema_version: 2
+id: mobile-app-reverse-yuanrenxue-mobile-app-reverse-compilation-yuanrenxue-app-20200803-01
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: android
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 微信公众号：猿人学Python
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags: []
+original_date: '2020-08-03'
+archived_date: '2026-07-16'
+---
+
 # 安卓逆向之Luac解密反编译
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 微信公众号：猿人学Python
 > 原始发布时间: 2020-08-03
 > 归档日期: 2026-07-16
 > 分类: mobile-app-reverse
+</details>
 >
 > lua文件大概分3种。lua是明文代码，直接用ide能打开，luac是lua编译后的字节码，文件头特征为0x1B 0x4C 0x75 0x61 0x51。 lua虚拟机直接解析lua和luac脚本文件，luaJIT是另一个lua的实现版本，采用即时解析运行机制，luaJIT更高效，文件头特征为0x1B 0x4C 0x4A。
 

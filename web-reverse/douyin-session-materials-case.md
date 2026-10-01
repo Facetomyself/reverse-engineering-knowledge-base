@@ -1,9 +1,40 @@
+---
+schema_version: 2
+id: web-reverse-douyin-session-materials-case
+document_type: archive
+scope:
+  targets:
+  - douyin
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: '`本地项目分析材料（定位不公开）`（DouYin_Spider，本地镜像只读对照）'
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags:
+- msToken
+- x-ms-token
+- bd-ticket-guard
+- x-tt-session-dtrait
+- __ac_signature
+- provenance
+original_date: '2026-09-20'
+archived_date: '2026-09-23'
+---
+
 # 抖音会话材料：msToken、票据、dtrait、acrawler
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/cv-cat`（DouYin_Spider，本地镜像只读对照）
 > 原始发布时间: 2026-09-20
 > 归档日期: 2026-09-23
 > 分类: web-reverse
+</details>
 >
 > `a_bogus` 算对之后，请求仍会因材料出处错误失败。本篇按源码把四条材料链分开：服务端签发的 msToken、票据 HMAC/ECDSA、按 path 重算的 dtrait、页面 VM 写出的 `__ac_signature`。随机串不能占这些位置。
 

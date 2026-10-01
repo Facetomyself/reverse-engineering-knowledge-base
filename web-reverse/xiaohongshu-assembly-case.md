@@ -1,9 +1,39 @@
+---
+schema_version: 2
+id: web-reverse-xiaohongshu-assembly-case
+document_type: archive
+scope:
+  targets:
+  - xiaohongshu
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: '`本地项目分析材料（定位不公开）`（Spider_XHS 现行 `xhs_core` / `xhs_pc` / `xhs_creator`，只读对照）'
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags:
+- parameter_sources
+- HostCookieStore
+- ordered_wire_headers
+- websectiga
+- _dsf
+original_date: '2026-09-08'
+archived_date: '2026-09-23'
+---
+
 # 小红书装配案例：材料六桶、签完即发、端别切开
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/cv-cat`（Spider_XHS 现行 `xhs_core` / `xhs_pc` / `xhs_creator`，只读对照）
 > 原始发布时间: 2026-09-08
 > 归档日期: 2026-09-23
 > 分类: web-reverse
+</details>
 >
 > 小红书签名头族的命中特征见 [x-s 产品文](./products/xiaohongshu-xs.md)。本篇补现行代码里的装配合同：参数按出处分桶、签参失败不降级、PC / Creator / 蒲公英 / 千帆切开，以及签完的 body 不再交给 HTTP 客户端重编码。不收录 mns keystream、字母表和 AES 材料。
 

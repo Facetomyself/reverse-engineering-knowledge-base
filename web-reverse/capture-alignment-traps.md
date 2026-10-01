@@ -1,9 +1,39 @@
+---
+schema_version: 2
+id: web-reverse-capture-alignment-traps
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: '`本地项目分析材料（定位不公开）`（DouYin_Spider、BilibiliApis、JdApis、KuaiShou-Spider、TiktokApis 源码注释里的已踩坑）'
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags:
+- 空值字段
+- 同名 t
+- parse_qsl
+- $HE_
+- 排序只用于签名
+original_date: '2026-09-23'
+archived_date: '2026-09-24'
+---
+
 # 技巧：抓包对齐时容易自己引入的偏差
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/cv-cat`（DouYin_Spider、BilibiliApis、JdApis、KuaiShou-Spider、TiktokApis 源码注释里的已踩坑）
 > 原始发布时间: 2026-09-23
 > 归档日期: 2026-09-24
 > 分类: web-reverse
+</details>
 >
 > 这些偏差不是算法没还原，而是对照实现自己把抓包形态改掉了。每条都有源码里的真实失误或防护。复用时先对这张表，再改签名。
 

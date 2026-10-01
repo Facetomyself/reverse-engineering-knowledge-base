@@ -1,9 +1,39 @@
+---
+schema_version: 2
+id: web-reverse-douyin-secsdk-websign-case
+document_type: archive
+scope:
+  targets:
+  - douyin
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: '`本地项目分析材料（定位不公开）`（DouYin_Spider `utils/secsdk_web_sign.py`，注释中的逆向窗口 2026-08-16）'
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags:
+- webSignUrl
+- CryptoJS.MD5
+- canonical query
+- encodeURIComponent
+- x-secsdk-web-signature
+original_date: '2026-08-16'
+archived_date: '2026-09-23'
+---
+
 # 抖音 webSign：钩宿主 MD5，再纯算规范化 query
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/cv-cat`（DouYin_Spider `utils/secsdk_web_sign.py`，注释中的逆向窗口 2026-08-16）
 > 原始发布时间: 2026-08-16
 > 归档日期: 2026-09-23
 > 分类: web-reverse
+</details>
 >
 > stack VM 的 opcode 读不动时，先在宿主哈希入口读明文，再只复刻规范化规则。抖音 `x-secsdk-web-signature` 是这条方法的完整案例：签名是 MD5，真正容易错的是 query 规范化，以及签完之后不能再编码。
 

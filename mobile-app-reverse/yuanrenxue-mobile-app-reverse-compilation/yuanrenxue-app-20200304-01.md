@@ -1,9 +1,34 @@
+---
+schema_version: 2
+id: mobile-app-reverse-yuanrenxue-mobile-app-reverse-compilation-yuanrenxue-app-20200304-01
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 微信公众号：猿人学Python
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags: []
+original_date: '2020-03-04'
+archived_date: '2026-07-16'
+---
+
 # APP爬虫之-Protobuf协议逆向解析
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 微信公众号：猿人学Python
 > 原始发布时间: 2020-03-04
 > 归档日期: 2026-07-16
 > 分类: mobile-app-reverse
+</details>
 >
 > 从 App 响应二进制识别 Protobuf，梳理 wire type、Varint、字段结构恢复与 Python 解码的基本路径。
 

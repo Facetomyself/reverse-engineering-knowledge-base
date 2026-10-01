@@ -1,9 +1,34 @@
+---
+schema_version: 2
+id: mobile-app-reverse-yuanrenxue-mobile-app-reverse-compilation-yuanrenxue-app-20200326-01
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 微信公众号：猿人学Python
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags: []
+original_date: '2020-03-26'
+archived_date: '2026-07-16'
+---
+
 # APP爬虫-双向认证抓包的两种方法
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 微信公众号：猿人学Python
 > 原始发布时间: 2020-03-26
 > 归档日期: 2026-07-16
 > 分类: mobile-app-reverse
+</details>
 >
 > APP抓包相对繁琐，越来越多的 APP 在 https 请求和响应时，为了防止中间人攻击（或中间人抓包），会做证书认证，让抓包工具抓不到请求。 证书认证分单向认证和双向认证，双向认证是相较于单向认证而言的，单向认证就是只在 APP 侧做证书校验，单向认证有现成的解决方法，比如用各种 bypass ssl 校验的 hook 脚本既可让单向认证失效，例如：JustTrustM……。
 

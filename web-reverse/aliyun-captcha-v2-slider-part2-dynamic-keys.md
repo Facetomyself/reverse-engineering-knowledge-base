@@ -1,10 +1,49 @@
+---
+schema_version: 2
+id: web-reverse-aliyun-captcha-v2-slider-part2-dynamic-keys
+document_type: archive
+scope:
+  targets:
+  - aliyun-captcha
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: https://mp.weixin.qq.com/s/JvKEU0yb49voNoNL9Ig8iw
+  basis: source-report
+source_completeness: unknown
+tags:
+- 阿里云验证码
+- V2
+- FeiLin 动态 key
+- sg 动态 key
+- SessionId
+- 异或
+- CaptchaVerifyParam
+- deviceToken
+- data
+- MD5
+- 轨迹压缩
+- vmp
+- hook 定位
+original_date: '2025-12-09'
+archived_date: '2026-09-26'
+---
+
 # 阿里云验证码 V2 滑块（下）：FeiLin / sg 动态 key 与 CaptchaVerifyParam（deviceToken / data）
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 微信公众号：無色逆向（[原文](https://mp.weixin.qq.com/s/JvKEU0yb49voNoNL9Ig8iw)）
+</details>
 > 作者: 無色逆向
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 原始发布时间: 2025-12-09
 > 归档日期: 2026-09-26
 > 分类: web-reverse
+</details>
 >
 > 接上篇，讲两个动态 key 和第四次请求。FeiLin 动态 key 进 Log2 `Data` 的环境对象：算法是解密后 `DeviceConfig` 的 `SessionId` 与两个参数两次异或后 base64，这两个参数每个 feilin 文件不同、从大数组解密取出；作者实际用正则补环境，从 `t7`（搜 `ENDPOINTS` 可定位）暴露 key。两个参数写死也能过，但成功率变低。sg 动态 key 用在 `CaptchaVerifyParam`：sg 3.20 后作者以 `void 0` 为锚点暴露，不同大版本匹配方式不同，也可手动收集约百来个版本的 key。`deviceToken` = 环境对象拼接 AES（也用 FeiLin key）→ 组数组（含 `daye,raolewoba!` 字符串）拼接后 MD5 → 再组数组拼接 → base64。`data` = sg 里轨迹（x / y / 时间）经控制流转换、TextEncoder，附加「轨迹 vmp 运算值」与「CertifyId + sg key 的 vmp 运算值」，转数组压缩，再与固定密钥走一遍 vmp 运算。混淆 JS 里定位加密可 hook `JSON.stringify`、`TextEncoder`、`btoa` / `atob` 打堆栈。
 

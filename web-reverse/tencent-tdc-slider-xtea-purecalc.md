@@ -1,10 +1,47 @@
+---
+schema_version: 2
+id: web-reverse-tencent-tdc-slider-xtea-purecalc
+document_type: archive
+scope:
+  targets:
+  - tencent-captcha
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: https://mp.weixin.qq.com/s/Z9JmapU1P6qTON8rf8Ma3Q
+  basis: source-report
+source_completeness: unknown
+tags:
+- TCaptcha
+- TDC
+- tdc.js
+- jsvmp
+- 插桩
+- XTEA
+- collect
+- eks
+- pow_answer
+- TM_CCOEFF_NORMED
+- 腾讯
+original_date: '2026-08-13'
+archived_date: '2026-09-26'
+---
+
 # 腾讯 TDC 滑块半纯算：jsvmp 插桩还原 XTEA 与动态 key 提取
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 微信公众号：猿人学Python（[原文](https://mp.weixin.qq.com/s/Z9JmapU1P6qTON8rf8Ma3Q)）
+</details>
 > 作者: 琴殇（投稿）
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 原始发布时间: 2026-08-13
 > 归档日期: 2026-09-26
 > 分类: web-reverse
+</details>
 >
 > 腾讯 TCaptcha 滑块的 `collect` 由 `tdc.js` jsvmp 生成。在本地 IDE + jsdom 里给函数调用、方法调用（`charCodeAt` / `fromCharCode` / `slice` 等白名单）、加法和常量载入 handler 插桩，由魔数 `0x9E3779B9` 与 `((x<<4)^(x>>5))+x`、`key[(sum>>11)&3]` 判定为 XTEA；明文 4 字符小端打包成 v0/v1，密文小端拆字节，空格补齐到 8 的倍数后 base64 + URL 编码。key 随每次动态下发的 `tdc.js` 变化：注入加法 handler 统计「一个加数是 33 个 sum 值之一」的另一加数，去掉 DELTA 取前 4，再用 24 种排列试解出含 `"cd"` 的明文定序。环境指纹 `cd/sd` 与 `eks` 仍靠 jsdom 跑 tdc 现取，所以是「半纯算」；缺口用带 mask 的多尺度 `TM_CCOEFF_NORMED`，`pow_answer` 为 md5 前缀爆破。
 

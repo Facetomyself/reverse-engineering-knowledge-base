@@ -1,9 +1,58 @@
+---
+schema_version: 2
+id: web-reverse-products-netease-yidun-captcha
+document_type: reference
+scope:
+  targets:
+  - netease-yidun
+  client: web
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: netease-yidun-jigsaw-v2285（trial 页 live compact-replay）
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+tags: []
+original_date: '2026-08-27'
+archived_date: '2026-08-27'
+modules:
+- name: request-chain
+  anchor: 常见链路
+  sources:
+  - s1
+  basis: source-report
+  limits: 仅保留来源陈述；出处为文本 citation，缺少可定位公开原文，本轮未重验算法、运行时或当前服务端。 来源主链为 SDK 2.28.5/type=2 trial；不外推其它题型或当前版本。
+- name: parameters
+  anchor: 核心边界
+  sources:
+  - s1
+  basis: source-report
+  limits: 仅保留来源陈述；出处为文本 citation，缺少可定位公开原文，本轮未重验算法、运行时或当前服务端。 仅参数角色、依赖或定位口径，不代表完整算法恢复。 来源主链为 SDK 2.28.5/type=2 trial；不外推其它题型或当前版本。
+- name: risk-control
+  anchor: 风控分层
+  sources:
+  - s1
+  basis: source-report
+  limits: 仅保留来源陈述；出处为文本 citation，缺少可定位公开原文，本轮未重验算法、运行时或当前服务端。 来源主链为 SDK 2.28.5/type=2 trial；不外推其它题型或当前版本。
+- name: validation
+  anchor: 验证口径
+  sources:
+  - s1
+  basis: source-report
+  limits: 仅保留来源陈述；出处为文本 citation，缺少可定位公开原文，本轮未重验算法、运行时或当前服务端。 本节是验收口径，不代表这些条件本轮已经满足。 来源主链为 SDK 2.28.5/type=2 trial；不外推其它题型或当前版本。
+---
+
 # 网易易盾行为式验证码（Web jigsaw / NECaptcha）
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: netease-yidun-jigsaw-v2285（trial 页 live compact-replay）
 > 原始发布时间: 2026-08-27
 > 归档日期: 2026-08-27
 > 分类: web-reverse
+</details>
 >
 > 网易易盾 Web 行为式验证码（NECaptcha / dun.163.com）：getconf → get → 题面 → check → validate。
 > 以 SDK 2.28.5 滑块 `type=2` 为实证主链，整理风控分层、纯算方法论、缺口与 token 生命周期。

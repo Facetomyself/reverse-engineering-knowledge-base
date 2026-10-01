@@ -1,10 +1,47 @@
+---
+schema_version: 2
+id: web-reverse-tiktok-xbogus-xgnarly-mstoken-env-patch
+document_type: archive
+scope:
+  targets:
+  - tiktok
+  client: web
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: https://mp.weixin.qq.com/s/WCxxC3p1nstT9EMrrr5Neg
+  basis: source-report
+source_completeness: unknown
+tags:
+- TikTok
+- X-Bogus
+- X-Gnarly
+- msToken
+- webmssdk.js
+- byted_acrawler
+- fetch 重写
+- 补环境
+- report
+- strData
+- VMP 条件断点
+original_date: '2025-10-31'
+archived_date: '2026-09-26'
+---
+
 # TikTok Web 评论接口 X-Bogus / X-Gnarly / msToken：webmssdk.js 补环境导出与 strData 定位
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 微信公众号：無色逆向（[原文](https://mp.weixin.qq.com/s/WCxxC3p1nstT9EMrrr5Neg)）
+</details>
 > 作者: 無色逆向
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 原始发布时间: 2025-10-31
 > 归档日期: 2026-09-26
 > 分类: web-reverse
+</details>
 >
 > TikTok Web 视频评论接口的三个参数。X-Bogus 与 X-Gnarly 都在 webmssdk.js：执行 SDK 生成 `window.byted_acrawler` → `byted_acrawler.init` 多次重写 `window.fetch` → 调用被重写的 fetch 时出值。作者用 `Object.defineProperty` hook `window.fetch` 的 setter 找到重写点，把整份 JS 拿到本地补环境（约二百行，重点是 canvas 和 toString 保护），再把两个加密函数赋值到 window 上导出调用（`encrypt_x_b.v` / `encrypt_x_g.v`）。msToken 现在由日志上报接口 report 的响应头下发，载荷密文 `strData` 由同一 SDK 的 VMP 生成：在 VMP 寄存器函数 `C` 上按参数长度 >4000 打条件日志，按环境关键字和 `n.o` 值逐步收窄到加密入口，同样赋值导出。验证码、verifyFp 不在本文范围，纯算作者还没做完。
 

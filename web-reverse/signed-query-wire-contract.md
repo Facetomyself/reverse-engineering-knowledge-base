@@ -1,9 +1,39 @@
+---
+schema_version: 2
+id: web-reverse-signed-query-wire-contract
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: '`本地项目分析材料（定位不公开）`（DouYin_Spider、TiktokApis、Spider_XHS、JdApis、KuaiShou-Spider 的 HTTP 出口对照）'
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags:
+- canonical query
+- default_headers
+- HTTP/2 cookie
+- duplicate t
+- quote
+original_date: '2026-09-23'
+archived_date: '2026-09-23'
+---
+
 # 签完即线上：query、头序与 HTTP/2 Cookie
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/cv-cat`（DouYin_Spider、TiktokApis、Spider_XHS、JdApis、KuaiShou-Spider 的 HTTP 出口对照）
 > 原始发布时间: 2026-09-23
 > 归档日期: 2026-09-23
 > 分类: web-reverse
+</details>
 >
 > 签名算在某一串字节上，服务端也按收到的字节校验。把 dict 再交给 HTTP 客户端，会改顺序、改编码、合并同名键。本篇把各仓已经踩过的写回合同收成一条可复用流程。
 

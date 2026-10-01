@@ -1,9 +1,34 @@
+---
+schema_version: 2
+id: mobile-app-reverse-xfq-android-cases-compilation-mafengwo-xpreauthencode-hook
+document_type: archive
+scope:
+  targets:
+  - mafengwo
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 知识星球：逆向学习交流（安居客/陌陌/马蜂窝附件笔记）
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags: []
+original_date: 附件笔记（随 2025 安卓案例索引）
+archived_date: '2026-09-06'
+---
+
 # 马蜂窝 zzzghostsigh：xPreAuthencode hook 窗口
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 知识星球：逆向学习交流（安居客/陌陌/马蜂窝附件笔记）
 > 原始发布时间: 附件笔记（随 2025 安卓案例索引）
 > 归档日期: 2026-09-06
 > 分类: mobile-app-reverse
+</details>
 >
 > `zzzghostsigh` 的 Java 入口是 `AuthorizeHelper.xPreAuthencode`。动态注册在 `libmfw.so`。入参是 OAuth 风格 canonical 串加包名，出参 40 hex。魔改 SHA1 本身已在签名算法分类闭合，本篇只补 hook 点、JNI 签名和 unidbg 观察窗口。不收录未脱敏 query、设备字段和「改返回值跳过验签」的脚本。
 

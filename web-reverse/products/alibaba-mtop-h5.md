@@ -1,9 +1,48 @@
+---
+schema_version: 2
+id: web-reverse-products-alibaba-mtop-h5
+document_type: reference
+scope:
+  targets:
+  - taobao
+  - xianyu
+  - alibaba-mtop-h5
+  client: web
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: TaoBaoApis / XianYuApis 2026-08 只读对照（原归档记载）
+  reason: 原归档明确记载对照项目名；仅保留非路径出处，省略本机定位，未提供公开原文 URL。
+tags: []
+original_date: '2026-08-18'
+archived_date: '2026-08-30'
+modules:
+- name: request-chain
+  anchor: 常见链路
+  sources:
+  - s1
+  basis: source-report
+  limits: 仅保留来源陈述；出处为文本 citation，缺少可定位公开原文，本轮未重验算法、运行时或当前服务端。
+- name: validation
+  anchor: 验证口径
+  sources:
+  - s1
+  basis: source-report
+  limits: 仅保留来源陈述；出处为文本 citation，缺少可定位公开原文，本轮未重验算法、运行时或当前服务端。 本节是验收口径，不代表这些条件本轮已经满足。
+---
+
 # 阿里 MTOP H5 sign
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/cv-cat`（TaoBaoApis / XianYuApis 2026-08 只读对照）
 > 原始发布时间: 2026-08-18
 > 归档日期: 2026-08-30
 > 分类: web-reverse
+</details>
 >
 > 淘宝 / 闲鱼 Web 的 H5 MTOP 查询签名：`_m_h5_tk`、`t`、`appKey`、`data` 拼串后 MD5。与 App `x-sign`、H5Sec/AWSC/Fireye、`tfstk` 不是同一条链。
 

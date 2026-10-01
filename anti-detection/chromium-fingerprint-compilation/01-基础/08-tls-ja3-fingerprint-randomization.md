@@ -1,3 +1,22 @@
+---
+schema_version: 2
+id: anti-detection-chromium-fingerprint-compilation-01-08-tls-ja3-fingerprint-randomization
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: unknown
+  reason: 已核实所属合集的收录关系，但合集来源说明不等于逐篇原文地址；逐篇公开来源指针未知。
+source_completeness: unknown
+tags: []
+---
+
 # 编译自己的指纹浏览器：随机 TLS/JA3 指纹
 
 ### 一、什么是TLS指纹和JA3指纹

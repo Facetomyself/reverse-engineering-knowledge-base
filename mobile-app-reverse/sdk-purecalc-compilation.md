@@ -1,9 +1,43 @@
+---
+schema_version: 2
+id: mobile-app-reverse-sdk-purecalc-compilation
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: workspace 吸收 `本地项目分析材料（定位不公开）`（已删原件）
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags:
+- DXRisk
+- riskToken
+- 数美
+- deviceprofile/v4
+- Qimei
+- snowflake
+- wtoken
+- XXTEA
+- 纯协议
+original_date: 2026-08 至 2026-09 源码落盘
+archived_date: '2026-09-06'
+---
+
 # App SDK 纯算落盘：顶象 / 数美 / Qimei / wtoken
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: workspace 吸收 `storage/sdk-storage`（已删原件）
 > 原始发布时间: 2026-08 至 2026-09 源码落盘
 > 归档日期: 2026-09-06
 > 分类: mobile-app-reverse
+</details>
 >
 > 四份已落到 `workspace/` 的纯协议实现：海南航空 DXRisk `riskToken` 签发、小星空数美 `deviceprofile/v4`、腾讯 Qimei REGISTER、今彩萍乡 `wtoken`。本文只保留封装链和字段生命周期。密钥、真实画像、identity 和可直接打生产的脚本留在各 workspace `source/`。
 

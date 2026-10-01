@@ -1,9 +1,38 @@
+---
+schema_version: 2
+id: web-reverse-linkedin-voyager-csrf-case
+document_type: archive
+scope:
+  targets:
+  - linkedin
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: '`本地项目分析材料（定位不公开）`（LinkedinApis，HEAD 日期 2026-08-18，只读对照）'
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags:
+- JSESSIONID
+- csrf-token
+- queryId
+- voyager
+original_date: '2026-08-18'
+archived_date: '2026-09-23'
+---
+
 # 领英案例：JSESSIONID 双写与页面 queryId
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/cv-cat`（LinkedinApis，HEAD 日期 2026-08-18，只读对照）
 > 原始发布时间: 2026-08-18
 > 归档日期: 2026-09-23
 > 分类: web-reverse
+</details>
 >
 > 领英 Voyager 在这份对照仓里没有独立签名算法。鉴权是 Cookie 里的 `JSESSIONID` 去掉引号后双写到 `csrf-token`，GraphQL 的 `queryId` 从当前页面 JS 里抠。
 

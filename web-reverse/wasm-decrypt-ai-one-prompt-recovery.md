@@ -1,10 +1,48 @@
+---
+schema_version: 2
+id: web-reverse-wasm-decrypt-ai-one-prompt-recovery
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: https://mp.weixin.qq.com/s/qfJ0QfJTSyoO4wTaEs7hsw
+  basis: source-report
+source_completeness: unknown
+tags:
+- WASM
+- secure_decrypt_data
+- WebAssembly.Instance
+- 同步加载
+- wasm2wat
+- wasm-decompile
+- AI 逆向
+- Cursor
+- Claude
+- SM2
+- SM4-ECB
+- C1C3C2
+original_date: '2026-03-26'
+archived_date: '2026-09-26'
+---
+
 # 招投标公告电话字段 WASM 解密：抠 JS 同步加载 WASM 与一句话让 AI 还原 SM2 + SM4 链
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 微信公众号：無色逆向（[原文](https://mp.weixin.qq.com/s/qfJ0QfJTSyoO4wTaEs7hsw)）
+</details>
 > 作者: 無色逆向
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 原始发布时间: 2026-03-26
 > 归档日期: 2026-09-26
 > 分类: web-reverse
+</details>
 >
 > 某招投标公告详情接口里的联系电话是密文，页面能显示明文，解密在 WASM 的 `secure_decrypt_data` 里。传统做法：全局搜 `decrypt` 定位到 `_0x2be3ab(固定参数, 密文)`，补齐 WASM 导出对象 `_0x5aadb9`，把 `fetch` + 异步 instantiate 的初始化改成 `fs.readFileSync` + `new WebAssembly.Module` / `Instance` 同步加载本地 `.wasm`，然后直接调用。之后作者在 Cursor 里用 claude-4.6-opus-high-thinking，只输入「分析js复现出wasm中的加密算法」：模型自己列 todo，装 wasm2wat / wasm-decompile 反编译，从函数名先猜 SM2，再写测试验证。截图给出的链路：参数 1 URL 解码 → base64 → SM2 解密（C1C3C2，硬编码私钥）→ 再 base64 解码得 16 字节 SM4 key；参数 2 URL 解码 → base64 → SM4-ECB + PKCS7 解密得明文。约 15 分钟、300 万 token。
 

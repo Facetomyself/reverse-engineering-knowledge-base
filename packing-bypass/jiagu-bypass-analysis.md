@@ -1,9 +1,46 @@
+---
+schema_version: 2
+id: packing-bypass-jiagu-bypass-analysis
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: '`本地项目分析材料（定位不公开）`'
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags:
+- Jiagu
+- 360加固
+- raise(9)
+- PR_SET_PTRACER
+- direct syscall
+- panda
+- whole-DEX
+- 方法抽取
+- CodeItem
+- FART
+- JDex2
+- CDEX
+original_date: '2026-07-02'
+archived_date: '2026-07-05'
+---
+
 # 360 Jiagu VIP 绕过与脱壳能力更新
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/qidian`
 > 原始发布时间: 2026-07-02
 > 归档日期: 2026-07-05
 > 分类: packing-bypass
+</details>
 >
 > 样本: 起点读书 7.9.464 / `libjiagu_vip.so` ｜ 更新: 2026-07-15
 >

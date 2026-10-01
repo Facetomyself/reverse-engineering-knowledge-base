@@ -1,9 +1,41 @@
+---
+schema_version: 2
+id: anti-detection-xfq-device-fp-compilation
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 知识星球：逆向学习交流
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags:
+- 设备指纹
+- 设备注册
+- 熵源
+- 伪随机
+- TLS指纹
+- 风控SO
+- QIMEI
+original_date: 多篇合集
+archived_date: '2026-09-04'
+---
+
 # 逆向学习交流设备指纹与风控合集
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 知识星球：逆向学习交流
 > 原始发布时间: 多篇合集
 > 归档日期: 2026-09-04
 > 分类: anti-detection
+</details>
 >
 > 设备注册纯协议、熵源/伪随机、协议指纹演进、风控 so 上手思路与代理身份笔记。方法论优先，不收录设备 ID 清单或批量注册脚本。
 

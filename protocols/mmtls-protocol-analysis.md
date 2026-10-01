@@ -1,9 +1,44 @@
+---
+schema_version: 2
+id: protocols-mmtls-protocol-analysis
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: '`本地项目分析材料（定位不公开）` / `yyb_go` 源码'
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags:
+- mmtls
+- TLS 1.3
+- ECDHE
+- PSK 0-RTT
+- AES-GCM
+- HKDF
+- 腾讯私有协议
+- ShortLink
+- iLink
+- NewDNS
+original_date: '2026-07-05'
+archived_date: '2026-07-05'
+---
+
 # mmtls 协议深度分析
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/yyb` / `yyb_go` 源码
 > 原始发布时间: 2026-07-05
 > 归档日期: 2026-07-05
 > 分类: protocols
+</details>
 >
 > 基于 `yyb_go` 源码逆向还原腾讯应用宝 (YYB) / 微信小程序 WMPF 登录与 API 调用链。
 

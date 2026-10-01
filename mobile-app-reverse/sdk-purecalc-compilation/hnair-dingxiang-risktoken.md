@@ -1,9 +1,34 @@
+---
+schema_version: 2
+id: mobile-app-reverse-sdk-purecalc-compilation-hnair-dingxiang-risktoken
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 本地项目分析材料（定位不公开）
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags: []
+original_date: 2026-08-14 源码
+archived_date: '2026-09-06'
+---
+
 # 顶象 DXRisk：riskToken 是签发请求不是本地拼串
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: workspace/hnair-dingxiang-risktoken
 > 原始发布时间: 2026-08-14 源码
 > 归档日期: 2026-09-06
 > 分类: mobile-app-reverse
+</details>
 >
 > 海南航空 Android 接入顶象 DXRisk。客户端构造 `/udid/m1` 签发请求，token 在响应里。不收录 appKey、XXTEA key 和 189 项真实画像。
 

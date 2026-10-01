@@ -1,9 +1,34 @@
+---
+schema_version: 2
+id: mobile-app-reverse-wechat-mp-oss-landscape-weread-mp-chapters
+document_type: archive
+scope:
+  targets:
+  - wechat
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: '`本地项目分析材料（定位不公开）` 对照 weread-omni、wechrss、we-mp-rss、wewe-rss'
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags: []
+original_date: 2026-08-23 / 2026-09-13
+archived_date: '2026-09-15'
+---
+
 # 微信读书公众号列表与 RefreshToken
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/weixin_download` 对照 weread-omni、wechrss、we-mp-rss、wewe-rss
 > 原始发布时间: 2026-08-23 / 2026-09-13
 > 归档日期: 2026-09-15
 > 分类: mobile-app-reverse
+</details>
 >
 > 微信读书是第四套会话：个人微信开通读书后 QR 登录，用 `MP_WXS_<BID>` 调 `/mp/chapters` 分页。这是 `getmsg` 之外少见的、带 HTTP RefreshToken 的历史源。覆盖的是读书侧能上架/加书架的号，不是任意公开号完整历史。官方 `wrk-` Skill 不含公众号。
 

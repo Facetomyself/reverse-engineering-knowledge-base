@@ -1,9 +1,34 @@
+---
+schema_version: 2
+id: anti-detection-anti-crawler-risk-control-compilation-anti-crawler-risk-20260408-01
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 微信公众号：反爬破解社
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags: []
+original_date: '2026-04-08'
+archived_date: '2026-07-13'
+---
+
 # 浏览器指纹的深度伪装与检测：从UserAgent到WebGL的全面攻防
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 微信公众号：反爬破解社
 > 原始发布时间: 2026-04-08
 > 归档日期: 2026-07-13
 > 分类: anti-detection
+</details>
 >
 > 在之前的Hook与反Hook文章中，我们探讨了如何拦截和伪装 代码执行环境 。今天，我们将进入一个更底层、更隐蔽的战场： 浏览器指纹 。这是现在市面上的反爬技术基本都会采用的验证手段。
 

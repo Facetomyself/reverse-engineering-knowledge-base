@@ -8,17 +8,17 @@
 
 | 分类 | canonical | 子文章 | 合计 |
 |------|----------:|-------:|-----:|
-| `anti-detection` | 12 | 162 | 174 |
+| `anti-detection` | 13 | 162 | 175 |
 | `collection-engineering` | 6 | 2 | 8 |
 | `drm-content-acquisition` | 1 | 0 | 1 |
-| `mobile-app-reverse` | 19 | 172 | 191 |
+| `mobile-app-reverse` | 20 | 172 | 192 |
 | `native-analysis` | 4 | 12 | 16 |
 | `packing-bypass` | 3 | 0 | 3 |
 | `protocols` | 3 | 0 | 3 |
 | `signature-algorithms` | 7 | 19 | 26 |
-| `web-reverse` | 65 | 109 | 174 |
+| `web-reverse` | 66 | 109 | 175 |
 
-文章总数：596。
+文章总数：599。
 
 ## 逐篇目录
 
@@ -27,6 +27,7 @@
 | 类型 | 日期 | 文章 | 父合集 | 关键标题 |
 |------|------|------|--------|----------|
 | 主文 | 2026-07-05 | [51job 风控检测面分析 & bypass 对抗设计](./anti-detection/51job-anti-detection-analysis.md) | — | 目标 / 风控架构回顾 / 检测向量清单 & 对抗矩阵 / V1: Function.prototype.toString 检测 |
+| 主文 | — | [51job Web 风控参考卡：检测面与证据边界](./anti-detection/51job-risk-control-reference.md) | — | 风控检测面 / 查阅时怎样使用 / 验证与限制 |
 | 主文 | 2026-08-30 | [安卓 ACE deviceUniqueId 设备拉黑机制](./anti-detection/android-ace-deviceuniqueid.md) | — | 适用范围 / 1. 硬锚点 / 2. KeyBox 与对外形态 / 3. 取样到上报 |
 | 主文 | 多篇合集 | [反爬破解社风控与反检测合集](./anti-detection/anti-crawler-risk-control-compilation.md) | — | 收录说明 / 文章目录（10 篇，连载合并后 8 条） |
 | 主文 | 多篇合集 | [本如笔记反爬与反检测实战合集](./anti-detection/benru-anti-detection-compilation.md) | — | 收录说明 / 文章目录（8 篇） |
@@ -54,7 +55,7 @@
 | 子文 | 2026-03-11 | [2026 年了，你的爬虫还在被验证码按在地上摩擦？](./anti-detection/benru-anti-detection-compilation/benru-anti-20260311-01.md) | [本如笔记反爬与反检测实战合集](./anti-detection/benru-anti-detection-compilation.md) | 一、先说点废话 / 二、最基础的图文验证码 / 我以前怎么搞的？ / 三、滑块验证码——拦路虎本虎 |
 | 子文 | 2026-04-25 | [你每次打开网页，浏览器都在偷偷画画](./anti-detection/benru-anti-detection-compilation/benru-anti-20260425-01.md) | [本如笔记反爬与反检测实战合集](./anti-detection/benru-anti-detection-compilation.md) | Canvas指纹到底是啥 / 写个检测器，看看谁在画你 / 装环境 / 完整代码 |
 | 子文 | 2026-04-29 | [被“请依次点击图中文字”逼疯了？这套YOLO+孪生网络方案，300张图就能破！](./anti-detection/benru-anti-detection-compilation/benru-anti-20260429-01.md) | [本如笔记反爬与反检测实战合集](./anti-detection/benru-anti-detection-compilation.md) | 一、技术原理 / 二、实操 / 2.1 搭建与跑 Demo / 2.2 爬虫集成：Playwright 端到端自动化 |
-| 子文 | — | [追加html播放器支持](./anti-detection/chromium-fingerprint-compilation/01-基础/01-chromium-compilation-guide.md) | [Chromium 指纹浏览器编译系列](./anti-detection/chromium-fingerprint-compilation.md) | 一、系统要求 / 二、安装 Visual Studio / 三、安装SDK / 四、安装 depot_tools |
+| 子文 | — | [Chromium 编译环境搭建指南](./anti-detection/chromium-fingerprint-compilation/01-基础/01-chromium-compilation-guide.md) | [Chromium 指纹浏览器编译系列](./anti-detection/chromium-fingerprint-compilation.md) | 一、系统要求 / 二、安装 Visual Studio / 三、安装SDK / 四、安装 depot_tools |
 | 子文 | — | [Chromium 源码随机 Canvas 指纹（一～二）：fillText 偏移与 setFillStyle 颜色微调](./anti-detection/chromium-fingerprint-compilation/01-基础/02-canvas-fingerprint-randomization.md) | [Chromium 指纹浏览器编译系列](./anti-detection/chromium-fingerprint-compilation.md) | 收录说明 / 第一篇：通过源码编译随机 Canvas 指纹 / 第二篇：指纹浏览器开发：修改 Canvas 指纹（二） |
 | 子文 | — | [Chromium 源码随机 WebGL 指纹（一～二）：getSupportedExtensions 打乱与 ReadPixelsHelper / toDataURL](./anti-detection/chromium-fingerprint-compilation/01-基础/03-webgl-fingerprint-randomization.md) | [Chromium 指纹浏览器编译系列](./anti-detection/chromium-fingerprint-compilation.md) | 收录说明 / 第一篇：修改 Chromium 源码随机 WebGL 指纹 / 第二篇：指纹浏览器开发：修改 WebGL 指纹（二） |
 | 子文 | — | [Chromium 源码随机 Fonts 指纹](./anti-detection/chromium-fingerprint-compilation/01-基础/04-fonts-fingerprint-randomization.md) | [Chromium 指纹浏览器编译系列](./anti-detection/chromium-fingerprint-compilation.md) | 一、什么是字体指纹 / 二、如何获取字体指纹 / 三、字体指纹原理 / 四、编译随机fonts指纹 |
@@ -71,23 +72,23 @@
 | 子文 | — | [修改 Chromium 大版本](./anti-detection/chromium-fingerprint-compilation/01-基础/18-major-version-modification.md) | [Chromium 指纹浏览器编译系列](./anti-detection/chromium-fingerprint-compilation.md) | 一、源码位置 / 二、新旧版本差异 / 三、看creepjs源码 / 四、总结： |
 | 子文 | — | [指纹浏览器开发：禁止加载图片](./anti-detection/chromium-fingerprint-compilation/01-基础/19-disable-image-loading.md) | [Chromium 指纹浏览器编译系列](./anti-detection/chromium-fingerprint-compilation.md) | 20250521 追加更新 |
 | 子文 | — | [Chromium ClientRects 指纹修改](./anti-detection/chromium-fingerprint-compilation/01-基础/20-clientrects-fingerprint.md) | [Chromium 指纹浏览器编译系列](./anti-detection/chromium-fingerprint-compilation.md) | 一、什么是ClientRects指纹 / 二、js如何获取ClientRects指纹 / 三、编译 / 四、在线指纹验证网站： |
-| 子文 | — | [指定chromedriver的路径](./anti-detection/chromium-fingerprint-compilation/01-基础/21-chromedriver-selenium-bypass.md) | [Chromium 指纹浏览器编译系列](./anti-detection/chromium-fingerprint-compilation.md) | 一、selenium简介 / 二、机器人识别网站 / 三、 检测原理 / 四、编译crhomedriver.exe |
+| 子文 | — | [Chromedriver 编译 — 绕过 Selenium 检测](./anti-detection/chromium-fingerprint-compilation/01-基础/21-chromedriver-selenium-bypass.md) | [Chromium 指纹浏览器编译系列](./anti-detection/chromium-fingerprint-compilation.md) | 一、selenium简介 / 二、机器人识别网站 / 三、 检测原理 / 四、编译crhomedriver.exe |
 | 子文 | — | [浏览器魔改：绕过无限 debugger](./anti-detection/chromium-fingerprint-compilation/01-基础/22-bypass-infinite-debugger.md) | [Chromium 指纹浏览器编译系列](./anti-detection/chromium-fingerprint-compilation.md) | 一、目标 / 二、如何使debugger关键字变得无效 / 三、新增debuggel关键字 / 四、效果 |
 | 子文 | — | [自定义 Chromium：修改屏幕尺寸](./anti-detection/chromium-fingerprint-compilation/01-基础/23-screen-size-modification.md) | [Chromium 指纹浏览器编译系列](./anti-detection/chromium-fingerprint-compilation.md) | 一、如何使用js获取屏幕信息 / 二、如何更改源码： / 三、反检测 / 四、反反检测 |
-| 子文 | — | [Chromium WebGPU 指纹修改](./anti-detection/chromium-fingerprint-compilation/01-基础/24-webgpu-fingerprint.md) | [Chromium 指纹浏览器编译系列](./anti-detection/chromium-fingerprint-compilation.md) | — |
-| 子文 | — | [Chromium 语言与时区修改](./anti-detection/chromium-fingerprint-compilation/01-基础/26-language-and-timezone.md) | [Chromium 指纹浏览器编译系列](./anti-detection/chromium-fingerprint-compilation.md) | 二、修改源码 / 三、更改语言： / 四、2025-01-22追加：通过读文件方式获取时区参数 |
+| 子文 | — | [Chromium WebGPU 指纹修改](./anti-detection/chromium-fingerprint-compilation/01-基础/24-webgpu-fingerprint.md) | [Chromium 指纹浏览器编译系列](./anti-detection/chromium-fingerprint-compilation.md) | 一、WebGPU是什么 / 二、什么是WebGPU指纹 / 三、获取浏览器的WebGPU指纹 / 四、编译随机webGPU指纹 |
+| 子文 | — | [Chromium 语言与时区修改](./anti-detection/chromium-fingerprint-compilation/01-基础/26-language-and-timezone.md) | [Chromium 指纹浏览器编译系列](./anti-detection/chromium-fingerprint-compilation.md) | 一、为啥要改时区： / 二、修改源码 / 三、更改语言： / 四、2025-01-22追加：通过读文件方式获取时区参数 |
 | 子文 | — | [Chromium 访问 closed Shadow DOM](./anti-detection/chromium-fingerprint-compilation/01-基础/27-shadow-dom-closed-access.md) | [Chromium 指纹浏览器编译系列](./anti-detection/chromium-fingerprint-compilation.md) | 一、什么是Shadow DOM / 二、js操作Shadow DOM / 三、如何获取closed的shadowRoot里的内容 / 四、还可以优化 |
 | 子文 | — | [Chromium 跨域访问 iframe 内容](./anti-detection/chromium-fingerprint-compilation/01-基础/28-cross-origin-iframe-access.md) | [Chromium 指纹浏览器编译系列](./anti-detection/chromium-fingerprint-compilation.md) | 一、iframe下的#document是什么 / 二、如何获取#document下的内容 / 三、如何获取跨域iframe的#document里的内容 / 四、风险 |
 | 子文 | — | [Chromium Windows 系统版本伪装](./anti-detection/chromium-fingerprint-compilation/01-基础/29-windows-os-version-spoof.md) | [Chromium 指纹浏览器编译系列](./anti-detection/chromium-fingerprint-compilation.md) | 一、目标： / 二、js是如何获取 windows 系统版本： / 三、修改源码： |
-| 子文 | — | [Chromium 指纹浏览器成品功能概览](./anti-detection/chromium-fingerprint-compilation/01-基础/30-product-overview.md) | [Chromium 指纹浏览器编译系列](./anti-detection/chromium-fingerprint-compilation.md) | — |
-| 子文 | — | [Chromium WebRTC IP 指纹与 BrowserScan 绕过](./anti-detection/chromium-fingerprint-compilation/02-进阶/01-webrtc-ip-browserscan-bypass.md) | [Chromium 指纹浏览器编译系列](./anti-detection/chromium-fingerprint-compilation.md) | — |
-| 子文 | — | [Chromium macOS Platform 伪装](./anti-detection/chromium-fingerprint-compilation/02-进阶/02-macos-platform-spoof.md) | [Chromium 指纹浏览器编译系列](./anti-detection/chromium-fingerprint-compilation.md) | — |
+| 子文 | — | [Chromium 指纹浏览器成品功能概览](./anti-detection/chromium-fingerprint-compilation/01-基础/30-product-overview.md) | [Chromium 指纹浏览器编译系列](./anti-detection/chromium-fingerprint-compilation.md) | 关于成品 |
+| 子文 | — | [Chromium WebRTC IP 指纹与 BrowserScan 绕过](./anti-detection/chromium-fingerprint-compilation/02-进阶/01-webrtc-ip-browserscan-bypass.md) | [Chromium 指纹浏览器编译系列](./anti-detection/chromium-fingerprint-compilation.md) | 一、进阶简介： / 二、webrtc简介 / 三、browserscan如何通过webrtc的获取用户ip / 四、核心逻辑 |
+| 子文 | — | [Chromium macOS Platform 伪装](./anti-detection/chromium-fingerprint-compilation/02-进阶/02-macos-platform-spoof.md) | [Chromium 指纹浏览器编译系列](./anti-detection/chromium-fingerprint-compilation.md) | 一、目标： / 二、js如何判断操作系统是否为Mac / 三、修改navigator.platform / 四、修改navigator.userAgent |
 | 子文 | — | [Chromium 禁用 CSS Animation 与 Canvas](./anti-detection/chromium-fingerprint-compilation/02-进阶/03-disable-css-animation-canvas.md) | [Chromium 指纹浏览器编译系列](./anti-detection/chromium-fingerprint-compilation.md) | 一、目标： / 二、为何禁用动画 / 三、css动画案例 / 四、修改chromium源码 |
 | 子文 | — | [Chromium 启动参数注入 Cookie](./anti-detection/chromium-fingerprint-compilation/02-进阶/04-startup-cookie-injection.md) | [Chromium 指纹浏览器编译系列](./anti-detection/chromium-fingerprint-compilation.md) | 一、目标： / 二、为何要传参传入cookies / 三、修改chromium源码 / 四、检测： |
-| 子文 | — | [这个target不生成任何编译输出，只是一个配置的容器](./anti-detection/chromium-fingerprint-compilation/02-进阶/05-jwt-startup-validation.md) | [Chromium 指纹浏览器编译系列](./anti-detection/chromium-fingerprint-compilation.md) | 一、目标： / 二、为什么添加启动校验： / 三、JWT格式说明： / 四、安装jwt-cpp |
-| 子文 | — | [Chromium 任务栏数字徽标](./anti-detection/chromium-fingerprint-compilation/02-进阶/06-taskbar-badge-icon.md) | [Chromium 指纹浏览器编译系列](./anti-detection/chromium-fingerprint-compilation.md) | — |
-| 子文 | — | [Chromium Cookie 明文存储](./anti-detection/chromium-fingerprint-compilation/02-进阶/07-cookie-plaintext-storage.md) | [Chromium 指纹浏览器编译系列](./anti-detection/chromium-fingerprint-compilation.md) | — |
-| 子文 | — | [Chromium Cookie 持久化存储](./anti-detection/chromium-fingerprint-compilation/02-进阶/08-cookie-persistent-storage.md) | [Chromium 指纹浏览器编译系列](./anti-detection/chromium-fingerprint-compilation.md) | — |
+| 子文 | — | [JWT 启动校验 — 使用权限控制](./anti-detection/chromium-fingerprint-compilation/02-进阶/05-jwt-startup-validation.md) | [Chromium 指纹浏览器编译系列](./anti-detection/chromium-fingerprint-compilation.md) | 一、目标： / 二、为什么添加启动校验： / 三、JWT格式说明： / 四、安装jwt-cpp |
+| 子文 | — | [Chromium 任务栏数字徽标](./anti-detection/chromium-fingerprint-compilation/02-进阶/06-taskbar-badge-icon.md) | [Chromium 指纹浏览器编译系列](./anti-detection/chromium-fingerprint-compilation.md) | 一、目标： / 二、为什么要给任务栏加提示图标： / 三、修改chromium源码： / 四、备注 |
+| 子文 | — | [Chromium Cookie 明文存储](./anti-detection/chromium-fingerprint-compilation/02-进阶/07-cookie-plaintext-storage.md) | [Chromium 指纹浏览器编译系列](./anti-detection/chromium-fingerprint-compilation.md) | 一、目标： / 二、浅析cookie存储方式： / 三、修改chromium源码： / 四、成果测试： |
+| 子文 | — | [Chromium Cookie 持久化存储](./anti-detection/chromium-fingerprint-compilation/02-进阶/08-cookie-persistent-storage.md) | [Chromium 指纹浏览器编译系列](./anti-detection/chromium-fingerprint-compilation.md) | 一、目标： / 二、为什么要设置cookie的持久化存储： / 三、修改chromium源码： / 四、成果测试： |
 | 子文 | 2025-04-20 | [Chromium指纹浏览器开发教程之VMware虚拟机环境构建](./anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20250420-01.md) | [如意私塾浏览器指纹与反检测合集](./anti-detection/ruyi-browser-anti-detection-compilation.md) | 1.1.1 VMware 安装配置 / 1.1.2 Windows 11 虚拟机的创建 |
 | 子文 | 2025-04-21 | [Chromium指纹浏览器开发教程之Blink渲染引擎](./anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20250421-01.md) | [如意私塾浏览器指纹与反检测合集](./anti-detection/ruyi-browser-anti-detection-compilation.md) | 2.3.1 Blink 运行方式 / 2.3.2 Blink 模块 / 2.3.3 Blink 目录结构 / 2.3.4 Blink 线程创建 |
 | 子文 | 2025-04-22 | [01.浏览器自动化webdriver源码分析之启动函数](./anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20250422-01.md) | [如意私塾浏览器指纹与反检测合集](./anti-detection/ruyi-browser-anti-detection-compilation.md) | — |
@@ -168,7 +169,7 @@
 | 子文 | 2026-05-26 | [RuyiTrace全量日志工具秒wasm--某画师 M-S 签名逆向分析全过程](./anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260526-01.md) | [如意私塾浏览器指纹与反检测合集](./anti-detection/ruyi-browser-anti-detection-compilation.md) | 一、目标确认 / 二、分析工具与数据来源 / 三、定位 M-S 头的设置位置 / 3.1 搜索 setRequestHeader |
 | 子文 | 2026-05-27 | [过px盾 \| 自动outlook微软邮箱注册机放在星球了](./anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260527-01.md) | [如意私塾浏览器指纹与反检测合集](./anti-detection/ruyi-browser-anti-detection-compilation.md) | 安装与使用 / 安装 / 框架地址： |
 | 子文 | 2026-05-28 | [魔改Firefox火狐浏览器内核源码支持SOCKS5密码代理（文档给AI可一键修改完毕）](./anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260528-01.md) | [如意私塾浏览器指纹与反检测合集](./anti-detection/ruyi-browser-anti-detection-compilation.md) | 目标 / 修改文件 / 1\. C:\firefox\firefox\netwerk\base\nsProtocolProxyService.cpp / 2\. C:\firefox\firefox\netwerk\base\nsProtocolProxyService.h |
-| 子文 | 2026-06-01 | [魔改Firefox火狐浏览器源码webGPU指纹定制（文档给AI可一键修改完毕）](./anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260601-01.md) | [如意私塾浏览器指纹与反检测合集](./anti-detection/ruyi-browser-anti-detection-compilation.md) | 配置入口 / 文件改动 / dom/webgpu/Utility.h / dom/webgpu/Utility.cpp |
+| 子文 | 2026-06-01 | [魔改Firefox火狐浏览器源码webGPU指纹定制（文档给AI可一键修改完毕）](./anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260601-01.md) | [如意私塾浏览器指纹与反检测合集](./anti-detection/ruyi-browser-anti-detection-compilation.md) | 目标 / 配置入口 / 文件改动 / dom/webgpu/Utility.h |
 | 子文 | 2026-06-02 | [魔改safari/webkit苹果浏览器内核实现HTTP密码代理支持（文档给AI可一键修改完毕）](./anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260602-01.md) | [如意私塾浏览器指纹与反检测合集](./anti-detection/ruyi-browser-anti-detection-compilation.md) | 运行配置 / 整体链路 / 修改文件 / 1\. Tools/MiniBrowser/win/WebKitBrowserWindow.cpp |
 | 子文 | 2026-06-04 | [魔改Firefox火狐浏览器一个tab一个s5密码隔离](./anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260604-01.md) | [如意私塾浏览器指纹与反检测合集](./anti-detection/ruyi-browser-anti-detection-compilation.md) | 1\. 架构 / 1.1 目标效果 / 1.2 数据流 / 1.3 为什么必须用 container tab |
 | 子文 | 2026-06-07 | [Fingerprint POST指纹加密包纯算还原报告(ruyiPage+ruyiTrace+codex 5.5 xhigh)](./anti-detection/ruyi-browser-anti-detection-compilation/ruyi-20260607-01.md) | [如意私塾浏览器指纹与反检测合集](./anti-detection/ruyi-browser-anti-detection-compilation.md) | 结论摘要 / 源码中的关键函数 / 常量定义 / 第一步：生成明文 JSON |
@@ -232,6 +233,7 @@
 | 主文 | 2026-04-13 | [MTOP InnerSignImpl Frida RPC](./mobile-app-reverse/mtop-innersign-rpc.md) | — | 适用边界 / 工作流 / 观察优先级 / 常见坑 |
 | 主文 | 多篇合集 | [泡泡以安 Android 逆向技术合集](./mobile-app-reverse/paopao-android-reverse-compilation.md) | — | 收录说明 / 文章目录（67 篇，连载合并后 57 条） |
 | 主文 | 2026-09-06 | [App 协议准入四关：设备、签名、主机、传输](./mobile-app-reverse/protocol-admission-four-gates.md) | — | 定位 / 完成门（先于四关） / 四关（并联，不是流水线） / 关 1 — 设备：同行，不编造 |
+| 主文 | — | [App 协议准入诊断流程：从空响应到有边界的验收](./mobile-app-reverse/protocol-admission-procedure.md) | — | 前提与输入 / 步骤与分支 / 流程图 / 输出 |
 | 主文 | 2026-09-09 | [App 设备注册包顺序：事件驱动、前置身份与 SDK 同构](./mobile-app-reverse/protocol-register-packet-order.md) | — | 定位 / 核心判断 / 1. 注册环节不是串行时间线 / 2. 事件包：一条一条，或凑阈值再发 |
 | 主文 | 2026-09-03 | [App 纯协议 SDK 重建：从首次设备注册到可维护协议客户端](./mobile-app-reverse/pure-protocol-sdk-reconstruction.md) | — | 定位 / 总流程 / 1. 干净首次注册与 HAR 语料 / 1.1 刷到可复现的首次开机 |
 | 主文 | 2025-04 至 2025-07 | [reverseNotes 早期安卓案例合集](./mobile-app-reverse/reversenotes-android-compilation.md) | — | 收录说明 / 文章目录（4 篇） / 索引里提到但本批不收的条目 |
@@ -365,7 +367,7 @@
 | 子文 | 2025-12-18 | [trace_natives_plus](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-20251218-01.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 |
 | 子文 | 2025-12-22 | [frida-server经典报错 not a function](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-20251222-01.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 |
 | 子文 | 2026-01-05 | [常见 证书安装 方案 与 对应常见问题](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-20260105-01.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 |
-| 子文 | 2026-01-12 | [binary ninja的mcp配置](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-20260112-01.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 |
+| 子文 | 2026-01-12 | [binary ninja的mcp配置](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-20260112-01.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 清洗与完整性说明 / 原归档摘要（保留） / 正文 / 复用边界 |
 | 子文 | 2026-01-15 | [安卓9以上 lsp中发http包](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-20260115-01.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 |
 | 子文 | 2026-02-16 | [静态住宅ip 代理配置教程](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-20260216-01.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 |
 | 子文 | 2026-03-09 | [bug：某些手机在特定fridaserver运行的时候会出现下列报错](./mobile-app-reverse/xfq-tools-debug-compilation/xfq-20260309-01.md) | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | 正文 |
@@ -420,7 +422,7 @@
 
 | 类型 | 日期 | 文章 | 父合集 | 关键标题 |
 |------|------|------|--------|----------|
-| 主文 | unknown | [AI 复杂 VM 算法还原](./native-analysis/ai-assisted-vmp-trace-recovery.md) | — | KEY16 和 repeating-key XOR / "Saw" 明文误判 / HKDF / HMAC-PRF 候选 / 五段 SHA 输出 |
+| 主文 | unknown | [AI 复杂 VM 算法还原](./native-analysis/ai-assisted-vmp-trace-recovery.md) | — | 战场：反编译已经不够用了 / 方法论：从输出往回走 / 错误路线地图 / KEY16 和 repeating-key XOR |
 | 主文 | 2026-07-08 至 2026-07-16 | [Nuitka onefile：外层 payload 与第二层 native 主程序](./native-analysis/nuitka-onefile-payload-recovery.md) | — | 适用与不适用 / 外层：onefile bootstrap / 内层：仍然是 Nuitka native / 不要做的 |
 | 主文 | 2026-06-27 | [Qidian Native SO 分析与结论纠偏](./native-analysis/qidian-so-analysis.md) | — | 技术摘要 / 文件清单 / QDSign 结论纠偏 / 已撤销的旧判断 |
 | 主文 | 多篇合集 | [逆向学习交流 Unidbg 与 Native 合集](./native-analysis/xfq-unidbg-native-compilation.md) | — | 收录说明 / 文章目录（12 篇） |
@@ -523,6 +525,7 @@
 | 主文 | 2026-08-30 | [快手案例：资料接口的 hxfalcon 装配](./web-reverse/kuaishou-landing-case.md) | — | 案例：GET /rest/v/profile/get / CP 与直播 / 成本判断在代码里的位置 / 证据边界 |
 | 主文 | 2026-08-18 | [领英案例：JSESSIONID 双写与页面 queryId](./web-reverse/linkedin-voyager-csrf-case.md) | — | 案例：资料卡 / 可复用点 / 证据边界 |
 | 主文 | 2026-09-23 | [方法论：签名材料出处账本](./web-reverse/material-provenance-ledger.md) | — | 四类出处 / 真实记账 / 账本伪代码 / 怎么给新字段归类 |
+| 主文 | 2026-08-04（浅克隆唯一提交；正文日期多停在 2026-05，skill 正文写到 2026-06-13） | [PerimeterX 参考仓：结构对照与证据边界](./web-reverse/perimeterx-human-reference-evidence-boundary.md) | — | 证据等级 / 仓的位置 / 目录职责 / 自称和树不一致 |
 | 主文 | 多篇合集 | [Web 安全产品强制命中索引](./web-reverse/products.md) | — | 用途 / 强制命中纪律 / 产品一览 / 使用边界 |
 | 主文 | 2026-09-23 | [方法论：纯算还是预言机，先写成本账](./web-reverse/purecalc-vs-oracle-cost.md) | — | 成本账怎么填 / 预言机也有验收 / 伪代码 / 账本里要写的一句 |
 | 主文 | 2026-09-23 | [方法论：请求面切开，失败按面翻译](./web-reverse/request-plane-failure-translation.md) | — | 画法 / 真实翻译 / 伪代码 / 同名不同面 |

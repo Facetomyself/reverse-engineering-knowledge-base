@@ -1,9 +1,34 @@
+---
+schema_version: 2
+id: mobile-app-reverse-yuanrenxue-mobile-app-reverse-compilation-yuanrenxue-app-20190520-01
+document_type: archive
+scope:
+  targets:
+  - weibo
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 微信公众号：猿人学Python
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags: []
+original_date: '2019-05-20'
+archived_date: '2026-07-16'
+---
+
 # 爬虫技巧：使用Charles和requests模拟微博登录
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 微信公众号：猿人学Python
 > 原始发布时间: 2019-05-20
 > 归档日期: 2026-07-16
 > 分类: mobile-app-reverse
+</details>
 >
 > 我们通过模拟微博登录这个例子来看看如何使用Charles分析网站加载流程，顺便把微博模拟登录的Python代码也给实现了。
 

@@ -1,9 +1,78 @@
+---
+schema_version: 2
+id: web-reverse-products
+document_type: reference
+scope:
+  targets:
+  - unknown
+  client: web
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: JS终结计划课程方法论（clean-room 重写）
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+tags:
+- 风控产品
+- 验证码
+- 签名
+- WAF
+- 反爬
+- 命中索引
+- DataDome
+- Akamai
+- Kasada
+- 瑞数
+- reCAPTCHA
+- Arkose Labs
+- FunCaptcha
+- 同盾
+- 京东
+- JCAP
+- tp=22
+- 空间推理
+- h5st
+- 抖音
+- 阿里云验证码
+- 腾讯验证码
+- 网易易盾
+- NECaptcha
+- F5
+- PerimeterX
+- reese84
+- 小红书
+- x-s
+- 快手
+- __NS_sig3
+- MTOP
+original_date: 多篇合集
+archived_date: '2026-08-11'
+modules:
+- name: decision-flow
+  anchor: 强制命中纪律
+  sources:
+  - s1
+  basis: source-report
+  limits: 仅保留来源陈述；出处为文本 citation，缺少可定位公开原文，本轮未重验算法、运行时或当前服务端。
+- name: validation
+  anchor: 使用边界
+  sources:
+  - s1
+  basis: source-report
+  limits: 仅保留来源陈述；出处为文本 citation，缺少可定位公开原文，本轮未重验算法、运行时或当前服务端。 本节是验收口径，不代表这些条件本轮已经满足。
+---
+
 # Web 安全产品强制命中索引
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: JS终结计划课程方法论（clean-room 重写）
 > 原始发布时间: 多篇合集
 > 归档日期: 2026-08-11
 > 分类: web-reverse
+</details>
 >
 > 面向 Web 逆向与风控请求链复现的安全产品特征索引。命中特征 → 映射产品 → 只读对应文档，是定位签名、验证码、状态型业务链时的第一道分类门。2026-08-27 增补网易易盾 Web captcha。2026-08-30 增补小红书 xs、快手 NS 签名、阿里 MTOP H5。
 

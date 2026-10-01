@@ -1,9 +1,34 @@
+---
+schema_version: 2
+id: anti-detection-yuanrenxue-anti-detection-compilation-yuanrenxue-anti-20190104-01
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 微信公众号：猿人学Python
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags: []
+original_date: '2019-01-04'
+archived_date: '2026-07-16'
+---
+
 # 不要相信requests返回的text
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 微信公众号：猿人学Python
 > 原始发布时间: 2019-01-04
 > 归档日期: 2026-07-16
 > 分类: anti-detection
+</details>
 >
 > Python的requests库是一个非常好用的库，这应该已经是大多写过爬虫的人的共识了。它的简洁易用给我们带来很大方便。然而，它也并不是非常完美。今天我们就说说它在处理中文编码方面的不足。
 

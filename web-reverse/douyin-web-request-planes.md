@@ -1,9 +1,41 @@
+---
+schema_version: 2
+id: web-reverse-douyin-web-request-planes
+document_type: archive
+scope:
+  targets:
+  - douyin
+  client: web
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: '`本地项目分析材料（定位不公开）`（DouYin_Spider，本地镜像只读对照，抓包窗口约 2026-08）'
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags:
+- a_bogus
+- host
+- aid
+- page_id
+- signed_url
+- bd-ticket-guard
+- check_risk_response
+original_date: '2026-09-20'
+archived_date: '2026-09-23'
+---
+
 # 抖音 Web 请求面：七条链的真实装配
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/cv-cat`（DouYin_Spider，本地镜像只读对照，抓包窗口约 2026-08）
 > 原始发布时间: 2026-09-20
 > 归档日期: 2026-09-23
 > 分类: web-reverse
+</details>
 >
 > 抖音一条「业务请求」同时叠了查询签名、会话 token、URL 完整性、票据、设备头和传输层。本篇用 DouYin_Spider 的真实调用点说明每条链在哪一步接上、哪一步必须停手，不收录字母表、盐或可执行签名器。
 

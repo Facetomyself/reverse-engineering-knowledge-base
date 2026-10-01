@@ -1,9 +1,41 @@
+---
+schema_version: 2
+id: web-reverse-datadome-env-patch
+document_type: archive
+scope:
+  targets:
+  - datadome
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 微信公众号转载 / 知识星球技术稿
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags:
+- DataDome
+- plv3
+- payload
+- iframe Realm
+- OffscreenCanvas
+- jsdom
+- VM 分叉
+original_date: unknown
+archived_date: '2026-09-06'
+---
+
 # DataDome 无感验证补环境
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 微信公众号转载 / 知识星球技术稿
 > 原始发布时间: unknown
 > 归档日期: 2026-09-06
 > 分类: web-reverse
+</details>
 >
 > DataDome 无感 interstitial 的补环境路径：jsdom + vm 跑原脚本出 payload/plv3，难点在 iframe Realm 生命周期、Worker/OffscreenCanvas 异步链、六万步 VM 第一处分叉，以及 CSS 自定义属性驱动的 offsetWidth；成功口径是 view=redirect 后新 Session 连续业务 200。
 

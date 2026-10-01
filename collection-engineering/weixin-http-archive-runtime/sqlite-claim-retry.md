@@ -1,9 +1,34 @@
+---
+schema_version: 2
+id: collection-engineering-weixin-http-archive-runtime-sqlite-claim-retry
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: '`本地项目分析材料（定位不公开）` `weixin_download_state.py`'
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags: []
+original_date: '2026-07-17'
+archived_date: '2026-09-15'
+---
+
 # SQLite 文章 claim 与 durable retry
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/weixin_download` `weixin_download_state.py`
 > 原始发布时间: 2026-07-17
 > 归档日期: 2026-09-15
 > 分类: collection-engineering
+</details>
 >
 > 本地 SQLite WAL 上用短 `BEGIN IMMEDIATE` 做文章占有：协议主键、owner token、heartbeat、缺文件重试、durable queue。网络请求不持有写锁。队列里的 URL 要剥掉临时凭证参数。
 

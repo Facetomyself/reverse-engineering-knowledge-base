@@ -1,9 +1,34 @@
+---
+schema_version: 2
+id: mobile-app-reverse-yuanrenxue-mobile-app-reverse-compilation-yuanrenxue-app-20200602-01
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 微信公众号：猿人学Python
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags: []
+original_date: '2020-06-02'
+archived_date: '2026-07-16'
+---
+
 # APP爬虫-某APP iOS版逆向过程
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 微信公众号：猿人学Python
 > 原始发布时间: 2020-06-02
 > 归档日期: 2026-07-16
 > 分类: mobile-app-reverse
+</details>
 >
 > 跟着猿人学王平大佬学了一段时间安卓APP逆向，刚刚入门。由于我使用Mac和iOS更频繁，所以我以某汽车 iOS 版为例，记录一下逆向过程和一些知识点。
 

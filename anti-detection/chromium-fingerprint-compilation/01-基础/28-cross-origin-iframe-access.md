@@ -1,3 +1,22 @@
+---
+schema_version: 2
+id: anti-detection-chromium-fingerprint-compilation-01-28-cross-origin-iframe-access
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: unknown
+  reason: 已核实所属合集的收录关系，但合集来源说明不等于逐篇原文地址；逐篇公开来源指针未知。
+source_completeness: unknown
+tags: []
+---
+
 # Chromium 跨域访问 iframe 内容
 
 ### 一、iframe下的#document是什么

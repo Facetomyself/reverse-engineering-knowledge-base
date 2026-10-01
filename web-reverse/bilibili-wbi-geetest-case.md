@@ -1,9 +1,40 @@
+---
+schema_version: 2
+id: web-reverse-bilibili-wbi-geetest-case
+document_type: archive
+scope:
+  targets:
+  - bilibili
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: '`本地项目分析材料（定位不公开）`（BilibiliApis，HEAD 日期 2026-09-13，只读对照）'
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags:
+- WBI
+- w_rid
+- wts
+- mixin
+- correspondPath
+- 极验
+original_date: '2026-09-13'
+archived_date: '2026-09-23'
+---
+
 # B 站案例：WBI 原序写回、极验本地载荷、correspondPath
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/cv-cat`（BilibiliApis，HEAD 日期 2026-09-13，只读对照）
 > 原始发布时间: 2026-09-13
 > 归档日期: 2026-09-23
 > 分类: web-reverse
+</details>
 >
 > 这份对照仓已经去掉整包 `static/bili.js`。WBI、票据和 correspondPath 在 Python 里闭合；极验 v3 的 `w` 载荷本地计算，点选识别是另一层。排序只用于算 `w_rid`，发出去的 query 保持原序。
 

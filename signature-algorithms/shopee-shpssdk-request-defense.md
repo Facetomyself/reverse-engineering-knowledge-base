@@ -1,9 +1,43 @@
+---
+schema_version: 2
+id: signature-algorithms-shopee-shpssdk-request-defense
+document_type: archive
+scope:
+  targets:
+  - shopee
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 语雀 xiayutian23/htolhb
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags:
+- x-sap-ri
+- SHPSSDK
+- libshpssdk.so
+- ChaCha20
+- Salsa20
+- RC6
+- xxhash
+- mmh3
+- unidbg
+original_date: '2026-03-22'
+archived_date: '2026-09-15'
+---
+
 # Shopee SHPSSDK requestDefense：x-sap-ri 与四键签名
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 语雀 xiayutian23/htolhb
 > 原始发布时间: 2026-03-22
 > 归档日期: 2026-09-15
 > 分类: signature-algorithms
+</details>
 >
 > Shopee 菲律宾包 `com.shopee.ph` 版本 33731 无加固。OkHttp 反欺诈拦截器走 `SHPSSDK.requestDefense`，最终 native 在 `libshpssdk.so!0x995dc`。请求头是 `x-sap-ri` 加四个变化键：时间戳小端、自定义 SHA-256、ChaCha20 / RC6 / Salsa20、xxhash、mmh3 与自定义 Base64。正文按原文结构归档，截图已落成本地文件，便于按 unidbg + SearchData / traceWrite 复现。
 

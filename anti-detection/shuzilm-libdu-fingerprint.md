@@ -1,9 +1,43 @@
+---
+schema_version: 2
+id: anti-detection-shuzilm-libdu-fingerprint
+document_type: archive
+scope:
+  targets:
+  - zhihu
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 知乎 11.4.0 / `libdu.so` SDK v8.4.0 独立分析（rizin + HAR；Pixel 5 实验室样本）
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags:
+- 数盟
+- 数字联盟
+- libdu.so
+- x-ms-id
+- cdd
+- d2api
+- vB2
+- AYk
+- deviceUniqueId
+original_date: 2026-09
+archived_date: '2026-09-15'
+---
+
 # 数盟 libdu.so 指纹对照表（知乎 11.4.0）
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 知乎 11.4.0 / `libdu.so` SDK v8.4.0 独立分析（rizin + HAR；Pixel 5 实验室样本）
 > 原始发布时间: 2026-09
 > 归档日期: 2026-09-15
 > 分类: 反检测/风控对抗 — 数盟设备指纹
+</details>
 >
 > 数盟可信 ID 的注册面很薄：顶层大约 20–30 个 key，其中一个（`vB2`）再嵌套 100–200 个 key，注册包合计约 258 key。`d2api` 回 `cdd`，就是 App 业务后续用的 `x-ms-id`。对着 `libdu.so` 跑 native trace 就能把 key 对上。本文 366 行是把 daa / dcc2 / dai / audd 以及 SO 里其它采集点顺手编进来的全表，不是注册包字段数；个别分组还没完全钉死，但不妨碍理解签发路径。实验室 `android_id` / GAID / Widevine / MAC / IMSI 原值已截断。
 

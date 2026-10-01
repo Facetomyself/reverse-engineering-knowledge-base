@@ -1,9 +1,42 @@
+---
+schema_version: 2
+id: anti-detection-device-fingerprint-consistency-modeling
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 方法论整理（设备指纹一致性建模）
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags:
+- 设备指纹
+- 一致性建模
+- 联合分布
+- 泊松分布
+- 对数正态
+- 多次采集
+- APK版本
+- 生命周期
+original_date: '2026-09-15'
+archived_date: '2026-09-15'
+---
+
 # 设备指纹一致性建模：联合分布、时间间隔与生命周期
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 方法论整理（设备指纹一致性建模）
 > 原始发布时间: 2026-09-15
 > 归档日期: 2026-09-15
 > 分类: 反检测/风控对抗 — 设备指纹一致性建模
+</details>
 >
 > 服务端审查设备指纹，看的不是某几个字段单独像不像，而是字段之间的联合分布、时间间隔的统计形态，以及多次采集之间的状态演化。把真实指纹拿来抖动几个字段，联合分布和时序一对照就会露馅。本文只整理识别面与建模原则，不收录生成代码、设备 ID 原值或可打生产的改机脚本。
 

@@ -1,8 +1,45 @@
+---
+schema_version: 2
+id: web-reverse-products-imperva-reese84-canadiannorth
+document_type: case
+scope:
+  targets:
+  - imperva
+  - canadiannorth
+  client: web
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: canadiannorth-imperva-v1 项目（84 纯算成品吸收）
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+tags: []
+archived_date: '2026-08-14'
+modules:
+- name: request-chain
+  anchor: 完整链路本案例实证
+  sources:
+  - s1
+  basis: source-report
+  limits: 仅保留来源陈述；出处为文本 citation，缺少可定位公开原文，本轮未重验算法、运行时或当前服务端。 原稿“纯算”含动态 JS 的 VM 执行，不等同零宿主纯算法。
+- name: validation
+  anchor: 验证口径
+  sources:
+  - s1
+  basis: source-report
+  limits: 仅保留来源陈述；出处为文本 citation，缺少可定位公开原文，本轮未重验算法、运行时或当前服务端。 本节是验收口径，不代表这些条件本轮已经满足。 原稿“纯算”含动态 JS 的 VM 执行，不等同零宿主纯算法。
+---
+
 # Imperva Reese84 — Canadian North 案例
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: canadiannorth-imperva-v1 项目（84 纯算成品吸收）
 > 归档日期: 2026-08-14
 > 分类: web-reverse
+</details>
 >
 > Imperva/Incapsula reese84 在 Canadian North（Sabre 5TDX 航司订票站）的纯算落地案例：
 > curl_cffi 管线 + Node vm 执行器契约 + GraphQL 业务层验证。

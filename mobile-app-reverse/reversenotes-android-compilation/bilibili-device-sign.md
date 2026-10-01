@@ -1,9 +1,34 @@
+---
+schema_version: 2
+id: mobile-app-reverse-reversenotes-android-compilation-bilibili-device-sign
+document_type: archive
+scope:
+  targets:
+  - bilibili
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: GitHub xfxfxiaofeng/reverseNotes
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags: []
+original_date: 2025-06（观察版本 6.28.0 / 6.68.0 / 8.48.0）
+archived_date: '2026-09-06'
+---
+
 # 哔哩哔哩：buvid、deviceid 信封、fp_local 与 sign
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: GitHub xfxfxiaofeng/reverseNotes
 > 原始发布时间: 2025-06（观察版本 6.28.0 / 6.68.0 / 8.48.0）
 > 归档日期: 2026-09-06
 > 分类: mobile-app-reverse
+</details>
 >
 > B 站 Android 设备身份不是单一哈希。`buvid` 是前缀加 MD5 抽位；`deviceid` 是随机 AES 密钥经 RSA-PKCS#1 v1.5 包裹后再 AES 加密注册明文；`fp_local` 本地拼 MD5+时间+随机+校验和，`fp_remote` 由 fingerprint 接口回写；`sign` 在 `libbili.so` JNI 里对已填 `ts` 的 map 做加盐 MD5。盐值只在截图，正文未导出。
 

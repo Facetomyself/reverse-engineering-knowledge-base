@@ -1,3 +1,24 @@
+---
+schema_version: 2
+id: anti-detection-chromium-fingerprint-compilation-01-01-chromium-compilation-guide
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: unknown
+  reason: 已核实所属合集的收录关系，但合集来源说明不等于逐篇原文地址；逐篇公开来源指针未知。
+source_completeness: unknown
+tags: []
+---
+
+# Chromium 编译环境搭建指南
+
 > chromium编译是个非常耗时的过程，网上教程一搜一大把，我也懒得详细写。  
 > 且chromium一直都在更新，编译教程还是要以官网为准。
 

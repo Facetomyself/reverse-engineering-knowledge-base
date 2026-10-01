@@ -1,9 +1,34 @@
+---
+schema_version: 2
+id: anti-detection-yuanrenxue-anti-detection-compilation-yuanrenxue-anti-20181207-01
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 微信公众号：猿人学Python
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags: []
+original_date: '2018-12-07'
+archived_date: '2026-07-16'
+---
+
 # 爬虫小偏方二：修改referer后可以不用登录了
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 微信公众号：猿人学Python
 > 原始发布时间: 2018-12-07
 > 归档日期: 2026-07-16
 > 分类: anti-detection
+</details>
 >
 > 通过对比不同入口的 Referer 与登录校验差异，说明访问控制可能只绑定特定来源链路，定位时应同时检查 Web、App 与分享页面。
 

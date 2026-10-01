@@ -1,0 +1,14 @@
+%% 来源方法整理（source-report）；未新增目标实测。诊断顺序不是网络请求时序；unknown 不视为通过。
+flowchart TD
+    S7{"S7 独立 TLS 会话<br/>有效业务读？"} -->|有效 readback| S8["S8 当前范围的完成门验收"]
+    S7 -->|空响应或挑战| F3["F3 尚无 serverAccepted"]
+    S8 --> G_LOCAL["本地字节对照闭合<br/>localReproduced"]
+    S8 --> G_SERVER["独立会话有效业务读<br/>serverAccepted"]
+    S8 --> G_REG["注册与引导激活闭合<br/>registrationComplete"]
+    S8 --> G_SESSION["同套 SDK / 身份上下文<br/>sessionConsistent"]
+    G_LOCAL --> AND{"AND：四门均有<br/>当前证据？"}
+    G_SERVER --> AND
+    G_REG --> AND
+    G_SESSION --> AND
+    AND -->|全部满足| ACCEPT["限定范围验收完成"]
+    AND -->|任一缺失或未知| F2["F2 完成门未闭合"]

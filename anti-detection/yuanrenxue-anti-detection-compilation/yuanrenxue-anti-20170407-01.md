@@ -1,9 +1,34 @@
+---
+schema_version: 2
+id: anti-detection-yuanrenxue-anti-detection-compilation-yuanrenxue-anti-20170407-01
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 微信公众号：猿人学Python
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags: []
+original_date: '2017-04-07'
+archived_date: '2026-07-16'
+---
+
 # 「运维」Linux单台机器配置多IP的squid3 http代理
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 微信公众号：猿人学Python
 > 原始发布时间: 2017-04-07
 > 归档日期: 2026-07-16
 > 分类: anti-detection
+</details>
 >
 > 在单机绑定多个出口地址，并通过 Squid ACL 将监听地址映射到对应出口 IP，适合构建集中管理的多出口代理节点。
 

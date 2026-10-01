@@ -1,9 +1,46 @@
+---
+schema_version: 2
+id: web-reverse-products-jd-jcap-spatial
+document_type: reference
+scope:
+  targets:
+  - jd
+  client: web
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: reverse_ENV 实测（`jd-slider-v1`）
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+tags: []
+original_date: '2026-08-22'
+archived_date: '2026-08-22'
+modules:
+- name: request-chain
+  anchor: 常见链路
+  sources:
+  - s1
+  basis: source-report
+  limits: 仅保留来源陈述；出处为文本 citation，缺少可定位公开原文，本轮未重验算法、运行时或当前服务端。
+- name: validation
+  anchor: 验证口径
+  sources:
+  - s1
+  basis: source-report
+  limits: 仅保留来源陈述；出处为文本 citation，缺少可定位公开原文，本轮未重验算法、运行时或当前服务端。 本节是验收口径，不代表这些条件本轮已经满足。
+---
+
 # 京东 JCAP 空间推理（tp=22）
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: reverse_ENV 实测（`jd-slider-v1`）
 > 原始发布时间: 2026-08-22
 > 归档日期: 2026-08-22
 > 分类: web-reverse
+</details>
 >
 > 京东 PC 登录 JCAP 的空间推理题型。服务端用 `tp=22` 下发题面，与滑块 `tp=30` / 旋转 `tp=26` 不是同一条交互链。
 

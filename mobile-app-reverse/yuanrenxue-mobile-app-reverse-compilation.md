@@ -1,9 +1,42 @@
+---
+schema_version: 2
+id: mobile-app-reverse-yuanrenxue-mobile-app-reverse-compilation
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 微信公众号：猿人学Python
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags:
+- Token Hook
+- TCP抓包
+- Protobuf
+- 双向认证
+- Android
+- iOS
+- Flutter
+- Jailbreak检测
+original_date: 多篇合集
+archived_date: '2026-07-16'
+---
+
 # 猿人学移动 App 逆向与抓包合集
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 微信公众号：猿人学Python
 > 原始发布时间: 多篇合集
 > 归档日期: 2026-07-16
 > 分类: mobile-app-reverse
+</details>
 >
 > 覆盖登录态与 Token Hook、TCP/HTTPS 抓包、Protobuf、双向认证、Native 参数还原、iOS、Flutter 与 Jailbreak 检测分析。
 

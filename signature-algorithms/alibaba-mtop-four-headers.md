@@ -1,9 +1,42 @@
+---
+schema_version: 2
+id: signature-algorithms-alibaba-mtop-four-headers
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: '`本地项目分析材料（定位不公开）`（吸收 `本地项目分析材料（定位不公开）`）'
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags:
+- MTOP
+- x-sign
+- x-sgext
+- x-mini-wua
+- x-umt
+- SG 70102
+- DES-ECB
+- libsgmainso
+original_date: '2026-09-10'
+archived_date: '2026-09-15'
+---
+
 # 阿里 SG 70102 四头纯算
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/alibaba-mtop-four-headers`（吸收 `storage/ali-algorithms.zip`）
 > 原始发布时间: 2026-09-10
 > 归档日期: 2026-09-15
 > 分类: signature-algorithms
+</details>
 >
 > 阿里 App 网关四头 `x-sign` / `x-sgext` / `x-mini-wua` / `x-umt` 可以纯算，但输入是一份会话画像加 `data2sign`，不是只喂请求体。一加捕获只是目前唯一 byte-exact 样本；算法层通用，不能凭空生成新会话。
 

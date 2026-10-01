@@ -1,10 +1,49 @@
+---
+schema_version: 2
+id: web-reverse-tencent-tdc-slider-vmp-part2-tea-collect-pow
+document_type: archive
+scope:
+  targets:
+  - tencent-captcha
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: https://mp.weixin.qq.com/s/vGUza2i9rFSJVdANaMpccQ
+  basis: source-report
+source_completeness: unknown
+tags:
+- 腾讯验证码
+- TDC
+- __TENCENT_CHAOS_VM
+- 栈式虚拟机
+- 插桩
+- TEA
+- XTEA
+- '2654435769'
+- '>>> 5'
+- collect
+- pow_answer
+- pow_calc_time
+- md5 PoW
+original_date: '2025-12-24'
+archived_date: '2026-09-26'
+---
+
 # 腾讯滑块 TDC vmp（下）：__TENCENT_CHAOS_VM 插桩还原魔改 TEA collect 与 pow 工作量证明
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 微信公众号：無色逆向（[原文](https://mp.weixin.qq.com/s/vGUza2i9rFSJVdANaMpccQ)）
+</details>
 > 作者: 無色逆向
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 原始发布时间: 2025-12-24
 > 归档日期: 2026-09-26
 > 分类: web-reverse
+</details>
 >
 > `tdc.js` 的核心是 `__TENCENT_CHAOS_STACK` 里的 `__TENCENT_CHAOS_VM` 栈式虚拟机（`Q` 指令指针、`U` 指令数组、`W` 指令函数表、`c` 栈，没有其它混淆）。在 `.apply` / `.call` 与运算指令处插桩（加法日志必须加条件，否则日志爆栈）后可见：环境字符串每次按索引取 4 个字符 `charCodeAt`，每两组经运算得到 4 位数组再 `fromCharCode` 成乱码串，全部乱码串拼接后 base64 即 `collect`。频繁出现的常量 2654435769 指向 TEA 家族，实测魔改点是 `>> 5` 改成 `>>> 5`；作者给的 Python 里 key 取 `key[sum & 3]` / `key[(sum >> 11) & 3]`，这是 XTEA 的轮结构。4 个 key 随每份 `tdc.js` 变化，作者把日志片段交给 DeepSeek 深度思考模型找出，再在固定 `tdc.js` 下用正向 / 逆向算法互验真实 `collect`。`pow_answer` = prehandle 返回的前缀 + 工作量答案，`pow_calc_time` 是耗时：从 0 递增，`md5(nonce + ans)` 等于目标 md5 即停，30 秒超时。轨迹不校验，但可在 `setData` 前加入，坐标转换后同样切割计算。
 

@@ -1,9 +1,39 @@
+---
+schema_version: 2
+id: web-reverse-fail-closed-completion-gate
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: '`本地项目分析材料（定位不公开）`（TiktokApis `SignerError`、DouYin_Spider acrawler/create_v2、Spider_XHS 签参、JdApis tk03）'
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags:
+- fail-closed
+- SignerError
+- localReproduced
+- serverAccepted
+- tk03
+original_date: '2026-09-23'
+archived_date: '2026-09-24'
+---
+
 # 方法论：缺字段失败，成功口径分开写
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/cv-cat`（TiktokApis `SignerError`、DouYin_Spider acrawler/create_v2、Spider_XHS 签参、JdApis tk03）
 > 原始发布时间: 2026-09-23
 > 归档日期: 2026-09-24
 > 分类: web-reverse
+</details>
 >
 > 签名器缺材料时应该失败，而不是补一个长度对的随机串或回放抓包。HTTP 200、进程退出码 0、oracle 有输出，各自都不是 `serverAccepted`。完成门要写成业务读回，并标明哪一层只是 `localReproduced`。
 

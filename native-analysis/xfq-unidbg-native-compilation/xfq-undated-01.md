@@ -1,9 +1,34 @@
+---
+schema_version: 2
+id: native-analysis-xfq-unidbg-native-compilation-xfq-undated-01
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 知识星球：逆向学习交流
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags: []
+original_date: 未知
+archived_date: '2026-09-04'
+---
+
 # 04-追doCommandNative参数
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 知识星球：逆向学习交流
 > 原始发布时间: 未知
 > 归档日期: 2026-09-04
 > 分类: native-analysis
+</details>
 >
 > function hook_dlopen(targetSoName) { // dlopen主要是 hook native函数中加载别的so的，典型的如加固或者系统级别的so； Interceptor.attach(Module.findExportByName(null, "dlopen"), { onEnter: function (args) { this.fileName = args[0].readCString(); con
 

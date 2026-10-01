@@ -1,9 +1,40 @@
+---
+schema_version: 2
+id: web-reverse-castle-profile-compression-parity
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: '`本地项目分析材料（定位不公开）`，`3fe6ea7d`，`utils/castle_token.py`、`utils/castle_crypto.py`、`utils/chromium_deflate.py`、`x_apis/login_api.py`'
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags:
+- Castle
+- Rl
+- CompressionStream
+- raw-DEFLATE
+- ctypes
+- parity
+original_date: 2026-09-27（本轮源码对照窗口）
+archived_date: '2026-09-27'
+---
+
 # Castle 对照：完整画像输入、压缩字节一致性与纯算边界
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/cv-cat/XApis`，`3fe6ea7d`，`utils/castle_token.py`、`utils/castle_crypto.py`、`utils/chromium_deflate.py`、`x_apis/login_api.py`
 > 原始发布时间: 2026-09-27（本轮源码对照窗口）
 > 归档日期: 2026-09-27
 > 分类: web-reverse
+</details>
 >
 > 把加密和封装改写成 Python，只闭合了计算边界；完整浏览器画像、逐动作状态、压缩后端仍是独立依赖。解压后相同不能代替压缩字节相同，输入齐全也不能代替服务端接受。
 

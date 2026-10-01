@@ -1,9 +1,34 @@
+---
+schema_version: 2
+id: mobile-app-reverse-wechat-mp-oss-landscape-wmpf-h5-debug-plane
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: GitHub 对照 xuange520/WeChat-H5-DevTools、WMPFDebugger 族；对照 `本地项目分析材料（定位不公开）` 发证审计
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags: []
+original_date: '2026-09-15'
+archived_date: '2026-09-15'
+---
+
 # WMPF H5 调试面与 WeixinJSBridge Mock
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: GitHub 对照 xuange520/WeChat-H5-DevTools、WMPFDebugger 族；对照 `workspace/weixin_download` 发证审计
 > 原始发布时间: 2026-09-15
 > 归档日期: 2026-09-15
 > 分类: mobile-app-reverse
+</details>
 >
 > 微信 4.x 关掉内置浏览器物理 F12 后，开源工具用 Frida / 透明代理 / JSBridge Mock 做 H5 调试。这是观察面，不是 `getmsg` 发证面。外部 Chrome 注入 30+ `WeixinJSBridge` 只能过「请在微信客户端打开」的 JS 门，签发不了真 `uin/key`。小程序 CDP（`wechat-miniapp-re-mcp` / `flue.dll`）与公众号 H5 不要混成一个入口。
 

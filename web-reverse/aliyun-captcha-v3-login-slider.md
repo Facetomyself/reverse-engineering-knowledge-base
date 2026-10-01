@@ -1,10 +1,48 @@
+---
+schema_version: 2
+id: web-reverse-aliyun-captcha-v3-login-slider
+document_type: archive
+scope:
+  targets:
+  - aliyun-captcha
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: https://mp.weixin.qq.com/s/XtZHmacv8Nr2jcBafZ4GXw
+  basis: source-report
+source_completeness: unknown
+tags:
+- 阿里云验证码
+- InitCaptchaV3
+- VerifyCaptchaV3
+- Log2
+- DeviceData
+- Signature
+- HmacSHA1
+- AES
+- FeiLin
+- CaptchaVerifyParam
+- deviceToken
+- 滑块轨迹
+original_date: '2026-09-23'
+archived_date: '2026-09-26'
+---
+
 # 阿里云验证码 V3 登录滑块：InitCaptchaV3 / Log2 / VerifyCaptchaV3 参数链
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 微信公众号：搞窜窜学逆向（[原文](https://mp.weixin.qq.com/s/XtZHmacv8Nr2jcBafZ4GXw)）
+</details>
 > 作者: 小张学逆向
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 原始发布时间: 2026-09-23
 > 归档日期: 2026-09-26
 > 分类: web-reverse
+</details>
 >
 > 阿里云验证码 V3 登录滑块一轮五个包：InitCaptchaV3、UploadLog、Log2、Log3、VerifyCaptchaV3；实测 UploadLog 与 Log3 可不发。InitCaptchaV3 三个动态参数：`DeviceData` 为固定 key/iv 的 AES，`SignatureNonce` 为类 UUID 随机值，`Signature` 为请求体 `&` 拼接（前面另拼两个字段）后 HmacSHA1；响应密文同样 AES 解密，内含动态 FeiLin 脚本地址。Log2 的 `data` 是 `#` 拼接字段的 AES，其中指纹段由 `window.FEILIN.initFeiLin(Br, r)` 动态脚本生成，作者用补环境出值。VerifyCaptchaV3 的 `CaptchaVerifyParam`：`deviceToken` 为补环境值 AES（内含一步 MD5），`data` 为轨迹压缩转 Base64 后再加密、btoa，扣代码出值。
 

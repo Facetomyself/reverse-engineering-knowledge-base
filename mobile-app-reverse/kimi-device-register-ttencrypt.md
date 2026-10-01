@@ -1,9 +1,42 @@
+---
+schema_version: 2
+id: mobile-app-reverse-kimi-device-register-ttencrypt
+document_type: archive
+scope:
+  targets:
+  - kimi
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 独立技术分析（Kimi Android 3.0.6）
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags:
+- device_register
+- ttEncrypt
+- tt_info
+- AES-128-CBC
+- SHA512
+- volces
+- Kimi
+- JNI
+original_date: unknown
+archived_date: '2026-09-06'
+---
+
 # 从抓包到纯 Python：Kimi device_register 与 ttEncrypt 还原
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 独立技术分析（Kimi Android 3.0.6）
 > 原始发布时间: unknown
 > 归档日期: 2026-09-06
 > 分类: mobile-app-reverse
+</details>
 >
 > 字节系 Kimi Android 的 volces `device_register`：query `tt_info` 与二进制 body 共用 MAGIC||seed||AES-128-CBC 封装；key/IV 由明文 seed 经 SHA512 与固定盐派生。这是可逆协议封装不是不可伪造签名，文内给出 Java/JNI/ARM64 证据链和 Python 复现。
 

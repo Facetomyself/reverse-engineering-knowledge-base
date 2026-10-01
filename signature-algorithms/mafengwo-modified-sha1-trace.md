@@ -1,9 +1,41 @@
+---
+schema_version: 2
+id: signature-algorithms-mafengwo-modified-sha1-trace
+document_type: archive
+scope:
+  targets:
+  - mafengwo
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 语雀 xiaofeng777/android_example
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags:
+- SHA-1
+- HashFinder
+- Ch
+- Parity
+- Maj
+- feed-forward
+- libmfw.so
+original_date: '2026-04-18'
+archived_date: '2026-09-06'
+---
+
 # 马蜂窝魔改 SHA1：从 HashFinder 到轮函数分段
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 语雀 xiaofeng777/android_example
 > 原始发布时间: 2026-04-18
 > 归档日期: 2026-09-06
 > 分类: signature-algorithms
+</details>
 >
 > 马蜂窝 `libmfw.so` 对输入 `123456` 给出 40 位 hex。语雀练习稿用 HashFinder 的 `0x80` 扫描和逐轮 `a_new` 对照，把压缩函数从标准 SHA-1 的 20 轮一段改成 Ch / Parity / Maj 错位分段。更完整的四类魔改（含 feed-forward `H2/H3` 对调）以知识星球笔记为准，不要停在「40–59 改成 Ch 就跑通」。
 

@@ -1,3 +1,22 @@
+---
+schema_version: 2
+id: anti-detection-chromium-fingerprint-compilation-01-03-webgl-fingerprint-randomization
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: unknown
+  reason: 已核实所属合集的收录关系，但合集来源说明不等于逐篇原文地址；逐篇公开来源指针未知。
+source_completeness: unknown
+tags: []
+---
+
 # Chromium 源码随机 WebGL 指纹（一～二）：getSupportedExtensions 打乱与 ReadPixelsHelper / toDataURL
 
 ## 收录说明

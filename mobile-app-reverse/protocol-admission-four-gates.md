@@ -1,9 +1,44 @@
+---
+schema_version: 2
+id: mobile-app-reverse-protocol-admission-four-gates
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 方法论整理（`本地项目分析材料（定位不公开）` 对照）
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags:
+- 协议准入
+- 四关
+- 设备画像
+- 签名拦截器
+- 主机路由
+- TLS指纹
+- 空成功
+- 激活调用
+- registrationComplete
+- hardware-fp
+original_date: '2026-09-06'
+archived_date: '2026-09-06'
+---
+
 # App 协议准入四关：设备、签名、主机、传输
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 方法论整理（`workspace/tiktok-four-gate-source-study` 对照）
 > 原始发布时间: 2026-09-06
 > 归档日期: 2026-09-06
 > 分类: 移动 App 逆向 — 协议准入四关
+</details>
 >
 > 带设备注册、请求签名和自研网络栈的 App，业务 readback 之前必须同时闭合四关：同行一致的设备画像、拦截器式签名栈、主机/引导路由、传输指纹。HTTP 200 空壳不是 `serverAccepted`；注册签发标识不等于激活完成。TikTok 三源只作推导语料，不收录密钥或可执行签名器。
 

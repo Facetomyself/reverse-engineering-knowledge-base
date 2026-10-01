@@ -1,9 +1,44 @@
+---
+schema_version: 2
+id: mobile-app-reverse-xfq-android-cases-compilation
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: android
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 知识星球：逆向学习交流
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags:
+- Unidbg
+- NS_sig3
+- 白盒AES
+- 小黑盒
+- 趣头条
+- AppsFlyer
+- 安居客 nsign
+- 陌陌 x-sign
+- 纯算
+- signature
+original_date: 多篇合集
+archived_date: '2026-09-04'
+---
+
 # 逆向学习交流安卓实战案例合集
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 知识星球：逆向学习交流
 > 原始发布时间: 多篇合集
 > 归档日期: 2026-09-04
 > 分类: mobile-app-reverse
+</details>
 >
 > 快手白盒/NS_sig3、小黑盒 hkey、马蜂窝魔改 SHA1、AppsFlyer、安居客 nsign、陌陌 x-sign、趣头条等 App 签名与 unidbg 补环境案例。保留算法定位、hook 点和复现路径，隐去附件、设备字段与可直接跑的过检测脚本。
 

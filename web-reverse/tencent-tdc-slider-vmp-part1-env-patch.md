@@ -1,10 +1,48 @@
+---
+schema_version: 2
+id: web-reverse-tencent-tdc-slider-vmp-part1-env-patch
+document_type: archive
+scope:
+  targets:
+  - tencent-captcha
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: https://mp.weixin.qq.com/s/pAoOxIU_DNgCllUTKhLf9Q
+  basis: source-report
+source_completeness: unknown
+tags:
+- 腾讯验证码
+- TCaptcha
+- TDC
+- tdc.js
+- jsvmp
+- cap_union_prehandle
+- cap_union_new_verify
+- collect
+- eks
+- 补环境
+- RTCPeerConnection
+- createElement
+original_date: '2025-12-23'
+archived_date: '2026-09-26'
+---
+
 # 腾讯滑块 TDC vmp（上）：cap_union 三接口与 collect 补环境检测点
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 微信公众号：無色逆向（[原文](https://mp.weixin.qq.com/s/pAoOxIU_DNgCllUTKhLf9Q)）
+</details>
 > 作者: 無色逆向
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 原始发布时间: 2025-12-23
 > 归档日期: 2026-09-26
 > 分类: web-reverse
+</details>
 >
 > 腾讯云验证码官网 demo 的滑块链：`cap_union_prehandle`（参数可写死，`ua` 只是 User-Agent 的 base64；返回 `sess` / `prefix` / `md5` / `tdc_path` / `img_url` / `sprite_url`）→ 动态 `tdc.js`（其中有个动态参数要提取，即 `eks`）→ `cap_union_new_verify`（`collect` / `tlg` / `eks` / `sess` / `ans` / `pow_answer` / `pow_calc_time`；`errorCode` 为 0 返回 ticket，50 表示滑块距离不对）。`collect` 来自 `getTdcData`：先 `window.TDC.setData`，再 `window.TDC.getData(!0)`，进入约三百行的 jsvmp `tdc.js`。补环境重点：`RTCPeerConnection` 原型（`createDataChannel` / `createOffer` / `setLocalDescription`，后两者要返回 Promise）、`matchMedia` 多条件查询、`getElementById`，以及 `createElement` 连带的插入 / 删除 / 克隆 / 属性操作和 canvas 的 WebGL 信息、绘图取图。补完出值约 900 字符，浏览器约 1700，差在还没加轨迹（轨迹不校验）。作者说明 `collect` 是否强校验由客户侧配置决定，官网 demo 和实测多个站点都不校验。
 

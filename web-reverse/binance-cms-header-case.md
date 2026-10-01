@@ -1,9 +1,39 @@
+---
+schema_version: 2
+id: web-reverse-binance-cms-header-case
+document_type: archive
+scope:
+  targets:
+  - binance
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: '`本地项目分析材料（定位不公开）`（BinanceApis，HEAD 日期 2026-08-18，只读对照）'
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags:
+- fvideo-id
+- fvideo-token
+- csrftoken
+- BNC_FV_KEY
+- device-info
+original_date: '2026-08-18'
+archived_date: '2026-09-23'
+---
+
 # 币安案例：公告列表的设备头，不是交易签名
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/cv-cat`（BinanceApis，HEAD 日期 2026-08-18，只读对照）
 > 原始发布时间: 2026-08-18
 > 归档日期: 2026-09-23
 > 分类: web-reverse
+</details>
 >
 > 这份对照仓轮询的是公开 CMS 公告列表，不是交易 API 的 HMAC。本地 JS 填 `csrftoken`、设备指纹和 `fvideo-token`；`fvideo-id` 直接来自 Cookie。
 

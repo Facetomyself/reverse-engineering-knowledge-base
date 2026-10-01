@@ -1,9 +1,44 @@
+---
+schema_version: 2
+id: mobile-app-reverse-protocol-register-packet-order
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 方法论整理（纯协议补注册包顺序）
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags:
+- 纯协议
+- 设备注册
+- 发送顺序
+- 事件包
+- 日志包
+- 多线程
+- SDK 状态机
+- 前置身份
+- 自动化
+- AppsFlyer
+original_date: '2026-09-09'
+archived_date: '2026-09-09'
+---
+
 # App 设备注册包顺序：事件驱动、前置身份与 SDK 同构
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 方法论整理（纯协议补注册包顺序）
 > 原始发布时间: 2026-09-09
 > 归档日期: 2026-09-09
 > 分类: 移动 App 逆向 — 设备注册包顺序
+</details>
 >
 > 纯协议补设备注册时，包顺序不是把 HAR 时间线串行重放，而是按真实 App 的线程、事件和信号来发。事件包与日志包走独立通道，云端身份是后续包的前置条件；要接近真机，就扣核心 SDK 做成同构实现，而不是手写一条「看起来完整」的注册脚本。
 

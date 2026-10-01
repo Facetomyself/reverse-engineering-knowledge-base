@@ -1,3 +1,24 @@
+---
+schema_version: 2
+id: anti-detection-chromium-fingerprint-compilation-01-21-chromedriver-selenium-bypass
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: unknown
+  reason: 已核实所属合集的收录关系，但合集来源说明不等于逐篇原文地址；逐篇公开来源指针未知。
+source_completeness: unknown
+tags: []
+---
+
+# Chromedriver 编译 — 绕过 Selenium 检测
+
 
 *   有小伙伴说使用selenium没能绕过机器人检测，盘他。
 *   selenium机器人检测有2种，一是cdp检测，二是webdriver特征检测。cdp检测前面的博客已写过，这里就提下webdriver特征检测。

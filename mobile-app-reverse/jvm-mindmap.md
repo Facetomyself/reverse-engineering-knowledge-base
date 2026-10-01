@@ -1,9 +1,44 @@
+---
+schema_version: 2
+id: mobile-app-reverse-jvm-mindmap
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 方法论整理（JVM 思维导图文本校正）
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags:
+- JVM
+- ClassLoader
+- 双亲委派
+- Runtime Data Area
+- PermGen
+- Metaspace
+- Heap
+- JIT
+- JNI
+- volatile
+original_date: '2026-09-16'
+archived_date: '2026-09-16'
+---
+
 # JVM 思维导图（文本版）
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 方法论整理（JVM 思维导图文本校正）
 > 原始发布时间: 2026-09-16
 > 归档日期: 2026-09-16
 > 分类: 移动 App 逆向 — JVM 运行时地图
+</details>
 >
 > HotSpot JVM 四块对照：ClassLoader（加载 / 链接 / 初始化）、Runtime Data Area（线程共享与私有）、执行引擎（解释器 + JIT C1/C2）、JNI。用于 App 逆向时对照类加载隔离、堆分代、栈帧和 native 边界；本文是 JVM 地图，不是 ART 实现细节。
 

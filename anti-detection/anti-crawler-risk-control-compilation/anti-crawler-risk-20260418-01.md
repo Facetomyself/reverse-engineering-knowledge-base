@@ -1,9 +1,34 @@
+---
+schema_version: 2
+id: anti-detection-anti-crawler-risk-control-compilation-anti-crawler-risk-20260418-01
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 微信公众号：反爬破解社
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags: []
+original_date: '2026-04-18'
+archived_date: '2026-07-13'
+---
+
 # 指纹识别篇：从浏览器指纹到设备指纹，你的爬虫如何"隐身"？
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 微信公众号：反爬破解社
 > 原始发布时间: 2026-04-18
 > 归档日期: 2026-07-13
 > 分类: anti-detection
+</details>
 >
 > 在2026年，指纹识别已经发展到令人惊叹的精度。以下是主流指纹识别技术的完整分类。
 

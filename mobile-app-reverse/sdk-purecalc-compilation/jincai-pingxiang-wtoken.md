@@ -1,9 +1,34 @@
+---
+schema_version: 2
+id: mobile-app-reverse-sdk-purecalc-compilation-jincai-pingxiang-wtoken
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 本地项目分析材料（定位不公开）
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags: []
+original_date: 源码落盘
+archived_date: '2026-09-06'
+---
+
 # 今彩萍乡 wtoken：0003_ 头 + 274 字节 blob
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: workspace/jincai-pingxiang-wtoken
 > 原始发布时间: 源码落盘
 > 归档日期: 2026-09-06
 > 分类: mobile-app-reverse
+</details>
 >
 > `WTokenPure.vmpSign` 生成带固定前后缀的 token。AES/HMAC 密钥、签名 MD5 和自测 token 不进本文。
 

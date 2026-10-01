@@ -1,9 +1,39 @@
+---
+schema_version: 2
+id: web-reverse-session-binding-double-write
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: '`本地项目分析材料（定位不公开）`（微博 XSRF、领英 JSESSIONID、X 的 ct0、飞书 swp_csrf_token、抖音 uifid / creator CSRF）'
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags:
+- XSRF-TOKEN
+- JSESSIONID
+- ct0
+- swp_csrf_token
+- uifid
+original_date: '2026-09-23'
+archived_date: '2026-09-24'
+---
+
 # 技巧：会话材料双写，并且绑源
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/cv-cat`（微博 XSRF、领英 JSESSIONID、X 的 ct0、飞书 swp_csrf_token、抖音 uifid / creator CSRF）
 > 原始发布时间: 2026-09-23
 > 归档日期: 2026-09-24
 > 分类: web-reverse
+</details>
 >
 > 不少「签名头」只是把同一会话材料再写到一个头或 query 里。技巧是找出源字段、去掉包装、绑到正确的 origin。源变了，副本必须一起变。本地哈希出的另一串不能拿来填这个头。
 

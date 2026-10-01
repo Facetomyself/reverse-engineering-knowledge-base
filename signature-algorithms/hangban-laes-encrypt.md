@@ -1,9 +1,41 @@
+---
+schema_version: 2
+id: signature-algorithms-hangban-laes-encrypt
+document_type: archive
+scope:
+  targets:
+  - hangban
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: PDF 归档 `航班管家 ai还原 全过程.pdf`
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags:
+- LAES
+- ECB
+- PKCS7
+- T-box
+- JNI
+- libhbgjbangbang_crypto_tool.so
+- 航班管家
+original_date: '2026-04-17'
+archived_date: '2026-09-06'
+---
+
 # 航班管家 laesEncryptStringWithBase64：魔改 AES-like 纯算还原
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: PDF 归档 `航班管家 ai还原 全过程.pdf`
 > 原始发布时间: 2026-04-17
 > 归档日期: 2026-09-06
 > 分类: signature-algorithms
+</details>
 >
 > `com.hbgjbangbang.CryptoTool.laesEncryptStringWithBase64` 不是标准 AES 套壳。
 > JNI 只做 UTF-8 / hex 解码 / 自定义 Base64；核心在 `libhbgjbangbang_crypto_tool.so`

@@ -1,9 +1,46 @@
+---
+schema_version: 2
+id: mobile-app-reverse-app-reverse-environment-setup
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 微信公众号：反爬破解社（爬虫任）「App 逆向」系列第2章（PDF 归档 + 公众号正文）
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags:
+- App逆向环境
+- Android
+- LDPlayer
+- MuMu
+- Magisk
+- LSPosed
+- JustTrustMe
+- Charles
+- jadx-gui
+- APKTool
+- Frida
+- 证书安装
+original_date: '2026-07-06'
+archived_date: '2026-07-07'
+---
+
 # App 逆向环境搭建
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 微信公众号：反爬破解社（爬虫任）「App 逆向」系列第2章（PDF 归档 + 公众号正文）
 > 原始发布时间: 2026-07-06
 > 归档日期: 2026-07-07
 > 分类: 移动 App 逆向 — 环境搭建
+</details>
 >
 > 本文整理 App 逆向基础环境搭建路线，覆盖模拟器与真机选择、Root / Magisk / LSPosed、证书安装、代理配置、抓包工具、反编译工具和 Frida 动态调试工具。
 

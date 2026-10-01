@@ -1,9 +1,40 @@
+---
+schema_version: 2
+id: web-reverse-request-signing-vs-cookie-maintenance
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: null119 提供的 Elong 接口测试会话导出；仅提炼同一签名 SDK 的调用面混淆与报告纠偏。
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags:
+- signer
+- GET
+- Cookie 维护
+- 调用面
+- 业务码
+- 单因子实验
+original_date: 2026-06-22（导出文件标注）
+archived_date: '2026-09-27'
+---
+
 # 同一个 signer 的两条调用面：请求签名与 Cookie 维护
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: null119 提供的 Elong 接口测试会话导出；仅提炼同一签名 SDK 的调用面混淆与报告纠偏。
 > 原始发布时间: 2026-06-22（导出文件标注）
 > 归档日期: 2026-09-27
 > 分类: web-reverse
+</details>
 >
 > 找到 signer 还不够。业务 GET 与 Cookie 维护可能调用同一个导出，却使用不同 URL、body 和消费位置。复制错调用点时，SDK 可以正常出值，HTTP 也可以返回 200，但业务结果仍被拒绝。
 

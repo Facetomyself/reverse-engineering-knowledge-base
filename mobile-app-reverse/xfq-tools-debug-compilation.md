@@ -1,9 +1,41 @@
+---
+schema_version: 2
+id: mobile-app-reverse-xfq-tools-debug-compilation
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 知识星球：逆向学习交流
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags:
+- xfqtrace
+- Frida
+- Gadget
+- jadx
+- 抓包
+- WebView
+- MCP
+original_date: 多篇合集
+archived_date: '2026-09-04'
+---
+
 # 逆向学习交流工具与调试合集
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 知识星球：逆向学习交流
 > 原始发布时间: 多篇合集
 > 归档日期: 2026-09-04
 > 分类: mobile-app-reverse
+</details>
 >
 > xfqtrace、Frida/Gadget、jadx、证书、WebView Hook、抓包对比与 AI/MCP 辅助分析笔记。去掉续杯、号池、破解版和社群闲聊。
 

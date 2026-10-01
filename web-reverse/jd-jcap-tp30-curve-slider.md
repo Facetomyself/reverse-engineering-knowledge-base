@@ -1,10 +1,50 @@
+---
+schema_version: 2
+id: web-reverse-jd-jcap-tp30-curve-slider
+document_type: archive
+scope:
+  targets:
+  - jd
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: https://mp.weixin.qq.com/s/quMCKKw8M7mAqWo--6iFHw
+  basis: source-report
+source_completeness: unknown
+tags:
+- JCAP
+- tp:30
+- si
+- vt
+- n1
+- se
+- st
+- ii
+- tk
+- ct
+- 曲线映射
+- 离散反函数
+- 透明边距
+- 京东
+original_date: '2026-08-26'
+archived_date: '2026-09-26'
+---
+
 # 京东 JCAP tp:30 变速曲线滑块：si → vt 纯协议参数链与曲线反查
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 微信公众号：GH2N（[原文](https://mp.weixin.qq.com/s/quMCKKw8M7mAqWo--6iFHw)）
+</details>
 > 作者: 叶小伦
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 原始发布时间: 2026-08-26
 > 归档日期: 2026-09-26
 > 分类: web-reverse
+</details>
 >
 > 京东 JCAP 业务侧 tp:30「拖箭头驱动拼块」变速曲线滑块的纯协议链：业务组件下发 `si` → `fp` 初始化（`fp` 写回 `devcInfo.capfp`、给初始 `st`）→ 挑战 `tp/b1/b2/n1` → 拼块透明边距修正与尺寸换算得 `render_target` → 在同版本曲线运行时逐点枚举求离散反函数 `endpoint = argmin|f(p) − render_target|` → 模板轨迹缩放并完整回放 `down/move/up` 取 `ii` → `sensorInfo/ct`、`payload/tk/cs` → check 成功返回 `vt`。`n1` 不提交却决定曲线映射，`se = f([si, st])` 必须用最新 `st`，`tk` 对紧凑 JSON 与 URI 编码层级逐字节敏感；参数函数仍调用同版本运行时，不手写混淆算法。
 

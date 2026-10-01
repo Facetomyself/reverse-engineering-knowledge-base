@@ -1,0 +1,103 @@
+<svg role="img" aria-labelledby="completion-gates-title completion-gates-desc" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 887.91 877.803" width="887.91" height="877.803" style="--bg:#f6f7f9;--fg:#253041;--line:#748398;--accent:#276eab;--muted:#47576b;--surface:#ffffff;--border:#bec8d4;background:var(--bg)"><title id="completion-gates-title">App 协议准入诊断：S7 至 S8 与四门 AND 验收</title><desc id="completion-gates-desc">来源方法整理（source-report）；未新增目标实测。诊断顺序不是网络请求时序；unknown 不视为通过。</desc>
+<style>
+  
+  text { font-family: 'Microsoft YaHei', system-ui, sans-serif; }
+  svg {
+    /* Derived from --bg and --fg (overridable via --line, --accent, etc.) */
+    --_text:          var(--fg);
+    --_text-sec:      var(--muted, color-mix(in srgb, var(--fg) 60%, var(--bg)));
+    --_text-muted:    var(--muted, color-mix(in srgb, var(--fg) 40%, var(--bg)));
+    --_text-faint:    color-mix(in srgb, var(--fg) 25%, var(--bg));
+    --_line:          var(--line, color-mix(in srgb, var(--fg) 50%, var(--bg)));
+    --_arrow:         var(--accent, color-mix(in srgb, var(--fg) 85%, var(--bg)));
+    --_node-fill:     var(--surface, color-mix(in srgb, var(--fg) 3%, var(--bg)));
+    --_node-stroke:   var(--border, color-mix(in srgb, var(--fg) 20%, var(--bg)));
+    --_group-fill:    var(--bg);
+    --_group-hdr:     color-mix(in srgb, var(--fg) 5%, var(--bg));
+    --_inner-stroke:  color-mix(in srgb, var(--fg) 12%, var(--bg));
+    --_key-badge:     color-mix(in srgb, var(--fg) 10%, var(--bg));
+  }
+</style>
+<defs>
+  <marker id="arrowhead" markerWidth="8" markerHeight="5" refX="7" refY="2.5" orient="auto">
+    <polygon points="0 0, 8 2.5, 0 5" fill="var(--_arrow)" stroke="var(--_arrow)" stroke-width="0.75" stroke-linejoin="round" />
+  </marker>
+  <marker id="arrowhead-start" markerWidth="8" markerHeight="5" refX="1" refY="2.5" orient="auto-start-reverse">
+    <polygon points="8 0, 0 2.5, 8 5" fill="var(--_arrow)" stroke="var(--_arrow)" stroke-width="0.75" stroke-linejoin="round" />
+  </marker>
+</defs>
+<polyline class="edge" data-from="S7" data-to="S8" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="有效 readback" points="522.4000833333332,185.73083333333335 522.4000833333332,250.877 432.8399999999999,250.877 432.8399999999999,337.177" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="S7" data-to="F3" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="空响应或挑战" points="580.6924166666665,185.73083333333335 580.6924166666665,262.877 670.2524999999999,262.877 670.2524999999999,337.177" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="S8" data-to="G_LOCAL" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="432.8399999999999,374.077 432.8399999999999,401.077 120.255,401.077 120.255,428.07700000000006" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="S8" data-to="G_SERVER" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="432.8399999999999,374.077 432.8399999999999,401.077 326.17499999999995,401.077 326.17499999999995,428.07700000000006" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="S8" data-to="G_REG" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="432.8399999999999,374.077 432.8399999999999,401.077 539.505,401.077 539.505,428.07700000000006" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="S8" data-to="G_SESSION" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="432.8399999999999,374.077 432.8399999999999,401.077 756.54,401.077 756.54,428.07700000000006" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="G_LOCAL" data-to="AND" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="120.255,481.87700000000007 120.255,499.87700000000007 345.18999999999994,499.87700000000007 345.18999999999994,517.8770000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="G_SERVER" data-to="AND" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="326.17499999999995,481.87700000000007 326.17499999999995,499.87700000000007 345.18999999999994,499.87700000000007 345.18999999999994,517.8770000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="G_REG" data-to="AND" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="539.505,481.87700000000007 539.505,499.87700000000007 345.18999999999994,499.87700000000007 345.18999999999994,517.8770000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="G_SESSION" data-to="AND" data-style="solid" data-arrow-start="false" data-arrow-end="true" points="756.54,481.87700000000007 756.54,499.87700000000007 345.18999999999994,499.87700000000007 345.18999999999994,517.8770000000001" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="AND" data-to="ACCEPT" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="全部满足" points="317.4023333333333,656.8153333333333 317.4023333333333,720.6030000000001 248.71374999999995,720.6030000000001 248.71374999999995,800.903" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<polyline class="edge" data-from="AND" data-to="F2" data-style="solid" data-arrow-start="false" data-arrow-end="true" data-label="任一缺失或未知" points="372.9776666666666,656.8153333333333 372.9776666666666,720.6030000000001 441.66624999999993,720.6030000000001 441.66624999999993,800.903" fill="none" stroke="var(--_line)" stroke-width="1" marker-end="url(#arrowhead)" />
+<g class="edge-label" data-from="S7" data-to="S8" data-label="有效 readback">
+  <rect x="387.8399999999999" y="257.877" width="89.524" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="432.6019999999999" y="273.027" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">有效 readback</text>
+</g>
+<g class="edge-label" data-from="S7" data-to="F3" data-label="空响应或挑战">
+  <rect x="625.7524999999999" y="269.877" width="88.93" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="670.2175" y="285.027" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">空响应或挑战</text>
+</g>
+<g class="edge-label" data-from="AND" data-to="ACCEPT" data-label="全部满足">
+  <rect x="215.71374999999995" y="727.6030000000001" width="65.17" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="248.29874999999996" y="742.753" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">全部满足</text>
+</g>
+<g class="edge-label" data-from="AND" data-to="F2" data-label="任一缺失或未知">
+  <rect x="391.16624999999993" y="727.6030000000001" width="100.81000000000002" height="30.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="1" />
+  <text x="441.57124999999996" y="742.753" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-sec)" dy="3.8499999999999996">任一缺失或未知</text>
+</g>
+<g class="node" data-id="S7" data-label="S7 独立 TLS 会话
+有效业务读？" data-shape="diamond">
+  <polygon points="551.5462499999999,40 638.9847499999998,127.4385 551.5462499999999,214.877 464.1077499999999,127.4385" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="551.5462499999999" y="127.4385" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="551.5462499999999" dy="-3.9000000000000012">S7 独立 TLS 会话</tspan><tspan x="551.5462499999999" dy="16.900000000000002">有效业务读？</tspan></text>
+</g>
+<g class="node" data-id="S8" data-label="S8 当前范围的完成门验收" data-shape="rectangle">
+  <rect x="328.50249999999994" y="337.177" width="208.67499999999998" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="432.8399999999999" y="355.627" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">S8 当前范围的完成门验收</text>
+</g>
+<g class="node" data-id="F3" data-label="F3 尚无 serverAccepted" data-shape="rectangle">
+  <rect x="575.1774999999999" y="337.177" width="190.14999999999998" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="670.2524999999998" y="355.627" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">F3 尚无 serverAccepted</text>
+</g>
+<g class="node" data-id="G_LOCAL" data-label="本地字节对照闭合
+localReproduced" data-shape="rectangle">
+  <rect x="40" y="428.07700000000006" width="160.51" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="120.255" y="454.97700000000003" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="120.255" dy="-3.9000000000000012">本地字节对照闭合</tspan><tspan x="120.255" dy="16.900000000000002">localReproduced</tspan></text>
+</g>
+<g class="node" data-id="G_SERVER" data-label="独立会话有效业务读
+serverAccepted" data-shape="rectangle">
+  <rect x="238.51" y="428.07700000000006" width="175.32999999999998" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="326.17499999999995" y="454.97700000000003" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="326.17499999999995" dy="-3.9000000000000012">独立会话有效业务读</tspan><tspan x="326.17499999999995" dy="16.900000000000002">serverAccepted</tspan></text>
+</g>
+<g class="node" data-id="G_REG" data-label="注册与引导激活闭合
+registrationComplete" data-shape="rectangle">
+  <rect x="451.84" y="428.07700000000006" width="175.32999999999998" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="539.505" y="454.97700000000003" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="539.505" dy="-3.9000000000000012">注册与引导激活闭合</tspan><tspan x="539.505" dy="16.900000000000002">registrationComplete</tspan></text>
+</g>
+<g class="node" data-id="G_SESSION" data-label="同套 SDK / 身份上下文
+sessionConsistent" data-shape="rectangle">
+  <rect x="665.17" y="428.07700000000006" width="182.73999999999998" height="53.800000000000004" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="756.54" y="454.97700000000003" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="756.54" dy="-3.9000000000000012">同套 SDK / 身份上下文</tspan><tspan x="756.54" dy="16.900000000000002">sessionConsistent</tspan></text>
+</g>
+<g class="node" data-id="AND" data-label="AND：四门均有
+当前证据？" data-shape="diamond">
+  <polygon points="345.18999999999994,517.877 428.55299999999994,601.24 345.18999999999994,684.6030000000001 261.82699999999994,601.24" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="345.18999999999994" y="601.24" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)"><tspan x="345.18999999999994" dy="-3.9000000000000012">AND：四门均有</tspan><tspan x="345.18999999999994" dy="16.900000000000002">当前证据？</tspan></text>
+</g>
+<g class="node" data-id="ACCEPT" data-label="限定范围验收完成" data-shape="rectangle">
+  <rect x="168.45874999999995" y="800.903" width="160.51" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="248.71374999999995" y="819.3530000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">限定范围验收完成</text>
+</g>
+<g class="node" data-id="F2" data-label="F2 完成门未闭合" data-shape="rectangle">
+  <rect x="366.96874999999994" y="800.903" width="149.39499999999998" height="36.900000000000006" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="441.66624999999993" y="819.3530000000001" text-anchor="middle" font-size="13" font-weight="500" fill="var(--_text)" dy="4.55">F2 完成门未闭合</text>
+</g>
+</svg>

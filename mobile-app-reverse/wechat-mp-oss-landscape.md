@@ -1,9 +1,43 @@
+---
+schema_version: 2
+id: mobile-app-reverse-wechat-mp-oss-landscape
+document_type: archive
+scope:
+  targets:
+  - wechat-official-account
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: '`本地项目分析材料（定位不公开）` 开源库对照（2026-07 至 2026-09）'
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags:
+- wechatDownload
+- list_ex
+- wechrss
+- weread-omni
+- GetA8Key
+- WeChat-H5-DevTools
+- __biz
+- mid
+- idx
+original_date: 2026-07-16 至 2026-09-13
+archived_date: '2026-09-15'
+---
+
 # 微信公众号开源库对照：按会话平面读仓库
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/weixin_download` 开源库对照（2026-07 至 2026-09）
 > 原始发布时间: 2026-07-16 至 2026-09-13
 > 归档日期: 2026-09-15
 > 分类: mobile-app-reverse
+</details>
 >
 > 把公开微信公众号下载器、RSS、协议号和 H5 调试箱钉到五套会话上，记录接口形状、停更节点和可复用工程模式。不收录凭证、不 vendoring 闭源协议栈、不把死接口写成当前可用。平面定义见 [微信公众号五套会话](../protocols/wechat-mp-session-planes.md)。
 

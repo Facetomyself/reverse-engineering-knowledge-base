@@ -1,9 +1,44 @@
+---
+schema_version: 2
+id: drm-content-acquisition-widevine-l3-video-download
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: '`本地项目分析材料（定位不公开）`'
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags:
+- Widevine
+- L3 CDM
+- KeyDive
+- pywidevine
+- license 重放
+- PSSH
+- mp4decrypt
+- shaka-player
+- videomarket
+- CENC
+original_date: '2026-09-22'
+archived_date: '2026-09-22'
+---
+
 # Widevine L3 视频下载工程：CDM 自提取、license 重放与解密管道
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/ktv-smart-jp-download`
 > 原始发布时间: 2026-09-22
 > 归档日期: 2026-09-22
 > 分类: drm-content-acquisition
+</details>
 >
 > 从一次日本 VOD 站点（videomarket / カンテレドーガ）租赁剧集的本地化下载中提炼：
 > 浏览器播放链路定位、Android 真机 L3 CDM 自提取、pywidevine license 重放、Bento4/ffmpeg

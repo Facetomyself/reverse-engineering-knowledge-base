@@ -1,9 +1,34 @@
+---
+schema_version: 2
+id: mobile-app-reverse-reversenotes-android-compilation-ewt360-aes-md5
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: GitHub xfxfxiaofeng/reverseNotes
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags: []
+original_date: 2025-07（观察版本 11.2.1）
+archived_date: '2026-09-06'
+---
+
 # 升学e网通：共享 AES-ECB 与时间戳加盐 MD5
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: GitHub xfxfxiaofeng/reverseNotes
 > 原始发布时间: 2025-07（观察版本 11.2.1）
 > 归档日期: 2026-09-06
 > 分类: mobile-app-reverse
+</details>
 >
 > `升学e网通` 登录请求头签名是 `MD5(timestamp_ms || salt)` 再转大写；`userName` / `password` / `deviceToken` / `deviceName` 共用 `EncryptUtils` 里的同一组 `AES/ECB/PKCS7Padding`。作者写明还有 x 加密的 Frida 检测，且未建号，不知道 Flutter 侧是否另有参数。本篇只锁这两条算法，不写检测绕过。
 

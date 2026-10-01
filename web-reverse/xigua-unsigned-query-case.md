@@ -1,9 +1,38 @@
+---
+schema_version: 2
+id: web-reverse-xigua-unsigned-query-case
+document_type: archive
+scope:
+  targets:
+  - xigua
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: '`本地项目分析材料（定位不公开）`（XiguaApis，HEAD 日期 2026-08-18，只读对照）'
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags:
+- aid=1768
+- msToken
+- X-Bogus
+- AES-CBC
+original_date: '2026-08-18'
+archived_date: '2026-09-23'
+---
+
 # 西瓜案例：签名位是空占位，播放解密另算
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/cv-cat`（XiguaApis，HEAD 日期 2026-08-18，只读对照）
 > 原始发布时间: 2026-08-18
 > 归档日期: 2026-09-23
 > 分类: web-reverse
+</details>
 >
 > 西瓜视频在这份对照仓里没有计算 `msToken`、`X-Bogus` 或 `_signature`。列表和评论把这三个键留空，`aid` 固定为 `1768`。播放地址解密是另一段 AES-CBC，而且当前 API 路径没有调用它。
 

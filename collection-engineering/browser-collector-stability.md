@@ -1,9 +1,45 @@
+---
+schema_version: 2
+id: collection-engineering-browser-collector-stability
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: '`本地项目分析材料（定位不公开）`'
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags:
+- ruyipage
+- Firefox 151
+- MOZ_ASSERT
+- '0x80000003'
+- 孤儿 session
+- CF 软挑战
+- IP 风控窗口
+- OOM 连锁
+- BiDi
+- 多进程并发
+- spawn 子进程
+original_date: '2026-08-12'
+archived_date: '2026-08-12'
+---
+
 # 浏览器采集器稳定性：ruyipage Firefox 断言崩溃与 OOM 连锁
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/radwell`
 > 原始发布时间: 2026-08-12
 > 归档日期: 2026-08-12
 > 分类: collection-engineering
+</details>
 >
 > 从一次 44326 页 ruyipage Firefox 批量采集（采 39% 后因崩溃与 OOM 终止）中提炼：
 > 真实浏览器采集器的稳定性边界 —— 定制 Firefox 的断言崩溃触发条件、单出口 IP 的

@@ -1,9 +1,52 @@
+---
+schema_version: 2
+id: web-reverse-products-arkose-funcaptcha
+document_type: reference
+scope:
+  targets:
+  - arkose-funcaptcha
+  client: web
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: spider-skill-tzpnode 2026-08-19 增量（clean-room 重写）
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+tags: []
+original_date: 未知
+archived_date: '2026-08-19'
+modules:
+- name: request-chain
+  anchor: 状态链
+  sources:
+  - s1
+  basis: source-report
+  limits: 仅保留来源陈述；出处为文本 citation，缺少可定位公开原文，本轮未重验算法、运行时或当前服务端。
+- name: parameters
+  anchor: 动态输入
+  sources:
+  - s1
+  basis: source-report
+  limits: 仅保留来源陈述；出处为文本 citation，缺少可定位公开原文，本轮未重验算法、运行时或当前服务端。 仅参数角色、依赖或定位口径，不代表完整算法恢复。
+- name: validation
+  anchor: 验证口径
+  sources:
+  - s1
+  basis: source-report
+  limits: 仅保留来源陈述；出处为文本 citation，缺少可定位公开原文，本轮未重验算法、运行时或当前服务端。 本节是验收口径，不代表这些条件本轮已经满足。
+---
+
 # Arkose Labs / FunCaptcha
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: spider-skill-tzpnode 2026-08-19 增量（clean-room 重写）
 > 原始发布时间: 未知
 > 归档日期: 2026-08-19
 > 分类: web-reverse
+</details>
 >
 > Arkose Labs / FunCaptcha 的产品识别、状态请求链、动态输入和业务读回验收边界。
 

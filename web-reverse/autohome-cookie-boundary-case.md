@@ -1,9 +1,38 @@
+---
+schema_version: 2
+id: web-reverse-autohome-cookie-boundary-case
+document_type: archive
+scope:
+  targets:
+  - autohome
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: '`本地项目分析材料（定位不公开）`（AutohomeApis，HEAD 日期 2026-08-18，只读对照）'
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags:
+- JSONP
+- jsonprv
+- clubajax
+- _appid
+original_date: '2026-08-18'
+archived_date: '2026-09-23'
+---
+
 # 汽车之家案例：Cookie 加 JSONP，没有本地 sign
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/cv-cat`（AutohomeApis，HEAD 日期 2026-08-18，只读对照）
 > 原始发布时间: 2026-08-18
 > 归档日期: 2026-09-23
 > 分类: web-reverse
+</details>
 >
 > 汽车之家在这份对照仓里没有签名函数。详情接口是带 Cookie 的 JSONP，创作者接口只追加时间戳和 `_appid`。案例价值是把「没有算法」写成明确的请求边界，避免以后把空响应误判成签名缺失。
 

@@ -1,9 +1,43 @@
+---
+schema_version: 2
+id: mobile-app-reverse-reversenotes-android-compilation
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: android
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: GitHub xfxfxiaofeng/reverseNotes（知识星球「逆向学习交流」索引所称 GitHub 小号）
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags:
+- buvid
+- deviceid
+- HMAC-SHA1
+- AES-CBC
+- AES-ECB
+- libmsaoaidsec
+- B站
+- 豆瓣
+- 韩小圈
+original_date: 2025-04 至 2025-07
+archived_date: '2026-09-06'
+---
+
 # reverseNotes 早期安卓案例合集
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: GitHub xfxfxiaofeng/reverseNotes（知识星球「逆向学习交流」索引所称 GitHub 小号）
 > 原始发布时间: 2025-04 至 2025-07
 > 归档日期: 2026-09-06
 > 分类: mobile-app-reverse
+</details>
 >
 > 星球索引 [安卓逆向实战案例 文章索引](https://articles.zsxq.com/id_dipgb89z5tns.html) 写明：2025 年 4–7 月 B 站案例曾放 GitHub，后因侵权风险下架，改存小号。本合集只吸收该仓库里作者原创、算法已闭合的笔记，隐去联系方式、付费课复刻、成人/政务样本和未脱敏抓包。
 

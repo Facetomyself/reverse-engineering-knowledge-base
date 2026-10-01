@@ -1,8 +1,44 @@
+---
+schema_version: 2
+id: anti-detection-chromium-fingerprint-compilation
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 'CSDN 博客系列 (作者: w1101662433 / fivcan)'
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags:
+- Chromium编译
+- 指纹浏览器
+- Canvas指纹
+- WebGL指纹
+- WebRTC
+- TLS/JA3/JA4
+- CDP绕过
+- 无头检测
+- 源码修改
+- BoringSSL
+- V8
+- Blink
+archived_date: '2026-07-06'
+---
+
 # Chromium 指纹浏览器编译系列
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: CSDN 博客系列 (作者: w1101662433 / fivcan)
 > 归档日期: 2026-07-06
 > 分类: 反检测/风控对抗 — 浏览器源码级指纹伪装
+</details>
 >
 > 本系列记录通过修改 Chromium 源码实现指纹浏览器编译的完整技术方案，涵盖 15+ 指纹维度的随机化/固定，以及爬虫专用浏览器的底层魔改。
 

@@ -1,9 +1,39 @@
+---
+schema_version: 2
+id: web-reverse-thin-wrapper-vs-purecalc
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: '`本地项目分析材料（定位不公开）` 各仓 README 与调用点（2026-08 至 2026-09 对照）'
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags:
+- execjs
+- 整包
+- 双写
+- 完成度
+- boundary_known
+original_date: '2026-09-23'
+archived_date: '2026-09-24'
+---
+
 # 方法论：薄封装、整包 execjs、纯算，三种完成度
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/cv-cat` 各仓 README 与调用点（2026-08 至 2026-09 对照）
 > 原始发布时间: 2026-09-23
 > 归档日期: 2026-09-24
 > 分类: web-reverse
+</details>
 >
 > 公开仓看起来都是「Python API + static/*.js」。落地完成度要按调用点分：没有签名、execjs 整包、隔离运行器、纯算、设备 RPC。整包出参只能说明参数名和请求边界，不能写成纯算完成。
 

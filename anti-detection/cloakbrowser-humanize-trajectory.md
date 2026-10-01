@@ -1,9 +1,39 @@
+---
+schema_version: 2
+id: anti-detection-cloakbrowser-humanize-trajectory
+document_type: archive
+scope:
+  targets:
+  - cloakbrowser
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: https://github.com/CloakHQ/CloakBrowser
+  basis: source-report
+source_completeness: unknown
+tags:
+- humanize
+- 三次贝塞尔
+- ease-in-out
+- 鼠标轨迹
+- 过冲
+- CloakBrowser
+- Playwright
+original_date: '2026-09-24'
+archived_date: '2026-09-24'
+---
+
 # CloakBrowser humanize 轨迹：包装层三次贝塞尔计划器
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: CloakHQ/CloakBrowser MIT 包装层 `cloakbrowser/human`（https://github.com/CloakHQ/CloakBrowser）
 > 分析日期: 2026-09-24
 > 归档日期: 2026-09-24
 > 分类: 反检测/风控对抗 — CloakBrowser humanize 轨迹
+</details>
 >
 > 鼠标曲线在官方 Python/JS 包装进程里算完，再交给 Playwright 原来的 `mouse.move`。本机 Pro `chrome.dll` 没有 `humanize` / `trajectory` 符号。可调用实现在主仓 `tools/cloakbrowser_human`，只产出样本，不挂页面、不发 CDP。
 

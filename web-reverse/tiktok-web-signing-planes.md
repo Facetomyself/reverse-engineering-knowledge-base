@@ -1,9 +1,41 @@
+---
+schema_version: 2
+id: web-reverse-tiktok-web-signing-planes
+document_type: archive
+scope:
+  targets:
+  - tiktok
+  client: web
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: '`本地项目分析材料（定位不公开）`（TiktokApis，本地镜像只读对照，仓说明写明 2026-09-23 去掉整包 execjs）'
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags:
+- X-Bogus
+- X-Gnarly
+- X-Dynosaur
+- msToken
+- fail-closed
+- 5.3.2
+- 5.1.0
+original_date: '2026-09-23'
+archived_date: '2026-09-23'
+---
+
 # TikTok Web 签名面：端点合同、两代 SDK、fail-closed
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/cv-cat`（TiktokApis，本地镜像只读对照，仓说明写明 2026-09-23 去掉整包 execjs）
 > 原始发布时间: 2026-09-23
 > 归档日期: 2026-09-23
 > 分类: web-reverse
+</details>
 >
 > TikTok HTTP 签名按 path 选择字段集和编码器。Creator Studio 5.1.0 与公开 Web 5.3.2 不能混用。缺 msToken、空 header、长度不匹配都直接失败，抓包签名不能回填。本篇只写路由和写回合同，不收录轮函数、字母表和 canvas 原值。
 

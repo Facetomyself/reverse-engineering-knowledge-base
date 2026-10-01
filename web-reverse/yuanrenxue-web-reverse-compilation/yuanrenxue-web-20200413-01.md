@@ -1,9 +1,34 @@
+---
+schema_version: 2
+id: web-reverse-yuanrenxue-web-reverse-compilation-yuanrenxue-web-20200413-01
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 微信公众号：猿人学Python
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags: []
+original_date: '2020-04-13'
+archived_date: '2026-07-16'
+---
+
 # Python 的控制流代码混淆
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 微信公众号：猿人学Python
 > 原始发布时间: 2020-04-13
 > 归档日期: 2026-07-16
 > 分类: web-reverse
+</details>
 >
 > 聊下 Python 的代码混淆，对 Python 的代码做混淆感觉是不伦不类，但是对于外包项目交付型的，又有一些需要。 混淆的目的就是加大别人分析你代码逻辑和流程的难度，让代码看上去杂乱，逻辑混乱。但是程序要能正常运行。 一般混淆 对 Python 代码做简单点混淆的就是变量名/类名/字符串/常量做混淆，把名称变成很长或者近似。
 

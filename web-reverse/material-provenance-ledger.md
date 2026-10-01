@@ -1,9 +1,39 @@
+---
+schema_version: 2
+id: web-reverse-material-provenance-ledger
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: '`本地项目分析材料（定位不公开）`（DouYin_Spider、Spider_XHS、KuaiShou-Spider、XianYuApis 的材料分类）'
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags:
+- provenance
+- server_issued
+- unproven_synthetic
+- TTL
+- 状态机
+original_date: '2026-09-23'
+archived_date: '2026-09-24'
+---
+
 # 方法论：签名材料出处账本
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/cv-cat`（DouYin_Spider、Spider_XHS、KuaiShou-Spider、XianYuApis 的材料分类）
 > 原始发布时间: 2026-09-23
 > 归档日期: 2026-09-24
 > 分类: web-reverse
+</details>
 >
 > 一个字段能算出来，只说明算法边界闭合。它能不能本地造，要先记账：本地状态机、服务端下发、隔离程序、设备绑定。缺了就失败或用缓存，不用随机串占位。随机串只能标 `unproven_synthetic`。
 

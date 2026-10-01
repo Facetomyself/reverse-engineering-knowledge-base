@@ -1,9 +1,39 @@
+---
+schema_version: 2
+id: web-reverse-vmp-host-primitive-to-purecalc
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: '`本地项目分析材料（定位不公开）`（DouYin_Spider `secsdk_web_sign.py` 的定位路径，对照窗口 2026-08-16）'
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags:
+- stack VM
+- CryptoJS.MD5
+- 宿主原语
+- 盐探针
+- webSignUrl
+original_date: '2026-08-16'
+archived_date: '2026-09-24'
+---
+
 # 方法论：VMP 先钩宿主原语，再决定要不要纯算
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/cv-cat`（DouYin_Spider `secsdk_web_sign.py` 的定位路径，对照窗口 2026-08-16）
 > 原始发布时间: 2026-08-16
 > 归档日期: 2026-09-24
 > 分类: web-reverse
+</details>
 >
 > 认定目标是 stack VM 之后，先在哈希、编码和 WebCrypto 入口读明文，用换 Cookie 探针把常量池和会话材料分开，只移植已经闭合的边界。opcode 解释不是完成门。抖音 `webSignUrl` 是这条方法的完整工作样例。
 

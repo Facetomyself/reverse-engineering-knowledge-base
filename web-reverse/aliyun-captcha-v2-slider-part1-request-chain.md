@@ -1,10 +1,51 @@
+---
+schema_version: 2
+id: web-reverse-aliyun-captcha-v2-slider-part1-request-chain
+document_type: archive
+scope:
+  targets:
+  - aliyun-captcha
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: https://mp.weixin.qq.com/s/t2cuWZ73_mZrdmdaM2ovDg
+  basis: source-report
+source_completeness: unknown
+tags:
+- 阿里云验证码
+- V2
+- InitCaptcha
+- Log2
+- Log3
+- DeviceData
+- SignatureNonce
+- Signature
+- HMAC
+- DeviceConfig
+- FeiLin
+- 多重 AES
+- T001
+- u_asig
+- acw_sc__v2
+original_date: '2025-12-05'
+archived_date: '2026-09-26'
+---
+
 # 阿里云验证码 V2 滑块（上）：四次请求链、Signature HMAC 与 DeviceConfig 多重 AES
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 微信公众号：無色逆向（[原文](https://mp.weixin.qq.com/s/t2cuWZ73_mZrdmdaM2ovDg)）
+</details>
 > 作者: 無色逆向
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 原始发布时间: 2025-12-05
 > 归档日期: 2026-09-26
 > 分类: web-reverse
+</details>
 >
 > 阿里 `acw_sc__v2` 无感校验在 IP 质量差时升级为阿里云验证码 V2 滑块。一轮四次请求：`captcha-pro-open` 初始化（参数多取自 queryPage 触发响应的 `requestInfo`；`DeviceData` 为标准 AES 可写死，`SignatureNonce` 为 `de` 方法随机类 UUID，`Signature` = 参数与固定串拼接后 URL 编码 → 以固定字符串为密钥 HMAC → base64）→ `device.captcha-open` 的 Log2 / Log3（`Data` 为 feiling.js 环境检测结果经多重 AES，每段换 key、iv 固定）→ 再次请求初始化域名提交 `CaptchaVerifyParam`，`VerifyCode` 为 `T001` 即通过 → 业务请求带 `u_asig = CertifyId`、`u_atoken = requestInfo.token`。首包响应 `DeviceConfig` 用固定 key/iv AES 解密得时间戳、feiling 版本和 IP 等，按 `#` 分割取首段 base64 解码即 `Data` 的 AES key；在 AliyunCaptcha.js 的 `decrypt:` 入口断点或插桩可看到全部 key/iv。AliyunCaptcha.js 的 `?t=` 一小时内不变，feiling.js 动态更新。
 

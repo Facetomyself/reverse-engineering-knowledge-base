@@ -1,9 +1,40 @@
+---
+schema_version: 2
+id: web-reverse-unpacked-mv3-native-updater
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: '`本地项目分析材料（定位不公开）`'
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags:
+- MV3
+- sideload
+- 自定义协议
+- PyInstaller 更新器
+- 加载已解压扩展
+- 渠道 zip
+original_date: '2026-08-24'
+archived_date: '2026-08-24'
+---
+
 # 未上架 MV3 扩展的本机更新器架构
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/mouchenjie-ai-plugin`
 > 原始发布时间: 2026-08-24
 > 归档日期: 2026-08-24
 > 分类: web-reverse
+</details>
 >
 > 把「开发者模式加载已解压扩展 + 绿色更新器 EXE + 自定义 URL 协议唤醒」拆成可复用的五层打包合同，便于自有插件做 sideload 分发，而不是照抄 Chrome Web Store 上架流程。
 

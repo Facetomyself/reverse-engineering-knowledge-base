@@ -1,9 +1,34 @@
+---
+schema_version: 2
+id: web-reverse-yuanrenxue-web-reverse-compilation-yuanrenxue-web-20190902-01
+document_type: archive
+scope:
+  targets:
+  - wechat
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 微信公众号：猿人学Python
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags: []
+original_date: '2019-09-02'
+archived_date: '2026-07-16'
+---
+
 # 谈下微信小程序的抓取技巧
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 微信公众号：猿人学Python
 > 原始发布时间: 2019-09-02
 > 归档日期: 2026-07-16
 > 分类: web-reverse
+</details>
 >
 > 今天聊下微信小程序的抓取，其实小程序的抓取不难，主要解决抓包和如何调试小程序这两个问题。如果你运用chrome调试已经比较熟练了的话，就手到擒来。
 

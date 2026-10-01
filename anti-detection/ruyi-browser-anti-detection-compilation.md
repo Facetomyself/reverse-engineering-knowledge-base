@@ -1,9 +1,45 @@
+---
+schema_version: 2
+id: anti-detection-ruyi-browser-anti-detection-compilation
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 微信公众号：如意私塾
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags:
+- Chromium
+- Firefox
+- WebKit
+- Canvas
+- WebGL
+- WebGPU
+- TLS
+- CDP
+- BiDi
+- RuyiTrace
+- 浏览器指纹
+original_date: 多篇合集
+archived_date: '2026-07-13'
+---
+
 # 如意私塾浏览器指纹与反检测合集
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 微信公众号：如意私塾
 > 原始发布时间: 多篇合集
 > 归档日期: 2026-07-13
 > 分类: anti-detection
+</details>
 >
 > 汇总浏览器内核定制、指纹检测、自动化对抗、网络身份、论文研读与 Web 逆向工具链资料。
 

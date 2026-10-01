@@ -1,9 +1,42 @@
+---
+schema_version: 2
+id: anti-detection-android-ace-deviceuniqueid
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: android
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: https://bbs.kanxue.com/thread-292813.htm
+  basis: source-report
+source_completeness: unknown
+tags:
+- ACE
+- libtersafe.so
+- deviceUniqueId
+- Widevine
+- KeyBox
+- TEE
+- RPMB
+- Play Integrity
+- Key Attestation
+- TssSDKSetUserInfo
+original_date: '2026-08-30'
+archived_date: '2026-09-03'
+---
+
 # 安卓 ACE deviceUniqueId 设备拉黑机制
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 看雪论坛 [thread-292813](https://bbs.kanxue.com/thread-292813.htm)（作者 Lun_OS；原文声明由 AI 辅助整理，数据来自真实环境 ACE 逆向）
 > 原始发布时间: 2026-08-30
 > 归档日期: 2026-09-03
 > 分类: 反检测/风控对抗 — Android 硬件身份锚点
+</details>
 >
 > ACE 在安卓端把设备身份钉在 Widevine `deviceUniqueId` 上。该值由 TEE / RPMB 内的 KeyBox 派生，不在普通文件系统；客户端经 Java `MediaDrm` 取样后写入 `libtersafe.so`，随常规上报加密后走 UDP。刷机、恢复出厂、改 persist MAC、清 provisioning 文件都改不掉它；只 hook Java 层会被双路径对账拆穿。完整性修复（PIF / 下发 keybox）和身份取值是正交维度。
 

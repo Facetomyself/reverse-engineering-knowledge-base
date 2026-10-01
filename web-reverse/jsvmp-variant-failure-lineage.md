@@ -1,9 +1,40 @@
+---
+schema_version: 2
+id: web-reverse-jsvmp-variant-failure-lineage
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: null119 提供的腾讯文字点选测试会话导出；本篇仅提炼静态可见的版本失败与异常处理过程。
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags:
+- JSVMP
+- 动态版本
+- key builder
+- 失败谱系
+- 重试
+- 兼容性
+original_date: 2026-06-22（导出文件标注）
+archived_date: '2026-09-27'
+---
+
 # JSVMP 动态版本：重试成功不等于提取器修复
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: null119 提供的腾讯文字点选测试会话导出；本篇仅提炼静态可见的版本失败与异常处理过程。
 > 原始发布时间: 2026-06-22（导出文件标注）
 > 归档日期: 2026-09-27
 > 分类: web-reverse
+</details>
 >
 > 动态 JSVMP 的结构、opcode 与 key 构造方式会随资源变化。一次失败后换新资源重试，可能只是绕开不支持的变体，并没有修复分析器。可靠性指标要以资源版本和失败谱系分组，而不是只看最终成功次数。
 

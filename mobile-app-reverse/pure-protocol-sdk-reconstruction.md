@@ -1,9 +1,43 @@
+---
+schema_version: 2
+id: mobile-app-reverse-pure-protocol-sdk-reconstruction
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 方法论整理（设备注册 / 拦截器式协议客户端）
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags:
+- 纯协议
+- 设备注册
+- HAR 语料
+- Interceptor
+- algorithms
+- 指纹语义
+- TLS/JA3
+- SDK 状态机
+- 发送顺序
+original_date: '2026-09-03'
+archived_date: '2026-09-03'
+---
+
 # App 纯协议 SDK 重建：从首次设备注册到可维护协议客户端
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 方法论整理（设备注册 / 拦截器式协议客户端）
 > 原始发布时间: 2026-09-03
 > 归档日期: 2026-09-03
 > 分类: 移动 App 逆向 — 纯协议 SDK 重建
+</details>
 >
 > 把 Android App 的设备注册、公共参数、指纹与事件埋点重建成可脱离原 App 运行的 Python 协议客户端。主线不是单接口重放，而是拦截器式架构、多 HAR 对照、指纹语义和注册完备性；扩容只是后续成本问题，不能倒过来当完成标准。
 

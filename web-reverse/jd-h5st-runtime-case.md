@@ -1,9 +1,40 @@
+---
+schema_version: 2
+id: web-reverse-jd-h5st-runtime-case
+document_type: archive
+scope:
+  targets:
+  - jd
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: '`本地项目分析材料（定位不公开）`（JdApis，HEAD 日期 2026-09-19，只读对照）'
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags:
+- h5st 5.3
+- tk03
+- request_algo
+- js_security
+- searchWare
+- SHA-256
+original_date: '2026-09-19'
+archived_date: '2026-09-23'
+---
+
 # 京东案例：h5st 5.3 运行时、body 预哈希、JCAP 分链
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/cv-cat`（JdApis，HEAD 日期 2026-09-19，只读对照）
 > 原始发布时间: 2026-09-19
 > 归档日期: 2026-09-23
 > 分类: web-reverse
+</details>
 >
 > 京东 PC 搜索在这份对照仓里不是 execjs 喂整包 `JD.js`。它是常驻 Node：环境、未改的 js_security 库、一行协议的签名服务。业务 h5st 要等 cactus 返回 `tk03`。登录验证码是另一条 JCAP 链。
 

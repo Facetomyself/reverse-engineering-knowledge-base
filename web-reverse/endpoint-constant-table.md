@@ -1,9 +1,39 @@
+---
+schema_version: 2
+id: web-reverse-endpoint-constant-table
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: '`本地项目分析材料（定位不公开）`（DouYin_Spider `HOST_APP_IDS` / `with_platform`、MTOP appKey、头条与西瓜 aid）'
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags:
+- aid
+- page_id
+- appKey
+- version_code
+- 常量表
+original_date: '2026-09-23'
+archived_date: '2026-09-24'
+---
+
 # 技巧：端别常量表，按抓包填，不为统一抹平
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/cv-cat`（DouYin_Spider `HOST_APP_IDS` / `with_platform`、MTOP appKey、头条与西瓜 aid）
 > 原始发布时间: 2026-09-23
 > 归档日期: 2026-09-24
 > 分类: web-reverse
+</details>
 >
 > 同一算法常嵌入 aid、page_id、appKey、version_code。这些数按 host 和接口变化。为了「公共参数统一」抹平差异，会在强校验接口上被判成人机，或签到错误的网关。常量表来自抓包，会过期，但「签名函数必须吃端别」这条不过期。
 

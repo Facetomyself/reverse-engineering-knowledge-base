@@ -1,3 +1,22 @@
+---
+schema_version: 2
+id: anti-detection-chromium-fingerprint-compilation-01-19-disable-image-loading
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: unknown
+  reason: 已核实所属合集的收录关系，但合集来源说明不等于逐篇原文地址；逐篇公开来源指针未知。
+source_completeness: unknown
+tags: []
+---
+
 # 指纹浏览器开发：禁止加载图片
 
 *   使用浏览器自动化进行爬虫工作都有一个痛点，就是速度太慢。其中图片流量占据很多比重。

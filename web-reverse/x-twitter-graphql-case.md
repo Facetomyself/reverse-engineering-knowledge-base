@@ -1,9 +1,39 @@
+---
+schema_version: 2
+id: web-reverse-x-twitter-graphql-case
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: '`本地项目分析材料（定位不公开）`，`a8bbd36f` → `3fe6ea7d`，公开源码静态对照'
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags:
+- GraphQL 注册表
+- XCTID
+- ct0
+- fieldToggles
+- 部分成功
+original_date: 2026-09-27（本轮合并窗口）
+archived_date: '2026-09-27'
+---
+
 # X 案例：GraphQL 注册表、XCTID 与会话状态分层
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/cv-cat/XApis`，`a8bbd36f` → `3fe6ea7d`，公开源码静态对照
 > 原始发布时间: 2026-09-27（本轮合并窗口）
 > 归档日期: 2026-09-27
 > 分类: web-reverse
+</details>
 >
 > XApis 已不再是只透传 Bearer 与 ct0 的旧搜索壳。现行版本集中维护鉴权，使用可刷新 GraphQL 注册表、本地 XCTID 与独立登录链。可复用的是材料分层和请求形状合同，不是上游的长期可用性声明。
 

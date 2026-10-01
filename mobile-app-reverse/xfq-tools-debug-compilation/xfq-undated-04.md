@@ -1,9 +1,34 @@
+---
+schema_version: 2
+id: mobile-app-reverse-xfq-tools-debug-compilation-xfq-undated-04
+document_type: archive
+scope:
+  targets:
+  - kimi
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 知识星球：逆向学习交流
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags: []
+original_date: 未知
+archived_date: '2026-09-04'
+---
+
 # 从抓包到纯 Python：Kimi `device_register` 接口完整还原
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 知识星球：逆向学习交流
 > 原始发布时间: 未知
 > 归档日期: 2026-09-04
 > 分类: mobile-app-reverse
+</details>
 >
 > device_register 是设备首次注册时使用的接口。它看起来只有一个很长的 tt_info 参数和一段不可读的二进制请求体，但两者实际上使用了同一套 Native 封装。 本文从真实抓包出发，依次还原 Java 调用链、JNI 注册、ARM64 核心函数、key/IV 派生方式和 AES 参数，最后给出可以独立运行的 Python 加解密实现。 分析对象： | 项目 | 信息 | | | | | App | Kimi Andro
 

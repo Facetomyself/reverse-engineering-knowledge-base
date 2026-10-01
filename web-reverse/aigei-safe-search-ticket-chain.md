@@ -1,9 +1,44 @@
+---
+schema_version: 2
+id: web-reverse-aigei-safe-search-ticket-chain
+document_type: archive
+scope:
+  targets:
+  - aigei
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: '`本地项目分析材料（定位不公开）`'
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags:
+- safe-search 票据链
+- icon.png 藏票据
+- 搜索权限门
+- AES-ECB cnkierjj
+- N@32
+- 响应体数据流
+- request-parameter-lineage
+- companion_response_audit
+- 403 权限不足
+- vcode-normal
+original_date: '2026-09-18'
+archived_date: '2026-09-18'
+---
+
 # 爱给网 safe-search 票据链：响应体藏票据的翻页 403 根因
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/aigei`
 > 原始发布时间: 2026-09-18
 > 归档日期: 2026-09-18
 > 分类: web-reverse
+</details>
 >
 > 爱给网筛选列表翻页 403 根因复盘：带 term 列表每页须走 icon.png 签发票据 → /f/d → 列表的搜索授权链，票据藏响应体 base64 尾部且按页绑定；边界已对齐仍非 200 时先做伴随请求响应体数据流审计。
 

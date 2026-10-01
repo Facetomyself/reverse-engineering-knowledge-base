@@ -1,9 +1,34 @@
+---
+schema_version: 2
+id: mobile-app-reverse-xfq-tools-debug-compilation-xfq-undated-01
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 知识星球：逆向学习交流
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags: []
+original_date: 未知
+archived_date: '2026-09-04'
+---
+
 # flatbuf 基本结构解析
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 知识星球：逆向学习交流
 > 原始发布时间: 未知
 > 归档日期: 2026-09-04
 > 分类: mobile-app-reverse
+</details>
 >
 > 先说结论，由于使用schema的flact引擎会自动优化flatbuf结构，而 样本 签名使用的是未优化的flatbuf结构，所以不能用schema解析。 只能使用python库flatbuffers来encode；decode使用指定的解密函数来解 flatbuf 大概由4个部分组成 [root] [vtable] [data] [ref_data] 生成一个最简单的看下 解析流程: root_ptr: [10000000] le_h
 

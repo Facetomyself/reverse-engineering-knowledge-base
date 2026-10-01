@@ -1,9 +1,39 @@
+---
+schema_version: 2
+id: web-reverse-xianyu-android-sign-rpc-case
+document_type: archive
+scope:
+  targets:
+  - xianyu
+  client: android
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: '`本地项目分析材料（定位不公开）`（XianyuAndroidApis，HEAD 日期 2026-04-13，只读对照）'
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags:
+- InnerSignImpl
+- getUnifiedSign
+- '21407387'
+- ttid
+- g-acs
+original_date: '2026-04-13'
+archived_date: '2026-09-23'
+---
+
 # 闲鱼 Android 案例：InnerSignImpl 实例 RPC
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/cv-cat`（XianyuAndroidApis，HEAD 日期 2026-04-13，只读对照）
 > 原始发布时间: 2026-04-13
 > 归档日期: 2026-09-23
 > 分类: web-reverse
+</details>
 >
 > 闲鱼 App 的网关签名走设备上的 `InnerSignImpl.getUnifiedSign`。对照仓的做法是 spawn 后等类加载、hook 一次抓住实例、立刻摘 hook，再按六参 overload 重放。这不是还原 SO，也不是 Web H5 `sign`。
 

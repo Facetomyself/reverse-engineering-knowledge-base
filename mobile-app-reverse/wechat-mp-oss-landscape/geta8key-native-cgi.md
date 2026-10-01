@@ -1,9 +1,34 @@
+---
+schema_version: 2
+id: mobile-app-reverse-wechat-mp-oss-landscape-geta8key-native-cgi
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: '`本地项目分析材料（定位不公开）` 2026-09-13 iPad 协议审查'
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags: []
+original_date: '2026-09-13'
+archived_date: '2026-09-15'
+---
+
 # GetA8Key 发证器，不是历史 API
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/weixin_download` 2026-09-13 iPad 协议审查
 > 原始发布时间: 2026-09-13
 > 归档日期: 2026-09-15
 > 分类: mobile-app-reverse
+</details>
 >
 > iPad/Android 协议号能调一部分公众号 CGI，但主业是关注、收推送、刷阅读。唯一可能接到 `getmsg` 的是 `GetA8Key` / `MpGetA8Key`：对 `mp.weixin.qq.com` URL 签发 `uin/key/pass_ticket`。type 10039「历史推送」没有 `general_msg_list`，不能当完整翻页。Gewechat 已停；商业栈闭源，最多本机 sidecar。
 

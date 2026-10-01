@@ -1,9 +1,43 @@
+---
+schema_version: 2
+id: protocols-wechat-mp-http-surface
+document_type: archive
+scope:
+  targets:
+  - wechat-official-account
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: '`本地项目分析材料（定位不公开）` Nuitka constants 恢复 + 协议复现'
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags:
+- getmsg
+- general_msg_list
+- getappmsgext
+- appmsg_comment
+- getalbum
+- __biz
+- mid
+- idx
+- scene=124
+original_date: '2026-07-16'
+archived_date: '2026-09-15'
+---
+
 # 微信公众号 HTTP 接口面：getmsg / 统计 / 评论 / 合集
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/weixin_download` Nuitka constants 恢复 + 协议复现
 > 原始发布时间: 2026-07-16
 > 归档日期: 2026-09-15
 > 分类: protocols
+</details>
 >
 > 公众号 Web 归档不是一个接口。历史列表是 `profile_ext?action=getmsg`，阅读量是 POST `getappmsgext`，评论是 `appmsg_comment`，合集是 `appmsgalbum?action=getalbum`。公开文章 URL 无登录可拉正文。会话平面见 [五套会话](./wechat-mp-session-planes.md)；本文只保留已实现的 HTTPS 形状和完成门。
 

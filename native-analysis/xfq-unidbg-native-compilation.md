@@ -1,9 +1,41 @@
+---
+schema_version: 2
+id: native-analysis-xfq-unidbg-native-compilation
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 知识星球：逆向学习交流
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags:
+- Unidbg
+- JNI
+- Gadget
+- xfqtrace
+- ELF
+- so注入
+- jnilog
+original_date: 多篇合集
+archived_date: '2026-09-04'
+---
+
 # 逆向学习交流 Unidbg 与 Native 合集
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 知识星球：逆向学习交流
 > 原始发布时间: 多篇合集
 > 归档日期: 2026-09-04
 > 分类: native-analysis
+</details>
 >
 > Unidbg 稳定性、JNI/so 注入、xfqtrace/Gadget、maps 与 ELF 格式笔记。面向 Native 复现与 trace 工具链，不收录未开源工具本体。
 

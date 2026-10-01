@@ -1,9 +1,42 @@
+---
+schema_version: 2
+id: native-analysis-ai-assisted-vmp-trace-recovery
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 微信公众号转载稿（原文链接见源稿）
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags:
+- ARM64 trace
+- VMP
+- tracedb
+- MCP
+- 数据流回溯
+- AES-256-CBC
+- HMAC-SHA256
+- Adjust nSign
+original_date: unknown
+archived_date: '2026-07-13'
+---
+
 # AI 复杂 VM 算法还原
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 微信公众号转载稿（原文链接见源稿）
 > 原始发布时间: unknown
 > 归档日期: 2026-07-13
 > 分类: native-analysis
+</details>
 >
 > pc模拟执行指令，jni libc svc转发到真实设备实现急速trace，以前在手机上跑要几个小时，现在只需要几分钟，使用llvm做指令解析，收集足够的信息，存入自定义的数据库格式，即使几十G的文件，也只需要几秒就可以查完，中间不断优化skill 跟 mcp 工具，主要突破是给了更高维度的信息，让ai不再是追踪字节计算，想办法绕过复杂计算过程，快速的进行算。
 

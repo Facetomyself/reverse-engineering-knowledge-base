@@ -1,9 +1,34 @@
+---
+schema_version: 2
+id: mobile-app-reverse-xfq-android-cases-compilation-momo-x-sign-aes
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 知识星球：逆向学习交流（安居客/陌陌/马蜂窝附件笔记）
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags: []
+original_date: 附件笔记（随 2025 安卓案例索引）
+archived_date: '2026-09-06'
+---
+
 # 陌陌 x-sign 第一参：AES-CBC 与 SHA1 拼接
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 知识星球：逆向学习交流（安居客/陌陌/马蜂窝附件笔记）
 > 原始发布时间: 附件笔记（随 2025 安卓案例索引）
 > 归档日期: 2026-09-06
 > 分类: mobile-app-reverse
+</details>
 >
 > 陌陌 `x-sign` 的第一参不是整包自定义算法。Java 入口 `com.immomo.momoenc.e.a` 先把一段 JSON 明文送进 `Coded.aesEncode`，底层落到 `libcoded.so` → `libmmcrypto.so` 的 AES-128-CBC；密文再 Base64。`x-sign` 本体另走标准 SHA1（明文后拼 8 字节）。本篇只记 hook 点、缓冲区形状和派生规则。不收录设备 JSON、主动调用字节数组和可直接跑的 invoke 脚本。
 

@@ -1,9 +1,39 @@
+---
+schema_version: 2
+id: web-reverse-request-plane-failure-translation
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: '`本地项目分析材料（定位不公开）`（DouYin_Spider、TiktokApis、KuaiShou-Spider、JdApis、TaoBaoApis 的失败分链）'
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags:
+- 请求面
+- bdturing
+- 空 body
+- status_code
+- 同名参数
+original_date: '2026-09-23'
+archived_date: '2026-09-24'
+---
+
 # 方法论：请求面切开，失败按面翻译
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/cv-cat`（DouYin_Spider、TiktokApis、KuaiShou-Spider、JdApis、TaoBaoApis 的失败分链）
 > 原始发布时间: 2026-09-23
 > 归档日期: 2026-09-24
 > 分类: web-reverse
+</details>
 >
 > 一条「平台请求」通常叠了查询签名、会话材料、完整性头、设备头和传输。一个组件正确不能解释整站失败。先画面，再把 HTTP 200、空 body、业务码翻译到具体的面，而不是统一归到签名算错。
 

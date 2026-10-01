@@ -1,10 +1,49 @@
+---
+schema_version: 2
+id: web-reverse-iv8-python-v8-browser-env
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: https://mp.weixin.qq.com/s/eBF8z9yEzEzaSTXO2Uhvzw
+  basis: source-report
+source_completeness: unknown
+tags:
+- iv8
+- V8
+- 补环境
+- page.load
+- eventLoop
+- logical time
+- wrapNative
+- isTrusted
+- DevTools
+- netLog
+- environment
+- Isolate
+- WebAssembly
+original_date: '2026-09-24'
+archived_date: '2026-09-26'
+---
+
 # iv8 使用手册：Python 内嵌 V8 的浏览器补环境运行时
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 微信公众号：爬虫逆向技术栈（[原文](https://mp.weixin.qq.com/s/eBF8z9yEzEzaSTXO2Uhvzw)）
+</details>
 > 作者: 爬虫逆向技术栈
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 原始发布时间: 2026-09-24
 > 归档日期: 2026-09-26
 > 分类: web-reverse
+</details>
 >
 > iv8 是 Python 原生扩展，内嵌 Chromium 同款 V8，在 C++ 层预置 BOM/DOM/CSSOM，单进程跑依赖浏览器环境的 JS。`page.load` 用 `html` + `baseURL` + `resources` 代替真实导航；默认 logical 虚拟时间，`eventLoop.advance` / `sleep` / `tick` 瞬间推进，`drain()` 可能让定时器先于微任务；`mode="debug"` 开 DevTools inspector，`vdebugger` / `vconsole` 替代被禁用的原生调试，`watch_apis` 和缺失 API 日志辅助补环境；`wrapNative` 伪装 `[native code]`，`input.dispatch*` 出 `isTrusted=true`；网络走 `expose` / `add_resource` 离线资源表与 `netLog`；`environment` 是指纹画像、`config` 是行为；多线程按 Isolate 隔离并注意 GIL；WASM 同步 `Module` 可用，`instantiateStreaming` 不可用。
 

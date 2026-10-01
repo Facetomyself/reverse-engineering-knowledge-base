@@ -1,9 +1,34 @@
+---
+schema_version: 2
+id: mobile-app-reverse-yuanrenxue-mobile-app-reverse-compilation-yuanrenxue-app-20200930-01
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 微信公众号：猿人学Python
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags: []
+original_date: '2020-09-30'
+archived_date: '2026-07-16'
+---
+
 # APP 中的 JS 加密逆向解析
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 微信公众号：猿人学Python
 > 原始发布时间: 2020-09-30
 > 归档日期: 2026-07-16
 > 分类: mobile-app-reverse
+</details>
 >
 > 使用木木模拟器，安装好app刚准备愉快的抓个包。竟然检测到root，不能进入。那就先把这个给他hook掉。
 

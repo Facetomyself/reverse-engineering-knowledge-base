@@ -1,9 +1,46 @@
+---
+schema_version: 2
+id: web-reverse-products-douyin-creator-im
+document_type: reference
+scope:
+  targets:
+  - douyin
+  client: web
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: JS终结计划课程方法论（clean-room 重写）
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+tags: []
+original_date: 多篇合集
+archived_date: '2026-08-11'
+modules:
+- name: request-chain
+  anchor: 常见链路
+  sources:
+  - s1
+  basis: source-report
+  limits: 仅保留来源陈述；出处为文本 citation，缺少可定位公开原文，本轮未重验算法、运行时或当前服务端。
+- name: validation
+  anchor: 验证口径
+  sources:
+  - s1
+  basis: source-report
+  limits: 仅保留来源陈述；出处为文本 citation，缺少可定位公开原文，本轮未重验算法、运行时或当前服务端。 本节是验收口径，不代表这些条件本轮已经满足。
+---
+
 # 抖音创作 IM 私信链路
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: JS终结计划课程方法论（clean-room 重写）
 > 原始发布时间: 多篇合集
 > 归档日期: 2026-08-11
 > 分类: web-reverse
+</details>
 >
 > 抖音 Creator Web 私信发送链路：Cookie 会话、identity token、ticket guard、action_report、IM HTTP 接口与可选 WS 观察组成的完整业务链路。
 

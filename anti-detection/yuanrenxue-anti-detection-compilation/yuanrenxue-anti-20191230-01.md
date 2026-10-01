@@ -1,9 +1,34 @@
+---
+schema_version: 2
+id: anti-detection-yuanrenxue-anti-detection-compilation-yuanrenxue-anti-20191230-01
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 微信公众号：猿人学Python
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags: []
+original_date: '2019-12-30'
+archived_date: '2026-07-16'
+---
+
 # 写网络爬虫程序的四种难度
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 微信公众号：猿人学Python
 > 原始发布时间: 2019-12-30
 > 归档日期: 2026-07-16
 > 分类: anti-detection
+</details>
 >
 > 写爬虫，是一个非常考验综合实力的活儿。有时候，你轻而易举地就抓取到了想要的数据；有时候，你费尽心思却毫无所获。
 

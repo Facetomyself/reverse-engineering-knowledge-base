@@ -1,9 +1,44 @@
+---
+schema_version: 2
+id: collection-engineering-reliable-mac-nas-spool-delivery
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: '`本地项目分析材料（定位不公开）`'
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags:
+- Mac mini
+- SSD spool
+- NAS mirror
+- marker
+- ACK
+- at-least-once
+- 幂等
+- launchd
+- 非侵入式巡检
+- GC
+original_date: '2026-08-02'
+archived_date: '2026-08-02'
+---
+
 # Mac 热写与 NAS 交付：可重放 spool、mirror ACK 和非侵入式运维
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/psa`
 > 原始发布时间: 2026-08-02
 > 归档日期: 2026-08-02
 > 分类: collection-engineering
+</details>
 >
 > 提炼长时间采集任务在 Mac worker 与 NAS durability tier 之间的可靠交付模式：本地 SSD 热写、不可变 marker、SSH tar staging、幂等 ACK、灰度 GC、supervisor 完成门和低成本巡检，并明确它目前保证的是进程崩溃可重放，而不是目录事务或断电级 durability。
 

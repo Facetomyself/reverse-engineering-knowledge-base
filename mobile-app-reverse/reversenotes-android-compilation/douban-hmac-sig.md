@@ -1,9 +1,34 @@
+---
+schema_version: 2
+id: mobile-app-reverse-reversenotes-android-compilation-douban-hmac-sig
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: GitHub xfxfxiaofeng/reverseNotes
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags: []
+original_date: 2025-06（观察版本 7.98.0 / 对照 7.0.1）
+archived_date: '2026-09-06'
+---
+
 # 豆瓣：HMAC-SHA1 sig、udid 与 MSA 定位
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: GitHub xfxfxiaofeng/reverseNotes
 > 原始发布时间: 2025-06（观察版本 7.98.0 / 对照 7.0.1）
 > 归档日期: 2026-09-06
 > 分类: mobile-app-reverse
+</details>
 >
 > 豆瓣 `com.douban.frodo` 短评接口的 `sig` 先像 Base64，解码后 20 字节，是 HMAC-SHA1 再 URL-encode，不是裸 SHA1(时间戳)。7.98.0 对加密 hook 会在 `libmsaoaidsec.so` 加载期闪退，作者改用 7.0.1 对照把 HMAC 明文钩出来。`udid` 是对 UUID（或任意串）做 SHA1 再 hex。本篇只归档检测面定位和签名结构，不收录替换检测函数的脚本。
 

@@ -1,9 +1,44 @@
+---
+schema_version: 2
+id: anti-detection-xianyu-eeid-risk-control
+document_type: archive
+scope:
+  targets:
+  - xianyu
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 闲鱼 7.28.30（`com.taobao.idlefish`，versionCode 520）/ SecurityGuard 6.7.260202 独立分析（Redmi K20 Pro，Android 11）
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags:
+- EEID
+- SecurityGuard
+- Mini 探针
+- ET 探针
+- SGEXT
+- UTDID
+- SG 文件
+- ACS-MUM
+- x-eeid
+- 闲鱼
+original_date: '2026-09-24'
+archived_date: '2026-09-26'
+---
+
 # 闲鱼 EEID 风控体系完全揭秘
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 闲鱼 7.28.30（`com.taobao.idlefish`，versionCode 520）/ SecurityGuard 6.7.260202 独立分析（Redmi K20 Pro，Android 11）
 > 分析日期: 2026-09-24
 > 归档日期: 2026-09-26
 > 分类: 反检测/风控对抗 — 阿里 SecurityGuard EEID 设备风控
+</details>
 >
 > 闲鱼 EEID（Extended Equipment ID）是 SecurityGuard 在客户端采集 Mini 探针（7 字节布尔段 + 11 字节半字节段）、ET 探针（本包实采 55 个）、SGEXT 45 字段、PL 测量、BI/CS 上报后，由 ACS-MUM 服务端签发的设备扩展标识。本文按原文结构归档探针位定义、SG 文件（`.s/` 目录、`.sg` mtime → SGEXT `fields[4]`）、UTDID 持久化、EEID 注册/验证协议与签名参数关系；服务端评分与 EEID 生成算法为原文推测。
 

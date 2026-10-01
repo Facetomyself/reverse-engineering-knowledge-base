@@ -1,9 +1,34 @@
+---
+schema_version: 2
+id: mobile-app-reverse-wechat-mp-oss-landscape-mp-backend-list-ex
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: '`本地项目分析材料（定位不公开）` 对照 wechat-article-exporter、EasyWechatDownload、we-mp-rss、wechat-download-api'
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags: []
+original_date: 2026-07-16 / 2026-07-30 / 2026-08-23
+archived_date: '2026-09-15'
+---
+
 # MP 后台跨号列表与 2026-07-30 收紧
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/weixin_download` 对照 wechat-article-exporter、EasyWechatDownload、we-mp-rss、wechat-download-api
 > 原始发布时间: 2026-07-16 / 2026-07-30 / 2026-08-23
 > 归档日期: 2026-09-15
 > 分类: mobile-app-reverse
+</details>
 >
 > 公众号后台扫码会话曾被用来 `searchbiz` + `appmsgpublish list_ex` 跨号枚举。2026-07-30 上游关闭、多项目 `ret=200013`，默认 fail-closed。`free_publish` 是本号已发表列表，不是任意 `__biz` 历史。操作者必须具备后台登录资格。
 

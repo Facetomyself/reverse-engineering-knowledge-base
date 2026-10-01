@@ -1,9 +1,41 @@
+---
+schema_version: 2
+id: web-reverse-yuanrenxue-web-reverse-compilation
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: web
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 微信公众号：猿人学Python
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags:
+- JS Cookie
+- 参数加密
+- 反调试
+- 字符串混淆
+- 控制流混淆
+- 微信小程序
+- AI逆向
+original_date: 多篇合集
+archived_date: '2026-07-16'
+---
+
 # 猿人学 Web 与 JavaScript 逆向合集
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 微信公众号：猿人学Python
 > 原始发布时间: 多篇合集
 > 归档日期: 2026-07-16
 > 分类: web-reverse
+</details>
 >
 > 整理 JS Cookie、参数加密、反调试、字符串与控制流混淆、微信小程序抓取以及 AI 辅助逆向的长期方法论。
 

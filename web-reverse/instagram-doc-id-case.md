@@ -1,9 +1,38 @@
+---
+schema_version: 2
+id: web-reverse-instagram-doc-id-case
+document_type: archive
+scope:
+  targets:
+  - instagram
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: '`本地项目分析材料（定位不公开）`（InstagramApis，HEAD 日期 2026-08-18，只读对照）'
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags:
+- doc_id
+- x-ig-app-id
+- web_profile_info
+- graphql
+original_date: '2026-08-18'
+archived_date: '2026-09-23'
+---
+
 # Instagram 案例：HTML 抽 app_id 与 doc_id
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/cv-cat`（InstagramApis，HEAD 日期 2026-08-18，只读对照）
 > 原始发布时间: 2026-08-18
 > 归档日期: 2026-09-23
 > 分类: web-reverse
+</details>
 >
 > 这份对照仓没有本地签名器。用户页 HTML 提供 `user_id`、`app_id` 和首页 GraphQL `doc_id`；后续请求把 `doc_id` 和 Cookie 一起发出。`x-csrftoken` 辅助函数存在，但资料和时间线调用点没有用它。
 

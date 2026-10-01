@@ -1,9 +1,34 @@
+---
+schema_version: 2
+id: anti-detection-yuanrenxue-anti-detection-compilation-yuanrenxue-anti-20181206-01
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 微信公众号：猿人学Python
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags: []
+original_date: '2018-12-06'
+archived_date: '2026-07-16'
+---
+
 # 爬虫小偏方：绕开登陆和访问频率控制
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 微信公众号：猿人学Python
 > 原始发布时间: 2018-12-06
 > 归档日期: 2026-07-16
 > 分类: anti-detection
+</details>
 >
 > 其实在抓取数据时，如果有大量的离散账号和离散IP的话，抓取数据就问题不大了。但是相信大部分的爬虫选手们都没有这么多的资源，所以就会绞尽脑汁研究和各种尝试对方的访问控制策略，如果始终无法破局，这时就要跳出来想下其他办法，比如多使用一下对方的产品，包括APP，网站，微信等，抓包看看他们之间的URL有没有关联，访问控制策略是否一致等，有时你会找到新的突破口。
 

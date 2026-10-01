@@ -1,9 +1,40 @@
+---
+schema_version: 2
+id: collection-engineering-media-download-contract-drift
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: '`本地项目分析材料（定位不公开）`（`4479ea78` → `b17b12ee`）、`本地项目分析材料（定位不公开）`（`7077c88f` → `ebb6c4fb`），公开源码增量对照'
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags:
+- Referer
+- CDN
+- 编码别名
+- 备用 URL
+- raise_for_status
+- 失败隔离
+original_date: '2026-09-27'
+archived_date: '2026-09-27'
+---
+
 # 媒体下载故障分层：请求上下文、流选择与单项失败隔离
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/cv-cat/DouYin_Spider`（`4479ea78` → `b17b12ee`）、`workspace/cv-cat/Spider_XHS`（`7077c88f` → `ebb6c4fb`），公开源码增量对照
 > 原始发布时间: 2026-09-27
 > 归档日期: 2026-09-27
 > 分类: collection-engineering
+</details>
 >
 > 元数据 API 返回成功不代表媒体交付成功。两处下载修复分别落在 CDN 请求上下文与响应结构漂移，不涉及签名算法更新；排障应把 URL 选择、HTTP 响应、文件落盘、批次进度拆开。
 

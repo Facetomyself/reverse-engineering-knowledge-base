@@ -1,9 +1,34 @@
+---
+schema_version: 2
+id: web-reverse-anti-crawler-web-reverse-compilation-anti-crawler-web-20260323-01
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 微信公众号：反爬破解社
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags: []
+original_date: 2026-03-23 ~ 2026-03-30（3 篇，逐篇日期见各节）
+archived_date: '2026-07-13'
+---
+
 # Chrome开发者工具反爬指南（三篇）：断点调试、Hook 与反 Hook 检测对抗
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 微信公众号：反爬破解社
 > 原始发布时间: 2026-03-23 ~ 2026-03-30（3 篇，逐篇日期见各节）
 > 归档日期: 2026-07-13
 > 分类: web-reverse
+</details>
 >
 > 本文合并同一作者的 3 篇连载：第一篇「Chrome开发者工具反爬实操指南-断点调试篇」、第二篇「Chrome开发者工具指南-Hook篇」、第三篇「Chrome开发者工具指南-反Hook检测与对抗篇」。
 

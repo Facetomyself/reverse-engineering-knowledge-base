@@ -1,9 +1,41 @@
+---
+schema_version: 2
+id: mobile-app-reverse-anti-crawler-app-reverse-series
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 微信公众号：反爬破解社
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags:
+- App逆向
+- jadx
+- Frida
+- JNI
+- SO层
+- 密码算法
+- Python复现
+original_date: 多篇合集
+archived_date: '2026-07-13'
+---
+
 # 反爬破解社 App 逆向章节合集
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 微信公众号：反爬破解社
 > 原始发布时间: 多篇合集
 > 归档日期: 2026-07-13
 > 分类: mobile-app-reverse
+</details>
 >
 > 从全局视角、环境搭建、静态定位、Frida Hook、密码算法到 SO 层分析的 App 逆向入门系列。
 

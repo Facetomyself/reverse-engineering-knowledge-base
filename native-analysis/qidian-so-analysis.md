@@ -1,9 +1,43 @@
+---
+schema_version: 2
+id: native-analysis-qidian-so-analysis
+document_type: archive
+scope:
+  targets:
+  - qidian
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: '`本地项目分析材料（定位不公开）`'
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags:
+- libfock.so
+- libfockrt.so
+- ARM64
+- JNI动态注册
+- 3DES-CBC
+- AES-256-CBC
+- QuickJS
+- Unicorn
+- 结论纠偏
+original_date: '2026-06-27'
+archived_date: '2026-07-05'
+---
+
 # Qidian Native SO 分析与结论纠偏
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/qidian`
 > 原始发布时间: 2026-06-27
 > 归档日期: 2026-07-05
 > 分类: native-analysis
+</details>
 >
 > 样本: 起点读书 7.9.464 ｜ 分析区间: 2026-06-27 至 2026-07-05 ｜ 更新: 2026-07-15
 >

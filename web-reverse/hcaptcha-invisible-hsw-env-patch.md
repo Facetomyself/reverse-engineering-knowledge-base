@@ -1,10 +1,50 @@
+---
+schema_version: 2
+id: web-reverse-hcaptcha-invisible-hsw-env-patch
+document_type: archive
+scope:
+  targets:
+  - hcaptcha
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: https://mp.weixin.qq.com/s/Ts4CGskbT6CgRIJkc2efDg
+  basis: source-report
+source_completeness: unknown
+tags:
+- hCaptcha
+- hsw.js
+- WASM
+- checksiteconfig
+- JWT
+- ArrayBuffer
+- motionData
+- n 值
+- 补环境
+- RTCRtpSender
+- OfflineAudioContext
+- WebGL2
+- Math 精度
+- Worker
+original_date: '2026-01-14'
+archived_date: '2026-09-26'
+---
+
 # hCaptcha 无感验证补环境：hsw.js / WASM 出 n 值的入口定位与环境检测点
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 微信公众号：無色逆向（[原文](https://mp.weixin.qq.com/s/Ts4CGskbT6CgRIJkc2efDg)）
+</details>
 > 作者: 無色逆向
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 原始发布时间: 2026-01-14
 > 归档日期: 2026-09-26
 > 分类: web-reverse
+</details>
 >
 > 以 Steam 注册页为 demo。链路：`hcaptcha.html`（`v1/` 后是版本号，约一周一更）→ `checksiteconfig`（`siteKey` 各站唯一，响应里的 `c.req` 是 JWT）→ `hsw.js` → 最终校验接口，请求体和响应体都是 ArrayBuffer；改 `hcaptcha.html` 两处（序列化位置、头部 CSP 只留 worker）可以让它走明文 JSON。载荷有 `v` / `sitekey` / `host` / `hl` / `pdc` / `pem` / `c` / `motionData` / `n`，响应 `generated_pass_UUID` 以 `P1` 开头即通过。`n` 的入口：xhr 断点 → 沿 Promise 链反跟 `l ← s ← e.proof` → `Promise.all` 迭代里的 `xr` → `n(i.req, o)` 进入 `hsw.js`，先解码 JWT，再由 `aG` 加载 WASM。插桩点有两处大数组：`kc.Ob` → `fm`（WASM 导出）里 `Mv` 的数组，和首参为数字串的检测函数写入的环境数组，都用来对照本地与浏览器差异。检测点：RTCPeerConnection、RTCRtpSender / RTCRtpReceiver、OfflineAudioContext、WebGL2RenderingContext、函数描述符（`"prototype" in AudioBuffer.prototype.getChannelData`，要用箭头函数）、Math 精度差异、字体与 canvas 指纹、Worker / SharedWorker。作者补了三千多行；环境不过会返回验证码图片链接。
 

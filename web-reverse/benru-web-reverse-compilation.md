@@ -1,9 +1,42 @@
+---
+schema_version: 2
+id: web-reverse-benru-web-reverse-compilation
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: web
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 微信公众号：本如笔记
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags:
+- WBI签名
+- AST
+- JS混淆
+- Node补环境
+- mitmproxy
+- 动态参数
+- Webpack RPC
+- Python还原
+original_date: 多篇合集
+archived_date: '2026-07-16'
+---
+
 # 本如笔记 Web 逆向与协议恢复合集
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 微信公众号：本如笔记
 > 原始发布时间: 多篇合集
 > 归档日期: 2026-07-16
 > 分类: web-reverse
+</details>
 >
 > 精选 WBI 签名、AST 反混淆、动态参数定位、Node 补环境、mitmproxy、Webpack RPC 与 Python 协议复现等实战资料。
 

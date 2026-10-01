@@ -1,9 +1,44 @@
+---
+schema_version: 2
+id: collection-engineering-high-concurrency-http-collector-control-plane
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: '`本地项目分析材料（定位不公开）`'
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags:
+- 代理租约
+- Sticky SID
+- Cookie 隔离
+- 连接池
+- AIMD
+- congestion epoch
+- Retry-After
+- half-open
+- item deadline
+- checkpoint
+original_date: '2026-08-02'
+archived_date: '2026-08-02'
+---
+
 # 高并发 HTTP 采集控制面：代理租约、AIMD 与故障恢复
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/psa`
 > 原始发布时间: 2026-08-02
 > 归档日期: 2026-08-02
 > 分类: collection-engineering
+</details>
 >
 > 从一个真实异步采集器中提炼代理身份生命周期、连接池复用、自适应限速、分层 deadline、checkpoint 与容量晋级门。重点不是复制某个站点的并发数字，而是解释高并发系统为什么会“进程还活着，产物却不再增长”，以及控制面如何收敛。
 

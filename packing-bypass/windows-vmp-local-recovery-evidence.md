@@ -1,9 +1,41 @@
+---
+schema_version: 2
+id: packing-bypass-windows-vmp-local-recovery-evidence
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: null119 提供的 Windows 逆向方法资料，`vmp-unpack-playbook.md` 与 `vmp-devirt-playbook.md`；另核对文末上游项目说明。
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags:
+- Windows
+- VMProtect
+- OEP
+- IAT
+- handler
+- 局部语义
+- 证据边界
+original_date: 未知
+archived_date: '2026-09-27'
+---
+
 # Windows VMProtect：局部语义恢复的证据边界
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: null119 提供的 Windows 逆向方法资料，`vmp-unpack-playbook.md` 与 `vmp-devirt-playbook.md`；另核对文末上游项目说明。
 > 原始发布时间: 未知
 > 归档日期: 2026-09-27
 > 分类: packing-bypass
+</details>
 >
 > 本篇是方法资料的静态提炼，不是某个 Windows 样本的成功去虚拟化案例。核心是分开识别保护、恢复可运行映像和恢复局部语义，避免把 OEP、dump 或 IAT 修复当成 VM 已经消失。
 

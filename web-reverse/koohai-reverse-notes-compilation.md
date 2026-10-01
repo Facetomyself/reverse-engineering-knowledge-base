@@ -1,9 +1,43 @@
+---
+schema_version: 2
+id: web-reverse-koohai-reverse-notes-compilation
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 微信公众号：零基础爬虫第一天
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags:
+- KhBox
+- 补环境
+- Illegal invocation
+- Canvas
+- jsdom
+- JSVMP
+- FART
+- WebView
+- IDA MD5
+original_date: 多篇合集
+archived_date: '2026-09-06'
+---
+
 # 零基础爬虫第一天 逆向笔记合集
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 微信公众号：零基础爬虫第一天
 > 原始发布时间: 多篇合集
 > 归档日期: 2026-09-06
 > 分类: web-reverse
+</details>
 >
 > 17 篇 koohai 笔记：KhBox 补环境（原型链 / Illegal invocation / Canvas / Node 编译）、BrowserLeaks 检测面、AST 到 JSVMP、以及 FART、WebView 调试和 IDA 识别 MD5。保留实现要点，不收录项目仓库附件和图片。
 

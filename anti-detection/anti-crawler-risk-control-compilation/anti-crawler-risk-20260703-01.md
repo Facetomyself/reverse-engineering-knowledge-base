@@ -1,9 +1,34 @@
+---
+schema_version: 2
+id: anti-detection-anti-crawler-risk-control-compilation-anti-crawler-risk-20260703-01
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 微信公众号：反爬破解社
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags: []
+original_date: '2026-07-03'
+archived_date: '2026-07-13'
+---
+
 # 行为分析篇：如何模拟人类行为，避免行为模型检测？
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 微信公众号：反爬破解社
 > 原始发布时间: 2026-07-03
 > 归档日期: 2026-07-13
 > 分类: anti-detection
+</details>
 >
 > 指纹伪装得再好，行为模式不对依然会被风控揪出来。现代反爬系统（如 Datadome、Akamai Bot Manager、Cloudflare Bot > Management）已经把用户行为建模做到了毫秒级： > 你鼠标怎么动、键盘怎么敲、页面怎么滚、两次操作间隔多少、甚至屏幕有没有晃动，都在实时打分。 。
 

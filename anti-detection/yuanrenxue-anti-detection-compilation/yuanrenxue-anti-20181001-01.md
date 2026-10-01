@@ -1,9 +1,34 @@
+---
+schema_version: 2
+id: anti-detection-yuanrenxue-anti-detection-compilation-yuanrenxue-anti-20181001-01
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 微信公众号：猿人学Python
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags: []
+original_date: '2018-10-01'
+archived_date: '2026-07-16'
+---
+
 # Python爬虫使用浏览器的cookies：browsercookie
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 微信公众号：猿人学Python
 > 原始发布时间: 2018-10-01
 > 归档日期: 2026-07-16
 > 分类: anti-detection
+</details>
 >
 > 很多用Python的人可能都写过网络爬虫，自动化获取网络数据确实是一件令人愉悦的事情，而Python很好的帮助我们达到这种愉悦。然而，爬虫经常要碰到各种登录、验证的阻挠，让人灰心丧气（网站：天天碰到各种各样的爬虫抓我们网站，也很让人灰心丧气～）。爬虫和反爬虫就是一个猫和老鼠的游戏，道高一尺魔高一丈，两者反复纠缠。
 

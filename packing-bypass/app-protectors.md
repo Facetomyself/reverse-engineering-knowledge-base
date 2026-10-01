@@ -1,9 +1,54 @@
+---
+schema_version: 2
+id: packing-bypass-app-protectors
+document_type: reference
+scope:
+  targets:
+  - unknown
+  client: android
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: reverse_ENV App 主线（ciweimao / 豆瓣 / 起点）
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+tags:
+- Jiagu
+- Legu
+- SecNeo
+- NIS
+- libnesec
+- stub-wrapper
+- whole-dex
+- Gadget
+original_date: '2026-08-29'
+archived_date: '2026-08-29'
+modules:
+- name: decision-flow
+  anchor: 观察顺序
+  sources:
+  - s1
+  basis: source-report
+  limits: 仅保留来源陈述；出处为文本 citation，缺少可定位公开原文，本轮未重验算法、运行时或当前服务端。
+- name: validation
+  anchor: 使用边界
+  sources:
+  - s1
+  basis: source-report
+  limits: 仅保留来源陈述；出处为文本 citation，缺少可定位公开原文，本轮未重验算法、运行时或当前服务端。 本节是验收口径，不代表这些条件本轮已经满足。
+---
+
 # App 加固产品命中
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: reverse_ENV App 主线（ciweimao / 豆瓣 / 起点）
 > 原始发布时间: 2026-08-29
 > 归档日期: 2026-08-29
 > 分类: packing-bypass
+</details>
 >
 > App 壳与 wrapper 的命中特征 → `protectorKind` → `apk_case.py next`。只做观察顺序，不替代当前样本的 DEX 计数、tombstone 和官方 live。
 

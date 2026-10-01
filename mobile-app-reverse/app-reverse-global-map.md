@@ -1,9 +1,44 @@
+---
+schema_version: 2
+id: mobile-app-reverse-app-reverse-global-map
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 微信公众号：反爬破解社（爬虫任）「App 逆向」系列第1章（PDF 归档 + 公众号正文）
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags:
+- App逆向
+- Android请求生命周期
+- OkHttp
+- Interceptor
+- JNI
+- SO层
+- Frida
+- SSL Pinning
+- 设备指纹
+- VMP
+original_date: '2026-07-05'
+archived_date: '2026-07-07'
+---
+
 # App 逆向的全局视角
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 微信公众号：反爬破解社（爬虫任）「App 逆向」系列第1章（PDF 归档 + 公众号正文）
 > 原始发布时间: 2026-07-05
 > 归档日期: 2026-07-07
 > 分类: 移动 App 逆向 — 方法论与切入点
+</details>
 >
 > 本文建立 App 逆向的基础地图：从一次请求的生命周期出发，梳理 UI、业务、网络、加密、JNI、SO、网络发送各层的切入点，并总结定位加密点、还原算法、模拟请求三类核心任务。
 

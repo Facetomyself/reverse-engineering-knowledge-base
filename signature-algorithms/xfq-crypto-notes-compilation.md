@@ -1,9 +1,44 @@
+---
+schema_version: 2
+id: signature-algorithms-xfq-crypto-notes-compilation
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 知识星球：逆向学习交流
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags:
+- AES
+- DES
+- 3DES
+- MD5
+- SHA1
+- RC4
+- ChaCha20
+- GCM
+- 魔改哈希
+- trace
+original_date: 多篇合集
+archived_date: '2026-09-04'
+---
+
 # 逆向学习交流密码算法笔记合集
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 知识星球：逆向学习交流
 > 原始发布时间: 多篇合集
 > 归档日期: 2026-09-04
 > 分类: signature-algorithms
+</details>
 >
 > 从知识星球「逆向学习交流」整理的密码算法笔记：AES/DES/3DES、MD5/SHA1、RC4/Salsa20/ChaCha20/GCM 与魔改哈希还原路径，保留公式、实现步骤和 trace 打法，不收录附件 zip。
 

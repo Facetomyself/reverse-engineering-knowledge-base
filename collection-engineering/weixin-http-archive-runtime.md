@@ -1,9 +1,42 @@
+---
+schema_version: 2
+id: collection-engineering-weixin-http-archive-runtime
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: '`本地项目分析材料（定位不公开）` 落地实现'
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags:
+- SQLite
+- BEGIN IMMEDIATE
+- claim_token
+- heartbeat
+- durable retry
+- MCP job
+- stdio
+- Streamable HTTP
+original_date: 2026-07-16 至 2026-07-17
+archived_date: '2026-09-15'
+---
+
 # HTTP 归档运行时：文章身份、SQLite claim 与 MCP job
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/weixin_download` 落地实现
 > 原始发布时间: 2026-07-16 至 2026-07-17
 > 归档日期: 2026-09-15
 > 分类: collection-engineering
+</details>
 >
 > 公众号这类「短时会话 + 逐篇落盘」的 HTTP 归档，控制面不是 AIMD 并发，而是身份主键、短事务 claim、durable retry 和与文章状态分离的 MCP job。凭证不得进入队列或 job payload。进程还活着、job 标 completed，不等于文章 canonical 成功。
 

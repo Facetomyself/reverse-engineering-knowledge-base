@@ -1,9 +1,34 @@
+---
+schema_version: 2
+id: mobile-app-reverse-sdk-purecalc-compilation-tencent-qimei-register
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 本地项目分析材料（定位不公开）
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags: []
+original_date: 2026-08-10 源码
+archived_date: '2026-09-06'
+---
+
 # 腾讯 Qimei REGISTER：route15 之后才是 ky/pms/sn
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: workspace/tencent-qimei-pure
 > 原始发布时间: 2026-08-10 源码
 > 归档日期: 2026-09-06
 > 分类: mobile-app-reverse
+</details>
 >
 > 应用宝风控设备标识的纯协议 REGISTER。无 JAR、无 Frida、无执行 so。不收录 appKey、静态 AES、RSA 公钥、identity 和 zip 口令。
 

@@ -1,9 +1,42 @@
+---
+schema_version: 2
+id: collection-engineering-mihomo-dialer-proxy-chain
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: — (GitHub 归档)
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags:
+- Clash Verge
+- Mihomo
+- dialer-proxy
+- relay
+- Chain-Front
+- TUN fake-ip
+- preproxy
+- mihomo_fanout
+original_date: '2026-08-13'
+archived_date: '2026-09-06'
+---
+
 # Mihomo 链式代理：dialer-proxy、全局脚本与采集器前置链
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: — (GitHub 归档)
 > 原始发布时间: 2026-08-13
 > 归档日期: 2026-09-06
 > 分类: collection-engineering
+</details>
 >
 > 从 Clash Verge Rev 全局脚本与 Mihomo 官方 `dialer-proxy` 文档提炼：内核链式代理、已废弃的 `relay` 组、TUN fake-ip 排除坑，以及它和采集器 `curl --preproxy` / 隔离 sidecar 为什么不是同一条合同。
 

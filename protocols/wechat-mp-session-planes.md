@@ -1,9 +1,43 @@
+---
+schema_version: 2
+id: protocols-wechat-mp-session-planes
+document_type: archive
+scope:
+  targets:
+  - wechat-official-account
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: '`本地项目分析材料（定位不公开）` 开源库与协议对照'
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags:
+- getmsg
+- profile_ext
+- pass_ticket
+- list_ex
+- GetA8Key
+- 微信读书
+- MP_WXS_
+- uin/key
+- 公众号会话
+original_date: 2026-07-16 至 2026-09-13
+archived_date: '2026-09-15'
+---
+
 # 微信公众号五套会话：登录态不是 getmsg
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/weixin_download` 开源库与协议对照
 > 原始发布时间: 2026-07-16 至 2026-09-13
 > 归档日期: 2026-09-15
 > 分类: protocols
+</details>
 >
 > 微信客户端在线、公众号 WebView、公众号后台、微信读书、原生 CGI（GetA8Key）是五套互不续期的会话。公开 GitHub 下载器失败的第一原因是把它们当成同一个 Cookie。本文只保留平面划分、字段边界和完成门；凭证原值与可执行客户端不收录。
 

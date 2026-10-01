@@ -1,9 +1,34 @@
+---
+schema_version: 2
+id: mobile-app-reverse-wechat-mp-oss-landscape-getmsg-webview-issuance
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: '`本地项目分析材料（定位不公开）` 对照 qiye45/wechatDownload、wxdown-service'
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags: []
+original_date: 2026-07-16 / 2026-08-16 / 2026-08-23
+archived_date: '2026-09-15'
+---
+
 # getmsg WebView 发证与短时 key
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/weixin_download` 对照 qiye45/wechatDownload、wxdown-service
 > 原始发布时间: 2026-07-16 / 2026-08-16 / 2026-08-23
 > 归档日期: 2026-09-15
 > 分类: mobile-app-reverse
+</details>
 >
 > `profile_ext?action=getmsg` 的 `uin/key/pass_ticket` 只在内置浏览器访问 `mp.weixin.qq.com` 时签发。PC/手机登录态不会自动出现这组参数。原工具 4.7 仍靠人打开链接再扫缓存；MITM 服务只收证、不触发微信。
 

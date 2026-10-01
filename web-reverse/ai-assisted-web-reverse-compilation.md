@@ -1,9 +1,45 @@
+---
+schema_version: 2
+id: web-reverse-ai-assisted-web-reverse-compilation
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: web
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 微信公众号：ai辅助逆向手记
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags:
+- h5st
+- a_bogus
+- x-s
+- x-s-common
+- JSVMP
+- RSA
+- fangdir
+- X-Gnarly
+- Shein
+- Dewu
+- md5__1038
+original_date: 多篇合集
+archived_date: '2026-09-06'
+---
+
 # AI辅助逆向手记 Web 逆向合集
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 微信公众号：ai辅助逆向手记
 > 原始发布时间: 多篇合集
 > 归档日期: 2026-09-06
 > 分类: web-reverse
+</details>
 >
 > 20 篇 Web 签名与挑战实战：md5__1038、京东 h5st v5.3、X-Gnarly、瑞数 fangdir、抖音 a_bogus、小红书 x-s / x-s-common、Shein x-gw-auth、得物 Web 签名，以及 JSVMP 是否拆 opcode 与 RSA DER 锚点。目标已脱敏，不收录附件 zip/图片。
 

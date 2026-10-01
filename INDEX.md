@@ -1,6 +1,6 @@
 # 逆向知识库文章索引
 
-> 更新于 2026-09-27 ｜ 来源: `article/`
+> 更新于 2026-09-30 ｜ 来源: `article/`
 >
 > 本文件维护 canonical 入口与技术标签；合集子文章详见 [CATALOG.md](./CATALOG.md)，机器读取使用 [`catalog.json`](./catalog.json)。
 >
@@ -32,6 +32,7 @@
 | 文章 | 来源项目 | 关键词 | 摘要 |
 |------|----------|--------|------|
 | [51job-anti-detection-analysis.md](./anti-detection/51job-anti-detection-analysis.md) | 51job-web-reverse | `阿里ACW WAF`, `飞林FeiLin`, `神策SensorsData`, `Function.toString`, `debugger绕过`, `WebDriver检测`, `CDP检测`, `hook检测`, `反检测对抗矩阵` | 51job 三层风控体系全面分析：ACW WAF 检测向量、飞林设备指纹、神策行为埋点，20+ 检测向量的逐一对抗设计 |
+| [51job-risk-control-reference.md](./anti-detection/51job-risk-control-reference.md) | 来源提炼（51job 历史分析） | `51job`, `risk-control`, `source-report`, `evidence-boundary` | 按风控模块整理历史检测候选面、来源锚点与未知项；不继承已解决标签，不表示当前绕过验证 |
 | [chromium-fingerprint-compilation.md](./anti-detection/chromium-fingerprint-compilation.md) | — (CSDN 归档) | `Chromium编译`, `指纹浏览器`, `Canvas指纹`, `WebGL指纹`, `WebRTC`, `TLS/JA3/JA4`, `CDP绕过`, `无头检测`, `源码修改`, `BoringSSL`, `V8`, `Blink` | Chromium 源码级指纹浏览器编译全系列 (38篇)：15+ 指纹维度随机化/固定、反检测绕过 (WebDriver/CDP/无头/Selenium)、爬虫增强 (Shadow DOM/跨域iframe/CSS动画禁用)、工程化 (JWT校验/Cookie明文/任务栏徽章) |
 | [anti-crawler-risk-control-compilation.md](./anti-detection/anti-crawler-risk-control-compilation.md) | — (公众号归档) | `浏览器指纹`, `验证码`, `行为风控`, `TLS指纹`, `HTTP/2指纹`, `代理检测`, `注册环境` | 浏览器、网络、验证码与行为模型的风控对抗系列，保留检测维度、定位方法和综合系统设计 |
 | [ruyi-browser-anti-detection-compilation.md](./anti-detection/ruyi-browser-anti-detection-compilation.md) | — (公众号归档) | `Chromium`, `Firefox`, `WebKit`, `Canvas`, `WebGL`, `WebGPU`, `TLS`, `CDP`, `BiDi`, `RuyiTrace`, `浏览器指纹` | 97 篇浏览器内核、指纹检测、自动化对抗、论文研读与 Web 逆向工具链合集 |
@@ -91,6 +92,7 @@
 | [xfq-tools-debug-compilation.md](./mobile-app-reverse/xfq-tools-debug-compilation.md) | — (知识星球归档) | `xfqtrace`, `Frida`, `Gadget`, `jadx`, `抓包`, `WebView`, `MCP` | 逆向学习交流 41 篇工具调试：xfqtrace/Frida/jadx、证书、WebView Hook 与 MCP，已去掉号池/续杯/破解版 |
 | [kimi-device-register-ttencrypt.md](./mobile-app-reverse/kimi-device-register-ttencrypt.md) | — (独立分析归档) | `device_register`, `ttEncrypt`, `tt_info`, `AES-128-CBC`, `SHA512`, `volces`, `Kimi`, `JNI` | 字节系 Kimi `device_register`：query `tt_info` 与二进制 body 共用 MAGIC\|\|seed\|\|AES 封装，key/IV 由明文 seed 派生，属可逆协议封装并给出 Python 复现 |
 | [protocol-admission-four-gates.md](./mobile-app-reverse/protocol-admission-four-gates.md) | tiktok-four-gate-source-study | `协议准入`, `四关`, `设备画像`, `签名拦截器`, `主机路由`, `TLS指纹`, `空成功`, `激活调用`, `registrationComplete`, `hardware-fp` | App 协议准入四关：同行设备、签名切面、主机/引导、传输指纹必须并联闭合；HTTP 200 空壳不是 serverAccepted，注册签发不等于激活。供后续纯协议 case 复用，TikTok 三源只作推导语料 |
+| [protocol-admission-procedure.md](./mobile-app-reverse/protocol-admission-procedure.md) | 来源提炼（准入四关） | `protocol-admission`, `decision-flow`, `registration`, `source-report` | S1–S8 诊断、F1–F3 失败出口与四门 AND 验收；附可维护流程图，步骤不是实际网络包时序 |
 | [protocol-register-packet-order.md](./mobile-app-reverse/protocol-register-packet-order.md) | — (方法论整理) | `纯协议`, `设备注册`, `发送顺序`, `事件包`, `日志包`, `多线程`, `SDK 状态机`, `前置身份`, `自动化`, `AppsFlyer` | 纯协议补注册不是按 HAR 串行：事件/日志走独立线程，云端身份是后续包前置条件；跟真机接近靠扣核心 SDK，上量失败多半是风控认知而不是签名 |
 | [sdk-purecalc-compilation.md](./mobile-app-reverse/sdk-purecalc-compilation.md) | hnair-dingxiang-risktoken / xiaoxingkong-shumei-dpv4 / tencent-qimei-pure / jincai-pingxiang-wtoken | `DXRisk`, `riskToken`, `数美`, `deviceprofile/v4`, `Qimei`, `snowflake`, `wtoken`, `XXTEA`, `纯协议` | storage SDK 落盘提炼：顶象签发请求、数美 v4 封装、腾讯 Qimei REGISTER、今彩萍乡 wtoken；不含密钥、画像原值和可直接打生产的脚本 |
 | [softard-android-reverse-compilation.md](./mobile-app-reverse/softard-android-reverse-compilation.md) | — (公众号归档) | `Android权限`, `ELF`, `ART`, `Smali`, `OLLVM`, `IDA`, `UnCrackable`, `DEX string_ids` | Softard 13 篇：权限模型、ELF/SO、ART、Smali patch、OLLVM 与 IDA 追 native 算法；不含订阅/会员推广 |
@@ -110,6 +112,7 @@
 | [jsvmp-variant-failure-lineage.md](./web-reverse/jsvmp-variant-failure-lineage.md) | — (null119 会话静态提炼) | `JSVMP`, `动态版本`, `key builder`, `失败谱系`, `重试`, `兼容性` | 提取器漏覆盖槽位后异常转为可重试，不等于支持了失败变体；按资源版本保存反例与覆盖 |
 | [wasm-js-fallback-version-parity.md](./web-reverse/wasm-js-fallback-version-parity.md) | — (null119 会话静态提炼) | `WASM`, `JS fallback`, `版本绑定`, `编码`, `parity`, `wrapper` | 区分旧 JS、新 fallback 与 WASM 资源身份，从输入字节找首处分叉，不将同名导出当通用算法 |
 | [request-signing-vs-cookie-maintenance.md](./web-reverse/request-signing-vs-cookie-maintenance.md) | — (null119 会话静态提炼) | `signer`, `GET`, `Cookie 维护`, `调用面`, `业务码`, `单因子实验` | 同一 SDK 的 GET 签名与 Cookie 维护输入不同；保留会话纠偏链，HTTP 200 与本地出值不能替代业务读回 |
+| [perimeterx-human-reference-evidence-boundary.md](./web-reverse/perimeterx-human-reference-evidence-boundary.md) | — (GitHub 参考仓静态提炼) | `PerimeterX`, `HUMAN`, `证据边界`, `版本锁定`, `参考仓`, `_px3` | 对照 2026-08-04 参考仓的目录、许可证和自称差异；生成器与 SDK 快照留在 storage，不升为当前服务端接受 |
 | [51job-webpack-analysis.md](./web-reverse/51job-webpack-analysis.md) | 51job-web-reverse | `Webpack 4`, `Vue 2.7`, `模块自吐`, `加密定位`, `sign`, `AES`, `SM4`, `国密`, `webpackJsonp` | 51job Webpack 模块自吐分析：1634 个 factory 模块识别、加密/签名模块定位、Vue 组件反编译、chunk 加载机制 |
 | [anti-crawler-web-reverse-compilation.md](./web-reverse/anti-crawler-web-reverse-compilation.md) | — (公众号归档) | `Akamai`, `JSVMP`, `Babel AST`, `控制流平坦化`, `Chrome DevTools`, `Hook`, `反Hook` | Akamai 参数、JSVMP、AST 反混淆与 Chrome DevTools 调试对抗的 16 篇实战合集 |
 | [benru-web-reverse-compilation.md](./web-reverse/benru-web-reverse-compilation.md) | — (公众号归档) | `WBI签名`, `AST`, `JS混淆`, `Node补环境`, `mitmproxy`, `动态参数`, `Webpack RPC`, `Python还原` | 本如笔记 12 篇 Web 逆向与协议恢复实战，从参数定位、反混淆和补环境延伸到 RPC 与 Python 复现 |
@@ -266,6 +269,7 @@
 - **Akamai JA3/JA4/HTTP2 指纹**: [yuanrenxue-anti](./anti-detection/yuanrenxue-anti-detection-compilation.md)
 
 ### 反检测/对抗
+- **51job 风控候选面 / 来源自述与当前验证分离**: [51job-risk-reference](./anti-detection/51job-risk-control-reference.md)
 - **WAF 绕过**: [51job-anti-detection](./anti-detection/51job-anti-detection-analysis.md)
 - **设备指纹**: [51job-anti-detection](./anti-detection/51job-anti-detection-analysis.md), [pure-protocol-sdk](./mobile-app-reverse/pure-protocol-sdk-reconstruction.md), [protocol-register-order](./mobile-app-reverse/protocol-register-packet-order.md), [ace-deviceuniqueid](./anti-detection/android-ace-deviceuniqueid.md), [xfq-device-fp](./anti-detection/xfq-device-fp-compilation.md), [fp-consistency](./anti-detection/device-fingerprint-consistency-modeling.md), [shuzilm-libdu](./anti-detection/shuzilm-libdu-fingerprint.md), [reversenotes-android](./mobile-app-reverse/reversenotes-android-compilation.md), [sdk-purecalc](./mobile-app-reverse/sdk-purecalc-compilation.md), [protocol-admission](./mobile-app-reverse/protocol-admission-four-gates.md), [xianyu-eeid](./anti-detection/xianyu-eeid-risk-control.md)
 - **阿里 SecurityGuard EEID（Mini/ET 探针 / SGEXT / SG 文件 mtime / UTDID / sgcookie）**: [xianyu-eeid](./anti-detection/xianyu-eeid-risk-control.md)
@@ -345,7 +349,7 @@
 - **浏览器采集器稳定性（ruyipage/Firefox 崩溃/OOM）**: [browser-collector-stability](./collection-engineering/browser-collector-stability.md)
 - **Clash Verge Rev / Mihomo**: [mihomo-dialer-proxy](./collection-engineering/mihomo-dialer-proxy-chain.md)
 - **Akamai**: [anti-crawler-web](./web-reverse/anti-crawler-web-reverse-compilation.md), [products](./web-reverse/products.md)
-- **DataDome / Kasada / PerimeterX / F5 Shape / reese84 / Cloudflare 5s**: [products](./web-reverse/products.md), [datadome-env-patch](./web-reverse/datadome-env-patch.md), [cloudflare-5s-v2](./web-reverse/cloudflare-5s-v2-fo-pipeline.md)
+- **DataDome / Kasada / PerimeterX / F5 Shape / reese84 / Cloudflare 5s**: [products](./web-reverse/products.md), [px-reference](./web-reverse/perimeterx-human-reference-evidence-boundary.md), [datadome-env-patch](./web-reverse/datadome-env-patch.md), [cloudflare-5s-v2](./web-reverse/cloudflare-5s-v2-fo-pipeline.md)
 - **Kimi / 字节 volces applog**: [kimi-ttencrypt](./mobile-app-reverse/kimi-device-register-ttencrypt.md)
 - **TikTok / ByteDance musically / TTNet / metasec**: [protocol-admission](./mobile-app-reverse/protocol-admission-four-gates.md), [tiktok-planes](./web-reverse/tiktok-web-signing-planes.md), [tiktok-frontier](./web-reverse/tiktok-frontier-ticket-shop-case.md), [tiktok-xbogus-env](./web-reverse/tiktok-xbogus-xgnarly-mstoken-env-patch.md)
 - **抖音 Web 请求面 / webSign / 会话材料**: [douyin-planes](./web-reverse/douyin-web-request-planes.md), [douyin-secsdk](./web-reverse/douyin-secsdk-websign-case.md), [douyin-session](./web-reverse/douyin-session-materials-case.md), [products](./web-reverse/products.md)
@@ -390,10 +394,12 @@
 - **CloakBrowser / CloakHQ humanize**: [cloakbrowser-humanize](./anti-detection/cloakbrowser-humanize-trajectory.md)
 
 ### 工具/方法
+- **App 准入诊断流程 / S1–S8 / F1–F3 / 四门 AND 验收**: [protocol-admission-procedure](./mobile-app-reverse/protocol-admission-procedure.md)
 - **Windows VMProtect / OEP / IAT / 局部语义证据**: [windows-vmp](./packing-bypass/windows-vmp-local-recovery-evidence.md)
 - **JSVMP 动态版本 / key builder / 重试与修复分离**: [jsvmp-variant](./web-reverse/jsvmp-variant-failure-lineage.md)
 - **WASM / JS fallback 版本绑定与输入 parity**: [wasm-fallback](./web-reverse/wasm-js-fallback-version-parity.md)
 - **signer 调用面 / GET 与 Cookie 维护 / 单因子纠偏**: [signer-planes](./web-reverse/request-signing-vs-cookie-maintenance.md)
+- **PerimeterX 参考仓 / 证据边界 / 版本窗口**: [px-reference](./web-reverse/perimeterx-human-reference-evidence-boundary.md)
 - **Webpack 模块自吐**: [51job-webpack](./web-reverse/51job-webpack-analysis.md)
 - **抓包+逐字节匹配**: [mmtls](./protocols/mmtls-protocol-analysis.md)
 - **IDA Pro 静态分析**: [qidian-so](./native-analysis/qidian-so-analysis.md), [jiagu-bypass](./packing-bypass/jiagu-bypass-analysis.md), [ace-deviceuniqueid](./anti-detection/android-ace-deviceuniqueid.md), [hangban-laes](./signature-algorithms/hangban-laes-encrypt.md), [softard-android](./mobile-app-reverse/softard-android-reverse-compilation.md)

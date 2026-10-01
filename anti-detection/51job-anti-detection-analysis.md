@@ -1,9 +1,43 @@
+---
+schema_version: 2
+id: anti-detection-51job-anti-detection-analysis
+document_type: archive
+scope:
+  targets:
+  - 51job
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: '`本地项目分析材料（定位不公开）`'
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags:
+- 阿里ACW WAF
+- 飞林FeiLin
+- 神策SensorsData
+- Function.toString
+- debugger绕过
+- WebDriver检测
+- CDP检测
+- hook检测
+- 反检测对抗矩阵
+original_date: '2026-07-05'
+archived_date: '2026-07-05'
+---
+
 # 51job 风控检测面分析 & bypass 对抗设计
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/51job-web-reverse`
 > 原始发布时间: 2026-07-05
 > 归档日期: 2026-07-05
 > 分类: anti-detection
+</details>
 >
 > 面向 51job 三层风控检测面，整理可验证的检测向量、现有脚本缺口与逐项对抗设计。
 

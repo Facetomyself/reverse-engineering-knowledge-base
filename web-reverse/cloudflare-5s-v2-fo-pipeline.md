@@ -1,9 +1,43 @@
+---
+schema_version: 2
+id: web-reverse-cloudflare-5s-v2-fo-pipeline
+document_type: archive
+scope:
+  targets:
+  - cloudflare
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: Firefox 151 ruyitrace 整理（早期两次 `/fo` 基线 + 近期四份成功样本）
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags:
+- Cloudflare 5s
+- /fo
+- _cf_chl_opt
+- cf_clearance
+- Turnstile
+- form.submit
+- orchestrate
+- Blob Worker
+- document.all
+original_date: 2026-07
+archived_date: '2026-09-26'
+---
+
 # Cloudflare 5s v2：/fo 与 form.submit 补环境
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: Firefox 151 ruyitrace 整理（早期两次 `/fo` 基线 + 近期四份成功样本）
 > 原始日期: 2026-07
 > 归档日期: 2026-09-26
 > 分类: web-reverse
+</details>
 >
 > Cloudflare managed challenge（`cFPWv=g`，`cType=managed`）的补环境边界：Python 是唯一真实 HTTP 层，Node 执行本轮 fresh orchestrate，自然生成 `/fo` body，并在主站 accepted 响应回灌后自己创建 form 与 3 个 hidden。`cf_clearance` 和 `location.reload()` 都不是完成。样本业务页是 `cn.airbusan.com` 的航班查询 POST；字段值、三元组和 onload 名每轮变化，下文只保留形态。
 

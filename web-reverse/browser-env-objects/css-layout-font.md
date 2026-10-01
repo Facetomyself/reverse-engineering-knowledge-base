@@ -1,9 +1,42 @@
+---
+schema_version: 2
+id: web-reverse-browser-env-objects-css-layout-font
+document_type: reference
+scope:
+  targets:
+  - css
+  - layout
+  - font
+  client: web
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: JS终结计划课程方法论（clean-room 重写）
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+tags: []
+original_date: 多篇合集
+archived_date: '2026-08-11'
+modules:
+- name: risk-control
+  anchor: 检测面
+  sources:
+  - s1
+  basis: source-report
+  limits: 仅保留来源陈述；出处为文本 citation，缺少可定位公开原文，本轮未重验算法、运行时或当前服务端。 仅通用 Web 宿主对象检测/语义面，不是任一站点的真实环境值。
+---
+
 # CSS / Layout / Font 对象参考
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: JS终结计划课程方法论（clean-room 重写）
 > 原始发布时间: 多篇合集
 > 归档日期: 2026-08-11
 > 分类: web-reverse
+</details>
 
 CSS、layout 和 font 内容由元素样式状态、computed style、字体加载状态、viewport、DOM 树和测量方法共同产生，不只是若干宽高数字。
 

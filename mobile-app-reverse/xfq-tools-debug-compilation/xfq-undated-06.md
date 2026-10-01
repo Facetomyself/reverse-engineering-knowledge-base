@@ -1,9 +1,34 @@
+---
+schema_version: 2
+id: mobile-app-reverse-xfq-tools-debug-compilation-xfq-undated-06
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 知识星球：逆向学习交流
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags: []
+original_date: 未知
+archived_date: '2026-09-04'
+---
+
 # 函数花指令.js
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 知识星球：逆向学习交流
 > 原始发布时间: 未知
 > 归档日期: 2026-09-04
 > 分类: mobile-app-reverse
+</details>
 >
 > const parser = require("@babel/parser"); const traverse = require("@babel/traverse").default; const types = require("@babel/types"); const generator = require("@babel/generator").default; let jscode = ''; // // 1 fix // 
 

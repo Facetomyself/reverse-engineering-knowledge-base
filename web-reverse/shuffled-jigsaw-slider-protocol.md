@@ -1,10 +1,45 @@
+---
+schema_version: 2
+id: web-reverse-shuffled-jigsaw-slider-protocol
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: https://mp.weixin.qq.com/s/87CALi3iH5f54t7pZR7xVw
+  basis: source-report
+source_completeness: unknown
+tags:
+- 拼图滑块
+- loc 乱序
+- JSONP
+- capTicket
+- AES-128-CBC
+- length+9
+- op 轨迹
+- 错误码分流
+- 纯协议
+original_date: '2026-09-05'
+archived_date: '2026-09-26'
+---
+
 # 拼图打乱重排型滑块纯协议：loc 重排、length+9 与错误码分流
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 微信公众号：让bug飞一会儿（[原文](https://mp.weixin.qq.com/s/87CALi3iH5f54t7pZR7xVw)）
+</details>
 > 作者: nolhc
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 原始发布时间: 2026-09-05
 > 归档日期: 2026-09-26
 > 分类: web-reverse
+</details>
 >
 > 某充值中心查询页的拼图滑块走 4 段 JSONP GET（captchasInit → key → info → validate）加 1 个业务 POST，全程不用浏览器拖动。背景被切成 13px 竖条并按 `loc`（40 个 tile 编号）打乱，必须先重排成 260×120 显示画布再做缺口检测；`length = 显示坐标缺口 + 9`；轨迹 `op` 与 `validData` 为 AES-128-CBC/PKCS7，key=iv 从 capTicket 固定位置抽取。真实 `op` 是页面绝对坐标、无 mouseup、约 110ms 节流、取整；错误码 -1 换位置、105 同位置换轨迹、111/112 换题；凹槽检测与模板匹配按分差择一；拟人轨迹交给 slider-track-gen skill 再做适配层转换。
 

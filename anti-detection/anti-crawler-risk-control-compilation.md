@@ -1,9 +1,41 @@
+---
+schema_version: 2
+id: anti-detection-anti-crawler-risk-control-compilation
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: 微信公众号：反爬破解社
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags:
+- 浏览器指纹
+- 验证码
+- 行为风控
+- TLS指纹
+- HTTP/2指纹
+- 代理检测
+- 注册环境
+original_date: 多篇合集
+archived_date: '2026-07-13'
+---
+
 # 反爬破解社风控与反检测合集
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 微信公众号：反爬破解社
 > 原始发布时间: 多篇合集
 > 归档日期: 2026-07-13
 > 分类: anti-detection
+</details>
 >
 > 覆盖浏览器与网络指纹、验证码、行为模型、注册环境和综合风控对抗的系列资料。
 

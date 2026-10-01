@@ -1,9 +1,40 @@
+---
+schema_version: 2
+id: web-reverse-wasm-js-fallback-version-parity
+document_type: archive
+scope:
+  targets:
+  - unknown
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: null119 提供的 `decode__1174` 测试会话导出；仅保留版本错配与输入编码的通用分析方法。
+  reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
+source_completeness: unknown
+tags:
+- WASM
+- JS fallback
+- 版本绑定
+- 编码
+- parity
+- wrapper
+original_date: 2026-06-22（导出文件标注）
+archived_date: '2026-09-27'
+---
+
 # WASM 与 JS fallback：先绑定版本，再谈算法一致
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: null119 提供的 `decode__1174` 测试会话导出；仅保留版本错配与输入编码的通用分析方法。
 > 原始发布时间: 2026-06-22（导出文件标注）
 > 归档日期: 2026-09-27
 > 分类: web-reverse
+</details>
 >
 > 同一前端里同时出现 WASM、旧 JS fallback 和新 fallback bundle，不表示三者实现同一输入合同。先绑定实际加载的模块与资源版本，再比较入口、序列化和输出；不能拿任意一条同名函数替代当前浏览器路径。
 

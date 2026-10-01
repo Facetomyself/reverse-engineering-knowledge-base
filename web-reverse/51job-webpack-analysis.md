@@ -1,9 +1,43 @@
+---
+schema_version: 2
+id: web-reverse-51job-webpack-analysis
+document_type: archive
+scope:
+  targets:
+  - 51job
+  client: unknown
+  version: unknown
+  observed_at: unknown
+sources:
+- id: s1
+  ref: null
+  basis: source-report
+  citation: '`本地项目分析材料（定位不公开）`'
+  reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+source_completeness: unknown
+tags:
+- Webpack 4
+- Vue 2.7
+- 模块自吐
+- 加密定位
+- sign
+- AES
+- SM4
+- 国密
+- webpackJsonp
+original_date: '2026-07-03'
+archived_date: '2026-07-05'
+---
+
 # 51job Webpack 模块自吐分析
 
+<details data-kb-history="legacy-metadata">
+<summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: `workspace/51job-web-reverse`
 > 原始发布时间: 2026-07-03
 > 归档日期: 2026-07-05
 > 分类: web-reverse
+</details>
 >
 > 通过 Webpack factory 模块自吐定位 51job 的框架、业务模块、请求链和加密候选。
 
