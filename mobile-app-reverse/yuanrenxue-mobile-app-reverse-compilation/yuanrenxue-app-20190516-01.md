@@ -128,3 +128,8 @@ https://maimai.cn/contact/share/card?u=2k6qxxxxxxxx。有了这个无需登录�
 ![](https://mmbiz.qpic.cn/mmbiz_png/GrTTsqWuEcc7Za1a7QsXkVtF1M39yqf1D4fkPlVCNZgq8y9y5988NFqZ7wEhQMian6W795zMbkdib6TtUIsnPb8Q/640?wx_fmt=png)
 
 长按扫码关注
+
+## 提炼说明（541）
+archive_only。
+脉脉分享链免登录抓取策略；远程图未审，含 token URL 形态。不提炼采集 procedure。
+本轮不另建卡。

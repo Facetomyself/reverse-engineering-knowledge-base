@@ -79,3 +79,10 @@ profile 还可能携带 `prefix`、`compression`、`inner_variant` 和 `timestam
 4. 单独验证动作间状态变化、会话字段完整性与业务读回。
 
 上述顺序是移植验收建议，不是本轮执行结果。本轮仅静态阅读 [XApis @ 3fe6ea7d](https://github.com/cv-cat/XApis/tree/3fe6ea7d)，没有加载 DLL、运行 Node 或访问线上目标。整体请求装配见 [X GraphQL 与会话分层](./x-twitter-graphql-case.md)。
+
+<a id="reference-extraction-202"></a>
+## 提炼说明
+
+本来源保留为完整 archive。按本批全文审查，将 `generate` / `generate_pure` 分流、画像封装元信息、native `deflate-raw` fail-closed 与四层对照，提炼为 [Castle 画像压缩字节 parity 参考](./castle-profile-compression-parity-reference.md)。
+
+X GraphQL 会话卡只覆盖登录后的请求装配。该 reference 只标记 `source-report`；未加载 DLL、未运行 Node 或目标服务，不收录向量、Cookie、storage、盐或封装常量，不表示当前 runtime、parity 或 server acceptance。

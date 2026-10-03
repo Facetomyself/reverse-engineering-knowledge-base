@@ -75,3 +75,7 @@ fetch、XHR、Request、Response、Headers、URLSearchParams、FormData、Blob/F
 - XHR readyState 变化序列与事件回调顺序按证据实现。
 - URLSearchParams / FormData 保留顺序与重复 key，toString 不重排。
 - body used 与 clone 状态独立维护，重复消费按证据处理。
+
+## 提炼说明（640）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

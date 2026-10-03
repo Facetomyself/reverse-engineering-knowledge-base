@@ -140,3 +140,7 @@ ninja -C out/Default chrome
 ```
 
 > 注意：编译较慢。
+
+## 提炼说明（259）
+archive-only。closed Shadow DOM 强开不是指纹 reference。不另建卡。
+不收录 IDL/补丁。远程图未审。源码片段自相矛盾处保留在 archive。

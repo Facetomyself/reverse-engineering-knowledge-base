@@ -308,3 +308,7 @@ fp 是自定义 base64 链，载荷含 `v/fp/u/h/ec` 等。环境向量可以降
 | 未覆盖 | 智能无感、点选、短信、acToken/watchman 强制路径、站点二次校验差异 |
 
 换站点时只替换 `id`（captchaId）和 `referer`。算法表仍按该站实际 SDK 版本重新对 fixture，不要把 trial 的 captchaId 写进其它站。
+
+## 提炼说明（691）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

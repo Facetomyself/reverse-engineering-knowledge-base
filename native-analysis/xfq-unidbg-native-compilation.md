@@ -59,3 +59,17 @@ archived_date: '2026-09-04'
 | — | [04-追doCommandNative参数](xfq-unidbg-native-compilation/xfq-undated-01.md) |
 | — | [HashFinder.java](xfq-unidbg-native-compilation/xfq-undated-02.md) |
 | — | [rand-srand](xfq-unidbg-native-compilation/xfq-undated-03.md) |
+
+## 提炼说明（571）
+archive_only。
+Unidbg/Native 合集 TOC 枢纽；子文本轮逐篇处置。
+本轮不另建卡。
+
+## 同目录窄参考
+
+本段只挂同目录提炼卡。
+
+- [kiro 跑 unidbg 时，执行入口和改代码分开](xfq-unidbg-native-compilation/xfq-20251205-01-reference.md)
+- [DynarmicFactory 断点回调缺失时的无限调试器](xfq-unidbg-native-compilation/xfq-20251218-01-reference.md)
+- [xfqtrace 的两条 gadget 连接，以及作者为什么仍推荐 xfinject](xfq-unidbg-native-compilation/xfq-20260710-01-reference.md)
+- [libkwsgmain.so：doCommandNative 的加载钩子与参数打印](xfq-unidbg-native-compilation/xfq-undated-01-reference.md)

@@ -41,6 +41,7 @@ archived_date: '2026-09-23'
 
 对照仓把这些链拆成不同模块。`a_bogus` 通过不能解释 TicketGuard 失败，直播长连的 `signature` 也不是主站 `a_bogus`。产品命中见 [抖音 a_bogus](./products/douyin-a-bogus.md) 与 [Ticket Guard](./products/douyin-ticket-guard.md)。落地选型见 [平台签名落地方法](./sign-landing-methods.md)。
 
+<a id="request-plane-matrix"></a>
 ## 链怎么切开
 
 | 链 | 代码入口 | 产出 | 不负责 |
@@ -163,3 +164,11 @@ assemble(plane, path, biz, auth, body):
 - 行号与分支来自本地 `DouYin_Spider` 源码，不是重新打线上的验收。
 - `version_code`、`(aid, page_id)`、策略 path 表都是抓包窗口常量，换 SDK 要重核。
 - 本篇不收录 `a_bogus` 字母表、RC4 键、secsdk 盐、设备画像原值和 Cookie。
+
+## 关联提炼
+
+- [抖音 Web 请求面矩阵参考](./douyin-request-plane-matrix-reference.md#interfaces)：仅提取 detail、comment、live commerce、creator publish 与 WebSocket 的接口面、参数边界和装配差异；保留来源报告限制，不含运行时、服务端验收或敏感样值。
+
+## 提炼说明（733）
+retain_existing_reference。既有卡 web-reverse/douyin-request-plane-matrix-reference.md。
+本轮不另建卡。不复制 Cookie/token/指纹原值。未审图片不作证据。

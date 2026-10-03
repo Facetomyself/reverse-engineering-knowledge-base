@@ -1,11 +1,11 @@
 ---
 schema_version: 2
 id: mobile-app-reverse-sdk-purecalc-compilation-tencent-qimei-register
-document_type: archive
+document_type: reference
 scope:
   targets:
-  - unknown
-  client: unknown
+  - Tencent Qimei REGISTER / risk-token issuance
+  client: Android app
   version: unknown
   observed_at: unknown
 sources:
@@ -15,7 +15,23 @@ sources:
   citation: 本地项目分析材料（定位不公开）
   reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
 source_completeness: unknown
-tags: []
+modules:
+- name: request-chain
+  anchor: qimei-register-chain
+  sources: [s1]
+  basis: source-report
+  limits: 请求形状来自来源报告；设备字段、密钥和完整 protobuf/JCE schema 未公开。
+- name: parameters
+  anchor: qimei-outer-crypto
+  sources: [s1]
+  basis: source-report
+  limits: 只保留字段关系和算法形状，不含 appKey、证书、静态 AES 或 RSA 公钥。
+- name: validation
+  anchor: qimei-acceptance-gate
+  sources: [s1]
+  basis: source-report
+  limits: 外层 JSON 生成不等于 serverAccepted；本轮未做网络或服务端读回。
+tags: [qimei, register, route15, server-acceptance]
 original_date: 2026-08-10 源码
 archived_date: '2026-09-06'
 ---
@@ -32,6 +48,7 @@ archived_date: '2026-09-06'
 >
 > 应用宝风控设备标识的纯协议 REGISTER。无 JAR、无 Frida、无执行 so。不收录 appKey、静态 AES、RSA 公钥、identity 和 zip 口令。
 
+<a id="qimei-register-chain"></a>
 ## 流程
 
 ```text
@@ -45,6 +62,7 @@ archived_date: '2026-09-06'
 
 离线 `demo.py` 只证明能生成外层 JSON。`serverAccepted` 必须来自 snowflake 业务 readback。
 
+<a id="qimei-outer-crypto"></a>
 ## 外层加密（形状）
 
 | 字段 | 作用 |
@@ -57,6 +75,7 @@ archived_date: '2026-09-06'
 
 `f7`：`canonical = f5||os||app_key||sdk||app_version`，偶数字节/奇数字节分两路 digest，再按 `second[first[i] & 0x1F]` 抽成 hex。salt 不进本文。
 
+<a id="qimei-acceptance-gate"></a>
 ## JCE 边界
 
 `mayyb.py` 只把 qimei36 token 编成 JCE（external id 17/19）。不含应用宝 AUTH/SEARCH 传输层。
@@ -68,3 +87,12 @@ archived_date: '2026-09-06'
 - 换包先换 appKey / 证书材料，不要抄静态 AES
 - `identity.json` 含 qimei/android_id/IMEI，只留 workspace
 - 实现：`workspace/tencent-qimei-pure/source/`
+
+## 验收边界
+
+离线 demo 只证明外层 JSON 可以生成；`serverAccepted` 必须有 snowflake 业务 readback。JCE 编码支持也不包含应用宝 AUTH/SEARCH 传输层。本条是来源给出的门槛，本轮未发送请求或验证服务端。
+
+## 提炼说明（457）
+retain 既有 Qimei REGISTER 请求链 reference。
+离线 demo 不是 snowflake readback。
+本轮不另建卡。

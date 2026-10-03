@@ -116,3 +116,7 @@ bundle-press / blocked-page-press / xhr-press：
 - 验收间隔：单 IP 每次运行至少间隔 10-30 秒；高信任目标每个 cookie 尽量换干净 IP
 - 4-way trust 矩阵定位签发后仍 block：真浏览器 cookie+真浏览器请求 / 真 cookie+脚本请求 / 本地 cookie+真浏览器请求 / 本地 cookie+脚本请求
 - 不保存 live _px3、raw payload、raw ob、账号、代理、OTP、OAuth 一次性值，只保存 hash、命令形状、profile 与验收结论
+
+## 提炼说明（694）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

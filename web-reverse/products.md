@@ -136,3 +136,7 @@ modules:
 - 验证码 / challenge 子链属于 `web-challenge` 的路由面；签名 / 加密参数属于 `web-reverse` → `web-env-patcher` / `protocol-recovery` 路由面。
 - 产品文档描述的补环境对象（iframe、Worker、MessagePort、canvas 等）参考 [browser-env-objects](./browser-env-objects.md)。
 - 签名落地选型（纯算 / 隔离黑盒 / execjs 整包 / 设备 RPC）参考 [平台签名落地方法](./sign-landing-methods.md)。App `x-sign` 默认参考 [InnerSignImpl RPC](../mobile-app-reverse/mtop-innersign-rpc.md)；`SG 70102` 会话画像齐了再看 [四头纯算](../signature-algorithms/alibaba-mtop-four-headers.md)。
+
+## 提炼说明（700）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

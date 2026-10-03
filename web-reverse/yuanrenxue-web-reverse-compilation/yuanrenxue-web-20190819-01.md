@@ -102,3 +102,7 @@ Stack”发现它好像陷入了一个函数的递归调用。这个“debugger�
 **快来跟我交流爬虫技术，这个月的技术直播分享又要来了。（交流使人愉快）**
 
 ![](https://mmbiz.qpic.cn/mmbiz_png/GrTTsqWuEceYsrOvOkOLKXBO0JWPyluJkdXaAqa0YZH15ZH5p45bKEtLQ2qUKbfBeSPl1Wiboich4pw8A9tDYmHA/640?wx_fmt=png)
+
+## 提炼说明（709）
+archive_only。猿人学 Web 教学合集，不另建产品卡。
+本轮不另建卡。

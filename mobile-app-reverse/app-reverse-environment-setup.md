@@ -1,11 +1,11 @@
 ---
 schema_version: 2
 id: mobile-app-reverse-app-reverse-environment-setup
-document_type: archive
+document_type: reference
 scope:
   targets:
-  - unknown
-  client: unknown
+  - Android reverse-engineering environment
+  client: Android app reverse engineering
   version: unknown
   observed_at: unknown
 sources:
@@ -15,6 +15,17 @@ sources:
   citation: 微信公众号：反爬破解社（爬虫任）「App 逆向」系列第2章（PDF 归档 + 公众号正文）
   reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
 source_completeness: unknown
+modules:
+- name: decision-flow
+  anchor: environment-device-choice
+  sources: [s1]
+  basis: source-report
+  limits: 设备选择和 Root 分流来自来源教程；目标 App、版本和设备兼容性未在本轮验证。
+- name: validation
+  anchor: certificate-proxy-validation
+  sources: [s1]
+  basis: source-report
+  limits: 浏览器读回只是基础抓包线索，不覆盖 pinning、mTLS 或目标 App 行为。
 tags:
 - App逆向环境
 - Android
@@ -48,6 +59,7 @@ archived_date: '2026-07-07'
 
 本文最初由公众号 PDF 归档整理（2026-07-07），同一篇文章的公众号正文「第2章：环境搭建——工欲善其事必先利其器」（2026-07-06 发布，2026-07-13 归档于反爬破解社 App 逆向章节合集）是重复副本，2026-09-26 合并去重后只保留本文。两份内容逐段对照一致；公众号版多出的操作细节（JustTrustMe 以 APK 拖入模拟器安装、解锁 BL 步骤因品牌而异）已补入下文，其余差异只是标点、排版和措辞。[反爬破解社 App 逆向章节合集](./anti-crawler-app-reverse-series.md) 的第2章条目现指向本文。
 
+<a id="environment-device-choice"></a>
 ## 模拟器 vs 真机
 
 环境搭建是所有逆向工作的起点，也是劝退最多人的地方。很多人花了一整天装模拟器、配代理、装证书，结果打开 Charles 只看到 CONNECT 请求，一个正常数据包都没有。
@@ -204,6 +216,7 @@ fastboot flash boot magisk_patched.img
 - adb：Android 调试桥，用于安装应用、推送文件、截屏等，必须安装
 - Burp Suite：专业 Web 代理，比 Charles 更适合分析复杂协议，例如 WebSocket、自定义 TCP，可选但推荐
 
+<a id="certificate-proxy-validation"></a>
 ## 证书安装与代理配置
 
 模拟器和真机的流程基本一致，区别主要在证书存放位置。

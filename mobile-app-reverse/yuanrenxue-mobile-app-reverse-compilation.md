@@ -65,3 +65,23 @@ archived_date: '2026-07-16'
 | 2020-09-30 | [APP 中的 JS 加密逆向解析](yuanrenxue-mobile-app-reverse-compilation/yuanrenxue-app-20200930-01.md) |
 | 2026-03-24 | [使用 AI 实现最新版本 Flutter HTTPS 明文抓包](yuanrenxue-mobile-app-reverse-compilation/yuanrenxue-app-20260324-01.md) |
 | 2026-05-29 | [AI 逆向实战：Flutter + Swift 混合型 App 的 Jailbreak 检测分析与绕过](yuanrenxue-mobile-app-reverse-compilation/yuanrenxue-app-20260529-01.md) |
+
+## 提炼说明（556）
+archive_only。
+猿人学移动 App 合集 TOC 枢纽；17 篇子文已逐篇处置。
+本轮不另建卡。
+
+## 同目录窄参考
+
+本段只挂同目录提炼卡。
+
+- [脉脉分享路径与免登录名片路径](yuanrenxue-mobile-app-reverse-compilation/yuanrenxue-app-20190516-01-reference.md)
+- [不还原算法时的 getAS 调用边界](yuanrenxue-mobile-app-reverse-compilation/yuanrenxue-app-20191113-01-reference.md)
+- [Android 7 抓包分支](yuanrenxue-mobile-app-reverse-compilation/yuanrenxue-app-20200409-01-procedure.md)
+- [com.lawyee 查询请求的 base64 体和 3DES 响应](yuanrenxue-mobile-app-reverse-compilation/yuanrenxue-app-20200507-01-reference.md)
+- [某汽车 iOS：sign 与 _r 的函数链](yuanrenxue-mobile-app-reverse-compilation/yuanrenxue-app-20200602-01-reference.md)
+- [Cocos2dx-lua：luac 头里的 sign 和 so 里的 key](yuanrenxue-mobile-app-reverse-compilation/yuanrenxue-app-20200803-01-reference.md)
+- [未点名站点的登录链与字段](yuanrenxue-mobile-app-reverse-compilation/yuanrenxue-app-20200908-01-reference.md)
+- [App 登录加密落在 JS 而不是 Java 加密类](yuanrenxue-mobile-app-reverse-compilation/yuanrenxue-app-20200930-01-reference.md)
+- [libflutter.so 的文件偏移和两种落点](yuanrenxue-mobile-app-reverse-compilation/yuanrenxue-app-20260324-01-reference.md)
+- [ZDefend 越狱检测的消费层字段](yuanrenxue-mobile-app-reverse-compilation/yuanrenxue-app-20260529-01-reference.md)

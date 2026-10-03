@@ -93,3 +93,7 @@ GET g-acs.m.goofish.com/gw/{api}/{ver}/
 ```
 
 版本一变，overload 和 `ttid` 都要重适配。未知版本仍走实例 RPC，不把某次抓包的 `x-sign` 当纯算完成。SG 四头的 byte-exact 纯算另有会话画像前提，见 [阿里 SG 70102 四头](../signature-algorithms/alibaba-mtop-four-headers.md)。
+
+## 本轮提炼评估
+
+依据本文 `s1` 的来源报告，Android overload 类型、来源脚本类加载重试、两组 `HashMap` 职责及 null RPC 返回边界已补入[现有 InnerSignImpl reference](../mobile-app-reverse/mtop-innersign-rpc.md#innersign-rpc-overload)，不另建重复 Xianyu 文档。该补充仍为 `source-report`；底层 `XianyuAndroidApis` 材料不可定位，本轮未运行设备或服务端验收。

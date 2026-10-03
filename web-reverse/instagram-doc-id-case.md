@@ -76,3 +76,12 @@ page = GET /graphql/query/ ? doc_id=home_doc & variables={id, first, after}
 ## 证据边界
 
 正则依赖页面内嵌 JSON 的键名。Instagram 改用纯客户端渲染后，这份抽取会空。本库没有登录或请求 Instagram，也不收录 sessionid。
+
+<a id="extraction-reference"></a>
+## 深度提炼
+
+HTML 中的 `doc_id` / `app_id` 来源、profile-info 请求头映射与 timeline cursor 链路见[Instagram doc_id 请求链参考](./instagram-doc-id-reference.md)。Cookie/session 是来源中记录的请求输入；不能据此推断登录是必要条件。本文及参考均为 source-report，未做站点/runtime/parity/server 验证。
+
+## 提炼说明（736）
+retain_existing_reference。既有卡 web-reverse/instagram-doc-id-reference.md。
+本轮不另建卡。不复制 Cookie/token/指纹原值。未审图片不作证据。

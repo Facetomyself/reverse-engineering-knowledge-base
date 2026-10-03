@@ -70,3 +70,8 @@ while begin <= total:
 ## 证据边界
 
 `token`、`slave_sid` 一类 Cookie 不入库。`list_ex` 的字段名以当前后台为准；2026 年后台收紧后，同一 URL 可能改返回验证页，届时 `ret != 0` 仍是失败。本库没有请求 mp.weixin.qq.com。
+
+<a id="reference-extraction-217"></a>
+## 提炼说明
+
+本篇是公众号后台 CGI 的来源案例：searchbiz 到 appmsgpublish list_ex 的 token 透传、ret==0 与 HTTP 200 分流，以及公开 HTML 面不带 token。平面划分与失败翻译已由 [微信公众号五套会话](../protocols/wechat-mp-session-planes.md) 与 [HTTP 接口面](../protocols/wechat-mp-http-surface.md) 覆盖。本批 query --target wechat-official-account --type reference 命中上述两卡。不新增 reference。不收录 token/Cookie。

@@ -151,3 +151,8 @@ we.51job.com/api/job/search-pc
 window.__WP_REQUIRE__ = require;
 window.__WP_CACHE__ = require.c;  // 1310 个 loaded modules
 ```
+
+## 提炼说明（589）
+archive_only。
+Webpack 模块自吐列出 CryptoJS/Axios；签名函数未定位，链路为推测。
+本轮不另建卡。

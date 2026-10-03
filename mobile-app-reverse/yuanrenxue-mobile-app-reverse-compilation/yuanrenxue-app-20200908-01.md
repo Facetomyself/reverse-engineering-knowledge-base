@@ -141,3 +141,8 @@ PS：偶跟virjar出了个爬虫进阶课，包含JS/APP逆向抓取、安卓群
 
 [ 把爬虫高阶课又更新了
 ](http://mp.weixin.qq.com/s?__biz=MjM5NjE0NTY5OA==&mid=2448549536&idx=2&sn=fa53201a28ff10d8020587e75bf7f930&chksm=b2e8f9ed859f70fb4850a9598bc4ea182b62cb98d0acdafe8abadf646e87ad5ef9fa3a40caa2&scene=21#wechat_redirect)
+
+## 提炼说明（553）
+archive_only。
+某书登录与某数 202/200 cookie 长度笔记；远程图未审，缺完整算法。
+本轮不另建卡。

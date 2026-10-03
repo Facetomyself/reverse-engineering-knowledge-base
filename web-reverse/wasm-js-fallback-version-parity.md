@@ -75,3 +75,10 @@ WASM 指针/长度接口还应记录 memory 视图有效期、字符串编码、
 - 「业务读取成功」：需要当前运行时独立读回；不由离线 fixture 推导。
 
 内部算法恢复的另一类案例见 [WASM 解密分析资料](./wasm-decrypt-ai-one-prompt-recovery.md)。这里的新增重点是版本绑定和边界 parity，不是把某份 fallback 宣称为所有版本的通用替代。
+
+<a id="reference-extraction-105"></a>
+## 提炼说明
+
+本来源保留为完整 archive。按本轮全文审查，将资源身份表、实际分支 provenance、核心算法前的首处分叉比较，以及 WASM 指针/长度接口的 memory-view 生命周期边界提炼为[WASM 与 JS fallback 版本边界参考](./wasm-js-fallback-version-reference.md)。该 reference 只保留 `source-report` 检查项，不新增通用 validation/risk-control 卡或 procedure。
+
+scope 与 source completeness 仍为 `unknown`；本轮未加载 WASM、fallback bundle、loader trace 或浏览器运行时，也未做 fixture parity、当前请求或业务读回。文中的版本绑定不等于 WASM 与 fallback 等价，边界匹配不等于算法恢复，离线样本匹配也不等于服务端接受。

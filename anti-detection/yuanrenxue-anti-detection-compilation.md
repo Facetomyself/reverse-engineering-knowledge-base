@@ -57,3 +57,17 @@ archived_date: '2026-07-16'
 | 2019-06-20 | [大规模爬虫为什么要管理DNS缓存](yuanrenxue-anti-detection-compilation/yuanrenxue-anti-20190620-01.md) |
 | 2019-12-30 | [写网络爬虫程序的四种难度](yuanrenxue-anti-detection-compilation/yuanrenxue-anti-20191230-01.md) |
 | 2026-07-13 | [Akamai对抗的隐秘战线——TLS指纹](yuanrenxue-anti-detection-compilation/yuanrenxue-anti-20260713-01.md) |
+
+## 提炼说明（379）
+archive-only。合集 TOC 枢纽。
+子篇已逐篇处置。
+不把目录当模块。
+
+## 同目录窄参考
+
+本段只挂同目录提炼卡。
+
+- [Squid3 按本地地址选择出口](yuanrenxue-anti-detection-compilation/yuanrenxue-anti-20170407-01-reference.md)
+- [browsercookie 的三个加载入口](yuanrenxue-anti-detection-compilation/yuanrenxue-anti-20181001-01-reference.md)
+- [requests 文本解码把中文解乱的来源边界](yuanrenxue-anti-detection-compilation/yuanrenxue-anti-20190104-01-reference.md)
+- [Firefox NSS ClientHello 与 requests 出厂握手的字段边界](yuanrenxue-anti-detection-compilation/yuanrenxue-anti-20260713-01-reference.md)

@@ -224,3 +224,7 @@ ninja  -C  out/Default chrome
 *   …
 
 > 下节讲webRTC。
+
+## 提炼说明（241）
+archive-only。字体探测面见 js-browser-fingerprint 与 canvas-webgl（measureText）。源码随机 offsetWidth 补丁不另建卡。
+不收录字体列表、hash 样值或 Blink 补丁。

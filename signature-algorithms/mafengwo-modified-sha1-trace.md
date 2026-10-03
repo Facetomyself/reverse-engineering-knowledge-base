@@ -134,3 +134,9 @@ digest[3] = old_H3 + c
 3. HashFinder 的第一次 `0x80` 可能是证书或其他预哈希；用 bit 长度和 ASCII 明文交叉确认。
 4. 每次只改 IV、一段 `f/K` 或 feed-forward 中的一个点，用 first mismatch round 找分界。
 5. 80 轮都对齐但 digest 仍错，优先查最后 5 个 word 的对位，而不是回头改 W。
+<a id="reference-extraction-202"></a>
+## 提炼说明
+
+本来源保留为完整 archive。按本批全文审查，将 IV 与 feed-forward 分界、HashFinder 首次 0x80 误命中、f/K 错位分段和 H2/H3 对位，提炼为 [马蜂窝魔改 SHA-1 轮函数分段参考](./mafengwo-modified-sha1-reference.md)。
+
+xPreAuthencode hook 卡只覆盖 JNI/canonical；HashFinder 插件卡只覆盖通用 0x80 扫描。该 reference 只标记 source-report；练习输入与 digest 留在本文，未运行 unidbg/IDA，40 hex 不等于 serverAccepted。

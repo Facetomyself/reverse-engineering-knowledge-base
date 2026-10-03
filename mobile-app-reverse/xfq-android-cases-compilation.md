@@ -65,3 +65,22 @@ archived_date: '2026-09-04'
 | 2026-05-23 | [AppsFlyer androidevent PBKDF2+AES-CBC](xfq-android-cases-compilation/xfq-20260523-01.md) |
 | 2026-07-23 | [不同渠道apk/xapk/apks下载 汇总](xfq-android-cases-compilation/xfq-20260723-01.md) |
 | 2026-08-28 | [聊聊ks的白盒](xfq-android-cases-compilation/xfq-20260828-01.md) |
+
+## 提炼说明（493）
+TOC hub archive-only。
+子文已逐篇处置。
+本轮不另建合集卡。
+
+## 同目录窄参考
+
+本段只挂同目录提炼卡。
+
+- [陌陌 x-sign 第一参的 AES-CBC 形状](xfq-android-cases-compilation/momo-x-sign-aes-reference.md)
+- [BOSS直聘 13.160：sig 加盐 MD5 与 sp 的 LZ4、RC4、码表替换](xfq-android-cases-compilation/xfq-20250922-01-reference.md)
+- [cn.xla 短信头：nonce、did、ts 与 sign 截取](xfq-android-cases-compilation/xfq-20250923-01-reference.md)
+- [小黑盒 1.3.368：hkey 的路径 Base64、HMAC-SHA1 与 MixColumns 校验位](xfq-android-cases-compilation/xfq-20251023-01-reference.md)
+- [安居客 17.28.1 nsign 的四段与一位改写](xfq-android-cases-compilation/xfq-20251122-01-reference.md)
+- [最右 5.7.3 NetCrypto.sign 的形状](xfq-android-cases-compilation/xfq-20251206-01-reference.md)
+- [小猿口算 3.93.2 的五轮 MD5 顺序](xfq-android-cases-compilation/xfq-20251214-01-reference.md)
+- [南银法巴消金 7.4.4：native 密文入口和三段布局](xfq-android-cases-compilation/xfq-20260112-01-reference.md)
+- [快手 Android：48 字节白盒的两套用途](xfq-android-cases-compilation/xfq-20260828-01-reference.md)

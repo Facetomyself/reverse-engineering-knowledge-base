@@ -170,3 +170,7 @@ ua_data->SetUAFullVersion(String::FromUTF8(metadata.full_version));
 #### 四、感想
 
 *   当初想到搞指纹浏览器，就是想绕过akamai的指纹风控。。其实自定义指纹写到这里，最初的目标早就实现了。
+
+## 提炼说明（250）
+archive-only。GPU renderer 见 canvas-webgl；UA/版本见 js-browser-fingerprint。本篇种子伪造不另建卡。
+不收录伪造 GPU/UA 字符串。远程图未审。

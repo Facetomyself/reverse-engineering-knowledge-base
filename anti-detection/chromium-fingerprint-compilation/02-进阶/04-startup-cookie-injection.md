@@ -11,8 +11,9 @@ scope:
 sources:
 - id: s1
   ref: null
-  basis: unknown
-  reason: 已核实所属合集的收录关系，但合集来源说明不等于逐篇原文地址；逐篇公开来源指针未知。
+  basis: source-report
+  citation: Chromium 指纹浏览器编译系列中的“Chromium 启动参数注入 Cookie”条目
+  reason: 来源文章的技术内容仅按作者报告整理；合集来源说明不等于逐篇原文地址，逐篇公开来源指针未知。
 source_completeness: unknown
 tags: []
 ---
@@ -131,3 +132,12 @@ StoragePartitionImpl::GetCookieManagerForBrowserProcess() {
 
 > 可以看到，cookie写入成功了。
 
+<a id="reference-extraction-117"></a>
+## 提炼处置（review 117）
+
+本篇保留为来源 archive，并新增 [Chromium 启动 CookieManager 参考](../../chromium-startup-cookie-manager-reference.md)。提炼只记录 `StoragePartitionImpl` 获取 browser-process `CookieManager`、解析启动参数并调用 `SetCanonicalCookie` 的接口与请求链，不复制原文中的 Cookie 样值、域名或命令行示例。原文的 callback 结果、持久化回读、后续请求读回和服务端接受仍未闭合；末尾图片也未做视觉审查，不能把来源的“写入成功”升级为本轮验证。
+
+
+## 提炼说明（715）
+retain_existing_reference。既有卡 anti-detection/chromium-startup-cookie-manager-reference.md。
+本轮不另建卡。不复制 Cookie/token/指纹原值。未审图片不作证据。

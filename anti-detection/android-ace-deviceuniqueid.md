@@ -46,6 +46,10 @@ archived_date: '2026-09-03'
 
 它不是改机手册，也不讨论具体游戏业务。`deviceUniqueId` 原值、完整哈希、出口 IP、Cookie 不进知识库。原文实验里的 Wi-Fi MAC 已脱敏。
 
+<a id="deviceuniqueid-reference"></a>
+
+提炼参考：[ACE deviceUniqueId 取值与上报参考](./android-ace-deviceuniqueid-reference.md)。本锚点只覆盖 Widevine 到 TSS/UDP 的来源报告链路、三路径一致性和风控边界，不把单字段拉黑描述升级为已验证规则。
+
 相关地图：
 
 | 主题 | 文档 |
@@ -264,3 +268,7 @@ ACE 用单个 `deviceUniqueId` 做设备级拉黑，靠的不是「字段多」�
 | PIF 全绿但仍对不上设备 | 第 8 节：完整性 ≠ 身份 |
 | 上报包在哪一层发出 | 第 3.2 节：游戏回调 + `tss_sdk_encryptpacket` + UDP |
 | 和纯协议指纹生成是不是一回事 | 不是。那是应用层字段规则；这是 TEE 派生的硬件 ID |
+
+## 提炼说明（715）
+retain_existing_reference。既有卡 anti-detection/android-ace-deviceuniqueid-reference.md。
+本轮不另建卡。不复制 Cookie/token/指纹原值。未审图片不作证据。

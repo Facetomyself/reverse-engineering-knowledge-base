@@ -55,3 +55,16 @@ archived_date: '2026-09-04'
 | 2026-07-15 | [今天发现群里有人问怎么找设备指纹的一些信息,焚诀来了！](xfq-device-fp-compilation/xfq-20260715-01.md) |
 | 2026-08-09 | [推荐文章：设备指纹系列](xfq-device-fp-compilation/xfq-20260809-01.md) |
 | 2026-08-31 | [怎么用py纯协议写出跟真实sdk一样的设备注册/事件埋点，然后批量起来然后爬虫？](xfq-device-fp-compilation/xfq-20260831-01.md) |
+
+## 提炼说明（370）
+archive-only。合集 TOC 枢纽。
+子篇已逐篇处置。
+不把目录当模块。
+
+## 同目录窄参考
+
+本段只挂同目录提炼卡。
+
+- [NekoBox 链式代理的节点顺序](xfq-device-fp-compilation/xfq-20260325-01-reference.md)
+- [App 行为时间分布与弱伪随机的来源边界](xfq-device-fp-compilation/xfq-20260608-01-reference.md)
+- [云真机上自采设备指纹的来源边界](xfq-device-fp-compilation/xfq-20260715-01-reference.md)

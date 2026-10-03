@@ -186,3 +186,40 @@ L4: 行为层 — WebRTC IP / 无头特征 / matchMedia 一致性
 ## 关键词
 
 `Chromium编译`, `指纹浏览器`, `反检测`, `Canvas指纹`, `WebGL指纹`, `WebRTC`, `TLS指纹`, `JA3`, `JA4`, `CDP检测绕过`, `无头检测绕过`, `源码修改`, `BoringSSL`, `V8`, `Blink`
+
+## 提炼说明（268）
+archive-only。合集导航与能力矩阵。子篇已在 238–268 处置。
+不把目录表升级为独立指纹卡。
+
+## 同目录窄参考
+
+本段只挂同目录提炼卡。
+
+- [Chromium 指纹浏览器系列的最小构建参数](chromium-fingerprint-compilation/01-基础/01-chromium-compilation-guide-reference.md)
+- [Chromium Canvas 源码扰动落在哪些函数](chromium-fingerprint-compilation/01-基础/02-canvas-fingerprint-randomization-reference.md)
+- [Chromium WebGL 源码扰动落在哪些函数](chromium-fingerprint-compilation/01-基础/03-webgl-fingerprint-randomization-reference.md)
+- [Chromium Blink 字体 offset 绑定的随机偏移](chromium-fingerprint-compilation/01-基础/04-fonts-fingerprint-randomization-reference.md)
+- [Chromium Blink ICE candidate 返回值替换](chromium-fingerprint-compilation/01-基础/05-webrtc-ip-randomization-reference.md)
+- [Chromium Blink OfflineAudioContext 采样率扰动](chromium-fingerprint-compilation/01-基础/06-audio-fingerprint-randomization-reference.md)
+- [Plugins 指纹采集串与 description 后缀](chromium-fingerprint-compilation/01-基础/07-plugins-fingerprint-randomization-reference.md)
+- [Chromium 无头信号与作者点名的源码位置](chromium-fingerprint-compilation/01-基础/09-headless-detection-bypass-reference.md)
+- [--fingerprints 种子在哪些 Blink 入口上分叉](chromium-fingerprint-compilation/01-基础/12-fingerprint-parameter-fixation-reference.md)
+- [Chromium CDP 检测与 V8Console::Debug 接缝](chromium-fingerprint-compilation/01-基础/14-cdp-detection-bypass-reference.md)
+- [Chromium --fingerprints 与 GPU、reduced UA、小版本](chromium-fingerprint-compilation/01-基础/17-ua-gpu-version-modification-reference.md)
+- [Chromium 大版本替换与特性差](chromium-fingerprint-compilation/01-基础/18-major-version-modification-reference.md)
+- [Chromium 禁图开关与两层拦截](chromium-fingerprint-compilation/01-基础/19-disable-image-loading-reference.md)
+- [Chromium ClientRects FromRectF 噪声](chromium-fingerprint-compilation/01-基础/20-clientrects-fingerprint-reference.md)
+- [Chromedriver window 属性标记](chromium-fingerprint-compilation/01-基础/21-chromedriver-selenium-bypass-reference.md)
+- [V8 关键字表里的 debugger 角色](chromium-fingerprint-compilation/01-基础/22-bypass-infinite-debugger-reference.md)
+- [Blink screen 尺寸偏移的源码位置](chromium-fingerprint-compilation/01-基础/23-screen-size-modification-reference.md)
+- [Chromium WebGPU limit 的种子返回值](chromium-fingerprint-compilation/01-基础/24-webgpu-fingerprint-reference.md)
+- [Chromium 语言开关与时区注入位置](chromium-fingerprint-compilation/01-基础/26-language-and-timezone-reference.md)
+- [Chromium closed Shadow DOM 的两处源码改动](chromium-fingerprint-compilation/01-基础/27-shadow-dom-closed-access-reference.md)
+- [Chromium contentDocument 的跨域 IDL 改动位置](chromium-fingerprint-compilation/01-基础/28-cross-origin-iframe-access-reference.md)
+- [Chromium Win10/Win11 的 platformVersion 接缝](chromium-fingerprint-compilation/01-基础/29-windows-os-version-spoof-reference.md)
+- [Chromium ICE JSON 与 SDP 的地址接缝](chromium-fingerprint-compilation/02-进阶/01-webrtc-ip-browserscan-bypass-reference.md)
+- [Chromium --platform 的五个读取面](chromium-fingerprint-compilation/02-进阶/02-macos-platform-spoof-reference.md)
+- [Chromium 禁用 CSS 动画与 Canvas 的源码接缝](chromium-fingerprint-compilation/02-进阶/03-disable-css-animation-canvas-reference.md)
+- [Chromium Windows 任务栏数字徽章的图标接缝](chromium-fingerprint-compilation/02-进阶/06-taskbar-badge-icon-reference.md)
+- [Chromium Cookie 库加密接缝与一篇未闭合的明文改写](chromium-fingerprint-compilation/02-进阶/07-cookie-plaintext-storage-reference.md)
+- [Chromium CanonicalCookie 过期时间覆盖](chromium-fingerprint-compilation/02-进阶/08-cookie-persistent-storage-reference.md)

@@ -92,3 +92,8 @@ archived_date: '2026-09-15'
 - 当前 4.x（审计时市场版本约 4.1.13）打开 home 后 key 的真实分钟数
 - `poc_token` 与 `key` 是否同 TTL
 - 验证码页的稳定 HTML marker 全集
+
+## 提炼说明（475）
+archive-only：getmsg 发证面已有会话卡。
+ret=-3 禁止空成功。
+本轮不另建卡。

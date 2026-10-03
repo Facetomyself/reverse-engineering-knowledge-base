@@ -311,3 +311,7 @@ ninja -C out/Default chrome
 
 *   之前记录了一种方法：任务栏图标右上角加提示徽章，是通过找到当前窗口句柄来做的，感兴趣的可以传送：[https://blog.csdn.net/w1101662433/article/details/142182520](https://blog.csdn.net/w1101662433/article/details/142182520)
 
+
+## 提炼说明（265）
+archive-only。任务栏徽章是多开 UI 区分，不是指纹卡。
+不收录 GDI 补丁。远程图未审。

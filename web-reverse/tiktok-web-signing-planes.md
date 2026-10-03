@@ -147,3 +147,7 @@ writeback:
 - `X-Bogus="1"` 是这份 5.3.2 对照实现里的端点合同，不是所有历史 TikTok 接口的永久事实。换 SDK 要重新看浏览器 query。
 - 编码器内部的轮函数、字母表、魔数表不收录。
 - 本库没有对线上重放这些签名。
+
+## 提炼说明（739）
+retain_existing_reference。既有卡 web-reverse/tiktok-web-signing-planes-reference.md。
+本轮不另建卡。不复制 Cookie/token/指纹原值。未审图片不作证据。

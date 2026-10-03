@@ -102,3 +102,8 @@ extract_payload_full 落到项目 payload_extracted_full/，禁止写到仓库�
 ## 和后续落地的关系
 
 取证脚本不是运行时依赖。协议客户端应 clean-room 按字段重写（本仓库对应 `weixin_protocol_reproducer.py`），只把 frozen constants 当 oracle。归档运行时（身份、claim、MCP job）见 [HTTP 归档运行时](../collection-engineering/weixin-http-archive-runtime.md)。
+
+## 提炼说明（559）
+archive_only。
+Nuitka onefile 外层 RT_RCDATA/KAY+zstd 与内层 native Python 分层已在本文成稿；未重跑样本，不另建 procedure。
+本轮不另建卡。

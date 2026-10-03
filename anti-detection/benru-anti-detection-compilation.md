@@ -56,3 +56,20 @@ archived_date: '2026-07-16'
 | 2026-03-11 | [2026 年了，你的爬虫还在被验证码按在地上摩擦？](benru-anti-detection-compilation/benru-anti-20260311-01.md) |
 | 2026-04-25 | [你每次打开网页，浏览器都在偷偷画画](benru-anti-detection-compilation/benru-anti-20260425-01.md) |
 | 2026-04-29 | [被“请依次点击图中文字”逼疯了？这套YOLO+孪生网络方案，300张图就能破！](benru-anti-detection-compilation/benru-anti-20260429-01.md) |
+
+## 提炼说明（238）
+archive-only。导航页仅 8 条目录。
+子篇 20260205–20260429 已在 229/232/235 处置。
+
+## 同目录窄参考
+
+本段只挂同目录提炼卡。
+
+- [HTTP 请求头一致性的来源策略](benru-anti-detection-compilation/benru-anti-20260205-01-reference.md)
+- [curl_cffi 的 impersonate 与 JA3 字段检查](benru-anti-detection-compilation/benru-anti-20260206-01-procedure.md)
+- [stealth.js 的 Python 注入面](benru-anti-detection-compilation/benru-anti-20260208-01-reference.md)
+- [Python 爬虫登录态的四种载体](benru-anti-detection-compilation/benru-anti-20260220-01-reference.md)
+- [自定义字体反爬的两条还原路径](benru-anti-detection-compilation/benru-anti-20260306-01-reference.md)
+- [ddddocr 验证码分流：接口、轨迹参数与未闭合分支](benru-anti-detection-compilation/benru-anti-20260311-01-reference.md)
+- [Canvas toDataURL 调用记账](benru-anti-detection-compilation/benru-anti-20260425-01-procedure.md)
+- [B 站文字点选：YOLO 与孪生网络的训练边界](benru-anti-detection-compilation/benru-anti-20260429-01-procedure.md)

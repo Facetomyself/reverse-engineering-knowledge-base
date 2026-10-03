@@ -309,3 +309,7 @@ chrome://webrtc-internals  ` 能看到。
 
 > 提醒：本篇技术仅供理解风控原理用，注册账号/爬数据请遵守平台 ToS 和当地法律。住宅代理和 4G
 > 代理本身是中性工具，但批量注册违规账号在任何平台都是封号理由。
+
+## 提炼说明（226）
+archive-only。query --target tls 命中 tls-fingerprint；HTTP/2 已有 http2-fingerprint-reference。
+不收录 JA3 计算脚本、代理配置或请求样例。

@@ -192,3 +192,7 @@ debugger 检测）：
 如果大家有遇到过特别难搞的 VMP 网站，欢迎在评论区留言，咱们一起拆解它！
 
 过几天有时间也会更新全部研究 Akamai 的思路。
+
+## 提炼说明（604）
+archive_only。VMP 识别与浏览器自动化建议已有 products/akamai 与 jsvmp 边界卡。
+本轮不另建卡。dvc 还原声明不全。

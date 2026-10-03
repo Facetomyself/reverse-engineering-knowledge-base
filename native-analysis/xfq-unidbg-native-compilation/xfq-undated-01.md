@@ -142,3 +142,8 @@ function setClassloader(loader) {
         console.warn("[-] Cannot set null ClassLoader");
     }
 }
+
+## 提炼说明（568）
+archive_only。
+Frida dlopen/android_dlopen_ext 后 hook 快手 JNICLibrary.doCommandNative；ClassLoader 找到未 set。
+本轮不另建卡。

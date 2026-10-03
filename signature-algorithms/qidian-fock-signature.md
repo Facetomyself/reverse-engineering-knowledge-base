@@ -49,6 +49,7 @@ archived_date: '2026-07-05'
 
 当前样本的 QDSign 是固定 24-byte key 与 8-byte IV 下的 3DES-CBC 字段密文。`libfock.so` 内确实存在 AES、DES、Hash 与 CRC 代码，但其业务归属需要重新沿 JNI 调用链确认。
 
+<a id="fock-request-injection"></a>
 ## 请求注入结构
 
 ~~~text
@@ -184,6 +185,10 @@ Public 知识库不保存真实设备 QIMEI、流量 Cookie、用户 token 或�
 
 ## 关联资料
 
-- [Qidian Native SO 分析与结论纠偏](../native-analysis/qidian-so-analysis.md)
+- [Qidian Native SO 分析与结论纠偏](../native-analysis/qidian-so-analysis.md#fock-request-assembly)：补充 FockUtil/Knobs 请求链、canonicalization 与排行榜范围的窄参考。
 - [360 Jiagu VIP 绕过与脱壳能力](../packing-bypass/jiagu-bypass-analysis.md)
 - [GodKeawa/AppApiCrack](https://github.com/GodKeawa/AppApiCrack)
+
+## 提炼说明（727）
+retain_existing_reference。既有卡 native-analysis/qidian-so-analysis.md。
+本轮不另建卡。不复制 Cookie/token/指纹原值。未审图片不作证据。

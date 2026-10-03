@@ -248,3 +248,8 @@ FixSequenceExpression({
     filter_memberexpr: true
 })(cfg);
 console.log(generator(cfg.ast).code)
+
+## 提炼说明（541）
+archive_only。
+Babel SequenceExpression 展开脚本与内置样例；近邻混淆边界卡。
+本轮不另建卡。

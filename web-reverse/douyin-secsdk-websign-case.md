@@ -141,3 +141,10 @@ if 函数体是 stack VM:
 | 用 `quote_plus` 或把空格编成 `+` | 浏览器是 `%20` |
 | 签完再 `params=` | 线上 query 与哈希输入分叉 |
 | 给评论接口也套 webSign | 策略表没有这条 path，多字段同样偏离浏览器 |
+
+<a id="reference-extraction-202"></a>
+## 提炼说明
+
+本来源保留为完整 archive。按本批全文审查，将明文模板、canonical_query 规则、受保护 path 策略表与签完即发送的写回纪律，提炼为 [抖音 webSign 规范化与宿主 MD5 参考](./douyin-secsdk-websign-reference.md)。
+
+请求面矩阵与 a_bogus 产品卡不覆盖本算法；VMP 方法论只保留探针，字段规则以该 reference 为准。材料只标记 `source-report`；未运行浏览器或 CDP，不收录 `VM_CONST` 值、字母表、Cookie 或签名样值，作者自称的抓包/oracle 回归未重跑。

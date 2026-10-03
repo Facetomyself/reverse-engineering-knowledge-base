@@ -102,3 +102,7 @@ hook XHR.open / fetch
 ## 反面
 
 把巨型 DOM stub 加冻住的 canvas data URL 当成已经纯算。抖音 acrawler 走的是另一条路：页面 VM 隔离执行，provenance 记 `node_page_js`，失败不写随机签名。那是预言机，不是宿主原语纯算。分流见 [纯算与预言机](./purecalc-vs-oracle-cost.md)。
+
+## 提炼说明（703）
+archive_only。方法论：VMP 先钩宿主原语，再决定要不要纯算 保持 archive。
+本轮不另建卡。

@@ -60,6 +60,7 @@ archived_date: '2026-09-18'
 
 结论先行：边界已对齐仍 403 的剩余变量是**伴随请求的数据流**，不是客户端指纹。
 
+<a id="safe-search-ticket-chain"></a>
 ## 根因：safe-search 票据链
 
 浏览器每次翻页窗口（RuyiTrace 3.3 http_packet 证据）固定为三步，第三步依赖前两步的响应：
@@ -105,3 +106,11 @@ GET /3d/max/character_models_2?term=...&page=N&_pjax=%23tab-mount-content
 - token 生成：`gei-v-cli.js icon-token`（`encodeV(params)`，key `cnkierjj`，rounds 随机 1-5，N@32）；`e` 为 +08 时区 now+1..5h 的 `yyyyMMddHH`。
 - 每页流程：`term_click` 统计（仅首页）→ icon 签票据 → `/f/d` 票据值 → 列表 → `tabMount/cnt` → `f/d/l/p`。
 - 凭证与 token 原值不入文章、不入 Git；站点 cookie 名（`gei_d_1`/`gei_d_u`/`SESSION`/`SERVERID`/混淆名）仅作标识。
+
+## 提炼归档
+
+请求响应体签发票据、后续表单消费与分页上下文边界整理见 [Aigei safe-search 票据链参考](./aigei-safe-search-ticket-chain-reference.md#request-chain)。该参考只拆分来源稿明确描述的请求链和参数谱系；原始 trace、响应样本、实现源码与独立 parity 证据均未公开，不代表当前站点行为已验证。
+
+## 提炼说明（604）
+archive_only。请求链已提炼至 aigei-safe-search-ticket-chain-reference。
+本轮不另建卡。不复制票据、Cookie 或站点密钥。

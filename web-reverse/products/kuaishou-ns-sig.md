@@ -106,3 +106,7 @@ modules:
 - Brook VM 路径的出参 provenance 记 runtime，不得标纯算完成
 
 落地选型见 [平台签名落地方法](../sign-landing-methods.md)。
+
+## 提炼说明（691）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

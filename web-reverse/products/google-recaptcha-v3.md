@@ -184,3 +184,7 @@ Node 20 起不能把 `Proxy` 当 `globalThis.crypto` 等 native getter 的 `this
 - 证据：`evidence/web/parity/live-reload-20260908/receipt.json`
 
 换站点复用：改 pageUrl、sitekey、action、origin/`co`。不要把本轮 rresp 写进 runner。
+
+## 提炼说明（682）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

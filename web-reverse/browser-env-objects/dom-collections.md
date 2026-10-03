@@ -73,3 +73,7 @@ DOM 集合是类数组对象，不是普通数组。核心内容是 length、数
 - PluginArray / MimeTypeArray 维护 plugin 与 mimeType 双向引用。
 - 集合 item 的 ownerDocument / ownerElement / enabledPlugin 回指来源对象。
 - 未触达的集合类型不预建；补入后按接口外观与来源语义一并核对。
+
+## 提炼说明（631）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

@@ -359,3 +359,14 @@ String.fromCharCode(...n.words.flatMap(w => [(w>>>24)&0xff,(w>>>16)&0xff,(w>>>8)
 剩余最后一次请求以及一些动态key的生成
 
 我们下篇再继续分析
+
+<a id="reference-extraction-109"></a>
+## 提炼说明
+
+本来源保留为完整 archive。按本轮全文审查，仅将上篇的 Signature 参数来源与 URL 编码 → HMAC → Base64 形状、首包 `DeviceConfig` → 分段/Base64 → `Data` key 的交接，以及上篇与下篇的职责边界提炼为[阿里云验证码 V2 请求链参考](./aliyun-captcha-v2-request-chain-reference.md)。现有 V2 产品 reference 仍负责状态机和最终业务完成门，本卡不重复建立通用验证码流程。
+
+技术叙述仍为 `source-report`；不复制目标地址、Cookie、设备/IP、key/iv、nonce、签名或 token 样值，也不从本来源 33 张未做像素审查的图片提取结论。`T001`、`u_asig` 和 `u_atoken` 仅作为来源报告中的中间字段/交接描述，未升级为 runtime、local parity 或 server-accepted 事实。
+
+## 提炼说明（730）
+retain_existing_reference。既有卡 web-reverse/aliyun-captcha-v2-request-chain-reference.md。
+本轮不另建卡。不复制 Cookie/token/指纹原值。未审图片不作证据。

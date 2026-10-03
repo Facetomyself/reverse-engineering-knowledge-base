@@ -97,3 +97,7 @@ modules:
 - black_box 写到业务实际读取的位置；业务请求只替换目标字段并保留原业务上下文
 - 业务响应返回正常业务数据（status/msg/data），而不是只返回 HTTP 200 或空数据
 - 多轮更换会话、业务参数或 SDK 版本后，能定位是业务参数变化还是环境差异
+
+## 提炼说明（697）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

@@ -1253,3 +1253,8 @@ PyO3封装好NSS和请求顺序、加密套件等相关指纹信息，然后通�
     /goal 根据firefox的源码阅读请求的握手和发送请求的地方，来进行模拟浏览器发包，使用Rust + PyO3来进行封装给Python调用，Api参考requests的风格来进行调用，在请求时，不断的比对akamai指纹和ja3/4的指纹信息，与浏览器同源，直到可以进行生产使用。
 
 ### 本文由  小卢 投稿
+
+## 提炼说明（379）
+archive-only。Akamai TLS 抓包笔记。
+tls-fingerprint 卡已覆盖握手面。
+不收录 JA3 样值。

@@ -62,3 +62,11 @@ body = unwrap_jsonp(GET mbd.baidu.com/webpage ? uk & ...)
 ## 证据边界
 
 不收录 `uk`、`Hmery-Time` 或 runtime 原值。chrome101 是这份仓选择的 impersonate 名，不等于当前百家号页面的 UA。本库没有请求百度。
+
+## 本轮提炼评估
+
+页面 `window.runtime` 字段、JSONP 列表链和客户端传输上下文已整理为[Runtime 参数与请求链 reference](./baijiahao-runtime-header.md#interfaces)。实际 Cookie/runtime 值没有复制；来源没有公开 locator，本轮也未向百度发请求或验证服务端行为。
+
+## 提炼说明（733）
+retain_existing_reference。既有卡 web-reverse/baijiahao-runtime-header.md。
+本轮不另建卡。不复制 Cookie/token/指纹原值。未审图片不作证据。

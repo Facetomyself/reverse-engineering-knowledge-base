@@ -442,3 +442,7 @@ archived_date: '2026-07-13'
 对网络安全底线的坚定守护  ** 。
 
   * 再次强调：所有操作仅用于合法学习、技术研究，严禁用于商业网站的违规爬取！
+
+## 提炼说明（220）
+archive-only。行为序列/拟人轨迹已有 cloakbrowser-humanize-trajectory-reference 与 event-input。
+蓝图无独立站点模块，也无五门 procedure。不收录攻击代码。

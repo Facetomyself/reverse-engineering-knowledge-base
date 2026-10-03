@@ -1,11 +1,11 @@
 ---
 schema_version: 2
 id: protocols-wechat-mp-session-planes
-document_type: archive
+document_type: reference
 scope:
   targets:
   - wechat-official-account
-  client: unknown
+  client: web / Android / iOS session planes
   version: unknown
   observed_at: unknown
 sources:
@@ -15,6 +15,17 @@ sources:
   citation: '`本地项目分析材料（定位不公开）` 开源库与协议对照'
   reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
 source_completeness: unknown
+modules:
+- name: request-chain
+  anchor: session-plane-map
+  sources: [s1]
+  basis: source-report
+  limits: 平面划分和字段边界来自来源报告；凭证续期与业务探针需按当前实现复核。
+- name: validation
+  anchor: session-completion-gate
+  sources: [s1]
+  basis: source-report
+  limits: completion gate 是来源合同，本文未执行 live 请求或 server readback。
 tags:
 - getmsg
 - profile_ext
@@ -55,6 +66,7 @@ archived_date: '2026-09-15'
 才决定：公开 URL 归档 / 短时 getmsg / 读书列表 / CGI 发证 / 只做调试观察
 ```
 
+<a id="session-plane-map"></a>
 ## 五套会话
 
 | # | 会话 | 载体 | 能做什么 | 不能做什么 | 公开续期 |
@@ -67,6 +79,7 @@ archived_date: '2026-09-15'
 
 官方开放平台 OAuth `refresh_token` 是第六套授权域，不能续上面任何一套私有 session。
 
+<a id="session-completion-gate"></a>
 ## 完成门（先于选库）
 
 | 门槛 | 含义 | 不够格 |

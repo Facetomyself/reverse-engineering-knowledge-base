@@ -12,7 +12,7 @@ sources:
 - id: s1
   ref: https://mp.weixin.qq.com/s/Ts4CGskbT6CgRIJkc2efDg
   basis: source-report
-source_completeness: unknown
+source_completeness: partial
 tags:
 - hCaptcha
 - hsw.js
@@ -51,6 +51,10 @@ archived_date: '2026-09-26'
 ## 收录说明
 
 原文标题「hCaptcha无感逆向分析-补环境」，2026-01-14 17:27（UTC+8）发布，公众号标注原创。归档时用公开短链纯 HTTP 拉取（桌面 Chrome UA，无需登录、未遇验证页），`#js_content` 转 Markdown。54 张图已下载到 `web-reverse/hcaptcha-invisible-hsw-env-patch/`。原文小标题是普通段落，归档时提为 Markdown 标题（声明 / 前言 / hCaptcha简介 / 目标网站 / 抓包分析 / 逆向分析 / 插桩分析点 / 补环境 / 结果验证为二级；四个接口和九个检测点为三级），正文文字未改。
+
+### 隐私清理与完整性
+
+2026-10-02 对 54 张图片逐张复核：50 张含挑战/响应样值、站点或环境标识、日志路径等内容的图片已替换为同尺寸 `REDACTED FOR PRIVACY` 占位图；4 张只保留通用 WebRTC、音频和 Worker API 结构。未审查结果不作技术证据，正文及保留图仍只代表来源报告。截图中未选中的 Cookie 面板标签无法支持 Cookie 内容推断；不补写或猜测其值。原始图像哈希与清理明细保存在本次任务的本地回执中，未放入 Public 仓库，因此来源完整性标记为 `partial`。
 
 作者没公开补环境代码。截图里的 JWT、`generated_pass_UUID`、`sitekey` 是作者调试 Steam 注册页时的样本值，JWT 是 hCaptcha 下发的短时挑战数据。
 
@@ -426,3 +430,10 @@ nodejs中
 环境不行会给验证码图片链接
 
 ![](hcaptcha-invisible-hsw-env-patch/img-054.png)
+
+<a id="reference-extraction-211"></a>
+## 提炼说明
+
+本来源保留为 partial archive。证据-80 已全文阅读并完成 50/54 图隐私替换，当时未发 reference。本批 kb_catalog.py query --target hcaptcha --type reference 仍为 0，将 n 值入口与九类检测点提炼为 [hCaptcha 无感 hsw.js / WASM 出 n 与环境检测点参考](./hcaptcha-invisible-hsw-env-patch-reference.md)。
+
+该 reference 只标记 source-report；未请求 hCaptcha 域，不收录 JWT/sitekey/pass UUID/demo URL，图片不当证据。

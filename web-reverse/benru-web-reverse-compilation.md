@@ -60,3 +60,18 @@ archived_date: '2026-07-16'
 | 2026-06-04 | [反混淆革命：当AI遇上AST，读懂"天书"再也不是梦](benru-web-reverse-compilation/benru-web-20260604-01.md) |
 | 2026-06-12 | [一个Ajax请求，三层动态加密：m、x、r 逆向实战（反混淆→Python还原）](benru-web-reverse-compilation/benru-web-20260612-01.md) |
 | 2026-06-18 | [还在Webpack里抠代码？RPC远程调用：让浏览器加密JS直接为你“打工”](benru-web-reverse-compilation/benru-web-20260618-01.md) |
+
+## 提炼说明（622）
+archive_only。本如笔记 Web 合集 TOC 枢纽；子文逐篇处置。
+本轮不另建卡。
+
+## 同目录窄参考
+
+本段只挂同目录提炼卡。
+
+- [Babel 字面量改写的入门文本](benru-web-reverse-compilation/benru-web-20260315-01-reference.md)
+- [Babel 常量字符串还原的四步顺序](benru-web-reverse-compilation/benru-web-20260316-01-procedure.md)
+- [有道网页翻译 sign 字段与 AI 译文边界](benru-web-reverse-compilation/benru-web-20260330-01-reference.md)
+- [mitmproxy v11 三个事件与本地代理检查](benru-web-reverse-compilation/benru-web-20260427-01-procedure.md)
+- [login1.scrape.center 的 token 只有一行 Base64](benru-web-reverse-compilation/benru-web-20260513-01-reference.md)
+- [Node 补环境四条路线的来源界限](benru-web-reverse-compilation/benru-web-20260519-01-reference.md)

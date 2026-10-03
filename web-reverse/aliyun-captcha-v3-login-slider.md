@@ -239,3 +239,10 @@ T主要就是一个轨迹，经过一个压缩算法转base64，然后继续下�
 ![](aliyun-captcha-v3-login-slider/img-044.png)
 
 ![](aliyun-captcha-v3-login-slider/img-045.png)
+
+<a id="reference-extraction-205"></a>
+## 提炼说明
+
+本来源保留为完整 archive。按本批全文审查，将登录滑块窗口的 InitCaptchaV3 / Log2 / VerifyCaptchaV3 三包与字段角色，提炼为 [阿里云验证码 V3 登录滑块参数链参考](./aliyun-captcha-v3-login-slider-reference.md)。
+
+不改写 [products/aliyun-captcha-v3.md](./products/aliyun-captcha-v3.md) 的 CHECK_BOX / Log1 先行状态机；两分支并列检索。该 reference 只标记 `source-report`；未运行浏览器或目标，不收录 AES key/iv、Signature 前缀、轨迹、Cookie 或 AccessKeyId，45 张图未审。

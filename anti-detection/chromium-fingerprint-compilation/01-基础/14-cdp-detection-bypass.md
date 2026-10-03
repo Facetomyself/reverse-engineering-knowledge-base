@@ -135,3 +135,7 @@ ninja  -C  out/Default chrome
 
 *   https://fingerprint.com/products/bot-detection/
 *   https://www.browserscan.net/bot-detection
+
+## 提炼说明（247）
+archive-only。CDP/F12 探测不是可查站点模块，掏空 V8Console::Debug 不另建卡。
+不收录探测页或 inspector 补丁。

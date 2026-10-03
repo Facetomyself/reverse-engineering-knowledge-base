@@ -1700,3 +1700,14 @@ iv8 换了条路：**在 Python 里嵌一个带浏览器壳的 V8**——有 `wi
 - 黑盒跑 `.wasm`（`Module` / `instantiate`；streaming 先回避）
 
 它**不是**完整 Chrome（比如默认不上真网、复杂排版有限），但对「跑混淆、出参数、对探针」这类活，已经够当一台**小型浏览器**用了。
+
+<a id="reference-extraction-114"></a>
+## 提炼说明
+
+本来源保留为完整 archive，并将 Python/V8 context、host bridge、离线 resource injection、请求观察、调度以及 Isolate/GIL 归纳为[iv8 Python/V8 runtime reference](./iv8-python-v8-runtime-reference.md)。新 reference 只登记来源报告可定位的模块边界，不重复 browser-object reference，也不把 iv8 宣称为完整 Chrome、通用 V8 ABI、物理用户输入或反爬/服务端验收方案。
+
+本文中的 profile/default 值、性能数字、网络样例和请求数据未复制；WASM imports/exports、memory/pointer-lifetime、callback error/async/release contract 仍未知。本轮未运行 iv8、浏览器、WASM、local parity 或业务请求，所有提炼保持 `source-report`。
+
+## 提炼说明（736）
+retain_existing_reference。既有卡 web-reverse/iv8-python-v8-runtime-reference.md。
+本轮不另建卡。不复制 Cookie/token/指纹原值。未审图片不作证据。

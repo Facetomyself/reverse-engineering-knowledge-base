@@ -107,3 +107,7 @@ RS6 很容易被误判为"只有一个签名参数"。业务 API 前仍需刷新
 - 入口页与业务页各阶段 cookie 生成；API 前刷新同轮 cookie；动态 query 与 cookie 同一轮
 - 业务请求使用同一个 session/cookie jar；业务响应是正常业务 JSON/页面内容，不是 challenge HTML、空数据、重定向或风控错误
 - 多轮重新拉页面、重新拉动态脚本后仍能稳定复现；只复现样本固定 cookie 或固定后缀不能视为完成
+
+## 提炼说明（694）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

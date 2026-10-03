@@ -1174,3 +1174,14 @@ def register(endpoint: str, aid: str, query: str, body: dict):
 ```
 
 其中 seed 已经随 packet 发送，key 和 IV 只是由 seed 临时派生的中间值。这也解释了为什么本地解密时只需要密文，不需要另外提供 key 或 IV。
+
+<a id="archive-only-122"></a>
+## 本轮处置说明
+
+本来源保留为完整 archive-only。全文核验确认其中的 endpoint/aid、query/body、JNI/native、key/IV 与响应边界均已由[Kimi device_register ttEncrypt reference](../kimi-device-register-ttencrypt.md)覆盖；本篇没有新增可定位来源、独立 artifact、版本对照或 runtime/parity 证据。为避免重复建立同一接口、封装算法和响应模块，不新建 reference 或 procedure。
+
+技术叙述仍为 `source-report`；本轮不复制样值、设备/账户信息、key、iv、salt、seed、摘要/密文、Native 偏移或响应数据，也未运行 APK/SO、Frida、请求重放或服务端验收。
+
+## 提炼说明（721）
+retain_existing_reference。既有卡 mobile-app-reverse/kimi-device-register-ttencrypt.md。
+本轮不另建卡。不复制 Cookie/token/指纹原值。未审图片不作证据。

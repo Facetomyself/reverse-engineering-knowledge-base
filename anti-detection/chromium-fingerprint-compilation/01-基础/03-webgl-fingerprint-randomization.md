@@ -428,3 +428,7 @@ ninja  -C  out/Default chrome
 
 *   https://abrahamjuliot.github.io/creepjs/
 *   https://www.browserscan.net/
+
+## 提炼说明（241）
+archive-only。WebGL 检测面见 canvas-webgl。源码随机补丁不另建算法/指纹卡。
+不收录 getSupportedExtensions / ReadPixelsHelper / toDataURL 补丁或指纹样值。

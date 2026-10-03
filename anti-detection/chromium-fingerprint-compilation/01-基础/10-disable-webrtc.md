@@ -86,3 +86,7 @@ ninja  -C  out/Default chrome
 --force-webrtc-ip-handling-policy
 --webrtc-ip-handling-policy=disable_non_proxied_udp
 ```
+
+## 提炼说明（247）
+archive-only。WebRTC 禁用/伪造见 05 篇与 js-browser-fingerprint 的 IP 边界。本篇补丁与启动参数不另建卡。
+不收录 setLocalDescription 补丁。

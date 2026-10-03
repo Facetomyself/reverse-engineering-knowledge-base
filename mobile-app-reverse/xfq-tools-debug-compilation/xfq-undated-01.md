@@ -164,3 +164,8 @@ root_node
 root_data
 ref_data(如果有)
 child_obj(如果有)
+
+## 提炼说明（535）
+archive_only。
+未优化 flatbuf 手工解析笔记；decode 依赖未给出的解密函数。近邻 protobuf 卡不覆盖。
+本轮不另建卡。

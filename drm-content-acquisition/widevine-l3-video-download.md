@@ -232,3 +232,8 @@ ffmpeg -y -i video-dec.mp4 -i audio-dec.mp4 -c copy -movflags +faststart out.mp4
   不触发其崩溃条件。
 - 代理出口管理见 `collection-engineering/mihomo-dialer-proxy-chain.md` 与
   proxy-usage skill。
+
+## 提炼说明（385）
+archive-only。L3 CDM/license 管道为本地 source-report。
+ACE deviceUniqueId 是 TEE 层，不合并。
+不收录票据与密钥样值。

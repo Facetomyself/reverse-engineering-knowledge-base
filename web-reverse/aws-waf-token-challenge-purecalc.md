@@ -12,7 +12,7 @@ sources:
 - id: s1
   ref: https://mp.weixin.qq.com/s/Ik7LgaFIpJR_KCWinc5y3w
   basis: source-report
-source_completeness: unknown
+source_completeness: partial
 tags:
 - AWS WAF
 - aws-waf-token
@@ -269,3 +269,16 @@ END
 还有啥想看的可以评论区留言或者私信我
 
 有些兄弟的私信触发了官方的规则被屏蔽了我这没看到啊
+
+## 本轮评估：部分来源归档，不提炼 reference
+
+原文共引用 25 张图片；其中 19 张含敏感样值的图片已替换为同尺寸隐私占位图，另 6 张代码图保留。图片中的技术细节不再完整可读，因此 source completeness 标记为 `partial`；本轮不再修改图片。
+
+原文摘要将 `Present` 描述为对 `checksum + 环境` 的 AES-GCM 输入，正文的 `Present` 小节又将输入称为 `环境`，两处表述不能由当前 Public 文本消解。文章还把 `checksum`、`Present`、`solution` 一并称作“加密”，但其自身分别将这些值归为 CRC32、AES-GCM 与 SHA-256 工作量证明，术语使用不准确。
+
+在图片证据缺失、正文公式相互矛盾且没有独立代码或服务端验收的条件下，本篇只保留为 `source-report` archive，不提炼算法 reference 或 procedure。作者所述的 401/403 结果不构成本轮 server-accepted 验证。
+
+<a id="reference-extraction-211"></a>
+## 提炼说明
+
+本批全文复核确认：kb_catalog.py query --target aws-waf --type reference 仍为 0。既有「本轮评估」记录的 Present 输入摘要/正文冲突、checksum/Present/solution 误称“加密”、19/25 图隐私替换与缺少独立代码/服务端验收仍然成立。不新增算法 reference。本轮未改图片。

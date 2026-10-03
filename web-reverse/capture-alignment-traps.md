@@ -91,3 +91,7 @@ send(pairs):
     else:
         send pair_list(pairs)                  # not dict(pairs)
 ```
+
+## 提炼说明（646）
+archive_only。技巧：抓包对齐时容易自己引入的偏差 保持 archive。
+本轮不另建卡。

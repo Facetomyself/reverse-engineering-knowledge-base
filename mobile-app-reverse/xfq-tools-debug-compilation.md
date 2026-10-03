@@ -90,3 +90,26 @@ archived_date: '2026-09-04'
 | — | [你要注入的 JS 脚本内容](xfq-tools-debug-compilation/xfq-undated-05.md) |
 | — | [函数花指令.js](xfq-tools-debug-compilation/xfq-undated-06.md) |
 | — | [逗号表达式.js](xfq-tools-debug-compilation/xfq-undated-08.md) |
+
+## 提炼说明（541）
+archive_only。
+工具与调试 TOC 枢纽；子文本轮起逐篇处置，枢纽不升卡。
+本轮不另建卡。
+
+## 同目录窄参考
+
+本段只挂同目录提炼卡。
+
+- [IDA 与 JADX 的 MCP 接线入口](xfq-tools-debug-compilation/xfq-20251204-01-reference.md)
+- [unidbg 里 libc++ std::string 的对象边界](xfq-tools-debug-compilation/xfq-20251205-01-reference.md)
+- [Binary Ninja MCP 的安装入口](xfq-tools-debug-compilation/xfq-20260112-01-reference.md)
+- [安卓明文 HTTP 的版本默认值和进程外出口](xfq-tools-debug-compilation/xfq-20260115-01-reference.md)
+- [Android WebView：四个类、调试入口和两代桥](xfq-tools-debug-compilation/xfq-20260322-01-reference.md)
+- [AOSP 内 ART/bionic 的 JNI 可观测插装点](xfq-tools-debug-compilation/xfq-20260617-01-reference.md)
+- [libcore XfCryptoHook 的放行顺序和事件字段](xfq-tools-debug-compilation/xfq-20260620-01-reference.md)
+- [Frida Gadget 的 listen 配置与连接时机](xfq-tools-debug-compilation/xfq-20260710-01-reference.md)
+- [scrcpy 常见录制与音频旗标](xfq-tools-debug-compilation/xfq-20260711-01-reference.md)
+- [未优化 flatbuf 的布局对照](xfq-tools-debug-compilation/xfq-undated-01-reference.md)
+- [xfqtrace Gadget 脚本的武装顺序](xfq-tools-debug-compilation/xfq-undated-02-procedure.md)
+- [单返回函数调用何时内联、何时放弃](xfq-tools-debug-compilation/xfq-undated-06-reference.md)
+- [逗号表达式按父节点外提还是只删纯值](xfq-tools-debug-compilation/xfq-undated-08-reference.md)

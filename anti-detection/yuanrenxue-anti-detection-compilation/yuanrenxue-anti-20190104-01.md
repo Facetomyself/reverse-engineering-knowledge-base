@@ -124,3 +124,8 @@ cchardet是uchardet的Python绑定，后者是用C++实现的字符编码检测�
 \-------------------------------------------------------------
 
 ![](https://mmbiz.qpic.cn/mmbiz_jpg/GrTTsqWuEce2yoT3xt5Oo8wFb4u5tpRxBMomDWxdleyLLlIJUFcdDQYzWJbFl3nG2EH246Vfb4Jg7tXfnZ2uKA/640?wx_fmt=jpeg)
+
+## 提炼说明（376）
+archive-only。requests.text 编码随笔。
+线合同卡已覆盖编码边界。
+未审图片不作证据。

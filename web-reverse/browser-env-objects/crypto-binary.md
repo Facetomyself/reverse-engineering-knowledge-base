@@ -77,3 +77,7 @@ modules:
 - DataView 读写实现 littleEndian 参数，越界抛对应异常外观。
 - TypedArray 的 byteOffset / byteLength / length 与底层 ArrayBuffer 一致。
 - 未触达的算法与编码不预补；补入后与其输入输出类型一并核对。
+
+## 提炼说明（628）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

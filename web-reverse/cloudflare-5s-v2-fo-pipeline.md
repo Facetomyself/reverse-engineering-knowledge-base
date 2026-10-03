@@ -296,3 +296,10 @@ P3  旧补丁实现，只作候选
 不把 document.all 补成普通对象
 不把子站 /fo accepted 当成主站通过
 ```
+
+<a id="reference-extraction-205"></a>
+## 提炼说明
+
+本来源保留为完整 archive。按本批全文审查，将 `/fo` 与 form.submit 完成门、Python/Node 分工、主站与 Turnstile 子 `/fo` 分计、accepted 后 3 hidden 的 form.submit，以及 document.all 按表达式最小补，提炼为 [Cloudflare 5s v2 `/fo` 与 form.submit 参考](./cloudflare-5s-v2-fo-pipeline-reference.md)。
+
+产品卡的 `flow/ov1` 命中与分层成功口径仍见 [products/cloudflare-5s-challenge.md](./products/cloudflare-5s-challenge.md)。该 reference 只标记 `source-report`；未运行 ruyitrace、浏览器或目标 challenge，不收录 Cookie、cf_clearance、hidden 名/值或 `/fo` body，不表示当前 runtime 或 server acceptance。

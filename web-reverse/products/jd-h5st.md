@@ -111,3 +111,7 @@ modules:
 - 同轮先发出带 `tk06` 的 `pc_search_searchWare`，后发出带 `tk03` 的同接口；两次均 **HTTP 403 空 body**，响应带 `X-Rp-Sdtoken`、`server: jfe`
 - RuyiTrace Firefox 155 已生成完整 h5st 仍 403，优先按指纹/TLS/HTTP 层排查，不要先当「没算出 h5st」
 - 证据 run `rt_20260822111135_db15120748`：Firefox 约 3 分钟意外退出（`BROWSER_EXIT_UNEXPECTED`），事后 index/receipt 仍 integrity pass，rootSha256 `0378bb2edad556b850624c51127fdfa936224628a6c33f4cf744c0afd9206c49`
+
+## 提炼说明（685）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

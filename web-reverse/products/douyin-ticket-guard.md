@@ -103,3 +103,7 @@ SecureSDK 初始化
 - 复用已有 profile 前先匹配当前 Cookie 身份、guard 公钥与 ts_sign；不匹配即在请求构造前拒绝
 - 新浏览器绑定的假设必须有当前响应实际下发绑定材料；setup/心跳响应不足为凭
 - 先用非破坏性、当前会话判据验证；不把公开读接口的成功当作受保护动作的成功
+
+## 提炼说明（679）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

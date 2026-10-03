@@ -120,3 +120,7 @@ modules:
 - Node/v8 路径（kasada-v1）走到 `POST /r` 156B；RuyiDOM 黑盒走到 `POST /tl`（本轮 bodyBytes 约 74KiB），`hasR=false`
 - `/tl` 响应 200、`x-kpsdk-cr=true`；首页仍可能 429（`x-kpsdk-r` 拒绝标记）。请求边界对齐不等于 `serverAccepted`
 - 禁止因此拆 VM handler。`/tl` 响应头里的 `x-kpsdk-ct` 必须带到下一跳业务 GET，不能只看 cookie jar
+
+## 提炼说明（688）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

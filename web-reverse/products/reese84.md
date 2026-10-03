@@ -107,3 +107,7 @@ modules:
   （Sabre 5TDX 航司订票站）纯算案例：curl_cffi 管线、Node vm 执行器契约（stdin 传本轮
   challenge 脚本 + fetch hook 捕获 p POST + 占位 200 + 输出 actualPostUrl/actualPostBodyText
   交接）、GraphQL 业务层（dcmcInit 的 execution 头回带）与实证坑
+
+## 提炼说明（694）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

@@ -274,3 +274,8 @@ my-plugin/
 | 版本 | 渠道版本 ≠ manifest 版本，发版说明里写两行 |
 | 端口 | 本机进度口不要复用抓包/MCP 默认端口 |
 | 账号 | 安装成功 ≠ 已登录 |
+
+<a id="reference-extraction-217"></a>
+## 提炼说明
+
+本来源保留为完整 archive。按本批全文审查，将五层 sideload 合同（渠道 zip、本机更新、Load unpacked、协议唤醒、账号面分离）提炼为 [未上架 MV3 sideload 更新器五层合同参考](./unpacked-mv3-native-updater-reference.md)。`kb_catalog.py query --tag MV3 --type reference` 发布前为 0。该 reference 只标记 `source-report`；不收录清单 URL、协议名、端口、zip 哈希或账号 token。

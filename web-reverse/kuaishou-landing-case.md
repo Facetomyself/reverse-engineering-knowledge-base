@@ -78,3 +78,7 @@ if code == 400002:
 ## 证据边界
 
 白名单和 `caver=2` 来自当前树。换 kwf 代际要重抓 `signUrl`，不能用仓库里的历史 `kws-N-*.js` 签线上。
+
+## 提炼说明（667）
+archive_only。快手 hxfalcon 装配案例；已有 products/kuaishou-ns-sig。
+本轮不另建卡。

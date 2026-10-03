@@ -229,3 +229,8 @@ SO 文件被加密或压缩，运行时才解密加载。直接用 IDA 打开看
 这就是 App 逆向的基础地图。后续每个具体技术点，都可以落到这张地图上的某个坐标。
 
 协议客户端不要停在「模拟请求能通」：HTTP 200 空壳、错机房、未激活设备，先走 [协议准入四关](./protocol-admission-four-gates.md)；过关后再按 [纯协议 SDK 重建](./pure-protocol-sdk-reconstruction.md) 建目录，不要先写采集器。
+
+## 提炼说明（391）
+archive-only。请求生命周期地图。
+环境搭建与协议准入已有 procedure。
+不把防御表当风控卡。

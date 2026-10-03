@@ -73,3 +73,8 @@ retry / job 序列化前走同一套 sanitize：secret 键置空，URL 走 canon
 - 丢失 lease 的旧 worker 不能把状态写成 complete。
 - `AUTH_REQUIRED` / `CAPTCHA_REQUIRED` / `CONTENT_INVALID` 不进 retry queue（目标语义；当前代码对 `getmsg ret` 仍未完全分类，复用时先补）。
 - 状态库路径跟输出目录走，不要全局一个 SQLite 混多个互不相干的目标站。
+
+## 提炼说明（382）
+archive-only。SQLite claim 与 durable retry。
+父篇已覆盖身份/claim 边界。
+不把凭证参数写入知识卡。

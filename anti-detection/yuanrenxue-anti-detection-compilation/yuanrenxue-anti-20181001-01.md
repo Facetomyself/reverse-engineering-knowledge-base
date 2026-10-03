@@ -109,3 +109,8 @@ https://bitbucket.org/richardpenman/browsercookie/
 ![](https://mmbiz.qpic.cn/mmbiz_jpg/GrTTsqWuEcf0gicwByDpgFGF9RY4NsG95BOo3rEMtqibjNga7jSdzowp6A2eibvuZ2YtcVFhl7iazgevdylu6vhb7A/640?wx_fmt=jpeg)
 
 欢迎关注微信公众号阅读最新文章
+
+## 提炼说明（373）
+archive-only。browsercookie 教程。
+会话卡已覆盖 Cookie 平面。
+不收录 Cookie 样例。

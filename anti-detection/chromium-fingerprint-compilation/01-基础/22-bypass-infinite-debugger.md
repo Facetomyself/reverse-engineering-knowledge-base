@@ -131,3 +131,7 @@ ninja  -C  out/Default chrome
 ### 四、效果
 
 ![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/0301305822bf427396cd572e2d0184e5.png)
+
+## 提炼说明（256）
+archive-only。无限 debugger 关键字替换不是站点模块，也无五门 procedure。
+不收录 keywords-gen 补丁。远程图未审。

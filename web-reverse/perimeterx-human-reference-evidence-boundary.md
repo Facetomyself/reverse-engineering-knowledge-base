@@ -115,3 +115,7 @@ archived_date: '2026-09-30'
 | [products/perimeterx.md](./products/perimeterx.md) | 命中特征、先判门、观察顺序、验证口径 |
 | 本篇 | 这份 2026-08-04 参考仓里有什么、哪些自称站不住、哪些材料不能入库 |
 | storage 检出 | 原始生成器、SDK、抓包。不执行，不复制 |
+
+## 提炼说明（667）
+archive_only。PerimeterX 参考仓：结构对照与证据边界 保持 archive。
+本轮不另建卡。

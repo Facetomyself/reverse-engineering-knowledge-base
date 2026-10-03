@@ -108,3 +108,7 @@ PS：上述对.wxapkg文件解包，还有一些小细节我没有全部写出�
 ](http://mp.weixin.qq.com/s?__biz=MjM5NjE0NTY5OA==&mid=2448548692&idx=1&sn=ccd73a67ee615c8111eb28319d388919&chksm=b2e8fc19859f750f972d9e9e954576bdef0fe2ea2f3252e42aeb979b853dd642a9488b7898b8&scene=21#wechat_redirect)
 [ 如何让爬虫一天抓取100万张网页
 ](http://mp.weixin.qq.com/s?__biz=MjM5NjE0NTY5OA==&mid=2448548659&idx=1&sn=d2a8dd3544bfd7980c8ab1fbb0c5dd4b&chksm=b2e8fc7e859f7568b41fcc55b384e9d78a4c4503707ac34c890a3be17ecfe2d40df4bc3602d5&scene=21#wechat_redirect)
+
+## 提炼说明（709）
+archive_only。猿人学 Web 教学合集，不另建产品卡。
+本轮不另建卡。

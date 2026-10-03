@@ -1123,3 +1123,14 @@ Session 生命周期:
 | `newdns.go` | 264 | HTTP DNS 服务发现 |
 | `pool.go` | 461 | 连接池 + 会话管理 + 并发控制 |
 | `loginbuffer.go` | 347 | login_buffer 获取/刷新 + 签名 |
+
+<a id="reference-extraction-113"></a>
+## 提炼说明
+
+本来源本轮保留为 `archive-only`，不新建当前协议 reference、procedure 或请求复现合同。全文核验确认它包含可检索的 Record 帧、ECDHE 握手、PSK/0-RTT、密钥派生、ShortLink/iLink 分层和 NewDNS 角色区分，但 `yyb_go` 原始材料不可定位、未取得 source checkout、packet fixture、向量、runtime 或服务端响应，所有技术叙述继续保持 `source-report`。
+
+认证模型（cipher-suite、证书链与 pinned key）和 PSK 响应 transcript/sequence 仍未调和，服务端 0-RTT 处理也是从客户端材料推断。正文中的加密记录、会话/账户/设备字段、目标地址以及 credential-shaped 常量不复制到新文档，也不据此声称当前可用性、登录成功或服务端接受；原文作为保留 archive 继续承载这些待审材料。
+
+## 提炼说明（727）
+archive_only。query --target mmtls --type reference 为 0。会话平面已由 wechat-mp-session-planes 区分 mmtls vs mp.weixin.qq.com HTTP；本篇无 runtime/parity，不另建算法卡。
+本轮不另建卡。

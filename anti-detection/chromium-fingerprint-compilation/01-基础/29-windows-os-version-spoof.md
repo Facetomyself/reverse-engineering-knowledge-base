@@ -117,3 +117,7 @@ Windows 11
 ```c
 ninja -C out/Default chrome
 ```
+
+## 提炼说明（262）
+archive-only。Win10/11 UA-CH 区分见 js-browser-fingerprint。platformVersion 种子不另建卡。
+不收录补丁或默认种子。

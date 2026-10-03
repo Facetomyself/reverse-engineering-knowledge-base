@@ -79,3 +79,11 @@ upload_video:
 ## 证据边界
 
 自定义 CRC 表和上传域名留在源码。本库没有重放发帖。Cookie 与 `X-Up-Auth` 都是服务端材料，不能本地随机。
+
+## 提炼去向
+
+请求面与参数边界的窄化参考见 [微博请求面与上传参数边界](./weibo-request-planes.md)。该参考只整理本文 source-report，不代表本轮运行时或服务端验证。
+
+## 提炼说明（706）
+archive_only。微博三面案例源；已有 Weibo interfaces/parameters reference。
+本轮不另建卡。

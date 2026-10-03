@@ -69,3 +69,19 @@ archived_date: '2026-09-04'
 | 2026-05-08 | [xtime是个啥意思？](xfq-crypto-notes-compilation/xfq-20260508-01.md) |
 | 2026-06-22 | [Java Crypto Hook UI 重设计](xfq-crypto-notes-compilation/xfq-20260622-01.md) |
 | — | [mt19937伪随机.py](xfq-crypto-notes-compilation/xfq-undated-01.md) |
+
+## 同目录窄参考
+
+本段只挂同目录提炼卡。
+
+- [DES / 3DES 对照时先看的点](xfq-crypto-notes-compilation/xfq-20251129-01-reference.md)
+- [AES 分组对照时先看的点](xfq-crypto-notes-compilation/xfq-20251203-01-reference.md)
+- [Blowfish 的大端 Feistel 与 OFB 反馈](xfq-crypto-notes-compilation/xfq-20251217-01-reference.md)
+- [Twofish 的小端四路 Feistel](xfq-crypto-notes-compilation/xfq-20260213-01-reference.md)
+- [Salsa20 的状态矩阵与变种识别](xfq-crypto-notes-compilation/xfq-20260216-01-reference.md)
+- [RC4 的 KSA/PRGA 与常见改动识别](xfq-crypto-notes-compilation/xfq-20260216-02-reference.md)
+- [ChaCha20 相对 Salsa20 的轮结构与 nonce 宽度](xfq-crypto-notes-compilation/xfq-20260224-01-reference.md)
+- [Rabbit 的平方非线性与 RFC / CryptoJS 分叉](xfq-crypto-notes-compilation/xfq-20260224-02-reference.md)
+- [AES-CTR 计数器块切分与整块自增](xfq-crypto-notes-compilation/xfq-20260318-01-reference.md)
+- [AES-GCM 的 J0、GHASH 与报文切分](xfq-crypto-notes-compilation/xfq-20260318-02-reference.md)
+- [标准 MD5 轮日志地标与魔改落点](xfq-crypto-notes-compilation/xfq-20260416-01-reference.md)

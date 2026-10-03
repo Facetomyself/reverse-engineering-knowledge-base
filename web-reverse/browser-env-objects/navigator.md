@@ -72,3 +72,7 @@ modules:
 - sendBeacon / javaEnabled 等方法有返回与 native 外观，不返回 undefined。
 - 子对象被读后转对应子对象语义并保持稳定身份。
 - iframe 子 window 共享 profile 但不复用主 window 身份对象。
+
+## 提炼说明（637）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

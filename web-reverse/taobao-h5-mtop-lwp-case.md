@@ -89,3 +89,7 @@ send LWP /r/MessageSend/...
 ## 证据边界
 
 appKey `12574478` 是端别标识，和闲鱼 Web `34839810`、闲鱼 App `21407387` 不是同一个。本库没有重放线上请求。IM app-key 字面量留在源码里，知识库不把它当成可跨站复用的密钥。
+
+## 提炼去向
+
+本地实现快照的 Cookie 前提、ExecJS/JSONP 与 LWP `/reg` 字段位置增补见 [阿里 MTOP H5 sign](./products/alibaba-mtop-h5.md#taobao-implementation-snapshot)。增补仅限来源报告，不表示空 sign 种票的一般链路失效，也不构成线上验证。

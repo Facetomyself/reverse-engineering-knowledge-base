@@ -1,11 +1,11 @@
 ---
 schema_version: 2
 id: mobile-app-reverse-anti-crawler-app-reverse-series-anti-crawler-app-20260709-01
-document_type: archive
+document_type: reference
 scope:
   targets:
-  - unknown
-  client: unknown
+  - Android app signing-function static triage
+  client: Android app reverse engineering
   version: unknown
   observed_at: unknown
 sources:
@@ -15,7 +15,18 @@ sources:
   citation: 微信公众号：反爬破解社
   reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
 source_completeness: unknown
-tags: []
+modules:
+- name: decision-flow
+  anchor: apk-sign-static-triage
+  sources: [s1]
+  basis: source-report
+  limits: 搜索与回溯是来源教程方法；关键词命中率和“15分钟”不作为性能保证。
+- name: interfaces
+  anchor: apk-request-interceptor
+  sources: [s1]
+  basis: source-report
+  limits: OkHttp/Retrofit 是示例入口；目标 App 可能使用其他网络栈或 native 路径。
+tags: [jadx, interceptor, obfuscation, sign-triage]
 original_date: '2026-07-09'
 archived_date: '2026-07-13'
 ---
@@ -81,6 +92,7 @@ archived_date: '2026-07-13'
 Native方法  |  搜索  ` native  ` 关键字  |  加密逻辑在so层时会有native声明
 
 
+<a id="apk-request-interceptor"></a>
 ##  二、调用链回溯：从网络请求出发
 
 这是定位加密函数最核心的方法论。思路很简单：  ** 找到网络请求发出的地方，然后反向追踪参数来源。  **
@@ -309,6 +321,7 @@ jadx提供了非常强大的交叉引用功能，可以帮助你快速跳转。
 验证通过，逆向完成。
 
 
+<a id="apk-sign-static-triage"></a>
 ##  五、本章小结
 
 静态分析的核心不是读代码，而是  ** 高效地找到关键代码  ** 。记住三个要点：

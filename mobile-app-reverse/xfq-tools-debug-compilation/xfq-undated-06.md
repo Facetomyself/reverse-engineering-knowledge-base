@@ -439,3 +439,8 @@ traverse(cfg.ast, {
 console.log(generator(cfg.ast, {
     // compact: true,
 }).code);
+
+## 提炼说明（538）
+archive_only。
+Babel 函数花指令展开脚本；近邻 js-obfuscation-boundaries，不重复。
+本轮不另建卡。

@@ -74,3 +74,7 @@ modules:
 - CookieJar 与 document.cookie、请求 header、Set-Cookie 互相解释。
 - 参数生成后的同轮 cookie / header / storage 状态带到后续请求。
 - indexedDB / caches 被读时按异步对象实现，仅检测存在时保持外观。
+
+## 提炼说明（643）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

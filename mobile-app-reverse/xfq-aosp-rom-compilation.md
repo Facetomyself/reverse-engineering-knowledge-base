@@ -60,3 +60,22 @@ archived_date: '2026-09-04'
 | 2026-07-02 | [20260702 Pixel Launcher 预置与默认 HOME/Recents 切换](xfq-aosp-rom-compilation/xfq-20260702-01.md) |
 | 2026-07-10 | [屏幕采集 / 投屏黑屏绕过总览](xfq-aosp-rom-compilation/xfq-20260710-01.md) |
 | 2026-07-11 | [aosp魔改笔记：bypass投屏/录屏黑屏保护、伪装 scrcpy/adb 点击事件](xfq-aosp-rom-compilation/xfq-20260711-01.md) |
+
+## 提炼说明（508）
+TOC hub archive-only。
+子文已逐篇处置。
+本轮不另建合集卡。
+
+## 同目录窄参考
+
+本段只挂同目录提炼卡。
+
+- [AOSP Captive Portal 默认探测改到国内可达地址](xfq-aosp-rom-compilation/xfq-20260613-01-procedure.md)
+- [Panther 开发者默认项与第一次亮度不被 float 默认值覆盖](xfq-aosp-rom-compilation/xfq-20260614-01-procedure.md)
+- [Android 13 REL 上把用户 CA 并入系统证书目录](xfq-aosp-rom-compilation/xfq-20260614-02-procedure.md)
+- [xf-rom 插装日志的双通道约定](xfq-aosp-rom-compilation/xfq-20260618-01-reference.md)
+- [按包强开 AOSP WebView DevTools，且不在本功能里做隐藏](xfq-aosp-rom-compilation/xfq-20260626-01-procedure.md)
+- [panther user 构建把 APatch 收进 ROM](xfq-aosp-rom-compilation/xfq-20260626-02-procedure.md)
+- [panther 原厂 GMS 预置：提取、user 构建与路径验收](xfq-aosp-rom-compilation/xfq-20260630-01-procedure.md)
+- [panther 预置 Pixel Launcher 并切换 Recents](xfq-aosp-rom-compilation/xfq-20260702-01-procedure.md)
+- [AOSP 屏幕采集黑屏绕过：开关、验收与停止条件](xfq-aosp-rom-compilation/xfq-20260710-01-procedure.md)

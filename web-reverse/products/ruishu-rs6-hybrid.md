@@ -94,3 +94,7 @@ modules:
 - 本地语法检查通过；离线生成目标 cookie 与固定长度业务后缀
 - live 完整链路返回 HTTP 200，响应体含业务字段；翻页使用同一真实会话循环页码，每页重新生成后缀，多页返回不同业务数据
 - 最终以真实业务接口为准，不只看本地 ok 状态
+
+## 提炼说明（697）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

@@ -63,3 +63,23 @@ archived_date: '2026-09-06'
 | 2026-06-01 | [某厂安全研发的逆向笔记（11.1）：更多混淆手法与对抗工具](softard-android-reverse-compilation/softard-20260601-01.md) |
 | 2026-06-04 | [某厂安全研发的逆向笔记（12）：IDA 逆向 SO 算法的路径](softard-android-reverse-compilation/softard-20260604-01.md) |
 | 2026-06-06 | [某厂安全研发的逆向笔记（12.1）：对抗算法特征检索的简单攻防](softard-android-reverse-compilation/softard-20260606-01.md) |
+
+## 提炼说明（472）
+TOC hub archive-only。
+13 篇子文已逐篇 retain 或 archive。
+本轮不另建合集卡。
+
+## 同目录窄参考
+
+本段只挂同目录提炼卡。
+
+- [Android permission 名怎样对到 Linux gid](softard-android-reverse-compilation/softard-20190114-01-reference.md)
+- [Android 框架权限的落点与授权分支](softard-android-reverse-compilation/softard-20191118-01-reference.md)
+- [DEX string id 崩溃的寄存器对齐](softard-android-reverse-compilation/softard-20251231-01-reference.md)
+- [Android SO 的 ELF 字段和 JNI 入口分叉](softard-android-reverse-compilation/softard-20260429-01-reference.md)
+- [ART 方法入口与壳介入时机](softard-android-reverse-compilation/softard-20260501-01-reference.md)
+- [Dalvik Smali 的寄存器和调用形式](softard-android-reverse-compilation/softard-20260504-01-reference.md)
+- [UnCrackable Level 2：libfoo.so 的校验入口、口令门闩和 sub_918](softard-android-reverse-compilation/softard-20260511-01-reference.md)
+- [Android SO 混淆：三种进阶手法和工具顺序](softard-android-reverse-compilation/softard-20260601-01-reference.md)
+- [IDA 中用特征常量区分 SO 里的标准算法](softard-android-reverse-compilation/softard-20260604-01-reference.md)
+- [findcrypt 扫不到常量时，来源怎么把值藏起来又怎么认回去](softard-android-reverse-compilation/softard-20260606-01-reference.md)

@@ -63,3 +63,7 @@ Voyager 的 `queryId` 会随前端发布变化。把它写死在客户端里，�
 ## 证据边界
 
 本库没有登录领英，也不收录 Cookie 或 li_at。queryId 正则依赖当前前端打包形状，换构建后要重看 `define(` 的位置。
+
+## 本轮提炼评估
+
+来源报告中的资料页获取、按卡片抽取 `queryId`、请求 Voyager GraphQL 的顺序已整理为[LinkedIn Voyager 请求链参考](./linkedin-voyager-request-chain.md#request-chain)。新文档只复述未公开对照材料的 `source-report`，未访问当前页面、重放请求或验证服务端响应；本来源归档仍作为出处保留。

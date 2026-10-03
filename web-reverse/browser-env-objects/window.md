@@ -72,3 +72,7 @@ modules:
 - 定时器、RAF、microtask 与消息时序来自同一调度模型。
 - 主窗口与子窗口状态分离，iframe 子 realm 独立。
 - 未触达的宿主 API 不预建。
+
+## 提炼说明（643）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

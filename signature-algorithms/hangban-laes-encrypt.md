@@ -189,3 +189,11 @@ def _mix(tbl, left, right):
 ## 完成口径
 
 `localReproduced` = 同一明文/`key_hex` 离线脚本输出与官方 JNI 返回的 Base64 一致。`serverAccepted` 仍要独立业务 readback。标准 AES 套壳假设已被同一对输入输出证伪。
+
+## 本轮提炼评估
+
+JNI 入口、来源报告描述的 LAES-like 参数分支与作者自述的单样本对照已整理为[LAES 来源报告 reference](./hangban-laes-reference.md#interfaces)。PDF、算法脚本和完整查表数据未取得；本轮未独立复跑，不能把原文的 localReproduced 陈述提升为本轮 parity。
+
+## 提炼说明（727）
+retain_existing_reference。既有卡 signature-algorithms/hangban-laes-reference.md。
+本轮不另建卡。不复制 Cookie/token/指纹原值。未审图片不作证据。

@@ -180,3 +180,7 @@ driver，开发起来简单很多，但运行效率会低一些，适合抓取�
 
 [ 爬虫小偏方：绕开登陆和访问频率控制
 ](http://mp.weixin.qq.com/s?__biz=MjM5NjE0NTY5OA==&mid=2448548014&idx=1&sn=b77ee2c67a68bd395edb91be78e794bd&chksm=b2e8ffe3859f76f533c97bd38946cf68dfd82b097cb963744e97531a176773800be3864c809a&scene=21#wechat_redirect)
+
+## 提炼说明（706）
+archive_only。猿人学 Web 教学合集，不另建产品卡。
+本轮不另建卡。

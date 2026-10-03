@@ -103,3 +103,7 @@ ninja -C out/Default chrome
 
 > 现在即使将浏览器关闭后重新打开，依然可以**正常保持登录状态**了，因为我们做了cookie持久化存储。
 
+
+## 提炼说明（268）
+archive-only。Cookie 过期强改不是站点模块。Time::Max 与正文“1 年”矛盾，保留在 archive。
+不收录补丁。远程图未审。

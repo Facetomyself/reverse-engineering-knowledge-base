@@ -86,3 +86,8 @@ ps:
 ](http://mp.weixin.qq.com/s?__biz=MjM5NjE0NTY5OA==&mid=2448548009&idx=1&sn=509bf23eb7d0f04f252c305876431771&chksm=b2e8ffe4859f76f253ad136e8797da67862a9fa805c58d132e22d92a3eefa1ac93900c94d510&scene=21#wechat_redirect)
 
 这篇写得偏技术点，不知道反响咋样，给我点反馈，不晓得该写哪方面的了！！！
+
+## 提炼说明（373）
+archive-only。微信分享绕登录随笔。
+微信 HTTP 卡已覆盖会话面。
+不收录采集步骤。

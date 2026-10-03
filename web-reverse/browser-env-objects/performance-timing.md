@@ -76,3 +76,7 @@ performance 和 observer 是时间源、entry 列表、异步 record 队列和�
 - timer 与 microtask 队列顺序不颠倒，clear 后不再触发。
 - observer entry 的 target 是真实节点身份，rect / time 与 layout 同源。
 - 未触达的 entry 类型不预建。
+
+## 提炼说明（640）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

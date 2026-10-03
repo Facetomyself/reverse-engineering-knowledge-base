@@ -1,11 +1,11 @@
 ---
 schema_version: 2
 id: mobile-app-reverse-protocol-admission-four-gates
-document_type: archive
+document_type: reference
 scope:
   targets:
-  - unknown
-  client: unknown
+  - mobile protocol client admission
+  client: Android/iOS app protocol
   version: unknown
   observed_at: unknown
 sources:
@@ -15,6 +15,17 @@ sources:
   citation: 方法论整理（`本地项目分析材料（定位不公开）` 对照）
   reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
 source_completeness: unknown
+modules:
+- name: decision-flow
+  anchor: admission-parallel-gates
+  sources: [s1]
+  basis: source-report
+  limits: 四关是方法论分诊模型；各目标的具体字段、触发规则和依赖需逐案取证。
+- name: validation
+  anchor: admission-completion-gate
+  sources: [s1]
+  basis: source-report
+  limits: localReproduced/serverAccepted/registrationComplete/sessionConsistent 为验收定义，不代表任何目标本轮已通过。
 tags:
 - 协议准入
 - 四关
@@ -69,6 +80,7 @@ archived_date: '2026-09-06'
 
 Web 面和 App 面即使同厂同名，也默认不是同一套拦截器。
 
+<a id="admission-completion-gate"></a>
 ## 完成门（先于四关）
 
 | 门槛 | 含义 | 不够格 |
@@ -80,6 +92,7 @@ Web 面和 App 面即使同厂同名，也默认不是同一套拦截器。
 
 空成功是第一诊断对象：状态码成功、body 合法、业务字段为空。它不是「再改一版签名」的信号，而是四关里至少一关没过。营销产能、公开 GitHub `sign()`、商业签名 RPC 都不能写成 `serverAccepted`。
 
+<a id="admission-parallel-gates"></a>
 ## 四关（并联，不是流水线）
 
 四关必须同时成立。错一关时，另外三关的工作会表现为通了但没货。

@@ -1,12 +1,12 @@
 ---
 schema_version: 2
 id: signature-algorithms-alibaba-mtop-four-headers
-document_type: archive
+document_type: reference
 scope:
   targets:
-  - unknown
-  client: unknown
-  version: unknown
+  - Alibaba App Gateway SG 70102
+  client: Android app gateway
+  version: source report; exact SG build unknown
   observed_at: unknown
 sources:
 - id: s1
@@ -15,6 +15,17 @@ sources:
   citation: '`本地项目分析材料（定位不公开）`（吸收 `本地项目分析材料（定位不公开）`）'
   reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
 source_completeness: unknown
+modules:
+- name: parameters
+  anchor: sg-70102-four-headers
+  sources: [s1]
+  basis: source-report
+  limits: 输入画像、计数和四头算法均为来源报告；本轮未生成新会话或运行脚本。
+- name: validation
+  anchor: sg-70102-four-headers
+  sources: [s1]
+  basis: source-report
+  limits: 来源只声明离线 localReproduced；没有独立 TLS readback，不能称 serverAccepted。
 tags:
 - MTOP
 - x-sign
@@ -111,6 +122,13 @@ SGProfile + data2sign
 `k0` / `k1` 不是随机数。X 链是 Park-Miller `16807` LCG（mod `2^31-1`）。B 链偶步 `*5+7`、奇步 `*3+0x13`。键值为 `((X | mask) + B) mod 0xFF`。
 
 DES key 是 SG 侧固定 8 字节常量，不是机型字段，所以 `des_ecb.py` 与设备无关。
+
+<a id="sg-70102-four-headers"></a>
+## 可复用提炼：SG 70102 四头输入边界
+
+来源报告将 `x-sign`、`x-sgext`、`x-mini-wua`、`x-umt` 描述为依赖会话画像与 `data2sign` 的 App 网关头；`x-umt` 不吃 `data2sign`，只切会话材料。输入还包含 `key24`、`phase2`、`device_40`、调用计数、XOR 键和模板词，输出链分别涉及 mini DES/ECB、sgext XOR、切片 Base64 与状态链。
+
+**验证边界**：来源只声明一加样本的离线 `localReproduced`，明确没有独立 TLS readback，不能写 `serverAccepted`。四头路径不能与 Web H5 query sign 或未知 SG 版本的 RPC 路径互换；缺少会话画像时不应宣称可凭请求体纯算。
 
 ## 验证口径
 

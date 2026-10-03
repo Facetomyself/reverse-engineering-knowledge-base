@@ -127,3 +127,8 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+## 提炼说明（538）
+archive_only。
+Frida spawn-gating 挂子进程示例，演示包 SignatureService.native1。
+本轮不另建卡。

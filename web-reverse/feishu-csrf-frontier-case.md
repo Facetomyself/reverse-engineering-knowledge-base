@@ -73,3 +73,7 @@ WS wss://msg-frontier.feishu.cn/ws/v2 ? access_key & ticket & ...
 ## 证据边界
 
 本库没有连接飞书。示例 Cookie、JWT、did 不收录。`access_key` 的输入字段以当前 `generate_access_key` 调用点为准，换前端后要重看 JS 导出是否还在。
+
+## 本轮提炼评估
+
+frontier ticket、页面 JS `access_key`、WebSocket 和独立 IM HTTP 面已整理为[请求链 reference](./feishu-frontier-request-chain.md#request-chain)。CSRF 双写关系仍以[会话材料双写参考](./session-binding-double-write.md)为准；本文没有连接服务、重放请求或验证 server-accepted。

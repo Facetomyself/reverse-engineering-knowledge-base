@@ -123,3 +123,10 @@ plan = plan_mouse_path(0, 0, 400, 300, resolve_config("default"), make_rng(1))
 - 本机 Pro 二进制的定制面是 `components/ungoogled/license_runtime.cc` 和 `fingerprint-*` 开关。曲线不在 `chrome.dll`。
 - 提取模块不复制上游的 Playwright 猴子补丁、隔离世界和 CDP 按键派发。
 - `get_by_role` 与 `>>` 链式选择器在上游 humanize 里仍不支持。Playwright 的 `query_selector()` 返回的 ElementHandle 会绕过补丁。
+
+<a id="reference-extraction-199"></a>
+## 提炼说明
+
+本来源保留为完整 archive。按本批全文审查，将包装层三次贝塞尔计划器、点击顺序和 chrome.dll / CDP / ElementHandle 边界，提炼为 [CloakBrowser humanize 轨迹计划器参考](./cloakbrowser-humanize-trajectory-reference.md)。
+
+该 reference 只标记 `source-report`；不收录本机绝对路径、许可证或坐标样值，未运行 Playwright 或页面，不表示目标站点接受这些样本。

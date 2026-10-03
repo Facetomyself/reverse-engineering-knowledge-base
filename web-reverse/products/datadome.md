@@ -101,3 +101,7 @@ captcha 滑块链：
 ## 延伸
 
 无感 interstitial 的 jsdom/vm 补环境、iframe Realm、Worker/OffscreenCanvas 与 VM 第一处分叉，见 [DataDome 无感验证补环境](../datadome-env-patch.md)。产品索引只负责命中与观察优先级，不替代该文的执行细节。
+
+## 提炼说明（676）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

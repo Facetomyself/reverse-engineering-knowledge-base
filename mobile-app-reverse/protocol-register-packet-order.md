@@ -1,11 +1,12 @@
 ---
 schema_version: 2
 id: mobile-app-reverse-protocol-register-packet-order
-document_type: archive
+document_type: reference
 scope:
   targets:
-  - unknown
-  client: unknown
+  - device registration packet order
+  - SDK event/log channels
+  client: mobile protocol SDK
   version: unknown
   observed_at: unknown
 sources:
@@ -15,6 +16,22 @@ sources:
   citation: 方法论整理（纯协议补注册包顺序）
   reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
 source_completeness: unknown
+modules:
+- name: request-chain
+  anchor: registration-event-scheduling
+  sources: [s1]
+  basis: source-report
+  limits: 线程、事件、缓冲和身份依赖来自方法论来源；未绑定具体 SDK 或目标运行时。
+- name: decision-flow
+  anchor: cloud-identity-prerequisite
+  sources: [s1]
+  basis: source-report
+  limits: 依赖边和禁止混用规则是来源建议；字段名、阈值和失效时机仍未知。
+- name: validation
+  anchor: registration-fidelity-boundary
+  sources: [s1]
+  basis: source-report
+  limits: 来源明确区分 localReproduced/serverAccepted/registrationComplete；本轮未执行任何门禁。
 tags:
 - 纯协议
 - 设备注册
@@ -78,6 +95,7 @@ HTTP 200、空壳 JSON、只抄到 `did` / `iid` / token 字符串，都不够�
 
 方案 A 只适合当对照时间线。工程实现至少要到方案 B；要稳定过强风控接口，最终往往要到方案 C——把核心 SDK 扣下来，调用面跟 Java 接近。
 
+<a id="registration-event-scheduling"></a>
 ## 1. 注册环节不是串行时间线
 
 设备注册看起来像一串包，其实是多条通道同时在跑。常见形态：
@@ -143,6 +161,7 @@ HTTP 200、空壳 JSON、只抄到 `did` / `iid` / token 字符串，都不够�
 
 日志包同样可以逐条发，也可以进缓冲。不要默认「日志 = 批量、事件 = 实时」，以代码为准。也不要为了「看起来完整」先移植几百条无关日志；先证明这条通道在注册完备性里是阻塞，再按信号补，而不是按 HAR 条数补。成本边界见 [纯协议 SDK 重建](./pure-protocol-sdk-reconstruction.md) 第 7.2 节：为低权限读接口补四百个日志包，在工程上可以不成立。
 
+<a id="cloud-identity-prerequisite"></a>
 ## 4. 前置条件：云端身份还没落到状态里，后面的包不能发
 
 包与包之间除了并行，还有硬依赖。最常见的一条：
@@ -169,6 +188,7 @@ HTTP 200、空壳 JSON、只抄到 `did` / `iid` / token 字符串，都不够�
 
 依赖边用 DAG 表达就够用：谁等谁，等的是哪个字段。调度时间、批量窗口、失败重试不要写进 DAG 的边，那是状态机内部的事。HAR 只能证明「这次确实带了这个 id」，不能证明「没有 id 时会不会也发」。后者必须看代码。
 
+<a id="registration-fidelity-boundary"></a>
 ## 5. 保真度：尽可能像，但承认还不是真机
 
 事件通道、日志通道、前置身份，都要尽可能跟 App 一样。一样的程度决定协议客户端在强风控接口上稳不稳。时间成本也会明显高于「把注册包按顺序发一遍」。

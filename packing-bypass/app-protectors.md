@@ -92,3 +92,7 @@ Web 风控产品走 `article/web-reverse/products.md`。本表只覆盖 Android 
 - 一份 panda `complete-enough` 不是完整脱壳。
 - NIS 与 Web 易盾滑块不是同一产品面。
 - Gadget 重签只在 `fridaAttachFailed` 且 `wantGadget` 时作为活取降级。
+
+## 提炼说明（571）
+retain existing reference。加固命中表已在本文。
+不扩卡。

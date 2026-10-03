@@ -108,3 +108,7 @@ modules:
 
 - 单独验证码目标：`cap_union_new_verify` 返回 `errorCode == "0"` 且带 `ticket/randstr` 作为验证码口径成功
 - 业务链目标（登录、下单、活动等）：必须继续验证原业务接口真正放行，不能只看验证码通过
+
+## 提炼说明（697）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

@@ -322,3 +322,7 @@ std::string HeadlessBrowser::GetProductNameAndVersion() {
 
 *   无头模式主要是为了后续做linux版本做准备，但博主太穷，没钱升级电脑。
 *   所以短时间linux版的是搞不了了。
+
+## 提炼说明（244）
+archive-only。无头特征清单不是可查站点模块，也无五门 procedure。
+不收录 webdriver/rtt/UA/plugins/SwiftShader 补丁。远程图未审。

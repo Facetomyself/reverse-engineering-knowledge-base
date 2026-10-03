@@ -77,3 +77,7 @@ Canvas 是带尺寸、绘制状态和输出方法的元素；2D context 是绘�
 - 位图内容与后续请求 / Worker 字节一致；重置尺寸后输出应变化或清空。
 - `ctx.canvas` 身份引用与字体测量同源关系先对齐，再定绘制值。
 - 未触达的绘制接口不补；补入接口后与其状态依赖一并补齐。
+
+## 提炼说明（628）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

@@ -1,11 +1,11 @@
 ---
 schema_version: 2
 id: collection-engineering-high-concurrency-http-collector-control-plane
-document_type: archive
+document_type: reference
 scope:
   targets:
-  - unknown
-  client: unknown
+  - high-concurrency HTTP collector control plane
+  client: collection engineering
   version: unknown
   observed_at: unknown
 sources:
@@ -15,6 +15,22 @@ sources:
   citation: '`本地项目分析材料（定位不公开）`'
   reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
 source_completeness: unknown
+modules:
+- name: request-chain
+  anchor: five-layer-control
+  sources: [s1]
+  basis: source-report
+  limits: 来源项目的控制面总结；并发、代理和容量参数不能直接外推到其他目标。
+- name: decision-flow
+  anchor: drain-half-open
+  sources: [s1]
+  basis: source-report
+  limits: drain/cooldown/probe 是来源方法论，未在本轮运行 outage fixture。
+- name: validation
+  anchor: bounded-recovery-gates
+  sources: [s1]
+  basis: source-report
+  limits: 长期 soak 和容量门是来源建议，当前文章没有本轮独立 receipt。
 tags:
 - 代理租约
 - Sticky SID
@@ -42,6 +58,7 @@ archived_date: '2026-08-02'
 >
 > 从一个真实异步采集器中提炼代理身份生命周期、连接池复用、自适应限速、分层 deadline、checkpoint 与容量晋级门。重点不是复制某个站点的并发数字，而是解释高并发系统为什么会“进程还活着，产物却不再增长”，以及控制面如何收敛。
 
+<a id="five-layer-control"></a>
 ## 结论先行
 
 生产采集器至少要同时控制五类状态：
@@ -221,6 +238,7 @@ if response.status == 429:
 
 真实固定窗口中，约八成 `429` 被识别为旧 epoch 响应并合并，避免了重复乘法惩罚；它们仍参与计数并延长 cooldown，没有被静默丢弃。
 
+<a id="drain-half-open"></a>
 ## 连接池故障恢复：drain，再 half-open
 
 长生命周期 session 是正常路径，但供应商短时故障后，既有 connection pool 可能不再自愈。正确恢复顺序是：
@@ -296,6 +314,7 @@ open                    close and back off again
 
 恢复配置还必须显式固化当前的路由策略，尤其是页面与图片/附件是否使用同一代理。不要让 recovery 从历史模板隐式继承旧值；主链与恢复链的路由不一致时，网络错误很容易被写成新的业务失败。启动补采前应做 route-policy parity check，不一致就停止，而不是批量消耗 retry budget。
 
+<a id="bounded-recovery-gates"></a>
 ## 容量晋级门
 
 不要从低并发直接跳到目标峰值。每次只增加一个 shard/lane，并至少观察两个同步健康窗口：

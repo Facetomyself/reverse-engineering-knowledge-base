@@ -37,6 +37,7 @@ archived_date: '2026-09-23'
 >
 > 这份对照仓轮询的是公开 CMS 公告列表，不是交易 API 的 HMAC。本地 JS 填 `csrftoken`、设备指纹和 `fvideo-token`；`fvideo-id` 直接来自 Cookie。
 
+<a id="cms-request-chain"></a>
 ## 案例：一页公告
 
 `BinanceApis.spider_one_page`：
@@ -77,3 +78,9 @@ diff catalogs[0].articles against previous first item
 ## 证据边界
 
 `News.js` 的 fvideo 拼装和字母表不入库。画像里的分辨率、WebGL 字符串是作者机器捕获，不能贴到另一份 Cookie。本库没有请求币安。
+
+公告 CMS 的接口、头字段来源和请求顺序另整理为 [Binance CMS header 参考](./binance-cms-header-reference.md#request-chain)。该参考限于本来源报告描述的公告列表路径，不外推到交易 API，也不声称服务端接受或校验这些字段。
+
+## 提炼说明（625）
+archive_only。币安公告设备头案例源；已有 Binance CMS reference。
+本轮不另建卡。

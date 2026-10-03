@@ -179,3 +179,7 @@ ninja  -C  out/Default chrome
 *   https://abrahamjuliot.github.io/creepjs/
 
 * * *
+
+## 提炼说明（256）
+archive-only。GPU 参数面见 canvas-webgl。WebGPU limits 随机不另建卡。
+不收录 hash 样值或 gpu_supported_limits 补丁。

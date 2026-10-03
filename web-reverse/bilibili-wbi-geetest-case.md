@@ -90,3 +90,7 @@ wire = original_order(params) + w_rid + wts
 ## 证据边界
 
 本库没有重放登录。mixin 下标表、RSA 公钥、极验密钥留在源码对照，不作为长期 SDK 常量。
+
+## 提炼说明（625）
+archive_only。WBI 写回/极验边界案例；评论与 WBI 面已有 reference。
+本轮不另建卡。

@@ -354,3 +354,7 @@ emoji/res/assets/newemoji/Fireworks.png)
 
 如果你们在实操时碰到问题，比如 “XHR 断点不触发”“加密算法看不懂”，欢迎在评论区留言，咱们一起拆解！后续还会出 “各个参数的实战案例”，教你用
 Python 完整复现 Akamai 加密逻辑，  这里是爬虫虐我千百遍，我待爬虫如初恋的爬虫任。  点赞关注，下次实战不迷路～，
+
+## 提炼说明（607）
+archive_only。mst/ajr/ffs/xCK 字段角色已有 products/akamai；本稿为插桩过程稿。
+本轮不另建卡。不复制 Cookie、UA 或 sensor 样值。

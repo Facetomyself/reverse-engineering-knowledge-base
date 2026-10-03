@@ -168,3 +168,10 @@ PART 09 · 稳定性 & 一图流
 写在最后
 
 本文仅用于安全研究与技术学习复盘。请勿用于未授权的抓取或绕过风控牟利。
+
+<a id="reference-extraction-199"></a>
+## 提炼说明
+
+本来源保留为完整 archive。按本批全文审查，将 4 段 JSONP 加业务 POST、loc 重排显示坐标系、length 偏移、AES 角色、op 形状和 -1/105/111/112 分流，提炼为 [拼图打乱重排滑块：loc 重排与错误码分流参考](./shuffled-jigsaw-slider-protocol-reference.md)。
+
+该 reference 只标记 `source-report`；2 张来源图未审，不收录轨迹坐标、票据、密钥或可运行协议实现，不表示当前验证码服务或业务接口验收。

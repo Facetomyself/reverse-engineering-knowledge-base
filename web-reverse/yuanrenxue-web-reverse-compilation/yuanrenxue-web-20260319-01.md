@@ -292,3 +292,7 @@ https://github.com/tanweai/pua/blob/main/README.zh-CN.md
 https://github.com/vmoranv/jshookmcp
 
 没有做详细测试，效果仅供参考
+
+## 提炼说明（712）
+archive_only。猿人学 Web 教学合集，不另建产品卡。
+本轮不另建卡。

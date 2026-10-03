@@ -75,3 +75,7 @@ navigator 子对象通常是独立接口：集合、权限状态、设备管理�
 - plugin / mimeType 双向引用与集合语义一起补。
 - connection / battery 字段组合与状态来源一致，change 先更新后回调。
 - 子对象状态与顶层 profile、权限、URL 安全上下文对齐后再定值。
+
+## 提炼说明（637）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

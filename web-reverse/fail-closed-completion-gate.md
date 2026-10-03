@@ -99,3 +99,11 @@ if result.local == "matched" and result.server != "accepted":
 ```
 
 把 `local == matched` 写成任务完成，是这套对照仓反复避开的结论。
+
+## 本轮审阅处置（2026-10-01）
+
+保留为 archive-only，不新建 validation reference 或 procedure：来源是不可公开定位的本地材料，scope target 仍为 unknown，且核心完成门已由 [材料出处账本](./material-provenance-ledger.md#完成门) 与 [请求面失败翻译](./request-plane-failure-translation.md#可复用提炼先定位生产者再翻译失败面) 覆盖。另有一处不能直接复用的内部冲突：第 61–68 行伪代码在 `required` 为空时仍会调用 `compute`，而第 71 行要求无签名 path 不调用计算函数；在显式补上该分支前，不把伪代码当实现模板。全部技术叙述仍是 `source-report`，未做 runtime、parity 或 server-acceptance 验证。
+
+## 提炼说明（733）
+archive_only。伪代码 required 为空仍 compute，与无签名 path 不调用矛盾；完成门已由 material-provenance-ledger / request-plane-failure-translation 覆盖。
+本轮不另建卡。

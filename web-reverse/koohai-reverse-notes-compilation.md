@@ -66,3 +66,28 @@ archived_date: '2026-09-06'
 | 2026-03-15 | [从AST到JSVMP（入坑记录）](koohai-reverse-notes-compilation/koohai-20260315-01.md) |
 | 2026-03-18 | [vmp-1：rs-while的构造器初探](koohai-reverse-notes-compilation/koohai-20260318-01.md) |
 | 2026-04-02 | [khbox补环境案例-2：yrx2内存爆破分析](koohai-reverse-notes-compilation/koohai-20260402-01.md) |
+
+<a id="reference-extraction-214"></a>
+## 提炼说明
+
+本合集页只列 17 篇子文目录，没有独立接口、参数或验收模块正文。子篇「某麦小程序sign解密」已在 reviewed-no-extraction-29 记 archive-only（正文不足以支撑 sign 参考）。kb_catalog.py query --tag KhBox --type reference 为 0。合集导航页不另建 reference。其余子篇需单独全文核验。
+
+## 同目录窄参考
+
+本段只挂同目录提炼卡。
+
+- [Android WebView 强制打开调试的入口](koohai-reverse-notes-compilation/koohai-20240108-01-reference.md)
+- [FART 抽取壳的脱壳点与目录开关](koohai-reverse-notes-compilation/koohai-20240109-01-reference.md)
+- [IDA 里认出 MD5 以及 findhash 的 32 位边界](koohai-reverse-notes-compilation/koohai-20240623-01-reference.md)
+- [KhBox 接入 jsdom 时的查找顺序与 envFuncs 键](koohai-reverse-notes-compilation/koohai-20260105-01-reference.md)
+- [KhBox 的原型链、native toString 与 Illegal invocation](koohai-reverse-notes-compilation/koohai-20260112-01-reference.md)
+- [KhBox addon 的 jsDispatch 与 V8 Context 隔离](koohai-reverse-notes-compilation/koohai-20260125-01-reference.md)
+- [KhBox V0.1：context 拆开和没做完的 in/delete](koohai-reverse-notes-compilation/koohai-20260205-01-reference.md)
+- [KhBox v1：VM 内 bootstrap 和新增的调用、堆栈检查](koohai-reverse-notes-compilation/koohai-20260209-01-reference.md)
+- [KhBox node 重构：内部绑定、jsDispatch 和两条回读](koohai-reverse-notes-compilation/koohai-20260225-01-reference.md)
+- [KhBox 笔记里的 Canvas 扣分标志和 toDataURL 分支](koohai-reverse-notes-compilation/koohai-20260303-01-reference.md)
+- [KhBox 编进 Node 内置 binding 时被点名的四处](koohai-reverse-notes-compilation/koohai-20260305-01-reference.md)
+- [BrowserLeaks JavaScript 计分脚本和三处 KhBox getter](koohai-reverse-notes-compilation/koohai-20260308-01-reference.md)
+- [khbox 1.2 里点名的数组型类和媒体能力桩](koohai-reverse-notes-compilation/koohai-20260313-01-reference.md)
+- [rs while 代码生成器：组装机和静态引擎怎么分开](koohai-reverse-notes-compilation/koohai-20260318-01-reference.md)
+- [yrx2 里来源点名的四处内存检查](koohai-reverse-notes-compilation/koohai-20260402-01-reference.md)

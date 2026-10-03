@@ -438,3 +438,14 @@ workspace/<project>/
 | 为读接口补了大量日志包 | 先算成本；不值得就停在方案 B |
 
 全局地图解决「请求从哪一层被改」。本文解决「改完之后，如何收成一套能维护的 Python SDK」。能维护的标志不是接口数量，而是算法、拦截器、指纹和状态机四层不再互相污染。
+
+<a id="archive-only-102"></a>
+## 处置说明
+
+本篇保留为 archive-only 方法论来源。全文审查确认，HAR/算法/拦截器/设备画像/准入门槛与现有 [`协议准入四关`](./protocol-admission-four-gates.md) 和 [`设备注册包顺序`](./protocol-register-packet-order.md) 的 canonical 内容重叠；本篇没有独立目标、闭合事件状态机、具体证据集或可验收 procedure，因此不另建 reference/procedure。
+
+本轮未运行设备、App、HAR、TLS listener、Python client、SDK、网络请求或服务端；所有原文建议仍是 `source-report`，不表示任何目标已注册、激活或取得业务 readback。
+
+## 提炼说明（721）
+archive_only。HAR/拦截器/指纹/注册顺序与 protocol-admission-four-gates、protocol-register-packet-order 重叠；无独立状态机/procedure。
+本轮不另建卡。

@@ -95,3 +95,7 @@ body 里的业务 appKey 和 query 里的 H5 appKey `34839810` 不是同一个�
 ## 证据边界
 
 `gen_tfstk.js` 和 `et_f.js` 的环境快照不入库。空 sign 换票是这份对照仓的引导步骤，是否仍被服务端接受要以当前抓包为准。本库没有打线上。
+
+## 提炼说明（739）
+retain_existing_reference。既有卡 web-reverse/products/alibaba-mtop-h5.md。
+本轮不另建卡。不复制 Cookie/token/指纹原值。未审图片不作证据。

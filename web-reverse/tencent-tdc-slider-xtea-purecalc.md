@@ -1052,3 +1052,10 @@ pow_answer = pow_cfg['prefix'] + str(nonce)
 这篇文章整整写了一周，耗费很多的心力，从开始学习反编译jsvmp，再到后来的插桩翻日志，每一步都很艰难。他们说t滑块的jsvmp是所有vmp里简单的那一批，可我却觉得，每一步都饱含泪水。逆向的过程从来都是迎难而上。未来继续努力吧，最后，**愿我们在高处相见，亦或在深处重逢**
 
 ### 本文由 琴殇 投稿
+
+<a id="reference-extraction-208"></a>
+## 提炼说明
+
+本来源保留为完整 archive。按本批全文审查，将 jsvmp handler 插桩判定 XTEA、4 字符小端打包、加法频率取动态 key、jsdom 现取 cd/sd 与 eks 的半纯算边界，提炼为 [腾讯 TDC collect XTEA 半纯算参考](./tencent-tdc-slider-xtea-purecalc-reference.md)。
+
+命中特征与同轮 sess/`tdc_path`/`pow_cfg` 仍见 [products/tencent-captcha.md](./products/tencent-captcha.md)。该 reference 只标记 `source-report`；未运行 tdc.js、jsdom、OpenCV 或校验接口，不收录 key、pow 前缀/目标哈希、collect 明文/密文或可运行加解密，10 张图未审。

@@ -92,3 +92,7 @@ MTOP 同样三行：H5 appKey、body 里的 IM app-key、App 的 `21407387`。�
 ## 过期
 
 `version_code`、page_id、appId（京东搜索 `f06cc`）都是抓包窗口的数。复用的是建表动作：新抓一条就加一行，旧行标日期。不要把表抄进另一个 Cookie 会话当设备指纹。
+
+## 提炼说明（646）
+archive_only。技巧：端别常量表，按抓包填，不为统一抹平 保持 archive。
+本轮不另建卡。

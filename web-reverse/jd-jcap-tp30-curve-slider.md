@@ -769,3 +769,10 @@ if is_behavior_reject(result):
 8. `check` 成功响应最终返回 `vt`。
 
 与登录滑块相比，两者底层参数算法大部分同源，但 `si` 来源、刷新状态链、交互方式和鼠标位移到拼块位置的映射不同。tp:30 不能直接套用登录滑块的“CV 位置即轨迹末点”假设，必须完成当前挑战的曲线反查。
+
+<a id="reference-extraction-205"></a>
+## 提炼说明
+
+本来源保留为完整 archive。按本批全文审查，将业务侧 tp:30 的 si→vt、n1 曲线、透明边距、离散反函数、ii 回放和 tk 字节合同，提炼为 [京东 JCAP tp:30 曲线映射与 si→vt 参考](./jd-jcap-tp30-curve-slider-reference.md)。
+
+题型分流与 vt 仍见 [products/jd-jcap-captcha.md](./products/jd-jcap-captcha.md)；视觉答案与 drag proof 见 [products/jd-jcap-slider.md](./products/jd-jcap-slider.md)。该 reference 只标记 `source-report`；未运行 JCAP、OpenCV 或浏览器，不收录 si/vt、轨迹点、Cookie 或密钥，4 张图未审。

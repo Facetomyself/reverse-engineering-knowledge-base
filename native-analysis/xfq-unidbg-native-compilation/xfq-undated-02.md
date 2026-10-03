@@ -203,3 +203,7 @@ public class HashFinder {
         return false;
     }
 }
+
+## 提炼说明（568）
+retain existing reference。HashFinder 扫描已由马蜂窝 SHA1 卡引用。
+本篇保留源码归档，不另建卡。

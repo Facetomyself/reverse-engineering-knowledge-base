@@ -73,3 +73,7 @@ modules:
 - toString / 模板字符串与 href 一致。
 - 页面 URL、脚本 URL、接口 URL 区分维护，不混为一个 href。
 - 主窗口与 iframe 各有 location 状态；未触达字段不预补。
+
+## 提炼说明（637）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

@@ -104,3 +104,8 @@ function main() {
 setImmediate(main)
 
 // frida -U -f com.max.xiaoheihe -l "hook frida检测.js"
+
+## 提炼说明（538）
+archive_only。
+对 libmsaoaidsec.so 硬编码偏移 ret patch；目标包教学脚本，不发布绕过卡。
+本轮不另建卡。

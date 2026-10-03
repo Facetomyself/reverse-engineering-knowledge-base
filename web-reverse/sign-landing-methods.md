@@ -176,3 +176,7 @@ MTOP `InnerSignImpl.getUnifiedSign` 是标准路径：spawn → 枚举 ClassLoad
 | 币安 / 领英 / Instagram / X | [币安](./binance-cms-header-case.md)、[领英](./linkedin-voyager-csrf-case.md)、[Instagram](./instagram-doc-id-case.md)、[X](./x-twitter-graphql-case.md) |
 | 飞书 / 公众号后台 / 汽车之家 / 百家号 | [飞书](./feishu-csrf-frontier-case.md)、[公众号后台](./wechat-oa-mp-cgi-case.md)、[汽车之家](./autohome-cookie-boundary-case.md)、[百家号](./baijiahao-runtime-header-case.md) |
 | 跨站写回 | [签完即线上](./signed-query-wire-contract.md) |
+
+## 提炼说明（703）
+archive_only。签名落地四分法方法稿；既有 routing/wire/provenance 覆盖，procedure 分支不闭合。
+本轮不另建卡。

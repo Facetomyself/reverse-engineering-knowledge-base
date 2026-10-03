@@ -521,3 +521,8 @@ App 不再消费这些 active threat 去阻断 UI。
 
 3\. **runtime 证据优先。** 静态能解出 `internalThreatID=39` 的文案映射，但最终仍通过真实
 `ZDefendThreat` 入参与 UI tree 完成了闭环验证。
+
+## 提炼说明（556）
+archive_only。
+ZDefend rule→threat/status→App UI 消费层 sanitize；6 张远程图未审，不发布越狱绕过 procedure。
+本轮不另建卡。

@@ -37,6 +37,10 @@ archived_date: '2026-09-27'
 >
 > XApis 已不再是只透传 Bearer 与 ct0 的旧搜索壳。现行版本集中维护鉴权，使用可刷新 GraphQL 注册表、本地 XCTID 与独立登录链。可复用的是材料分层和请求形状合同，不是上游的长期可用性声明。
 
+<a id="graphql-reference"></a>
+
+提炼参考：[X GraphQL 会话参考](./x-graphql-session-reference.md)。本锚点覆盖注册表/fieldToggles、XCTID、会话完成门和发布部分成功边界；仍保持 `source-report`。
+
 ## 版本边界：旧结论为什么失效
 
 旧 `apis/twitter_apis.py`、`utils/twitter_utils.py` 已删除。2026-08 的“仓内没有 guest 刷新和 XCTID”“features 写死在方法体”只描述 `a8bbd36f`，不能继续作为当前结论。

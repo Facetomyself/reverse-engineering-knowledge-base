@@ -119,3 +119,7 @@ cookie jar 同 session 延续）。
 - `reese84` 写入后，`dcmcInit` 正常返回 `execution` 头
 - `bookingAirSearch.originalResponse` 返回航班数据（非空数据、非风控结构）
 - 多轮重跑（重新拉首页、新 src、新 POST、新 token）稳定通过
+
+## 提炼说明（682）
+retain_existing_reference。已有 v2 case。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

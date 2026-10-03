@@ -78,3 +78,7 @@ shape_ok(line):
 `execjs.compile(open("static/foo.js"))` 然后 `call("tv")` 没有形状门、没有「失败不回显」、也没有显式时钟。它适合看导出函数名。一旦出参要当 runtime 证据，就换成上面这种运行器：最后一行 JSON、长度或前缀、超时、日志脱敏。
 
 两个运行器不要共用一个 `sign.js`。TikTok HTTP frontier 和 Shop OEC 各有自己的脚本路径。混用会让长度合同对到错误的算法上。
+
+## 提炼说明（649）
+archive_only。技巧：隔离 Node 运行器的进程合同 保持 archive。
+本轮不另建卡。

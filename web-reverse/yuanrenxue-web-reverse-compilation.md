@@ -54,3 +54,19 @@ archived_date: '2026-07-16'
 | 2019-09-02 | [谈下微信小程序的抓取技巧](yuanrenxue-web-reverse-compilation/yuanrenxue-web-20190902-01.md) |
 | 2020-04-13 | [Python 的控制流代码混淆](yuanrenxue-web-reverse-compilation/yuanrenxue-web-20200413-01.md) |
 | 2026-03-19 | [Vibe coding 用 AI 做 JS 逆向食用教程](yuanrenxue-web-reverse-compilation/yuanrenxue-web-20260319-01.md) |
+
+## 提炼说明（712）
+archive_only。猿人学 Web 合集 TOC 枢纽；子文逐篇处置。
+本轮不另建卡。
+
+## 同目录窄参考
+
+本段只挂同目录提炼卡。
+
+- [2019 年 translate.google.cn 上 translate_a/single 的 tk 被说到哪一步](yuanrenxue-web-reverse-compilation/yuanrenxue-web-20190513-01-reference.md)
+- [不透明字符串按前缀选哪一种解码](yuanrenxue-web-reverse-compilation/yuanrenxue-web-20190701-01-reference.md)
+- [521 页面里来源点名的 clearance cookie](yuanrenxue-web-reverse-compilation/yuanrenxue-web-20190711-01-reference.md)
+- [JS 反爬四种现象及来源给出的对策](yuanrenxue-web-reverse-compilation/yuanrenxue-web-20190819-01-reference.md)
+- [2019 笔记里的小程序包路径和抓包分支](yuanrenxue-web-reverse-compilation/yuanrenxue-web-20190902-01-reference.md)
+- [Python 混淆笔记里的三档判别](yuanrenxue-web-reverse-compilation/yuanrenxue-web-20200413-01-reference.md)
+- [JSReverser-MCP 在这篇笔记里的本地接通检查](yuanrenxue-web-reverse-compilation/yuanrenxue-web-20260319-01-procedure.md)

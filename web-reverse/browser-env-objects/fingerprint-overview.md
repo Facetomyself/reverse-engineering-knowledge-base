@@ -72,3 +72,7 @@ modules:
 - 多次读取稳定，重置或尺寸变化后输出变化或清空。
 - 各对象值来自同一浏览器身份 profile，禁止跨 profile 拼接。
 - 与目标链路无关的指纹面不补。
+
+## 提炼说明（634）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

@@ -32,6 +32,10 @@ archived_date: '2026-09-26'
 
 # 闲鱼 EEID 风控体系完全揭秘
 
+## 本轮提炼评估
+
+本篇继续保留为脱敏来源 archive，不新增 `reference`、`case` 或 `procedure`：原始输入、私有对照材料和运行环境不可核验，服务端评分/阈值为来源推测，签名输入待验证。设备与遥测样值、私有路径、密钥线索及细粒度规避细节已脱敏或抽象；不把来源结果推广为当前客户端/服务端事实。
+
 <details data-kb-history="legacy-metadata">
 <summary>历史来源记录（迁移前元数据，非当前真源）</summary>
 > 来源: 闲鱼 7.28.30（`com.taobao.idlefish`，versionCode 520）/ SecurityGuard 6.7.260202 独立分析（Redmi K20 Pro，Android 11）
@@ -44,7 +48,7 @@ archived_date: '2026-09-26'
 
 ## 收录说明
 
-原文为 2026-09-24 独立分析稿，归档时只加元数据、本节与相关地图，正文按原结构保留。原文「八、参考资料」列出的 `*.private.json`、`xianyu_sign/`、`xianyu_eeid/` 等项目文件不随本文收录。
+原文列出的项目文件、报告和工具均属于未公开本地材料，不随本文收录。
 
 阅读时按证据等级区分：
 
@@ -146,16 +150,16 @@ EEID 体系包含 **6,235+ 个参数**，分为以下几大类：
 
 ```json
 {
-  "utdid": "arNd7GBIB9wDAFhdV44i+riU",  // ⭐⭐⭐⭐⭐ 最重要
-  "device_id": "",                        // 可选
-  "ttid": "1582631881546@fleamarket_android_7.28.30",
-  "x_umt": "arNd7GBIB9wDAFhdV44i+riU",  // 与 utdid 相同
-  "wua": "HHnB...（长字符串）"            // 设备指纹摘要
+  "utdid": "[REDACTED: sample value]",  // ⭐⭐⭐⭐⭐ 最重要
+  "device_id": "[REDACTED: sample value]",                        // 可选
+  "ttid": "[REDACTED: sample value]",
+  "x_umt": "[REDACTED: sample value]",  // 与 utdid 相同
+  "wua": "[REDACTED: sample value]"            // 设备指纹摘要
 }
 ```
 
 **UTDID 详解**：
-- **存储位置**：`/data/data/com.taobao.idlefish/shared_prefs/Alvin2.xml`
+- **存储位置**：`未公开本地材料`
 - **生成算法**：首次安装时通过复杂算法生成，包含：
   - 设备硬件信息（MAC、IMEI、序列号等）
   - 随机数
@@ -178,8 +182,8 @@ Mini 探针是 **7 字节布尔段 + 11 字节半字节段**，共 70 组快速�
 
 **实际数据**（来自真实设备 Redmi K20 Pro）：
 ```
-布尔段（7 字节）：99 20 85 04 80 01 44
-半字节段（11 字节）：00 00 ff ff 00 ff 00 00 77 93 00
+布尔段（7 字节）：[REDACTED: sample value]
+半字节段（11 字节）：[REDACTED: sample value]
 ```
 
 ---
@@ -362,78 +366,7 @@ Mini 探针是 **7 字节布尔段 + 11 字节半字节段**，共 70 组快速�
 
 ##### Mini 探针风控逻辑
 
-**快速拦截规则**（服务端处理时间 < 10ms）：
-
-```python
-def check_mini_probes(bool_bytes, nibble_bytes):
-    risk_score = 0
-
-    # 【第 1 关：Root 检测】⭐⭐⭐⭐⭐
-    byte1 = bool_bytes[1]  # 0x20
-    root_bits = byte1 & 0x0F  # 低 4 位
-    if root_bits != 0:
-        return "BLOCK", "检测到 Root"  # 立即拦截
-
-    # 【第 2 关：Hook/模拟器检测】⭐⭐⭐⭐⭐
-    xposed = (byte1 >> 4) & 0x01
-    emulator = (byte1 >> 6) & 0x01
-    virtualapp = (byte1 >> 7) & 0x01
-    if xposed or emulator or virtualapp:
-        return "BLOCK", "检测到 Hook/模拟器/虚拟环境"
-
-    # 【第 3 关：传感器检测】⭐⭐⭐⭐
-    byte2 = bool_bytes[2]  # 0x85
-    sensor_count = bin(byte2).count('1')
-    if sensor_count < 2:
-        risk_score += 80  # 传感器太少（模拟器特征）
-
-    # 【第 4 关：SELinux 检测】⭐⭐⭐⭐⭐
-    nibble6_low = nibble_bytes[6] & 0x0F
-    if nibble6_low == 1:  # Permissive
-        risk_score += 90  # SELinux 被关闭（高风险）
-
-    # 【第 5 关：VPN/代理检测】⭐⭐⭐⭐
-    byte4 = bool_bytes[4]  # 0x80
-    vpn = (byte4 >> 5) & 0x01
-    proxy = (byte4 >> 6) & 0x01
-    if vpn or proxy:
-        risk_score += 60  # VPN/代理（可疑）
-
-    # 【第 6 关：触摸能力检测】⭐⭐⭐⭐
-    nibble2_high = (nibble_bytes[2] >> 4) & 0x0F
-    if nibble2_high < 5:
-        risk_score += 70  # 触摸点数过少（模拟器特征）
-
-    # 【第 7 关：硬件完整性】⭐⭐⭐
-    byte3 = bool_bytes[3]  # 0x04
-    if bin(byte3).count('1') < 2:
-        risk_score += 50  # 硬件组件缺失
-
-    # 决策
-    if risk_score >= 100:
-        return "REVIEW", f"风险评分: {risk_score}"
-    else:
-        return "PASS", f"评分: {risk_score}"
-```
-
-**关键风控点总结**：
-
-| 检测项 | 位置 | 阈值 | 风控动作 |
-|-------|------|------|---------|
-| **Root 检测** | Byte1 低 4 位 | 任意位为 1 | ❌ 立即拦截 |
-| **Xposed** | Byte1 bit4 | = 1 | ❌ 立即拦截 |
-| **模拟器** | Byte1 bit6 | = 1 | ❌ 立即拦截 |
-| **VirtualApp** | Byte1 bit7 | = 1 | ❌ 立即拦截 |
-| **SELinux** | Nibble6 低 4 位 | = 1 (Permissive) | ⚠️ 高风险 +90 分 |
-| **传感器数量** | Byte2 | < 2 个 | ⚠️ 可疑 +80 分 |
-| **VPN** | Byte4 bit5 | = 1 | ⚠️ 可疑 +60 分 |
-| **触摸点数** | Nibble2 高 4 位 | < 5 点 | ⚠️ 可疑 +70 分 |
-
-**Mini 探针的优势**：
-- ✅ **速度极快**：7+11=18 字节，解析时间 < 1ms
-- ✅ **准确率高**：Root/Hook/模拟器检测准确率 > 99%
-- ✅ **难以伪造**：需要同时伪造 70 个检测点，且要保持一致性
-- ✅ **实时采集**：每次请求都重新采集，无法重放历史数据
+> 来源报告涉及设备完整性、运行环境、传感器与网络状态等防御性检测类别。具体位映射、条件阈值、风险分值及处理逻辑不入 Public。
 
 #### 2.2.3 ET 探针（435 个深度检测）⭐⭐⭐⭐⭐
 
@@ -451,16 +384,16 @@ ET (Environment Telemetry) 探针是**最详细**的环境检测系统，每个�
 
 | # | Tag | 值示例 | 含义 | 风控作用 |
 |---|-----|-------|------|---------|
-| 1 | 0299 | Android | 系统类型 | ⭐⭐⭐⭐⭐ 验证是否真实 Android 设备（模拟器可能返回其他值） |
-| 3 | 023c | 2839F8E9-BB99-49CF-... | UUID 设备标识符 | ⭐⭐⭐⭐⭐ 设备指纹追踪，跨应用识别 |
-| 12 | bd30 | 680c7e9d-1277-40a0-... | UUID 设备标识符 | ⭐⭐⭐⭐ 另一个设备唯一标识 |
-| 16 | 45b7 | 680c7e9d-1277-40a0-... | UUID 设备标识符 | ⭐⭐⭐⭐ 与 bd30 交叉验证 |
-| 21 | d79b | arNd7GBIB9wDAFhdV44i+riU | UTDID（阿里设备ID） | ⭐⭐⭐⭐⭐ **最核心**的设备标识，跨阿里系 App |
-| 27 | 8f57 | 557acc7b9005281b | Android ID | ⭐⭐⭐⭐ 系统级设备标识 |
-| 34 | e345 | e5086470-5b80-4ca1-... | UUID 设备标识符 | ⭐⭐⭐ 额外的设备追踪标识 |
-| 41 | 0174 | 70a841e5423314d5 | 设备指纹 Hash | ⭐⭐⭐⭐ 综合设备特征哈希 |
-| 48 | 85ba | <e2827ebf73bd46384e1e72e6520e9d7 | 设备特征码 | ⭐⭐⭐ 额外的设备指纹 |
-| 17 | b7ab | 243462189056 | 设备序列号 | ⭐⭐⭐⭐ 硬件序列号（可能是 IMEI） |
+| 1 | 0299 | [REDACTED: sample value] | 系统类型 | ⭐⭐⭐⭐⭐ 验证是否真实 Android 设备（模拟器可能返回其他值） |
+| 3 | 023c | [REDACTED: sample value] | UUID 设备标识符 | ⭐⭐⭐⭐⭐ 设备指纹追踪，跨应用识别 |
+| 12 | bd30 | [REDACTED: sample value] | UUID 设备标识符 | ⭐⭐⭐⭐ 另一个设备唯一标识 |
+| 16 | 45b7 | [REDACTED: sample value] | UUID 设备标识符 | ⭐⭐⭐⭐ 与 bd30 交叉验证 |
+| 21 | d79b | [REDACTED: sample value] | UTDID（阿里设备ID） | ⭐⭐⭐⭐⭐ **最核心**的设备标识，跨阿里系 App |
+| 27 | 8f57 | [REDACTED: sample value] | Android ID | ⭐⭐⭐⭐ 系统级设备标识 |
+| 34 | e345 | [REDACTED: sample value] | UUID 设备标识符 | ⭐⭐⭐ 额外的设备追踪标识 |
+| 41 | 0174 | [REDACTED: sample value] | 设备指纹 Hash | ⭐⭐⭐⭐ 综合设备特征哈希 |
+| 48 | 85ba | [REDACTED: sample value] | 设备特征码 | ⭐⭐⭐ 额外的设备指纹 |
+| 17 | b7ab | [REDACTED: sample value] | 设备序列号 | ⭐⭐⭐⭐ 硬件序列号（可能是 IMEI） |
 
 **风控重点**：
 - UTDID (tag d79b) 是最核心的标识，服务端用它关联所有历史行为
@@ -473,15 +406,15 @@ ET (Environment Telemetry) 探针是**最详细**的环境检测系统，每个�
 
 | # | Tag | 值示例 | 含义 | 风控作用 |
 |---|-----|-------|------|---------|
-| 5 | f471 | 11 | Android 版本号 | ⭐⭐⭐⭐ 系统版本校验，与 ro.build.version 交叉验证 |
-| 6 | 403e | raphael | 设备代号 | ⭐⭐⭐⭐⭐ Redmi K20 Pro 内部代号，验证设备型号 |
-| 7 | 8fdc | raphael-user 11 RKQ1... | 完整编译指纹 | ⭐⭐⭐⭐⭐ 包含设备、版本、编译信息 |
-| 15 | 2b09 | RKQ1.200826.002 test-keys | Build Tags | ⭐⭐⭐⭐⭐ **test-keys=高风险**（自编译/开发版） |
-| 18 | 3b0a | V12.5.6.0.RFKCNXM | MIUI 版本号 | ⭐⭐⭐ 验证系统版本真实性 |
-| 20 | b8c8 | release-keys | 编译类型 | ⭐⭐⭐⭐⭐ **release-keys=正常**，test-keys=风险 |
-| 22 | fd52 | Xiaomi/raphael/raphael... | 完整系统指纹 | ⭐⭐⭐⭐⭐ 系统完整性验证 |
-| 29 | 1cdb | c5-xm-ota-bd022.bj | OTA 服务器 | ⭐⭐⭐ 验证系统更新来源是否官方 |
-| 44 | f31c | 30 | SDK 版本 | ⭐⭐⭐⭐ Android 11 = SDK 30 |
+| 5 | f471 | [REDACTED: sample value] | Android 版本号 | ⭐⭐⭐⭐ 系统版本校验，与 ro.build.version 交叉验证 |
+| 6 | 403e | [REDACTED: sample value] | 设备代号 | ⭐⭐⭐⭐⭐ Redmi K20 Pro 内部代号，验证设备型号 |
+| 7 | 8fdc | [REDACTED: sample value] | 完整编译指纹 | ⭐⭐⭐⭐⭐ 包含设备、版本、编译信息 |
+| 15 | 2b09 | [REDACTED: sample value] | Build Tags | ⭐⭐⭐⭐⭐ **test-keys=高风险**（自编译/开发版） |
+| 18 | 3b0a | [REDACTED: sample value] | MIUI 版本号 | ⭐⭐⭐ 验证系统版本真实性 |
+| 20 | b8c8 | [REDACTED: sample value] | 编译类型 | ⭐⭐⭐⭐⭐ **release-keys=正常**，test-keys=风险 |
+| 22 | fd52 | [REDACTED: sample value] | 完整系统指纹 | ⭐⭐⭐⭐⭐ 系统完整性验证 |
+| 29 | 1cdb | [REDACTED: sample value] | OTA 服务器 | ⭐⭐⭐ 验证系统更新来源是否官方 |
+| 44 | f31c | [REDACTED: sample value] | SDK 版本 | ⭐⭐⭐⭐ Android 11 = SDK 30 |
 
 **风控重点**：
 - **test-keys 检测**（tag 2b09）：自编译系统 = 高风险
@@ -494,14 +427,14 @@ ET (Environment Telemetry) 探针是**最详细**的环境检测系统，每个�
 
 | # | Tag | 值示例 | 含义 | 风控作用 |
 |---|-----|-------|------|---------|
-| 4 | a2c2 | 1080*2340 | 屏幕分辨率 | ⭐⭐⭐⭐ 验证设备型号（Redmi K20 Pro 特征） |
-| 8 | c342 | 8 | CPU 核心数 | ⭐⭐⭐⭐ 验证硬件配置（K20 Pro = 8核） |
-| 25 | aaca | Redmi K20 Pro | 设备型号 | ⭐⭐⭐⭐⭐ 官方型号名称 |
-| 40 | 2b23 | Xiaomi | 设备厂商 | ⭐⭐⭐⭐ 厂商验证 |
-| 45 | b07c | raphael | 设备代号 | ⭐⭐⭐⭐ 与 tag 403e 交叉验证 |
-| 36 | aaa0 | 1080*2296 | 可用屏幕分辨率 | ⭐⭐⭐ 减去状态栏/导航栏后的分辨率 |
-| 37 | efe7 | 243462189056 | 设备序列号 | ⭐⭐⭐⭐ 与 tag b7ab 交叉验证 |
-| 43 | a5a4 | 1785600 | 内存配置 | ⭐⭐⭐ 物理内存大小（KB） |
+| 4 | a2c2 | [REDACTED: sample value] | 屏幕分辨率 | ⭐⭐⭐⭐ 验证设备型号（Redmi K20 Pro 特征） |
+| 8 | c342 | [REDACTED: sample value] | CPU 核心数 | ⭐⭐⭐⭐ 验证硬件配置（K20 Pro = 8核） |
+| 25 | aaca | [REDACTED: sample value] | 设备型号 | ⭐⭐⭐⭐⭐ 官方型号名称 |
+| 40 | 2b23 | [REDACTED: sample value] | 设备厂商 | ⭐⭐⭐⭐ 厂商验证 |
+| 45 | b07c | [REDACTED: sample value] | 设备代号 | ⭐⭐⭐⭐ 与 tag 403e 交叉验证 |
+| 36 | aaa0 | [REDACTED: sample value] | 可用屏幕分辨率 | ⭐⭐⭐ 减去状态栏/导航栏后的分辨率 |
+| 37 | efe7 | [REDACTED: sample value] | 设备序列号 | ⭐⭐⭐⭐ 与 tag b7ab 交叉验证 |
+| 43 | a5a4 | [REDACTED: sample value] | 内存配置 | ⭐⭐⭐ 物理内存大小（KB） |
 
 **风控重点**：
 - 屏幕分辨率 + 设备型号 + CPU 核心数 组合验证
@@ -514,12 +447,12 @@ ET (Environment Telemetry) 探针是**最详细**的环境检测系统，每个�
 
 | # | Tag | 值示例 | 含义 | 风控作用 |
 |---|-----|-------|------|---------|
-| 9 | 0864 | 00:16:a1:80:c6:e8 | WiFi MAC 地址 | ⭐⭐⭐⭐⭐ 网络硬件唯一标识 |
-| 10 | 9ff5 | 02:a3:a5:d8:17:3e | 蓝牙 MAC 地址 | ⭐⭐⭐⭐ 蓝牙硬件标识 |
-| 32 | 0864 | e0:dc:ff:dd:d0:8d | 另一个 MAC 地址 | ⭐⭐⭐⭐ 可能是移动网络 MAC |
-| 46 | 0864 | (rmnet_data2)00:00:00... | 网络接口 MAC | ⭐⭐⭐ 移动数据网络接口 |
-| 49 | 0864 | (dummy0)1e:b5:59:9e:07:bf | 虚拟网络接口 MAC | ⭐⭐⭐ 检测 VPN/代理 |
-| 50 | 8676 | 1c:94:68:d9:71:8f | 网卡 MAC 地址 | ⭐⭐⭐⭐ 物理网络硬件标识 |
+| 9 | 0864 | [REDACTED: sample value] | WiFi MAC 地址 | ⭐⭐⭐⭐⭐ 网络硬件唯一标识 |
+| 10 | 9ff5 | [REDACTED: sample value] | 蓝牙 MAC 地址 | ⭐⭐⭐⭐ 蓝牙硬件标识 |
+| 32 | 0864 | [REDACTED: sample value] | 另一个 MAC 地址 | ⭐⭐⭐⭐ 可能是移动网络 MAC |
+| 46 | 0864 | [REDACTED: sample value] | 网络接口 MAC | ⭐⭐⭐ 移动数据网络接口 |
+| 49 | 0864 | [REDACTED: sample value] | 虚拟网络接口 MAC | ⭐⭐⭐ 检测 VPN/代理 |
+| 50 | 8676 | [REDACTED: sample value] | 网卡 MAC 地址 | ⭐⭐⭐⭐ 物理网络硬件标识 |
 
 **风控重点**：
 - 多个 MAC 地址交叉验证
@@ -532,10 +465,10 @@ ET (Environment Telemetry) 探针是**最详细**的环境检测系统，每个�
 
 | # | Tag | 值示例 | 含义 | 风控作用 |
 |---|-----|-------|------|---------|
-| 24 | 095a | 中国移动 | 运营商名称 | ⭐⭐⭐⭐ SIM 卡信息，验证地理位置 |
-| 38 | f02e | 中国移动 | 运营商名称（重复） | ⭐⭐⭐ 与 tag 095a 交叉验证 |
-| 33 | a506 | 1789800155245 | 时间戳 | ⭐⭐⭐ SIM 卡相关时间戳 |
-| 39 | b616 | -1 | SIM 卡状态 | ⭐⭐⭐ -1 可能表示无 SIM 或飞行模式 |
+| 24 | 095a | [REDACTED: sample value] | 运营商名称 | ⭐⭐⭐⭐ SIM 卡信息，验证地理位置 |
+| 38 | f02e | [REDACTED: sample value] | 运营商名称（重复） | ⭐⭐⭐ 与 tag 095a 交叉验证 |
+| 33 | a506 | [REDACTED: sample value] | 时间戳 | ⭐⭐⭐ SIM 卡相关时间戳 |
+| 39 | b616 | [REDACTED: sample value] | SIM 卡状态 | ⭐⭐⭐ -1 可能表示无 SIM 或飞行模式 |
 
 **风控重点**：
 - 验证是否有真实 SIM 卡（模拟器通常无 SIM）
@@ -548,10 +481,10 @@ ET (Environment Telemetry) 探针是**最详细**的环境检测系统，每个�
 
 | # | Tag | 值示例 | 含义 | 风控作用 |
 |---|-----|-------|------|---------|
-| 11 | 3ed1 | com.taobao.idlefish | 应用包名 | ⭐⭐⭐⭐⭐ 验证应用身份（防二次打包） |
-| 13 | 1c2b | 50816c6b14c076d0... | 应用签名 SHA1 | ⭐⭐⭐⭐⭐ 验证应用签名（防篡改） |
-| 14 | 6980 | 256da23e982f8fc4... | 另一个签名 Hash | ⭐⭐⭐⭐ 交叉验证签名 |
-| 26 | db95 | 7.28.30 | 应用版本号 | ⭐⭐⭐⭐ 验证版本真实性 |
+| 11 | 3ed1 | [REDACTED: sample value] | 应用包名 | ⭐⭐⭐⭐⭐ 验证应用身份（防二次打包） |
+| 13 | 1c2b | [REDACTED: sample value] | 应用签名 SHA1 | ⭐⭐⭐⭐⭐ 验证应用签名（防篡改） |
+| 14 | 6980 | [REDACTED: sample value] | 另一个签名 Hash | ⭐⭐⭐⭐ 交叉验证签名 |
+| 26 | db95 | [REDACTED: sample value] | 应用版本号 | ⭐⭐⭐⭐ 验证版本真实性 |
 
 **风控重点**：
 - **应用签名校验**（tag 1c2b, 6980）：检测二次打包
@@ -564,9 +497,9 @@ ET (Environment Telemetry) 探针是**最详细**的环境检测系统，每个�
 
 | # | Tag | 值示例 | 含义 | 风控作用 |
 |---|-----|-------|------|---------|
-| 2 | d38e | 7673468 | 系统构建时间戳 | ⭐⭐⭐⭐ 验证系统编译时间 |
-| 23 | f75f | 2026-09-19 14:46:22.609 | 当前时间 | ⭐⭐⭐⭐⭐ 时间一致性验证（防时间穿越） |
-| 54 | 920a | 1634558061 | Unix 时间戳 | ⭐⭐⭐ 系统启动时间或构建时间 |
+| 2 | d38e | [REDACTED: sample value] | 系统构建时间戳 | ⭐⭐⭐⭐ 验证系统编译时间 |
+| 23 | f75f | [REDACTED: sample value] | 当前时间 | ⭐⭐⭐⭐⭐ 时间一致性验证（防时间穿越） |
+| 54 | 920a | [REDACTED: sample value] | Unix 时间戳 | ⭐⭐⭐ 系统启动时间或构建时间 |
 
 **风控重点**：
 - 检测系统时间是否被篡改
@@ -579,8 +512,8 @@ ET (Environment Telemetry) 探针是**最详细**的环境检测系统，每个�
 
 | # | Tag | 值示例 | 含义 | 风控作用 |
 |---|-----|-------|------|---------|
-| 30 | e1dc | 6.7.260202 | SG 版本号 | ⭐⭐⭐⭐⭐ SecurityGuard SDK 版本 |
-| 55 | f410 | 5 | SG 配置版本 | ⭐⭐⭐ SG 内部配置版本 |
+| 30 | e1dc | [REDACTED: sample value] | SG 版本号 | ⭐⭐⭐⭐⭐ SecurityGuard SDK 版本 |
+| 55 | f410 | [REDACTED: sample value] | SG 配置版本 | ⭐⭐⭐ SG 内部配置版本 |
 
 **风控重点**：
 - 验证 SecurityGuard 版本与 App 版本匹配
@@ -592,9 +525,9 @@ ET (Environment Telemetry) 探针是**最详细**的环境检测系统，每个�
 
 | # | Tag | 值示例 | 含义 | 风控作用 |
 |---|-----|-------|------|---------|
-| 19 | bced | 63614244.629999995,... | 传感器数据序列 | ⭐⭐⭐⭐⭐ 传感器原始数据（加速度、陀螺仪等） |
-| 35 | 9785 | {"version":2,"data":...} | 传感器状态 JSON | ⭐⭐⭐⭐ 传感器可用性和状态 |
-| 53 | e7b4 | Linux version 4.14.180... | 内核版本 | ⭐⭐⭐⭐ 系统内核信息 |
+| 19 | bced | [REDACTED: sample value] | 传感器数据序列 | ⭐⭐⭐⭐⭐ 传感器原始数据（加速度、陀螺仪等） |
+| 35 | 9785 | [REDACTED: sample value] | 传感器状态 JSON | ⭐⭐⭐⭐ 传感器可用性和状态 |
+| 53 | e7b4 | [REDACTED: sample value] | 内核版本 | ⭐⭐⭐⭐ 系统内核信息 |
 
 **风控重点**：
 - 检测设备是否有真实传感器（模拟器通常无传感器）
@@ -607,12 +540,12 @@ ET (Environment Telemetry) 探针是**最详细**的环境检测系统，每个�
 
 | # | Tag | 值示例 | 含义 | 风控作用 |
 |---|-----|-------|------|---------|
-| 28 | e0a1 | YW3glsCgEACAhx7jl97f7KVl... | 加密的系统指纹 | ⭐⭐⭐⭐⭐ Base64 编码的系统特征 |
-| 31 | 0eef | {"xm_1":"PhCyi0rR3OOO..."} | 小米设备特征 JSON | ⭐⭐⭐⭐ 小米设备专属特征 |
-| 42 | 284e | ,,,4800924, | 分隔的数值数据 | ⭐⭐⭐ 某种编码的特征数据 |
-| 47 | ba2e | 127 | 数值型标志 | ⭐⭐⭐ 某种状态标志 |
-| 51 | 71f3 | 46 | 数值型配置 | ⭐⭐⭐ 配置参数 |
-| 52 | a506 | {"/data":"0005CF2DFFD2..."} | 文件系统信息 | ⭐⭐⭐⭐ 存储分区特征 |
+| 28 | e0a1 | [REDACTED: sample value] | 加密的系统指纹 | ⭐⭐⭐⭐⭐ Base64 编码的系统特征 |
+| 31 | 0eef | [REDACTED: sample value] | 小米设备特征 JSON | ⭐⭐⭐⭐ 小米设备专属特征 |
+| 42 | 284e | [REDACTED: sample value] | 分隔的数值数据 | ⭐⭐⭐ 某种编码的特征数据 |
+| 47 | ba2e | [REDACTED: sample value] | 数值型标志 | ⭐⭐⭐ 某种状态标志 |
+| 51 | 71f3 | [REDACTED: sample value] | 数值型配置 | ⭐⭐⭐ 配置参数 |
+| 52 | a506 | [REDACTED: sample value] | 文件系统信息 | ⭐⭐⭐⭐ 存储分区特征 |
 
 **风控重点**：
 - 加密数据防止直接读取和篡改
@@ -623,72 +556,7 @@ ET (Environment Telemetry) 探针是**最详细**的环境检测系统，每个�
 
 ##### ET 探针风控逻辑总结
 
-**多维度交叉验证**：
-
-```python
-# 1. 设备身份验证（10 个探针）
-if utdid != expected_utdid:
-    risk_score += 100  # 最高风险
-if len(set([uuid1, uuid2, uuid3])) != 3:
-    risk_score += 50   # UUID 不唯一
-
-# 2. 系统版本验证（9 个探针）
-if 'test-keys' in build_tags:
-    risk_score += 80   # 自编译系统，高风险
-if release_keys != 'release-keys':
-    risk_score += 60   # 非官方版本
-
-# 3. 硬件配置验证（8 个探针）
-if resolution != '1080*2340' and model == 'Redmi K20 Pro':
-    risk_score += 70   # 分辨率不匹配型号
-if cpu_cores != 8:
-    risk_score += 50   # CPU 核心数不匹配
-
-# 4. 网络硬件验证（6 个探针）
-if all_mac_same or all_mac_zero:
-    risk_score += 90   # MAC 地址异常（模拟器特征）
-if has_virtual_interface:
-    risk_score += 40   # 检测到虚拟网络（VPN/代理）
-
-# 5. 应用签名验证（4 个探针）
-if signature_sha1 != official_signature:
-    risk_score += 100  # 签名不匹配，二次打包
-if package_name != 'com.taobao.idlefish':
-    risk_score += 100  # 包名被修改
-
-# 6. 传感器验证（3 个探针）
-if sensor_count == 0:
-    risk_score += 90   # 无传感器（模拟器特征）
-if sensor_data_invalid:
-    risk_score += 60   # 传感器数据异常
-
-# 7. 时间一致性验证（3 个探针）
-if abs(device_time - server_time) > 300:
-    risk_score += 40   # 时间偏差超过 5 分钟
-if build_time > current_time:
-    risk_score += 80   # 时间穿越
-
-# 最终决策
-if risk_score >= 200:
-    return "BLOCK"      # 拒绝访问
-elif risk_score >= 100:
-    return "REVIEW"     # 人工审核
-else:
-    return "PASS"       # 通过
-```
-
-**风控强度评估**：
-
-| 检测项 | 探针数量 | 绕过难度 | 重要性 |
-|-------|---------|---------|--------|
-| UTDID 验证 | 1 | ⭐⭐⭐⭐⭐ | 最高 |
-| test-keys 检测 | 2 | ⭐⭐⭐⭐ | 最高 |
-| 应用签名校验 | 2 | ⭐⭐⭐⭐⭐ | 最高 |
-| 硬件配置匹配 | 8 | ⭐⭐⭐⭐ | 高 |
-| MAC 地址验证 | 6 | ⭐⭐⭐⭐ | 高 |
-| 传感器检测 | 3 | ⭐⭐⭐⭐⭐ | 高 |
-| 系统版本验证 | 9 | ⭐⭐⭐ | 中 |
-| 时间一致性 | 3 | ⭐⭐⭐ | 中 |
+> 来源报告将探针用于环境、设备、应用完整性和状态一致性检查。具体评分公式、阈值、覆盖率及效果未公开；本文不将其视为服务端实现。
 
 #### 2.2.4 SGEXT 扩展字段（45 个状态字段）
 
@@ -697,57 +565,52 @@ SGEXT 是 **SecurityGuard Extended** 的缩写，包含 45 个字段：
 ```python
 # SGEXT 字段映射
 fields = {
-    0: "10258",           # context 序列号（LCG 生成）
-    1: "30611",           # mini 序列号（LCG 生成）
-    2: "4",               # flags 类型
-    3: "",                # 保留
-    4: "1790139885",      # SG 文件修改时间（秒）⭐⭐⭐⭐⭐
-    5: "0000000000000000",# 特征码
-    6: "3",               # SG 主版本
-    7: "0",               # 子版本
-    8: "00",              # 标志位
-    9: "0000",            # 保留
-    10: "0",              # 计数器
-    11-17: "1",           # 功能启用标志
-    18: "0",              # ACTION_DOWN 计数（触摸统计）⭐⭐⭐⭐
-    19: "0",              # 触摸源 CRC 计数 ⭐⭐⭐⭐
-    20-24: "0",           # 事件统计
-    25-27: "0", "0", "",  # 分支状态 ⭐⭐⭐
-    28-34: ...,           # 各种统计
-    35: "0",              # sgcookie 状态 ⭐⭐⭐⭐
-    36: "",               # extraBuffer ⭐⭐⭐
-    37: "3",              # UMT 状态 ⭐⭐⭐⭐
-    38: "1",              # 保留
-    39: "3",              # 固定值
-    40-43: ...,           # 其他状态
-    44: "13_AgAA..._",    # 遥测段（复杂编码）⭐⭐⭐⭐⭐
+    0: "[REDACTED: sample value]",           # context 序列号（LCG 生成）
+    1: "[REDACTED: sample value]",           # mini 序列号（LCG 生成）
+    2: "[REDACTED: sample value]",               # flags 类型
+    3: "[REDACTED: sample value]",                # 保留
+    4: "[REDACTED: sample value]",      # SG 文件修改时间（秒）⭐⭐⭐⭐⭐
+    5: "[REDACTED: sample value]",# 特征码
+    6: "[REDACTED: sample value]",               # SG 主版本
+    7: "[REDACTED: sample value]",               # 子版本
+    8: "[REDACTED: sample value]",              # 标志位
+    9: "[REDACTED: sample value]",            # 保留
+    10: "[REDACTED: sample value]",              # 计数器
+    11-17: "[REDACTED: sample value]",           # 功能启用标志
+    18: "[REDACTED: sample value]",              # ACTION_DOWN 计数（触摸统计）⭐⭐⭐⭐
+    19: "[REDACTED: sample value]",              # 触摸源 CRC 计数 ⭐⭐⭐⭐
+    20-24: "[REDACTED: sample value]",           # 事件统计
+    25-27: "[REDACTED: sample value]",  # 分支状态 ⭐⭐⭐
+    28-34: "[REDACTED: sample value]",           # 各种统计
+    35: "[REDACTED: sample value]",              # sgcookie 状态 ⭐⭐⭐⭐
+    36: "[REDACTED: sample value]",               # extraBuffer ⭐⭐⭐
+    37: "[REDACTED: sample value]",              # UMT 状态 ⭐⭐⭐⭐
+    38: "[REDACTED: sample value]",              # 保留
+    39: "[REDACTED: sample value]",              # 固定值
+    40-43: "[REDACTED: sample value]",           # 其他状态
+    44: "[REDACTED: sample value]",    # 遥测段（复杂编码）⭐⭐⭐⭐⭐
 }
 ```
 
 **重点字段详解**：
 
-1. **fields[4] - SG 文件修改时间** ⭐⭐⭐⭐⭐
-   - 值：`1790139885`（Unix 时间戳）
-   - 来源：`/data/data/com.taobao.idlefish/.s/` 目录的文件修改时间
-   - 风控作用：验证 SG 文件是否被篡改，时间异常=可疑
+**重点字段详解**：
 
-2. **fields[18-19] - 触摸统计** ⭐⭐⭐⭐
-   - fields[18]：ACTION_DOWN 事件计数
-   - fields[19]：触摸源 CRC 去重计数
-   - 风控作用：检测自动化脚本（计数异常、触摸源单一）
+1. **fields[4] - SG 文件修改时间**
+   - 来源：未公开本地材料
+   - 风控作用：用于文件状态和时间连续性检查；具体判定值不公开。
 
-3. **fields[35] - sgcookie 状态** ⭐⭐⭐⭐
-   - 值：0=未初始化, 1=仅内存, 3=一致
-   - 风控作用：检测 SG 存储一致性
+2. **fields[18-19] - 触摸统计**
+   - 用于记录触摸事件相关状态；具体样值与阈值不公开。
 
-4. **fields[37] - UMT 状态** ⭐⭐⭐⭐
-   - 值：0=未初始化, 1=失败, 3=已安装
-   - 风控作用：统一监控平台状态
+3. **fields[35] - sgcookie 状态**
+   - 用于本地与内存状态一致性检查；具体编码值不公开。
 
-5. **fields[44] - 遥测段** ⭐⭐⭐⭐⭐
-   - 格式：`<length>_<base64_data>_<flag>_<count>_<tag>_<extra>_`
-   - 示例：`13_AgAAAAAAAAAAAAAAAAAAAAAAAAAA_16_0_28_AwAE/4o=_`
-   - 风控作用：加密上报的额外遥测数据
+4. **fields[37] - UMT 状态**
+   - 用于组件状态检查；具体编码值不公开。
+
+5. **fields[44] - 遥测段**
+   - 遥测字段及载荷样值：未公开本地材料。
 
 #### 2.2.5 PL 性能与日志（158 个参数）
 
@@ -756,27 +619,27 @@ PL (Performance & Logging) 测量系统性能和日志：
 ```python
 PL_PARAMS = {
     # 时间测量（毫秒）
-    "t1": 45,      # Mini 采集耗时
-    "t2": 234,     # ET 采集耗时
-    "t3": 12,      # 签名计算耗时
-    "t4": 8,       # SGEXT 生成耗时
+    "t1": "[REDACTED: sample value]",      # Mini 采集耗时
+    "t2": "[REDACTED: sample value]",     # ET 采集耗时
+    "t3": "[REDACTED: sample value]",      # 签名计算耗时
+    "t4": "[REDACTED: sample value]",       # SGEXT 生成耗时
 
     # 内存测量（KB）
-    "m1": 2048,    # Java 堆内存
-    "m2": 512,     # Native 内存
-    "m3": 128,     # 缓存大小
+    "m1": "[REDACTED: sample value]",    # Java 堆内存
+    "m2": "[REDACTED: sample value]",     # Native 内存
+    "m3": "[REDACTED: sample value]",     # 缓存大小
 
     # 计数器
-    "c1": 156,     # API 调用次数
-    "c2": 23,      # 异常次数
-    "c3": 1,       # 重试次数
+    "c1": "[REDACTED: sample value]",     # API 调用次数
+    "c2": "[REDACTED: sample value]",      # 异常次数
+    "c3": "[REDACTED: sample value]",       # 重试次数
 
     # 状态码
-    "s1": 200,     # HTTP 状态
-    "s2": 0,       # 错误码
+    "s1": "[REDACTED: sample value]",     # HTTP 状态
+    "s2": "[REDACTED: sample value]",       # 错误码
 
     # 校验和
-    "ck": "0x1a2b3c4d5e6f",  # CRC64-ECMA 校验 ⭐⭐⭐⭐⭐
+    "ck": "[REDACTED: sample value]",  # CRC64-ECMA 校验 ⭐⭐⭐⭐⭐
 }
 ```
 
@@ -792,14 +655,14 @@ BI (Behavior Intelligence) 记录用户行为：
 ```json
 {
   "bi": {
-    "utdid": "arNd7GBIB9wDAFhdV44i+riU",
-    "sid": "session_id_12345",
-    "pageName": "ItemDetailPage",
-    "action": "click_buy_button",
-    "timestamp": 1727190485,
-    "duration": 3500,        // 页面停留时长（毫秒）
-    "touchCount": 12,        // 触摸次数
-    "scrollDistance": 2340,  // 滚动距离（像素）
+    "utdid": "[REDACTED: sample value]",
+    "sid": "[REDACTED: sample value]",
+    "pageName": "[REDACTED: sample value]",
+    "action": "[REDACTED: sample value]",
+    "timestamp": "[REDACTED: sample value]",
+    "duration": "[REDACTED: sample value]",        // 页面停留时长（毫秒）
+    "touchCount": "[REDACTED: sample value]",        // 触摸次数
+    "scrollDistance": "[REDACTED: sample value]",  // 滚动距离（像素）
   }
 }
 ```
@@ -815,9 +678,9 @@ CS (Code Security) 检测代码完整性：
 ```json
 {
   "cs": {
-    "dexHash": "a1b2c3d4...",     // DEX 文件哈希
-    "soHash": "e5f6g7h8...",      // SO 库哈希
-    "signatureHash": "i9j0k1...", // 应用签名哈希
+    "dexHash": "[REDACTED: sample value]",     // DEX 文件哈希
+    "soHash": "[REDACTED: sample value]",      // SO 库哈希
+    "signatureHash": "[REDACTED: sample value]", // 应用签名哈希
     "integrityCheck": true        // 完整性检查结果
   }
 }
@@ -851,18 +714,18 @@ UTDevice SDK 初始化
    ↓
 混合哈希算法生成 UTDID (22 字符)
    算法：SHA256(硬件特征 + 随机盐 + 时间戳) → Base64 编码 → 截取
-   输出：arNd7GBIB9wDAFhdV44i+riU
+   输出：[REDACTED: sample value]
    ↓
 持久化存储
-   路径：/data/data/${package}/shared_prefs/Alvin2.xml
-   节点：<string name="UTDID2">arNd7GBIB9wDAFhdV44i+riU</string>
+   路径：未公开本地材料
+   节点：<string name="UTDID2">[REDACTED: sample value]</string>
 ```
 
 #### 3.1.2 SG 文件系统创建
 
 **目录结构初始化**：
 ```
-/data/data/com.taobao.idlefish/.s/
+未公开本地材料
    ├─ .sg        (主配置，记录设备基线)
    ├─ .s         (状态持久化)
    ├─ .c         (缓存数据)
@@ -915,7 +778,7 @@ SecurityGuard 探针系统启动
 INPUT = "&".join([
     f"0={utdid}",                    # UTDID
     f"1={ttid}",                     # ttid
-    f"2={appkey}",                   # 21407387
+    f"2={appkey}",                   # [REDACTED: sample value]
     f"3={timestamp}",                # Unix timestamp
     f"4={api}",                      # API method
     f"5={version}",                  # API version
@@ -940,8 +803,8 @@ INPUT = "&".join([
 
 **签名算法**：
 ```python
-# 1. 从 yw_1222.jpg 解密获取 appkey_secret
-secret = decrypt_appkey_secret(appkey)
+# 1. 密钥素材：未公开本地材料
+secret = "[REDACTED: credential material]"
 
 # 2. HMAC-SHA1 计算
 x_sign = hmac.new(
@@ -978,99 +841,18 @@ Headers:
 
 Body:
 {
-  "req_biz_code": "1000",
-  "context": {
-    "flags": 105,
-    "sg_file_mtime_seconds": 1790139885,
-    "byte49_initial": 147,
-    "byte50_initial": 196
-  },
-  "mini": {
-    "header_payload_hex": "0038050000",
-    "eeid_base64": "",
-    "device_body_hex": "99208504800144",
-    "unknown_section_hex": "0021390104000000000000",
-    "footer_prefix_hex": "04061e7f00",
-    "footer_probes_hex": "0000ffff00ff0000779300000000000000000000",
-    "trailer_hex": "00",
-    "byte30_initial": 252
-  },
-  "sgext": {
-    "header_hex": "2413",
-    "crc12_hex": "5807836f7d7feb865665f9bb",
-    "fields": [/* 45 个字段 */]
-  },
-  "et": {
-    "probes": [/* 55 个探针 */]
-  },
-  "pl": {
-    "measurements": {/* 158 个测量值 */}
-  }
+  "req_biz_code": "[REDACTED: sample value]",
+  "context": "[REDACTED: sample telemetry]",
+  "mini": "[REDACTED: sample telemetry]",
+  "sgext": "[REDACTED: sample telemetry]",
+  "et": "[REDACTED: sample telemetry]",
+  "pl": "[REDACTED: sample telemetry]"
 }
 ```
 
 #### 3.2.4 服务端验证流程
 
-**验证管道**：
-```
-ACS-MUM 接收请求
-   ↓
-[层 1] 签名验证
-   ├─ 重新计算 HMAC-SHA1(INPUT)
-   ├─ 对比 x-sign
-   └─ 不一致 → HTTP 403 (FAIL_SYS_ILLEGAL_ACCESS)
-   ↓
-[层 2] Mini 探针解析
-   ├─ 布尔段解析
-   │   ├─ Root 检测 (Byte1 & 0x0F)
-   │   ├─ Xposed 检测 (Byte1 & 0x10)
-   │   ├─ 模拟器检测 (Byte1 & 0x40)
-   │   └─ 任意异常 → 风险评分 +100
-   │
-   └─ 半字节段解析
-       ├─ SELinux 模式 (Nibble6 & 0x0F)
-       │   └─ Permissive (1) → 风险评分 +90
-       ├─ 触摸点数 < 5 → 风险评分 +70
-       └─ 传感器数量 < 2 → 风险评分 +80
-   ↓
-[层 3] ET 探针解密与分析
-   ├─ TEA/XTEA 解密
-   ├─ 交叉验证
-   │   ├─ UTDID 匹配性
-   │   ├─ test-keys 检测 → 风险评分 +80
-   │   ├─ 应用签名校验 → 不匹配 +100
-   │   ├─ MAC 地址合理性 → 全零/全 FF +90
-   │   └─ 传感器数据有效性
-   │
-   └─ 环境完整性评分 (0-100)
-   ↓
-[层 4] SGEXT 状态校验
-   ├─ SG 文件 mtime 合理性
-   │   └─ 未来时间 / 过早时间 → 风险评分 +60
-   ├─ sgcookie 一致性 (fields[35])
-   │   └─ 不一致 → 风险评分 +50
-   └─ UMT 状态 (fields[37])
-   ↓
-[层 5] PL 数据校验
-   ├─ CRC64 校验和验证
-   └─ 时间测量合理性检查
-   ↓
-[层 6] 风控决策引擎
-   ├─ 综合评分 = ∑(风险项评分)
-   ├─ 阈值判断
-   │   ├─ 评分 ≥ 200 → BLOCK
-   │   ├─ 评分 ≥ 100 → MANUAL_REVIEW
-   │   └─ 评分 < 100 → PASS
-   │
-   └─ 黑白名单过滤
-   ↓
-[层 7] EEID 生成
-   算法（推测）：
-   SHA256(UTDID || Mini_Hash || ET_Top10_Hash || Timestamp || Salt)
-   ↓ 截取 32 字节
-   ↓ Base64 编码
-   输出：A9+BxQdE7KkOhgKhp/6Ej/vZGg==
-```
+> 来源报告将服务端验证概括为签名、探针与状态一致性、完整性及风险决策等类别。具体处理次序、阈值、评分权重和 EEID 生成细节属于未公开的服务端模型；原文明确标注相关内容为推测，不作为已验证事实。
 
 #### 3.2.5 响应协议
 
@@ -1079,10 +861,10 @@ ACS-MUM 接收请求
 {
   "ret": ["SUCCESS::调用成功"],
   "data": {
-    "eeid": "A9+BxQdE7KkOhgKhp/6Ej/vZGg==",
-    "device_score": 95,
+    "eeid": "[REDACTED: sample value]",
+    "device_score": "[REDACTED: sample value]",
     "risk_level": "LOW",
-    "expire_time": 1727276885,
+    "expire_time": "[REDACTED: sample value]",
     "tips": ""
   }
 }
@@ -1102,7 +884,7 @@ ACS-MUM 接收请求
   "data": {
     "error_code": "EMULATOR_DETECTED",
     "message": "检测到模拟器环境",
-    "block_duration": 86400
+    "block_duration": "[REDACTED: sample value]"
   }
 }
 ```
@@ -1118,9 +900,9 @@ EEID 解析
    ├─ 内存缓存 (EEIDManager)
    └─ SharedPreferences
        ├─ key: "EEID"
-       ├─ value: "A9+BxQdE7KkOhgKhp/6Ej/vZGg=="
+        ├─ value: "[REDACTED: sample value]"
        └─ expire: 1727276885
-```
+        └─ expire: [REDACTED: sample value]
 
 ### 3.3 EEID 验证协议
 
@@ -1130,7 +912,7 @@ EEID 解析
 ```diff
   Headers:
     x-sign: {重新计算的签名}
-+   x-eeid: A9+BxQdE7KkOhgKhp/6Ej/vZGg==
+    +   x-eeid: [REDACTED: sample value]
     x-utdid: {不变}
     ... (其他头部)
 
@@ -1148,61 +930,7 @@ EEID 解析
 
 #### 3.3.2 服务端 EEID 验证
 
-**验证流程**：
-
-```
-请求到达
-   ↓
-EEID 预检
-   ├─ 查询 EEID → 设备档案
-   ├─ 检查过期时间
-   └─ 验证 EEID 与 UTDID 绑定关系
-   ↓
-实时探针对比（Diff 分析）
-   ├─ Mini 探针增量对比
-   │   ├─ 布尔段差异检测（XOR 运算）
-   │   ├─ 关键位变化（Root/Hook/模拟器位）
-   │   └─ 半字节段数值变化范围
-   │
-   ├─ ET 探针变化检测
-   │   ├─ 不可变属性验证
-   │   │   ├─ UTDID 一致性
-   │   │   ├─ 设备型号（ro.product.model）
-   │   │   ├─ MAC 地址持久性
-   │   │   └─ 应用签名不变性
-   │   │
-   │   └─ 可变属性合理性
-   │       ├─ 系统版本升级检测
-   │       ├─ 运营商切换验证
-   │       └─ 网络环境变化
-   │
-   ├─ SGEXT 状态连续性
-   │   ├─ sgcookie 一致性（fields[35]）
-   │   │   └─ 3 → 1/2 表示异常重置
-   │   ├─ SG 文件 mtime 单调性
-   │   │   └─ 时间回退 = 文件被篡改
-   │   └─ 触摸统计增长曲线
-   │       └─ fields[18-19] 异常跳变检测
-   │
-   └─ 行为模式分析
-       ├─ 请求频率统计（滑动窗口）
-       ├─ API 调用序列合法性
-       └─ 会话连续性验证
-   ↓
-风控决策（基于规则引擎 + 机器学习模型）
-   ├─ 规则层：确定性拦截
-   │   ├─ UTDID 变化 → 立即拦截
-   │   ├─ 关键探针异常 → 立即拦截
-   │   └─ EEID 过期 → 要求重新注册
-   │
-   └─ 模型层：风险评分（服务端黑盒）
-       ├─ 特征提取：探针差异向量化
-       ├─ 模型预测：异常概率计算
-       └─ 阈值判断：PASS/REVIEW/BLOCK
-   ↓
-设备信誉动态调整
-   └─ 基于长期行为轨迹的信誉衰减/增长
-```
+> 来源报告概括了标识绑定、探针变化、状态连续性与行为模式等检查类别。具体字段、规则、评分及模型细节未公开，且未由本次 runtime 证据验证。
 
 **关键验证维度**：
 
@@ -1261,13 +989,13 @@ Client                 SecurityGuard              ACS-MUM Server
 **INPUT 完整性保护**：
 - 签名覆盖所有关键参数（22 字段）
 - 任意字段修改导致签名失败
-- appkey_secret 存储在加密图片中（4 层 AES）
+- appkey_secret：受保护存储，具体方式不公开。
 
 #### 3.5.2 探针防重放
 
 **时间窗口验证**：
 ```python
-if abs(request_timestamp - server_time) > 300:
+if request_timestamp falls outside the server-defined freshness window:
     return "TIMESTAMP_EXPIRED"
 ```
 
@@ -1310,9 +1038,9 @@ EEID ←→ UTDID ←→ Device_Fingerprint_Hash
 - 检测设备环境变化
 
 **时效性要求**：
-- 客户端采集：<150ms
-- 服务端处理：<50ms
-- 总 RTT：<250ms（含网络传输）
+- 客户端采集时延：来源报告提及采集耗时；具体值未公开。
+- 服务端处理时延：来源报告提及处理耗时；具体值未公开。
+- 总 RTT（含网络传输）：来源报告提及端到端耗时；具体值未公开。
 
 #### 3.6.3 可扩展性设计
 
@@ -1332,7 +1060,7 @@ EEID ←→ UTDID ←→ Device_Fingerprint_Hash
 ### 4.1 SG 文件目录结构
 
 ```
-/data/data/com.taobao.idlefish/.s/
+未公开本地材料
 ├── .sg           (主配置文件，8-16 KB)
 ├── .s            (状态文件，4-8 KB)
 ├── .c            (缓存文件，1-4 KB)
@@ -1355,12 +1083,12 @@ EEID ←→ UTDID ←→ Device_Fingerprint_Hash
 [Header: 32 bytes]
 ├─ Magic: 0x53474D41494E ("SGMAIN")
 ├─ Version: 0x06070260202 (6.7.260202)
-├─ Flags: 0x00000069 (105)
-├─ Timestamp: 1790139885
+├─ Flags: [REDACTED: sample value] (105)
+├─ Timestamp: [REDACTED: sample value]
 └─ CRC32: 0x12345678
 
 [Body: Variable length]
-├─ UTDID: arNd7GBIB9wDAFhdV44i+riU
+├─ UTDID: [REDACTED: sample value]
 ├─ Device Profile
 │   ├─ Manufacturer: Xiaomi
 │   ├─ Model: Redmi K20 Pro
@@ -1368,8 +1096,8 @@ EEID ←→ UTDID ←→ Device_Fingerprint_Hash
 │   └─ SDK Version: 30
 │
 ├─ Mini Snapshot
-│   ├─ 布尔段: 99208504800144 (hex)
-│   └─ 半字节段: 0000ffff00ff0000779300000000000000000000 (hex)
+│   ├─ 布尔段: [REDACTED: sample value] (hex)
+│   └─ 半字节段: [REDACTED: sample value] (hex)
 │
 ├─ ET Snapshot (压缩存储)
 │   └─ 435 个探针的最近一次值
@@ -1379,7 +1107,7 @@ EEID ←→ UTDID ←→ Device_Fingerprint_Hash
 ```
 
 **修改时间的重要性** ⭐⭐⭐⭐⭐：
-- **fields[4] = 1790139885**（SG 文件的 mtime）
+- **fields[4] = [REDACTED: sample value]**（SG 文件的 mtime）
 - **风控作用**：
   - 验证文件是否被篡改
   - 检测时间穿越（mtime 在未来）
@@ -1389,12 +1117,12 @@ EEID ←→ UTDID ←→ Device_Fingerprint_Hash
 **如何验证 SG 文件**：
 ```bash
 # 查看 SG 文件修改时间
-adb shell "su -c ls -l /data/data/com.taobao.idlefish/.s/.sg"
-# 输出：-rw------- 1 u0_a123 u0_a123 12345 2026-09-24 10:31 .sg
+adb shell "su -c ls -l 未公开本地材料"
+# 样本输出：未公开本地材料
 
 # 修改时间戳转换
-date -d @1790139885
-# 输出：2026-09-24 10:31:25
+date -d @[REDACTED: sample value]
+# 转换结果：未公开本地材料
 ```
 
 #### 4.2.2 .s 状态文件 ⭐⭐⭐⭐
@@ -1402,14 +1130,14 @@ date -d @1790139885
 **内容**：
 ```json
 {
-  "byte49_initial": 147,      // 初始状态字节
-  "byte50_initial": 196,      // 初始状态字节
-  "byte30_initial": 252,      // Mini 初始状态
-  "sgcookie_status": 3,       // sgcookie 状态（一致）
-  "umt_status": 3,            // UMT 状态（已安装）
-  "last_update": 1727190485,  // 最后更新时间
-  "request_count": 1523,      // 请求计数
-  "error_count": 3            // 错误计数
+  "byte49_initial": "[REDACTED: sample value]",      // 初始状态字节
+  "byte50_initial": "[REDACTED: sample value]",      // 初始状态字节
+  "byte30_initial": "[REDACTED: sample value]",      // Mini 初始状态
+  "sgcookie_status": "[REDACTED: sample value]",       // sgcookie 状态（一致）
+  "umt_status": "[REDACTED: sample value]",            // UMT 状态（已安装）
+  "last_update": "[REDACTED: sample value]",  // 最后更新时间
+  "request_count": "[REDACTED: sample value]",      // 请求计数
+  "error_count": "[REDACTED: sample value]"            // 错误计数
 }
 ```
 
@@ -1503,23 +1231,23 @@ SIGNATURE_PARAMS = {
     "x-mini-wua": "Mini 探针摘要",                     # ⭐⭐⭐⭐
 
     # 设备标识
-    "x-utdid": "arNd7GBIB9wDAFhdV44i+riU",            # ⭐⭐⭐⭐⭐
-    "x-umt": "arNd7GBIB9wDAFhdV44i+riU",              # ⭐⭐⭐⭐
-    "x-ttid": "1582631881546@fleamarket_android_7.28.30",
+    "x-utdid": "[REDACTED: sample value]",            # ⭐⭐⭐⭐⭐
+    "x-umt": "[REDACTED: sample value]",              # ⭐⭐⭐⭐
+    "x-ttid": "[REDACTED: sample value]",
 
     # 设备信息
     "x-devid": "Axxxxxxxxxxxxx==",                    # ⭐⭐⭐⭐
     "x-features": "27",
 
     # App 信息
-    "x-appkey": "21407387",                           # ⭐⭐⭐⭐⭐
+    "x-appkey": "[REDACTED: sample value]",        # App 标识
     "x-app-ver": "7.28.30",
 
     # 其他
-    "x-t": "1727190485",          # 时间戳
+    "x-t": "[REDACTED: sample value]",          # 时间戳
     "x-sid": "session_id",        # 会话 ID
     "x-uid": "user_id",           # 用户 ID（登录后）
-    "x-location": "0,0",          # 位置
+    "x-location": "[REDACTED: sample value]",          # 位置
     "x-bx-version": "6.7.260202", # SecurityGuard 版本
 }
 ```
@@ -1530,40 +1258,41 @@ SIGNATURE_PARAMS = {
 
 ```python
 INPUT_FIELDS = [
-    "UTDID",          # 0. arNd7GBIB9wDAFhdV44i+riU
-    "ttid",           # 1. 1582631881546@fleamarket_android_7.28.30
-    "appkey",         # 2. 21407387
-    "timestamp",      # 3. 1727190485
-    "api",            # 4. mtop.taobao.idle.item.detail
-    "version",        # 5. 1.0
-    "data",           # 6. {"itemId":"123456"}
-    "sid",            # 7. session_id
-    "uid",            # 8. user_id (可选)
-    "deviceId",       # 9. (通常为空)
-    "lat",            # 10. 0
-    "lng",            # 11. 0
-    "features",       # 12. 27
-    "bx-version",     # 13. 6.7.260202
-    "mini_base64",    # 14. Mini 探针 Base64 编码 ⭐⭐⭐⭐⭐
-    "sgext_base64",   # 15. SGEXT Base64 编码 ⭐⭐⭐⭐⭐
-    "context",        # 16. Context 参数
-    "extdata",        # 17. openappkey=DEFAULT_AUTH
-    "x-umt",          # 18. arNd7GBIB9wDAFhdV44i+riU
-    "pv",             # 19. 6.3 (协议版本)
-    "utdid2",         # 20. (与 UTDID 相同)
-    "req-counter",    # 21. 请求计数器
+    "UTDID",          # 0. [REDACTED: sample value]
+    "ttid",           # 1. [REDACTED: sample value]
+    "appkey",         # 2. [REDACTED: sample value]
+    "timestamp",      # 3. [REDACTED: sample value]
+    "api",            # 4. API method
+    "version",        # 5. API version
+    "data",           # 6. [REDACTED: sample value]
+    "sid",            # 7. Session ID (optional)
+    "uid",            # 8. User ID (optional)
+    "deviceId",       # 9. Device ID (optional)
+    "lat",            # 10. [REDACTED: sample value]
+    "lng",            # 11. [REDACTED: sample value]
+    "features",       # 12. [REDACTED: sample value]
+    "bx-version",     # 13. SecurityGuard version
+    "mini_base64",    # 14. Mini encoded probe data
+    "sgext_base64",   # 15. SGEXT encoded data
+    "context",        # 16. Context data
+    "extdata",        # 17. [REDACTED: sample value]
+    "x-umt",          # 18. [REDACTED: sample value]
+    "pv",             # 19. Protocol version
+    "utdid2",         # 20. [REDACTED: sample value]
+    "req-counter",    # 21. Request counter
 ]
 
-# INPUT 拼接示例
+# INPUT 拼接示例（样值已脱敏）
 INPUT = "&".join([
-    "UTDID=arNd7GBIB9wDAFhdV44i+riU",
-    "ttid=1582631881546@fleamarket_android_7.28.30",
-    "appkey=21407387",
-    # ... 其他字段
-    "mini_base64=ADgFAADZEIgUgAFEACE5AQUAAAAAAAAA...",
-    "sgext_base64=JBNYB4Nv1/6FZZX5uw==:MTAyNTg...",
-    # ... 剩余字段
+    "UTDID=[REDACTED: sample value]",
+    "ttid=[REDACTED: sample value]",
+    "appkey=[REDACTED: sample value]",
+    "timestamp=[REDACTED: sample value]",
+    "data=[REDACTED: sample value]",
+    "mini_base64=[REDACTED: sample value]",
+    "sgext_base64=[REDACTED: sample value]",
 ])
+```
 ```
 
 ### 5.3 签名计算流程
@@ -1573,8 +1302,8 @@ def calculate_signature(input_str: str, appkey: str) -> str:
     """
     计算 x-sign 签名
     """
-    # 1. 获取 appkey 对应的密钥（从 yw_1222.jpg 解密）
-    secret = get_appkey_secret(appkey)  # 例如：某个 32 字节的密钥
+# 1. 密钥素材：未公开本地材料
+    secret = "[REDACTED: credential material]"
 
     # 2. 使用 HMAC-SHA1 计算签名
     signature = hmac.new(
@@ -1584,7 +1313,7 @@ def calculate_signature(input_str: str, appkey: str) -> str:
     ).hexdigest()
 
     # 3. 返回签名（40 个十六进制字符）
-    return signature  # 例如：a1b2c3d4e5f6789012345678901234567890abcd
+    return "[REDACTED: sample value]"
 ```
 
 ### 5.4 签名与 EEID 的关系
@@ -1680,129 +1409,42 @@ def calculate_signature(input_str: str, appkey: str) -> str:
 
 ### 6.1 常见对抗手段与检测
 
-#### 6.1.1 UTDID 伪造
+#### 6.1.1 设备标识一致性
+> 防御性检测类别：标识格式、绑定关系与历史一致性。具体字段和判定值不公开。
 
-**对抗手段**：
-- 生成随机 UTDID
-- 复制真实设备的 UTDID
+#### 6.1.2 探针与运行时完整性
+> 防御性检测类别：探针交叉一致性、运行时完整性及环境状态。具体检测步骤、位映射和阈值不公开。
 
-**检测方法**：
-- ✅ UTDID 格式校验（22 字符，特定字符集）
-- ✅ UTDID 与 SG 文件绑定检查
-- ✅ UTDID 与历史行为关联
-- ✅ UTDID 与设备硬件指纹对比
+#### 6.1.3 本地状态连续性
+> 防御性检测类别：本地状态完整性与跨请求连续性。具体文件值、篡改步骤和判定阈值不公开。
 
-**绕过难度**：⭐⭐⭐⭐（需要完整复制设备环境）
+#### 6.1.4 签名与代码完整性
+> 防御性检测类别：请求完整性、应用代码完整性与运行环境校验。密钥获取和签名伪造细节不公开。
 
-#### 6.1.2 Mini/ET 探针伪造
+#### 6.1.5 行为一致性
+> 防御性检测类别：行为序列、操作节奏与触摸统计。具体样值、策略和规避方式不公开。
 
-**对抗手段**：
-- Hook SecurityGuard 函数
-- 返回伪造的探针数据
-
-**检测方法**：
-- ✅ Mini/ET 数据一致性检查（内部交叉验证）
-- ✅ 探针值合理性校验（如传感器数量不能 > 100）
-- ✅ Hook 检测（ET 探针会检测 Xposed/Frida）
-- ✅ 实时对比（前后请求的探针数据应该连续）
-
-**绕过难度**：⭐⭐⭐⭐⭐（需要深入理解 435 个探针逻辑）
-
-#### 6.1.3 SG 文件篡改
-
-**对抗手段**：
-- 修改 .sg 文件内容
-- 修改文件时间戳
-
-**检测方法**：
-- ✅ 文件完整性校验（CRC32/HMAC）
-- ✅ 修改时间合理性（fields[4]）
-- ✅ 文件内容与实时探针对比
-- ✅ SELinux 文件访问审计
-
-**绕过难度**：⭐⭐⭐⭐（需要正确计算校验和）
-
-#### 6.1.4 签名伪造
-
-**对抗手段**：
-- 提取 appkey secret
-- 重新计算签名
-
-**检测方法**：
-- ✅ appkey secret 强加密（4 层 AES）
-- ✅ 签名计算在 Native 层（SO 混淆）
-- ✅ 反调试检测
-- ✅ 代码完整性检查（CS）
-
-**绕过难度**：⭐⭐⭐⭐⭐（需要深度逆向）
-
-#### 6.1.5 行为模拟
-
-**对抗手段**：
-- 使用自动化脚本模拟人类操作
-- 控制触摸速度和轨迹
-
-**检测方法**：
-- ✅ 触摸统计检测（fields[18-19]）
-- ✅ 行为序列分析（BI）
-- ✅ 时间间隔分析（操作间隔过于规律=脚本）
-- ✅ 触摸压力/面积检测（脚本通常缺失）
-
-**绕过难度**：⭐⭐⭐（需要精细模拟）
-
-#### 6.1.6 模拟器/云手机
-
-**对抗手段**：
-- 使用高度定制的模拟器
-- 修改系统属性伪装真机
-
-**检测方法**：
-- ✅ 硬件传感器检测（模拟器通常无传感器）
-- ✅ 特征文件检测（/system/lib/libc_malloc_debug_qemu.so）
-- ✅ CPU 特征检测（QEMU/VirtualBox 特征）
-- ✅ 性能指标检测（模拟器性能异常）
-- ✅ 多维度交叉验证（如 CPU 型号与传感器不匹配）
-
-**绕过难度**：⭐⭐⭐⭐⭐（多维度检测，难以完全伪装）
+#### 6.1.6 虚拟环境识别
+> 防御性检测类别：设备能力、系统环境及多信号一致性。具体检测值和规避步骤不公开。
 
 ### 6.2 风控强度评估
 
-| 风控层级 | 检测内容 | 绕过难度 | 覆盖率 |
-|---------|---------|---------|--------|
-| **L1: 签名** | HMAC-SHA1 | ⭐⭐⭐⭐⭐ | 100% |
-| **L2: 设备标识** | UTDID | ⭐⭐⭐⭐ | 100% |
-| **L3: 快速检测** | Mini 探针 | ⭐⭐⭐⭐ | 95% |
-| **L4: 深度检测** | ET 探针 | ⭐⭐⭐⭐⭐ | 99% |
-| **L5: 状态追踪** | SGEXT + SG 文件 | ⭐⭐⭐⭐ | 90% |
-| **L6: 行为分析** | BI + 触摸统计 | ⭐⭐⭐ | 85% |
-| **L7: 代码保护** | CS + 反调试 | ⭐⭐⭐⭐⭐ | 95% |
-| **L8: 信誉系统** | EEID + 历史记录 | ⭐⭐⭐⭐⭐ | 100% |
+| 层级 | 来源提及的检测类别 | 证据边界 |
+|------|--------------------|----------|
+| L1 | 签名完整性 | 规则与效果未验证 |
+| L2 | 设备标识 | 规则与效果未验证 |
+| L3 | 快速环境检测 | 规则与效果未验证 |
+| L4 | 深度环境检测 | 规则与效果未验证 |
+| L5 | 本地状态连续性 | 规则与效果未验证 |
+| L6 | 行为分析 | 规则与效果未验证 |
+| L7 | 代码完整性 | 规则与效果未验证 |
+| L8 | 设备信誉 | 服务端模型未公开 |
 
-**总体评估**：闲鱼 EEID 风控体系强度 **⭐⭐⭐⭐⭐（极强）**
+**总体评估**：原文的强度判断没有附可复核测量依据，不作为实际部署结论。
 
 ### 6.3 理论上的完全绕过方案（仅供研究）
 
-要完全绕过 EEID 风控，理论上需要：
-
-1. ✅ **真实设备** - 使用真实 Android 手机（非模拟器）
-2. ✅ **完整复制** - 完整复制真实设备的：
-   - UTDID（Alvin2.xml）
-   - SG 文件系统（.s 目录）
-   - 系统属性（ro.* 配置）
-   - 硬件传感器数据
-3. ✅ **行为模拟** - 精确模拟人类行为：
-   - 触摸压力、面积、速度
-   - 操作间隔随机化
-   - 页面停留时间自然化
-4. ✅ **签名计算** - 提取 appkey secret（需要深度逆向）
-5. ✅ **实时同步** - 保持与真实设备的环境同步
-
-**结论**：即使完成上述所有步骤，仍然面临：
-- 服务端行为建模（历史行为不一致）
-- 设备信誉评分（新设备初始低分）
-- 人工审核（高风险操作需人工确认）
-
-因此，**完全绕过几乎不可能**，这也是 EEID 风控体系的强大之处。
+> 本节具体绕过步骤、设备配置、签名材料与同步方法不入 Public。可复用内容仅限前述防御性检测类别；该来源没有提供足以验证绕过效果的当前 runtime 证据。
 
 ---
 
@@ -1902,12 +1544,12 @@ EEID 风控体系可能的演进方向：
 
 ### 8.1 项目文件
 
-1. `eeid_inputs_pure.private.json` - 完整输入参数快照
-2. `eeid_et_profile.private.json` - ET 探针详细数据
-3. `参数来源深度解析.md` - 6,235 参数完整来源
-4. `参数来源验证.md` - ADB 验证报告
-5. `未解析参数详细分析.md` - 14 个未解析参数分析
-6. `EEID参数来源调查-最终总结报告.md` - 项目总结
+1. 未公开本地材料
+2. 未公开本地材料
+3. 未公开本地材料
+4. 未公开本地材料
+5. 未公开本地材料
+6. 未公开本地材料
 
 ### 8.2 技术文档
 
@@ -1919,9 +1561,9 @@ EEID 风控体系可能的演进方向：
 
 ### 8.3 工具
 
-- `xianyu_sign/` - 签名计算实现
-- `xianyu_eeid/` - EEID 参数生成
-- `tests/` - 单元测试
+- 未公开本地材料
+- 未公开本地材料
+- 未公开本地材料
 
 ---
 

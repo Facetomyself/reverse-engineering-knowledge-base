@@ -112,3 +112,7 @@ Body metas:  AsuraId、fire_ua、fire_umid
 - `AsuraId / fire_ua` 与 140 链同轮产出，与最终业务请求同一 Cookie/storage/UA 上下文
 - 最终业务接口返回正常业务 JSON 或正常业务错误（如"账号不存在"），不再是用户验证、x5、验证码或风险拦截
 - 传输层指纹与浏览器相容；同参数用标准 HTTP 客户端仍被拦时优先查 TLS/HTTP 指纹，不把 JS 参数正确误判成全链路通过
+
+## 提炼说明（670）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

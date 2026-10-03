@@ -90,3 +90,8 @@ https://www.jb51.net/softs/575428.html  OSX演示：
 解密后的.lua文件在src目录中，ide打开，源代码反编译成功，可以进一步研究程序的客户端源码实现。
 ![](https://mmbiz.qpic.cn/mmbiz_png/GrTTsqWuEceUWPW8IHqOPtga4wctvahIFFH7buTsKu0nyvibLia4rQhREQG2AGlRSjfhtN0XJdEIycE10r9ycuZw/640?wx_fmt=png)
 本篇来自小伙伴，ID：学徒 的投稿
+
+## 提炼说明（553）
+archive_only。
+Cocos luac xxtea：文件头 1B4C756151，sign 在文件头、key 在 so；远程图未审。
+本轮不另建卡。

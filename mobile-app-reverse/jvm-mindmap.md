@@ -194,3 +194,8 @@ JNI 提供跨语言调用能力，使 Java 程序可以访问操作系统级别�
    - 共享：堆、方法区
    - 私有：虚拟机栈、本地方法栈、程序计数器
 3. **JDK 8 关键变化：** PermGen → Metaspace（本地内存）。
+
+## 提炼说明（391）
+archive-only。HotSpot JVM 地图。
+明确不是 ART 细节。
+不新建 runtime 卡。

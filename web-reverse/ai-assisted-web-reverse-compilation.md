@@ -65,3 +65,22 @@ archived_date: '2026-09-06'
 | 2026-08-21 | [某书 x-s-common 拆解（一～三·完，缺二）](ai-assisted-web-reverse-compilation/ai-assisted-20260821-01.md) |
 | 2026-08-26 | [某 sheinX 主签名 x-gw-auth](ai-assisted-web-reverse-compilation/ai-assisted-20260826-01.md) |
 | 2026-09-01 | [某 dewuX web 签名逆向](ai-assisted-web-reverse-compilation/ai-assisted-20260901-01.md) |
+
+<a id="reference-extraction-214"></a>
+## 提炼说明
+
+本合集页只列 14 条目录（20 篇连载合并），没有独立接口、参数或验收模块正文。子篇 i-assisted-20260727-01 已在 batch 100 提炼为 [匿名 Web md5__1038 参考](./ai-assisted-web-reverse-reference.md)。合集导航页不另建 reference。其余子篇需单独全文核验。
+
+## 同目录窄参考
+
+本段只挂同目录提炼卡。
+
+- [yuanrenxue match/10 参数 m 的寿命与误判](ai-assisted-web-reverse-compilation/ai-assisted-20260730-01-reference.md)
+- [fangdi RS6 的 P cookie 参数](ai-assisted-web-reverse-compilation/ai-assisted-20260731-01-reference.md)
+- [yuanrenxue match/28 的固定填充](ai-assisted-web-reverse-compilation/ai-assisted-20260804-01-reference.md)
+- [脱敏音乐接口的 zzc 签名与不对称响应](ai-assisted-web-reverse-compilation/ai-assisted-20260805-01-reference.md)
+- [a_bogus 的脱敏算法族、非硬件字节和栈观测约束](ai-assisted-web-reverse-compilation/ai-assisted-20260807-01-reference.md)
+- [先判断算法有没有编进 opcode，再决定要不要逐条逆](ai-assisted-web-reverse-compilation/ai-assisted-20260810-01-procedure.md)
+- [用 RSA 公钥的算法标识做内容锚，而不是用函数名](ai-assisted-web-reverse-compilation/ai-assisted-20260811-01-procedure.md)
+- [shein x-gw-auth 的来源定位流程](ai-assisted-web-reverse-compilation/ai-assisted-20260826-01-procedure.md)
+- [某 dewuX Web 签名字段与握手边界](ai-assisted-web-reverse-compilation/ai-assisted-20260901-01-reference.md)

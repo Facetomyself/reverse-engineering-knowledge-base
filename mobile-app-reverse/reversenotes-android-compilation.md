@@ -73,3 +73,8 @@ archived_date: '2026-09-06'
 | 扫盲 / Java 基础 / unidbg 模板 | 与现有环境、xfq-unidbg 合集重复 |
 
 语雀 `xiaofeng777/android_example` 书目录在 2026-09-06 已 404；已单独归档的公开页见 [菠萝包 SFSecurity](../signature-algorithms/boluobao-sfsecurity-trace.md) 与 [马蜂窝魔改 SHA1](../signature-algorithms/mafengwo-modified-sha1-trace.md)。
+
+## 提炼说明（454）
+TOC hub archive-only。
+四篇子文已各自成卡或 retain。
+本轮不另建合集卡。

@@ -74,3 +74,7 @@ Web Audio 是上下文、节点图、AudioParam、时间线和渲染 buffer 的�
 - `currentTime` 使用单调递增时间源，与 performance / 事件时间戳同一来源。
 - 渲染结果进入 hash 或请求参数时，与本地执行层后续字节保持同源。
 - 节点与 context 的身份引用（`node.context`、`destination.context`）先于字段值核对。
+
+## 提炼说明（625）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

@@ -165,3 +165,7 @@ ninja -C out/Default chrome
 *   使用cookie明文存储便于上传云端实现异地同步，但需注意明文存储存在泄密风险。
 *   如有更优的解决方案，欢迎留言分享。
 
+
+## 提炼说明（265）
+archive-only。启动注入见既有 chromium-startup-cookie-manager。本篇明文 SQLite 不另建卡。
+不收录 Cookies 路径或密文列。远程图未审。

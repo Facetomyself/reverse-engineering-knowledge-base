@@ -16,6 +16,9 @@ sources:
   basis: source-report
   citation: TaoBaoApis / XianYuApis 2026-08 只读对照（原归档记载）
   reason: 原归档明确记载对照项目名；仅保留非路径出处，省略本机定位，未提供公开原文 URL。
+- id: s2
+  ref: ../taobao-h5-mtop-lwp-case.md#落地形态
+  basis: source-report
 tags: []
 original_date: '2026-08-18'
 archived_date: '2026-08-30'
@@ -32,6 +35,21 @@ modules:
   - s1
   basis: source-report
   limits: 仅保留来源陈述；出处为文本 citation，缺少可定位公开原文，本轮未重验算法、运行时或当前服务端。 本节是验收口径，不代表这些条件本轮已经满足。
+- name: interfaces
+  anchor: taobao-implementation-snapshot
+  sources:
+  - s2
+  basis: source-report
+  limits: Python/ExecJS、JSONP 与 LWP 字段位置是 TaoBaoApis 单一不可公开定位快照的报告；源文件未提供，本轮未检查或执行。
+- name: parameters
+  anchor: taobao-cookie-precondition
+  sources:
+  - s2
+  basis: source-report
+  limits: Cookie 前提和缺少空 sign 种票实现仅描述该 TaoBaoApis 快照，不能否定其他 MTOP 实现或提升为当前服务端行为。
+relations:
+- type: supplements
+  target: ../taobao-h5-mtop-lwp-case.md#落地形态
 ---
 
 # 阿里 MTOP H5 sign
@@ -105,4 +123,22 @@ IM：
 - 记录 host、`appKey`、`jsv`、tk 刷新次数、是否同轮带 `tfstk`
 - App 接口必须另走 InnerSignImpl，不能用本页公式
 
+<a id="taobao-implementation-snapshot"></a>
+## TaoBaoApis 实现快照：接口细节
+
+以下仅增补 [淘宝来源案例](../taobao-h5-mtop-lwp-case.md#落地形态) 中单一实现快照的报告，不替代上面的通用链路。
+
+- Python 侧据称通过 `execjs` 编译打包 JavaScript 并调用导出的 `generate_sign(t, token, data)`；这是调用 bundle 出参，不等于已有可维护的纯 Python 实现。
+- token 请求使用 JSONP 包装，来源称客户端以 callback 包裹形式剥出响应 JSON。源码中的样例 `sign` 会被调用生成值覆盖，审读代码时应区分占位文本与最终赋值。
+- IM `/reg` 注册帧据称承载 IM `app-key` 与前一步 HTTP token；来源称该帧不再携带 MTOP query `sign` 或 `_m_h5_tk`。字段位置是代码报告，不是本轮抓到的 WebSocket 帧。
+
+<a id="taobao-cookie-precondition"></a>
+## TaoBaoApis 实现快照：Cookie 前提
+
+来源案例报告该实现从调用方提供的 `_m_h5_tk` 取下划线前第一段作为 sign 输入，并由调用方提供首包浏览器 Cookie；该仓库快照没有空 sign 种票实现。此处只记录该实现的能力边界，**不能**据此否定上方通用链路所述的空 sign 种票，也不表示首包 Cookie 已被本轮验证。
+
 落地选型见 [平台签名落地方法](../sign-landing-methods.md)。
+
+## 提炼说明（736）
+retain_existing_reference。既有卡 web-reverse/products/alibaba-mtop-h5.md。
+本轮不另建卡。不复制 Cookie/token/指纹原值。未审图片不作证据。

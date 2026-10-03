@@ -463,3 +463,8 @@ rpc.exports = {
 };
 
 main();
+
+## 提炼说明（535）
+archive_only。
+gadget_trace 示例脚本，含设备序列与演示包；非知识模块。
+本轮不另建卡。

@@ -1,12 +1,12 @@
 ---
 schema_version: 2
 id: native-analysis-qidian-so-analysis
-document_type: archive
+document_type: reference
 scope:
   targets:
   - qidian
-  client: unknown
-  version: unknown
+  client: Android native
+  version: source report 7.9.464; exact target build unknown
   observed_at: unknown
 sources:
 - id: s1
@@ -14,7 +14,29 @@ sources:
   basis: source-report
   citation: '`本地项目分析材料（定位不公开）`'
   reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
+- id: s2
+  ref: ../signature-algorithms/qidian-fock-signature.md#fock-request-injection
+  basis: source-report
 source_completeness: unknown
+modules:
+- name: parameters
+  anchor: qdsign-3des-pipeline
+  sources: [s1]
+  basis: source-report
+  limits: 126 条样本和字段结论均来自来源报告；本轮未运行解密、未做服务端回读。
+- name: validation
+  anchor: qdsign-3des-pipeline
+  sources: [s1, s2]
+  basis: source-report
+  limits: 来源报告中的样本复核不能升级为本轮 runtime 或 serverAccepted。
+- name: request-chain
+  anchor: fock-request-assembly
+  sources: [s2]
+  basis: source-report
+  limits: 仅补充来源报告中的 FockUtil/Knobs 请求装配、canonicalization 和排行榜样本边界；未运行目标 App、未验证其他 endpoint。
+relations:
+  - type: supplements
+    target: ../signature-algorithms/qidian-fock-signature.md#fock-request-injection
 tags:
 - libfock.so
 - libfockrt.so
@@ -48,6 +70,48 @@ archived_date: '2026-07-05'
 早期分析正确识别了 Fock SDK 的 Native 组件、JNI 动态注册、QuickJS runtime 和 `libfock.so` 内的自实现 Hash/AES 代码，但把 QDSign 的密文长度直接解释为 RSA-1024，并将一条 AES/Hash 函数链归因于当前版本 QDSign。后续对 126 条真实 QDSign 样本完成解密复核，已确认当前样本使用 3DES-CBC 与管道字段，不是 RSA，也没有证据表明 `libfock.so` 的 AES 链就是线上 QDSign。
 
 本文保留已经验证的 Native 结构结论，同时明确撤销过度推断。
+
+<a id="qdsign-3des-pipeline"></a>
+## 可复用提炼：QDSign 的来源报告边界
+
+来源报告将当前样本描述为 3DES-CBC 与九段管道字段，并明确撤销“RSA-1024”以及把 `libfock.so` AES 链直接归因于线上 QDSign 的旧推断。报告还称 126 条样本中 104 条可直接匹配 URL query 的小写 MD5，其余需要继续关联 POST body、空参数和 canonicalization。
+
+这些数字和算法归属均是 `source-report`，本轮没有运行解密或服务端回读。复用时应先固定目标 build、请求 canonicalization 和 QIMEI 变体，再分别确认网络字段与 Native 算法调用归属；不能把库内存在 AES/DES 实现当成 QDSign 使用证据。
+
+<a id="fock-request-assembly"></a>
+## 可复用提炼：FockUtil/Knobs 请求装配与排行榜边界
+
+这段只补充 [Qidian 请求签名与 Fock SDK 归档](../signature-algorithms/qidian-fock-signature.md#fock-request-injection)中独立于 3DES/QDSign 算法的调用链和 endpoint 范围，不重复其字段密文公式。
+
+### 请求链与 canonicalization
+
+来源报告给出的装配顺序是：
+
+```text
+OkHttp request
+  -> FockUtil.addRetrofitH(request)
+  -> FockUtil.getH(...)
+  -> QDSign / borgus / cecelia / gorgon / ibex / tstamp
+  -> QDRequestAddKnobsInterceptor
+  -> sora
+```
+
+其 payload 边界按来源描述分开记录：GET 通常关联 query，无参数请求关联空字符串，POST 则可能关联 body 或请求数据的 canonicalization。来源报告明确还有 22 条样本不能直接用 query 的小写 MD5 解释；不能把上述概括扩写成统一的 GET/POST 算法。
+
+### 头字段删除探针
+
+下表只记录来源报告对匿名排行榜样本的逐头删除结果，不外推到登录、付费、内容 key 或风控接口：
+
+| 探针 | 来源报告结果 | 适用边界 |
+|---|---|---|
+| 删除 `QDSign` | 返回签名错误 | 当前排行榜样本中为必需字段 |
+| 删除 `borgus`、`cecelia` | 仍成功 | 该批 endpoint 未独立校验 |
+| 删除 `gorgon`、`ibex`、`tstamp`、`QDInfo` | 仍成功 | 不能因此判定其他接口不需要；`ibex` 更像设备/注册态材料 |
+| `sora` | 由 Knobs interceptor 注入 | 仍需按目标 URL 单独验证 |
+
+### 排行榜重放范围
+
+来源报告称旧 QDSign 样本曾在 27 个排行榜分类接口上被接受。可复用的边界只有“指定版本、设备字段和该组 endpoint 的历史重放范围”；它不等于所有 QDSign 永不过期，也不覆盖登录、付费章节、内容解密、用户态或新版 App。
 
 ## 文件清单
 
@@ -180,3 +244,7 @@ QDSign = Base64(
 - [360 Jiagu VIP 绕过与脱壳能力](../packing-bypass/jiagu-bypass-analysis.md)
 - [P4nda0s/panda-dex-dumper](https://github.com/P4nda0s/panda-dex-dumper)
 - [GodKeawa/AppApiCrack](https://github.com/GodKeawa/AppApiCrack)
+
+## 提炼说明（559）
+retain existing reference。QDSign/Fock 边界已在本文。
+不扩卡，不升 runtime。

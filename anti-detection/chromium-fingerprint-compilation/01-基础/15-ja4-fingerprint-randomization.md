@@ -79,3 +79,7 @@ ninja  -C  out/Default chrome
 ```
 
 *   编译后每次刷新时ja4指纹也都是随机的了。
+
+## 提炼说明（250）
+archive-only。JA4/JA3 结构见 tls-fingerprint。本篇 cipher command 随机增减不另建卡。
+不收录套件过滤串。

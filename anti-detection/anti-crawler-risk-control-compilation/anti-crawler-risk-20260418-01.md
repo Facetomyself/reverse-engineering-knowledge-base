@@ -272,3 +272,7 @@ WebRTC 是 P2P 底层协议，走 UDP 传输，不经过浏览器代理层
 
 _
 _
+
+## 提炼说明（223）
+archive-only。指纹分类叙述被 js-browser-fingerprint、canvas-webgl、audio-fingerprint 与设备画像卡覆盖。
+不收录隐身/对抗代码。未审图不作证据。

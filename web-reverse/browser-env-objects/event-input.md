@@ -74,3 +74,7 @@ modules:
 - 输入事件字段成组派生，坐标组、按钮组、按键组互不矛盾。
 - timeStamp 与 performance 时间源一致，事件顺序不倒置。
 - 事件回调写入的状态后续读取可见；未触达的事件类型不预建。
+
+## 提炼说明（634）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

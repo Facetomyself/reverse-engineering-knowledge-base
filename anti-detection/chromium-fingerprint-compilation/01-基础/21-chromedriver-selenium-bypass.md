@@ -145,3 +145,7 @@ time.sleep(99999)
 ![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/d9085c124ddc4e4b8cb2718359c1652e.png)
 
 > 可以看到，依旧是自动化控制，官网却已经检测不到了。browserscan也一样。
+
+## 提炼说明（253）
+archive-only。Selenium cdc_ 窗口属性不是站点模块。不另建 chromedriver procedure。
+不收录注入脚本、本机路径或启动样值。远程图未审。

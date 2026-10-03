@@ -1,12 +1,12 @@
 ---
 schema_version: 2
 id: mobile-app-reverse-reversenotes-android-compilation-bilibili-device-sign
-document_type: archive
+document_type: reference
 scope:
   targets:
-  - bilibili
-  client: unknown
-  version: unknown
+  - bilibili buvid/deviceid/fingerprint/sign
+  client: Android app
+  version: source report; buvid 6.68.0, deviceid 6.28.0, fp/sign 8.48.0
   observed_at: unknown
 sources:
 - id: s1
@@ -15,7 +15,23 @@ sources:
   citation: GitHub xfxfxiaofeng/reverseNotes
   reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
 source_completeness: unknown
-tags: []
+modules:
+- name: request-chain
+  anchor: bili-deviceid-envelope
+  sources: [s1]
+  basis: source-report
+  limits: 注册信封结构来自版本化来源报告；register_plaintext 字段表与密钥未公开，密文因 RSA 随机填充不可逐字节复用。
+- name: parameters
+  anchor: bili-sign-boundary
+  sources: [s1]
+  basis: source-report
+  limits: sign 仅识别为 JNI 内标准 MD5 加盐；盐值未公开，且版本为 8.48.0。
+- name: validation
+  anchor: bili-evidence-boundary
+  sources: [s1]
+  basis: source-report
+  limits: 作者本地对照不等于本轮复现或 serverAccepted；fp_remote 必须来自接口回写。
+tags: [buvid, deviceid, fp-local, fp-remote, libbili]
 original_date: 2025-06（观察版本 6.28.0 / 6.68.0 / 8.48.0）
 archived_date: '2026-09-06'
 ---
@@ -51,6 +67,7 @@ archived_date: '2026-09-06'
 
 摘要不可逆，协议侧只需形状一致。作者用随机 UUID 走同一抽位也能过本地对照；是否被服务端当设备锚点，原文没有 `serverAccepted` 证据。
 
+<a id="bili-deviceid-envelope"></a>
 ## deviceid
 
 注册接口正文只有 `key` 与 `content` 关键：
@@ -76,13 +93,20 @@ content = AES(aes_key, register_plaintext)
 
 `fp_remote` 形状相同，但不是本地算：`POST /x/resource/fingerprint`，带 `appkey`/`ts`/`sign` 与已有 `buvid`/`fp_local`。接口返回值再写入。不要把两次抓包的 `fp_remote` 当本地可复现。
 
+<a id="bili-sign-boundary"></a>
 ## sign
 
 Java 层 `s` 先写入 `ts`，再 JNI 进 `libbili.so`。SO 对 map 做完后 `NewObject` 带回字符串，作者把返回值认成 `sign`。核心计算在内部哈希例程：对照后是**标准 MD5 + 盐**，不是魔改压缩函数。盐的字节只出现在截图，本篇不写猜测值。
 
 定位路径：`Map.put("sign")` 落空 → `StringBuilder` hook 看到 native 路径 → 调栈到 `s` → `JNI_OnLoad` 表 → 入参 map / 出参 sign。
 
+<a id="bili-evidence-boundary"></a>
 ## 边界
 
 - `sign` 的盐、`deviceid` 明文表、`fp_local` 校验和公式细节以仓库截图为准，归档只锁结构。
 - 8.48.0 的 `x-bili-*-bin` / protobuf 搜索接口原文只有截图，未闭合，不收录。
+
+## 提炼说明（451）
+retain 既有 B 站设备/sign reference。
+盐与字段表仍不公开。
+本轮不另建卡。

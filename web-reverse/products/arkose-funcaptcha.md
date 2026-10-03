@@ -113,3 +113,7 @@ modules:
 - challenge endpoint 的通过状态只记为 `submit=pass`，不能直接标记 `challenge accepted`。
 - 通过凭证注入原业务请求后，只有目标业务响应达到预期成功状态，才能写
   `business-readback=pass` 和 `challenge accepted`。
+
+## 提炼说明（673）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

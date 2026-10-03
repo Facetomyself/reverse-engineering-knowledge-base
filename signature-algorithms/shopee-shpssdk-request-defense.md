@@ -62,7 +62,7 @@ archived_date: '2026-09-15'
 | Native | `libshpssdk.so!0x995dc` |
 | 目标字段 | 请求头 `x-sap-ri` + 四个变化四字节键及其值 |
 | GET / POST | GET 三个短键；POST 多一个短值 |
-| 固定盐 | `gkXKQn1X6TZ1OR49` |
+| 固定盐 | <REDACTED_SAMPLE> |
 | 运行时 | Pixel 6 + JustTrustMe；unidbg 补 `RandomFileIO` / 文件访问 / AndroidModule |
 
 ## 字段速查
@@ -151,7 +151,7 @@ java.lang.Throwable
     at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
     at java.lang.Thread.run(Thread.java:920)
 
-hashMap.put:  x-sap-ri d0e8a369cf5fe61cbe850b1701035d4845816bf810178ed090cc
+hashMap.put:  x-sap-ri <REDACTED_SAMPLE> (52 hex chars)
 ```
 
 - 日志太长了，我省略了一部分；com.shopee.shpssdk.SHPSSDK这个肯定是比较显眼的，去看看；
@@ -179,7 +179,7 @@ hook_mointor_uvwvvwvvw();
 
 ```plain
 [->] com_shopee_shpssdk_SHPSSDK.uvwvvwvvw is called! args are as follows:
-    ->str= {"47ffc362": "nW6tuy51Fzec2IQxDJgMx/PlRMk=", "68d3f29e": "4L8ais8kBDqogPUL4m+jhIPIArs=", "6e7909a8": "4o1f7ZWoYTQhnKW8DBGlSSvC+jO=", "befc0ac1": "7H5obeYqNKbw/Kqa7x8l1JHQ83ks9J2vontoPB0KynPCJv8WppVwuHJFZTHcCF23FouW7zLFxfK5SIi1yHtrSK+8j5UVwb6WH1+xuZ9v/Fy+2VN7I6BWZQ1w7MT+X6f2KSwkeyrLB1QNCU7A9Ru4suLECjEUHAwhyMKJRjiTOcvo/q/m/rOOCR+J6L9/g9S4jB7d34vPKNGSGMgD0rvCs/6qQgz86afTGpA86viQspt7RnY+EwJjCetT0Bx/n266n5C8gvV8ruNvzEX/RP51Q9lSG703ihskd2N1AmPCyuA6W9op8T1Vzba4EEnPQhkPT4mKEuP9OD9bgCdKN9Ll0ABEDJxQzWc+Pd0Y0jhfo0o3aDhOKEDKz450H44pO8kl1HI0GDNIuuucX7sfNJ5mdLahIZfu8+hCALln50WiakItjlJrqMWJD53Pyee7ck7yes42yETWLycH/ZDiEqzlPXeJePbCxtz5kvBluzvfdAhmNG5g/rGRoYnTZssO/ROaLbrXcRVvbK1qgjR0x2oE6wLpE5bhGz6haauYa2T9wBmWH1qHAUVdrsFDMkkfd+0d6p5jECHFW8MgBe1MbwJEA5LzqtUQOGVd+iI7Hz1hn7X+4xnYPV+FYYBHhTVYdQwRD6ipRJebIOY8Cn+syD+0KqKiX0i69h4mobStrEVe9jeSrDLsstlaGh4PQP+Udf79F7v6Nug4swjDIewZD7p1rcHdxmxP+B0O2WIJZIgOGNodNqoQHXgPG50B7l9kbOnEv4PlYYE/sSz12W4VRY4GghkeC7hpOq7Hr6DValAdQIM14lINpZcC54AuTcgc2LWkQXnqNiEJvjx/nDUs2wvD3PTD93W7Dz+aTTU3m9dvAcjPHaareiSRRnK9ZSCTmY23Y5Gkl1P2BoX9VLKtYP7R4sHUoE05EGboqqUR6RNSBYf39jiXQX86Bm3mF0sXw6k+seUCByqVGOD+EirRLGrKXPbaQwcxhIdn/YYgxuyp2fH7CsrkIpOcUMC6keUojJLqaQH/PGc3NExk6WPGdWsNFIgkXgHwTzQUr0Xf0vzY+wuvFnJRKQenk2nA22Rj/tFZ2q79Pj23RQpX0KpJUoWFY3y8M9YtjwLSXDrRQ0pNb6BhPDv9lTG6DiurYYZIKpbWFY7HO7/1I9ADY4QhrinC9JeKUYcYgZYsm+36CndS4bkoUWOY0d+sgCafNqzGpKZF07eoVVL0NWM6gSEAGYTaMiXBTxmhcxt+Cf7WzWDKH9igxUCiFsyS7KkprkMy8XuDO+UbI0dvTNmcIXfbB4pHWCHSayDyfyV4KA1UcG3CUuxG+jqp3yDxTHzfEhNBl859j7xsEGvkYAYFymU4OEGTIHewC6z62xcNonCavc3QsAMRMy/syiSxnRW1a8f6vVaFvQ510zo0GF6cmM23flTY0Pjv3eznIVO4T/uobDpmBWWdWmr3LILZSHxtJWekd1TLPWqBh32nkye/e3q6gzeADgLzDq8SQM7mc3E7BRF2Vc1i0xdYRfSGkH0dq/T=", "x-sap-ri": "aae9a36986f402a52f60df1c01c6ad3709607c86357df52520b6"}
+    ->str= {"<header-key-1>":"<REDACTED_SAMPLE> (short)","<header-key-2>":"<REDACTED_SAMPLE> (short)","<header-key-3>":"<REDACTED_SAMPLE> (short)","<header-key-4>":"<REDACTED_SAMPLE> (long)","x-sap-ri":"<REDACTED_SAMPLE> (52 hex chars)"}
 [<-] com_shopee_shpssdk_SHPSSDK.uvwvvwvvw ended! 
     retval= [object Object]
 ```
@@ -226,10 +226,10 @@ hook_mointor_vuwuuwvw();
 ```plain
 [->] com_shopee_shpssdk_wvvvuwwu.vuwuuwvw is called! args are:
 bArr: https://live.shopee.ph/api/v1/full_screen/playlist
-bArr2: {"ctx_id":"<device-id>-1772350690578-34","device_id":"<device-id>","page_no":1,"source":"home_tab","need_play_param":true,"offset":0,"is_preload":true,"user_ctx":"{\"from_source\":\"home_tab\",\"first_rcmd_request\":true}","cached_session":{"last_ts":1772350110772,"session_ids":[<session-id>,<session-id>]}}
+bArr2: {"ctx_id":"<REDACTED_SAMPLE>","device_id":"<device-id>","page_no":1,"source":"home_tab","need_play_param":true,"offset":0,"is_preload":true,"user_ctx":"{\"from_source\":\"home_tab\",\"first_rcmd_request\":true}","cached_session":{"last_ts":1772350110772,"session_ids":[<session-id>,<session-id>]}}
 
 [<-] com_shopee_shpssdk_wvvvuwwu.vuwuuwvw ended! 
-    retval= {"2952479e": "QsK9VIcTH7/YzOlX/nrrEgTA4Lk=", "6146faa1": "n3Z/XItbCXzTDpxg0RLHYdvwzbjnNUKwaGZ2zPHhWelnvez8yFMgw2fTsBN4cyfDFezAwtWf18hqqXCcDr2UevHenKqMjO0SkjT04Hj6TiDoGUo9uaRwtbH7UU/sBntyRfWuhAltm1lwOOPtNwpOZT513vEbrnaXFxs4t5nSo5AafqS013KmfIkqvBPmVhs9yOhSjCh4xqJUhuXDxWebBZv/fOQf2buXIXJaKqkoTD6TBHJjKl9NDsYAgWRi41bNJ+GDBSbgF1epEJCE8Joy+aSPXAbLYlGHwBjuwbJUBrgyeoOzEdrBjWqm8Ds11u3tnT7BupU2pz76IplYs3h8aSaOtu0i03WzqhbonA6S1PWxkuf8YHYzWD/g8w4vWlK4OeMcxh8CN3WE0SU1OV+KNBHKVU/FH+dpXVPrLpHHEze+Zgg9xWBPOeb39nUXkm25lJHX9Hn8bPb4vROqN/zzV7ldGzOjcM7OJixuAl6aTDvoDyGsD9zTzTsMny6glh+hKhj+VzUc4sskSBs7e/elacrbSVcNjZM4k78kq/NqMkCMVSWaibRgc5IoP0rL7Rsd9n9NqIW3Wp4TWWRjz+fQIumKYG2rSBNlD7YxYnik9VZvxXJCvJS6Pybl0ubMDgoTlOAxQD/jDI3RXiSN0nizS50e9xuzCrObyYzPw8bJii1DvkEIRFQpI/OuHB8CeVoKS8gYBab7SfvwHa6L+ms/8+45DUvAXmlEtzhadDh/ETZIGqHhlqxebtD3TJf+4XQkR9dPc4wBv3Pw7GsL7fZBMd3ptG693BahW7EruytCPv2tS6DpqoBx5CogwSt3WcAaB5osBKV8+aaJSCM62bkKU5UQSwgBH5ssEhXsG1RhQ+v4NhwYK/DX5EGxEARS3K4pXB1w022H2Y54UVd8af2O67H63qKsVQp46UvQjUknZM3hnJkvKeodFEIAxRsW2MtuxCForrzsDZsmOwRjZlTEORcdWgQuwUN6OE50I5McfDSTnslWueUc+y0LdlIpJZ/f5Ek5VRC+smuELsUQlKt11viYtaH4Spv9VilmUq0zKOFxxE3m5vgDpulOx8KbPxJWvRtjBYMlQFIhmrgkFpyPjfH5e+Q0X7g+A8jXUI3zRbkqcSh02aJzbC+A3pYKk2pwJCCMOecmdsZlkSA/lk0L+wQv56pTTdfr1jrLPVayXLxhSGNW8s+gqwYzoWmHLI3dAaQCuJRdODhDj1ugrwxG+GSnsMPaPhb0dEQNZm8vqig0bnbgjM6j3pBPM+VsFd5BY5rlrRamUiDEcUv/xm1KFFBuKKrXhIU6C5FmQHNg3QeJOWNtO6HFgGZ5FP0iMkI8d/0hnFJdOvHnmPYejVcROLQAM4g+60ovkeZOnnLuPZ01SsOFkPc5GHNkSsyUj2bR0JrYqrWVdp5mm2JUZnfVB9FedQzU8/t5jttHSaitAxpCDG+Q2wdsrjWS32Bp0tfNqHIxdGAR4ay704Xb1I42RpQc/lYDt6dqNEor7j==", "66a0ff35": "w0wTFVjxktXuBb2XjQRsH2VyXn8=", "beb5428c": "1WwW2sYTfsyBLrneJ+jwlpZMNUQ=", "x-sap-ri": "e1eca3693393de9df46975140156ddfa616adf07ef5825bf1f4d"}
+    retval= {"<header-key-1>":"<REDACTED_SAMPLE> (short)","<header-key-2>":"<REDACTED_SAMPLE> (short)","<header-key-3>":"<REDACTED_SAMPLE> (short)","<header-key-4>":"<REDACTED_SAMPLE> (long)","x-sap-ri":"<REDACTED_SAMPLE> (52 hex chars)"}
 ```
 
 - 参数1是url，参数2就是请求体的内容；如果是get请求，url有参数的也会体现在参数1，而参数2就是null；并且get请求只有三个四字节键和值，比post少一个；接下来看看是哪一个so以及函数地址；
@@ -263,9 +263,9 @@ function call(){
 - 主动调用两组；
 
 ```plain
-call res-->> {"1a9ec9b9": "Dw4uBPzD32aYyH98QsImgy/E01O=", "1ea94c5c": "CGIseVxBmFlwKbV/d/VgqUsN93PxpkJJWRvYKNGXJrwH1O47p8rQBfD41aexgJQSe4VAoB5nYH7ofVd/2NrCjINptLxkRpD+QTQLi50txqixqHvZcIbdmWPXt3s49fRDw2OFtWKQ+vcB6UW4nuLyynfmzkeksmHs6VkIvGwGEFmWrO4eng/eDBit9FlkFMxWpQDvkkvgOJ+GFUhgAjmMpg/vyrQbOaDDZhnXHIKAHzpcQXqYvUzykxr1wYdUAUNdpnmflDBTATEXnR6U8v5NGkV+oX6edKI7emm0A/+guggvMbXPGJawuhdTA5s9hAWVrcXm/R6z0mSfiagbjqJllR928609Ko8/jPYF+qjYOdWhQB/q+qWRuydg1Wkzs3Bw5Os3SIE5v7w7SwM8/p/Ig77nk/eNOPL/NdzGq/gZpN3NRPu5cXC6RfIEA9UjwK9WlfvaBxjRsMU/svXqmCU6Mcze6O0F/UmMsXlb0Dw/qCJUUoweaLr7bvFqCB8BeRAn6MpqCZr0RP6K0Mufo0YjXTjG9+Pa8337IokMvXwxl2x8Ykv9bI1DCzhLJWNuHJHo5DQddJhvLqk07erCWQhELFwChuLwu0d7gTh/MvrcHbJkPytmpUAHfSi8qfkJ0Fkqv15dHdswz+GFek2uziLnUIvtUbWm26a/bpd01XAhLGXfiGLDxocDwnNVEqq/9asNTyPW7XNWH8znaVK4Fxq+IbPDcS73Tx03R8QMiH9ueG21daU1FID3MuuHbqoggXDZN52ylKwe+1n4hrGQ", "21250d6a": "hN/V87MRr1mguo5x+Ux+Z/1aiA4=", "395a6d7c": "jcHVlzd2GDUQ/0INzKqSPqohG5s=", "x-sap-ri": "60f1a369bce3e8c4278f681b0114453eef925a73858a959c89c5"}
+call res-->> {"<header-key-1>":"<REDACTED_SAMPLE> (short)","<header-key-2>":"<REDACTED_SAMPLE> (short)","<header-key-3>":"<REDACTED_SAMPLE> (short)","<header-key-4>":"<REDACTED_SAMPLE> (long)","x-sap-ri":"<REDACTED_SAMPLE> (52 hex chars)"}
 [Pixel 6::Shopee ]-> call()
-call res-->> {"1a9ec9b9": "INynEiSktsnhiO2r0GXgKi/kUOt=", "37316fcb": "OSBW5ghMl8XUK/MPwh0confiAkSQDt/Ifch/1eK8fgvU7PMo3WQE1BfqfK2SyBBusHFrL5mPc6yU0T3KoBWz2YF+/UEFikjDBSqYfuaUu/+Ld3O0TvCRhb0QiTiszM88kx+LofmJIDCZfltw2EC16OvQDIy+7LQlQTlt4qool0QKhP2T+TBkn0x6nSzhpAQ+r5//lQUDIsX+y6BWQMi1fab22LYbq0UKpBc9wXqgNT6A60s17dfWzNesWwt9K1IhdeKs+eKDbHdVW16hmf+TgMX4F8ELEDNhE7cCr7Mvx9gIZLtjyDeFgDWq93cYgv8ulApcyhBGvADAgIBWifIrh+r0XtSqRmZ66MHW5/IHv9WwlgEzXb4qQNpxKv972RD6eXr8oZpXdyA1jhVaJRooV4L4ZtKTroxEOUp4KssC45xAnIcWcW55jBI8ye90PLBEUxxKdBIp/A9iCuk/Ks69QUzpEwmVxjR4fF5E82C0lOKtG3KPthVNf85wyTL/QpUT49qKPAzMDXY3DEVwVsQt9YB6XpXTmb6Vb18jFt+Z53n5L6qfDWaLNVU+bcEHoCLQJHL38ReaTGnzkCdyUVH1OFQsDgzakrb3EmElt54r3yGh3HHMsY5eUd8PKJbhENnNzdf45yYE6JKOFy0y6k6cKrP3NMN6fVjxmv/+0RRuOYA60OolObMhbLNgwWR8rawvgwxHXsqA/Vc/5tlDXHNWeIkWZL0CFSUaJ82+QAtMIXSjPblXOk/88LuZWZ0zDdVgn1ZyfoBvCTJjQShU", "9e088027": "ME7gk3cXbxfG9BziwTeNZbM9IIs=", "c98247d8": "JUrBao8nfsPSrbXpLQLeuT3ZUMT=", "x-sap-ri": "61f1a3698ce350d9e7845a1501560f19e8065157280332327654"}
+call res-->> {"<header-key-1>":"<REDACTED_SAMPLE> (short)","<header-key-2>":"<REDACTED_SAMPLE> (short)","<header-key-3>":"<REDACTED_SAMPLE> (short)","<header-key-4>":"<REDACTED_SAMPLE> (long)","x-sap-ri":"<REDACTED_SAMPLE> (52 hex chars)"}
 ```
 
 - 观察一下，我们的目标有几个？五个，但是还包含那四个键，可以发现，除了1a9ec9b9这个键以外，所有的东西都变化了，当然x-sap-ri这个键我不计算在内；
@@ -328,12 +328,12 @@ public class shopee extends AbstractJni implements IOResolver {
         emulator.getSyscallHandler().addIOResolver(this);
         memory = emulator.getMemory();
         memory.setLibraryResolver(new AndroidResolver(23));
-        vm = emulator.createDalvikVM(new File("src/test/java/com/Samples/shopee/file/com.shopee.ph.apk"));
+        vm = emulator.createDalvikVM(new File("<path-to-sample-apk>"));
         // 虚拟模块 添加这个就可以
         new AndroidModule(emulator, vm).register(memory);
         vm.setJni(this);
         vm.setVerbose(true);
-        DalvikModule dm = vm.loadLibrary(new File("src/test/java/com/Samples/shopee/file/libshpssdk.so"), true);
+        DalvikModule dm = vm.loadLibrary(new File("<path-to-shpssdk-so>"), true);
         module = dm.getModule();
         dm.callJNI_OnLoad(emulator);
 
@@ -344,7 +344,7 @@ public class shopee extends AbstractJni implements IOResolver {
     }
 
     private void traceLog() {
-        String traceFile = "src/test/java/com/Samples/boss/trace/trace1.log";
+        String traceFile = "workspace/<project>/traces/trace1.log";
         PrintStream traceStream = null;
         try {
             traceStream = new PrintStream(new FileOutputStream(traceFile), true);
@@ -386,7 +386,7 @@ public void callByAddress(){
     list.add(vm.addLocalObject(arr1));
 
 //        byte[] bytes2 = "{\"img_size\":\"3.0x\",\"latitude\":\"\",\"location\":\"[]\"}".getBytes();
-    byte[] bytes2 = "{\"shopid\":1414312381,\"itemid\":29669138810,\"catid\":100012,\"keyword\":\"\",\"item_card\":3,\"offset\":0,\"upstream\":\"dd\",\"upstream_sequence\":[{\"itemId\":29669138810,\"shopId\":1414312381,\"upstream\":\"dd\"}],\"view_session_id\":\"GEZpdKbH8al3kRz2f4vqJlIkOHfzuNZlWjb+Wfn2oW4=-1741790904362\",\"user_behaviour\":{},\"rsku_info\":{\"itemid\":29669138810,\"shopid\":1414312381},\"phone_model\":\"22041216C\",\"network\":\"cellular\",\"os_version\":\"android 33\",\"brand\":\"Xiaomi\",\"advertising_id\":\"a146e330-eb81-4de5-ac16-40fb4e504a83\"}".getBytes();
+    byte[] bytes2 = "{\"shopid\":\"<REDACTED_SAMPLE>\",\"itemid\":\"<REDACTED_SAMPLE>\",\"catid\":\"<REDACTED_SAMPLE>\",\"keyword\":\"\",\"item_card\":3,\"offset\":0,\"upstream\":\"dd\",\"upstream_sequence\":[{\"itemId\":\"<REDACTED_SAMPLE>\",\"shopId\":\"<REDACTED_SAMPLE>\",\"upstream\":\"dd\"}],\"view_session_id\":\"<REDACTED_SAMPLE>\",\"user_behaviour\":{},\"rsku_info\":{\"itemid\":\"<REDACTED_SAMPLE>\",\"shopid\":\"<REDACTED_SAMPLE>\"},\"phone_model\":\"<REDACTED_SAMPLE>\",\"network\":\"<REDACTED_SAMPLE>\",\"os_version\":\"<REDACTED_SAMPLE>\",\"brand\":\"<REDACTED_SAMPLE>\",\"advertising_id\":\"<REDACTED_SAMPLE>\"}".getBytes();
     ByteArray arr2 = new ByteArray(vm,bytes2);
     list.add(vm.addLocalObject(arr2));
     Number number = module.callFunction(emulator, 0x995dc, list.toArray());
@@ -482,7 +482,7 @@ sana getString arg1-->> ""
 case "android/content/SharedPreferences->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;": {
     System.out.println("sana getString arg0-->> " + vaList.getObjectArg(0).toString());
     System.out.println("sana getString arg1-->> " + vaList.getObjectArg(1).toString());
-    return new StringObject(vm, "f0VMRgEAAAAIAAAAAGKYAQAAAAACAAAAJAAAADdhZmJiMzU1KmJjYTQqM2EyYio+NzE3KjUwZDY2M2Y2PzQxNQMAAAAIAAAAAAAEFAAAAAA=");
+    return new StringObject(vm, "<REDACTED_SAMPLE>");
 }
 ```
 
@@ -494,7 +494,7 @@ case "android/content/SharedPreferences->getString(Ljava/lang/String;Ljava/lang/
     System.out.println("sana getString arg1-->> " + vaList.getObjectArg(1).toString());
     String filename = dvmObject.getValue().toString();
     if ("SPHelper_sp_main".equals(filename)) {
-        return new StringObject(vm, "f0VMRgEAAAAIAAAAAGKYAQAAAAACAAAAJAAAADdhZmJiMzU1KmJjYTQqM2EyYio+NzE3KjUwZDY2M2Y2PzQxNQMAAAAIAAAAAAAEFAAAAAA=");
+        return new StringObject(vm, "<REDACTED_SAMPLE>");
     }
     return null;
 }
@@ -580,7 +580,7 @@ java.lang.UnsupportedOperationException: android/content/pm/ApplicationInfo->sou
 
 ```java
 case "android/content/pm/ApplicationInfo->sourceDir:Ljava/lang/String;": {
-    return new StringObject(vm, "/data/app/com.shopee.ph-6AYcVt33bWXGT_JAdpxbeQ==/");
+    return new StringObject(vm, "/data/app/<package-install-dir>/");
 }
 ```
 
@@ -667,7 +667,7 @@ case "android/content/SharedPreferences$Editor->putString(Ljava/lang/String;Ljav
     return vm.resolveClass("android/content/SharedPreferences$Editor").newObject(signature);
 }
 /*
-sana putString-->> "E1YASQpPEEUQWR1CCUwVVVVw" "f0VMRgEAAAAIAAAA1pdfnAAAAAACAAAAJAAAABUVFRUVFRUVCBUVFRUIERUVFQgdFRUVCBUVFRUVFRUVFRUVFQMAAAAIAAAAFFEVQQAAAAA="
+sana putString-->> "<REDACTED_SAMPLE>" "<REDACTED_SAMPLE>"
 */
 ```
 
@@ -719,7 +719,7 @@ shopee.shpssdk.wvvvuwwu-->74
     ->i= 74
     ->obj= 0
 [<-] com_shopee_shpssdk_wvvvuwwu.vuwuuuvv ended! 
-    retval= ReCX2BoJTnTH6BOu4w8HHw==|QnHlogIHBMERFgQZsV83NqcO28C+p9oA4wxmE2N48cSEvuqtb0j8pwiL6wLasRXZUpWBPysHocD1Y/Dl+sUih9BotoojhF92BGXqHEx6Eg==|YV2GRzdXRPaB3PNQ|08|1
+    retval= <REDACTED_SAMPLE> (five pipe-delimited fields)
 ```
 
 - 实际上就是请求头的af-ac-enc-sz-token，它会参与计算；
@@ -727,7 +727,7 @@ shopee.shpssdk.wvvvuwwu-->74
 ```java
 switch (int_data) {
     case 74: {
-        return new StringObject(vm, "oTSflMz92sjaiteHWrTbCA==|ZcaOB3RDBDZ45yuQO417seuqaFkyOokc0bEPSbb4EEOEWgsDQ8mELI4+L7dozfSMKhz8XKeONFtbuVR8YZ6h+cQJr6Sy6A7R9n7jAkbl|hApTLtwZfU6Gp8wb|08|1"); // 参与计算了 只影响最长的
+        return new StringObject(vm, "<REDACTED_SAMPLE>"); // 参与计算了 只影响最长的
     }
 }
 ```
@@ -764,14 +764,14 @@ switch (int_data) {
 - 提前写一下结果，更换了随机，后续还原基本都以这个为准；
 
 ```plain
-"{"1a9ec9b9": "zlug+XF2Nwvjy/venQJClQYEmb4=", "4b3e0f91": "wdolDJ8h1G/cmM+DshBh+kPhsub=", "9bbcf962": "u7CrEgUssUTsskOpBIddRvJUPHrldqB6pnvwxK65WatKgtRCST2j9Lbr06ZZ2nD6thaQ6nUbm28Dby3l8iQBdyuIRHx27gRd+MNuDDeNRKY1PmR8UWfy8Lsqtu6lGCnxrjLKnBXxTYUqBzQQcvgAW84+hNdM+9pb5qOuH0f6A3VbVEATHjMJd12DkdMWVuipGTEC/+7G6QjwMNYG1nyFiq2BQ5IvCmOAmFCJgwW/T3gCqCx9Bj6fa+FyIDC9M4I/+JVoRXq4zXKuRhe9zK4BTzcGAti8LAVEgLRewGW9WFzzEVdEF2u5tfaz9c56BDyjCPlVNzlq7qWAjj3pCn0XyRe6hpFjyS0a+/a/EhR2oeISke2GR6O95etE7PC5OnpDBjeWcP7zsFB73tLb79D+pxR+VMAMn9aNzghOccDHWgDK/I0hsvK44rOpnOcxqKZMT8p61U/GDsgcKZdV0I4D/9+Kg+BAfzopFlPe/vACFZBE2p3b0BfYHO12r/TJ3FFiImZTaPT5jXEFGkuZbDTB1N4I3hQW+gNfG0cqE+wvnquyr4UKrWjPuZ1PGSn3S3ACrSETwa1SMgOOiLTIQmFOKhTA53fsOB43qzfq704hC9skymisuflkmLyrQ2o1sdVZImdA9wrqtmspe71EcK59WCJKjjQ=", "c7fff146": "PZ6J6kNwywn/Ba2aSBuBMsshsUT=", "x-sap-ri": "16684368000102030405061701090a0b0c0d0e0f101112131415"}"
+"{"<header-key-1>":"<REDACTED_SAMPLE> (short)","<header-key-2>":"<REDACTED_SAMPLE> (short)","<header-key-3>":"<REDACTED_SAMPLE> (short)","<header-key-4>":"<REDACTED_SAMPLE> (long)","x-sap-ri":"<REDACTED_SAMPLE> (52 hex chars)"}"
 ```
 
 ### 4.1 x-sap-ri
 - 先来看它的结果：
 
 ```plain
-1668436800000000000000100100000000000000000000000000
+<REDACTED_SAMPLE> (52 hex chars; timestamp/random/fixed-slot example)
 ```
 
 - 它有52位，由于我们固定随机数时，返回的是0，这里就很显然是与它们脱不开干系的，这点嗅觉必须要有；但是中间也不完全是0，所以还需要看看中间是什么操作，我们把随机数固定成5看看结果如何；
@@ -802,14 +802,14 @@ public int read(Backend backend, Pointer buffer, int count) {
 - 这样我们方便看，先首先全部改成5 -> new byte[]{0x5,0x5,0x5,0x5}；
 
 ```plain
-1668436805050505050505150105050505050505050505050505
+<REDACTED_SAMPLE> (52 hex chars; controlled-random example)
 ```
 
 - 16684368是前面8位，没有变化，说明与这里的随机无关，后面的00几乎都变成05了，说明肯定是随机相关的；中间部分依旧是：
 
 ```plain
-16684368 05050505050505 1 5 01 05050505050505050505050505
-16684368 00000000000000 1 0 01 00000000000000000000000000
+timestamp=<REDACTED_SAMPLE> random-prefix=<REDACTED_SAMPLE> fixed-slots=<REDACTED_SAMPLE> random-suffix=<REDACTED_SAMPLE> (52 hex chars total)
+timestamp=<REDACTED_SAMPLE> random-prefix=<REDACTED_SAMPLE> fixed-slots=<REDACTED_SAMPLE> random-suffix=<REDACTED_SAMPLE> (52 hex chars total)
 ```
 
 - 看起来是固定的，可以多尝试随机几次不一样的值，它就是这样固定的，我们暂且得出结论：
@@ -818,15 +818,15 @@ public int read(Backend backend, Pointer buffer, int count) {
 - 再来看看前8位，16684368；我们证明了它和随机数无关；那它和时间戳有关吗？我们尝试修改我们固定的时间戳，看看其是否变化，改为1749248022000L -> 1749248011000L；
 
 ```plain
-16684368 00000000000000100100000000000000000000000000
-0b684368 05050505050505150105050505050505050505050505
+timestamp=<REDACTED_SAMPLE> random/fixed-fields=<REDACTED_SAMPLE> (52 hex chars total)
+timestamp=<REDACTED_SAMPLE> random/fixed-fields=<REDACTED_SAMPLE> (52 hex chars total)
 ```
 
 - 我们修改了两个字节，这里变了两个字节，有意思的，再尝试改一下结尾，改成1749248011666L；
 
 ```plain
-16684368 00000000000000100100000000000000000000000000
-0b684368 05050505050505150105050505050505050505050505
+timestamp=<REDACTED_SAMPLE> random/fixed-fields=<REDACTED_SAMPLE> (52 hex chars total)
+timestamp=<REDACTED_SAMPLE> random/fixed-fields=<REDACTED_SAMPLE> (52 hex chars total)
 ```
 
 - 结果居然和没改之前一样，那证明是10位的时间戳，如果做过sig3就肯定能反应过来了；
@@ -2408,7 +2408,7 @@ emulator.attach().addBreakPoint(module.base + 0x852a4, new BreakPointCallback() 
 - 前面我是说过为什么改这里的，这里不再提了；改了两组，那就还剩两个键不变；
 
 ```plain
-result:"{"1a9ec9b9": "21KYBuimMyJz0bJTlTvHnTpAj/j=", "3b4b2118": "wdolDJ8h1G/cmM+DshBh+kPhsub=", "9bbcf962": "u7CrEgUssUTs····cK59WCJKjjQ=", "a8cb0e10": "PZ6J6kNwywn/Ba2aSBuBMsshsUT=", "x-sap-ri": "16684368000102030405061701090a0b0c0d0e0f101112131415"}"
+result:"{"<header-key-1>":"<REDACTED_SAMPLE> (short)","<header-key-2>":"<REDACTED_SAMPLE> (short)","<header-key-3>":"<REDACTED_SAMPLE> (short)","<header-key-4>":"<REDACTED_SAMPLE> (long)","x-sap-ri":"<REDACTED_SAMPLE> (52 hex chars)"}"
 ```
 
 - 这里3b4b2118、a8cb0e10这两个键是发生变化的，3b4b2118对应的是01算法，a8cb0e10对应的是02算法；
@@ -2423,7 +2423,7 @@ result:"{"1a9ec9b9": "21KYBuimMyJz0bJTlTvHnTpAj/j=", "3b4b2118": "wdolDJ8h1G/cmM
 - 第二个值就是除了post以外剩下的那个短值，在这里它是：
 
 ```plain
-wdolDJ8h1G/cmM+DshBh+kPhsub=
+<REDACTED_SAMPLE> (28 base64 chars; 20 decoded bytes)
 ```
 
 - 还记得在分析base64的时候吗？我们回过头看一下之前的片段；
@@ -2433,10 +2433,10 @@ wdolDJ8h1G/cmM+DshBh+kPhsub=
 - 这里说了，四个值都是经过base64的，这个值自然也不例外，我们先解一下；
 
 ```plain
-a1 e0 b1 29 39 01 84 ff 1d c9 96 8a 00 16 01 69 02 41 03 6b
+<REDACTED_SAMPLE> (20 bytes)
 hexdump：
-00000000  a1 e0 b1 29 39 01 84 ff 1d c9 96 8a 00 16 01 69  |¡à±)9..ÿ.É.....i|
-00000010  02 41 03 6b                                      |.A.k|
+00000000 <REDACTED_SAMPLE> (16 bytes)
+00000010 <REDACTED_SAMPLE> (4 bytes)
 ```
 
 - 我们的目标就是找它，首先在做之前我们先观察一下这个密文；最后那一部分穿插着00 01 02 03；
@@ -2819,31 +2819,31 @@ nonce_words = list(struct.unpack("<3I", nonce))
 - 很显然这里是小端序运算的，或者说这里是被转过一次的，所以我们要倒着读才是原始的；
 
 ```plain
-d78c579d846ede56c94f0593ef16ec984c19914517315a31ee343256590e0523
+<REDACTED_SAMPLE> (32-byte derived key)
 ```
 
 - 这就是我们的key，根据组成部分，key后面则是counter，再就是三个四字节的随机；
 
 ```plain
 counter：0x0
-nonce  ：0x7c678c4f 0x4a56b834 0x68436816
-nonce换算：4f8c677c34b8564a16684368
+nonce  ：<REDACTED_SAMPLE> (three 32-bit words)
+nonce换算：<REDACTED_SAMPLE> (12 bytes)
 ```
 
 - 那么，w8这部分就是明文，如下：
 
 ```plain
-0000000001000200cdb87f28
+<REDACTED_SAMPLE> (12-byte plaintext sample)
 ```
 
 - 现在可以进行测试了；
 
 ```python
 if __name__ == '__main__':
-    key = bytes.fromhex('d78c579d846ede56c94f0593ef16ec984c19914517315a31ee343256590e0523')
+    key = bytes.fromhex('<REDACTED_SAMPLE>')  # 32-byte trace-derived key redacted
     nonce = bytes.fromhex('4f8c677c34b8564a16684368')
     counter = 0  # 一直都是
-    plaintext = bytes.fromhex('0000000001000200cdb87f28')
+    plaintext = bytes.fromhex('<REDACTED_SAMPLE>')  # 12-byte sample redacted
     print("明文:", plaintext.hex())
     ciphertext = chacha20_encrypt(key, nonce, counter, plaintext)
     print("密文 (hex):", ciphertext.hex())
@@ -2852,8 +2852,8 @@ if __name__ == '__main__':
 - 结果如下：
 
 ```plain
-明文: 0000000001000200cdb87f28
-密文 (hex): a1e0b129390184ff1dc9968a
+明文: <REDACTED_SAMPLE> (12 bytes)
+密文 (hex): <REDACTED_SAMPLE> (12 bytes)
 ```
 
 - 可以发现就是目标结果，所以现在得到了这些信息：
@@ -2892,7 +2892,7 @@ emulator.traceWrite(0xbfffe8b4L, 0xbfffe8b4L + 4);
 ```python
 import xxhash
 
-data = "5pC5QlE9zKWoSRBygkXKQn1X6TZ1OR49"
+data = "<REDACTED_SAMPLE>"
 hash = xxhash.xxh32()
 hash.update(data)
 print(int(hash.hexdigest(), 16).to_bytes(4, 'little').hex())
@@ -3027,15 +3027,15 @@ nonce = res + time
 print(res)
 print(nonce)
 # out：
-# 4f8c677c34b8564a
-# 4f8c677c34b8564a16684368
+# <REDACTED_SAMPLE> (8-byte hash output)
+# <REDACTED_SAMPLE> (12-byte nonce)
 ```
 
 - 这样，nonce也知道了，主要是MurmurHash3加密了url+随机数，后续再拼接了时间戳；
 - 那就还剩下key不知道，它是：
 
 ```plain
-d78c579d846ede56c94f0593ef16ec984c19914517315a31ee343256590e0523
+<REDACTED_SAMPLE> (32-byte derived key)
 ```
 
 - 它是64位的，看起来像是一个sha256的结果，我们来找它的生成吧，依旧是先去idea搜素；
@@ -3616,10 +3616,10 @@ emulator.attach().addBreakPoint(module.base + 0x1C13F8);
 mx0 0x18
 
 >-----------------------------------------------------------------------------<
-[14:15:30 945]x0=unidbg@0xbffff0f0, md5=05505870da91d388064bfd223611fb02, hex=4f8c677c34b8564a5672210971ffb4090001020316684368
+[14:15:30 945]x0=unidbg@0xbffff0f0, md5=<REDACTED_SAMPLE>, hex=<REDACTED_SAMPLE> (24 bytes)
 size: 24
-0000: 4F 8C 67 7C 34 B8 56 4A 56 72 21 09 71 FF B4 09    O.g|4.VJVr!.q...
-0010: 00 01 02 03 16 68 43 68                            .....hCh
+0000: <REDACTED_SAMPLE> (16 bytes)
+0010: <REDACTED_SAMPLE> (8 bytes)
 ^-----------------------------------------------------------------------------^
 ```
 
@@ -3852,14 +3852,14 @@ buf = new byte[]{(byte) (0x2), (byte) 0x00, 0x00, (byte) (0xf0+num)};
 - 这里的值是：
 
 ```plain
-XzozrrbYvMwA0iaLJgsuKjOosUO=
+<REDACTED_SAMPLE> (28 base64 chars; 20 decoded bytes)
 ```
 
 - 转成hexdump形式：
 
 ```plain
-00000000  9b 90 b9 45 1b 27 dd 9a 0d ea fa d7 4e e0 36 5b  |..¹E.'Ý..êú×Nà6[|
-00000010  02 02 02 02                                      |....|
+00000000 <REDACTED_SAMPLE> (16 bytes)
+00000010 <REDACTED_SAMPLE> (4 bytes)
 ```
 
 - 后续都是随机，这个随机虽然看不出来是第几次，但是结合前面的分析应该知道它是第8次；
@@ -3867,9 +3867,9 @@ XzozrrbYvMwA0iaLJgsuKjOosUO=
 
 ```plain
 >-----------------------------------------------------------------------------<
-[14:03:36 783]目标: bffff414 来源(主要追这里): bfffee89 lr 4008e3c4, md5=16f1fd46a321881804f1c30f67fb8f85, hex=9b90b9451b27dd9a0deafad74ee0365b
+[14:03:36 783]目标: bffff414 来源(主要追这里): bfffee89 lr 4008e3c4, md5=<REDACTED_SAMPLE>, hex=<REDACTED_SAMPLE> (16 bytes)
 size: 16
-0000: 9B 90 B9 45 1B 27 DD 9A 0D EA FA D7 4E E0 36 5B    ...E.'......N.6[
+0000: <REDACTED_SAMPLE> (16 bytes)
 ^-----------------------------------------------------------------------------^
 ```
 
@@ -4026,7 +4026,7 @@ class RC6:
 
 
 if __name__ == '__main__':
-    key = '35704335516c45397a4b576f53524279a3bde24bbb7c9d201668436809090909'
+    key = '<REDACTED_SAMPLE>'  # 32-byte trace-derived RC6 key redacted
     rc6 = RC6(bytes.fromhex(key))
     # 明文（128 位 = 16 字节）
     plaintext = bytes.fromhex('3C004C00 44004800 40003c00 40000000 '.replace(' ',''))
@@ -4184,7 +4184,7 @@ d1c24771
 - 后面就是以此类推，总体的结果就是：
 
 ```plain
-6d01dc187c4487dcd1c24771ccc8647b 08d43d66ece8d3048342725c79047eba
+<REDACTED_SAMPLE> (16-byte key half) <REDACTED_SAMPLE> (16-byte key half)
 ```
 
 - 我并没有完全这样，我是分析几个之后去日志里搜；
@@ -4197,10 +4197,10 @@ d1c24771
 
 ```plain
 >-----------------------------------------------------------------------------<
-[14:45:02 336]目标: bffff430 来源(主要追这里): bfffe790 lr 401c0830, md5=90288c3ac34b8f4cfc88eb84262e3b43, hex=03d740e119c0cb9b9c625a71c950a7d46d01dc187c4487dcd1c24771ccc8647b
+[14:45:02 336]目标: bffff430 来源(主要追这里): bfffe790 lr 401c0830, md5=<REDACTED_SAMPLE>, hex=<REDACTED_SAMPLE> (32 bytes)
 size: 32
-0000: 03 D7 40 E1 19 C0 CB 9B 9C 62 5A 71 C9 50 A7 D4    ..@......bZq.P..
-0010: 6D 01 DC 18 7C 44 87 DC D1 C2 47 71 CC C8 64 7B    m...|D....Gq..d{
+0000: <REDACTED_SAMPLE> (16 bytes)
+0010: <REDACTED_SAMPLE> (16 bytes)
 ^-----------------------------------------------------------------------------^
 
 >-----------------------------------------------------------------------------<
@@ -4310,7 +4310,7 @@ dbcd9bdca104aca1ec01000000000000
 - 我想先看key，它是最先分析的；
 
 ```plain
-6d01dc187c4487dcd1c24771ccc8647b 08d43d66ece8d3048342725c79047eba
+<REDACTED_SAMPLE> (16-byte key half) <REDACTED_SAMPLE> (16-byte key half)
 ```
 
 - 并且它是两段拼接的，先看第一段：6d01dc187c4487dcd1c24771ccc8647b；
@@ -4318,10 +4318,10 @@ dbcd9bdca104aca1ec01000000000000
 
 ```plain
 >-----------------------------------------------------------------------------<
-[14:45:02 336]目标: bffff430 来源(主要追这里): bfffe790 lr 401c0830, md5=90288c3ac34b8f4cfc88eb84262e3b43, hex=03d740e119c0cb9b9c625a71c950a7d46d01dc187c4487dcd1c24771ccc8647b
+[14:45:02 336]目标: bffff430 来源(主要追这里): bfffe790 lr 401c0830, md5=<REDACTED_SAMPLE>, hex=<REDACTED_SAMPLE> (32 bytes)
 size: 32
-0000: 03 D7 40 E1 19 C0 CB 9B 9C 62 5A 71 C9 50 A7 D4    ..@......bZq.P..
-0010: 6D 01 DC 18 7C 44 87 DC D1 C2 47 71 CC C8 64 7B    m...|D....Gq..d{
+0000: <REDACTED_SAMPLE> (16 bytes)
+0010: <REDACTED_SAMPLE> (16 bytes)
 ^-----------------------------------------------------------------------------^
 ```
 
@@ -4336,16 +4336,16 @@ size: 32
 - 参数依旧是这个，所以它就是之前的sha256的结果，然后这里的随机应该是第8次；结果只取了后面的32位，也就是16字节，也就是：
 
 ```plain
-6d01dc187c4487dcd1c24771ccc8647b
+<REDACTED_SAMPLE> (16-byte derived-key segment)
 ```
 
 - 再来看后面的那部分，它的出处：
 
 ```plain
 >-----------------------------------------------------------------------------<
-[14:45:02 373]目标: bfffeeb0 来源(主要追这里): 406e2124 lr 4008e634, md5=e021798f97689d394b55ee6cbb31cc07, hex=08d43d66ece8d3048342725c79047eba
+[14:45:02 373]目标: bfffeeb0 来源(主要追这里): 406e2124 lr 4008e634, md5=<REDACTED_SAMPLE>, hex=<REDACTED_SAMPLE> (16 bytes)
 size: 16
-0000: 08 D4 3D 66 EC E8 D3 04 83 42 72 5C 79 04 7E BA    ..=f.....Br\y.~.
+0000: <REDACTED_SAMPLE> (16 bytes)
 ^-----------------------------------------------------------------------------^
 ```
 
@@ -4411,7 +4411,7 @@ size: 8
 ```python
 import xxhash
 
-data = '{"shopid":1414312381,"itemid":29669138810,"catid":100012,"keyword":"","item_card":3,"offset":0,"upstream":"dd","upstream_sequence":[{"itemId":29669138810,"shopId":1414312381,"upstream":"dd"}],"view_session_id":"GEZpdKbH8al3kRz2f4vqJlIkOHfzuNZlWjb+Wfn2oW4=-1741790904362","user_behaviour":{},"rsku_info":{"itemid":29669138810,"shopid":1414312381},"phone_model":"22041216C","network":"cellular","os_version":"android 33","brand":"Xiaomi","advertising_id":"a146e330-eb81-4de5-ac16-40fb4e504a83"}'
+data = '{"shopid":"<REDACTED_SAMPLE>","itemid":"<REDACTED_SAMPLE>","catid":"<REDACTED_SAMPLE>","keyword":"","item_card":3,"offset":0,"upstream":"dd","upstream_sequence":[{"itemId":"<REDACTED_SAMPLE>","shopId":"<REDACTED_SAMPLE>","upstream":"dd"}],"view_session_id":"<REDACTED_SAMPLE>","user_behaviour":{},"rsku_info":{"itemid":"<REDACTED_SAMPLE>","shopid":"<REDACTED_SAMPLE>"},"phone_model":"<REDACTED_SAMPLE>","network":"<REDACTED_SAMPLE>","os_version":"<REDACTED_SAMPLE>","brand":"<REDACTED_SAMPLE>","advertising_id":"<REDACTED_SAMPLE>"}'
 hash = xxhash.xxh64()
 hash.update(data)
 hash_result = int(hash.hexdigest(), 16).to_bytes(8, 'little').hex()
@@ -4459,42 +4459,42 @@ size: 4
 - 第四个值是最长的那个，如下：
 
 ```plain
-Sxr8tgwpsUOssUOo8fhamy0yNPbFJXEhCXukRFDHp1T6cLvCKBriuVYm7vhS7HDQ5rjlO+YySWtqInpjdU3esIVLG5paCzql3m5CLv941mg1AILEvZEeYb30uP5OXYBArDRHwCwGKEQhe4T2ZnkBCaaifcmBUnYV0nljh8OkCR+MKdmcu6W6b6U2YIv8J1NqK/T8r1/EOsonlzf+viC8wyz+DnOfu+vrsOPtx2I4A7l2OdNBsg/xcc0IOYDy5YXHFVwIe19OXmieBp/W0tpzyhPkDuIt4oR4DN8ceO0UCHM0add1ARGzC67pNBIF+wkjkE1FrYMtE5ows1ACxZH5IZAfDe/V/KXlOnokY4HJ0li56CBmJl3z7iESC71P+44uyiBL9bMxKF6brPDERxH0Se5t/ZJHhVyVNuixsqM/KhL/SFtvh0fff+1+Yeto9IH/xacR/U93zKX8klUegLg2tiblPuKUj1943EQphxl/9jzw5B1GdDKx6+i9ldH2XeI7raKzaB3/QmmRLcFFOpJBqK3zB5ESzB2J6lC98ReEc65XbNc/FNbwNbyppv/vwAC47zUYyY/zPtHE7wyMkzwKrSnBY3ZtlqpxIRiagQUWAQc6i/QNKrFORebFWHr9WPE/AbZN3p12ZdpnnAaAa55yfzN+E/wKGu68fdCA44Ae8/L4qPxFrlkgD25MAib=
+<REDACTED_SAMPLE> (700 base64 chars; 524 decoded bytes)
 
 解base64之后：
-00000000  1a 94 64 d2 ea 03 02 02 00 02 02 02 92 d0 6b cb  |..dÒê........ÐkË|
-00000010  8e b8 6c 9b 0b 4e 61 01 3a 6d 90 7c b2 87 0e 13  |.¸l..Na.:m.|²...|
-00000020  3f 75 7d ce 59 84 6f da 29 f2 fb 70 46 f8 72 9c  |?u}ÎY.oÚ)òûpFør.|
-00000030  55 1c 31 21 a9 f8 1a 3d 35 4b 30 f0 7a 0f 45 01  |U.1!©ø.=5K0ðz.E.|
-00000040  28 97 3d 50 eb 3b 9d 71 f7 25 4e 5f 79 54 87 2b  |(.=Pë;.q÷%N_yT.+|
-00000050  a1 35 25 c4 de a1 05 9e cf 7a d8 95 48 9a 76 0d  |¡5%ÄÞ¡..ÏzØ.H.v.|
-00000060  44 a7 c7 a0 ea 0f 58 47 01 15 43 3b ab 34 18 3a  |D§Ç ê.XG..C;«4.:|
-00000070  ba ef b5 dc 98 83 39 e2 eb 3c 70 06 42 10 39 f6  |ºïµÜ..9âë<p.B.9ö|
-00000080  99 59 ec 9d db f8 ff b3 f8 3b 9d 2d e4 4e 16 f5  |.Yì.Ûøÿ³ø;.-äN.õ|
-00000090  5b c3 24 46 1f 04 20 00 b3 c7 9b 5a de f3 a4 a3  |[Ã$F.. .³Ç.ZÞó¤£|
-000000a0  8e 5a 2b 32 2d d9 ad d1 00 82 74 a7 b4 94 37 ec  |.Z+2-Ù.Ñ..t§´.7ì|
-000000b0  7b 21 e6 d8 02 ef 29 75 de 92 22 72 b8 56 79 87  |{!æØ.ï)uÞ."r¸Vy.|
-000000c0  2e 2a 12 16 19 48 9b 2b c5 60 3f 23 eb 40 f9 e0  |.*...H.+Å`?#ë@ùà|
-000000d0  12 50 2b 64 b4 50 27 d4 29 b9 1d 14 8e a0 38 76  |.P+d´P'Ô)¹... 8v|
-000000e0  7a ad e7 a1 35 f3 f9 3b ff 83 6d 84 8b 6a 84 30  |z.ç¡5óù;ÿ.m..j.0|
-000000f0  40 48 4b 46 76 74 11 50 a8 02 13 4e a6 a1 d5 4a  |@HKFvt.P¨..N¦¡ÕJ|
-00000100  a3 6d 28 5f 22 f1 69 b1 23 30 90 9d 41 d3 eb 1b  |£m(_"ñi±#0..AÓë.|
-00000110  d5 fc e6 32 4f 1f 79 fa f1 06 3b e8 49 69 45 36  |Õüæ2O.yúñ.;èIiE6|
-00000120  e2 f6 17 96 c6 69 58 bf ec 44 92 84 7e 91 fa 18  |âö..ÆiX¿ìD..~.ú.|
-00000130  55 74 f2 a4 c7 06 2e 22 6f 6b e9 03 56 7c 58 15  |Utò¤Ç.."oké.V|X.|
-00000140  fc 18 bd 37 07 ab 6d b5 a8 5a 9c 5d 02 95 21 fc  |ü.½7.«mµ¨Z.]..!ü|
-00000150  a6 b7 5f f2 09 7d e5 69 a4 43 18 05 b9 7b bb d2  |¦·_ò.}åi¤C..¹{»Ò|
-00000160  fb 31 27 65 a0 c2 19 54 f4 47 03 06 9c 7c 97 0e  |û1'e Â.TôG...|..|
-00000170  68 55 88 4f 78 a5 a9 fd ab e5 c5 e1 fb 98 54 be  |hU.Ox¥©ý«åÅáû.T¾|
-00000180  46 b5 b9 ad 8f 7c 73 2c 9f 5d d2 cb 20 34 d8 d5  |Fµ¹..|s,.]ÒË 4ØÕ|
-00000190  6f 79 61 51 06 e5 8e d3 ff 13 a5 91 f1 44 77 f5  |oyaQ.å.Óÿ.¥.ñDwõ|
-000001a0  66 b1 b7 7c 2d bb 28 6e ce 03 0f 7f 37 a0 d3 94  |f±·|-»(nÎ...7 Ó.|
-000001b0  fb 98 27 e2 7f 39 27 41 c4 fa 8e 19 43 9a 16 44  |û.'â.9'AÄú..C..D|
-000001c0  6c d8 9f da b4 c7 50 e9 49 fb eb b9 c8 23 35 c7  |lØ.Ú´ÇPéIûë¹È#5Ç|
-000001d0  7f bf c7 1b 59 12 c8 7c 5b 0b 8c 74 65 8c 91 3c  |.¿Ç.Y.È|[..te..<|
-000001e0  36 ca 9b f4 38 7b a9 e0 f3 cc da cd ad 55 78 b7  |6Ê.ô8{©àóÌÚÍ.Ux·|
-000001f0  96 da 13 ca 16 3f 6f e4 b5 e3 8d 51 43 45 93 c5  |.Ú.Ê.?oäµã.QCE.Å|
-00000200  d4 d4 9a 4b 47 14 2e 2b b5 59 36 fb              |ÔÔ.KG..+µY6û|
+00000000 <REDACTED_SAMPLE> (16 bytes)
+00000010 <REDACTED_SAMPLE> (16 bytes)
+00000020 <REDACTED_SAMPLE> (16 bytes)
+00000030 <REDACTED_SAMPLE> (16 bytes)
+00000040 <REDACTED_SAMPLE> (16 bytes)
+00000050 <REDACTED_SAMPLE> (16 bytes)
+00000060 <REDACTED_SAMPLE> (16 bytes)
+00000070 <REDACTED_SAMPLE> (16 bytes)
+00000080 <REDACTED_SAMPLE> (16 bytes)
+00000090 <REDACTED_SAMPLE> (16 bytes)
+000000a0 <REDACTED_SAMPLE> (16 bytes)
+000000b0 <REDACTED_SAMPLE> (16 bytes)
+000000c0 <REDACTED_SAMPLE> (16 bytes)
+000000d0 <REDACTED_SAMPLE> (16 bytes)
+000000e0 <REDACTED_SAMPLE> (16 bytes)
+000000f0 <REDACTED_SAMPLE> (16 bytes)
+00000100 <REDACTED_SAMPLE> (16 bytes)
+00000110 <REDACTED_SAMPLE> (16 bytes)
+00000120 <REDACTED_SAMPLE> (16 bytes)
+00000130 <REDACTED_SAMPLE> (16 bytes)
+00000140 <REDACTED_SAMPLE> (16 bytes)
+00000150 <REDACTED_SAMPLE> (16 bytes)
+00000160 <REDACTED_SAMPLE> (16 bytes)
+00000170 <REDACTED_SAMPLE> (16 bytes)
+00000180 <REDACTED_SAMPLE> (16 bytes)
+00000190 <REDACTED_SAMPLE> (16 bytes)
+000001a0 <REDACTED_SAMPLE> (16 bytes)
+000001b0 <REDACTED_SAMPLE> (16 bytes)
+000001c0 <REDACTED_SAMPLE> (16 bytes)
+000001d0 <REDACTED_SAMPLE> (16 bytes)
+000001e0 <REDACTED_SAMPLE> (16 bytes)
+000001f0 <REDACTED_SAMPLE> (16 bytes)
+00000200 <REDACTED_SAMPLE> (12 bytes)
 ```
 
 - 它也是有分支的，这里先不说，我们来观察这个十六进制的结果，看起来是有随机数的；
@@ -4624,14 +4624,14 @@ size: 4
 
 ```plain
 >-----------------------------------------------------------------------------<
-[18:56:17 573]目标: 406fd60c 来源(主要追这里): 406fd800 lr 4009fdb4, md5=0638dd63c925a3a4f29769c943a789e0, hex=e5f70e964ae···
+[18:56:17 573]目标: 406fd60c 来源(主要追这里): 406fd800 lr 4009fdb4, md5=<REDACTED_SAMPLE>, hex=<REDACTED_SAMPLE> (488 bytes)···
 size: 488
-0000: E5 F7 0E 96 4A EC E7 87 29 8D 4A 2E 4E BB 67 A5    ....J...).J.N.g.
-0010: 0E 07 02 8F 20 CD CD 90 3D 25 FF DC DE F3 21 3D    .... ...=%....!=
+0000: <REDACTED_SAMPLE> (16 bytes)
+0010: <REDACTED_SAMPLE> (16 bytes)
 ···
-01C0: A0 6D 70 61 CF 19 9A B3 47 05 24 79 F9 A5 E9 9A    .mpa....G.$y....
-01D0: 41 B7 0A 0A 26 DA 75 92 19 3B F5 17 B0 1B BD C2    A...&.u..;......
-01E0: 45 A0 C4 F5 19 E7 55 15                            E.....U.
+01C0: <REDACTED_SAMPLE> (16 bytes)
+01D0: <REDACTED_SAMPLE> (16 bytes)
+01E0: <REDACTED_SAMPLE> (8 bytes)
 ^-----------------------------------------------------------------------------^
 ```
 
@@ -4775,10 +4775,10 @@ def salsa20_encrypt(key, nonce, plaintext):
 # 示例
 if __name__ == "__main__":
     # 定义 32 字节的密钥和 8 字节的 nonce
-    key = b'gkXKQn1X6TZ1OR49' + bytes.fromhex('bafd9ab40cd0cfcf69b1d6955c9c3181')  # 32 字节
+    key = b'<REDACTED_SAMPLE>' + bytes.fromhex('<REDACTED_SAMPLE>')  # seed and derived key redacted; 32 bytes total
     nonce = bytes.fromhex('e4e1390603030303')  # 8 字节
-    plaintext = bytes.fromhex('400000003c004c0040003c0044004800')
-    ciphertext = salsa20_encrypt(key, nonce, plaintext)
+    nonce = bytes.fromhex('<REDACTED_SAMPLE>')  # 8-byte nonce redacted
+    plaintext = bytes.fromhex('<REDACTED_SAMPLE>')  # 16-byte fingerprint sample redacted
     print("密文 (hex):", ciphertext.hex())
 ```
 
@@ -4870,7 +4870,7 @@ state[4] = littleendian(key[12:16])
 
 ![](./shopee-shpssdk-request-defense/img-291.png)
 
-- 也就是676b584b516e315836545a314f523439，在前面我们已经确定过了，它是固定的，写在so里的字符串，再往后推；
+<REDACTED_SAMPLE> (16-byte application seed, hex form)
 
 ```python
 state[5] = littleendian(constants[4:8])
@@ -4894,7 +4894,7 @@ state[9] = (block_counter >> 32) & 0xffffffff
 - 0x3320646e就是第二个常数，对得上的，
 
 ```plain
-nonce：e4e1390603030303
+nonce：<REDACTED_SAMPLE> (8 bytes)
 block_counter：0 0
 ```
 
@@ -4921,13 +4921,13 @@ state[15] = littleendian(constants[12:16])
 - 收集一下；
 
 ```plain
-bafd9ab40cd0cfcf69b1d6955c9c3181
+<REDACTED_SAMPLE> (16-byte derived-key segment)
 ```
 
 - 把两部分的key加起来就是：
 
 ```plain
-676b584b516e315836545a314f523439bafd9ab40cd0cfcf69b1d6955c9c3181
+<REDACTED_SAMPLE> (32-byte assembled key)
 ```
 
 - nonce也找到了，可以测试一下，把那部分488长度的明文拿到这里来加密一下；
@@ -4938,7 +4938,7 @@ bafd9ab40cd0cfcf69b1d6955c9c3181
 - 接下来先看key的组成吧，刚刚我们知道了前半部分是一个固定的值，来看后续的内容吧；也就是这一部分：
 
 ```plain
-bafd9ab40cd0cfcf69b1d6955c9c3181
+<REDACTED_SAMPLE> (16-byte derived-key segment)
 ```
 
 ![](./shopee-shpssdk-request-defense/img-293.png)
@@ -4982,7 +4982,7 @@ if __name__ == "__main__":
     bytes_4_12 = int(len(plaintext)).to_bytes(4, byteorder='little').hex() + fun
     key_32 = custom_sha256.getKey(url, rand)
     nonce_hex = get_nonce(url, rand)
-    key = b'gkXKQn1X6TZ1OR49' + bytes.fromhex(key_32[:32])  # gkXKQn1X6TZ1OR49固定值
+    key = b'<REDACTED_SAMPLE>' + bytes.fromhex(key_32[:32])  # application-specific seed redacted
     nonce = bytes.fromhex(nonce_hex + rand)
     ciphertext = salsa20_encrypt(key, nonce, plaintext)
     base64_data = bytes.fromhex(bytes_4_12 + ciphertext.hex())
@@ -5005,3 +5005,9 @@ if __name__ == "__main__":
 - 在根据汇编还原时，需要注意填充、循环、各种判断等等，细心一些；
 - by：2026-03-22；
 
+## 脱敏评估（2026-10-01）
+本轮仅完成正文文本样值脱敏；引用的 296 张图片尚未进行像素级隐私审查。视觉隐私复核完成前，本文仍仅作为 archive，暂不提炼新的 reference。
+
+## 提炼说明（730）
+archive_only。query --target shopee --type reference 为 0。296 张未审图隐私未闭合，不升 reference。
+本轮不另建卡。

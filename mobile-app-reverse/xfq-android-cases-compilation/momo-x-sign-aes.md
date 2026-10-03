@@ -96,3 +96,8 @@ map_id = str(t) + str(randint(1000, 9999))
 - 第一参闭合不等于整个 `x-sign` 头已 `serverAccepted`。
 - 不收录附件里的设备 JSON、主动调用字节数组和完整 Frida invoke。
 - 换包先重核 `libcoded.so` / `libmmcrypto.so` 导出与 RVA，不要套观察偏移。
+
+## 提炼说明（481）
+archive-only：x-sign 第一参未升全头。
+不发布 AES 材料或 RVA 卡。
+本轮不另建卡。

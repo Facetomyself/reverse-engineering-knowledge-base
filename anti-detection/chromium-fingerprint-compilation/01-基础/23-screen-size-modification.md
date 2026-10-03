@@ -214,3 +214,7 @@ ninja  -C  out/Default chrome
 std::vector<int> arr = {800, 1152, 1280, 1366, 1600, 1680, 1920, 2560};
 std::vector<int> arr2 = {600, 864, 720, 768, 900, 1050, 1080, 1440};
 ```
+
+## 提炼说明（256）
+archive-only。屏幕/matchMedia 一致性见 js-browser-fingerprint。availHeight 微扰不另建卡。
+不收录屏幕样值或补丁。远程图未审。

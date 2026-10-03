@@ -87,3 +87,8 @@ MCP start_job
 ```
 
 取消 job 不能留下永久 in-progress 文章 claim：要么 heartbeat 过期变 stale，要么 cancel 路径显式释放。二次相同 URL 应走文章 store 的 `already_downloaded`，而不是再开一个成功 job 重复写盘。
+
+## 提炼说明（382）
+archive-only。MCP job 与文章 checkpoint 分离。
+父篇已处置；高并发控制面是另一平面。
+不建假成功终态 procedure。

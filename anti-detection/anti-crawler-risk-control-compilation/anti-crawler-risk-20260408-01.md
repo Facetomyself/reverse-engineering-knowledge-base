@@ -338,3 +338,7 @@ archived_date: '2026-07-13'
 
 
 ##  码字不易，如果真的有帮助可以顺手点个赞，你们的喜欢就是我更新的动力！
+
+## 提炼说明（220）
+archive-only。query --target browser-fingerprint 已有 js-browser-fingerprint 与 fingerprint-overview；Canvas/WebGL/Audio 另有对象卡。
+七层叙述无独立站点模块。不收录伪装代码。未审图不作证据。

@@ -68,3 +68,8 @@ Shein 魔改 MD5、AppsFlyer `androidevent`、抖音 `a_bogus` 已有独立条�
 | xiaoxingkong-shumei-dpv4 | [数美 deviceprofile/v4 封装](sdk-purecalc-compilation/xiaoxingkong-shumei-dpv4.md) |
 | tencent-qimei-pure | [腾讯 Qimei REGISTER](sdk-purecalc-compilation/tencent-qimei-register.md) |
 | jincai-pingxiang-wtoken | [今彩萍乡 wtoken](sdk-purecalc-compilation/jincai-pingxiang-wtoken.md) |
+
+## 提炼说明（460）
+TOC hub archive-only。
+四篇纯算子文已各自 retain。
+本轮不另建合集卡。

@@ -98,3 +98,14 @@ sign_and_send(request):
     response = client.send(wire, headers)
     return classify(response)                              # not "HTTP 200 means ok"
 ```
+
+<a id="archive-only-104"></a>
+## 本轮处置（2026-10-02）
+
+本篇保留为 `archive-only`，不新建重复的 `parameters`、`request-chain` 或 `validation` reference。全文审查确认，编码边界、签名排序与线上顺序、空值/同名键、头序与 HTTP/2 Cookie 拆分，以及响应/业务完成门，已经分别由[抓包对齐偏差](./capture-alignment-traps.md)、[签名落地方法](./sign-landing-methods.md)、[抖音请求面窄参考](./douyin-request-plane-matrix-reference.md)和[请求面失败翻译](./request-plane-failure-translation.md)覆盖；本篇新增的是多仓来源例子和正向汇总，不是独立目标协议。
+
+来源仍为 `source-report`，scope 与 source completeness 继续为 `unknown`。本轮没有重跑来源仓库、HTTP/2 ExtraInfo、签名请求、响应业务码或服务端验收；不得从通用 wire 规则推导 Alibaba MTOP 公式、当前头序要求或风控语义，也不把伪代码升级为 procedure。
+
+## 提炼说明（739）
+archive_only。query/头序/HTTP2 Cookie 写回陷阱已被现有 wire/request-plane 卡覆盖；不另建重复 contract。
+本轮不另建卡。

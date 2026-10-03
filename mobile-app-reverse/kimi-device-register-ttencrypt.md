@@ -1,12 +1,12 @@
 ---
 schema_version: 2
 id: mobile-app-reverse-kimi-device-register-ttencrypt
-document_type: archive
+document_type: reference
 scope:
   targets:
   - kimi
-  client: unknown
-  version: unknown
+  client: Android app
+  version: 3.0.6 source analysis; exact build unknown
   observed_at: unknown
 sources:
 - id: s1
@@ -15,15 +15,23 @@ sources:
   citation: 独立技术分析（Kimi Android 3.0.6）
   reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
 source_completeness: unknown
-tags:
-- device_register
-- ttEncrypt
-- tt_info
-- AES-128-CBC
-- SHA512
-- volces
-- Kimi
-- JNI
+modules:
+- name: request-chain
+  anchor: kimi-query-body-envelope
+  sources: [s1]
+  basis: source-report
+  limits: query/body 共同封装来自 3.0.6 来源分析；其他 endpoint/版本不可直接外推。
+- name: parameters
+  anchor: kimi-ttencrypt-algorithm
+  sources: [s1]
+  basis: source-report
+  limits: seed 派生、摘要、AES 与 packet 布局按来源实现描述；本轮未运行代码或服务端验证。
+- name: validation
+  anchor: kimi-validation-boundary
+  sources: [s1]
+  basis: source-report
+  limits: 正文报告特定抓包和本地闭环；不等于当前服务端或其他设备已验收。
+tags: [device-register, ttEncrypt, tt_info, aes-128-cbc, sha512, volces]
 original_date: unknown
 archived_date: '2026-09-06'
 ---
@@ -62,6 +70,7 @@ archived_date: '2026-09-06'
 
 ---
 
+<a id="kimi-query-body-envelope"></a>
 ## 一、最终结论
 
 请求中有两份被保护的数据：
@@ -675,6 +684,7 @@ SHA512("abc") || 61 62 63
 
 ---
 
+<a id="kimi-ttencrypt-algorithm"></a>
 ## 七、精确算法
 
 ### 7.1 key/IV 派生
@@ -1130,6 +1140,7 @@ def register(endpoint: str, aid: str, query: str, body: dict):
 
 ---
 
+<a id="kimi-validation-boundary"></a>
 ## 十一、验证闭环
 
 | 验证项 | 结果 | 判断依据 |
@@ -1197,3 +1208,8 @@ def register(endpoint: str, aid: str, query: str, body: dict):
 ```
 
 其中 seed 已经随 packet 发送，key 和 IV 只是由 seed 临时派生的中间值。这也解释了为什么本地解密时只需要密文，不需要另外提供 key 或 IV。
+
+## 提炼说明（391）
+retain existing reference。ttEncrypt 卡已发布。
+可逆封装不是不可伪造签名。
+不复制设备与密钥样值。

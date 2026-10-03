@@ -11,8 +11,9 @@ scope:
 sources:
 - id: s1
   ref: null
-  basis: unknown
-  reason: 已核实所属合集的收录关系，但合集来源说明不等于逐篇原文地址；逐篇公开来源指针未知。
+  basis: source-report
+  citation: Chromium 指纹浏览器编译系列中的“JWT 启动校验 — 使用权限控制”条目
+  reason: 来源文章的技术内容仅按作者报告整理；合集来源说明不等于逐篇原文地址，逐篇公开来源指针未知。
 source_completeness: unknown
 tags: []
 ---
@@ -174,3 +175,12 @@ void BrowserMainLoop::CreateStartupTasks() {
 ninja  -C  out/Default chrome
 ```
 
+<a id="reference-extraction-118"></a>
+## 提炼处置（review 118）
+
+本篇保留为来源 archive，并新增 [Chromium 启动 JWT 校验参考](../../chromium-jwt-startup-validation-reference.md)。提炼只登记启动参数、JWT 解码/算法校验、`BrowserMainLoop::CreateStartupTasks` 分支和构建依赖边界，不复制原文中的 JWT、secret 或时间值。`jwt-cpp`/Chromium 版本、`iat`/`exp` 与返回语义尚未固定，未形成 procedure、runtime 或 server-accepted 结论；末尾图片也未做视觉审查。
+
+
+## 提炼说明（718）
+retain_existing_reference。既有卡 anti-detection/chromium-jwt-startup-validation-reference.md。
+本轮不另建卡。不复制 Cookie/token/指纹原值。未审图片不作证据。

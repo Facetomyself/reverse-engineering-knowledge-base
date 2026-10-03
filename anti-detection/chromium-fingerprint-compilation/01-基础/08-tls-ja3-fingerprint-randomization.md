@@ -112,3 +112,12 @@ ninja  -C  out/Default chrome
 ```
 
 *   编译后每次刷新时tls指纹都是随机的了。
+
+<a id="archive-only-116"></a>
+## 归档处置（review 116）
+
+本篇保留为 `archive-only`。来源只描述 BoringSSL `ssl_cipher.cc` 中的 cipher array 改动、编译命令和作者观察；没有独立的 ClientHello 抓包、JA3/JA4 前后值、固定的浏览器构建版本或服务端/风控接受证据。本轮也未复测源码、编译产物或网络握手，因此不新增重复的 TLS/JA3 reference 或 procedure；可复用的协议层核验入口继续以现有 TLS/JA3 与准入资料为准。
+
+## 提炼说明（715）
+retain_existing_reference。既有卡 anti-detection/tls-fingerprint-reference.md。
+本轮不另建卡。不复制 Cookie/token/指纹原值。未审图片不作证据。

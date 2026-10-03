@@ -72,3 +72,7 @@ screen、window metrics、visualViewport 和 orientation 是一组尺寸/显示�
 - window.screen 与全局 screen 同一对象，iframe 按作用域独立或共享。
 - matchMedia 的尺寸查询与当前显示状态一致。
 - 未触达的显示字段不预补。
+
+## 提炼说明（643）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

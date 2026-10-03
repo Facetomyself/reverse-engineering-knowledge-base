@@ -106,3 +106,55 @@ archived_date: '2026-07-13'
 | 2026-06-29 | [Frida学习笔记（二十四）：Stalker 指令级追踪](paopao-android-reverse-compilation/paopao-20260629-01.md) |
 | 2026-07-07 | [Frida学习笔记（二十五）：签名校验绕过](paopao-android-reverse-compilation/paopao-20260707-01.md) |
 | 2026-07-08 | [Frida学习笔记（二十六）：DEX 脱壳实战](paopao-android-reverse-compilation/paopao-20260708-01.md) |
+
+## 提炼说明（448）
+archive-only。合集 TOC hub。
+子篇已逐篇处置。
+不建合集卡。
+
+## 同目录窄参考
+
+本段只挂同目录提炼卡。
+
+- [JA3、TCP 选项顺序与 HTTP/2 被动指纹](paopao-android-reverse-compilation/paopao-20260302-01-reference.md)
+- [目标音乐 App 的 eapi 搜索：路由直连、params 入口与 NMDI 外形](paopao-android-reverse-compilation/paopao-20260303-01-reference.md)
+- [安卓逆向里如何识别 AES、模式和近邻算法](paopao-android-reverse-compilation/paopao-20260317-01-reference.md)
+- [musics.fcg 与 libmer.so calc 的字段边界](paopao-android-reverse-compilation/paopao-20260319-01-reference.md)
+- [TEA 家族的识别参数](paopao-android-reverse-compilation/paopao-20260325-01-reference.md)
+- [Android 上识别 DES 与 3DES 的常量与字符串](paopao-android-reverse-compilation/paopao-20260327-01-reference.md)
+- [Frida Stalker 的事件、队列和插桩边界](paopao-android-reverse-compilation/paopao-20260330-01-reference.md)
+- [Android SSL Pinning 的症状、pin 对象和声明位置](paopao-android-reverse-compilation/paopao-20260331-01-reference.md)
+- [安卓逆向笔记里用来认出 RSA 的标记](paopao-android-reverse-compilation/paopao-20260408-01-reference.md)
+- [Unidbg 后端按追踪或速度二选一](paopao-android-reverse-compilation/paopao-20260409-01-reference.md)
+- [Unidbg 已实现层、文件返回值和来源点名的缺口](paopao-android-reverse-compilation/paopao-20260410-01-reference.md)
+- [Unidbg Backend 选型边界](paopao-android-reverse-compilation/paopao-20260413-01-reference.md)
+- [Unidbg 的 SVC 分发](paopao-android-reverse-compilation/paopao-20260414-01-reference.md)
+- [第一次 Unidbg 调用的排错闭环](paopao-android-reverse-compilation/paopao-20260415-01-procedure.md)
+- [Unidbg 补环境先分流再决定返回值](paopao-android-reverse-compilation/paopao-20260416-01-reference.md)
+- [Unidbg JNI override 的类型、取值和逻辑](paopao-android-reverse-compilation/paopao-20260417-01-reference.md)
+- [Unidbg 文件访问用 IOResolver 的三种返回](paopao-android-reverse-compilation/paopao-20260420-01-reference.md)
+- [Unidbg 系统调用缺口：何时介入，以及两套编号](paopao-android-reverse-compilation/paopao-20260421-01-reference.md)
+- [Unidbg 库函数层：框架边界和系统属性注册](paopao-android-reverse-compilation/paopao-20260424-01-reference.md)
+- [Unidbg 初始化边界：JNI_OnLoad 和 Java 主动 init](paopao-android-reverse-compilation/paopao-20260425-01-reference.md)
+- [Unidbg Trace 的三层接口和读法](paopao-android-reverse-compilation/paopao-20260427-01-reference.md)
+- [Unidbg 的边界、替代方向和 Frida 痕迹对照](paopao-android-reverse-compilation/paopao-20260429-01-reference.md)
+- [Unidbg 六种 Hook 的挂载点和选型边界](paopao-android-reverse-compilation/paopao-20260429-02-reference.md)
+- [Unidbg 生产服务：模拟器实例池与销毁边界](paopao-android-reverse-compilation/paopao-20260429-03-procedure.md)
+- [Frida 注入架构：ArtMethod、补丁宽度与 Spawn 时点](paopao-android-reverse-compilation/paopao-20260505-01-reference.md)
+- [Frida Android 实验环境：版本对齐、验收与停止条件](paopao-android-reverse-compilation/paopao-20260506-01-procedure.md)
+- [Frida Java.perform 与 overload 类型串](paopao-android-reverse-compilation/paopao-20260508-01-reference.md)
+- [Frida 里对象和混淆方法怎么定位](paopao-android-reverse-compilation/paopao-20260509-01-reference.md)
+- [Frida Java 桥的主动调用面](paopao-android-reverse-compilation/paopao-20260511-01-reference.md)
+- [Frida Native 指针、拦截与导出查找边界](paopao-android-reverse-compilation/paopao-20260512-01-reference.md)
+- [Frida Hook 不触发时的诊断顺序](paopao-android-reverse-compilation/paopao-20260513-01-reference.md)
+- [Android 系统 API 的 Frida 汇聚点](paopao-android-reverse-compilation/paopao-20260519-01-reference.md)
+- [Java JCE 算法自吐：实例关联、重载取舍和无输出边界](paopao-android-reverse-compilation/paopao-20260526-01-reference.md)
+- [BoringSSL/OpenSSL：两套 API、参数落点和找不到符号时的分支](paopao-android-reverse-compilation/paopao-20260528-01-reference.md)
+- [本地 Root 痕迹检测面，以及来源说 Hook 到不了的边界](paopao-android-reverse-compilation/paopao-20260529-01-reference.md)
+- [网易云音乐 9.2.80 上「进程还在、agent 被卸」怎么分层](paopao-android-reverse-compilation/paopao-20260604-01-reference.md)
+- [招商银行 cmb.pb 上三套检测为什么不能只挡界面](paopao-android-reverse-compilation/paopao-20260605-01-reference.md)
+- [网易云音乐 9.2.80 上免 Root 重签和注入方式怎么选](paopao-android-reverse-compilation/paopao-20260611-01-reference.md)
+- [JNI RegisterNatives 的定位与反向调用边界](paopao-android-reverse-compilation/paopao-20260625-01-reference.md)
+- [内存 SO dump 的时机、ELF 修复和 IDA 验收](paopao-android-reverse-compilation/paopao-20260626-01-procedure.md)
+- [Frida Stalker 的事件字段、追踪范围和失效条件](paopao-android-reverse-compilation/paopao-20260629-01-reference.md)
+- [DEX 加固代际、头字段和脱壳后怎么判断没取到正文](paopao-android-reverse-compilation/paopao-20260708-01-reference.md)

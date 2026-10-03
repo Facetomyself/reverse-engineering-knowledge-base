@@ -88,3 +88,7 @@ ninja -C out/Default chrome
 
 *   1.取消跨域隔离有一定安全风险。
 *   2.有些站会做安全隔离检测，可能会被识别到。
+
+## 提炼说明（259）
+archive-only。跨域 iframe 取消隔离不是指纹 reference。
+不收录 IDL 补丁或启动开关细节作为可执行流程。

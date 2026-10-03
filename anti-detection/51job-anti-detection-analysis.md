@@ -221,3 +221,8 @@ archived_date: '2026-07-05'
 3. **神策行为分析** — 如果我们的访问模式（无鼠标移动、快速翻页等）被神策埋点捕获，可能触发风控降级。这不是 anti-debugger 脚本的范畴。
 
 4. **阿里验证码** — 如果风控把用户标记为可疑，会主动弹出滑块验证码。此时需要 ruyipage 指纹对抗。
+
+<a id="reference-extraction-217"></a>
+## 提炼说明
+
+检测面与证据边界已提炼为 [51job Web 风控参考卡](./51job-risk-control-reference.md)。本批 query --target 51job --type reference 命中该卡。browser-env-objects 已在 reviewed-extraction-160 retain，故本批用本 archive 补位。不新增第二张 reference。不把残留风险或 v3 脚本对比升级为 runtime。

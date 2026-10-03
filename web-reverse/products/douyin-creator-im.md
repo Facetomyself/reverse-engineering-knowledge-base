@@ -92,3 +92,7 @@ WS 能连接成功不等于私信发送链路完整：关键业务路径是 HTTP
 
 - 会话字段（conversation_id / short_id / ticket）从当前登录态同轮获取；send 返回服务端消息 ID 与明确业务状态
 - 目标会话实际收到或服务端可验证回执；不输出账号、密码、token、凭据等敏感值
+
+## 提炼说明（676）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

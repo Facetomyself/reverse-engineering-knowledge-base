@@ -88,3 +88,7 @@ modules:
 - 人机：题面是空间推理还是滑块/旋转，必须写清，且不得与 `tp` 矛盾
 - 成功：答题 check `code=0` 且 `vt` 非空，再注入登录；未拿到 `vt` 只能标 triage
 - 滑块专项见 [jd-jcap-slider.md](jd-jcap-slider.md)；JCAP 总览见 [jd-jcap-captcha.md](jd-jcap-captcha.md)
+
+## 提炼说明（688）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

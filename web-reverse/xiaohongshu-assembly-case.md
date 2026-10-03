@@ -104,3 +104,7 @@ after_sign(headers, body):
 ## 证据边界
 
 行号对照的是本地 Spider_XHS 树。mns 档位和 `x12` 形状以现行源码为准，换前端包要重核。本篇不收录 keystream、RAP 密钥和指纹原值。
+
+## 提炼去向
+
+参数 provenance 与失败闭合增补见 [小红书 x-s / x-t / x-s-common](./products/xiaohongshu-xs.md#parameters)。增补仍是来源报告，不表示本轮重验源码、运行时或服务端行为。

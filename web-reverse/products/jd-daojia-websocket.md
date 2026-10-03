@@ -90,3 +90,7 @@ modules:
 - token 请求成功并获得当前登录态对应的 token/nonce；WS 握手成功并收到 auth_result
 - 心跳有业务层 ACK；收到 chat_message 后能解析订单字段并发送 ACK
 - 通过订单列表或详情 HTTP 接口交叉验证订单存在；推送里的订单号不视为已完成业务动作
+
+## 提炼说明（685）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

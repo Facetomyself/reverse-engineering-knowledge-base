@@ -191,3 +191,8 @@ input('>>please input pin:')</code> ` 来获取，加入到POST数据里面一�
 修改为你的微博账户和密码就可以测试起来啦。
 
 听说你想学爬虫？点阅读原文看看
+
+## 提炼说明（544）
+archive_only。
+2019 微博 SSO prelogin/login 教程；远程图未审。近邻 weibo planes 不覆盖 SSO。
+本轮不另建卡。

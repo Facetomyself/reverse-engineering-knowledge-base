@@ -73,3 +73,7 @@ parse JSON or HTML
 ## 证据边界
 
 空签名位是源码事实，不是「已经证明服务端不校验」。换版本后若抓包里这三个字段非空，这条结论就过期。本库没有打西瓜线上。
+
+## 本轮提炼评估
+
+空签名 query 的来源边界与独立播放解密 helper 已整理为[参数与播放边界 reference](./xigua-query-playback-boundary.md#parameters)。原始项目代码不可用，Base64 操作方向也未闭合；本文不将来源报告推广到当前客户端或服务端行为。

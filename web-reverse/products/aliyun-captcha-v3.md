@@ -93,3 +93,7 @@ modules:
 ## 验证口径
 
 分层状态：`chain_replayed`（fixture 路由可执行）→ `runtime_ready`（两份 fresh 动态脚本 loaded）→ `interaction_dispatched`（本轮独立事件 profile 已执行）→ `challenge_verified`（2xx Verify、Success=true、VerifyResult=true、当前目标接受的成功码、非空 captchaVerifyParam）→ `business_released`（业务接口明确成功码与目标状态）。具体成功码以当前目标证据为准，不写成通用常量。连续多轮验收：每轮独立进程与 fresh 材料，失败计分母，interaction profile 不跨轮完全相同，全部满足 `challenge_verified` 才通过。
+
+## 提炼说明（673）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

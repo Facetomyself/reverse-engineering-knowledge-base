@@ -75,3 +75,7 @@ modules:
 - orientation.type / angle 与 screen 尺寸方向配套。
 - addEventListener 与 addListener 共用同一 listener 状态。
 - 未触达的权限/设备面不预补。
+
+## 提炼说明（640）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

@@ -1,12 +1,12 @@
 ---
 schema_version: 2
 id: signature-algorithms-boluobao-sfsecurity-trace
-document_type: archive
+document_type: reference
 scope:
   targets:
   - boluobao
-  client: unknown
-  version: unknown
+  client: Android app
+  version: source report 5.1.54; 5.2.18/5.2.54 custom-linker branch
   observed_at: unknown
 sources:
 - id: s1
@@ -15,6 +15,22 @@ sources:
   citation: 语雀 xiaofeng777/android_example
   reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
 source_completeness: unknown
+modules:
+- name: parameters
+  anchor: sfsecurity-md5-pipeline
+  sources: [s1]
+  basis: source-report
+  limits: 93-byte 明文拼接和固定 key 细节有版本边界；不得推广到 5.2.x 未闭合 linker 路径。
+- name: decision-flow
+  anchor: sfsecurity-version-boundary
+  sources: [s1]
+  basis: source-report
+  limits: 5.1.54 与 5.2.x 路径不同；文件偏移、匿名内存映射和 linker 细节未完整公开。
+- name: validation
+  anchor: sfsecurity-md5-pipeline
+  sources: [s1]
+  basis: source-report
+  limits: 来源给出本地 fixture/trace 结论；不代表本轮 runtime 或 serverAccepted。
 tags:
 - SFSecurity
 - mt19937
@@ -60,6 +76,7 @@ archived_date: '2026-09-06'
 
 公开页把 5.2.x 的对抗变化概括为：算法本身更新不大，但业务 SO 用自定义 linker 把核心代码释放到匿名内存。这时 `registerNatives` 拿到的地址不能当文件 RVA，unidbg 也不能只 `load` 原 SO。页内没有给出 linker 实现细节。
 
+<a id="sfsecurity-md5-pipeline"></a>
 ## 5.1.54 出参形状
 
 固定 `clock_gettime` 后，unidbg 一次 `getSFSecurity` 的本地复现形如：
@@ -150,6 +167,7 @@ out      = isalnum(input) ? input : f(input)
 
 固定 key 不在这四段循环里算出来，而是 SO 内常量，RVA 约 `0xdf860`（运行时 `0x120df860`，基址 `0x12000000`）。
 
+<a id="sfsecurity-version-boundary"></a>
 ## nonce：mt19937 出 UUID v4
 
 `nonce` 形如 `FD57BB58-B88C-417B-B2AA-B2AEA8764F03`，按字节写入后做 hex 查表。追到的除法：
@@ -181,3 +199,7 @@ SFSecurity = "nonce=...&timestamp=...&devicetoken=...&sign=..."
 5. 伪随机只追 seed 和缩放，不要把每次 `extract` 当新算法。
 
 公开页没有给出可独立运行的 `custom_encode` 完整脚本；附件 `mt19937.py` / `generate_nonce.py` / `custom_algorithm.py` 未随语雀正文导出。5.2.x 匿名内存路径仍标未在本页闭合。
+
+## 提炼说明（574）
+retain existing reference。SFSecurity 边界已在本文。
+不复制 deviceToken/key。

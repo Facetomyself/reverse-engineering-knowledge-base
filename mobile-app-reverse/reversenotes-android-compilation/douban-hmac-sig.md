@@ -1,12 +1,12 @@
 ---
 schema_version: 2
 id: mobile-app-reverse-reversenotes-android-compilation-douban-hmac-sig
-document_type: archive
+document_type: reference
 scope:
   targets:
-  - unknown
-  client: unknown
-  version: unknown
+  - com.douban.frodo sig/udid/MSA
+  client: Android app
+  version: 7.98.0 observed; 7.0.1 comparison
   observed_at: unknown
 sources:
 - id: s1
@@ -15,7 +15,18 @@ sources:
   citation: GitHub xfxfxiaofeng/reverseNotes
   reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
 source_completeness: unknown
-tags: []
+modules:
+- name: parameters
+  anchor: douban-sig-structure
+  sources: [s1]
+  basis: source-report
+  limits: HMAC key、canonical 串和当前版本完整 parity 未知，不能生成 signer。
+- name: risk-control
+  anchor: douban-msa-boundary
+  sources: [s1]
+  basis: source-report
+  limits: 加载期闪退与 MSA 检测是来源判断；未做本轮 runtime 或绕过验证。
+tags: [hmac-sha1, udid, msa]
 original_date: 2025-06（观察版本 7.98.0 / 对照 7.0.1）
 archived_date: '2026-09-06'
 ---
@@ -41,6 +52,7 @@ archived_date: '2026-09-06'
 | 检测 SO | `libmsaoaidsec.so`（删掉则无法启动） |
 | 不收录 | dlopen/constructor 替换脚本、滑块登录采集链、未脱敏 cookie |
 
+<a id="douban-msa-boundary"></a>
 ## MSA 定位（不是绕过步骤）
 
 7.98.0 上：改内存函数就闪退；不 hook 则正常。hook `dlopen` / `android_dlopen_ext` 时，`libmsaoaidsec.so` 有 enter 无 leave，说明检测发生在加载/构造期。SO 不能删。作者把后续工作放到 `call_constructors` / `JNI_OnLoad` 观察窗口。可复用的判断是：
@@ -50,6 +62,7 @@ archived_date: '2026-09-06'
 
 不要把「换 7.0.1」写成 7.98.0 已过检测。安居客 17.28.1 同族观察窗口（`call_constructors` + `pthread_create` RVA）见 [安居客 nsign](../xfq-android-cases-compilation/xfq-20251122-01.md)，同样不收录替换脚本。
 
+<a id="douban-sig-structure"></a>
 ## sig
 
 - 同时变的只有时间戳时，`sig` 跟着变
@@ -68,3 +81,8 @@ HMAC key 与完整 canonical 串只在截图和加密网站对照里，正文没
 
 - 7.98.0 的 `sig` 是否与 7.0.1 同一 canonical，原文用低版本 hook 反推，没有在 7.98.0 上独立闭合。
 - 腾讯滑块登录、`authorization`、`spmid` 属于会话/业务链，不进本篇。
+
+## 提炼说明（451）
+retain 既有豆瓣 sig/MSA reference。
+7.0.1 对照不能写成 7.98.0 过检。
+本轮不另建卡。

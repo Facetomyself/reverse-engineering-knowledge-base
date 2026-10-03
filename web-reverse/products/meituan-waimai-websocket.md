@@ -103,3 +103,7 @@ uri 决定包类型；payload 内可能混合二进制字段、protobuf、JSON �
 - 能解析当前客户消息，动态提取回复所需的两个会话目标 ID
 - 发送回复二进制包后，目标会话实际收到或服务端有可验证回执
 - 换店铺/账号后，Cookie、店铺 ID、账号 ID、token、device_uuid 均同源
+
+## 提炼说明（691）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

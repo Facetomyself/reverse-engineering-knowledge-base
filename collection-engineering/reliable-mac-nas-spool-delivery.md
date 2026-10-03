@@ -1,11 +1,11 @@
 ---
 schema_version: 2
 id: collection-engineering-reliable-mac-nas-spool-delivery
-document_type: archive
+document_type: reference
 scope:
   targets:
-  - unknown
-  client: unknown
+  - Mac/NAS spool delivery
+  client: collection engineering
   version: unknown
   observed_at: unknown
 sources:
@@ -15,6 +15,17 @@ sources:
   citation: '`本地项目分析材料（定位不公开）`'
   reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
 source_completeness: unknown
+modules:
+- name: request-chain
+  anchor: marker-checkpoint-order
+  sources: [s1]
+  basis: source-report
+  limits: marker/checkpoint 顺序来自来源设计，未在本轮执行 NAS 或 crash-window 测试。
+- name: validation
+  anchor: completion-gate
+  sources: [s1]
+  basis: source-report
+  limits: 完成门是来源方法论；不等于断电一致性或 exactly-once 保证。
 tags:
 - Mac mini
 - SSD spool
@@ -56,6 +67,7 @@ PSA 的生产拓扑把职责拆成三层：
 
 核心原则是：**采集成功不等待 NAS 热写，但交付完成必须有 NAS receipt。**
 
+<a id="marker-checkpoint-order"></a>
 ## 数据流
 
 ```text
@@ -189,6 +201,7 @@ ACK 文件采用 append-only JSONL；读取时忽略或修复尾部半行，写�
 
 NAS 校验 timeout 不能把旧 `status=ok` 覆盖成 failed。更准确的状态是 `resume_verify_deferred`：历史成功仍保留，当前只是暂时无法完成远端复核。
 
+<a id="completion-gate"></a>
 ## supervisor 的 block 完成门
 
 长期任务由唯一 allocator 分配不重叠 block。领取顺序必须是：
@@ -310,3 +323,8 @@ PSA 已验证 LaunchAgent、绝对路径、`caffeinate` 与 heartbeat 接管流�
 - [ ] 日常巡检使用新鲜 heartbeat、bounded ACK tail 与 exact-path NAS smoke。
 - [ ] 通用同步脚本不覆盖运行中的 production root。
 - [ ] 文档明确 process-crash、power-loss、逐文件原子与目录事务的区别。
+
+## 提炼说明（382）
+retain existing reference。NAS spool/marker/ACK 卡已发布。
+本轮不补 procedure。
+不升级断电一致性。

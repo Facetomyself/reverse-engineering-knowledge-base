@@ -96,3 +96,7 @@ window.jdCAP.captcha(info)
 - 在线第二次 /api/check code=0 且 vt 非空；成功判定来自当前在线响应而非样本
 - 未采到 fresh 题面（如 tp=26 未自然下发）时，明确记录"未采到 fresh 题面"或具体失败响应，不宣称在线通过；只能验证轨迹产参路径
 - 调试抓取只在外围序列化层（JSON.stringify 包装）确认 proof 形状，不进入 VMP/opcode
+
+## 提炼说明（688）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

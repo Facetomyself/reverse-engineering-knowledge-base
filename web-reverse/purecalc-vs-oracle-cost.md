@@ -96,3 +96,7 @@ label:
 ## 账本里要写的一句
 
 每个参数一行：`落地 = purecalc | oracle | execjs_bundle | rpc`，加上「为什么不移植」和「完成门」。快手把 53KB 字节码留在 Node，就是这句。写成 purecalc 会让下一轮把 oracle 失败当成算法回归。
+
+## 提炼说明（700）
+archive_only。方法论：纯算还是预言机，先写成本账 保持 archive。
+本轮不另建卡。

@@ -250,3 +250,10 @@ matchMedia 是一个 Web API，用于检测用户的设备是否匹配特定的 
 不加也没关系，轨迹没有校验
 
 在下一篇算法篇里我也会说明如何加入轨迹
+
+<a id="reference-extraction-208"></a>
+## 提炼说明
+
+本来源保留为完整 archive。按本批全文审查，将 cap_union 三接口字段、collect 可选校验、RTCPeerConnection Promise 原型与 createElement/canvas 检测点，提炼为 [腾讯 TDC collect 补环境检测点参考](./tencent-tdc-slider-vmp-part1-env-patch-reference.md)。
+
+命中特征与 ticket 口径仍见 [products/tencent-captcha.md](./products/tencent-captcha.md)。该 reference 只标记 `source-report`；未请求 captcha 域，不收录 sess/collect/ticket，18 张图未审。

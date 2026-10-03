@@ -77,3 +77,8 @@ server，以http的形式把接口暴露出来，供远程调用。
 
 非常无聊中，欢迎撩骚，我的个人微信：
 ![](https://mmbiz.qpic.cn/mmbiz_jpg/GrTTsqWuEccnpLUwbaRX1RPgOic7kIHa3NNT3ZSgPnrnGH8GA4gHaibHw6TurEKszXSRPQhgcibFUficr1AsaPjJjw/640?wx_fmt=jpeg)
+
+## 提炼说明（544）
+archive_only。
+Frida RPC 调用 getAS 黑盒拿 signature；截图未审，无完整 RPC 合同。
+本轮不另建卡。

@@ -1,0 +1,16 @@
+flowchart TB
+    S1["S1 分开单次入口与持久开关"] --> S2["S2 锁定 release、ABI、allowlist、hash"]
+    S2 --> D2{"产物和 ABI 匹配?"}
+    D2 -- 否 --> F1["F1 停止：前提不成立"]
+    D2 -- 是 --> S3["S3 启动前读取 App 开关"]
+    S3 --> S4["S4 配置 request service 与 payload allowlist"]
+    S4 --> S5["S5 确认 property 与 request 权限"]
+    S5 --> D5{"权限无拒绝?"}
+    D5 -- 否 --> F2["F2 停止：检查最小 SELinux 权限"]
+    D5 -- 是 --> S6["S6 验证关闭态无副作用"]
+    S6 --> D6{"关闭态无 service、trace、AVC?"}
+    D6 -- 否 --> F3["F3 不通过：保留失败证据并关闭开关"]
+    D6 -- 是 --> S7["S7 开启态验证测试 App 与目标 JNI trace"]
+    S7 --> D7{"开启态 request 与 JNI trace 闭合?"}
+    D7 -- 否 --> F3
+    D7 -- 是 --> S8["S8 关闭开关、清理并归档回执"]

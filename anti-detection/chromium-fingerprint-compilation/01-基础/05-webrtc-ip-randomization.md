@@ -134,3 +134,7 @@ ninja  -C  out/Default chrome
 
 *   还有其他网站可以获取到我的真实ip啊，如：https://www.browserscan.net/  
     ![在这里插入图片描述](https://i-blog.csdnimg.cn/blog_migrate/3a086e8bedfa9bd2bd630f96ad90f774.png)
+
+## 提炼说明（241）
+archive-only。WebRTC 泄露面见 js-browser-fingerprint 的 IP 边界。源码替换 ICE candidate 不另建卡。
+不收录 STUN/补丁。远程图未审。browserscan 残留见后续进阶篇。

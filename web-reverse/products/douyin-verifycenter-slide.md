@@ -90,3 +90,7 @@ modules:
 - 在线 `/captcha/verify` 返回 code=200，且后续登录响应与成功证据同口径进入业务层（登录错误码变化表示验证码已通过）
 - 连续稳定性建议至少 5 次，记录 verify_code、captchaBody_len 与 trace 一致性、delta、body_len、登录错误码、异步错误数与耗时
 - 本地语法检查与语法编译通过；最终以真实 verify 响应和后续登录响应同时验收，不只看本地 body 长度
+
+## 提炼说明（679）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

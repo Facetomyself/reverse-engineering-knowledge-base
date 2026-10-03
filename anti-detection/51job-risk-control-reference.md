@@ -65,3 +65,7 @@ tags: [51job, anti-debugging, browser-instrumentation, risk-control, evidence-bo
 | 可见改动与服务端结果 | 哪一项改动对应哪一种可重复现象 | 未做单变量对照，不给出因果或稳定绕过结论 |
 
 不收录来源中的 v3 实现为通用修复代码，不复制其风险高低评级。需要当前站点事实时，应新建有明确版本与采样边界的分析记录，再按结论更新本卡；不要覆盖或改写原来源稿。
+
+## 提炼说明（220）
+本批确认本卡即 query --target 51job --type reference 的唯一命中，处置为 retain_existing_reference。
+217 已对来源分析稿 archive 做 retain 回链。不增补模块，不升级 runtime。

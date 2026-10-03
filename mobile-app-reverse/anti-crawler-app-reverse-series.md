@@ -55,3 +55,15 @@ archived_date: '2026-07-13'
 | 2026-07-10 | [第4章：Frida高级Hook——不止于打印参数](anti-crawler-app-reverse-series/anti-crawler-app-20260710-01.md) |
 | 2026-07-11 | [第5章：常见加密算法的精确还原](anti-crawler-app-reverse-series/anti-crawler-app-20260711-01.md) |
 | 2026-07-12 | [第6章：So层逆向——从汇编到Python](anti-crawler-app-reverse-series/anti-crawler-app-20260712-01.md) |
+
+## 提炼说明（388）
+archive-only。合集 TOC 枢纽。
+第3/4章已有卡；第5/6章本批 archive-only。
+不把目录当模块。
+
+## 同目录窄参考
+
+本段只挂同目录提炼卡。
+
+- [Java 层密钥材料：构造器、填充和盐值来源](anti-crawler-app-reverse-series/anti-crawler-app-20260711-01-reference.md)
+- [SO 层动态注册、JNI 读参和加密库符号](anti-crawler-app-reverse-series/anti-crawler-app-20260712-01-reference.md)

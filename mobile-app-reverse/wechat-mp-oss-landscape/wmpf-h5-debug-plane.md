@@ -81,3 +81,8 @@ wx-h5 proxy --port 8899
 ```
 
 这与 wxdown-service 同类，仍要人打开页面。不要把 Frida `hook` 写进纯 HTTP 下载主链。小程序调试继续走 WMPF MCP，不要用 H5-DevTools 去补 `flue.dll` 偏移。
+
+## 提炼说明（478）
+archive-only：H5 调试面不是发证面。
+JSBridge Mock 过不了 NetSceneGetA8Key。
+本轮不另建卡。

@@ -110,3 +110,7 @@ TLS 指纹层不属于本地执行层的 JS 补环境问题。请求在未进入
 - `sensor_data` POST 的 URL、Method、Header、Body 编码与浏览器一致
 - challenge POST 覆盖浏览器真实全部 XHR body、顺序、Header 和每次响应后的 Cookie 更新
 - 带更新 Cookie 请求业务页面或接口返回正常业务内容；仍返回 challenge、短 HTML、403 或重定向视为未通过
+
+## 提炼说明（667）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

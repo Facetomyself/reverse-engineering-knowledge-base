@@ -1,12 +1,12 @@
 ---
 schema_version: 2
 id: collection-engineering-browser-collector-stability
-document_type: archive
+document_type: reference
 scope:
   targets:
-  - unknown
-  client: unknown
-  version: unknown
+  - ruyipage Firefox browser collector stability
+  client: Firefox BiDi collector
+  version: source report Firefox 151; exact build unknown
   observed_at: unknown
 sources:
 - id: s1
@@ -15,6 +15,22 @@ sources:
   citation: '`本地项目分析材料（定位不公开）`'
   reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
 source_completeness: unknown
+modules:
+- name: risk-control
+  anchor: browser-cf-window
+  sources: [s1]
+  basis: source-report
+  limits: 30-60 分钟 / 400-600 页是单次来源测量，不能外推为通用 IP 配额。
+- name: decision-flow
+  anchor: browser-failure-cascade
+  sources: [s1]
+  basis: source-report
+  limits: 故障因果链为来源归因；未在本轮复现 Firefox/ruyipage 行为。
+- name: validation
+  anchor: browser-stability-guardrails
+  sources: [s1]
+  basis: source-report
+  limits: 并发、换 IP 和清理阈值为来源建议，应按当前目标与运行环境重新测量。
 tags:
 - ruyipage
 - Firefox 151
@@ -47,6 +63,7 @@ archived_date: '2026-08-12'
 > OOM 连锁机制。重点不是某个站点的数字，而是为什么"多开窗口"在真实风控目标上
 > 行不通，以及崩溃如何从单点故障演变成整机 OOM。
 
+<a id="browser-cf-window"></a>
 ## 结论先行
 
 1. **定制 Firefox 的崩溃是确定性断言失败，不是随机问题**：实测 12 小时内 118 次
@@ -76,6 +93,7 @@ archived_date: '2026-08-12'
 
 崩溃时间分布与运行阶段完全对应：并发越高、页面失败率越高，崩溃越密。
 
+<a id="browser-failure-cascade"></a>
 ## 根因链
 
 ```
@@ -100,6 +118,7 @@ CF 对单出口 IP 风控（有效窗口 30-60 分钟）
 | 出口 IP 质量导致崩溃 | 单实例任意 IP 全通过；多实例同 IP 崩溃 |
 | 轮换（quit+relaunch）导致崩溃 | 不轮换时也崩溃 |
 
+<a id="browser-stability-guardrails"></a>
 ## 稳定性改进清单（下次采集的执行规范）
 
 1. **并发上限**：目标实例数 = 可用健康 IP 数（1 实例/IP），且 ≤ 4。

@@ -157,3 +157,8 @@ ssl_logger 的作用原理是 hook 底层 ssl_read 和 ssl_write 两个方法，
 ![](https://mmbiz.qpic.cn/mmbiz_png/GrTTsqWuEcfLa0sEbiaHbO5uqWpxdGwn5yPWTSvJ0JAXNmZqltN41CZfaUmyBTZgMwttKAjqbo8ZPZn9wOsXkicg/640?wx_fmt=png)
 
 ![](https://mmbiz.qpic.cn/mmbiz_png/GrTTsqWuEcfLa0sEbiaHbO5uqWpxdGwn5wKh6lx1JOBlia3sGAcJQzUYYs6p44UUiazeMk9WSos3hAvFvXuHGfEOA/640?wx_fmt=png)
+
+## 提炼说明（547）
+archive_only。
+Android 7 用户 CA / pinning / mTLS 汇总；远程图未审，命令含证书 hash 样例。
+本轮不另建卡。

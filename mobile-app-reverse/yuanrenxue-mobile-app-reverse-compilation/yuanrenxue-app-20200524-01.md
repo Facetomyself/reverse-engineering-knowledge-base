@@ -130,5 +130,17 @@ com.XXXXXX.common.utils.encrtption.MD5Helper.getMD5Str
 自此，两个加密参数的分析就完成了。
 **PS：自己的广告** [ 正式把爬虫高阶课放在网课平台了
 ](http://mp.weixin.qq.com/s?__biz=MjM5NjE0NTY5OA==&mid=2448549375&idx=1&sn=9726b58dadcc220bbea6aa48eed694ca&chksm=b2e8fab2859f73a4076692e6368b1701371e2f9afa10f4f3bb3725abe51604e49e5b1e82028c&scene=21#wechat_redirect)
+
 [
 ](http://mp.weixin.qq.com/s?__biz=MjM5NjE0NTY5OA==&mid=2448549375&idx=1&sn=9726b58dadcc220bbea6aa48eed694ca&chksm=b2e8fab2859f73a4076692e6368b1701371e2f9afa10f4f3bb3725abe51604e49e5b1e82028c&scene=21#wechat_redirect)
+
+<a id="reference-extraction-101"></a>
+## 提炼说明
+
+本来源保留为完整 archive。按本轮全文审查，将 `securitykey` 的参数集合摘要边界、`password` 的 AES/CBC/PKCS5Padding 变换标签，以及加壳/MultiDex 下的类加载和运行时类名校正边界提炼为 [`Android 登录参数参考`](../yuanrenxue-login-protocol-reference.md)。
+
+reference 不复制手机号、设备/伪造标识、地理字段、摘要值、密码材料或截图，也不把来源叙述升级为可运行 signer、Hook procedure、设备风控或服务端验收。来源包含 29 个外部截图引用，本轮未做像素审查。
+
+## 提炼说明（724）
+retain_existing_reference。既有卡 mobile-app-reverse/yuanrenxue-login-protocol-reference.md。
+本轮不另建卡。不复制 Cookie/token/指纹原值。未审图片不作证据。

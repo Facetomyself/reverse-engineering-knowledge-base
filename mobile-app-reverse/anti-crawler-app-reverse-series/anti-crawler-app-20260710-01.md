@@ -233,3 +233,12 @@ App在请求前会检查设备是否Root、是否在模拟器中运行，如果�
  风险提示
 
 本章涉及的动态Hook技术仅可用于自己拥有权限的设备或已获得授权的安全测试。未经授权替换他人App的加密逻辑属于违法行为，请严格遵守法律法规。
+
+## 本轮提炼评估
+
+构造函数捕获、`implementation` 替换、`$new`、Native `Interceptor` 和 `Stalker` 的技巧选择已整理为[Frida Hook reference](../anti-crawler-frida-hook-selection.md#frida-hook-technique-selection)，并补充第 3 章的静态定位卡。原文代码块有展平现象，文末 Python 解密案例缺少可核验证据；来源 archive 保留原貌，不重建成可执行脚本。
+
+## 提炼说明（385）
+retain existing reference。Frida Hook 选择卡已发布。
+来源稿保持 archive 原貌。
+不重建可执行脚本。

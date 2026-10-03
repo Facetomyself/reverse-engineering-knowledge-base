@@ -317,3 +317,7 @@ String RTCSessionDescription::sdp() const {
 *   编译后测试结果：  
     ![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/e44da7a2f62b4b09ba3ffe11307e4009.png)
 
+
+## 提炼说明（262）
+archive-only。05/10 已覆盖 WebRTC 伪造/禁用。本篇补 toJSON/SDP 与 --webrtc-ip，不另建卡。
+不收录 STUN、IP 样值或补丁。远程图未审。

@@ -73,3 +73,7 @@ iframe 是子浏览器上下文，不只是一个 DOM 元素。`contentWindow`�
 - storage / cookie 共享或隔离按子文档作用域决定，不默认复制主状态。
 - postMessage 的 event.source / ports 指向实际发送方，不伪造身份。
 - 不提前执行 iframe 内脚本；加载时序以当前链路证据为准。
+
+## 提炼说明（634）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

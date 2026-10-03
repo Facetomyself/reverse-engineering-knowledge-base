@@ -101,3 +101,7 @@ API 级暗哨: 页面正常加载 → 伪装第一方 JS 的响应头 Set-Cookie
 - 去掉任一 Shape header 触发风控，保留完整动态 headers 返回业务数据
 - 最终验收是业务接口返回正常业务 JSON（而非 telemetry 或 challenge 接口成功）
 - 连续多次验证，记录状态码、Cookie 是否存在、动态 headers 是否启用、业务数量与耗时；有性能要求时区分冷启动、预热、动态生成与业务 POST 耗时
+
+## 提炼说明（682）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

@@ -128,3 +128,7 @@ ninja  -C  out/Default  mini_installer
 *   out/Default目录下生成的chrome.package.7z是绿色免安装包，可以解压即用
 
 > 注意：编译非常慢
+
+## 提炼说明（238）
+archive-only。编译环境指南不是指纹 reference，也无五门 procedure。
+不收录本机路径或代理细节。

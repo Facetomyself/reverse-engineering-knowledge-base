@@ -205,3 +205,7 @@ ninja  -C  out/Default chrome
 ```c
 --blink-settings=imagesEnabled=false
 ```
+
+## 提炼说明（253）
+archive-only。禁图是采集加速开关，不是指纹 reference，也无五门 procedure。
+不收录后缀表、占位 URI 或启动参数细节。远程图未审。

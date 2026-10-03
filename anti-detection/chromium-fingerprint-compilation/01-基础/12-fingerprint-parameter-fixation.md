@@ -514,3 +514,7 @@ std::string command("ALL:!aPSK:!ECDSA+SHA1:!3DES");
 #### 七、关于更新
 
 感谢读者的反馈和支持
+
+## 提炼说明（247）
+archive-only。传参固定只是把先前随机补丁换成命令行种子；检测面见既有 tls/canvas-webgl/audio/js-browser 卡。
+不收录 --fingerprints 值、字体表或 Blink 补丁。远程图未审。

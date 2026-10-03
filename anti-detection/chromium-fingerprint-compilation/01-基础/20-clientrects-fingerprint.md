@@ -115,3 +115,7 @@ ninja  -C  out/Default chrome
 
 *   之前一直没绕过creepjs检测，所以到现在才修改后再发出来。
 *   感谢读者的反馈，指纹浏览器功能渐渐更加完善。
+
+## 提炼说明（253）
+archive-only。ClientRects 布局差异见 js-browser-fingerprint。DOMRect 微扰补丁不另建卡。
+不收录补丁。远程图未审。

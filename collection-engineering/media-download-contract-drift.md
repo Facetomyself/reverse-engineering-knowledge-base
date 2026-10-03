@@ -77,3 +77,12 @@ archived_date: '2026-09-27'
 - [Spider_XHS @ ebb6c4fb](https://github.com/cv-cat/Spider_XHS/tree/ebb6c4fb)：`xhs_utils/data_util.py::handle_note_info`。
 
 两仓其余增量主要是 README、logo 和赞助信息，不进入技术知识库。本轮只完成静态差异审阅，未运行采集器或验证 CDN 行为。
+
+## 本轮提炼评估
+
+Referer 请求上下文、媒体候选字段回退、HTTP 状态检查位置及单作品失败边界已整理为[媒体下载变更 reference](./media-download-contract-drift-reference.md)。该卡不合并两个项目为同一站点行为，也不把来源差异升级成本轮运行或 CDN 交付验证。
+
+## 提炼说明（379）
+retain existing reference。媒体下载变更卡已发布。
+来源稿保持 archive。
+不扩 CDN 验证。

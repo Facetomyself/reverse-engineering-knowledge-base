@@ -295,3 +295,14 @@ jobject 或 jclass；  从第 3 个参数开始才是 java 层传递过来的。
 层的加密函数分析都不难，没有复杂难懂的逻辑，也没有混淆，只有个鸡肋的反调试，直接静态分析加 frida hook 就搞定了。  其实目前市面上大多数 APP
 的加密参数都能通过这种方式搞定，当然很难的也不少，学习逆向是个无底洞，但我们做爬虫的不要怕逆向，我们只是逆向它的那个加密参数而已，先要有信心，多学习多实操多总结，一点点深入，会学有所成。
 共勉！
+
+<a id="reference-extraction-106"></a>
+## 提炼说明
+
+本来源保留为完整 archive。按本轮全文审查，仅将 `signKey` / `signKeyV1` 的字段角色与 `formatQueryParaMap` 规范化边界、Java 到 Native 的动态 JNI 注册链，以及 MD5/HMAC-SHA256 Hook 的观察边界提炼为[猿人学 signKey / Native 参考](../yuanrenxue-signkey-native-reference.md)。reference 不收录手机号、设备/地理/请求样值、摘要输出、Native 指针或偏移、salt/key、代码截图和外部截图中的内容，也不提供可运行 signer。
+
+所有技术叙述仍为 `source-report`，未做 APK/DEX/SO、设备、Frida、请求、local parity 或服务端验收。原文的 14 张外部截图本轮未做像素审查，来源 archive 的视觉隐私仍是未闭合项；原文关于某字段服务端校验的说法只作为未证实限制，不得推广为 server-accepted 或 risk-control 结论。
+
+## 提炼说明（724）
+retain_existing_reference。既有卡 mobile-app-reverse/yuanrenxue-signkey-native-reference.md。
+本轮不另建卡。不复制 Cookie/token/指纹原值。未审图片不作证据。

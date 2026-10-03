@@ -94,3 +94,7 @@ modules:
 ## 验证口径
 
 最低验收同时满足：成功 InitCaptcha 被识别；当轮 StaticPath 的精确 dynamicJS 加载并记录 hash；FeiLin 与 sg 在同一共享执行环境完成；getInstance 或等价 runtime_ready 门禁通过；按当前 CaptchaType 进入真实交互；proof 四字段同轮；业务接口返回明确成功码和目标状态。callback 返回 `captchaResult:true` 与 SDK 成功 UI 均不能单独作为成功口径。至少执行多轮 fresh InitCaptcha，验证不同动态分支不依赖固定 sg。
+
+## 提炼说明（670）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

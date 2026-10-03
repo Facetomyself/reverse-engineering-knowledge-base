@@ -1,12 +1,12 @@
 ---
 schema_version: 2
 id: mobile-app-reverse-reversenotes-android-compilation-hanxiaoquan-aes-sign
-document_type: archive
+document_type: reference
 scope:
   targets:
-  - unknown
-  client: unknown
-  version: unknown
+  - com.babycloud.hanju sign/uk/response data
+  client: Android app
+  version: 6.5.3 source report
   observed_at: unknown
 sources:
 - id: s1
@@ -15,7 +15,18 @@ sources:
   citation: GitHub xfxfxiaofeng/reverseNotes
   reason: 原归档明确记载出处，但未提供可定位的公开来源链接；本轮只保留来源自述。
 source_completeness: unknown
-tags: []
+modules:
+- name: parameters
+  anchor: hanju-sign-uk-derivation
+  sources: [s1]
+  basis: source-report
+  limits: uid、device_json、uk 固定 key/iv 和完整序列化细节未闭合；本轮未复算。
+- name: validation
+  anchor: hanju-response-boundary
+  sources: [s1]
+  basis: source-report
+  limits: 作者一次随机 uid 抽检不是 serverAccepted；响应解密原语和当前服务端行为未知。
+tags: [aes-cbc, uid, uk, response-data]
 original_date: 2025-06（观察版本 6.5.3）
 archived_date: '2026-09-06'
 ---
@@ -42,6 +53,7 @@ archived_date: '2026-09-06'
 | 调栈 | `AesUtil` → `z3.d.g(SignUtil)` → `BaseSignStringRequest.getHeaders` → Volley |
 | 不收录 | 算法助手日志里的设备 JSON、具体 uid、hook 过检测步骤 |
 
+<a id="hanju-sign-uk-derivation"></a>
 ## sign
 
 算法助手对加密面自吐：`AES/CBC/PKCS5Padding`。同一安装期内 key/iv 稳定；`pm clear` 后 key、iv、明文里的 `uid` 一起换。
@@ -71,6 +83,7 @@ uk = AES-CBC(fixed_key, fixed_iv, uid)
 
 `o6.d.e` 取出后写入 JSON。脱壳不完整，作者未能 trace 出生成式。观察：定长 20，字符集 `[0-9A-Za-z]`。用随机串替换后，作者的一次发包没有报错；这只是抽检，不是生成算法已闭合。
 
+<a id="hanju-response-boundary"></a>
 ## 响应 data
 
 统一解密入口不在算法助手的标准 Java Crypto 列表里。hook 到 `w.a.a`：
@@ -86,3 +99,8 @@ plaintext = decrypt(data, key)
 
 - `uid` 生成、`uk` 固定密钥、解密原语（是否也是 AES-CBC）均未在正文写死。
 - 清数据必须同时换 `sign`/`uk`/`uid`，只换其中一项会形状分裂。
+
+## 提炼说明（454）
+retain 既有韩小圈 sign/uk/响应 reference。
+uid 生成与 uk 固定密钥仍未闭合。
+本轮不另建卡。

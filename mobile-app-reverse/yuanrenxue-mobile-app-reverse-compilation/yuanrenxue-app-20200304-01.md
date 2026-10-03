@@ -141,3 +141,7 @@ print里输出的就是序列化（“加密”）后的数据。
 ](http://mp.weixin.qq.com/s?__biz=MjM5NjE0NTY5OA==&mid=2448549144&idx=1&sn=8a174dacb495e3938d2df12ada9c7d2d&chksm=b2e8fa55859f7343c27b5f3368a81328ef21139c20b0da43c0836c04712a05a21b2fe0a9fcc8&scene=21#wechat_redirect)
 
 **PS: 再广而告之一声**
+
+## 提炼说明（547）
+retain existing reference。Protobuf 分析边界见 paopao-protobuf-analysis-reference。
+本文远程图未审，不扩卡。

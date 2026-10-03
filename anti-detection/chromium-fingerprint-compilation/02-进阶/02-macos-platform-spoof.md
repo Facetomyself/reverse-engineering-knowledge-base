@@ -405,3 +405,7 @@ ninja -C out/Default chrome
 
 ![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/caa73a49684f42588f9ba7f4dff1e843.png)
 
+
+## 提炼说明（262）
+archive-only。OS/字体一致性见 js-browser-fingerprint。mac 伪装补丁不另建卡。
+不收录 UA/字体表。远程图未审。启动参数拼写与空 UA 替换保留为来源缺口。

@@ -209,3 +209,11 @@ ROM / build 族
 | 生命周期 | 有状态对象；每次采集是演化，不是重新生成 |
 | 装配顺序 | 硬件 → ROM（1:N）→ APK 版本族 → 内核/开机 → 初始化 → 状态演化 |
 | 完成口径 | 单次字段能对拍 ≠ 联合分布合理 ≠ 多次采集连续 |
+
+## 本轮提炼说明
+
+已提炼窄范围参考卡：[Android 设备画像一致性：来源方法论边界](./android-device-fingerprint-consistency-reference.md)。参考卡仅保留来源支持的定性一致性视角、APK/SDK 版本沿革和重复采集生命周期原则；不把分布类型、概率或跨字段相关性写成经数据验证的模型。来源定位、scope、数据集及目标版本均缺失，所有技术内容仍为 `source-report`，没有 runtime、parity 或 server-accepted 验证。
+
+## 提炼说明（268）
+retain existing reference。69–71 已提炼 android-device-fingerprint-consistency-reference。
+本批不扩卡、不升级分布/概率。

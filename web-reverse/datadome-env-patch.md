@@ -290,3 +290,10 @@ Challenge 页面会随机改变祖先变量，所以最终值并不固定。
 3. DOM 布局和 CSS 自定义属性计算；
 4. 动态配置与静态运行时代码的区分；
 5. 异步字段的合法变体和严格顺序校验。
+
+<a id="reference-extraction-199"></a>
+## 提炼说明
+
+本来源保留为完整 archive。按本批全文审查，将无感 interstitial 的请求顺序、payload/plv3 分层、iframe Realm / Worker 异步链 / VM 第一处分叉 / CSS 布局排查，以及本地字段门与新 Session 业务口径，提炼为 [DataDome 无感 interstitial 补环境边界参考](./datadome-env-patch-reference.md)。
+
+产品命中与 captcha fallback 仍见 [products/datadome.md](./products/datadome.md)。该 reference 只标记 `source-report`；未运行 jsdom、浏览器或目标服务，不收录 Cookie、密文、设备值或请求样值，不表示当前 runtime、parity 或 server acceptance。

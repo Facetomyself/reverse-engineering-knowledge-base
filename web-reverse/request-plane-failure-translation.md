@@ -1,11 +1,11 @@
 ---
 schema_version: 2
 id: web-reverse-request-plane-failure-translation
-document_type: archive
+document_type: reference
 scope:
   targets:
-  - unknown
-  client: unknown
+  - web request failure translation
+  client: web reverse engineering
   version: unknown
   observed_at: unknown
 sources:
@@ -15,6 +15,17 @@ sources:
   citation: '`本地项目分析材料（定位不公开）`（DouYin_Spider、TiktokApis、KuaiShou-Spider、JdApis、TaoBaoApis 的失败分链）'
   reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
 source_completeness: unknown
+modules:
+- name: request-chain
+  anchor: request-plane-method
+  sources: [s1]
+  basis: source-report
+  limits: 这是来源项目方法论归纳；未在本轮抓包、运行或服务端复现。
+- name: risk-control
+  anchor: request-plane-failure-translation
+  sources: [s1]
+  basis: source-report
+  limits: 响应信号映射来自来源材料，版本、站点和当前代码状态未知。
 tags:
 - 请求面
 - bdturing
@@ -40,6 +51,8 @@ archived_date: '2026-09-24'
 抖音的七条链见 [请求面案例](./douyin-web-request-planes.md)。
 
 ## 画法
+
+<a id="request-plane-method"></a>
 
 对一条抓包，按「谁生产、谁消费、失败时长什么样」拆行。生产函数不同，就是不同的面。同名参数如果生产函数不同，也是不同的面。
 
@@ -115,3 +128,10 @@ on_exception_before_send(err):
 | `msToken` | mssdk 响应头 | 本地 `generate_msToken()` 随机串 |
 
 画表时写生产函数名，不写参数名。参数名会跨面复用。
+
+<a id="request-plane-failure-translation"></a>
+## 可复用提炼：先定位生产者，再翻译失败面
+
+这篇方法论的最小复用单元是“生产者 → 消费位置 → 失败形态”，而不是某个参数名。处理新请求时，先分别记录查询签名、会话、完整性、设备/行为、传输、业务读回六个面；同名参数只要生产函数不同，就拆成不同记录。
+
+响应翻译也要保留层次：HTTP 200 只说明传输层返回，必须继续看 JSON `ret/status_code`；空 body、Bdturing、Passport decision、acrawler HTML 分别指向不同的风险或业务面。以上规则均为 `source-report`，不能代替当前目标的 runtime、parity 或 server accepted 验收。

@@ -92,3 +92,7 @@ LWP 通道  = wss-cntaobao... /reg 注册后承载真正业务消息、同步、
 
 - ACCS token 和 LWP login token 都能从当前 Cookie 获取；LWP `/reg` 返回 code=200；心跳持续正常
 - 能解析当前客户会话 cid；发送文本接口返回业务成功，并能在目标会话实际看到消息或收到服务端回执
+
+## 提炼说明（679）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

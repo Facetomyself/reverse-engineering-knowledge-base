@@ -73,3 +73,7 @@ DOM 节点是带树关系、属性表、文本内容、样式子对象和布局�
 - 布局读数（getBoundingClientRect、client / offset）来自单一 layout 状态。
 - 同一节点多次返回同一对象身份，事件 target 回指元素。
 - 按目标触达的元素类型补语义，未触达类型不预建。
+
+## 提炼说明（631）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

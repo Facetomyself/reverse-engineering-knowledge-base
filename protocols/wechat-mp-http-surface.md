@@ -1,11 +1,11 @@
 ---
 schema_version: 2
 id: protocols-wechat-mp-http-surface
-document_type: archive
+document_type: reference
 scope:
   targets:
   - wechat-official-account
-  client: unknown
+  client: web HTTPS
   version: unknown
   observed_at: unknown
 sources:
@@ -15,6 +15,17 @@ sources:
   citation: '`本地项目分析材料（定位不公开）` Nuitka constants 恢复 + 协议复现'
   reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
 source_completeness: unknown
+modules:
+- name: interfaces
+  anchor: request-plane-method
+  sources: [s1]
+  basis: source-report
+  limits: 接口形状来自来源报告；票据签发和当前 live readback 未在本轮验证。
+- name: request-chain
+  anchor: request-plane-failure-translation
+  sources: [s1]
+  basis: source-report
+  limits: 失败翻译规则需结合目标版本与当前响应复核。
 tags:
 - getmsg
 - general_msg_list
@@ -41,6 +52,7 @@ archived_date: '2026-09-15'
 >
 > 公众号 Web 归档不是一个接口。历史列表是 `profile_ext?action=getmsg`，阅读量是 POST `getappmsgext`，评论是 `appmsg_comment`，合集是 `appmsgalbum?action=getalbum`。公开文章 URL 无登录可拉正文。会话平面见 [五套会话](./wechat-mp-session-planes.md)；本文只保留已实现的 HTTPS 形状和完成门。
 
+<a id="request-plane-method"></a>
 ## 定位
 
 `weixin_download` 从 4.6 样本 constants 恢复、并用独立 Python 复现了下列 HTTPS 面。凭证仍是 WebView 短时 `uin/key/pass_ticket`（平面 2）。本文不讨论如何签发；签发对照见 [getmsg WebView 发证](../mobile-app-reverse/wechat-mp-oss-landscape/getmsg-webview-issuance.md)。
@@ -125,6 +137,7 @@ https://mp.weixin.qq.com/mp/appmsgalbum?action=getalbum
 
 已知 `https://mp.weixin.qq.com/s/...` 无登录可抽标题、昵称、时间、图片 URL。工具 UA 可能 302 到 `wappoc_appmsgcaptcha`：按内容无效，禁止 checkpoint。媒体下载是后处理，缺文件不能把文章标 complete。
 
+<a id="request-plane-failure-translation"></a>
 ## 实现边界（写进复用合同）
 
 | 已验证 | 不要当成已完成 |

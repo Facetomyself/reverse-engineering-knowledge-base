@@ -52,3 +52,16 @@ archived_date: '2026-07-13'
 | 2025-10-13 | [深入解析控制流平坦化：原理与 AST 反混淆实战](anti-crawler-web-reverse-compilation/anti-crawler-web-20251013-01.md) |
 | 2025-10-17 | [AST 语法树硬刚某宝（七篇）：原理、Babel 修复格式、多层三元拆解、提取控制器与无用分支](anti-crawler-web-reverse-compilation/anti-crawler-web-20251017-01.md) |
 | 2026-03-23 | [Chrome开发者工具反爬指南（三篇）：断点调试、Hook 与反 Hook 检测对抗](anti-crawler-web-reverse-compilation/anti-crawler-web-20260323-01.md) |
+
+## 提炼说明（610）
+archive_only。反爬破解社 Web 合集 TOC 枢纽；子文逐篇处置。枢纽不升 reference。
+本轮不另建卡。
+
+## 同目录窄参考
+
+本段只挂同目录提炼卡。
+
+- [Akamai 来源里的 sensor 字段形状](anti-crawler-web-reverse-compilation/anti-crawler-web-20250923-01-reference.md)
+- [while(true) 加 switch 的平坦化形状](anti-crawler-web-reverse-compilation/anti-crawler-web-20251013-01-reference.md)
+- [语句规范化、打包状态字和无用分支](anti-crawler-web-reverse-compilation/anti-crawler-web-20251017-01-reference.md)
+- [Chrome DevTools 断点顺序与 Hook 观察点](anti-crawler-web-reverse-compilation/anti-crawler-web-20260323-01-reference.md)

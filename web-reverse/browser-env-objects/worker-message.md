@@ -76,3 +76,7 @@ Worker 和 MessagePort 是异步消息通道。核心内容是独立全局上下
 - transferable 实现 detach 语义，发送方 buffer 状态改变。
 - MessagePort 维护 started / closed 与双端关系。
 - 证据不足时记录缺口与阻塞点，不写猜测式消息模型。
+
+## 提炼说明（646）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

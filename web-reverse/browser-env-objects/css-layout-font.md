@@ -77,3 +77,7 @@ CSS、layout 和 font 内容由元素样式状态、computed style、字体加�
 - `matchMedia` / `CSS.supports` 来自当前 viewport 与能力表，不写死 true。
 - 样式或字体变化后，目标读取的布局读数应反映变化。
 - 未触达的样式面不预建；补入字段后与其依赖的字体/layout 状态一并核对。
+
+## 提炼说明（628）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

@@ -94,3 +94,7 @@ modules:
 - 最终 URL 参数顺序和编码一致；`msToken / verifyFp / fp` 与当前会话匹配；headers/cookies 与当前会话匹配
 - 请求命中真实目标接口，返回正常业务 JSON，而不是风控、空数据、重定向或验证码状态
 - 多次请求、翻页请求或不同业务参数下仍能稳定生成
+
+## 提炼说明（676）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

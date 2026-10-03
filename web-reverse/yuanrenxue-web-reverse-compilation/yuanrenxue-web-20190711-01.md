@@ -90,3 +90,7 @@ ExecJS、PyV8这样的模块来运行这段js同样也可以得到cookie的值�
 **时常有读者在公众号留言给我交流，多次留言比较麻烦，这里开放我微信10个朋友圈名额，可以在微信上跟我交流，只限前10个好友申请。**
 
 ![](https://mmbiz.qpic.cn/mmbiz_png/GrTTsqWuEceYsrOvOkOLKXBO0JWPyluJkdXaAqa0YZH15ZH5p45bKEtLQ2qUKbfBeSPl1Wiboich4pw8A9tDYmHA/640?wx_fmt=png)
+
+## 提炼说明（709）
+archive_only。猿人学 Web 教学合集，不另建产品卡。
+本轮不另建卡。

@@ -39,6 +39,10 @@ archived_date: '2026-09-23'
 
 HTTP 两代 SDK 的路由见 [TikTok Web 签名面](./tiktok-web-signing-planes.md)。
 
+<a id="frontier-reference"></a>
+
+提炼参考：[TikTok 旁路签名参考](./tiktok-frontier-ticket-shop-reference.md)。本锚点覆盖本篇三条旁路的接口、参数与请求链；仍保持 `source-report` 边界。
+
 ## 案例：frontierSign 是独立 Node 进程
 
 `TiktokSigner.frontier_sign` 不走 Python `encode_x_bogus`。它起 `signing/env/sign.js`：

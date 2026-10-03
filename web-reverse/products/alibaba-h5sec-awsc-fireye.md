@@ -98,3 +98,7 @@ MTOP H5 sign = h5api `_m_h5_tk` / query `sign` / `appKey`，见 alibaba-mtop-h5�
 - headers、metas、cookie 在同一轮运行/同一会话内动态生成
 - 最终业务接口不再返回 `bxpunish` / `x5secdata` / punish URL，返回正常业务 JSON、正常错误码或目标数据
 - 传输层与浏览器指纹相容；`140#` 等前缀属于案例观察形态，个别链路字段名或前缀可能不同，以当前目标实测为准
+
+## 提炼说明（670）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

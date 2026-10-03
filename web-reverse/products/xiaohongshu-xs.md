@@ -14,6 +14,9 @@ sources:
   basis: source-report
   citation: Spider_XHS 2026-08-18 只读对照（原归档记载）
   reason: 原归档明确记载对照项目名；仅保留非路径出处，省略本机定位，未提供公开原文 URL。
+- id: s2
+  ref: ../xiaohongshu-assembly-case.md#材料六桶
+  basis: source-report
 tags: []
 original_date: '2026-08-18'
 archived_date: '2026-08-30'
@@ -30,6 +33,15 @@ modules:
   - s1
   basis: source-report
   limits: 仅保留来源陈述；出处为文本 citation，缺少可定位公开原文，本轮未重验算法、运行时或当前服务端。 本节是验收口径，不代表这些条件本轮已经满足。
+- name: parameters
+  anchor: parameters
+  sources:
+  - s2
+  basis: source-report
+  limits: provenance 分类、失败行为与执行接口来自未公开定位的本地来源文章，未独立检查源树或复现；TTL、profile 与守卫条件不应外推到当前版本或服务端规则。
+relations:
+- type: supplements
+  target: ../xiaohongshu-assembly-case.md#材料六桶
 ---
 
 # 小红书 x-s / x-t / x-s-common
@@ -106,4 +118,25 @@ Creator：`appId=ugc`，无 0301。非 bootstrap 的 mns0101 必须把服务端 
 - 记录当前 `appId`、mns 档位、`dsl` 缓存时刻、`signCount`、是否带 RAP
 - `websectiga` / `_dsf` 失败时记 runtime-pending，不得用随机 Cookie 顶替
 
+<a id="parameters"></a>
+## 参数来源与失败闭合：来源报告增补
+
+下列细节来自 [装配案例](../xiaohongshu-assembly-case.md#材料六桶) 与同文的 Creator 执行边界。它们是未独立核验的实现报告，不是当前网站合同。
+
+来源文章将参数分为本地算法、对齐覆盖、生命周期状态、远端程序锚、服务端下发和用户交互六类；正文只给部分类别的具体失败行为：
+
+| 类别/材料 | 来源报告中的约束 |
+|---|---|
+| 本地算法 | 按状态机生成，不应每次随机 |
+| 远端程序锚 | DS 失败时使用已有缓存，否则失败关闭 |
+| 服务端下发 | 登录态缺少必需材料时抛错，不合成替代值 |
+| 用户交互 | 扫码、短信等交互结果不能在代码内伪造 |
+| 对齐覆盖、生命周期状态 | 只保留其为独立 provenance 类别；来源文章未给出可泛化的具体生成规则 |
+
+来源还报告 DS 锚 TTL 与接口 `cache-control max-age=300` 对齐，`getdss()` 从混淆 JS 提取 13 位时间戳；Creator 的特定 `mns0101` 路径要求 DS 程序交给 Node 执行并有超时/退出码门，`websectiga` 则是另一种 stdin JSON 与定长十六进制输出约束。这些实现条件来自来源文章，不足以证明当前端点行为或任何请求已被服务端接受。
+
 落地选型见 [平台签名落地方法](../sign-landing-methods.md)。
+
+## 提炼说明（700）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

@@ -171,3 +171,7 @@ bool InitializeICU() {
   return DoCommonInitialization();
 }
 ```
+
+## 提炼说明（259）
+archive-only。语言/时区与 IP 一致性见 js-browser-fingerprint。ICU/--timezone 补丁不另建卡。
+不收录时区 ID 或读文件补丁。

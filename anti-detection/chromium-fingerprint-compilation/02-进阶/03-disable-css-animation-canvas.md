@@ -181,3 +181,7 @@ V8RenderingContext* HTMLCanvasElementModule::getContext(
 
 ```
 
+
+## 提炼说明（265）
+archive-only。禁动画/Canvas 是采集降载开关，不是指纹 reference。
+不收录补丁或 CPU 百分比。远程图未审。

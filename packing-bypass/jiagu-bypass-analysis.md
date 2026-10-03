@@ -239,3 +239,8 @@ powershell -NoProfile -ExecutionPolicy Bypass -File "D:\reverse_ENV\skill\apk-re
 - [Qidian 请求签名分析](../signature-algorithms/qidian-fock-signature.md)
 - `D:\reverse_ENV\skill\apk-reverse\references\packing-and-unpacking.md`
 - `D:\reverse_ENV\tools\panda-dex-dumper\README.md`
+
+## 提炼说明（571）
+archive_only。
+Jiagu 终止链/prctl 与 panda 部分 DEX 恢复已成稿；Frida 会话未持久，不另建 bypass procedure。
+本轮不另建卡。

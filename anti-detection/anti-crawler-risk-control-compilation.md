@@ -55,3 +55,14 @@ archived_date: '2026-07-13'
 | 2026-07-01 | [网络指纹篇：TLS指纹、HTTP2指纹、IP信誉与代理检测](anti-crawler-risk-control-compilation/anti-crawler-risk-20260701-01.md) |
 | 2026-07-03 | [行为分析篇：如何模拟人类行为，避免行为模型检测？](anti-crawler-risk-control-compilation/anti-crawler-risk-20260703-01.md) |
 | 2026-07-04 | [综合实战篇：构建一个能够绕过大多数风控的智能爬虫系统](anti-crawler-risk-control-compilation/anti-crawler-risk-20260704-01.md) |
+
+## 提炼说明（229）
+archive-only。导航页仅 8 条目录，不是新模块。
+子篇 20260408–20260704 已在 220/223/226 逐篇 archive-only。
+
+## 同目录窄参考
+
+本段只挂同目录提炼卡。
+
+- [JA3、HTTP2 指纹与 IP 信誉的来源边界](anti-crawler-risk-control-compilation/anti-crawler-risk-20260701-01-reference.md)
+- [行为模型关注的维度和来源给出的时间范围](anti-crawler-risk-control-compilation/anti-crawler-risk-20260703-01-reference.md)

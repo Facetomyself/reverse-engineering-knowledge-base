@@ -559,3 +559,7 @@ https://bbs.kanxue.com/user-home-878476.htm
 
 
 **球点赞**
+
+## 提炼说明（724）
+retain_existing_reference。既有卡 native-analysis/vmp-trace-evidence-recovery-procedure.md。
+本轮不另建卡。不复制 Cookie/token/指纹原值。未审图片不作证据。

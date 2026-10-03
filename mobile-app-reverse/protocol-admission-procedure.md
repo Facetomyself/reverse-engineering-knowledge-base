@@ -114,3 +114,8 @@ tags: [protocol-admission, device-consistency, interceptor, host-routing, transp
 ## 适用边界
 
 来源给出的是方法论，未提供所有 App 的统一状态机。具体版本、SDK、传输与路由变化会使历史对照失效；该变化应触发新样本检查，而不是往本文填一套永久常量。需要协议客户端工程结构时，再查 [纯协议 SDK 重建](./pure-protocol-sdk-reconstruction.md)，不要把采集并发或产能当成准入完成标准。
+
+## 提炼说明（448）
+retain 既有准入 procedure。
+四门并联，非请求顺序。
+本轮不改正文结构。

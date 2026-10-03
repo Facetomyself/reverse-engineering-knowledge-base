@@ -80,3 +80,7 @@ send url
 ## 证据边界
 
 两包 JS 的函数体不入库。`aid=24` 只对当前 feed 调用点成立。本库没有重放头条接口。
+
+## 本轮提炼评估
+
+本篇暂作 archive-only，不提炼 `parameters`、`request-chain` 或 `procedure`。第 38 行称该 feed 同时带 `a_bogus` 与 `_signature`；第 57 行却称 `generate_sign(url)` 用于“另一条请求”，并把 `_signature` 放在未区分 query/header 的 `query_or_header`。现有材料未能判定两字段是否同属一个请求，也未能确认 `_signature` 的线上位置；不得据此补全请求链、参数位置或服务端行为。结论仍限于来源报告，未做运行时或服务端验证。

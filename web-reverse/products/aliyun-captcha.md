@@ -104,3 +104,7 @@ v2 滑块：
 v2 滑块至少同时满足：init 正常返回 StaticPath；sg 与 FeiLin 是当前 init 对应的动态脚本；设备日志已按真实顺序提交；verify 返回 JSON 且 Result 表示通过；回到业务接口后不再返回 WAF/处罚 HTML；业务字段或解密后的数据符合预期。
 
 1036/WAF 至少同时满足：`ssxmod_itna / ssxmod_itna2 / refer__1036` 与当前业务 req 同步生成；`acw_tc`、业务 Cookie、Header、TLS 指纹与当前会话一致；业务接口返回 JSON 而不是 HTML/WAF 页；加密业务响应能正常解密；业务状态码与数据符合目标接口预期。
+
+## 提炼说明（673）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

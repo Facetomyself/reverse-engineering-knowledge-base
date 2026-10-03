@@ -134,3 +134,8 @@ Query time就是dns的解析耗时，89毫秒。
 
 [ 爬虫小偏方系列：robots.txt快速抓取网站的小窍门
 ](http://mp.weixin.qq.com/s?__biz=MjM5NjE0NTY5OA==&mid=2448548110&idx=1&sn=eed95141eae2c24eec8cfe2ff927a971&chksm=b2e8fe43859f77554409558eb5f6b55012bd23112e079df53cb0b0819fe4186ac8984f411438&scene=21#wechat_redirect)
+
+## 提炼说明（376）
+archive-only。DNS 缓存随笔。
+不建爬虫运维卡。
+未审图片不作证据。

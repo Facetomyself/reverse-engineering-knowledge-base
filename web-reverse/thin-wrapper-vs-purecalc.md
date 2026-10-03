@@ -95,3 +95,7 @@ note(field):
 ```
 
 `status = boundary_known` 足够指导下一次抓包，不够指导「算法已经结束」。
+
+## 提炼说明（703）
+archive_only。方法论：薄封装、整包 execjs、纯算，三种完成度 保持 archive。
+本轮不另建卡。

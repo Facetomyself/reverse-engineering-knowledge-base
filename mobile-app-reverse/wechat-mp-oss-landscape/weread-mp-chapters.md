@@ -4,7 +4,7 @@ id: mobile-app-reverse-wechat-mp-oss-landscape-weread-mp-chapters
 document_type: archive
 scope:
   targets:
-  - wechat
+  - weread
   client: unknown
   version: unknown
   observed_at: unknown
@@ -99,3 +99,14 @@ CLI `public-accounts articles` 默认 20、`--limit` 最大 100，是产品上�
 不能声称：未入库号的完整历史；读书侧没有的旧文/删除文/付费私密文；永久零扫码；用官方 `wrk-` Skill 拉公众号；把 `-2041`/429 当临时网络错误轰炸。
 
 `getmsg` 的阅读量和精选评论仍要 WebView 凭证，读书列表替代不了那两套接口。
+
+<a id="extraction-review"></a>
+## 归档边界评估
+
+本文仅归档 WeRead 阅读业务会话中的 `/mp/chapters` 与 refreshToken 续期描述。路径中的 `mp` 和 `MP_WXS_` 命名不表示微信公众号后台通用接口，也不表示微信小程序 API；会话凭证属于 WeRead 阅读服务。
+
+本篇保留为 `archive-only`：稳定的微信会话平面已有[会话参考](../../protocols/wechat-mp-session-planes.md)覆盖，本来源未增加独立验证过的新模块。本文仍是 source-report，不代表当前服务端状态。
+
+## 提炼说明（721）
+archive_only。微信读书阅读会话/RefreshToken，不是公众号 MP 或小程序 API；wechat-mp session-planes 已覆盖 HTTP 面。
+本轮不另建卡。

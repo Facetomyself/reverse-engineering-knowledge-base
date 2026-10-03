@@ -141,3 +141,7 @@ ninja  -C  out/Default chrome
 *   https://abrahamjuliot.github.io/creepjs/
 *   https://ip77.net/  
     ![在这里插入图片描述](https://i-blog.csdnimg.cn/blog_migrate/ebe86493fdc451cdc2df00093fc0b18c.png)
+
+## 提炼说明（244）
+archive-only。Audio 检测面见 audio-fingerprint。sample_rate 偏移补丁不另建卡。
+不收录渲染脚本、hash 样值或 Blink 补丁。远程图未审。

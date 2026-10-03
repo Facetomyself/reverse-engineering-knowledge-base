@@ -72,3 +72,8 @@ bizlogin startlogin
 - 用 MP session 去调 `profile_ext/getmsg`。
 - 把停更仓库的 Stars 当健康指标。
 - 操作者没有后台资格时，对外说「扫个码就能拉任意号历史」。
+
+## 提炼说明（478）
+archive-only：list_ex 跨号 fail-closed。
+MP session 不能刷新 getmsg key。
+本轮不另建卡。

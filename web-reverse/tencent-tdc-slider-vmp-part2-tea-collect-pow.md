@@ -406,3 +406,10 @@ def get_workload_result(self, nonce, target, timeout=30000):
 ## 结果验证
 
 ![](tencent-tdc-slider-vmp-part2-tea-collect-pow/img-034.png)
+
+<a id="reference-extraction-211"></a>
+## 提炼说明
+
+本来源保留为完整 archive。按本批全文审查，将 CHAOS_VM 结构、条件插桩、>>>5、日志交 AI 找 key、collect 拼接+base64 与 pow md5(nonce+ans)，提炼为 [腾讯 TDC CHAOS_VM 魔改 TEA collect 与 pow 参考](./tencent-tdc-slider-vmp-part2-tea-collect-pow-reference.md)。
+
+命中特征与 ticket 口径仍见 [products/tencent-captcha.md](./products/tencent-captcha.md)。加法频率取 key 见 [XTEA 半纯算参考](./tencent-tdc-slider-xtea-purecalc-reference.md)。该 reference 只标记 source-report；未跑 tdc.js，不收录 key/collect/pow 样值，34 张图未审。

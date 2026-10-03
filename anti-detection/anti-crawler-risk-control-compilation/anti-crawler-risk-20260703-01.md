@@ -202,3 +202,7 @@ archived_date: '2026-07-13'
 
 行为模拟是猫鼠游戏中最耗精力的部分。  ** 没有银弹，只有持续优化  **
 。建议记录每次被拦截的场景，针对性调整参数。如果你有具体被检测的行为（比如鼠标轨迹被识别），欢迎继续交流。
+
+## 提炼说明（226）
+archive-only。拟人轨迹已有 cloakbrowser-humanize-trajectory-reference；输入对象见 event-input。
+不收录 Bezier/打字模拟代码。

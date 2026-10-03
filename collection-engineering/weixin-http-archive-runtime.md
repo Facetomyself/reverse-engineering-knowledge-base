@@ -32,7 +32,7 @@ archived_date: '2026-09-15'
 
 <details data-kb-history="legacy-metadata">
 <summary>历史来源记录（迁移前元数据，非当前真源）</summary>
-> 来源: `workspace/weixin_download` 落地实现
+> 来源: [本地路径已脱敏] 落地实现
 > 原始发布时间: 2026-07-16 至 2026-07-17
 > 归档日期: 2026-09-15
 > 分类: collection-engineering
@@ -63,3 +63,20 @@ archived_date: '2026-09-15'
 6. 认证类失败进 `AUTH_REQUIRED`，不进 retry queue。
 
 本实现有 33 个离线回归和 MCP transport smoke；`getmsg` 凭证窗口内的基础下载 live 过。P0 假成功（`ret!=0`、验证页、job `ok:false`）**尚未**修，复用时把这三条当必做门，不要复制旧终态。
+
+## 本轮评估：仅保留归档
+
+来源定位仍不可公开，底层实现与测试回执也不可见；source completeness 保持 `unknown`。历史来源指针已脱敏，以消除它与前置来源说明之间的矛盾。
+
+本文与高并发采集控制面、NAS marker/ACK 交付链主题相邻，但处理对象分别是 SQLite 文章 claim/MCP job、代理与请求并发、文件镜像交付状态，不能合并成同一套状态机。本轮不新建 reference 或 procedure；文内实现与测试描述仍为 `source-report`，未做 runtime、parity 或 server-accepted 验证。
+
+## 提炼说明（385）
+retain existing archive。父篇 69-71 已 archive-only。
+子篇 MCP/SQLite 已在 382 闭合。
+不把目录当模块。
+
+## 同目录窄参考
+
+本段只挂同目录提炼卡。
+
+- [MCP job 与文章 checkpoint 分离](weixin-http-archive-runtime/headless-mcp-jobs-reference.md)

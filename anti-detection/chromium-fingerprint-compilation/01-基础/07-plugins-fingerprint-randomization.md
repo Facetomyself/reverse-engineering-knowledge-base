@@ -136,3 +136,7 @@ ninja  -C  out/Default chrome
 
 *   https://abrahamjuliot.github.io/creepjs/
 *   https://ip77.net/
+
+## 提炼说明（244）
+archive-only。Plugins 枚举面见 js-browser-fingerprint。description 尾随机补丁不另建卡。
+不收录插件串、hash 样值或 Blink 补丁。远程图未审。

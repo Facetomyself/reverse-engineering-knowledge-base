@@ -111,3 +111,18 @@ README 写「全自动下载任意公众号」而实现是剪贴板 + 内置浏�
 ## 和 App 纯协议文档的关系
 
 公众号 Web 历史是 **HTTPS + 短时 Web 凭证**，不是设备注册四关。空壳诊断仍适用（[准入四关](./protocol-admission-four-gates.md) 的 `serverAccepted`），但不要把 `hardware-fp` / InnerSign 套到 `getmsg` 上。
+
+## 本次整理处置
+
+本合集保留为 archive-only：独有内容是截至 2026-09-13 的开源仓库对照，仓库状态、许可和复用建议具有时效性，原材料没有固定逐仓审阅 commit，本轮也未在线复核。稳定的 HTTP 接口和会话平面已由[公众号 HTTPS 接口面](../protocols/wechat-mp-http-surface.md)及[公众号五套会话](../protocols/wechat-mp-session-planes.md)覆盖；本合集不重复提炼 reference/procedure，也不把来源报告升级为当前可用性结论。
+
+## 提炼说明（478）
+TOC hub archive-only。
+五平面子文已逐篇处置。
+本轮不另建合集卡。
+
+## 同目录窄参考
+
+本段只挂同目录提炼卡。
+
+- [WeChat 4.x H5 调试面不是发证器](wechat-mp-oss-landscape/wmpf-h5-debug-plane-reference.md)

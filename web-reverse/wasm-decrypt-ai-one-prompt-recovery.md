@@ -275,3 +275,15 @@ function_0x3c5175() {
 ## 总结
 
 这次分析的过程也有不少感悟，我是先抠完JS让其正常运行后，再让AI分析得出的算法。其实换个思路，也可以尝试让AI通过MCP直接接管浏览器，自动加载JS、分析堆栈内容，进而给出算法，我觉得这也会是未来的发展趋势。不过这次分析的成本确实不低，总共耗时十五分钟左右，消耗了足足三百万token，说真的，这个量远超预期。要知道一百万token差不多要1美刀，可能也是我选用的旗舰模型最贵的原因，但这也能看出，成本现在确实是限制AI普及的问题之一，但要用肯定还是用最顶尖的模型，用那些个便宜的傻蛋你看一把能梭哈出来吗。
+
+<a id="reference-extraction-110"></a>
+## 提炼说明
+
+本来源保留为完整 archive。按本轮全文审查，仅将 JS wrapper 调用 WASM decrypt export、异步加载与本地同步实例化的边界，以及 AI 辅助分析的来源 provenance 提炼为[WASM decrypt loader 参考](./wasm-decrypt-loader-reference.md)。来源摘要中的 SM2/SM4 链和作者所称测试成功仍只作 `source-report` 叙述，不发布算法实现或可运行 signer/decryptor。
+
+本轮未下载或审查 30 张图片像素，不从图片、私钥前缀、密文、电话、目标地址、恢复代码或测试样例提取内容。没有实际 JS/WASM artifact、ABI、fixture、字节对拍、浏览器运行、local parity 或服务端业务回读，因此不登记 procedure、risk-control、runtime 或 server-accepted 结论。
+
+<a id="reference-extraction-214"></a>
+## 提炼说明（214）
+
+本批再次全文核验：loader / JS wrapper / 异步与同步实例化增量已由 #reference-extraction-110 覆盖，见 [WASM decrypt loader 参考](./wasm-decrypt-loader-reference.md)。kb_catalog.py query --tag WASM --type reference 另命中 wasm-js-fallback 版本边界卡。摘要中的 SM2（C1C3C2）→ SM4-ECB 链仍依赖未审 30 张图与缺失代码、私钥、密文/明文 fixture，不新增算法 reference。本轮未改图片，不解码目标站点 base64。

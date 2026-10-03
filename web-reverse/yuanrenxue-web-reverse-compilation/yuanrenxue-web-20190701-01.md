@@ -166,3 +166,7 @@ PS：最近晚上都忙着给跟着我学习爬虫的同学上课，上周只写
 
 [ 浅谈利用爬虫技术成就的那些商业公司
 ](http://mp.weixin.qq.com/s?__biz=MjM5NjE0NTY5OA==&mid=2448548376&idx=1&sn=5a2e18c1857671a4bc230b00a1920987&chksm=b2e8fd55859f7443b6c4dfab1e92e9db5b7b09fcf107d9be00d49690e76c2bae43e1373b4178&scene=21#wechat_redirect)
+
+## 提炼说明（706）
+archive_only。猿人学 Web 教学合集，不另建产品卡。
+本轮不另建卡。

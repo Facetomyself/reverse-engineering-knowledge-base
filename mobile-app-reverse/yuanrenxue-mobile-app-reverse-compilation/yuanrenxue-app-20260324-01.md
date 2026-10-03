@@ -156,3 +156,8 @@ extractNativeLibs=false  ，再来看一下效果。
   * BoringSSL 源码：  https://boringssl.googlesource.com/boringssl
 
   * 修改后的实现:  https://github.com/Litt1eQ/ecapture
+
+## 提炼说明（556）
+archive_only。
+AI+IDA MCP 定位 stripped libflutter.so SSL_write/SSL_read 文件偏移后用修改版 eCapture uprobe；16 张远程图未审，偏移与设备路径为单次样例。
+本轮不另建卡。

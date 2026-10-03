@@ -233,3 +233,14 @@ data 主要是对轨迹信息进行加密
 ## 结果验证
 
 ![](aliyun-captcha-v2-slider-part2-dynamic-keys/img-016.png)
+
+<a id="reference-extraction-120"></a>
+## 提炼说明
+
+本来源保留为完整 archive。按本轮全文审查，仅将 FeiLin/sg 动态 key 的版本分叉、`SessionId` 与动态值的来源关系、`deviceToken` / 轨迹 `data` 的高层组成，以及它们进入 Log2 与 `CaptchaVerifyParam` 的角色交接提炼为[阿里云验证码 V2 动态 key 与末段参数参考](./aliyun-captcha-v2-dynamic-keys-reference.md)。上篇参数与状态机仍以既有 reference 为检索入口，本卡不重复建立通用验证码流程。
+
+技术叙述仍为 `source-report`；本轮不复制 key、iv、固定密钥、token、Cookie、设备/IP、轨迹、密文或请求样值，也不从来源保留的 16 张未做像素审查的图片提取结论。未运行浏览器/JavaScript、Hook、请求重放、local parity 或业务读回，不构成 signer、procedure、risk-control 规则或 server-accepted 事实。
+
+## 提炼说明（730）
+retain_existing_reference。既有卡 web-reverse/aliyun-captcha-v2-dynamic-keys-reference.md。
+本轮不另建卡。不复制 Cookie/token/指纹原值。未审图片不作证据。

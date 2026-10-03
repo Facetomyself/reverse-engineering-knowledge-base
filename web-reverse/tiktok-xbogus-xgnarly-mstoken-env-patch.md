@@ -347,3 +347,10 @@ strData长度应该在5000左右，那么加密的环境也不会短
 ![](tiktok-xbogus-xgnarly-mstoken-env-patch/img-035.png)
 
 算法还在研究，学学人家写了个ast代码插桩但是只能把方法插出来，想把逻辑运算也插出来但一直有问题啊难受啊！！
+
+<a id="reference-extraction-208"></a>
+## 提炼说明
+
+本来源保留为完整 archive。按本批全文审查，将 webmssdk 生成 `byted_acrawler`、init 多次重写 fetch、补环境后导出两个加密函数、report 响应头下发 msToken，以及 VMP 寄存器函数按长度条件断点收窄 strData，提炼为 [TikTok webmssdk 补环境导出与 strData 定位参考](./tiktok-xbogus-xgnarly-mstoken-env-patch-reference.md)。
+
+path 路由与字段合同仍见 [tiktok-web-signing-planes-reference.md](./tiktok-web-signing-planes-reference.md)。该 reference 只标记 `source-report`；未运行 SDK、浏览器或评论接口，不收录 msToken/X-Bogus/X-Gnarly/strData 样值，35 张图未审。

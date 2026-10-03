@@ -103,3 +103,7 @@ modules:
 ## 验证口径
 
 按顺序验证：session refresh（拿到 sessionId/jwtToken）→ /api/fp（code=0、st/fp）→ 题面阶段（tp/img）→ 答案 check（code=0 且 vt 非空）→ 同会话立即注入登录。登录接口越过"图形验证码参数校验失败"、返回账号密码错误、newSafeVerify 或安全验证时，说明 JCAP 链已进入业务层；后续问题属于账号态或业务安全验证。
+
+## 提炼说明（685）
+retain_existing_reference。已有 v2 reference。
+本轮不另建卡。不复制 Cookie/token/指纹原值。

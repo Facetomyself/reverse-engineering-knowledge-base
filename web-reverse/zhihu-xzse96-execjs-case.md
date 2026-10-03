@@ -37,6 +37,7 @@ archived_date: '2026-09-23'
 >
 > 知乎评论接口的鉴权头在这份对照仓里不是纯算。Python 编译整包 `static/zhihu.js`，把 URL 和 Cookie 里的 `d_c0` 交给导出函数 `tv`，再给返回的 signature 加上 `2.0_` 前缀。
 
+<a id="comment-header"></a>
 ## 案例：评论头
 
 `utils/zhihu_utils.py`：
@@ -73,3 +74,11 @@ GET comment API with Cookie
 ## 误用
 
 把 `d_c0` 随机生成、用未登录 Cookie、或把 `x-zse-96` 留空，请求会在签名层失败。这和评论翻页逻辑无关。`zhihu.js` 的函数体不入库。
+
+## 关联提炼
+
+- [知乎 Web x-zse-96 ExecJS 参考](./zhihu-xzse96-execjs-reference.md#interfaces)：只拆评论相关接口面、URL/query 与 `tv` 输入结构、whole-bundle 请求链；不复制 Cookie、user、signature 样值或 bundle 内容。
+
+## 提炼说明（742）
+retain_existing_reference。既有卡 web-reverse/zhihu-xzse96-execjs-reference.md。
+本轮不另建卡。不复制 Cookie/token/指纹原值。未审图片不作证据。
