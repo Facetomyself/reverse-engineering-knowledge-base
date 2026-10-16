@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "article_count": 955,
+  "article_count": 957,
   "category_counts": {
     "anti-detection": 302,
     "collection-engineering": 12,
@@ -10,7 +10,7 @@
     "packing-bypass": 5,
     "protocols": 3,
     "signature-algorithms": 41,
-    "web-reverse": 264
+    "web-reverse": 266
   },
   "records": [
     {
@@ -53783,9 +53783,9 @@
         "结论",
         "验证与限制"
       ],
-      "bytes": 7386,
+      "bytes": 7499,
       "lines": 113,
-      "content_sha256": "51f671e55fd85e4f717afb0d2773c4dfbca1c4c91a9e167f11a53ffa6aebf9d7",
+      "content_sha256": "81a23283a5662d3cfa30a73e7854d0d30705cccae4ff2b8217b1f15882eee4b3",
       "metadata_status": "v2",
       "schema_version": 2,
       "id": "akamai-sensor-field-shapes-reference",
@@ -58815,6 +58815,195 @@
         "request-chain"
       ],
       "source_completeness": "unknown",
+      "metadata_errors": []
+    },
+    {
+      "path": "web-reverse/google-search-sgss-recaptcha-sample-case.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "Google 搜索 SG_SS 与 reCAPTCHA Enterprise 样本能力（案例）",
+      "source": "./google-search-sgss-recaptcha-sample-source-archive.md#source-body; https://github.com/QS-qinshaowen/Coding",
+      "original_date": "unknown",
+      "archive_date": "2026-10-16",
+      "summary": "范围限定为公开仓库 QS-qinshaowen/Coding（main / fdee33e）展开后的三份实现：reCAPTCHA Enterprise 用户验证入口、Chrome CDP SG_SS RPC、iv8 SG_SS 客户端。操作是静态阅读加本机语法/依赖检查；不对 www.google.com / www.google.com.hk 发搜索或验证码请求。reCAPTCHA v3 invisible 的产品口径仍以 Google reCAPTCHA v3 / invisible 为准，本文不把 Enterprise userverify 链与 v3 reload/rresp 合并，也不与知识库中尚未入库的 reCAPTCH",
+      "keywords": [
+        "interfaces",
+        "parameters",
+        "request-chain",
+        "SG_SS",
+        "userverify",
+        "static-review"
+      ],
+      "headings": [
+        "问题与范围",
+        "接口",
+        "参数",
+        "请求链",
+        "风控面",
+        "结论与反例",
+        "未决项与复用启示"
+      ],
+      "bytes": 7202,
+      "lines": 122,
+      "content_sha256": "15d8d42a5ab7cc2d7cd5a416511e3d30fa386484ca6746cfc57c797207551c0d",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "web-reverse-google-search-sgss-recaptcha-sample-case",
+      "document_type": "case",
+      "scope": {
+        "targets": [
+          "google-search",
+          "google-recaptcha"
+        ],
+        "client": "web",
+        "version": "unknown",
+        "observed_at": "2026-10-16"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": "./google-search-sgss-recaptcha-sample-source-archive.md#source-body",
+          "basis": "source-report"
+        },
+        {
+          "id": "s2",
+          "ref": "https://github.com/QS-qinshaowen/Coding",
+          "basis": "static-review"
+        }
+      ],
+      "modules": [
+        {
+          "name": "interfaces",
+          "anchor": "interfaces",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "basis": "static-review",
+          "limits": "只覆盖样本声明的本机 RPC/CDP 口与 Python 类方法；未把该口接到当前 Google 搜索页。"
+        },
+        {
+          "name": "parameters",
+          "anchor": "parameters",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "basis": "static-review",
+          "limits": "只登记 SG_SS / userverify token 的角色与读取位置；不含算法恢复或样值。"
+        },
+        {
+          "name": "request-chain",
+          "anchor": "request-chain",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "basis": "static-review",
+          "limits": "静态阅读样本控制流；本轮未对 Google 发搜索或 recaptcha 请求。"
+        },
+        {
+          "name": "risk-control",
+          "anchor": "risk-control",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "basis": "static-review",
+          "limits": "记录样本自称的隔离上下文、离线代理与 UA 画像；未验证这些选择对服务端评分的作用。"
+        },
+        {
+          "name": "validation",
+          "anchor": "validation",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "basis": "static-review",
+          "limits": "模块按静态阅读登记。本轮本机探测回执留在项目笔记，不作为 Public runtime-observation 来源，也不把打包 JSON 升为当前服务端接受。"
+        }
+      ],
+      "relations": [
+        {
+          "type": "derived_from",
+          "target": "./google-search-sgss-recaptcha-sample-source-archive.md#source-body"
+        },
+        {
+          "type": "supplements",
+          "target": "./products/google-recaptcha-v3.md#验证口径"
+        }
+      ],
+      "tags": [
+        "google-search",
+        "google-recaptcha",
+        "SG_SS",
+        "enterprise",
+        "iv8",
+        "CDP",
+        "static-review"
+      ],
+      "source_completeness": "unknown",
+      "metadata_errors": []
+    },
+    {
+      "path": "web-reverse/google-search-sgss-recaptcha-sample-source-archive.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "Google 搜索 SG_SS 与 reCAPTCHA Enterprise 样本（来源归档）",
+      "source": "https://github.com/QS-qinshaowen/Coding",
+      "original_date": "unknown",
+      "archive_date": "2026-10-16",
+      "summary": "公开仓库 QS-qinshaowen/Coding 在 main / fdee33e 以四个 zip 交付。展开后 Google/ 目录无可读实现；sgss_chrome README 提到的 test_rpc.py、examples/*.html、start.command 不在 zip 内。macOS MACOSX 元数据已忽略。token、Cookie、指纹 JSON 原值与 sitekey 常量不进入本文。完整性 partial。",
+      "keywords": [
+        "SG_SS",
+        "enterprise",
+        "iv8",
+        "CDP",
+        "source-report",
+        "partial"
+      ],
+      "headings": [
+        "清洗与完整性说明",
+        "来源正文（结构摘要）"
+      ],
+      "bytes": 2240,
+      "lines": 35,
+      "content_sha256": "6a8e69fc08219c1dd11186f882f652a093d2bd3b08cd3286d76e165c92bdda2b",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "web-reverse-google-search-sgss-recaptcha-sample-source-archive",
+      "document_type": "archive",
+      "scope": {
+        "targets": [
+          "google-search",
+          "google-recaptcha"
+        ],
+        "client": "web",
+        "version": "unknown",
+        "observed_at": "2026-10-16"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": "https://github.com/QS-qinshaowen/Coding",
+          "basis": "source-report"
+        }
+      ],
+      "modules": [],
+      "relations": [],
+      "tags": [
+        "google-search",
+        "google-recaptcha",
+        "SG_SS",
+        "enterprise",
+        "iv8",
+        "CDP",
+        "source-report",
+        "partial"
+      ],
+      "source_completeness": "partial",
       "metadata_errors": []
     },
     {

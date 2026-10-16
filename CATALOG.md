@@ -16,9 +16,9 @@
 | `packing-bypass` | 5 | 0 | 5 |
 | `protocols` | 3 | 0 | 3 |
 | `signature-algorithms` | 11 | 30 | 41 |
-| `web-reverse` | 114 | 150 | 264 |
+| `web-reverse` | 116 | 150 | 266 |
 
-文章总数：955。
+文章总数：957。
 
 ## 逐篇目录
 
@@ -798,6 +798,8 @@
 | 主文 | 2026-09-23 | [方法论：缺字段失败，成功口径分开写](./web-reverse/fail-closed-completion-gate.md) | — | 失败要发生在发送之前 / 三层完成门 / 伪代码：验收记录 / 本轮审阅处置（2026-10-01） |
 | 主文 | 2026-08-18 | [飞书案例：HTTP CSRF 与 frontier WebSocket 分链](./web-reverse/feishu-csrf-frontier-case.md) | — | 案例：CSRF 再取用户 / 案例：frontier 长连 / 落地判断 / 证据边界 |
 | 主文 | 2026-10-01 | [飞书 Frontier WebSocket 请求链参考](./web-reverse/feishu-frontier-request-chain.md) | — | 接口面 / Frontier 请求链 / 证据与边界 |
+| 主文 | unknown | [Google 搜索 SG_SS 与 reCAPTCHA Enterprise 样本能力（案例）](./web-reverse/google-search-sgss-recaptcha-sample-case.md) | — | 问题与范围 / 接口 / 参数 / 请求链 |
+| 主文 | unknown | [Google 搜索 SG_SS 与 reCAPTCHA Enterprise 样本（来源归档）](./web-reverse/google-search-sgss-recaptcha-sample-source-archive.md) | — | 清洗与完整性说明 / 来源正文（结构摘要） |
 | 主文 | 2026-01-14 | [hCaptcha 无感 hsw.js / WASM 出 n 与环境检测点参考](./web-reverse/hcaptcha-invisible-hsw-env-patch-reference.md) | — | 无感链路与 n 入口 / 字段角色 / 插桩对照与检测点 / 验证与限制 |
 | 主文 | 2026-01-14 | [hCaptcha 无感验证补环境：hsw.js / WASM 出 n 值的入口定位与环境检测点](./web-reverse/hcaptcha-invisible-hsw-env-patch.md) | — | 收录说明 / 隐私清理与完整性 / 声明 / 前言 |
 | 主文 | 2026-08-18 | [Instagram 案例：HTML 抽 app_id 与 doc_id](./web-reverse/instagram-doc-id-case.md) | — | 案例：从用户名到时间线 / csrf 辅助函数没有接上主路径 / 伪代码 / 证据边界 |

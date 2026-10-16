@@ -1,6 +1,6 @@
 # 逆向知识库文章索引
 
-> 更新于 2026-10-03 ｜ 来源: `article/`
+> 更新于 2026-10-16 ｜ 来源: `article/`
 >
 > 本文件维护 canonical 入口与技术标签；合集子文章详见 [CATALOG.md](./CATALOG.md)，机器读取使用 [`catalog.json`](./catalog.json)。
 >
@@ -265,6 +265,8 @@
 | [js-obfuscation-boundaries-reference.md](./web-reverse/js-obfuscation-boundaries-reference.md) | 教学整理 | `obfuscation`, `compression`, `encryption`, `parameters` | 混淆、压缩与 encryption 可同时出现但不是同一类 |
 | [v2pro-env-completion-case.md](./web-reverse/v2pro-env-completion-case.md) | 教学整理 | `v2pro`, `validation`, `env-completion` | 补环境的成功是看到数据；只有验证通过不算成功 |
 | [v2-slider-local-analysis-case.md](./web-reverse/v2-slider-local-analysis-case.md) | 教学整理 | `v2-slider` | 网页端 V2 滑块的本地分析停在未命名参数、未完成轨迹和点击注入 |
+| [google-search-sgss-recaptcha-sample-source-archive.md](./web-reverse/google-search-sgss-recaptcha-sample-source-archive.md) | QS-qinshaowen/Coding（公开 zip 样本，partial） | `SG_SS`, `enterprise`, `iv8`, `CDP`, `source-report`, `partial` | 搜索 SG_SS 与 Enterprise userverify 样本结构摘要；缺测试/示例文件与 Google/ 实现，不含 token/sitekey |
+| [google-search-sgss-recaptcha-sample-case.md](./web-reverse/google-search-sgss-recaptcha-sample-case.md) | QS-qinshaowen/Coding（静态阅读） | `interfaces`, `parameters`, `request-chain`, `SG_SS`, `userverify`, `static-review` | 本机 RPC/iv8/Enterprise 入口与 Windows Chrome launcher 退出点；未打 Google，不与 v3 reload/rresp 或 73 VMP 合并 |
 
 ---
 
@@ -320,6 +322,7 @@
 - **AWS WAF aws-waf-token 来源归档（Present 输入表述冲突；未作算法或服务端验收）**: [aws-waf-token](./web-reverse/aws-waf-token-challenge-purecalc.md)
 - **WASM 内 SM2（C1C3C2，硬编码私钥）解出 SM4 key → SM4-ECB + PKCS7**: [wasm-ai-sm2-sm4](./web-reverse/wasm-decrypt-ai-one-prompt-recovery.md)
 - **易盾自定义 xor-b64 / 非标准 AES / 47 维轨迹特征**: [products](./web-reverse/products.md)
+- **Google 搜索 SG_SS cookie / Enterprise userverify 样本结构**: [google-search-sgss-recaptcha-sample-case](./web-reverse/google-search-sgss-recaptcha-sample-case.md), [google-search-sgss-recaptcha-sample-archive](./web-reverse/google-search-sgss-recaptcha-sample-source-archive.md)
 
 ### 协议
 - **TLS 1.3 变体**: [mmtls](./protocols/mmtls-protocol-analysis.md)
@@ -465,6 +468,7 @@
 - **瑞数 RS6**: [products](./web-reverse/products.md)
 - **爱给网（aigei.com / fd.aigei.com / GeiFileLocalStore）**: [aigei-safe-search-reference](./web-reverse/aigei-safe-search-ticket-chain-reference.md), [aigei-safe-search](./web-reverse/aigei-safe-search-ticket-chain.md)
 - **Google reCAPTCHA v3 / invisible reload/rresp / Node 请求面**: [google-recaptcha-v3](./web-reverse/products/google-recaptcha-v3.md), [products](./web-reverse/products.md)
+- **Google reCAPTCHA Enterprise userverify / 搜索 SG_SS（样本静态阅读）**: [google-search-sgss-recaptcha-sample-case](./web-reverse/google-search-sgss-recaptcha-sample-case.md), [google-search-sgss-recaptcha-sample-archive](./web-reverse/google-search-sgss-recaptcha-sample-source-archive.md)
 - **hCaptcha（hsw.js / checksiteconfig / Steam 注册页）**: [hcaptcha-hsw-env-reference](./web-reverse/hcaptcha-invisible-hsw-env-patch-reference.md), [hcaptcha-hsw-env](./web-reverse/hcaptcha-invisible-hsw-env-patch.md)
 - **Amazon AWS WAF（aws-waf-token 来源文章；partial/archive-only）**: [aws-waf-token](./web-reverse/aws-waf-token-challenge-purecalc.md)
 - **阿里（ACW/H5Sec/BxUA/验证码/MTOP H5 / App 四头）**: [51job-anti-detection](./anti-detection/51job-anti-detection-analysis.md), [products](./web-reverse/products.md), [aliyun-captcha-v3-slider-reference](./web-reverse/aliyun-captcha-v3-login-slider-reference.md), [aliyun-captcha-v3-slider](./web-reverse/aliyun-captcha-v3-login-slider.md), [alibaba-mtop-h5](./web-reverse/products/alibaba-mtop-h5.md), [alibaba-mtop-four-headers](./signature-algorithms/alibaba-mtop-four-headers.md), [aliyun-v2-part1](./web-reverse/aliyun-captcha-v2-slider-part1-request-chain.md), [aliyun-v2-part2](./web-reverse/aliyun-captcha-v2-slider-part2-dynamic-keys.md)
