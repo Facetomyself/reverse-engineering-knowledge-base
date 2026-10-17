@@ -23,23 +23,31 @@ sources:
   - id: s4
     ref: "./anti-crawler-web-20250923-01.md#第四篇akamai难点第四弹获取xck字典后的混淆解密思路"
     basis: source-report
+  - id: s5
+    ref: "../purecalc-akamai-sensor-data-source-archive.md#sensor-data-generation"
+    basis: source-report
 modules:
   - name: parameters
     anchor: parameters
-    sources: [s1, s2, s3, s4]
+    sources: [s1, s2, s3, s4, s5]
     basis: source-report
-    limits: 只整理来源对字段形状的描述。UA、屏幕、插件串、字符表、ver 样例和生成样例都不收录。hh 下标未展开。没有运行，也不把作者的生成成功写成验收。
+    limits: 只整理来源对字段形状与变换链的描述。UA、屏幕、插件串、字符表、ver 样例、生成样例和事件轨迹都不收录。hh 下标未展开。s5 的 opcode 数、312 组对拍和浏览器匹配属于作者自述；没有运行，不把生成结果写成验收，且来源报告本地值未被服务端接受。
 relations:
   - type: derived_from
     target: "./anti-crawler-web-20250923-01.md#第四篇akamai难点第四弹获取xck字典后的混淆解密思路"
+  - type: derived_from
+    target: "../purecalc-akamai-sensor-data-source-archive.md#sensor-data-generation"
 tags:
   - akamai
   - sensor-data
+  - dvc
+  - vmp
+  - purecalc
   - source-report
 ---
 # Akamai 来源里的 sensor 字段形状
 
-这张卡只回答来源如何描述 dvc、ajr、ffs/inf、xCK 的键，以及 JSON 字符串之后的置换和前缀。POST、Cookie 更新和通过条件仍看产品卡的链路和验收，不在这里重复。环境字面量、字符表和生成样例都不抄。
+这张卡回答来源如何描述 dvc、ajr、ffs/inf、xCK 的键，以及 JSON 字符串之后的置换和前缀；新增来源补充 `sensor_data` 变换链与 `mst.dvc` 首段 VMP 的自述。POST、Cookie 更新和通过条件仍看产品卡的链路和验收，不在这里重复。环境字面量、字符表和生成样例都不抄。
 
 <a id="parameters"></a>
 ## 字段形状
@@ -84,6 +92,10 @@ cMK 进入 L7 时，鼠标串被写成空串，设备数据先经过 WL。nZK �
 
 > 这里就是生成了sensor_data的前缀
 
+### 纯算来源补充
+
+新增来源把 `sensor_data` 描述为明文对象序列化后，经 `key1` 重排和 `key0` 字符替换，再与版本/计时状态段拼接；它还称 `mst.dvc` 首段由 VMP 产生，并以 hash 和自定义字符表得到输出。该来源的动态样值、字符表和实现均未保留，以下结论仅作来源定位。
+
 ### 结论
 
 | claim_id | 结论 | 来源与定位 | basis | 适用范围 | 限制 |
@@ -105,9 +117,13 @@ cMK 进入 L7 时，鼠标串被写成空串，设备数据先经过 WL。nZK �
 | C15 | `qW[rq] = qW[SP]`。Mq 把字符串按冒号切开，再交换两段。 | ./anti-crawler-web-20250923-01.md:325 | source-report | parameters | k9 的多数更新式写成 hh[n]，不能当成已展开的常数。 |
 | C16 | `这里就是生成了sensor_data的前缀`。nvK 的结果被来源称为 sensor_data 的前缀，再与耗时串和正文用分号接上。 | ./anti-crawler-web-20250923-01.md:344 | source-report | parameters | 生成成功只是作者自述。 |
 | C17 | `JSON']['stringify'](xCK)`。进入 Mq 之前，来源先把 xCK 做成 JSON 字符串。 | ./anti-crawler-web-20250923-01.md:305 | source-report | parameters | 未对照浏览器里的 POST 正文。 |
+| C18 | 明文对象经 `JSON.stringify`、`key1` 重排，再由 `key0` 做字符替换后与版本/状态段拼接为 `sensor_data`。 | ../purecalc-akamai-sensor-data-source-archive.md#sensor-data-generation | source-report | parameters | 只保留来源描述；不含密钥、字符表、动态字段或密文样本，也未独立复现。 |
+| C19 | 来源把 `mst.dvc` 首段归为 VMP 输出，并称其纯算依赖 User-Agent、起始时间和事件数等输入。 | ../purecalc-akamai-sensor-data-source-archive.md#dvc-vmp | source-report | parameters | 算法细节和样本均已省略；不外推到其他版本或部署。 |
+| C20 | 作者报告已判定 42 个 opcode、运行时 trace 与静态反汇编吻合，且 312 组纯算对拍及一条浏览器观测值相同。 | ../purecalc-akamai-sensor-data-source-archive.md#validation-and-limits | source-report | parameters | 这是来源自述；未提供可审计测试夹具、trace 或实现，本轮未复跑。 |
+| C21 | 来源称本地生成的 `sensor_data` 未被服务端接受，并用反解作本地与浏览器明文对象的逐字段比较。 | ../purecalc-akamai-sensor-data-source-archive.md#validation-and-limits | source-report | parameters | 不含目标版本、请求、Cookie 或环境样本；没有服务端接受结论。 |
 
 ## 验证与限制
 
-产品卡已经有 request-chain 和 validation。本篇的增量是字段形状，不补进那两节，也不另建同名模块。
+产品卡已经有 request-chain 和 validation。本篇的增量是字段形状、序列化后的来源描述和 DVC/VMP 边界，不补进那两节，也不另建同名模块。
 
-插桩只被说成在若干日志断点上看输入输出，没有可引用的脚本位置，所以不建 decision-flow。hh 数组没有展开。作者写生成成功，这里保持 source-report。
+插桩只被说成在若干日志断点上看输入输出，没有可引用的脚本位置，所以不建 decision-flow。hh 数组没有展开。两组来源的算法、成功和 parity 描述都保持 `source-report`；新来源明确记录本地生成值未获服务端接受，不宣称端到端通过。

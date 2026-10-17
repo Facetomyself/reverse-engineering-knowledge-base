@@ -1,6 +1,6 @@
 # 逆向知识库文章索引
 
-> 更新于 2026-10-16 ｜ 来源: `article/`
+> 更新于 2026-10-17 ｜ 来源: `article/`
 >
 > 本文件维护 canonical 入口与技术标签；合集子文章详见 [CATALOG.md](./CATALOG.md)，机器读取使用 [`catalog.json`](./catalog.json)。
 >
@@ -29,6 +29,9 @@
 | [mihomo-dialer-proxy-chain.md](./collection-engineering/mihomo-dialer-proxy-chain.md) | — (GitHub 归档) | `Clash Verge`, `Mihomo`, `dialer-proxy`, `relay`, `Chain-Front`, `TUN fake-ip`, `preproxy`, `mihomo_fanout` | Mihomo 链式代理：`dialer-proxy` 替代已废弃 `relay`、Clash Verge 全局脚本的日常分流模型，以及它与采集器 `--preproxy` / 隔离 sidecar 的合同边界 |
 | [mihomo-proxy-plane-boundaries-reference.md](./collection-engineering/mihomo-proxy-plane-boundaries-reference.md) | Mihomo（来源报告） | `interfaces`, `request-chain`, `validation`, `dialer-proxy`, `preproxy`, `sidecar`, `route-identity`, `source-report` | 区分内核链、客户端级联与隔离 sidecar 的建链者、出口身份和生命周期；relay 可达不等于供应商出口已验收，不含凭据或运行验证 |
 | [weixin-http-archive-runtime.md](./collection-engineering/weixin-http-archive-runtime.md) | weixin_download（来源报告） | `SQLite`, `BEGIN IMMEDIATE`, `claim_token`, `heartbeat`, `durable retry`, `MCP job`, `stdio`, `Streamable HTTP`, `archive-only` | 短时会话归档的 SQLite claim/MCP job 来源文章；底层实现和测试回执不可见，来源指针已脱敏，保留 source-report，不新建 reference/procedure |
+| [scrapling-0.4.15-readout.md](./collection-engineering/scrapling-0.4.15-readout.md) | Scrapling 0.4.15（静态阅读，partial） | `relocate`, `find_similar`, `elements_storage`, `Spider`, `source-report`, `static-review` | 0.4.15 选段阅读：列表重定位默认阈值 40、浏览器 fetcher、Spider 默认 4 并发与阻塞重试；不收录整包，不把作者宣传写成绕过 |
+| [html-list-selector-relocate.md](./collection-engineering/html-list-selector-relocate.md) | 来源提炼（HTML 列表） | `decision-flow`, `replay_frozen`, `threshold 75`, `content_invalid`, `source-report` | 选择器变更先冻结体回放；relocate 低于 75 则 matches 为空；薄列是 content_invalid，不是 serverAccepted |
+| [generic-spider-vs-bounded-collector.md](./collection-engineering/generic-spider-vs-bounded-collector.md) | Scrapling Spider 0.4.15（静态阅读） | `risk-control`, `maxItems`, `minDelaySec`, `oneSession`, `407`, `444`, `AIMD` | 对照 Spider 默认并发、download_delay=0 和三次阻塞重试；407 仍记 transport，444 仍记 blocked |
 
 ### 反检测/风控对抗 (`article/anti-detection/`)
 
@@ -57,6 +60,10 @@
 | [tls-fingerprint-reference.md](./anti-detection/tls-fingerprint-reference.md) | 教学整理 | `tls`, `fingerprint`, `integrity`, `parameters`, `risk-control` | TLS 指纹检查项是否齐全和顺序是否一致，并区分前后两代结构与栈差异 |
 | [browser-fingerprint-linkage-reference.md](./anti-detection/browser-fingerprint-linkage-reference.md) | 教学整理 | `fingerprint`, `linkage`, `risk-control` | 指纹变化后的关联、唯一性不等于不可伪造，以及同配置碰撞 |
 | [js-browser-fingerprint-reference.md](./anti-detection/js-browser-fingerprint-reference.md) | 教学整理 | `browser-fingerprint`, `cookie`, `parameters`, `risk-control` | JS 指纹相对 cookie 与 IP；一致性要求改一项必须与其余匹配 |
+| [shumei-js-format-detection.md](./anti-detection/shumei-js-format-detection.md) | — (本地笔记，无公开链接) | `数美`, `isJsFormat`, `captcha-sdk`, `toString`, `DES`, `source-report` | v1.0.4-208 captcha SDK：诱饵函数源码行数大于 2 视为格式化；命中后换 DES 密钥。不是 deviceprofile/v4，密钥字节不在来源里 |
+| [shumei-js-format-detection-reference.md](./anti-detection/shumei-js-format-detection-reference.md) | 来源提炼（source-report） | `risk-control`, `shumei-captcha`, `isJsFormat`, `DES`, `source-report` | 只登记行数检测和密钥切换的来源陈述；未加载 SDK，不把恒返回 false 写成已验收绕过 |
+| [third-party-browser-fetcher-boundaries.md](./anti-detection/third-party-browser-fetcher-boundaries.md) | Scrapling 0.4.15（静态阅读） | `Playwright`, `Patchright`, `CDP`, `Camoufox`, `PagesCount`, `source-report` | DynamicFetcher / StealthyFetcher 不进采集运行时；过检测与 Cloudflare 保持作者自述 |
+| [page-text-before-llm.md](./anti-detection/page-text-before-llm.md) | 来源提炼（页面文本） | `decision-flow`, `aria-hidden`, `template`, `prompt-injection`, `source-report` | 送模型前的最小清洗；class 隐藏和低对比度文字仍会漏过，清洗通过不是内容可信 |
 
 
 ### 签名算法 (`article/signature-algorithms/`)
@@ -99,6 +106,7 @@
 | [xfq-unidbg-native-compilation.md](./native-analysis/xfq-unidbg-native-compilation.md) | — (知识星球归档) | `Unidbg`, `JNI`, `Gadget`, `xfqtrace`, `ELF`, `so注入`, `jnilog` | 逆向学习交流 12 篇 Unidbg/Native 笔记：调用栈、内存读写坑、JNI 注入与 xfqtrace/Gadget，不收录未开源工具本体 |
 | [nuitka-onefile-payload-recovery.md](./native-analysis/nuitka-onefile-payload-recovery.md) | weixin_download | `Nuitka`, `onefile`, `RT_RCDATA`, `KAY`, `Zstandard`, `python310.dll`, `constants` | Windows Nuitka onefile：外层 RCDATA 高熵 payload（本样本 KAY+zstd）放出第二层 native 主程序；无 PYC 全集，只做 constants/协议字符串，不宣称还原源码 |
 | [nuitka-onefile-payload-recovery-procedure.md](./native-analysis/nuitka-onefile-payload-recovery-procedure.md) | 来源提炼（source-report） | `parameters`, `decision-flow`, `validation`, `source-report`, `nuitka`, `onefile`, `zstandard` | 这份流程只回答来源自己如何区分 Nuitka --onefile 和外层释放器，以及它把什么当成做完。它不还原 .py，也不覆盖微信公众号 HTTP 面；那两张卡的目标是 wechat-official-account。query --target "Nuitka onefil… |
+| [kanxue-keymint-ta-rkp-signing-oracle.md](./native-analysis/kanxue-keymint-ta-rkp-signing-oracle.md) | 看雪 thread-293244 | `KeyMint`, `RKP`, `CDI_Leaf`, `keybox`, `QSEE`, `MINK IPC`, `source-report` | 归档作者把 QTI KeyMint TA 的 `GENERATE_CSR_V2(0x3122)` 当 RKP 签名 oracle 的来源陈述；附件 zip 未本地化，偏移与 0.3.23 窗口未复核 |
 
 ### 移动 App 逆向 (`article/mobile-app-reverse/`)
 
@@ -137,6 +145,13 @@
 | [uiautomator-privacy-consent-tap.md](./mobile-app-reverse/uiautomator-privacy-consent-tap.md) | — (知识星球归档) | `uiautomator`, `adb input tap`, `隐私协议`, `pm clear`, `设备注册`, `UI dump` | 首次启动隐私/权限弹窗：uiautomator dump 解析 bounds，对「同意/允许」中心点 `input tap`；界面问题不必先 Frida；来源更正为知识星球：逆向学习交流（2026-06-08），星球合集两份重复副本已并入 |
 | [uiautomator-privacy-consent-tap-procedure.md](./mobile-app-reverse/uiautomator-privacy-consent-tap-procedure.md) | 来源提炼（source-report） | `decision-flow`, `parameters`, `validation`, `source-report`, `uiautomator`, `adb`, `first-launch` | 这份流程只处理来源写明的界面问题：pm clear 后的首启协议页、权限页和挡在前面的标准弹窗。它不代替 Frida，也不采集指纹。环境准备流程是另一张卡，管的是设备、证书和代理，不是这个点击循环。来源是 用 uiautomator 自动点击隐私同意按钮。 |
 | [wechat-mp-oss-landscape.md](./mobile-app-reverse/wechat-mp-oss-landscape.md) | weixin_download | `wechatDownload`, `list_ex`, `wechrss`, `weread-omni`, `GetA8Key`, `WeChat-H5-DevTools`, `__biz`, `mid`, `idx` | 微信相关开源库的历史仓库对照；WeRead `/mp/chapters` 与 refreshToken 单列为阅读业务会话 archive-only，不是公众号 MP/小程序通用接口；稳定模块见既有 references |
+| [apatch-source-notes-wujianwu.md](./mobile-app-reverse/apatch-source-notes-wujianwu.md) | 吴见午（公众号，source-report） | `APatch`, `KernelPatch`, `event.rs`, `supercall`, `kpimg`, `su`, `SuperKey`, `SELinux`, `APModule` | 十篇源码阅读的目录：开机、apd、supercall、boot.img、su、授权、SuperKey、SELinux、模块生命周期与 ZIP 安装；版本针在 6ec140e / 0.13.8，不是 panther ROM 集成流程 |
+| [wechat-wcdb-cipher.md](./mobile-app-reverse/wechat-wcdb-cipher.md) | — (本地笔记，无公开链接) | `WCDB`, `SQLCipher`, `AES-256-CBC`, `HMAC-SHA512`, `PBKDF2`, `4.1`, `source-report` | 微信 4.1.13.65 本地库页加密来源稿：4.1 不再缓存明文 raw key；HMAC 与页布局按原文保留，本轮未打开进程 |
+| [wechat-wcdb-cipher-reference.md](./mobile-app-reverse/wechat-wcdb-cipher-reference.md) | 来源提炼（source-report） | `parameters`, `validation`, `AES-256-CBC`, `HMAC`, `WCDB`, `source-report` | 页加密参数和 page 1 HMAC 公式；XOR 掩码留在归档。不是请求 signature |
+| [wechat-wcdb-schema.md](./mobile-app-reverse/wechat-wcdb-schema.md) | — (本地笔记，无公开链接) | `message_0`, `contact`, `session`, `sns`, `Msg_`, `WCDB_CT`, `source-report` | 一份 4.1 本地目录的 18 库建表语句；行数只属于那次导出 |
+| [wechat-wcdb-schema-reference.md](./mobile-app-reverse/wechat-wcdb-schema-reference.md) | 来源提炼（source-report） | `interfaces`, `message_0`, `session`, `contact`, `sns`, `source-report` | 消息、会话、联系人、朋友圈各在哪个库；不复制全部 SQL |
+| [wechat-windows-sendmsg-static.md](./mobile-app-reverse/wechat-windows-sendmsg-static.md) | — (本地笔记，无公开链接) | `4.1.13.65`, `Weixin.dll`, `sendmsg`, `ilink2`, `pdata`, `source-report` | 静态发送链来源稿。本机解释器路径已脱敏。来源写明未注入、未发消息 |
+| [wechat-windows-sendmsg-static-case.md](./mobile-app-reverse/wechat-windows-sendmsg-static-case.md) | 来源提炼（source-report） | `wechat-windows`, `sendmsg`, `ilink`, `static`, `source-report` | 4.1.13.65 静态定位的范围、调用链和 localhost 不是 HTTP 的反例；不把未做的注入写成流程 |
 
 ### DRM 内容获取 (`article/drm-content-acquisition/`)
 
@@ -158,6 +173,12 @@
 | [51job-webpack-analysis.md](./web-reverse/51job-webpack-analysis.md) | 51job-web-reverse | `Webpack 4`, `Vue 2.7`, `模块自吐`, `加密定位`, `sign`, `AES`, `SM4`, `国密`, `webpackJsonp` | 51job Webpack 模块自吐分析：1634 个 factory 模块识别、加密/签名模块定位、Vue 组件反编译、chunk 加载机制 |
 | [51job-webpack-analysis-reference.md](./web-reverse/51job-webpack-analysis-reference.md) | 来源提炼（source-report） | `parameters`, `interfaces`, `request-chain`, `source-report`, `51job`, `webpack` | 这张卡只回答：2026-07-03 那份 we.51job.com/pc/search 自吐记录把 CryptoJS 和 Axios 标在哪个模块号，以及搜索接口被推测到哪里。它不提供签名算法。风控检测面仍看 51job 风控参考卡；那张卡没有收接口和加密参数。 |
 | [anti-crawler-web-reverse-compilation.md](./web-reverse/anti-crawler-web-reverse-compilation.md) | — (公众号归档) | `Akamai`, `JSVMP`, `Babel AST`, `控制流平坦化`, `Chrome DevTools`, `Hook`, `反Hook` | Akamai 参数、JSVMP、AST 反混淆与 Chrome DevTools 调试对抗的 16 篇实战合集 |
+| [anti-crawler-web-20250923-01-reference.md](./web-reverse/anti-crawler-web-reverse-compilation/anti-crawler-web-20250923-01-reference.md) | Akamai（来源报告） | `parameters`, `Akamai`, `sensor_data`, `dvc`, `VMP`, `source-report` | 扩展原有 sensor 字段参考，纳入新来源的序列化/变换链与 DVC VMP 自述；不含样值，不宣称本轮复现或服务端接受 |
+| [purecalc-akamai-sensor-data-source-archive.md](./web-reverse/purecalc-akamai-sensor-data-source-archive.md) | AI 纯算 Akamai（来源报告，partial） | `Akamai`, `sensor_data`, `DVC`, `VMP`, `AST`, `source-report` | 脱敏归档 AST、`sensor_data` 变换与 `mst.dvc` VMP 来源陈述；作者对拍保持 source-report，raw fingerprint/轨迹/Cookie/会话值/URL 未收录 |
+| [babel-ast-node-types.md](./web-reverse/babel-ast-node-types.md) | — (本地笔记，无公开链接) | `AST`, `Identifier`, `CallExpression`, `VariableDeclaration`, `Pattern`, `source-report` | JavaScript AST 节点类型对照；未用 Babel 重解析示例 |
+| [babel-ast-node-types-reference.md](./web-reverse/babel-ast-node-types-reference.md) | 来源提炼（source-report） | `interfaces`, `babel`, `node-types`, `source-report` | 五组节点类和 `const x = foo("hi")` 的拆分；不覆盖 path/scope |
+| [babel-core-objects.md](./web-reverse/babel-core-objects.md) | — (本地笔记，无公开链接) | `path`, `node`, `scope`, `binding`, `types`, `@babel/traverse`, `source-report` | path/node/scope/binding/types 的来源笔记；未安装 Babel |
+| [babel-core-objects-reference.md](./web-reverse/babel-core-objects-reference.md) | 来源提炼（source-report） | `interfaces`, `babel`, `path`, `scope`, `binding`, `source-report` | 五个对象的分工和来源点名的 API；不替代常量字符串还原 procedure |
 | [benru-web-reverse-compilation.md](./web-reverse/benru-web-reverse-compilation.md) | — (公众号归档) | `WBI签名`, `AST`, `JS混淆`, `Node补环境`, `mitmproxy`, `动态参数`, `Webpack RPC`, `Python还原` | 本如笔记 12 篇 Web 逆向与协议恢复实战，从参数定位、反混淆和补环境延伸到 RPC 与 Python 复现 |
 | [benru-m-x-r-parameters.md](./web-reverse/benru-m-x-r-parameters.md) | mashangpa.com（来源报告，目标未核实） | `m`, `x`, `r`, `MD5`, `SHA256`, `AES-CBC`, `来源矛盾` | 题七请求头/query hash 与响应 `r` 字段的来源报告；示例值与公式不符、Python `ts` 头未由 JS 证实，不作可运行实现 |
 | [yuanrenxue-web-reverse-compilation.md](./web-reverse/yuanrenxue-web-reverse-compilation.md) | — (公众号归档) | `JS Cookie`, `参数加密`, `反调试`, `字符串混淆`, `控制流混淆`, `微信小程序`, `AI逆向` | 猿人学 7 篇 Web 与 JavaScript 逆向方法论，保留长期可复用的定位、调试和反混淆路径 |
@@ -265,10 +286,21 @@
 | [js-obfuscation-boundaries-reference.md](./web-reverse/js-obfuscation-boundaries-reference.md) | 教学整理 | `obfuscation`, `compression`, `encryption`, `parameters` | 混淆、压缩与 encryption 可同时出现但不是同一类 |
 | [v2pro-env-completion-case.md](./web-reverse/v2pro-env-completion-case.md) | 教学整理 | `v2pro`, `validation`, `env-completion` | 补环境的成功是看到数据；只有验证通过不算成功 |
 | [v2-slider-local-analysis-case.md](./web-reverse/v2-slider-local-analysis-case.md) | 教学整理 | `v2-slider` | 网页端 V2 滑块的本地分析停在未命名参数、未完成轨迹和点击注入 |
-| [google-search-sgss-recaptcha-sample-source-archive.md](./web-reverse/google-search-sgss-recaptcha-sample-source-archive.md) | QS-qinshaowen/Coding（公开 zip 样本，partial） | `SG_SS`, `enterprise`, `iv8`, `CDP`, `source-report`, `partial` | 搜索 SG_SS 与 Enterprise userverify 样本结构摘要；缺测试/示例文件与 Google/ 实现，不含 token/sitekey |
-| [google-search-sgss-recaptcha-sample-case.md](./web-reverse/google-search-sgss-recaptcha-sample-case.md) | QS-qinshaowen/Coding（静态阅读） | `interfaces`, `parameters`, `request-chain`, `SG_SS`, `userverify`, `static-review` | 本机 RPC/iv8/Enterprise 入口与 Windows Chrome launcher 退出点；未打 Google，不与 v3 reload/rresp 或 73 VMP 合并 |
+| [devtools-curl-intake.md](./web-reverse/devtools-curl-intake.md) | Scrapling shell（静态阅读） | `Copy as cURL`, `request-chain`, `HAR`, `source-report` | 粘贴的 curl 只登记方法、URL、头和正文；不执行，本仓库不新增解析器 |
 
 ---
+| [datadome-plv2-plv3-detection-surface-reference.md](./web-reverse/datadome-plv2-plv3-detection-surface-reference.md) | DataDome interstitial 1.33.1（本地来源报告） | `interfaces`, `risk-control`, `plv2`, `plv3`, `WebGL`, `CSS`, `source-report` | 两条采集面的静态检测类别概要；不含指纹原值、bundle 或本机路径，未独立复验 |
+| [google-search-sgss-recaptcha-sample-source-archive.md](./web-reverse/google-search-sgss-recaptcha-sample-source-archive.md) | QS-qinshaowen/Coding（公开 zip 样本，partial） | `SG_SS`, `enterprise`, `iv8`, `CDP`, `source-report`, `partial` | 搜索 SG_SS 与 Enterprise userverify 样本结构摘要；缺测试/示例文件与 Google/ 实现，不含 token/sitekey |
+| [google-search-sgss-recaptcha-sample-case.md](./web-reverse/google-search-sgss-recaptcha-sample-case.md) | QS-qinshaowen/Coding（静态阅读） | `interfaces`, `parameters`, `request-chain`, `SG_SS`, `userverify`, `static-review` | 本机 RPC/iv8/Enterprise 入口与 Windows Chrome launcher 退出点；未打 Google，不与 v3 reload/rresp 或 73 VMP 合并 |
+| [recaptcha-73-vmp-reference.md](./web-reverse/recaptcha-73-vmp-reference.md) | reCAPTCHA “73”（来源报告，版本未知） | `parameters`, `VMP`, `GPU`, `time-seed`, `source-report` | 只保留可读的槽位输入与时间依赖概述；函数体和图片缺失，不与 Google v3 请求链合并 |
+| [yuanrenxue-match-31-aes-memory-scan-reference.md](./web-reverse/yuanrenxue-match-31-aes-memory-scan-reference.md) | 猿人学 match/31（公开练习题来源报告） | `parameters`, `WASM`, `AES-128`, `key-schedule`, `CBC`, `source-report` | key schedule 内存识别与 CBC 首块关系摘要；不收录 key、IV、token、明文样值或扫描代码 |
+| [datadome-plv2-plv3-source-archive.md](./web-reverse/datadome-plv2-plv3-source-archive.md) | DataDome interstitial 1.33.1（本地来源报告，partial） | `plv2`, `plv3`, `interfaces`, `risk-control`, `source-report` | 来源笔记正文保留两条采集面与检测类别；原始样值 / 路径脱敏，底层脚本和反汇编缺失，未复验 |
+| [recaptcha-73-vmp-source-archive.md](./web-reverse/recaptcha-73-vmp-source-archive.md) | reCAPTCHA 73（来源报告，partial） | `VMP`, `GPU`, `time-seed`, `source-report` | 保留可见来源文字；函数体、原图与下载件缺失，WebGL 样值脱敏，不与 Google v3 请求链合并 |
+| [yuanrenxue-match-31-source-archive.md](./web-reverse/yuanrenxue-match-31-source-archive.md) | 猿人学 match/31（公开练习题来源报告，partial） | `WASM`, `AES-128`, `key-schedule`, `CBC`, `source-report` | 来源结构与通用分析方法留档；精确 key / IV / token / 明文样值脱敏，本轮未复现 |
+| [acw-sc-v2-source-archive.md](./web-reverse/acw-sc-v2-source-archive.md) | ACW `acw_sc_v2`（来源归档，partial） | `Babel AST`, `acw-sc-v2`, `source-report`, `partial` | 保留来源可见正文；缺完整代码 / 解密数组，目标 URL 与占位图脱敏或缺失 |
+| [acw-sc-v2-ast-restoration-reference.md](./web-reverse/acw-sc-v2-ast-restoration-reference.md) | ACW `acw_sc_v2`（来源参考） | `decision-flow`, `Babel AST`, `binding`, `decoder`, `source-report` | AST 分层还原与外部解密表依赖摘要；不含目标 URL、完整代码或当前接受结论 |
+| [aliyun-captcha-v2-sandbox-source-archive.md](./web-reverse/aliyun-captcha-v2-sandbox-source-archive.md) | AliyunCaptcha V2（来源归档，partial） | `AliyunCaptcha`, `FeiLin`, `sg`, `Node vm`, `source-report`, `partial` | 单站来源正文归档；目标 host 与会话样值脱敏，图片附件及运行时证据缺失 |
+| [aliyun-captcha-v2-sandbox-case.md](./web-reverse/aliyun-captcha-v2-sandbox-case.md) | AliyunCaptcha V2（单站来源案例） | `request-chain`, `validation`, `requestInfo`, `Node vm`, `FeiLin`, `sg`, `source-report` | 单站补环境案例；分开请求真实性、环境数据与行为结果，作者结果未由本轮复现 |
 
 ## 按技术标签检索
 
@@ -278,6 +310,7 @@
 - **3DES-CBC**: [qidian-fock](./signature-algorithms/qidian-fock-signature.md), [qidian-so](./native-analysis/qidian-so-analysis.md)
 - **PKCS#7**: [qidian-fock](./signature-algorithms/qidian-fock-signature.md)
 - **ECDHE (P-256)**: [mmtls](./protocols/mmtls-protocol-analysis.md)
+- **Ed25519 CDI_Leaf / P-256 COSE_Key / RKP CSR v2（来源报告）**: [kanxue-keymint-rkp](./native-analysis/kanxue-keymint-ta-rkp-signing-oracle.md)
 - **HKDF**: [mmtls](./protocols/mmtls-protocol-analysis.md)
 - **SM4 (国密)**: [51job-webpack](./web-reverse/51job-webpack-analysis.md)
 - **AES/RSA/TEA/DES/MD5（Android 实战）**: [paopao-android](./mobile-app-reverse/paopao-android-reverse-compilation.md), [xfq-crypto](./signature-algorithms/xfq-crypto-notes-compilation.md), [reversenotes-android](./mobile-app-reverse/reversenotes-android-compilation.md)
@@ -322,7 +355,11 @@
 - **AWS WAF aws-waf-token 来源归档（Present 输入表述冲突；未作算法或服务端验收）**: [aws-waf-token](./web-reverse/aws-waf-token-challenge-purecalc.md)
 - **WASM 内 SM2（C1C3C2，硬编码私钥）解出 SM4 key → SM4-ECB + PKCS7**: [wasm-ai-sm2-sm4](./web-reverse/wasm-decrypt-ai-one-prompt-recovery.md)
 - **易盾自定义 xor-b64 / 非标准 AES / 47 维轨迹特征**: [products](./web-reverse/products.md)
+- **WASM 运行时 AES key schedule 线索与 CBC 首块关系（来源报告；不收录样值）**: [match-31-aes-memory-scan](./web-reverse/yuanrenxue-match-31-aes-memory-scan-reference.md)
+- **reCAPTCHA “73” VMP 槽位输入与时间依赖（算法资料不完整）**: [recaptcha-73-vmp](./web-reverse/recaptcha-73-vmp-reference.md)
+- **reCAPTCHA 73 VMP 来源正文（partial；函数体和原图缺失）**: [recaptcha-73-source-archive](./web-reverse/recaptcha-73-vmp-source-archive.md)
 - **Google 搜索 SG_SS cookie / Enterprise userverify 样本结构**: [google-search-sgss-recaptcha-sample-case](./web-reverse/google-search-sgss-recaptcha-sample-case.md), [google-search-sgss-recaptcha-sample-archive](./web-reverse/google-search-sgss-recaptcha-sample-source-archive.md)
+- **WASM AES match/31 来源正文（partial；目标样值脱敏）**: [match-31-source-archive](./web-reverse/yuanrenxue-match-31-source-archive.md)
 
 ### 协议
 - **TLS 1.3 变体**: [mmtls](./protocols/mmtls-protocol-analysis.md)
@@ -335,6 +372,7 @@
 - **WeRead 阅读业务 `i.weread.qq.com/mp/chapters` / `MP_WXS_` / refreshToken（非公众号 MP 或小程序通用 API）**: [wechat-mp-sessions](./protocols/wechat-mp-session-planes.md), [wechat-mp-oss archive](./mobile-app-reverse/wechat-mp-oss-landscape.md)
 - **`GetA8Key` / `MpGetA8Key` / `X-WECHAT-KEY`**: [wechat-mp-sessions](./protocols/wechat-mp-session-planes.md), [wechat-mp-oss](./mobile-app-reverse/wechat-mp-oss-landscape.md)
 - **ACE UDP 加密上报（tss_sdk_encryptpacket）**: [ace-deviceuniqueid-reference](./anti-detection/android-ace-deviceuniqueid-reference.md), [ace-deviceuniqueid](./anti-detection/android-ace-deviceuniqueid.md)
+- **Android RKP AuthenticatedRequest / signCertificates（来源报告）**: [kanxue-keymint-rkp](./native-analysis/kanxue-keymint-ta-rkp-signing-oracle.md)
 - **自定义 URL 协议唤醒本机更新器**: [unpacked-mv3-updater-reference](./web-reverse/unpacked-mv3-native-updater-reference.md), [unpacked-mv3-updater](./web-reverse/unpacked-mv3-native-updater.md)
 - **safe-search 票据链 / icon.png 响应体藏票据 / 按页绑定搜索授权**: [aigei-safe-search-reference](./web-reverse/aigei-safe-search-ticket-chain-reference.md), [aigei-safe-search](./web-reverse/aigei-safe-search-ticket-chain.md)
 - **HTTP DNS**: [mmtls](./protocols/mmtls-protocol-analysis.md)
@@ -377,6 +415,7 @@
 - **libmsaoaidsec 加载期检测（leave 缺失 / call_constructors 观察窗）**: [reversenotes-android](./mobile-app-reverse/reversenotes-android-compilation.md), [xfq-android-cases](./mobile-app-reverse/xfq-android-cases-compilation.md)
 - **风控熵源 / 伪随机 / 协议指纹演进**: [xfq-device-fp](./anti-detection/xfq-device-fp-compilation.md), [device-fingerprint-consistency](./anti-detection/android-device-fingerprint-consistency-reference.md)
 - **Widevine / deviceUniqueId / Key Attestation / Play Integrity**: [ace-deviceuniqueid-reference](./anti-detection/android-ace-deviceuniqueid-reference.md), [ace-deviceuniqueid](./anti-detection/android-ace-deviceuniqueid.md), [shuzilm-libdu](./anti-detection/shuzilm-libdu-fingerprint.md)
+- **KeyMint RKP / CDI_Leaf / GENERATE_CSR_V2 签名 oracle（看雪来源，未复现）**: [kanxue-keymint-rkp](./native-analysis/kanxue-keymint-ta-rkp-signing-oracle.md)
 - **加固绕过 / whole-DEX 分流**: [jiagu-bypass](./packing-bypass/jiagu-bypass-analysis.md)
 - **App 壳/wrapper 命中（Jiagu/Legu/SecNeo/NIS）**: [app-protectors](./packing-bypass/app-protectors.md)
 - **反调试 (ptrace/TracerPid)**: [jiagu-bypass](./packing-bypass/jiagu-bypass-analysis.md)
@@ -416,18 +455,26 @@
 - **curl_cffi/Selenium stealth/字体与验证码/Canvas**: [benru-anti](./anti-detection/benru-anti-detection-compilation.md)
 - **Cookie/Referer/代理/DNS/TLS 请求一致性**: [yuanrenxue-anti](./anti-detection/yuanrenxue-anti-detection-compilation.md)
 - **代理租约/Sticky 会话/429 自适应并发**: [collector-control-plane](./collection-engineering/high-concurrency-http-collector-control-plane.md)
+- **HTML 列表指纹重定位（冻结体回放 / 阈值 75）**: [html-list-relocate](./collection-engineering/html-list-selector-relocate.md), [scrapling-0-4-15](./collection-engineering/scrapling-0.4.15-readout.md)
+- **第三方浏览器 fetcher 不进采集运行时**: [browser-fetcher-boundaries](./anti-detection/third-party-browser-fetcher-boundaries.md)
+- **通用 Spider 默认并发与有界采集器**: [generic-spider-bounds](./collection-engineering/generic-spider-vs-bounded-collector.md)
+- **送模型前的页面文本（清洗通过不等于可信）**: [page-text-before-llm](./anti-detection/page-text-before-llm.md)
 - **Clash/Mihomo 链式代理与出口身份分离**: [mihomo-dialer-proxy](./collection-engineering/mihomo-dialer-proxy-chain.md)
 - **Flutter/iOS Jailbreak 与抓包对抗**: [yuanrenxue-app](./mobile-app-reverse/yuanrenxue-mobile-app-reverse-compilation.md)
 - **HTTP/2 指纹结构**: [http2-fingerprint](./anti-detection/http2-fingerprint-reference.md)
 - **TLS 指纹完整性与两代结构**: [tls-fingerprint](./anti-detection/tls-fingerprint-reference.md)
 - **指纹变化后的关联、复制与同配置碰撞**: [browser-fingerprint-linkage](./anti-detection/browser-fingerprint-linkage-reference.md)
 - **浏览器 JS 指纹相对 cookie/IP**: [js-browser-fingerprint](./anti-detection/js-browser-fingerprint-reference.md)
+- **DataDome plv2 / plv3 静态检测类别（来源报告；不含指纹原值）**: [datadome-plv2-plv3](./web-reverse/datadome-plv2-plv3-detection-surface-reference.md)
+- **DataDome plv2 / plv3 来源笔记正文（partial；样值和本机路径脱敏）**: [datadome-source-archive](./web-reverse/datadome-plv2-plv3-source-archive.md)
+- **AliyunCaptcha V2 单站沙箱诊断（来源报告；请求真实性 / 环境 / 行为分层）**: [aliyun-v2-sandbox-case](./web-reverse/aliyun-captcha-v2-sandbox-case.md)
 
 ### 厂商/平台
 - **腾讯 (微信/应用宝)**: [mmtls](./protocols/mmtls-protocol-analysis.md), [wechat-mp-sessions](./protocols/wechat-mp-session-planes.md), [wechat-mp-oss](./mobile-app-reverse/wechat-mp-oss-landscape.md)
 - **微信公众号 / mp.weixin.qq.com / WMPF 内置浏览器 H5**: [wechat-mp-sessions](./protocols/wechat-mp-session-planes.md), [wechat-mp-http](./protocols/wechat-mp-http-surface.md), [wechat-mp-oss](./mobile-app-reverse/wechat-mp-oss-landscape.md), [weixin-archive-runtime](./collection-engineering/weixin-http-archive-runtime.md)
 - **微信读书（WeRead）阅读业务会话**: [wechat-mp-sessions](./protocols/wechat-mp-session-planes.md), [wechat-mp-oss archive](./mobile-app-reverse/wechat-mp-oss-landscape.md)
 - **腾讯 ACE / Widevine DRM / libtersafe**: [ace-deviceuniqueid](./anti-detection/android-ace-deviceuniqueid.md)
+- **高通 KeyMint TA / Google Remote Key Provisioning**: [kanxue-keymint-rkp](./native-analysis/kanxue-keymint-ta-rkp-signing-oracle.md)
 - **阅文 (起点)**: [qidian-fock](./signature-algorithms/qidian-fock-signature.md), [qidian-so](./native-analysis/qidian-so-analysis.md), [jiagu-bypass](./packing-bypass/jiagu-bypass-analysis.md)
 - **阿里 (ACW/飞林)**: [51job-anti-detection](./anti-detection/51job-anti-detection-analysis.md)
 - **360 (Jiagu)**: [jiagu-bypass](./packing-bypass/jiagu-bypass-analysis.md), [app-protectors](./packing-bypass/app-protectors.md)
@@ -449,7 +496,7 @@
 - **macOS / NAS 采集交付**: [mac-nas-spool](./collection-engineering/reliable-mac-nas-spool-delivery.md)
 - **浏览器采集器稳定性（ruyipage/Firefox 崩溃/OOM）**: [browser-collector-stability](./collection-engineering/browser-collector-stability.md)
 - **Clash Verge Rev / Mihomo**: [mihomo-dialer-proxy](./collection-engineering/mihomo-dialer-proxy-chain.md)
-- **Akamai**: [anti-crawler-web](./web-reverse/anti-crawler-web-reverse-compilation.md), [products](./web-reverse/products.md)
+- **Akamai**: [akamai-sensor-shapes](./web-reverse/anti-crawler-web-reverse-compilation/anti-crawler-web-20250923-01-reference.md), [purecalc-akamai-source](./web-reverse/purecalc-akamai-sensor-data-source-archive.md), [anti-crawler-web](./web-reverse/anti-crawler-web-reverse-compilation.md), [products](./web-reverse/products.md)
 - **DataDome / Kasada / PerimeterX / F5 Shape / reese84 / Cloudflare 5s**: [products](./web-reverse/products.md), [px-reference](./web-reverse/perimeterx-human-reference-evidence-boundary.md), [datadome-env-patch-reference](./web-reverse/datadome-env-patch-reference.md), [datadome-env-patch](./web-reverse/datadome-env-patch.md), [cloudflare-5s-v2-reference](./web-reverse/cloudflare-5s-v2-fo-pipeline-reference.md), [cloudflare-5s-v2](./web-reverse/cloudflare-5s-v2-fo-pipeline.md)
 - **Kimi / 字节 volces applog**: [kimi-ttencrypt](./mobile-app-reverse/kimi-device-register-ttencrypt.md)
 - **TikTok / ByteDance musically / TTNet / metasec**: [protocol-admission](./mobile-app-reverse/protocol-admission-four-gates.md), [tiktok-planes](./web-reverse/tiktok-web-signing-planes.md), [tiktok-frontier](./web-reverse/tiktok-frontier-ticket-shop-case.md), [tiktok-xbogus-env-reference](./web-reverse/tiktok-xbogus-xgnarly-mstoken-env-patch-reference.md), [tiktok-xbogus-env](./web-reverse/tiktok-xbogus-xgnarly-mstoken-env-patch.md)
@@ -495,6 +542,9 @@
 - **谋臣界 / 未上架 MV3 更新器**: [unpacked-mv3-updater-reference](./web-reverse/unpacked-mv3-native-updater-reference.md), [unpacked-mv3-updater](./web-reverse/unpacked-mv3-native-updater.md)
 - **CloakBrowser / CloakHQ humanize**: [cloakbrowser-humanize-reference](./anti-detection/cloakbrowser-humanize-trajectory-reference.md), [cloakbrowser-humanize](./anti-detection/cloakbrowser-humanize-trajectory.md)
 - **美团 mtgsig 的参数与风控边界**: [meituan-mtgsig-limits](./web-reverse/meituan-mtgsig-jsvmp-source-limits-reference.md)
+- **reCAPTCHA “73” VMP 资料边界（具体产品分支未核实）**: [recaptcha-73-vmp](./web-reverse/recaptcha-73-vmp-reference.md)
+- **ACW `acw_sc_v2` AST 来源归档与定位参考**: [acw-sc-v2-source](./web-reverse/acw-sc-v2-source-archive.md), [acw-sc-v2-ast](./web-reverse/acw-sc-v2-ast-restoration-reference.md)
+- **AliyunCaptcha V2 单站来源正文与沙箱 case**: [aliyun-v2-sandbox-source](./web-reverse/aliyun-captcha-v2-sandbox-source-archive.md), [aliyun-v2-sandbox-case](./web-reverse/aliyun-captcha-v2-sandbox-case.md)
 
 ### 工具/方法
 - **App 准入诊断流程 / S1–S8 / F1–F3 / 四门 AND 验收**: [protocol-admission-procedure](./mobile-app-reverse/protocol-admission-procedure.md)
@@ -506,6 +556,7 @@
 - **Webpack 模块自吐**: [51job-webpack](./web-reverse/51job-webpack-analysis.md)
 - **抓包+逐字节匹配**: [mmtls](./protocols/mmtls-protocol-analysis.md)
 - **IDA Pro 静态分析**: [qidian-so](./native-analysis/qidian-so-analysis.md), [jiagu-bypass](./packing-bypass/jiagu-bypass-analysis.md), [ace-deviceuniqueid](./anti-detection/android-ace-deviceuniqueid.md), [hangban-laes](./signature-algorithms/hangban-laes-encrypt.md), [softard-android](./mobile-app-reverse/softard-android-reverse-compilation.md)
+- **KeyMint TA 命令面 / MINK IPC / `0x3122` CSR v2（来源报告）**: [kanxue-keymint-rkp](./native-analysis/kanxue-keymint-ta-rkp-signing-oracle.md)
 - **ACE TSS SDK / libtersafe 上报链**: [ace-deviceuniqueid-reference](./anti-detection/android-ace-deviceuniqueid-reference.md), [ace-deviceuniqueid](./anti-detection/android-ace-deviceuniqueid.md)
 - **radare2 快速侦察**: [qidian-so](./native-analysis/qidian-so-analysis.md)
 - **rizin + native trace 对 key（数盟 vB2 字符串 char+39 / shuffle-1）**: [shuzilm-libdu](./anti-detection/shuzilm-libdu-fingerprint.md)
@@ -547,6 +598,13 @@
 - **自定义 T-box 提表后纯算（LAES）**: [hangban-laes](./signature-algorithms/hangban-laes-encrypt.md)
 - **unidbg RandomFileIO 钉随机 / SearchData / memcpy + traceWrite（Shopee）**: [shopee-shpssdk](./signature-algorithms/shopee-shpssdk-request-defense.md)
 - **AOSP 预置 CA / APatch / WebView 调试 ROM**: [xfq-aosp-rom](./mobile-app-reverse/xfq-aosp-rom-compilation.md)
+- **APatch 源码阅读（event / supercall / su / SELinux / APModule，非 panther 集成）**: [apatch-source-notes](./mobile-app-reverse/apatch-source-notes-wujianwu.md)
+- **微信 Windows 4.1 WCDB 页加密与 HMAC（encryption，不是请求 signature）**: [wechat-wcdb-cipher-reference](./mobile-app-reverse/wechat-wcdb-cipher-reference.md), [wechat-wcdb-cipher](./mobile-app-reverse/wechat-wcdb-cipher.md)
+- **微信 Windows 4.1 本地库分工（message / session / contact / sns）**: [wechat-wcdb-schema-reference](./mobile-app-reverse/wechat-wcdb-schema-reference.md), [wechat-wcdb-schema](./mobile-app-reverse/wechat-wcdb-schema.md)
+- **微信 Windows 4.1.13.65 发送消息静态链（未注入）**: [wechat-sendmsg-case](./mobile-app-reverse/wechat-windows-sendmsg-static-case.md), [wechat-sendmsg](./mobile-app-reverse/wechat-windows-sendmsg-static.md)
+- **数美 captcha-sdk isJsFormat 行数检测（非 deviceprofile/v4）**: [shumei-js-format-reference](./anti-detection/shumei-js-format-detection-reference.md), [shumei-js-format](./anti-detection/shumei-js-format-detection.md)
+- **Babel AST 节点类分组**: [babel-ast-nodes-reference](./web-reverse/babel-ast-node-types-reference.md), [babel-ast-nodes](./web-reverse/babel-ast-node-types.md)
+- **Babel path / node / scope / binding / types**: [babel-core-objects-reference](./web-reverse/babel-core-objects-reference.md), [babel-core-objects](./web-reverse/babel-core-objects.md)
 - **trace 数据库 + MCP 证据回溯**: [ai-vmp-trace](./native-analysis/ai-assisted-vmp-trace-recovery.md)
 - **Chromium/Firefox/WebKit 内核定制**: [ruyi-browser](./anti-detection/ruyi-browser-anti-detection-compilation.md)
 - **AST/JS 混淆/Node 补环境/Webpack RPC**: [benru-web](./web-reverse/benru-web-reverse-compilation.md), [yuanrenxue-web](./web-reverse/yuanrenxue-web-reverse-compilation.md), [koohai-notes](./web-reverse/koohai-reverse-notes-compilation.md)
@@ -590,6 +648,9 @@
 - **mitmproxy/Charles/Frida/Protobuf/iOS/Flutter 工具链**: [benru-web](./web-reverse/benru-web-reverse-compilation.md)
 - **伴随请求响应体数据流审计 / companion_response_audit / 参数谱系 sourceKind 溯源**: [aigei-safe-search-reference](./web-reverse/aigei-safe-search-ticket-chain-reference.md), [aigei-safe-search](./web-reverse/aigei-safe-search-ticket-chain.md), [yuanrenxue-app](./mobile-app-reverse/yuanrenxue-mobile-app-reverse-compilation.md)
 - **高并发采集控制面/AIMD/half-open**: [collector-control-plane](./collection-engineering/high-concurrency-http-collector-control-plane.md), [collector-control-plane-procedure](./collection-engineering/high-concurrency-http-collector-control-plane-procedure.md)
+- **HTML 列表选择器冻结回放 / relocate 阈值 75**: [html-list-relocate](./collection-engineering/html-list-selector-relocate.md)
+- **Spider 阻塞码重试不并进换 IP（407 transport / 444 blocked）**: [generic-spider-bounds](./collection-engineering/generic-spider-vs-bounded-collector.md)
+- **DevTools Copy as cURL 只作请求形状**: [devtools-curl](./web-reverse/devtools-curl-intake.md)
 - **Mihomo dialer-proxy / curl --preproxy / 隔离 sidecar**: [mihomo-dialer-proxy](./collection-engineering/mihomo-dialer-proxy-chain.md)
 - **SSD spool/NAS mirror/marker-ACK 重放**: [mac-nas-spool](./collection-engineering/reliable-mac-nas-spool-delivery.md)
 - **微信公众号开源库按会话平面分流（禁止混用 Cookie）**: [wechat-mp-sessions](./protocols/wechat-mp-session-planes.md), [wechat-mp-oss](./mobile-app-reverse/wechat-mp-oss-landscape.md)
@@ -606,6 +667,8 @@
 - **网页端 V2 滑块的本地分析边界**: [v2-slider-local](./web-reverse/v2-slider-local-analysis-case.md)
 
 ---
+- **WASM AES 运行时 key schedule 识别（来源报告；无样值代码）**: [match-31-aes-memory-scan](./web-reverse/yuanrenxue-match-31-aes-memory-scan-reference.md)
+- **Babel AST numeric folding / binding / 外部解密表分层还原（ACW 来源报告）**: [acw-sc-v2-ast](./web-reverse/acw-sc-v2-ast-restoration-reference.md)
 
 ## 维护规则
 

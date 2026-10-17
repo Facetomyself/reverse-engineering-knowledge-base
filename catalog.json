@@ -1,16 +1,16 @@
 {
   "schema_version": 2,
-  "article_count": 957,
+  "article_count": 998,
   "category_counts": {
-    "anti-detection": 302,
-    "collection-engineering": 12,
+    "anti-detection": 306,
+    "collection-engineering": 15,
     "drm-content-acquisition": 2,
-    "mobile-app-reverse": 300,
-    "native-analysis": 26,
+    "mobile-app-reverse": 317,
+    "native-analysis": 27,
     "packing-bypass": 5,
     "protocols": 3,
     "signature-algorithms": 41,
-    "web-reverse": 266
+    "web-reverse": 282
   },
   "records": [
     {
@@ -8016,6 +8016,88 @@
         "fingerprint",
         "parameters",
         "risk-control"
+      ],
+      "source_completeness": "unknown",
+      "metadata_errors": []
+    },
+    {
+      "path": "anti-detection/page-text-before-llm.md",
+      "kind": "canonical",
+      "category": "anti-detection",
+      "parent": null,
+      "title": "页面文本送进模型之前",
+      "source": "https://github.com/D4Vinci/Scrapling/blob/aa814a77d942678f1a44f68198a0c88550382d28/scrapling/core/shell.py; ./ruyi-browser-anti-detection-compilation/ruyi-20260430-01.md#四前提3间接提示注入agent为什么会执行网页里的指令",
+      "original_date": "2026-10-09",
+      "archive_date": "2026-10-09",
+      "summary": "这份流程处理“准备把页面文字交给模型”这一步。它补充已有合集里关于间接提示注入的讨论，不替换那篇文章，也不把清洗器当成信任门。",
+      "keywords": [
+        "decision-flow",
+        "aria-hidden",
+        "template",
+        "prompt-injection",
+        "source-report"
+      ],
+      "headings": [
+        "前提与输入",
+        "步骤与分支",
+        "输出",
+        "验收",
+        "失败出口"
+      ],
+      "bytes": 3588,
+      "lines": 69,
+      "content_sha256": "f7dfefcd519989c1c2b46e3d0d5d27a8f7076189cda748d4d313a3c87a39fe79",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "page-text-before-llm",
+      "document_type": "procedure",
+      "scope": {
+        "targets": [
+          "page text before model"
+        ],
+        "client": "web",
+        "version": "unknown",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s-shell",
+          "ref": "https://github.com/D4Vinci/Scrapling/blob/aa814a77d942678f1a44f68198a0c88550382d28/scrapling/core/shell.py",
+          "basis": "static-review"
+        },
+        {
+          "id": "s-ruyi",
+          "ref": "./ruyi-browser-anti-detection-compilation/ruyi-20260430-01.md#四前提3间接提示注入agent为什么会执行网页里的指令",
+          "basis": "source-report"
+        }
+      ],
+      "modules": [
+        {
+          "name": "decision-flow",
+          "anchor": "steps",
+          "sources": [
+            "s-shell",
+            "s-ruyi"
+          ],
+          "basis": "source-report",
+          "limits": "只补充送模型前的文本缺口。清洗通过不是内容可信，也不是绕过。未对活页做 runtime。不复制上游 XPath。"
+        }
+      ],
+      "relations": [
+        {
+          "type": "derived_from",
+          "target": "../collection-engineering/scrapling-0.4.15-readout.md#sanitize"
+        },
+        {
+          "type": "supplements",
+          "target": "./ruyi-browser-anti-detection-compilation/ruyi-20260430-01.md#四前提3间接提示注入agent为什么会执行网页里的指令"
+        }
+      ],
+      "tags": [
+        "prompt-injection",
+        "page-text",
+        "decision-flow",
+        "source-report"
       ],
       "source_completeness": "unknown",
       "metadata_errors": []
@@ -19412,6 +19494,131 @@
       "metadata_errors": []
     },
     {
+      "path": "anti-detection/shumei-js-format-detection-reference.md",
+      "kind": "canonical",
+      "category": "anti-detection",
+      "parent": null,
+      "title": "数美 captcha SDK 的格式化行数检测",
+      "source": "./shumei-js-format-detection.md#source-body",
+      "original_date": "unknown",
+      "archive_date": "2026-10-08",
+      "summary": "这张卡只回答：来源说 isJsFormat 在看什么，以及命中之后加密密钥选择怎么变。它不是 Android deviceprofile/v4 的字段卡。",
+      "keywords": [
+        "risk-control",
+        "shumei-captcha",
+        "isJsFormat",
+        "DES",
+        "source-report"
+      ],
+      "headings": [
+        "行数检测与密钥切换",
+        "验证与限制"
+      ],
+      "bytes": 2453,
+      "lines": 47,
+      "content_sha256": "85ed3a216552c6b485d8726858b6a21350cbc69c7c73bf62a6f3287ab746c8bb",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "shumei-js-format-detection-reference",
+      "document_type": "reference",
+      "scope": {
+        "targets": [
+          "shumei-captcha"
+        ],
+        "client": "web",
+        "version": "captcha-sdk v1.0.4-208",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": "./shumei-js-format-detection.md#source-body",
+          "basis": "source-report"
+        }
+      ],
+      "modules": [
+        {
+          "name": "risk-control",
+          "anchor": "risk-control",
+          "sources": [
+            "s1"
+          ],
+          "basis": "source-report",
+          "limits": "缺公开 locator。只覆盖来源点名的 v1.0.4-208 captcha SDK。未加载脚本，未看服务端解密结果。密钥字节不在来源里。"
+        }
+      ],
+      "relations": [
+        {
+          "type": "derived_from",
+          "target": "./shumei-js-format-detection.md#source-body"
+        }
+      ],
+      "tags": [
+        "shumei",
+        "isJsFormat",
+        "risk-control"
+      ],
+      "source_completeness": "unknown",
+      "metadata_errors": []
+    },
+    {
+      "path": "anti-detection/shumei-js-format-detection.md",
+      "kind": "canonical",
+      "category": "anti-detection",
+      "parent": null,
+      "title": "数美 JS 格式化检测",
+      "source": "数美 JS 格式化检测；文件 castatic.fengkongcloud.cn/pr/auto-build/v1.0.4-208/captcha-sdk.min.js",
+      "original_date": "unknown",
+      "archive_date": "2026-10-08",
+      "summary": "来源点名 captcha-sdk.min.js 的 v1.0.4-208，没有作者和公开文章链接。正文把行数检测和后续 DES 密钥选择写成同一段来源观察。",
+      "keywords": [
+        "数美",
+        "isJsFormat",
+        "captcha-sdk",
+        "toString",
+        "DES",
+        "source-report"
+      ],
+      "headings": [
+        "清洗与完整性说明",
+        "来源正文",
+        "复用边界"
+      ],
+      "bytes": 3576,
+      "lines": 128,
+      "content_sha256": "1f11725c3722604d8111a4b7ee3bcdeefd5f87682a6ea987b934a54c0e9e3a42",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "shumei-js-format-detection",
+      "document_type": "archive",
+      "scope": {
+        "targets": [
+          "shumei-captcha"
+        ],
+        "client": "web",
+        "version": "captcha-sdk v1.0.4-208",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": null,
+          "basis": "source-report",
+          "citation": "数美 JS 格式化检测；文件 castatic.fengkongcloud.cn/pr/auto-build/v1.0.4-208/captcha-sdk.min.js",
+          "reason": "原始材料未提供作者名或可公开定位的链接"
+        }
+      ],
+      "modules": [],
+      "relations": [],
+      "tags": [
+        "shumei",
+        "isJsFormat",
+        "risk-control"
+      ],
+      "source_completeness": "complete",
+      "metadata_errors": []
+    },
+    {
       "path": "anti-detection/shuzilm-libdu-fingerprint.md",
       "kind": "canonical",
       "category": "anti-detection",
@@ -19481,6 +19688,110 @@
         "deviceUniqueId"
       ],
       "source_completeness": "partial",
+      "metadata_errors": []
+    },
+    {
+      "path": "anti-detection/third-party-browser-fetcher-boundaries.md",
+      "kind": "canonical",
+      "category": "anti-detection",
+      "parent": null,
+      "title": "第三方浏览器 fetcher 的边界",
+      "source": "https://github.com/D4Vinci/Scrapling/blob/aa814a77d942678f1a44f68198a0c88550382d28/scrapling/fetchers/chrome.py; https://github.com/D4Vinci/Scrapling/blob/aa814a77d942678f1a44f68198a0c88550382d28/scrapling/engines/_browsers/_stealth.py; https://github.com/D4Vinci/Scrapling/blob/aa814a77d942678f1a44f68198a0c88550382d28/scrapling/engines/_browsers/_validators.py; https://github.com/D4Vinci/Scrapling/blob/aa814a77d942678f1a44f68198a0c88550382d28/docs/fetching/stealthy.md; ../collection-engineering/scrapling-0.4.15-readout.md#fetchers",
+      "original_date": "2026-10-09",
+      "archive_date": "2026-10-09",
+      "summary": "这张卡回答一个检索问题：Scrapling 0.4.15 的动态浏览器和隐身浏览器能不能进入本仓库的采集运行时。不能。",
+      "keywords": [
+        "Playwright",
+        "Patchright",
+        "CDP",
+        "Camoufox",
+        "PagesCount",
+        "source-report"
+      ],
+      "headings": [
+        "接口平面",
+        "风控自述与拒绝项"
+      ],
+      "bytes": 3384,
+      "lines": 66,
+      "content_sha256": "1c3a382c8901eced4eb30dd3bc310a67670588ab33be303fa41ca296db1cf935",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "third-party-browser-fetcher-boundaries",
+      "document_type": "reference",
+      "scope": {
+        "targets": [
+          "Scrapling"
+        ],
+        "client": "python",
+        "version": "0.4.15",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s-chrome",
+          "ref": "https://github.com/D4Vinci/Scrapling/blob/aa814a77d942678f1a44f68198a0c88550382d28/scrapling/fetchers/chrome.py",
+          "basis": "static-review"
+        },
+        {
+          "id": "s-stealth",
+          "ref": "https://github.com/D4Vinci/Scrapling/blob/aa814a77d942678f1a44f68198a0c88550382d28/scrapling/engines/_browsers/_stealth.py",
+          "basis": "static-review"
+        },
+        {
+          "id": "s-pages",
+          "ref": "https://github.com/D4Vinci/Scrapling/blob/aa814a77d942678f1a44f68198a0c88550382d28/scrapling/engines/_browsers/_validators.py",
+          "basis": "static-review"
+        },
+        {
+          "id": "s-docs",
+          "ref": "https://github.com/D4Vinci/Scrapling/blob/aa814a77d942678f1a44f68198a0c88550382d28/docs/fetching/stealthy.md",
+          "basis": "source-report"
+        },
+        {
+          "id": "s-readout",
+          "ref": "../collection-engineering/scrapling-0.4.15-readout.md#fetchers",
+          "basis": "source-report"
+        }
+      ],
+      "modules": [
+        {
+          "name": "interfaces",
+          "anchor": "interfaces",
+          "sources": [
+            "s-chrome",
+            "s-stealth",
+            "s-pages"
+          ],
+          "basis": "static-review",
+          "limits": "只说明 0.4.15 源码里的启动方式和标签页池上限。没有启动浏览器，没有连接 CDP，没有核对驱动版本是否仍能安装。"
+        },
+        {
+          "name": "risk-control",
+          "anchor": "risk-control",
+          "sources": [
+            "s-docs",
+            "s-readout"
+          ],
+          "basis": "source-report",
+          "limits": "过检测、Cloudflare、canvas 和 WebRTC 只保留作者文档自述。本卡不把它写成绕过已成立，也不提供操作步骤。"
+        }
+      ],
+      "relations": [
+        {
+          "type": "derived_from",
+          "target": "../collection-engineering/scrapling-0.4.15-readout.md#fetchers"
+        }
+      ],
+      "tags": [
+        "Scrapling",
+        "Playwright",
+        "Patchright",
+        "CDP",
+        "source-report",
+        "static-review"
+      ],
+      "source_completeness": "unknown",
       "metadata_errors": []
     },
     {
@@ -21400,6 +21711,89 @@
       "metadata_errors": []
     },
     {
+      "path": "collection-engineering/generic-spider-vs-bounded-collector.md",
+      "kind": "canonical",
+      "category": "collection-engineering",
+      "parent": null,
+      "title": "通用 Spider 与有界采集器",
+      "source": "https://github.com/D4Vinci/Scrapling/blob/aa814a77d942678f1a44f68198a0c88550382d28/scrapling/spiders/spider.py; https://github.com/D4Vinci/Scrapling/blob/aa814a77d942678f1a44f68198a0c88550382d28/scrapling/spiders/engine.py; ./scrapling-0.4.15-readout.md#spider",
+      "original_date": "2026-10-09",
+      "archive_date": "2026-10-09",
+      "summary": "这张卡用来防止把 Scrapling Spider 的类默认值当成采集器合同。",
+      "keywords": [
+        "risk-control",
+        "maxItems",
+        "minDelaySec",
+        "oneSession",
+        "407",
+        "444",
+        "AIMD"
+      ],
+      "headings": [
+        "风控与并发边界"
+      ],
+      "bytes": 2827,
+      "lines": 57,
+      "content_sha256": "b6f2bd8ddf5514cf0bc9cfbc12866ce9b31d7d0a8fa03f654e02dbebfd3bdb85",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "generic-spider-vs-bounded-collector",
+      "document_type": "reference",
+      "scope": {
+        "targets": [
+          "Scrapling Spider"
+        ],
+        "client": "python",
+        "version": "0.4.15",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s-spider",
+          "ref": "https://github.com/D4Vinci/Scrapling/blob/aa814a77d942678f1a44f68198a0c88550382d28/scrapling/spiders/spider.py",
+          "basis": "static-review"
+        },
+        {
+          "id": "s-engine",
+          "ref": "https://github.com/D4Vinci/Scrapling/blob/aa814a77d942678f1a44f68198a0c88550382d28/scrapling/spiders/engine.py",
+          "basis": "static-review"
+        },
+        {
+          "id": "s-readout",
+          "ref": "./scrapling-0.4.15-readout.md#spider",
+          "basis": "source-report"
+        }
+      ],
+      "modules": [
+        {
+          "name": "risk-control",
+          "anchor": "risk-control",
+          "sources": [
+            "s-spider",
+            "s-engine",
+            "s-readout"
+          ],
+          "basis": "static-review",
+          "limits": "只核对 0.4.15 的类默认值和阻塞重试分支。没有跑 Spider。407 记 transport、444 记 blocked 是本仓库既有信号，不是上游 is_blocked 的返回值。"
+        }
+      ],
+      "relations": [
+        {
+          "type": "derived_from",
+          "target": "./scrapling-0.4.15-readout.md#spider"
+        }
+      ],
+      "tags": [
+        "Scrapling",
+        "spider",
+        "risk-control",
+        "AIMD",
+        "static-review"
+      ],
+      "source_completeness": "unknown",
+      "metadata_errors": []
+    },
+    {
       "path": "collection-engineering/high-concurrency-http-collector-control-plane-procedure.md",
       "kind": "canonical",
       "category": "collection-engineering",
@@ -21619,6 +22013,79 @@
         "half-open",
         "item deadline",
         "checkpoint"
+      ],
+      "source_completeness": "unknown",
+      "metadata_errors": []
+    },
+    {
+      "path": "collection-engineering/html-list-selector-relocate.md",
+      "kind": "canonical",
+      "category": "collection-engineering",
+      "parent": null,
+      "title": "HTML 列表选择器重定位",
+      "source": "./scrapling-0.4.15-readout.md#relocate",
+      "original_date": "2026-10-09",
+      "archive_date": "2026-10-09",
+      "summary": "这份流程只处理一件事：业务响应体是 HTML，列表行已经有过一次业务读回，之后页面结构变了，或者有人要改选择器、改指纹。它不抓页面，不启动浏览器，也不把解析命中写成服务端接受。",
+      "keywords": [
+        "decision-flow",
+        "replay_frozen",
+        "threshold 75",
+        "content_invalid",
+        "source-report"
+      ],
+      "headings": [
+        "前提与输入",
+        "步骤与分支",
+        "输出",
+        "验收",
+        "失败出口"
+      ],
+      "bytes": 3956,
+      "lines": 71,
+      "content_sha256": "05e879a07cdde2d5cbc9939f29d1bb3039a18c4812783566c585f2466ccfd2ba",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "html-list-selector-relocate",
+      "document_type": "procedure",
+      "scope": {
+        "targets": [
+          "HTML list selector"
+        ],
+        "client": "web",
+        "version": "unknown",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": "./scrapling-0.4.15-readout.md#relocate",
+          "basis": "source-report"
+        }
+      ],
+      "modules": [
+        {
+          "name": "decision-flow",
+          "anchor": "steps",
+          "sources": [
+            "s1"
+          ],
+          "basis": "source-report",
+          "limits": "只覆盖业务体已是 HTML 列表、且一行已有业务读回之后的选择器维护。阈值 75、body SHA-256 和失败即停是本仓库合同，不是 Scrapling 的默认 40。未对活页做 runtime、local-parity 或 server-accepted。"
+        }
+      ],
+      "relations": [
+        {
+          "type": "derived_from",
+          "target": "./scrapling-0.4.15-readout.md#relocate"
+        }
+      ],
+      "tags": [
+        "html-list",
+        "relocate",
+        "replay-frozen",
+        "decision-flow",
+        "source-report"
       ],
       "source_completeness": "unknown",
       "metadata_errors": []
@@ -22048,6 +22515,111 @@
         "GC"
       ],
       "source_completeness": "unknown",
+      "metadata_errors": []
+    },
+    {
+      "path": "collection-engineering/scrapling-0.4.15-readout.md",
+      "kind": "canonical",
+      "category": "collection-engineering",
+      "parent": null,
+      "title": "Scrapling 0.4.15 采集边界阅读摘录",
+      "source": "https://github.com/D4Vinci/Scrapling/blob/aa814a77d942678f1a44f68198a0c88550382d28/pyproject.toml; https://github.com/D4Vinci/Scrapling/blob/aa814a77d942678f1a44f68198a0c88550382d28/scrapling/parser.py; https://github.com/D4Vinci/Scrapling/blob/aa814a77d942678f1a44f68198a0c88550382d28/scrapling/core/utils/_utils.py; https://github.com/D4Vinci/Scrapling/blob/aa814a77d942678f1a44f68198a0c88550382d28/scrapling/spiders/spider.py; https://github.com/D4Vinci/Scrapling/blob/aa814a77d942678f1a44f68198a0c88550382d28/scrapling/spiders/engine.py; https://github.com/D4Vinci/Scrapling/blob/aa814a77d942678f1a44f68198a0c88550382d28/scrapling/fetchers/chrome.py; https://github.com/D4Vinci/Scrapling/blob/aa814a77d942678f1a44f68198a0c88550382d28/scrapling/engines/_browsers/_stealth.py; https://github.com/D4Vinci/Scrapling/blob/aa814a77d942678f1a44f68198a0c88550382d28/scrapling/engines/_browsers/_validators.py; https://github.com/D4Vinci/Scrapling/blob/aa814a77d942678f1a44f68198a0c88550382d28/scrapling/core/shell.py; https://github.com/D4Vinci/Scrapling/blob/aa814a77d942678f1a44f68198a0c88550382d28/docs/fetching/stealthy.md",
+      "original_date": "2026-10-08",
+      "archive_date": "2026-10-09",
+      "summary": "这是对 Scrapling 0.4.15（commit aa814a77d942678f1a44f68198a0c88550382d28，2026-10-08）的选段阅读，不是仓库镜像，也不是运行验收。许可证是 BSD-3-Clause。基础依赖是解析器；fetchers extra 才带 curl_cffi、Playwright、Patchright、browserforge 和指纹数据。本文不粘贴大段源码。",
+      "keywords": [
+        "relocate",
+        "find_similar",
+        "elements_storage",
+        "Spider",
+        "source-report",
+        "static-review"
+      ],
+      "headings": [
+        "阅读范围",
+        "列表元素重定位",
+        "浏览器 fetcher",
+        "Spider 默认值与阻塞重试",
+        "送模型前的页面文本",
+        "DevTools curl",
+        "复用边界"
+      ],
+      "bytes": 8099,
+      "lines": 100,
+      "content_sha256": "749f112d3d1c363f5a9c5541b902f4d8468d20c4515f96396a3a43ff2a0a88d9",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "scrapling-0-4-15-readout",
+      "document_type": "archive",
+      "scope": {
+        "targets": [
+          "Scrapling"
+        ],
+        "client": "python",
+        "version": "0.4.15",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s-pyproject",
+          "ref": "https://github.com/D4Vinci/Scrapling/blob/aa814a77d942678f1a44f68198a0c88550382d28/pyproject.toml",
+          "basis": "static-review"
+        },
+        {
+          "id": "s-parser",
+          "ref": "https://github.com/D4Vinci/Scrapling/blob/aa814a77d942678f1a44f68198a0c88550382d28/scrapling/parser.py",
+          "basis": "static-review"
+        },
+        {
+          "id": "s-storage",
+          "ref": "https://github.com/D4Vinci/Scrapling/blob/aa814a77d942678f1a44f68198a0c88550382d28/scrapling/core/utils/_utils.py",
+          "basis": "static-review"
+        },
+        {
+          "id": "s-spider",
+          "ref": "https://github.com/D4Vinci/Scrapling/blob/aa814a77d942678f1a44f68198a0c88550382d28/scrapling/spiders/spider.py",
+          "basis": "static-review"
+        },
+        {
+          "id": "s-engine",
+          "ref": "https://github.com/D4Vinci/Scrapling/blob/aa814a77d942678f1a44f68198a0c88550382d28/scrapling/spiders/engine.py",
+          "basis": "static-review"
+        },
+        {
+          "id": "s-chrome",
+          "ref": "https://github.com/D4Vinci/Scrapling/blob/aa814a77d942678f1a44f68198a0c88550382d28/scrapling/fetchers/chrome.py",
+          "basis": "static-review"
+        },
+        {
+          "id": "s-stealth",
+          "ref": "https://github.com/D4Vinci/Scrapling/blob/aa814a77d942678f1a44f68198a0c88550382d28/scrapling/engines/_browsers/_stealth.py",
+          "basis": "static-review"
+        },
+        {
+          "id": "s-pages",
+          "ref": "https://github.com/D4Vinci/Scrapling/blob/aa814a77d942678f1a44f68198a0c88550382d28/scrapling/engines/_browsers/_validators.py",
+          "basis": "static-review"
+        },
+        {
+          "id": "s-shell",
+          "ref": "https://github.com/D4Vinci/Scrapling/blob/aa814a77d942678f1a44f68198a0c88550382d28/scrapling/core/shell.py",
+          "basis": "static-review"
+        },
+        {
+          "id": "s-docs",
+          "ref": "https://github.com/D4Vinci/Scrapling/blob/aa814a77d942678f1a44f68198a0c88550382d28/docs/fetching/stealthy.md",
+          "basis": "source-report"
+        }
+      ],
+      "modules": [],
+      "relations": [],
+      "tags": [
+        "Scrapling",
+        "collector-boundary",
+        "static-review",
+        "source-report"
+      ],
+      "source_completeness": "partial",
       "metadata_errors": []
     },
     {
@@ -23127,6 +23699,677 @@
         "native"
       ],
       "source_completeness": "unknown",
+      "metadata_errors": []
+    },
+    {
+      "path": "mobile-app-reverse/apatch-source-notes-wujianwu.md",
+      "kind": "canonical",
+      "category": "mobile-app-reverse",
+      "parent": null,
+      "title": "吴见午 APatch 源码笔记（一至十）",
+      "source": "https://mp.weixin.qq.com/s?__biz=MzI5NDkwNTAyOQ%3D%3D&mid=2247484751&idx=1&sn=33a39f61aa89b8661225cf5b846e8718&chksm=ec5af0e5db2d79f3f33260f79949d1e460be24000bb7622454871db9f2396f96d907e54b98dc#rd",
+      "original_date": "2026-09-02/2026-09-07",
+      "archive_date": "2026-10-08",
+      "summary": "这是十篇公开笔记的目录，不是新的源码结论。每篇仍单独成文。来源版本是 APatch main@6ec140e 与 KernelPatch tag 0.13.8（HEAD bcc8498）。作者把「源码明确行为」和「作者推测」分开写；归档不把任一处升级成运行时事实。",
+      "keywords": [
+        "APatch",
+        "KernelPatch",
+        "event.rs",
+        "supercall",
+        "kpimg",
+        "su",
+        "SuperKey",
+        "SELinux",
+        "APModule"
+      ],
+      "headings": [
+        "清洗与完整性说明",
+        "篇目",
+        "复用边界"
+      ],
+      "bytes": 4379,
+      "lines": 68,
+      "content_sha256": "5d1ecacf1df517e49460e1da4cee54054311e5b9902227c4ac3b86b8fa69c07d",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "apatch-source-notes-wujianwu",
+      "document_type": "archive",
+      "scope": {
+        "targets": [
+          "apatch",
+          "kernelpatch"
+        ],
+        "client": "Android",
+        "version": "APatch main@6ec140e; KernelPatch 0.13.8 bcc8498",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": "https://mp.weixin.qq.com/s?__biz=MzI5NDkwNTAyOQ%3D%3D&mid=2247484751&idx=1&sn=33a39f61aa89b8661225cf5b846e8718&chksm=ec5af0e5db2d79f3f33260f79949d1e460be24000bb7622454871db9f2396f96d907e54b98dc#rd",
+          "basis": "source-report"
+        }
+      ],
+      "modules": [],
+      "relations": [
+        {
+          "type": "supplements",
+          "target": "./xfq-aosp-rom-compilation/xfq-20260626-02-procedure.md#prerequisites"
+        }
+      ],
+      "tags": [
+        "apatch",
+        "kernelpatch",
+        "source-notes"
+      ],
+      "source_completeness": "partial",
+      "metadata_errors": []
+    },
+    {
+      "path": "mobile-app-reverse/apatch-source-notes-wujianwu/01-event-boot-stages.md",
+      "kind": "nested",
+      "category": "mobile-app-reverse",
+      "parent": "mobile-app-reverse/apatch-source-notes-wujianwu.md",
+      "title": "APatch 源码笔记（一）：从 event.rs 看懂开机四阶段",
+      "source": "https://mp.weixin.qq.com/s?__biz=MzI5NDkwNTAyOQ%3D%3D&mid=2247484751&idx=1&sn=33a39f61aa89b8661225cf5b846e8718&chksm=ec5af0e5db2d79f3f33260f79949d1e460be24000bb7622454871db9f2396f96d907e54b98dc#rd",
+      "original_date": "2026-09-02",
+      "archive_date": "2026-10-08",
+      "summary": "吴见午公开笔记，发布日 2026-09-02。来源把结论绑在 APatch main@6ec140e 与 KernelPatch 0.13.8（bcc8498）。归档不把作者读源码的结论升级成刷机或运行时验收。",
+      "keywords": [],
+      "headings": [
+        "清洗与完整性说明",
+        "来源正文",
+        "01 开篇：为什么从 event.rs 开始？",
+        "02 先补背景：Android 开机时发生了什么",
+        "03 初见 event.rs：一个\"没有事件的事件系统\"",
+        "真相：内核把\"闹钟\"塞进了 init 的闹钟本",
+        "04 确认\"开机四阶段\"：以源码为准",
+        "05 主菜：on_post_data_fs 的十七步",
+        "第一段：报到与自证（event.rs:44-57）",
+        "第二段：清理与共存检查（event.rs:59-68）",
+        "第三段：搭日志环境（event.rs:70-126）",
+        "第四段：safe mode 三重门（event.rs:140-174）",
+        "第五段：模块的正戏（event.rs:158-207）",
+        "第六段：内嵌的第四阶段（event.rs:209-213）",
+        "第七段：run_stage——四层固定的脚本洋葱（event.rs:216-246）",
+        "06 第三进程与唯一的循环：boot-completed 和 uid-listener",
+        "07 顺手学到的 Rust：三个服务于源码的设计",
+        "08 源码阅读方法论：这篇用到的五招",
+        "09 本篇源码地图",
+        "10 十二个核心问题收口",
+        "11 总结与思考题",
+        "复用边界"
+      ],
+      "bytes": 43008,
+      "lines": 575,
+      "content_sha256": "c836762a0ac084a6533e42a1a3b71710977c3a620eaf6469546b48f4a798a212",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "apatch-source-note-01-event-boot-stages",
+      "document_type": "archive",
+      "scope": {
+        "targets": [
+          "apatch",
+          "kernelpatch"
+        ],
+        "client": "Android",
+        "version": "APatch main@6ec140e; KernelPatch 0.13.8 bcc8498",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": "https://mp.weixin.qq.com/s?__biz=MzI5NDkwNTAyOQ%3D%3D&mid=2247484751&idx=1&sn=33a39f61aa89b8661225cf5b846e8718&chksm=ec5af0e5db2d79f3f33260f79949d1e460be24000bb7622454871db9f2396f96d907e54b98dc#rd",
+          "basis": "source-report"
+        }
+      ],
+      "modules": [],
+      "relations": [],
+      "tags": [
+        "apatch",
+        "kernelpatch",
+        "source-report"
+      ],
+      "source_completeness": "partial",
+      "metadata_errors": []
+    },
+    {
+      "path": "mobile-app-reverse/apatch-source-notes-wujianwu/02-apd-multicall.md",
+      "kind": "nested",
+      "category": "mobile-app-reverse",
+      "parent": "mobile-app-reverse/apatch-source-notes-wujianwu.md",
+      "title": "APatch 源码笔记（二）：apd 到底是什么？从 main.rs 追踪守护进程的启动与 multicall 设计",
+      "source": "https://mp.weixin.qq.com/s?__biz=MzI5NDkwNTAyOQ%3D%3D&mid=2247484793&idx=1&sn=4737a4033cbe010a17b4ea59e3666406&chksm=ec5af0d3db2d79c521c23cc0741694c84fc6a9e1b3fbf8fa56c2fbf72e126be1bfc89eeeebbf#rd",
+      "original_date": "2026-09-03",
+      "archive_date": "2026-10-08",
+      "summary": "吴见午公开笔记，发布日 2026-09-03。来源把结论绑在 APatch main@6ec140e 与 KernelPatch 0.13.8（bcc8498）。归档不把作者读源码的结论升级成刷机或运行时验收。",
+      "keywords": [],
+      "headings": [
+        "清洗与完整性说明",
+        "来源正文",
+        "01 这一篇我们要解决什么问题？",
+        "02 为什么从这里开始？",
+        "03 cli::run() 第一幕：argv[0] 多重身份（multicall）",
+        "那 resetprop 和 magiskpolicy 的\"分身\"是怎么造出来的？",
+        "04 第二幕：clap 接管与 SuperKey 自证",
+        "05 第三幕：一张 match 分发全图",
+        "06 核心认知纠正：apd 是守护进程吗？",
+        "07 抢先 60 秒：root_shell 的大门",
+        "08 为什么这样设计？multicall 的三笔账",
+        "09 本篇源码地图",
+        "10 总结与思考题",
+        "复用边界"
+      ],
+      "bytes": 22299,
+      "lines": 329,
+      "content_sha256": "f522215f57983a5055b6a2f8fbc23b1d4c028f6bdf3e2d5b6acf476f9d37f9b5",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "apatch-source-note-02-apd-multicall",
+      "document_type": "archive",
+      "scope": {
+        "targets": [
+          "apatch",
+          "kernelpatch"
+        ],
+        "client": "Android",
+        "version": "APatch main@6ec140e; KernelPatch 0.13.8 bcc8498",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": "https://mp.weixin.qq.com/s?__biz=MzI5NDkwNTAyOQ%3D%3D&mid=2247484793&idx=1&sn=4737a4033cbe010a17b4ea59e3666406&chksm=ec5af0d3db2d79c521c23cc0741694c84fc6a9e1b3fbf8fa56c2fbf72e126be1bfc89eeeebbf#rd",
+          "basis": "source-report"
+        }
+      ],
+      "modules": [],
+      "relations": [],
+      "tags": [
+        "apatch",
+        "kernelpatch",
+        "source-report"
+      ],
+      "source_completeness": "partial",
+      "metadata_errors": []
+    },
+    {
+      "path": "mobile-app-reverse/apatch-source-notes-wujianwu/03-supercall.md",
+      "kind": "nested",
+      "category": "mobile-app-reverse",
+      "parent": "mobile-app-reverse/apatch-source-notes-wujianwu.md",
+      "title": "APatch 源码笔记（三）：没有 ioctl、没有 netlink——supercall 通信机制解剖",
+      "source": "https://mp.weixin.qq.com/s?__biz=MzI5NDkwNTAyOQ%3D%3D&mid=2247484794&idx=1&sn=9b8ed437bea559677f377c0bea39592c&chksm=ec5af0d0db2d79c68f358b939991720ce4716c31d9ca566db7f57bcfdb0381c09916951f2bd6#rd",
+      "original_date": "2026-09-04",
+      "archive_date": "2026-10-08",
+      "summary": "吴见午公开笔记，发布日 2026-09-04。来源把结论绑在 APatch main@6ec140e 与 KernelPatch 0.13.8（bcc8498）。归档不把作者读源码的结论升级成刷机或运行时验收。",
+      "keywords": [],
+      "headings": [
+        "清洗与完整性说明",
+        "来源正文",
+        "01 这一篇我们要解决什么问题？",
+        "02 为什么从这里开始？",
+        "03 背景：为什么不用 ioctl / netlink / procfs？",
+        "04 源码入口：两份客户端、一份契约、一个内核",
+        "05 核心数据结构：一次调用都带了什么",
+        "ver_and_cmd：把版本、暗号、命令塞进一个 64 位整数",
+        "SuProfile：一张 104 字节的提权名片",
+        "06 内核侧第一层：45 号是怎么被劫走的",
+        "07 内核侧第二层：before()——门禁、解码、分派",
+        "08 内核侧第三层：supercall() 的四段式 switch",
+        "09 数据流：一次 sc_su_grant_uid 的完整旅程",
+        "10 常见误区",
+        "11 本篇源码地图",
+        "12 总结与思考题",
+        "复用边界"
+      ],
+      "bytes": 21912,
+      "lines": 317,
+      "content_sha256": "ea5355d64522208f7acde18f3e4bcb9ab24d93db22d10eb2b36f87a9f98970dc",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "apatch-source-note-03-supercall",
+      "document_type": "archive",
+      "scope": {
+        "targets": [
+          "apatch",
+          "kernelpatch"
+        ],
+        "client": "Android",
+        "version": "APatch main@6ec140e; KernelPatch 0.13.8 bcc8498",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": "https://mp.weixin.qq.com/s?__biz=MzI5NDkwNTAyOQ%3D%3D&mid=2247484794&idx=1&sn=9b8ed437bea559677f377c0bea39592c&chksm=ec5af0d0db2d79c68f358b939991720ce4716c31d9ca566db7f57bcfdb0381c09916951f2bd6#rd",
+          "basis": "source-report"
+        }
+      ],
+      "modules": [],
+      "relations": [],
+      "tags": [
+        "apatch",
+        "kernelpatch",
+        "source-report"
+      ],
+      "source_completeness": "partial",
+      "metadata_errors": []
+    },
+    {
+      "path": "mobile-app-reverse/apatch-source-notes-wujianwu/04-bootimg-kpimg.md",
+      "kind": "nested",
+      "category": "mobile-app-reverse",
+      "parent": "mobile-app-reverse/apatch-source-notes-wujianwu.md",
+      "title": "APatch 源码笔记（四）：boot.img 是怎么被改的——kptools 注入与 kpimg 的开机自举",
+      "source": "https://mp.weixin.qq.com/s?__biz=MzI5NDkwNTAyOQ%3D%3D&mid=2247484794&idx=2&sn=b96342ea7a723bdacf41cabfdc63234e&chksm=ec5af0d0db2d79c626dc9537b057423966b2f13f714e2a132be9bddf6c5e095606f9674afd7d#rd",
+      "original_date": "2026-09-04",
+      "archive_date": "2026-10-08",
+      "summary": "吴见午公开笔记，发布日 2026-09-04。来源把结论绑在 APatch main@6ec140e 与 KernelPatch 0.13.8（bcc8498）。归档不把作者读源码的结论升级成刷机或运行时验收。",
+      "keywords": [],
+      "headings": [
+        "清洗与完整性说明",
+        "来源正文",
+        "01 这一篇我们要解决什么问题？",
+        "02 背景：boot.img 与两个前提",
+        "03 管理器视角：一次\"安装\"的完整流水线",
+        "04 kptools 解剖：boot.img 被改了哪几个字节",
+        "05 最难的一步：无符号内核里\"认路\"",
+        "06 开机自举：控制权的三次接力",
+        "07 澄清一个流传很广的误解：kptools 根本不看 KMI",
+        "08 常见误区",
+        "09 本篇源码地图",
+        "10 总结与思考题",
+        "复用边界"
+      ],
+      "bytes": 18728,
+      "lines": 198,
+      "content_sha256": "6ca1d05520fe746b2863badaa33a4ce452a46cee6aa7fb890e4ebab2b9f0e3f4",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "apatch-source-note-04-bootimg-kpimg",
+      "document_type": "archive",
+      "scope": {
+        "targets": [
+          "apatch",
+          "kernelpatch"
+        ],
+        "client": "Android",
+        "version": "APatch main@6ec140e; KernelPatch 0.13.8 bcc8498",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": "https://mp.weixin.qq.com/s?__biz=MzI5NDkwNTAyOQ%3D%3D&mid=2247484794&idx=2&sn=b96342ea7a723bdacf41cabfdc63234e&chksm=ec5af0d0db2d79c626dc9537b057423966b2f13f714e2a132be9bddf6c5e095606f9674afd7d#rd",
+          "basis": "source-report"
+        }
+      ],
+      "modules": [],
+      "relations": [],
+      "tags": [
+        "apatch",
+        "kernelpatch",
+        "source-report"
+      ],
+      "source_completeness": "partial",
+      "metadata_errors": []
+    },
+    {
+      "path": "mobile-app-reverse/apatch-source-notes-wujianwu/05-su-execve.md",
+      "kind": "nested",
+      "category": "mobile-app-reverse",
+      "parent": "mobile-app-reverse/apatch-source-notes-wujianwu.md",
+      "title": "APatch 源码笔记（五）：su 是怎么来的——从 execve hook 到 root_shell",
+      "source": "https://mp.weixin.qq.com/s?__biz=MzI5NDkwNTAyOQ%3D%3D&mid=2247484795&idx=1&sn=06f90629839034035b8b8e5aecc43b87&chksm=ec5af0d1db2d79c7814c724c667a998fc5910638c5a269e6dac279edafec528932dd776a9dc0#rd",
+      "original_date": "2026-09-05",
+      "archive_date": "2026-10-08",
+      "summary": "吴见午公开笔记，发布日 2026-09-05。来源把结论绑在 APatch main@6ec140e 与 KernelPatch 0.13.8（bcc8498）。归档不把作者读源码的结论升级成刷机或运行时验收。",
+      "keywords": [],
+      "headings": [
+        "清洗与完整性说明",
+        "来源正文",
+        "01 这一篇我们要解决什么问题？",
+        "02 为什么从这里开始？",
+        "03 背景：su 的三种实现思路",
+        "04 内核侧第一层：handle_before_execve 逐段精读",
+        "05 内核侧第二层：commit_su 的两条路径",
+        "06 第三层：SELinux 双保险",
+        "07 apd 侧：root_shell 逐段精读",
+        "08 猫鼠游戏：su 的\"隐身术\"",
+        "09 常见误区",
+        "10 本篇源码地图",
+        "11 总结与思考题",
+        "复用边界"
+      ],
+      "bytes": 20140,
+      "lines": 277,
+      "content_sha256": "c3d6b963a3f0b1cad93156629598eee5519c3c274ea4b972669f5c9778389227",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "apatch-source-note-05-su-execve",
+      "document_type": "archive",
+      "scope": {
+        "targets": [
+          "apatch",
+          "kernelpatch"
+        ],
+        "client": "Android",
+        "version": "APatch main@6ec140e; KernelPatch 0.13.8 bcc8498",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": "https://mp.weixin.qq.com/s?__biz=MzI5NDkwNTAyOQ%3D%3D&mid=2247484795&idx=1&sn=06f90629839034035b8b8e5aecc43b87&chksm=ec5af0d1db2d79c7814c724c667a998fc5910638c5a269e6dac279edafec528932dd776a9dc0#rd",
+          "basis": "source-report"
+        }
+      ],
+      "modules": [],
+      "relations": [],
+      "tags": [
+        "apatch",
+        "kernelpatch",
+        "source-report"
+      ],
+      "source_completeness": "partial",
+      "metadata_errors": []
+    },
+    {
+      "path": "mobile-app-reverse/apatch-source-notes-wujianwu/06-superuser-uid-listener.md",
+      "kind": "nested",
+      "category": "mobile-app-reverse",
+      "parent": "mobile-app-reverse/apatch-source-notes-wujianwu.md",
+      "title": "APatch 源码笔记（六）：谁有资格拿 Root——SuperUser 授权与 uid-listener",
+      "source": "https://mp.weixin.qq.com/s?__biz=MzI5NDkwNTAyOQ%3D%3D&mid=2247484795&idx=2&sn=74348f914d39184423a16cb8eb33f521&chksm=ec5af0d1db2d79c7e9f2687ef141c30f636a01f407552e550e70d82a765a53077fe1956efde2#rd",
+      "original_date": "2026-09-05",
+      "archive_date": "2026-10-08",
+      "summary": "吴见午公开笔记，发布日 2026-09-05。来源把结论绑在 APatch main@6ec140e 与 KernelPatch 0.13.8（bcc8498）。归档不把作者读源码的结论升级成刷机或运行时验收。",
+      "keywords": [],
+      "headings": [
+        "清洗与完整性说明",
+        "来源正文",
+        "01 这一篇我们要解决什么问题？",
+        "02 为什么从这里开始？",
+        "03 数据模型：一张 CSV，两张内核表",
+        "04 写入端：点下\"允许\"的那一瞬间",
+        "05 开机重播：内核自己读 CSV",
+        "06 运行时同步：uid-listener 与\"全撤重播\"",
+        "07 kstorage：这张表长什么样",
+        "08 常见误区",
+        "09 本篇源码地图",
+        "10 总结与思考题",
+        "复用边界"
+      ],
+      "bytes": 16302,
+      "lines": 241,
+      "content_sha256": "15f7b7342d0f2f2792be4bb7db1adc26c034395fa6c80831bd0ca784a9c33b61",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "apatch-source-note-06-superuser-uid-listener",
+      "document_type": "archive",
+      "scope": {
+        "targets": [
+          "apatch",
+          "kernelpatch"
+        ],
+        "client": "Android",
+        "version": "APatch main@6ec140e; KernelPatch 0.13.8 bcc8498",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": "https://mp.weixin.qq.com/s?__biz=MzI5NDkwNTAyOQ%3D%3D&mid=2247484795&idx=2&sn=74348f914d39184423a16cb8eb33f521&chksm=ec5af0d1db2d79c7e9f2687ef141c30f636a01f407552e550e70d82a765a53077fe1956efde2#rd",
+          "basis": "source-report"
+        }
+      ],
+      "modules": [],
+      "relations": [],
+      "tags": [
+        "apatch",
+        "kernelpatch",
+        "source-report"
+      ],
+      "source_completeness": "partial",
+      "metadata_errors": []
+    },
+    {
+      "path": "mobile-app-reverse/apatch-source-notes-wujianwu/07-superkey.md",
+      "kind": "nested",
+      "category": "mobile-app-reverse",
+      "parent": "mobile-app-reverse/apatch-source-notes-wujianwu.md",
+      "title": "APatch 源码笔记（七）：SuperKey——一把钥匙的安全模型",
+      "source": "https://mp.weixin.qq.com/s?__biz=MzI5NDkwNTAyOQ%3D%3D&mid=2247484826&idx=1&sn=3d31a3388ebf8fce10c1f15b4bd61b78&chksm=ec5af030db2d79265750ad86f0cc1fd44ac1c3482de3dacf179f03635b210cc7bdff98de4f49#rd",
+      "original_date": "2026-09-06",
+      "archive_date": "2026-10-08",
+      "summary": "吴见午公开笔记，发布日 2026-09-06。来源把结论绑在 APatch main@6ec140e 与 KernelPatch 0.13.8（bcc8498）。归档不把作者读源码的结论升级成刷机或运行时验收。",
+      "keywords": [],
+      "headings": [
+        "清洗与完整性说明",
+        "来源正文",
+        "01 这一篇我们要解决什么问题？",
+        "02 为什么从这里开始？",
+        "03 密钥的一生：从打补丁到开机",
+        "04 auth_superkey：双通道鉴权与\"自动晋升\"",
+        "05 一段考古：hash_key() 是个装饰品",
+        "06 钥匙的管理台：SKEY 三命令",
+        "07 新默认：内核里的 APK 签名验证",
+        "08 管理器侧：钥匙的交接仪式",
+        "09 安全模型总账",
+        "10 常见误区",
+        "11 本篇源码地图",
+        "12 总结与思考题",
+        "复用边界"
+      ],
+      "bytes": 17464,
+      "lines": 259,
+      "content_sha256": "b9046a92e1464991b0e3f3f3cb21c689a5ae6835d74be20fee722690d0c34686",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "apatch-source-note-07-superkey",
+      "document_type": "archive",
+      "scope": {
+        "targets": [
+          "apatch",
+          "kernelpatch"
+        ],
+        "client": "Android",
+        "version": "APatch main@6ec140e; KernelPatch 0.13.8 bcc8498",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": "https://mp.weixin.qq.com/s?__biz=MzI5NDkwNTAyOQ%3D%3D&mid=2247484826&idx=1&sn=3d31a3388ebf8fce10c1f15b4bd61b78&chksm=ec5af030db2d79265750ad86f0cc1fd44ac1c3482de3dacf179f03635b210cc7bdff98de4f49#rd",
+          "basis": "source-report"
+        }
+      ],
+      "modules": [],
+      "relations": [],
+      "tags": [
+        "apatch",
+        "kernelpatch",
+        "source-report"
+      ],
+      "source_completeness": "partial",
+      "metadata_errors": []
+    },
+    {
+      "path": "mobile-app-reverse/apatch-source-notes-wujianwu/08-selinux.md",
+      "kind": "nested",
+      "category": "mobile-app-reverse",
+      "parent": "mobile-app-reverse/apatch-source-notes-wujianwu.md",
+      "title": "APatch 源码笔记（八）：SELinux——APatch 如何在 enforcing 模式下生存",
+      "source": "https://mp.weixin.qq.com/s?__biz=MzI5NDkwNTAyOQ%3D%3D&mid=2247484826&idx=2&sn=1862c1159606772bab6e45b05012c0ae&chksm=ec5af030db2d792640cedec01eff981d7a5d0b878b5b2ffdeb6df56d5ec468aa5e49a95411a8#rd",
+      "original_date": "2026-09-06",
+      "archive_date": "2026-10-08",
+      "summary": "吴见午公开笔记，发布日 2026-09-06。来源把结论绑在 APatch main@6ec140e 与 KernelPatch 0.13.8（bcc8498）。归档不把作者读源码的结论升级成刷机或运行时验收。",
+      "keywords": [],
+      "headings": [
+        "清洗与完整性说明",
+        "来源正文",
+        "01 这一篇我们要解决什么问题？",
+        "02 背景：SELinux 三十秒",
+        "03 第一层：改\"法律\"——规则注入",
+        "04 第二层：换\"法官\"——执法函数替换",
+        "05 selinux_hide：改完法律，还要装作没改",
+        "06 restorecon：文件标签的善后组",
+        "07 时序总图",
+        "08 常见误区",
+        "09 本篇源码地图",
+        "10 总结与思考题",
+        "复用边界"
+      ],
+      "bytes": 16493,
+      "lines": 191,
+      "content_sha256": "e6b7d294fc6552cd481f1095d676152bf8becf0c1737ed447aa2e16cfe043685",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "apatch-source-note-08-selinux",
+      "document_type": "archive",
+      "scope": {
+        "targets": [
+          "apatch",
+          "kernelpatch"
+        ],
+        "client": "Android",
+        "version": "APatch main@6ec140e; KernelPatch 0.13.8 bcc8498",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": "https://mp.weixin.qq.com/s?__biz=MzI5NDkwNTAyOQ%3D%3D&mid=2247484826&idx=2&sn=1862c1159606772bab6e45b05012c0ae&chksm=ec5af030db2d792640cedec01eff981d7a5d0b878b5b2ffdeb6df56d5ec468aa5e49a95411a8#rd",
+          "basis": "source-report"
+        }
+      ],
+      "modules": [],
+      "relations": [],
+      "tags": [
+        "apatch",
+        "kernelpatch",
+        "source-report"
+      ],
+      "source_completeness": "partial",
+      "metadata_errors": []
+    },
+    {
+      "path": "mobile-app-reverse/apatch-source-notes-wujianwu/09-apmodule.md",
+      "kind": "nested",
+      "category": "mobile-app-reverse",
+      "parent": "mobile-app-reverse/apatch-source-notes-wujianwu.md",
+      "title": "APatch 源码笔记（九）：APModule 全景——目录、约定与生命周期总览",
+      "source": "https://mp.weixin.qq.com/s?__biz=MzI5NDkwNTAyOQ%3D%3D&mid=2247484833&idx=1&sn=f55f1fdcfd41c4e15d89a2d72df42c16&chksm=ec5af00bdb2d791d7c58687e7bd4ce42f635c18a3f3fec5bce8d4d73f65c2fff7b823fdf62b6#rd",
+      "original_date": "2026-09-07",
+      "archive_date": "2026-10-08",
+      "summary": "吴见午公开笔记，发布日 2026-09-07。来源把结论绑在 APatch main@6ec140e 与 KernelPatch 0.13.8（bcc8498）。归档不把作者读源码的结论升级成刷机或运行时验收。",
+      "keywords": [],
+      "headings": [
+        "清洗与完整性说明",
+        "来源正文",
+        "01 这一篇我们要解决什么问题？",
+        "02 为什么从这里开始？",
+        "03 解剖图：模块的文件协议",
+        "04 模块的\"三种武器\"：怎么改变一个系统",
+        "05 状态机：三个旗标文件撑起的生命周期",
+        "06 生死簿：开机那一下的三场戏",
+        "07 与 Magisk 的兼容面：一张对照表",
+        "08 常见误区",
+        "09 本篇源码地图",
+        "10 总结与思考题",
+        "复用边界"
+      ],
+      "bytes": 14687,
+      "lines": 173,
+      "content_sha256": "6a4a0e02b1011a8a3e64835e8f4d56151e5f52d02e5fcc512073b993bfb53883",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "apatch-source-note-09-apmodule",
+      "document_type": "archive",
+      "scope": {
+        "targets": [
+          "apatch",
+          "kernelpatch"
+        ],
+        "client": "Android",
+        "version": "APatch main@6ec140e; KernelPatch 0.13.8 bcc8498",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": "https://mp.weixin.qq.com/s?__biz=MzI5NDkwNTAyOQ%3D%3D&mid=2247484833&idx=1&sn=f55f1fdcfd41c4e15d89a2d72df42c16&chksm=ec5af00bdb2d791d7c58687e7bd4ce42f635c18a3f3fec5bce8d4d73f65c2fff7b823fdf62b6#rd",
+          "basis": "source-report"
+        }
+      ],
+      "modules": [],
+      "relations": [],
+      "tags": [
+        "apatch",
+        "kernelpatch",
+        "source-report"
+      ],
+      "source_completeness": "partial",
+      "metadata_errors": []
+    },
+    {
+      "path": "mobile-app-reverse/apatch-source-notes-wujianwu/10-module-zip-install.md",
+      "kind": "nested",
+      "category": "mobile-app-reverse",
+      "parent": "mobile-app-reverse/apatch-source-notes-wujianwu.md",
+      "title": "APatch 源码笔记（十）：一个模块 ZIP 的安装之旅本文基于双仓库交叉核实",
+      "source": "https://mp.weixin.qq.com/s?__biz=MzI5NDkwNTAyOQ%3D%3D&mid=2247484845&idx=1&sn=28a9352c0043fc3bcfa2b9534839ca4d&chksm=ec5af007db2d791168f0f39147000e186d381f235f8daee4ef5fa3e2f314b51d428246ba2f3f#rd",
+      "original_date": "2026-09-07",
+      "archive_date": "2026-10-08",
+      "summary": "吴见午公开笔记，发布日 2026-09-07。来源把结论绑在 APatch main@6ec140e 与 KernelPatch 0.13.8（bcc8498）。归档不把作者读源码的结论升级成刷机或运行时验收。",
+      "keywords": [],
+      "headings": [
+        "清洗与完整性说明",
+        "来源正文",
+        "01 这一篇我们要解决什么问题？",
+        "02 为什么从这里开始？",
+        "03 第一站：Rust 侧的安检闸门",
+        "04 第二站：两次解压的怪事",
+        "05 第三站：installer.sh 的十步加工",
+        "06 \"升级即复活\"与旗标继承的合谋",
+        "07 一个诚实的疑点：restorecon 的目标目录",
+        "08 常见误区",
+        "09 本篇源码地图",
+        "10 总结与思考题",
+        "复用边界"
+      ],
+      "bytes": 16208,
+      "lines": 227,
+      "content_sha256": "23547316c84c32ecf8017d43412d01e58219e64de3c92fc72d892f0578c12b8b",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "apatch-source-note-10-module-zip-install",
+      "document_type": "archive",
+      "scope": {
+        "targets": [
+          "apatch",
+          "kernelpatch"
+        ],
+        "client": "Android",
+        "version": "APatch main@6ec140e; KernelPatch 0.13.8 bcc8498",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": "https://mp.weixin.qq.com/s?__biz=MzI5NDkwNTAyOQ%3D%3D&mid=2247484845&idx=1&sn=28a9352c0043fc3bcfa2b9534839ca4d&chksm=ec5af007db2d791168f0f39147000e186d381f235f8daee4ef5fa3e2f314b51d428246ba2f3f#rd",
+          "basis": "source-report"
+        }
+      ],
+      "modules": [],
+      "relations": [],
+      "tags": [
+        "apatch",
+        "kernelpatch",
+        "source-report"
+      ],
+      "source_completeness": "partial",
       "metadata_errors": []
     },
     {
@@ -36453,6 +37696,449 @@
       "metadata_errors": []
     },
     {
+      "path": "mobile-app-reverse/wechat-wcdb-cipher-reference.md",
+      "kind": "canonical",
+      "category": "mobile-app-reverse",
+      "parent": null,
+      "title": "微信 4.1 本地库的页加密和 HMAC",
+      "source": "./wechat-wcdb-cipher.md#source-body",
+      "original_date": "unknown",
+      "archive_date": "2026-10-08",
+      "summary": "这张卡只回答两件事：来源给 WCDB 页写了哪些 encryption 参数，以及它用什么判断密钥对不对。表分工在库结构参考里。这不是请求 signature。",
+      "keywords": [
+        "parameters",
+        "validation",
+        "AES-256-CBC",
+        "HMAC",
+        "WCDB",
+        "source-report"
+      ],
+      "headings": [
+        "页加密参数",
+        "用页 HMAC 判断密钥",
+        "验证与限制"
+      ],
+      "bytes": 4150,
+      "lines": 85,
+      "content_sha256": "76f91667c024d1496989c1435512e680c1f3d71ae9f6610ef8c09899aa8db753",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "wechat-wcdb-cipher-reference",
+      "document_type": "reference",
+      "scope": {
+        "targets": [
+          "wechat-windows"
+        ],
+        "client": "windows",
+        "version": "4.1.13.65",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": "./wechat-wcdb-cipher.md#source-body",
+          "basis": "source-report"
+        }
+      ],
+      "modules": [
+        {
+          "name": "parameters",
+          "anchor": "parameters",
+          "sources": [
+            "s1"
+          ],
+          "basis": "source-report",
+          "limits": "只记录来源写的 SQLCipher/WCDB 页参数和密钥形态差异。未打开数据库，未核对 4.1 之后的构建。掩码字节留在来源归档，不在本卡重复。"
+        },
+        {
+          "name": "validation",
+          "anchor": "validation",
+          "sources": [
+            "s1"
+          ],
+          "basis": "source-report",
+          "limits": "HMAC 公式按来源摘录。迭代 2 次只用于 MAC 密钥，不是主密钥的 256000 次。未做自检。"
+        }
+      ],
+      "relations": [
+        {
+          "type": "derived_from",
+          "target": "./wechat-wcdb-cipher.md#source-body"
+        },
+        {
+          "type": "supplements",
+          "target": "./wechat-wcdb-schema-reference.md#interfaces"
+        }
+      ],
+      "tags": [
+        "wechat",
+        "wcdb",
+        "sqlcipher",
+        "aes"
+      ],
+      "source_completeness": "unknown",
+      "metadata_errors": []
+    },
+    {
+      "path": "mobile-app-reverse/wechat-wcdb-cipher.md",
+      "kind": "canonical",
+      "category": "mobile-app-reverse",
+      "parent": null,
+      "title": "微信 4.x 本地数据库解密原理",
+      "source": "微信 4.x 本地数据库解密原理",
+      "original_date": "unknown",
+      "archive_date": "2026-10-08",
+      "summary": "来源描述微信 4.x 本地库的 SQLCipher/WCDB 参数，以及 4.1 相对 4.0 不再把派生密钥以明文留在进程内存。数据目录用 <wxid> 占位，原文就是这样写的。",
+      "keywords": [
+        "WCDB",
+        "SQLCipher",
+        "AES-256-CBC",
+        "HMAC-SHA512",
+        "PBKDF2",
+        "4.1",
+        "source-report"
+      ],
+      "headings": [
+        "清洗与完整性说明",
+        "来源正文",
+        "一、加密机制",
+        "二、4.0 与 4.1 的关键差异",
+        "三、4.1+ 的密钥位置：Config.Cipher 对象图",
+        "遍历步骤",
+        "四、HMAC 校验：判断密钥真伪的唯一标准",
+        "五、几个容易踩的坑",
+        "1. page 1 的 IV 不在页内",
+        "2. reserve 字节的位置",
+        "3. WCDB_CT_<列名> 压缩标记",
+        "4. 空数据库是正常的",
+        "六、备用路径",
+        "七、相关脚本",
+        "复用边界"
+      ],
+      "bytes": 6768,
+      "lines": 190,
+      "content_sha256": "b6c8e20ac622bb153d2fff3d5379b3a28e8841e8ece19f79efeeb8aa11417137",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "wechat-wcdb-cipher",
+      "document_type": "archive",
+      "scope": {
+        "targets": [
+          "wechat-windows"
+        ],
+        "client": "windows",
+        "version": "4.1.13.65",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": null,
+          "basis": "source-report",
+          "citation": "微信 4.x 本地数据库解密原理",
+          "reason": "原始材料未提供作者名或可公开定位的链接"
+        }
+      ],
+      "modules": [],
+      "relations": [],
+      "tags": [
+        "wechat",
+        "wcdb",
+        "sqlcipher",
+        "aes"
+      ],
+      "source_completeness": "complete",
+      "metadata_errors": []
+    },
+    {
+      "path": "mobile-app-reverse/wechat-wcdb-schema-reference.md",
+      "kind": "canonical",
+      "category": "mobile-app-reverse",
+      "parent": null,
+      "title": "微信 4.1 本地库各文件放什么",
+      "source": "./wechat-wcdb-schema.md#source-body",
+      "original_date": "unknown",
+      "archive_date": "2026-10-08",
+      "summary": "这张卡只回答：来源的 18 个已解密库里，消息、联系人、会话和朋友圈各在哪个文件。完整 CREATE TABLE 在 来源归档。页加密不在本卡。",
+      "keywords": [
+        "interfaces",
+        "message_0",
+        "session",
+        "contact",
+        "sns",
+        "source-report"
+      ],
+      "headings": [
+        "库与关键表",
+        "验证与限制"
+      ],
+      "bytes": 3188,
+      "lines": 63,
+      "content_sha256": "9dd4e201e65a8395e5f542405401741d91a0fd44b8cfe8f91e11deef5eabaf91",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "wechat-wcdb-schema-reference",
+      "document_type": "reference",
+      "scope": {
+        "targets": [
+          "wechat-windows"
+        ],
+        "client": "windows",
+        "version": "4.1",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": "./wechat-wcdb-schema.md#source-body",
+          "basis": "source-report"
+        }
+      ],
+      "modules": [
+        {
+          "name": "interfaces",
+          "anchor": "interfaces",
+          "sources": [
+            "s1"
+          ],
+          "basis": "source-report",
+          "limits": "只登记来源列出的库角色和关键表名。行数是一份本地库的计数。未打开数据库，未核对 4.1 之后是否改表。"
+        }
+      ],
+      "relations": [
+        {
+          "type": "derived_from",
+          "target": "./wechat-wcdb-schema.md#source-body"
+        },
+        {
+          "type": "supplements",
+          "target": "./wechat-wcdb-cipher-reference.md#parameters"
+        }
+      ],
+      "tags": [
+        "wechat",
+        "wcdb",
+        "schema"
+      ],
+      "source_completeness": "unknown",
+      "metadata_errors": []
+    },
+    {
+      "path": "mobile-app-reverse/wechat-wcdb-schema.md",
+      "kind": "canonical",
+      "category": "mobile-app-reverse",
+      "parent": null,
+      "title": "微信 4.1 本地数据库结构参考",
+      "source": "微信 4.1 本地数据库结构参考",
+      "original_date": "unknown",
+      "archive_date": "2026-10-08",
+      "summary": "来源列出一份已解密本地目录里的 18 个库和建表语句。行数是那一份数据的计数，不是版本常量。",
+      "keywords": [
+        "message_0",
+        "contact",
+        "session",
+        "sns",
+        "Msg_",
+        "WCDB_CT",
+        "source-report"
+      ],
+      "headings": [
+        "清洗与完整性说明",
+        "来源正文",
+        "一、数据库清单",
+        "二、表结构",
+        "biz_message_0.db",
+        "bizchat.db",
+        "chatbot_message.db",
+        "contact.db",
+        "contact_fts.db",
+        "emoticon.db",
+        "favorite.db",
+        "favorite_fts.db",
+        "general.db",
+        "hardlink.db",
+        "head_image.db",
+        "media_0.db",
+        "message_0.db",
+        "message_fts.db",
+        "message_resource.db",
+        "session.db",
+        "sns.db",
+        "third_app_icon.db",
+        "复用边界"
+      ],
+      "bytes": 36494,
+      "lines": 1242,
+      "content_sha256": "a2c6a0dd7c851c89cb4840c3777b8b29c32d975f02eefc944be3d81d99efaabf",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "wechat-wcdb-schema",
+      "document_type": "archive",
+      "scope": {
+        "targets": [
+          "wechat-windows"
+        ],
+        "client": "windows",
+        "version": "4.1",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": null,
+          "basis": "source-report",
+          "citation": "微信 4.1 本地数据库结构参考",
+          "reason": "原始材料未提供作者名或可公开定位的链接"
+        }
+      ],
+      "modules": [],
+      "relations": [],
+      "tags": [
+        "wechat",
+        "wcdb",
+        "sqlite",
+        "schema"
+      ],
+      "source_completeness": "complete",
+      "metadata_errors": []
+    },
+    {
+      "path": "mobile-app-reverse/wechat-windows-sendmsg-static-case.md",
+      "kind": "canonical",
+      "category": "mobile-app-reverse",
+      "parent": null,
+      "title": "微信 Windows 4.1.13.65 发送消息的静态定位",
+      "source": "./wechat-windows-sendmsg-static.md#source-body",
+      "original_date": "unknown",
+      "archive_date": "2026-10-08",
+      "summary": "来源要定位 4.1.13.65（原文写 2025-09-17 构建）里“发送消息”停在哪一层。范围是静态：PE、已加载模块表、字符串和 localhost 端口。来源写明没有注入、没有 hook、没有发出消息。地址不能挪到别的构建。",
+      "keywords": [
+        "wechat-windows",
+        "sendmsg",
+        "ilink",
+        "static",
+        "source-report"
+      ],
+      "headings": [
+        "问题与范围",
+        "过程与关键证据",
+        "结论与反例",
+        "未决项与复用启示"
+      ],
+      "bytes": 3129,
+      "lines": 49,
+      "content_sha256": "f4039fbdeded4985e456cbf5a97ffb7d39c799d9d8fbee38267e702776805274",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "wechat-windows-sendmsg-static-case",
+      "document_type": "case",
+      "scope": {
+        "targets": [
+          "wechat-windows"
+        ],
+        "client": "windows",
+        "version": "4.1.13.65",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": "./wechat-windows-sendmsg-static.md#source-body",
+          "basis": "source-report"
+        }
+      ],
+      "modules": [],
+      "relations": [
+        {
+          "type": "derived_from",
+          "target": "./wechat-windows-sendmsg-static.md#source-body"
+        }
+      ],
+      "tags": [
+        "wechat",
+        "sendmsg",
+        "static"
+      ],
+      "source_completeness": "unknown",
+      "metadata_errors": []
+    },
+    {
+      "path": "mobile-app-reverse/wechat-windows-sendmsg-static.md",
+      "kind": "canonical",
+      "category": "mobile-app-reverse",
+      "parent": null,
+      "title": "微信 4.1.13.65 Windows 发送消息链路 —— 逆向笔记",
+      "source": "微信 4.1.13.65 Windows 发送消息链路 —— 逆向笔记",
+      "original_date": "unknown",
+      "archive_date": "2026-10-08",
+      "summary": "来源自称只做了静态阅读：文件、进程模块表和本机 localhost 端口表。它写明没有注入、没有 hook、没有发消息。构建日期按原文是 2025-09-17，观察日不另填。",
+      "keywords": [
+        "4.1.13.65",
+        "Weixin.dll",
+        "sendmsg",
+        "ilink2",
+        "pdata",
+        "source-report"
+      ],
+      "headings": [
+        "清洗与完整性说明",
+        "来源正文",
+        "1. 架构总览：这不再是一个单体程序",
+        "主进程实际加载的腾讯模块",
+        "关键结论：Weixin.dll 的 189 MB 不是业务逻辑",
+        "一个可用的替代品：.pdata",
+        "2. 工具链",
+        "xref.py 的两个核心技巧",
+        "3. 发送消息链路（已定位）",
+        "3.1 字符串锚点",
+        "3.2 调用链",
+        "3.3 上层是一个 JSON 命令注册表",
+        "3.4 JSON 参数键名（已在 .rdata 中确认存在）",
+        "3.5 传输层（另一条路）",
+        "4. 外部可达性排查（结论：不可外部调用）",
+        "5. 建议的下一步：抓包-回放（而非盲猜 schema）",
+        "风险（必须知情）",
+        "更保守的替代方案",
+        "6. 复现命令",
+        "7. 已知限制",
+        "复用边界"
+      ],
+      "bytes": 12213,
+      "lines": 316,
+      "content_sha256": "9d68b361dca32331c6acd46716266ecbe08fea269861f609b7c1dcc048970ad1",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "wechat-windows-sendmsg-static",
+      "document_type": "archive",
+      "scope": {
+        "targets": [
+          "wechat-windows"
+        ],
+        "client": "windows",
+        "version": "4.1.13.65",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": null,
+          "basis": "source-report",
+          "citation": "微信 4.1.13.65 Windows 发送消息链路 —— 逆向笔记",
+          "reason": "原始材料未提供作者名或可公开定位的链接"
+        }
+      ],
+      "modules": [],
+      "relations": [],
+      "tags": [
+        "wechat",
+        "sendmsg",
+        "ilink",
+        "static"
+      ],
+      "source_completeness": "partial",
+      "metadata_errors": []
+    },
+    {
       "path": "mobile-app-reverse/xfq-android-cases-compilation.md",
       "kind": "canonical",
       "category": "mobile-app-reverse",
@@ -45114,6 +46800,82 @@
       "metadata_errors": []
     },
     {
+      "path": "native-analysis/kanxue-keymint-ta-rkp-signing-oracle.md",
+      "kind": "canonical",
+      "category": "native-analysis",
+      "parent": null,
+      "title": "不用提取 CDI_Leaf：把 KeyMint TA 变成 RKP 签名 Oracle",
+      "source": "https://bbs.kanxue.com/thread-293244.htm",
+      "original_date": "2026-10-16",
+      "archive_date": "2026-10-17",
+      "summary": "看雪 thread-293244，发帖账号「西瓜帅」，栏目 Android 安全。页面相对时间约为 2026-10-16。清洗不代表本库复现 KeyMint TA、RKP 或 Google 签发。",
+      "keywords": [
+        "KeyMint",
+        "RKP",
+        "CDI_Leaf",
+        "keybox",
+        "QSEE",
+        "MINK IPC",
+        "source-report"
+      ],
+      "headings": [
+        "清洗与完整性说明",
+        "来源正文",
+        "前言",
+        "一、目标与背景知识",
+        "RKP seed 是什么",
+        "正常流程里的安全假设",
+        "二、攻坚失败史（可跳过，但都是真金白银的实验）",
+        "三、转向：把攻击面缩到 KeyMint TA 本体",
+        "四、打通 TA 命令通道（root 不是终点，是起点）",
+        "五、Oracle 实战",
+        "5.1 请求格式",
+        "5.2 完整 pipeline",
+        "5.3 结果",
+        "六、原理总结：为什么 Google 分不出来",
+        "七、影响面与边界",
+        "附：本次沉淀的工具",
+        "楼层摘录（固件版本）",
+        "复用边界"
+      ],
+      "bytes": 12028,
+      "lines": 227,
+      "content_sha256": "8710888657831990563adfff128a0b629cf32b6292a2f8a09c7621a2c2534c6e",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "kanxue-keymint-ta-rkp-signing-oracle",
+      "document_type": "archive",
+      "scope": {
+        "targets": [
+          "qti-keymint-ta"
+        ],
+        "client": "android",
+        "version": "unknown",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": "https://bbs.kanxue.com/thread-293244.htm",
+          "basis": "source-report"
+        }
+      ],
+      "modules": [],
+      "relations": [],
+      "tags": [
+        "keymint",
+        "rkp",
+        "cdi-leaf",
+        "keybox",
+        "qsee",
+        "mink-ipc",
+        "tee",
+        "source-report"
+      ],
+      "source_completeness": "partial",
+      "metadata_errors": []
+    },
+    {
       "path": "native-analysis/nuitka-onefile-payload-recovery-procedure.md",
       "kind": "canonical",
       "category": "native-analysis",
@@ -50931,6 +52693,131 @@
       "metadata_errors": []
     },
     {
+      "path": "web-reverse/acw-sc-v2-ast-restoration-reference.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "ACW acw_sc_v2 混淆代码的 AST 还原参考",
+      "source": "./acw-sc-v2-source-archive.md#source-body",
+      "original_date": "2025-09-26",
+      "archive_date": "2026-10-13",
+      "summary": "这张卡只提炼来源文章中可定位的 AST 操作顺序；清洗后的来源正文与缺口见 ACW 来源归档。原文只报告一个目标版本，不据此推断其他 acw_sc_v2 实现。",
+      "keywords": [
+        "decision-flow",
+        "Babel AST",
+        "binding",
+        "decoder",
+        "source-report"
+      ],
+      "headings": [
+        "分层还原",
+        "验证与限制"
+      ],
+      "bytes": 2762,
+      "lines": 54,
+      "content_sha256": "f497815a31c60cf385f26cec8aab96888f0b3fea33e5db91575e74fdc2c805fb",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "web-reverse-acw-sc-v2-ast-restoration-reference",
+      "document_type": "reference",
+      "scope": {
+        "targets": [
+          "acw-sc-v2"
+        ],
+        "client": "web",
+        "version": "unknown",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": "./acw-sc-v2-source-archive.md#source-body",
+          "basis": "source-report"
+        }
+      ],
+      "modules": [
+        {
+          "name": "decision-flow",
+          "anchor": "ast-restoration",
+          "sources": [
+            "s1"
+          ],
+          "basis": "source-report",
+          "limits": "仅整理来源描述的分层 AST 还原顺序；未取得完整目标脚本、浏览器解密表或完整转换代码，本轮未运行目标代码或验证 Cookie。"
+        }
+      ],
+      "relations": [
+        {
+          "type": "derived_from",
+          "target": "./acw-sc-v2-source-archive.md#source-body"
+        }
+      ],
+      "tags": [
+        "acw-sc-v2",
+        "babel-ast",
+        "binding",
+        "deobfuscation",
+        "source-report"
+      ],
+      "source_completeness": "unknown",
+      "metadata_errors": []
+    },
+    {
+      "path": "web-reverse/acw-sc-v2-source-archive.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "Python 爬虫进阶：acw_sc_v2 加密 AST 解混淆全流程（来源归档）",
+      "source": "https://mp.weixin.qq.com/s/P0x9xe9r6ruAlB1UwSFJqg",
+      "original_date": "2025-09-26",
+      "archive_date": "2026-10-13",
+      "summary": "原文件没有 H1；归档标题按已审输入文件名补入。正文声明日期为 2025-09-26，但没有完整复现代码；导出中有 9 个 1×1 SVG 占位图而无独立图片附件。以 Base64 表示的目标网址不解码、不复制，替换为脱敏标记。保留原始可见文字与代码片段，不补齐缺失 decoder、浏览器解密数组或 AST 转换器。 来源可定位到 metadata 中的原文链接；链接只按来源材料记录，本轮未访问原站。该 archive 只归档 pending 可见内容，source_completeness: partial 不替代原文以外的图片、附件或原始 runtime 证据。",
+      "keywords": [
+        "Babel AST",
+        "acw-sc-v2",
+        "source-report",
+        "partial"
+      ],
+      "headings": [
+        "清洗与完整性说明",
+        "来源正文",
+        "复用边界"
+      ],
+      "bytes": 7555,
+      "lines": 186,
+      "content_sha256": "c1659f67266c95e3f0a383314b31fbab972afd9776093f23358761ee701f3e63",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "web-reverse-acw-sc-v2-source-archive",
+      "document_type": "archive",
+      "scope": {
+        "targets": [
+          "acw-sc-v2"
+        ],
+        "client": "web",
+        "version": "unknown",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": "https://mp.weixin.qq.com/s/P0x9xe9r6ruAlB1UwSFJqg",
+          "basis": "source-report"
+        }
+      ],
+      "modules": [],
+      "relations": [],
+      "tags": [
+        "acw-sc-v2",
+        "babel-ast",
+        "binding",
+        "deobfuscation",
+        "source-report"
+      ],
+      "source_completeness": "partial",
+      "metadata_errors": []
+    },
+    {
       "path": "web-reverse/ai-assisted-web-reverse-compilation.md",
       "kind": "canonical",
       "category": "web-reverse",
@@ -53311,6 +55198,153 @@
       "metadata_errors": []
     },
     {
+      "path": "web-reverse/aliyun-captcha-v2-sandbox-case.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "AliyunCaptcha V2 单站补环境案例（来源报告）",
+      "source": "./aliyun-captcha-v2-sandbox-source-archive.md#source-body",
+      "original_date": "unknown",
+      "archive_date": "2026-10-13",
+      "summary": "来源描述一个站点在请求过程中由 acw_sc_v2 阶段转入 AliyunCaptcha V2 滑块，并报告以 Node 沙箱承载 AliyunCaptcha SDK、FeiLin 与 sg 的单次分析。目标 URL 在来源中以 Base64 表示，公共归档中未解码；本文范围限定为该来源所述的 V2 流程，不代表所有 AliyunCaptcha 集成。",
+      "keywords": [
+        "request-chain",
+        "validation",
+        "requestInfo",
+        "Node vm",
+        "FeiLin",
+        "sg",
+        "source-report"
+      ],
+      "headings": [
+        "问题与范围",
+        "过程与关键证据",
+        "结论与反例",
+        "未决项与复用启示"
+      ],
+      "bytes": 3991,
+      "lines": 63,
+      "content_sha256": "c08d2649e738deb9cc94c3ca6cdbac895e3d8f0288bad7c9ed9aa94829c837a7",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "web-reverse-aliyun-captcha-v2-sandbox-case",
+      "document_type": "case",
+      "scope": {
+        "targets": [
+          "aliyun-captcha"
+        ],
+        "client": "web",
+        "version": "V2",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": "./aliyun-captcha-v2-sandbox-source-archive.md#source-body",
+          "basis": "source-report"
+        }
+      ],
+      "modules": [
+        {
+          "name": "request-chain",
+          "anchor": "request-chain",
+          "sources": [
+            "s1"
+          ],
+          "basis": "source-report",
+          "limits": "仅记录来源报告对单站阶段交接的描述；未验证当前服务或其他集成的完整请求顺序。"
+        },
+        {
+          "name": "validation",
+          "anchor": "validation",
+          "sources": [
+            "s1"
+          ],
+          "basis": "source-report",
+          "limits": "仅整理来源对请求真实性、设备 / 行为分流和返回码的解释；本轮未运行 SDK 或复核服务端结果。"
+        }
+      ],
+      "relations": [
+        {
+          "type": "derived_from",
+          "target": "./aliyun-captcha-v2-sandbox-source-archive.md#source-body"
+        },
+        {
+          "type": "supplements",
+          "target": "./aliyun-captcha-v2-dynamic-keys-reference.md#request-chain"
+        }
+      ],
+      "tags": [
+        "aliyun-captcha",
+        "V2",
+        "sandbox",
+        "environment-parity",
+        "request-chain",
+        "validation",
+        "source-report"
+      ],
+      "source_completeness": "unknown",
+      "metadata_errors": []
+    },
+    {
+      "path": "web-reverse/aliyun-captcha-v2-sandbox-source-archive.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "AliyunCaptcha V2 滑块补环境单站分析（来源归档）",
+      "source": "https://mp.weixin.qq.com/s/FuTVmBa7DOu59FJ2O-NV8w",
+      "original_date": "unknown",
+      "archive_date": "2026-10-13",
+      "summary": "原文件没有 H1；标题按已审输入文件名与正文主题补入。导出里有 1 个 1×1 SVG 占位图，没有原图附件。原文中的 Base64 目标网址保持未解码并替换为脱敏标记；本归档不带入目标 host、真实 token、设备指纹、密钥、请求体或运行时样值。所见代码与结果只保留来源报告身份，不代表本轮复现。 来源可定位到 metadata 中的原文链接；链接只按来源材料记录，本轮未访问原站。该 archive 只归档 pending 可见内容，source_completeness: partial 不替代原文以外的图片、附件或原始 runtime 证据。",
+      "keywords": [
+        "AliyunCaptcha",
+        "FeiLin",
+        "sg",
+        "Node vm",
+        "source-report",
+        "partial"
+      ],
+      "headings": [
+        "清洗与完整性说明",
+        "来源正文",
+        "复用边界"
+      ],
+      "bytes": 19676,
+      "lines": 425,
+      "content_sha256": "9aa89b09e823512163ee38029fc38a77b04c1b953c32ba13aae790469fd8579d",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "web-reverse-aliyun-captcha-v2-sandbox-source-archive",
+      "document_type": "archive",
+      "scope": {
+        "targets": [
+          "aliyun-captcha"
+        ],
+        "client": "web",
+        "version": "V2",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": "https://mp.weixin.qq.com/s/FuTVmBa7DOu59FJ2O-NV8w",
+          "basis": "source-report"
+        }
+      ],
+      "modules": [],
+      "relations": [],
+      "tags": [
+        "aliyun-captcha",
+        "V2",
+        "Node-vm",
+        "FeiLin",
+        "sg",
+        "source-report"
+      ],
+      "source_completeness": "partial",
+      "metadata_errors": []
+    },
+    {
       "path": "web-reverse/aliyun-captcha-v2-slider-part1-request-chain.md",
       "kind": "canonical",
       "category": "web-reverse",
@@ -53769,23 +55803,31 @@
       "category": "web-reverse",
       "parent": "web-reverse/anti-crawler-web-reverse-compilation.md",
       "title": "Akamai 来源里的 sensor 字段形状",
-      "source": "./anti-crawler-web-20250923-01.md#第一篇akamai难点第一弹mst参数的vmp混淆解决思路; ./anti-crawler-web-20250923-01.md#第二篇akamai难点第二弹ajr参数得混淆解密; ./anti-crawler-web-20250923-01.md#第三篇akamai难点第三弹ffs参数的混淆解密思路; ./anti-crawler-web-20250923-01.md#第四篇akamai难点第四弹获取xck字典后的混淆解密思路",
+      "source": "./anti-crawler-web-20250923-01.md#第一篇akamai难点第一弹mst参数的vmp混淆解决思路; ./anti-crawler-web-20250923-01.md#第二篇akamai难点第二弹ajr参数得混淆解密; ./anti-crawler-web-20250923-01.md#第三篇akamai难点第三弹ffs参数的混淆解密思路; ./anti-crawler-web-20250923-01.md#第四篇akamai难点第四弹获取xck字典后的混淆解密思路; ../purecalc-akamai-sensor-data-source-archive.md#sensor-data-generation",
       "original_date": "2025-09-23",
       "archive_date": "2026-10-02",
-      "summary": "这张卡只回答来源如何描述 dvc、ajr、ffs/inf、xCK 的键，以及 JSON 字符串之后的置换和前缀。POST、Cookie 更新和通过条件仍看产品卡的链路和验收，不在这里重复。环境字面量、字符表和生成样例都不抄。",
-      "keywords": [],
+      "summary": "这张卡回答来源如何描述 dvc、ajr、ffs/inf、xCK 的键，以及 JSON 字符串之后的置换和前缀；新增来源补充 sensor_data 变换链与 mst.dvc 首段 VMP 的自述。POST、Cookie 更新和通过条件仍看产品卡的链路和验收，不在这里重复。环境字面量、字符表和生成样例都不抄。",
+      "keywords": [
+        "parameters",
+        "Akamai",
+        "sensor_data",
+        "dvc",
+        "VMP",
+        "source-report"
+      ],
       "headings": [
         "字段形状",
         "dvc",
         "ajr",
         "ffs 与 inf",
         "xCK 之后",
+        "纯算来源补充",
         "结论",
         "验证与限制"
       ],
-      "bytes": 7499,
-      "lines": 113,
-      "content_sha256": "81a23283a5662d3cfa30a73e7854d0d30705cccae4ff2b8217b1f15882eee4b3",
+      "bytes": 9685,
+      "lines": 129,
+      "content_sha256": "11cb5f2715edbbac39d27e8eaa9c488bdc0e956ccf4a8d12ef33a44910ffb383",
       "metadata_status": "v2",
       "schema_version": 2,
       "id": "akamai-sensor-field-shapes-reference",
@@ -53818,6 +55860,11 @@
           "id": "s4",
           "ref": "./anti-crawler-web-20250923-01.md#第四篇akamai难点第四弹获取xck字典后的混淆解密思路",
           "basis": "source-report"
+        },
+        {
+          "id": "s5",
+          "ref": "../purecalc-akamai-sensor-data-source-archive.md#sensor-data-generation",
+          "basis": "source-report"
         }
       ],
       "modules": [
@@ -53828,21 +55875,29 @@
             "s1",
             "s2",
             "s3",
-            "s4"
+            "s4",
+            "s5"
           ],
           "basis": "source-report",
-          "limits": "只整理来源对字段形状的描述。UA、屏幕、插件串、字符表、ver 样例和生成样例都不收录。hh 下标未展开。没有运行，也不把作者的生成成功写成验收。"
+          "limits": "只整理来源对字段形状与变换链的描述。UA、屏幕、插件串、字符表、ver 样例、生成样例和事件轨迹都不收录。hh 下标未展开。s5 的 opcode 数、312 组对拍和浏览器匹配属于作者自述；没有运行，不把生成结果写成验收，且来源报告本地值未被服务端接受。"
         }
       ],
       "relations": [
         {
           "type": "derived_from",
           "target": "./anti-crawler-web-20250923-01.md#第四篇akamai难点第四弹获取xck字典后的混淆解密思路"
+        },
+        {
+          "type": "derived_from",
+          "target": "../purecalc-akamai-sensor-data-source-archive.md#sensor-data-generation"
         }
       ],
       "tags": [
         "akamai",
         "sensor-data",
+        "dvc",
+        "vmp",
+        "purecalc",
         "source-report"
       ],
       "source_completeness": "unknown",
@@ -54486,6 +56541,350 @@
         "纯算"
       ],
       "source_completeness": "partial",
+      "metadata_errors": []
+    },
+    {
+      "path": "web-reverse/babel-ast-node-types-reference.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "Babel AST 节点类怎么分组",
+      "source": "./babel-ast-node-types.md#source-body",
+      "original_date": "unknown",
+      "archive_date": "2026-10-08",
+      "summary": "这张卡只回答：来源把 JavaScript AST 节点分成哪几类，以及 const x = foo(\"hi\") 被拆成哪些节点。完整例子在 来源归档。path、scope 和 types 工厂不在本卡。",
+      "keywords": [
+        "interfaces",
+        "babel",
+        "node-types",
+        "source-report"
+      ],
+      "headings": [
+        "节点类",
+        "验证与限制"
+      ],
+      "bytes": 3210,
+      "lines": 56,
+      "content_sha256": "bcbd435bc3958fb8ecfd57da4e320ce416638cd4074b96c46a022c957e2639de",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "babel-ast-node-types-reference",
+      "document_type": "reference",
+      "scope": {
+        "targets": [
+          "javascript-ast",
+          "babel"
+        ],
+        "client": "node",
+        "version": "unknown",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": "./babel-ast-node-types.md#source-body",
+          "basis": "source-report"
+        }
+      ],
+      "modules": [
+        {
+          "name": "interfaces",
+          "anchor": "interfaces",
+          "sources": [
+            "s1"
+          ],
+          "basis": "source-report",
+          "limits": "只登记来源点名的节点类和分组。未对照 @babel/types 当前导出，未解析示例源码。"
+        }
+      ],
+      "relations": [
+        {
+          "type": "derived_from",
+          "target": "./babel-ast-node-types.md#source-body"
+        },
+        {
+          "type": "supplements",
+          "target": "./babel-core-objects-reference.md#interfaces"
+        }
+      ],
+      "tags": [
+        "babel",
+        "ast",
+        "node-types"
+      ],
+      "source_completeness": "unknown",
+      "metadata_errors": []
+    },
+    {
+      "path": "web-reverse/babel-ast-node-types.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "AST 节点体系基础类型",
+      "source": "AST 节点体系基础类型",
+      "original_date": "unknown",
+      "archive_date": "2026-10-08",
+      "summary": "来源是一份没有作者名和公开链接的 AST 节点类型笔记。归档只保留原文分类和例子，不表示本轮用某个 Babel 版本跑过 parser。",
+      "keywords": [
+        "AST",
+        "Identifier",
+        "CallExpression",
+        "VariableDeclaration",
+        "Pattern",
+        "source-report"
+      ],
+      "headings": [
+        "清洗与完整性说明",
+        "来源正文",
+        "1. 基础节点",
+        "Program",
+        "Identifier",
+        "StringLiteral",
+        "NumericLiteral",
+        "BooleanLiteral",
+        "NullLiteral",
+        "RegExpLiteral",
+        "BigIntLiteral",
+        "2. 声明类节点",
+        "VariableDeclaration",
+        "VariableDeclarator",
+        "FunctionDeclaration",
+        "ClassDeclaration",
+        "ImportDeclaration",
+        "ExportNamedDeclaration",
+        "3. 语句类节点",
+        "ExpressionStatement",
+        "ReturnStatement",
+        "IfStatement",
+        "ForStatement",
+        "WhileStatement",
+        "BlockStatement",
+        "BreakStatement",
+        "ContinueStatement",
+        "4. 表达式类节点",
+        "CallExpression",
+        "MemberExpression",
+        "BinaryExpression",
+        "LogicalExpression",
+        "AssignmentExpression",
+        "ConditionalExpression",
+        "ArrowFunctionExpression",
+        "ObjectExpression",
+        "ArrayExpression",
+        "NewExpression",
+        "5. 结构和模式类节点",
+        "ObjectPattern",
+        "ArrayPattern",
+        "RestElement",
+        "AssignmentPattern",
+        "SpreadElement",
+        "6. 怎么理解这些节点",
+        "在 Babel 插件开发中的位置",
+        "复用边界"
+      ],
+      "bytes": 8087,
+      "lines": 537,
+      "content_sha256": "723cecb4ec4429c6e67b3c484afee01503fb80f09917f4f2bdc734616aab062c",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "babel-ast-node-types",
+      "document_type": "archive",
+      "scope": {
+        "targets": [
+          "javascript-ast",
+          "babel"
+        ],
+        "client": "node",
+        "version": "unknown",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": null,
+          "basis": "source-report",
+          "citation": "AST 节点体系基础类型",
+          "reason": "原始材料未提供作者名或可公开定位的链接"
+        }
+      ],
+      "modules": [],
+      "relations": [],
+      "tags": [
+        "babel",
+        "ast",
+        "node-types"
+      ],
+      "source_completeness": "complete",
+      "metadata_errors": []
+    },
+    {
+      "path": "web-reverse/babel-core-objects-reference.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "Babel 的 path、node、scope、binding、types",
+      "source": "./babel-core-objects.md#source-body",
+      "original_date": "unknown",
+      "archive_date": "2026-10-08",
+      "summary": "这张卡只回答：写 visitor 时这五个对象各管什么。节点类型表不在这里。常量字符串还原的四步顺序是另一张 procedure，本卡不改它的验收。",
+      "keywords": [
+        "interfaces",
+        "babel",
+        "path",
+        "scope",
+        "binding",
+        "source-report"
+      ],
+      "headings": [
+        "五个对象",
+        "验证与限制"
+      ],
+      "bytes": 3394,
+      "lines": 58,
+      "content_sha256": "a7aaae56ed4c29773ab11514dbd1718005e6fbda301b0b5dab3d66517627d2f1",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "babel-core-objects-reference",
+      "document_type": "reference",
+      "scope": {
+        "targets": [
+          "babel"
+        ],
+        "client": "node",
+        "version": "unknown",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": "./babel-core-objects.md#source-body",
+          "basis": "source-report"
+        }
+      ],
+      "modules": [
+        {
+          "name": "interfaces",
+          "anchor": "interfaces",
+          "sources": [
+            "s1"
+          ],
+          "basis": "source-report",
+          "limits": "只整理来源列出的对象分工和 API 名。未安装这些包，未验证当前主版本的导出。"
+        }
+      ],
+      "relations": [
+        {
+          "type": "derived_from",
+          "target": "./babel-core-objects.md#source-body"
+        },
+        {
+          "type": "supplements",
+          "target": "./babel-ast-node-types-reference.md#interfaces"
+        },
+        {
+          "type": "supplements",
+          "target": "./benru-web-reverse-compilation/benru-web-20260316-01-procedure.md#prerequisites"
+        }
+      ],
+      "tags": [
+        "babel",
+        "path",
+        "scope",
+        "binding"
+      ],
+      "source_completeness": "unknown",
+      "metadata_errors": []
+    },
+    {
+      "path": "web-reverse/babel-core-objects.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "Babel 中的 path / node / binding / types / scope",
+      "source": "Babel 中的 path / node / binding / types / scope",
+      "original_date": "unknown",
+      "archive_date": "2026-10-08",
+      "summary": "来源是一份没有作者名和公开链接的 Babel 对象笔记。它描述 path、node、scope、binding、types 的分工，不报告某次反混淆已经跑通。",
+      "keywords": [
+        "path",
+        "node",
+        "scope",
+        "binding",
+        "types",
+        "@babel/traverse",
+        "source-report"
+      ],
+      "headings": [
+        "清洗与完整性说明",
+        "来源正文",
+        "Babel 是什么",
+        "Babel 常用模块",
+        "Babel 在 AST 反混淆中的用途",
+        "Babel 的五个核心对象",
+        "1. path",
+        "作用",
+        "常见属性",
+        "常见 API",
+        "2. node",
+        "作用",
+        "常见字段",
+        "例子",
+        "常见理解",
+        "3. scope",
+        "作用",
+        "常见 API",
+        "4. binding",
+        "作用",
+        "常见属性",
+        "例子",
+        "常见用途",
+        "5. types",
+        "作用",
+        "常见 API",
+        "例子",
+        "6. 它们之间的关系",
+        "7. 典型使用场景",
+        "改函数名",
+        "查变量是否局部声明",
+        "生成临时变量",
+        "判断变量是否被修改",
+        "8. 一句话总结",
+        "9. 学习顺序建议",
+        "复用边界"
+      ],
+      "bytes": 9937,
+      "lines": 524,
+      "content_sha256": "97f88266cd543c77da452ce97f67324593d16528e13f1e7dd2896792e9bd5658",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "babel-core-objects",
+      "document_type": "archive",
+      "scope": {
+        "targets": [
+          "babel"
+        ],
+        "client": "node",
+        "version": "unknown",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": null,
+          "basis": "source-report",
+          "citation": "Babel 中的 path / node / binding / types / scope",
+          "reason": "原始材料未提供作者名或可公开定位的链接"
+        }
+      ],
+      "modules": [],
+      "relations": [],
+      "tags": [
+        "babel",
+        "path",
+        "scope",
+        "binding"
+      ],
+      "source_completeness": "complete",
       "metadata_errors": []
     },
     {
@@ -58159,6 +60558,246 @@
         "OffscreenCanvas",
         "jsdom",
         "VM 分叉"
+      ],
+      "source_completeness": "unknown",
+      "metadata_errors": []
+    },
+    {
+      "path": "web-reverse/datadome-plv2-plv3-detection-surface-reference.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "DataDome plv2 / plv3 静态检测面参考",
+      "source": "./datadome-plv2-plv3-source-archive.md#source-body",
+      "original_date": "unknown",
+      "archive_date": "2026-10-13",
+      "summary": "这张卡概括本地笔记对一个 DataDome interstitial 版本的静态提取结果。笔记中的浏览器、GPU、键盘布局等实测值及本机路径未复制；以下内容仍是来源报告，不代表本轮检查了原始脚本或目标站点。",
+      "keywords": [
+        "interfaces",
+        "risk-control",
+        "plv2",
+        "plv3",
+        "WebGL",
+        "CSS",
+        "source-report"
+      ],
+      "headings": [
+        "两条采集面",
+        "检测类别与阅读边界",
+        "验证与限制"
+      ],
+      "bytes": 3857,
+      "lines": 63,
+      "content_sha256": "3b88da661943ddcdf523b084b31926ff6085368ba8bf12d9b6e7043166204701",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "web-reverse-datadome-plv2-plv3-detection-surface-reference",
+      "document_type": "reference",
+      "scope": {
+        "targets": [
+          "datadome"
+        ],
+        "client": "web",
+        "version": "1.33.1",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": "./datadome-plv2-plv3-source-archive.md#source-body",
+          "basis": "source-report"
+        }
+      ],
+      "modules": [
+        {
+          "name": "interfaces",
+          "anchor": "collection-surfaces",
+          "sources": [
+            "s1"
+          ],
+          "basis": "source-report",
+          "limits": "只整理来源笔记归纳的 API 类别与两条采集面；没有原始 bundle、反汇编或运行时证据，本卡不证明每项均在当前版本执行。"
+        },
+        {
+          "name": "risk-control",
+          "anchor": "detection-patterns",
+          "sources": [
+            "s1"
+          ],
+          "basis": "source-report",
+          "limits": "检测机制与覆盖数量均为来源笔记自述；未复现当前 DataDome 行为，不含设备指纹原值、路径或可运行补环境实现。"
+        }
+      ],
+      "relations": [
+        {
+          "type": "derived_from",
+          "target": "./datadome-plv2-plv3-source-archive.md#source-body"
+        },
+        {
+          "type": "supplements",
+          "target": "./datadome-env-patch-reference.md#decision-flow"
+        }
+      ],
+      "tags": [
+        "datadome",
+        "plv2",
+        "plv3",
+        "browser-environment",
+        "source-report"
+      ],
+      "source_completeness": "unknown",
+      "metadata_errors": []
+    },
+    {
+      "path": "web-reverse/datadome-plv2-plv3-source-archive.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "DataDome 环境检测清单（plv2 + plv3）",
+      "source": "本地分析笔记《DataDome 环境检测清单（plv2 + plv3）》",
+      "original_date": "unknown",
+      "archive_date": "2026-10-13",
+      "summary": "本地笔记的原始目录路径、浏览器 / GPU / 屏幕 / 字体 / 布局样值、环境哈希与本机栈路径均已脱敏；静态检测字段名、分析步骤、来源对各类接口的解释和不确定性保留。原笔记头部标注的 2026-10-13 是更新日期，不当作观察日期或原始发布日期。没有独立图片或附件。原笔记引用的 3.js、VM 常量池、反汇编与字段映射不在本批，故仅为 partial，不代表静态提取结论已由本轮复核。",
+      "keywords": [
+        "plv2",
+        "plv3",
+        "interfaces",
+        "risk-control",
+        "source-report"
+      ],
+      "headings": [
+        "清洗与完整性说明",
+        "来源正文",
+        "一、plv2 线（明文 JS，静态全量）",
+        "1.1 navigator（62 条，全量）",
+        "1.2 screen（10 条，全量）",
+        "1.3 document（36 条，全量）",
+        "1.4 自动化 / devtools 专项",
+        "1.5 栈帧与调用方检测（反自动化核心）",
+        "1.6 原生性检测（函数有没有被改过）",
+        "1.7 媒体能力（canPlayType 矩阵）",
+        "1.8 其他 Web API",
+        "1.9 WebAssembly 能力门（重要）",
+        "1.10 计算型指纹（plv2 侧）",
+        "1.11 自己的参数与自校验",
+        "二、plv3 线（内层 VM，258 条常量池）",
+        "2.1 读取的宿主对象与属性",
+        "2.2 WebGL 指纹（GPU 浮点运算）",
+        "2.3 CSS 布局引擎指纹（最独特的一项）",
+        "2.4 canvas 2D / SVG 指纹",
+        "2.5 自动化 / 环境伪造检测（VM 侧）",
+        "2.6 VM 对时间的使用（可复现性的关键）",
+        "三、两条线的交叉与差异",
+        "四、补环境优先级",
+        "五、取材方式（为什么是静态的）",
+        "复用边界"
+      ],
+      "bytes": 33653,
+      "lines": 691,
+      "content_sha256": "96e7f3686616abe511499293b28635b7c976d4b6d5c6f990b80e39a4bc8ad91f",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "web-reverse-datadome-plv2-plv3-source-archive",
+      "document_type": "archive",
+      "scope": {
+        "targets": [
+          "datadome"
+        ],
+        "client": "web",
+        "version": "1.33.1",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": null,
+          "basis": "source-report",
+          "citation": "本地分析笔记《DataDome 环境检测清单（plv2 + plv3）》",
+          "reason": "原材料为本地分析笔记，未提供可公开定位的链接。"
+        }
+      ],
+      "modules": [],
+      "relations": [],
+      "tags": [
+        "datadome",
+        "plv2",
+        "plv3",
+        "environment-detection",
+        "source-report"
+      ],
+      "source_completeness": "partial",
+      "metadata_errors": []
+    },
+    {
+      "path": "web-reverse/devtools-curl-intake.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "DevTools curl 只作为请求形状",
+      "source": "https://github.com/D4Vinci/Scrapling/blob/aa814a77d942678f1a44f68198a0c88550382d28/scrapling/core/shell.py; ../collection-engineering/scrapling-0.4.15-readout.md#curl",
+      "original_date": "2026-10-09",
+      "archive_date": "2026-10-09",
+      "summary": "这张卡回答：开发者工具里的 “Copy as cURL” 能不能当采集入口。不能。它只是一份请求形状材料。",
+      "keywords": [
+        "Copy as cURL",
+        "request-chain",
+        "HAR",
+        "source-report"
+      ],
+      "headings": [
+        "请求链上的位置"
+      ],
+      "bytes": 2078,
+      "lines": 45,
+      "content_sha256": "b2e9c1e450b6afe9c0fbec000cb20d800dd52a172c0454b441efb0d281668aac",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "devtools-curl-intake",
+      "document_type": "reference",
+      "scope": {
+        "targets": [
+          "DevTools copy as cURL"
+        ],
+        "client": "web",
+        "version": "unknown",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s-shell",
+          "ref": "https://github.com/D4Vinci/Scrapling/blob/aa814a77d942678f1a44f68198a0c88550382d28/scrapling/core/shell.py",
+          "basis": "static-review"
+        },
+        {
+          "id": "s-readout",
+          "ref": "../collection-engineering/scrapling-0.4.15-readout.md#curl",
+          "basis": "source-report"
+        }
+      ],
+      "modules": [
+        {
+          "name": "request-chain",
+          "anchor": "request-chain",
+          "sources": [
+            "s-shell",
+            "s-readout"
+          ],
+          "basis": "source-report",
+          "limits": "只记录材料边界。上游 shell 有 CurlParser，本仓库没有采用，也没有新写解析器。不执行粘贴的 curl，不含样例头或 Cookie。"
+        }
+      ],
+      "relations": [
+        {
+          "type": "derived_from",
+          "target": "../collection-engineering/scrapling-0.4.15-readout.md#curl"
+        }
+      ],
+      "tags": [
+        "devtools",
+        "curl",
+        "HAR",
+        "request-chain",
+        "source-report"
       ],
       "source_completeness": "unknown",
       "metadata_errors": []
@@ -63317,7 +65956,7 @@
       "category": "web-reverse",
       "parent": null,
       "title": "PerimeterX 参考仓：结构对照与证据边界",
-      "source": "`warterbili/perimeterX_reverse` 浅克隆，落在 `storage/references/external-repos/perimeterX_reverse`，commit `b4dd645`（2026-08-04，`Initial commit`）。只保留目录职责、自称与树的差异、许可证和证据边界。",
+      "source": "`warterbili/perimeterX_reverse` 浅克隆，落在 `storage/perimeterX_reverse`，commit `b4dd645`（2026-08-04，`Initial commit`）。只保留目录职责、自称与树的差异、许可证和证据边界。",
       "original_date": "2026-08-04（浅克隆唯一提交；正文日期多停在 2026-05，skill 正文写到 2026-06-13）",
       "archive_date": "2026-09-30",
       "summary": "这份参考仓是按站点写好的求解器和长文档，不是当前浏览器事实。作者的通过记录停在其 SDK 版本窗口里。可复用的是分档、版本锁定和三层验收；生成器、第三方 SDK 快照、抓包和残留口令不进入知识库。",
@@ -63339,9 +65978,9 @@
         "与观察手册的分工",
         "提炼说明（667）"
       ],
-      "bytes": 7409,
+      "bytes": 7357,
       "lines": 121,
-      "content_sha256": "162020aeb8443ee791515b880f5bc84a0b71769094472dd9d76e0cb701ca11a2",
+      "content_sha256": "1c39a26f6ce03c62a4f26c98e948130bb61707f3b95a410d53205b914c3709c3",
       "metadata_status": "v2",
       "schema_version": 2,
       "id": "web-reverse-perimeterx-human-reference-evidence-boundary",
@@ -65987,6 +68626,70 @@
       "metadata_errors": []
     },
     {
+      "path": "web-reverse/purecalc-akamai-sensor-data-source-archive.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "AI 纯算 Akamai",
+      "source": "AI纯算akamai",
+      "original_date": "unknown",
+      "archive_date": "2026-10-13",
+      "summary": "原稿记录了一条 Akamai sensor_data 脱混淆、生成链分析与 mst.dvc VMP 反编译思路。本文按来源材料提取可复用的算法关系和作者自述的验证边界，不是独立复现报告，也不是当前目标的运行时事实。",
+      "keywords": [
+        "Akamai",
+        "sensor_data",
+        "DVC",
+        "VMP",
+        "AST",
+        "source-report"
+      ],
+      "headings": [
+        "收录说明",
+        "清洗与完整性说明",
+        "来源正文",
+        "一、AST 反混淆与定位",
+        "二、sensor_data 的变换链",
+        "三、mst.dvc 首段与 VMP",
+        "四、来源自述的验证与失败边界",
+        "复用边界"
+      ],
+      "bytes": 4496,
+      "lines": 70,
+      "content_sha256": "50ac4c46f84fb63f1dedf08588cd4eb0af9ba9143ae5fc1bea5199d1c3902c2d",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "akamai-purecalc-sensor-data-dvc-vmp-source-archive",
+      "document_type": "archive",
+      "scope": {
+        "targets": [
+          "akamai"
+        ],
+        "client": "web",
+        "version": "unknown",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": null,
+          "basis": "source-report",
+          "citation": "AI纯算akamai",
+          "reason": "原稿末尾注明转载，但本 Public 归档不保留来源 URL，且未对外部出处作独立核验。"
+        }
+      ],
+      "modules": [],
+      "relations": [],
+      "tags": [
+        "akamai",
+        "sensor-data",
+        "dvc",
+        "vmp",
+        "source-report"
+      ],
+      "source_completeness": "partial",
+      "metadata_errors": []
+    },
+    {
       "path": "web-reverse/purecalc-vs-oracle-cost-procedure.md",
       "kind": "canonical",
       "category": "web-reverse",
@@ -66144,6 +68847,131 @@
         "53KB"
       ],
       "source_completeness": "unknown",
+      "metadata_errors": []
+    },
+    {
+      "path": "web-reverse/recaptcha-73-vmp-reference.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "reCAPTCHA “73” VMP 槽位算法参考",
+      "source": "./recaptcha-73-vmp-source-archive.md#source-body",
+      "original_date": "unknown",
+      "archive_date": "2026-10-13",
+      "summary": "这张卡只整理 pending 文本里可读的算法轮廓。材料没有说明精确产品版本，也没有足够信息证明该 VMP 与知识库中的 Google reCAPTCHA v3 请求链属于同一分支，因此两者不合并。",
+      "keywords": [
+        "parameters",
+        "VMP",
+        "GPU",
+        "time-seed",
+        "source-report"
+      ],
+      "headings": [
+        "来源报告中的输入与变换",
+        "验证与限制"
+      ],
+      "bytes": 2772,
+      "lines": 46,
+      "content_sha256": "1836a6072051774503dbab7cd108bc1c7dd1d12af6c4d0ec3171f3edc794b79f",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "web-reverse-recaptcha-73-vmp-reference",
+      "document_type": "reference",
+      "scope": {
+        "targets": [
+          "recaptcha-73"
+        ],
+        "client": "web",
+        "version": "unknown",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": "./recaptcha-73-vmp-source-archive.md#source-body",
+          "basis": "source-report"
+        }
+      ],
+      "modules": [
+        {
+          "name": "parameters",
+          "anchor": "parameters",
+          "sources": [
+            "s1"
+          ],
+          "basis": "source-report",
+          "limits": "仅记录来源可读的 73 槽位输入和时间 / 盐依赖概述；函数体、关键中间量和截图缺失，无法复算完整算法。"
+        }
+      ],
+      "relations": [
+        {
+          "type": "derived_from",
+          "target": "./recaptcha-73-vmp-source-archive.md#source-body"
+        }
+      ],
+      "tags": [
+        "recaptcha-73",
+        "VMP",
+        "gpu-fingerprint",
+        "time-seed",
+        "source-report"
+      ],
+      "source_completeness": "unknown",
+      "metadata_errors": []
+    },
+    {
+      "path": "web-reverse/recaptcha-73-vmp-source-archive.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "reCAPTCHA 73 算法（来源节选）",
+      "source": "https://mp.weixin.qq.com/s/SckvWTplUI9B3gQEqvGGaA",
+      "original_date": "unknown",
+      "archive_date": "2026-10-13",
+      "summary": "原文件无 H1；此标题按审阅后的文件名 recaptcha 73 算法.md 与正文主题补入。pending 导出中的 11 张图片均为 1×1 占位图，没有对应原图；文中 encrypt73_slot / parse_vmp_key 只有函数声明，没有函数体，作者提及的反编译文件也未随输入提供。来源里的 WebGL vendor / renderer / 扩展数量样值已脱敏，未补写缺失算法，所以标记 partial。",
+      "keywords": [
+        "VMP",
+        "GPU",
+        "time-seed",
+        "source-report"
+      ],
+      "headings": [
+        "清洗与完整性说明",
+        "来源正文",
+        "复用边界"
+      ],
+      "bytes": 6364,
+      "lines": 216,
+      "content_sha256": "9436ff23f873edd54803673172a93f1875f1e7b3c4eb8175289bf01c5ed1879e",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "web-reverse-recaptcha-73-vmp-source-archive",
+      "document_type": "archive",
+      "scope": {
+        "targets": [
+          "recaptcha-73"
+        ],
+        "client": "web",
+        "version": "unknown",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": "https://mp.weixin.qq.com/s/SckvWTplUI9B3gQEqvGGaA",
+          "basis": "source-report"
+        }
+      ],
+      "modules": [],
+      "relations": [],
+      "tags": [
+        "recaptcha-73",
+        "VMP",
+        "gpu-fingerprint",
+        "time-seed",
+        "source-report"
+      ],
+      "source_completeness": "partial",
       "metadata_errors": []
     },
     {
@@ -69468,6 +72296,142 @@
         "AES-CBC"
       ],
       "source_completeness": "unknown",
+      "metadata_errors": []
+    },
+    {
+      "path": "web-reverse/yuanrenxue-match-31-aes-memory-scan-reference.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "猿人学 match/31：WASM AES 运行时材料定位参考",
+      "source": "./yuanrenxue-match-31-source-archive.md#source-body",
+      "original_date": "unknown",
+      "archive_date": "2026-10-13",
+      "summary": "这张卡将来源文章的要点收敛为可检索的方法边界，不复制其可直接用于目标题目的 key、IV、token 样值或扫描代码。来源将目标描述为公开练习题；本文没有连接该目标或复现作者结果。",
+      "keywords": [
+        "parameters",
+        "WASM",
+        "AES-128",
+        "key-schedule",
+        "CBC",
+        "source-report"
+      ],
+      "headings": [
+        "参数与算法定位",
+        "验证与限制"
+      ],
+      "bytes": 3073,
+      "lines": 46,
+      "content_sha256": "94172e75f771512d6d014c6d2dfdd580068951e9782364399b19028e11d45afe",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "web-reverse-yuanrenxue-match-31-aes-memory-scan-reference",
+      "document_type": "reference",
+      "scope": {
+        "targets": [
+          "yuanrenxue-match-31"
+        ],
+        "client": "web",
+        "version": "unknown",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": "./yuanrenxue-match-31-source-archive.md#source-body",
+          "basis": "source-report"
+        }
+      ],
+      "modules": [
+        {
+          "name": "parameters",
+          "anchor": "key-schedule-method",
+          "sources": [
+            "s1"
+          ],
+          "basis": "source-report",
+          "limits": "仅提炼来源对公开练习题的算法定位方法；不收录原始 key、IV、token、样本明文或可直接生成目标 token 的代码，本轮未运行目标。"
+        }
+      ],
+      "relations": [
+        {
+          "type": "derived_from",
+          "target": "./yuanrenxue-match-31-source-archive.md#source-body"
+        }
+      ],
+      "tags": [
+        "yuanrenxue",
+        "match-31",
+        "WASM",
+        "AES-128",
+        "key-schedule",
+        "source-report"
+      ],
+      "source_completeness": "unknown",
+      "metadata_errors": []
+    },
+    {
+      "path": "web-reverse/yuanrenxue-match-31-source-archive.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "别逆 wasm 里的 VM，扫一遍内存就拿到 AES key",
+      "source": "https://mp.weixin.qq.com/s/QW-pPE1ae1lBOiyrtbv8Xw",
+      "original_date": "unknown",
+      "archive_date": "2026-10-13",
+      "summary": "保留来源关于 WASM AES key-schedule、CBC 首块和跨会话前缀的分析结构及通用方法；确切 AES key、IV、token、明文 / 密文样值与对应输出已脱敏。来源中的通用扫描代码保留为来源报告原文，不代表本轮已对目标执行；来源称其为公开练习题，本轮未访问目标。由于样值删节，标记 partial。",
+      "keywords": [
+        "WASM",
+        "AES-128",
+        "key-schedule",
+        "CBC",
+        "source-report"
+      ],
+      "headings": [
+        "清洗与完整性说明",
+        "来源正文",
+        "一、先看 token 形状，不用碰代码",
+        "二、认清形状：壳拼明文，wasm 做加密",
+        "三、破法：别逆 VM，扫内存捞 key",
+        "具体怎么扫",
+        "四、反推 IV：key 和 IV 只差一个字母",
+        "五、明文模板，和逐字节验证",
+        "六、三条能复用的方法",
+        "复用边界"
+      ],
+      "bytes": 10041,
+      "lines": 141,
+      "content_sha256": "413b80151796ef8ffc7a18a7e270a306a40f877cbaeb828f89834dba59924844",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "web-reverse-yuanrenxue-match-31-aes-memory-scan-source-archive",
+      "document_type": "archive",
+      "scope": {
+        "targets": [
+          "yuanrenxue-match-31"
+        ],
+        "client": "web",
+        "version": "unknown",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": "https://mp.weixin.qq.com/s/QW-pPE1ae1lBOiyrtbv8Xw",
+          "basis": "source-report"
+        }
+      ],
+      "modules": [],
+      "relations": [],
+      "tags": [
+        "yuanrenxue",
+        "match-31",
+        "WASM",
+        "AES-128",
+        "key-schedule",
+        "source-report"
+      ],
+      "source_completeness": "partial",
       "metadata_errors": []
     },
     {

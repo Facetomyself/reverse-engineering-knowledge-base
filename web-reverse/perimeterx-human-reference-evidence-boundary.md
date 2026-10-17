@@ -28,7 +28,7 @@ archived_date: '2026-09-30'
 
 <details data-kb-history="legacy-metadata">
 <summary>历史来源记录（迁移前元数据，非当前真源）</summary>
-> 来源: `warterbili/perimeterX_reverse` 浅克隆，落在 `storage/references/external-repos/perimeterX_reverse`，commit `b4dd645`（2026-08-04，`Initial commit`）。只保留目录职责、自称与树的差异、许可证和证据边界。
+> 来源: `warterbili/perimeterX_reverse` 浅克隆，落在 `storage/perimeterX_reverse`，commit `b4dd645`（2026-08-04，`Initial commit`）。只保留目录职责、自称与树的差异、许可证和证据边界。
 > 原始发布时间: 2026-08-04（浅克隆唯一提交；正文日期多停在 2026-05，skill 正文写到 2026-06-13）
 > 归档日期: 2026-09-30
 > 分类: web-reverse
@@ -54,7 +54,7 @@ archived_date: '2026-09-30'
 |---|---|
 | 上游 remote | `https://github.com/warterbili/perimeterX_reverse` |
 | README / BibTeX 写的地址 | `github.com/warterbili/PerimeterX_RE`（与 remote 不一致） |
-| 本地路径 | `storage/references/external-repos/perimeterX_reverse` |
+| 本地路径 | `storage/perimeterX_reverse` |
 | 包字段 | `package.json` 名 `perimeter`，版本 `1.0.0` |
 | 与本仓 git 的关系 | `storage/` 不进 Git。article 只收本篇 |
 

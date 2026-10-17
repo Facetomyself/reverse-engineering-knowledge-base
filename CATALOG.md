@@ -8,17 +8,17 @@
 
 | 分类 | canonical | 子文章 | 合计 |
 |------|----------:|-------:|-----:|
-| `anti-detection` | 24 | 278 | 302 |
-| `collection-engineering` | 9 | 3 | 12 |
+| `anti-detection` | 28 | 278 | 306 |
+| `collection-engineering` | 12 | 3 | 15 |
 | `drm-content-acquisition` | 2 | 0 | 2 |
-| `mobile-app-reverse` | 32 | 268 | 300 |
-| `native-analysis` | 10 | 16 | 26 |
+| `mobile-app-reverse` | 39 | 278 | 317 |
+| `native-analysis` | 11 | 16 | 27 |
 | `packing-bypass` | 5 | 0 | 5 |
 | `protocols` | 3 | 0 | 3 |
 | `signature-algorithms` | 11 | 30 | 41 |
-| `web-reverse` | 116 | 150 | 266 |
+| `web-reverse` | 132 | 150 | 282 |
 
-文章总数：957。
+文章总数：998。
 
 ## 逐篇目录
 
@@ -42,9 +42,13 @@
 | 主文 | 2026-09-15 | [设备指纹一致性建模：联合分布、时间间隔与生命周期](./anti-detection/device-fingerprint-consistency-modeling.md) | — | 定位 / 核心判断 / 1. 联合分布，不是单字段真假 / 2. APK 自身也是指纹面 |
 | 主文 | unknown | [HTTP/2 指纹的结构](./anti-detection/http2-fingerprint-reference.md) | — | 参数：fingerprint / 风控触发 / 验证与限制 |
 | 主文 | unknown | [浏览器 JS 指纹](./anti-detection/js-browser-fingerprint-reference.md) | — | 参数：fingerprint / 一致性与完整性 / 验证与限制 |
+| 主文 | 2026-10-09 | [页面文本送进模型之前](./anti-detection/page-text-before-llm.md) | — | 前提与输入 / 步骤与分支 / 输出 / 验收 |
 | 主文 | 2026-04-25 | [云片滑块验证码 JSONP 与风控边界参考](./anti-detection/ruyi-20260425-risk-boundary-reference.md) | — | 接口与字段角色 / 加密、身份与轨迹参数 / JSONP 请求链 / 响应验证边界 |
 | 主文 | 多篇合集 | [如意私塾浏览器指纹与反检测合集](./anti-detection/ruyi-browser-anti-detection-compilation.md) | — | 收录说明 / 文章目录（97 篇，连载合并后 96 条） / 提炼说明（361） / 同目录窄参考 |
+| 主文 | unknown | [数美 captcha SDK 的格式化行数检测](./anti-detection/shumei-js-format-detection-reference.md) | — | 行数检测与密钥切换 / 验证与限制 |
+| 主文 | unknown | [数美 JS 格式化检测](./anti-detection/shumei-js-format-detection.md) | — | 清洗与完整性说明 / 来源正文 / 复用边界 |
 | 主文 | 2026-09 | [数盟 libdu.so 指纹对照表（知乎 11.4.0）](./anti-detection/shuzilm-libdu-fingerprint.md) | — | 怎么用这篇 / 1. 签发 / 2. 口径：258 vs 366 / 3. 两张枚举 |
+| 主文 | 2026-10-09 | [第三方浏览器 fetcher 的边界](./anti-detection/third-party-browser-fetcher-boundaries.md) | — | 接口平面 / 风控自述与拒绝项 |
 | 主文 | unknown | [TLS 指纹的完整性与两代结构](./anti-detection/tls-fingerprint-reference.md) | — | 参数：有哪些项，顺序对不对 / 栈差异 / 验证与限制 |
 | 主文 | 多篇合集 | [逆向学习交流设备指纹与风控合集](./anti-detection/xfq-device-fp-compilation.md) | — | 收录说明 / 文章目录（8 篇） / 提炼说明（370） / 同目录窄参考 |
 | 主文 | 2026-09-24 | [闲鱼 EEID 风控体系完全揭秘](./anti-detection/xianyu-eeid-risk-control.md) | — | 本轮提炼评估 / 收录说明 / 📋 文档说明 / 一、EEID 风控体系概述 |
@@ -334,13 +338,16 @@
 | 类型 | 日期 | 文章 | 父合集 | 关键标题 |
 |------|------|------|--------|----------|
 | 主文 | 2026-08-12 | [浏览器采集器稳定性：ruyipage Firefox 断言崩溃与 OOM 连锁](./collection-engineering/browser-collector-stability.md) | — | 结论先行 / 崩溃证据链 / 根因链 / 已排除的假设（实测） |
+| 主文 | 2026-10-09 | [通用 Spider 与有界采集器](./collection-engineering/generic-spider-vs-bounded-collector.md) | — | 风控与并发边界 |
 | 主文 | — | [高并发 HTTP 采集控制面流程](./collection-engineering/high-concurrency-http-collector-control-plane-procedure.md) | — | 前提与输入 / 步骤与分支 / 输出 / 验收 |
 | 主文 | 2026-08-02 | [高并发 HTTP 采集控制面：代理租约、AIMD 与故障恢复](./collection-engineering/high-concurrency-http-collector-control-plane.md) | — | 结论先行 / 证据与版本边界 / 调试时间线：每次提速都先推翻一个错误假设 / 从成功实验进入主线的准入清单 |
+| 主文 | 2026-10-09 | [HTML 列表选择器重定位](./collection-engineering/html-list-selector-relocate.md) | — | 前提与输入 / 步骤与分支 / 输出 / 验收 |
 | 主文 | 2026-09-27 | [媒体下载变更参考：请求上下文、候选流与失败隔离](./collection-engineering/media-download-contract-drift-reference.md) | — | 请求上下文 / 候选流与单项失败隔离 / HTTP 状态检查边界 / 去重与边界 |
 | 主文 | 2026-09-27 | [媒体下载故障分层：请求上下文、流选择与单项失败隔离](./collection-engineering/media-download-contract-drift.md) | — | 同样是“视频不能下”，根因可能不在同一层 / 先找候选流，再区分是否已经下载 / HTTP 检查要早，交付确认要晚 / 单项失败隔离不是“全批成功” |
 | 主文 | 2026-08-13 | [Mihomo 链式代理：dialer-proxy、全局脚本与采集器前置链](./collection-engineering/mihomo-dialer-proxy-chain.md) | — | 结论先行 / 来源与证据边界 / 内核链：谁看见谁 / 多跳怎么叠 |
 | 主文 | — | [Mihomo 代理平面与出口身份边界参考](./collection-engineering/mihomo-proxy-plane-boundaries-reference.md) | — | 三种接口平面 / 请求链边界 / 验收与失败出口 |
 | 主文 | 2026-08-02 | [Mac 热写与 NAS 交付：可重放 spool、mirror ACK 和非侵入式运维](./collection-engineering/reliable-mac-nas-spool-delivery.md) | — | 为什么 NAS 不应进入采集热路径 / 数据流 / 热写路径：批量输出后再生成 marker / 已验证边界 |
+| 主文 | 2026-10-08 | [Scrapling 0.4.15 采集边界阅读摘录](./collection-engineering/scrapling-0.4.15-readout.md) | — | 阅读范围 / 列表元素重定位 / 浏览器 fetcher / Spider 默认值与阻塞重试 |
 | 主文 | 2026-07-16 至 2026-07-17 | [HTTP 归档运行时：文章身份、SQLite claim 与 MCP job](./collection-engineering/weixin-http-archive-runtime.md) | — | 和 PSA 高并发文的分工 / 文章目录 / 结论先行 / 本轮评估：仅保留归档 |
 | 子文 | 2026-07-17 | [MCP job 与文章 checkpoint 分离](./collection-engineering/weixin-http-archive-runtime/headless-mcp-jobs-reference.md) | [HTTP 归档运行时：文章身份、SQLite claim 与 MCP job](./collection-engineering/weixin-http-archive-runtime.md) | 传输与工具分面 / Job 状态机 / 假成功与文章 claim / 验证与限制 |
 | 子文 | 2026-07-17 | [MCP job 与文章状态分离](./collection-engineering/weixin-http-archive-runtime/headless-mcp-jobs.md) | [HTTP 归档运行时：文章身份、SQLite claim 与 MCP job](./collection-engineering/weixin-http-archive-runtime.md) | Transport / Job 状态机 / 假成功陷阱（必修） / 和文章 claim 的关系 |
@@ -359,6 +366,7 @@
 |------|------|------|--------|----------|
 | 主文 | 多篇合集 | [反爬破解社 App 逆向章节合集](./mobile-app-reverse/anti-crawler-app-reverse-series.md) | — | 收录说明 / 文章目录（6 篇） / 提炼说明（388） / 同目录窄参考 |
 | 主文 | 2026-07-10 | [Frida Hook 技术选择：Java 实例与 Native 跟踪](./mobile-app-reverse/anti-crawler-frida-hook-selection.md) | — | 按分析困境选择技巧 / 证据与限制 |
+| 主文 | 2026-09-02/2026-09-07 | [吴见午 APatch 源码笔记（一至十）](./mobile-app-reverse/apatch-source-notes-wujianwu.md) | — | 清洗与完整性说明 / 篇目 / 复用边界 |
 | 主文 | — | [Android App 逆向环境准备流程](./mobile-app-reverse/app-reverse-environment-setup-procedure.md) | — | 前提与输入 / 步骤与分支 / 输出 / 验收 |
 | 主文 | 2026-07-06 | [App 逆向环境搭建](./mobile-app-reverse/app-reverse-environment-setup.md) | — | 收录说明 / 模拟器 vs 真机 / 模拟器环境搭建 / 模拟器选择 |
 | 主文 | 2026-07-05 | [App 请求从点击到发出的层级坐标](./mobile-app-reverse/app-reverse-global-map-reference.md) | — | 七层坐标 / 六种防御在检查什么 / 验证与限制 |
@@ -383,6 +391,12 @@
 | 主文 | 2026-06-08 | [用 uiautomator 自动点击隐私同意按钮](./mobile-app-reverse/uiautomator-privacy-consent-tap.md) | — | 收录说明 / 正文 / 一、为什么选它 / 二、uiautomator 到底提供了什么 |
 | 主文 | 2026-04-28 | [Android Native 确定性基线与环境冻结流程](./mobile-app-reverse/unidbg-deterministic-environment-freeze-procedure.md) | — | 前提与输入 / 变化源分层 / 步骤与分支 / 输出 |
 | 主文 | 2026-07-16 至 2026-09-13 | [微信公众号开源库对照：按会话平面读仓库](./mobile-app-reverse/wechat-mp-oss-landscape.md) | — | 怎么读一个新仓库 / 文章目录 / 仓库总表（2026-09-13 源码审查） / 身份与状态（跨平面复用） |
+| 主文 | unknown | [微信 4.1 本地库的页加密和 HMAC](./mobile-app-reverse/wechat-wcdb-cipher-reference.md) | — | 页加密参数 / 用页 HMAC 判断密钥 / 验证与限制 |
+| 主文 | unknown | [微信 4.x 本地数据库解密原理](./mobile-app-reverse/wechat-wcdb-cipher.md) | — | 清洗与完整性说明 / 来源正文 / 一、加密机制 / 二、4.0 与 4.1 的关键差异 |
+| 主文 | unknown | [微信 4.1 本地库各文件放什么](./mobile-app-reverse/wechat-wcdb-schema-reference.md) | — | 库与关键表 / 验证与限制 |
+| 主文 | unknown | [微信 4.1 本地数据库结构参考](./mobile-app-reverse/wechat-wcdb-schema.md) | — | 清洗与完整性说明 / 来源正文 / 一、数据库清单 / 二、表结构 |
+| 主文 | unknown | [微信 Windows 4.1.13.65 发送消息的静态定位](./mobile-app-reverse/wechat-windows-sendmsg-static-case.md) | — | 问题与范围 / 过程与关键证据 / 结论与反例 / 未决项与复用启示 |
+| 主文 | unknown | [微信 4.1.13.65 Windows 发送消息链路 —— 逆向笔记](./mobile-app-reverse/wechat-windows-sendmsg-static.md) | — | 清洗与完整性说明 / 来源正文 / 1. 架构总览：这不再是一个单体程序 / 主进程实际加载的腾讯模块 |
 | 主文 | 多篇合集 | [逆向学习交流安卓实战案例合集](./mobile-app-reverse/xfq-android-cases-compilation.md) | — | 收录说明 / 文章目录（15 篇） / 提炼说明（493） / 同目录窄参考 |
 | 主文 | 多篇合集 | [逆向学习交流 AOSP 与 ROM 笔记合集](./mobile-app-reverse/xfq-aosp-rom-compilation.md) | — | 收录说明 / 文章目录（13 篇） / 提炼说明（508） / 同目录窄参考 |
 | 主文 | 多篇合集 | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | — | 收录说明 / 文章目录（41 篇） / 提炼说明（541） / 同目录窄参考 |
@@ -395,6 +409,16 @@
 | 子文 | 2026-07-11 | [第5章：常见加密算法的精确还原](./mobile-app-reverse/anti-crawler-app-reverse-series/anti-crawler-app-20260711-01.md) | [反爬破解社 App 逆向章节合集](./mobile-app-reverse/anti-crawler-app-reverse-series.md) | 一、AES-CBC/PKCS7：从内存中dump出Key和IV / 场景 / 解法：Hook IvParameterSpec 和 SecretKeySpec 构造函数 / Python复现 |
 | 子文 | 2026-07-12 | [SO 层动态注册、JNI 读参和加密库符号](./mobile-app-reverse/anti-crawler-app-reverse-series/anti-crawler-app-20260712-01-reference.md) | [反爬破解社 App 逆向章节合集](./mobile-app-reverse/anti-crawler-app-reverse-series.md) | 注册入口和库符号 / JNI 参数怎么读 / 平坦化时先走哪条 / 验证与限制 |
 | 子文 | 2026-07-12 | [第6章：So层逆向——从汇编到Python](./mobile-app-reverse/anti-crawler-app-reverse-series/anti-crawler-app-20260712-01.md) | [反爬破解社 App 逆向章节合集](./mobile-app-reverse/anti-crawler-app-reverse-series.md) | 一、如何找到JNI函数映射表：Hook RegisterNatives / 场景 / 解法 / 踩坑提醒 |
+| 子文 | 2026-09-02 | [APatch 源码笔记（一）：从 event.rs 看懂开机四阶段](./mobile-app-reverse/apatch-source-notes-wujianwu/01-event-boot-stages.md) | [吴见午 APatch 源码笔记（一至十）](./mobile-app-reverse/apatch-source-notes-wujianwu.md) | 清洗与完整性说明 / 来源正文 / 01 开篇：为什么从 event.rs 开始？ / 02 先补背景：Android 开机时发生了什么 |
+| 子文 | 2026-09-03 | [APatch 源码笔记（二）：apd 到底是什么？从 main.rs 追踪守护进程的启动与 multicall 设计](./mobile-app-reverse/apatch-source-notes-wujianwu/02-apd-multicall.md) | [吴见午 APatch 源码笔记（一至十）](./mobile-app-reverse/apatch-source-notes-wujianwu.md) | 清洗与完整性说明 / 来源正文 / 01 这一篇我们要解决什么问题？ / 02 为什么从这里开始？ |
+| 子文 | 2026-09-04 | [APatch 源码笔记（三）：没有 ioctl、没有 netlink——supercall 通信机制解剖](./mobile-app-reverse/apatch-source-notes-wujianwu/03-supercall.md) | [吴见午 APatch 源码笔记（一至十）](./mobile-app-reverse/apatch-source-notes-wujianwu.md) | 清洗与完整性说明 / 来源正文 / 01 这一篇我们要解决什么问题？ / 02 为什么从这里开始？ |
+| 子文 | 2026-09-04 | [APatch 源码笔记（四）：boot.img 是怎么被改的——kptools 注入与 kpimg 的开机自举](./mobile-app-reverse/apatch-source-notes-wujianwu/04-bootimg-kpimg.md) | [吴见午 APatch 源码笔记（一至十）](./mobile-app-reverse/apatch-source-notes-wujianwu.md) | 清洗与完整性说明 / 来源正文 / 01 这一篇我们要解决什么问题？ / 02 背景：boot.img 与两个前提 |
+| 子文 | 2026-09-05 | [APatch 源码笔记（五）：su 是怎么来的——从 execve hook 到 root_shell](./mobile-app-reverse/apatch-source-notes-wujianwu/05-su-execve.md) | [吴见午 APatch 源码笔记（一至十）](./mobile-app-reverse/apatch-source-notes-wujianwu.md) | 清洗与完整性说明 / 来源正文 / 01 这一篇我们要解决什么问题？ / 02 为什么从这里开始？ |
+| 子文 | 2026-09-05 | [APatch 源码笔记（六）：谁有资格拿 Root——SuperUser 授权与 uid-listener](./mobile-app-reverse/apatch-source-notes-wujianwu/06-superuser-uid-listener.md) | [吴见午 APatch 源码笔记（一至十）](./mobile-app-reverse/apatch-source-notes-wujianwu.md) | 清洗与完整性说明 / 来源正文 / 01 这一篇我们要解决什么问题？ / 02 为什么从这里开始？ |
+| 子文 | 2026-09-06 | [APatch 源码笔记（七）：SuperKey——一把钥匙的安全模型](./mobile-app-reverse/apatch-source-notes-wujianwu/07-superkey.md) | [吴见午 APatch 源码笔记（一至十）](./mobile-app-reverse/apatch-source-notes-wujianwu.md) | 清洗与完整性说明 / 来源正文 / 01 这一篇我们要解决什么问题？ / 02 为什么从这里开始？ |
+| 子文 | 2026-09-06 | [APatch 源码笔记（八）：SELinux——APatch 如何在 enforcing 模式下生存](./mobile-app-reverse/apatch-source-notes-wujianwu/08-selinux.md) | [吴见午 APatch 源码笔记（一至十）](./mobile-app-reverse/apatch-source-notes-wujianwu.md) | 清洗与完整性说明 / 来源正文 / 01 这一篇我们要解决什么问题？ / 02 背景：SELinux 三十秒 |
+| 子文 | 2026-09-07 | [APatch 源码笔记（九）：APModule 全景——目录、约定与生命周期总览](./mobile-app-reverse/apatch-source-notes-wujianwu/09-apmodule.md) | [吴见午 APatch 源码笔记（一至十）](./mobile-app-reverse/apatch-source-notes-wujianwu.md) | 清洗与完整性说明 / 来源正文 / 01 这一篇我们要解决什么问题？ / 02 为什么从这里开始？ |
+| 子文 | 2026-09-07 | [APatch 源码笔记（十）：一个模块 ZIP 的安装之旅本文基于双仓库交叉核实](./mobile-app-reverse/apatch-source-notes-wujianwu/10-module-zip-install.md) | [吴见午 APatch 源码笔记（一至十）](./mobile-app-reverse/apatch-source-notes-wujianwu.md) | 清洗与完整性说明 / 来源正文 / 01 这一篇我们要解决什么问题？ / 02 为什么从这里开始？ |
 | 子文 | 2026-03-02 | [JA3、TCP 选项顺序与 HTTP/2 被动指纹](./mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260302-01-reference.md) | [泡泡以安 Android 逆向技术合集](./mobile-app-reverse/paopao-android-reverse-compilation.md) | 参数机制 / 对照时来源说风控看什么 / 来源用来核对「像不像」的口径 / 来源点名的入口和库 |
 | 子文 | 2026-03-02 | [风控对抗中的浏览器指纹技术（上）：协议层、应用层与行为检测](./mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260302-01.md) | [泡泡以安 Android 逆向技术合集](./mobile-app-reverse/paopao-android-reverse-compilation.md) | 一、协议层指纹：最容易被忽视的底层防线 / 1.1 TCP/IP 协议栈指纹 / 1.2 SSL/TLS 指纹（JA3 / JA3S / peetprint 与 GREASE 对抗） / 1.3 HTTP 协议指纹 |
 | 子文 | 2026-03-03 | [目标音乐 App 的 eapi 搜索：路由直连、params 入口与 NMDI 外形](./mobile-app-reverse/paopao-android-reverse-compilation/paopao-20260303-01-reference.md) | [泡泡以安 Android 逆向技术合集](./mobile-app-reverse/paopao-android-reverse-compilation.md) | 防抓包 / 歌曲搜索接口 / 调用链 / params、设备字段与 NMDI 外形 |
@@ -663,6 +687,7 @@
 | 类型 | 日期 | 文章 | 父合集 | 关键标题 |
 |------|------|------|--------|----------|
 | 主文 | unknown | [AI 复杂 VM 算法还原](./native-analysis/ai-assisted-vmp-trace-recovery.md) | — | 战场：反编译已经不够用了 / 方法论：从输出往回走 / 错误路线地图 / KEY16 和 repeating-key XOR |
+| 主文 | 2026-10-16 | [不用提取 CDI_Leaf：把 KeyMint TA 变成 RKP 签名 Oracle](./native-analysis/kanxue-keymint-ta-rkp-signing-oracle.md) | — | 清洗与完整性说明 / 来源正文 / 前言 / 一、目标与背景知识 |
 | 主文 | 2026-07-08 至 2026-07-16 | [Nuitka onefile 外层 payload 与内层 constants](./native-analysis/nuitka-onefile-payload-recovery-procedure.md) | — | 前提与输入 / 步骤与分支 / 输出 / 验收 |
 | 主文 | 2026-07-08 至 2026-07-16 | [Nuitka onefile：外层 payload 与第二层 native 主程序](./native-analysis/nuitka-onefile-payload-recovery.md) | — | 适用与不适用 / 外层：onefile bootstrap / 内层：仍然是 Nuitka native / 不要做的 |
 | 主文 | 2026-06-27 | [Qidian Native SO 分析与结论纠偏](./native-analysis/qidian-so-analysis.md) | — | 技术摘要 / 可复用提炼：QDSign 的来源报告边界 / 可复用提炼：FockUtil/Knobs 请求装配与排行榜边界 / 请求链与 canonicalization |
@@ -759,12 +784,16 @@
 |------|------|------|--------|----------|
 | 主文 | 2026-07-03 | [51job 这次 Webpack 自吐里点名的库和未定位的签名](./web-reverse/51job-webpack-analysis-reference.md) | — | 已点名的库模块 / 页面和推测中的搜索路径 / 作者推测的签名路径 / 验证与限制 |
 | 主文 | 2026-07-03 | [51job Webpack 模块自吐分析](./web-reverse/51job-webpack-analysis.md) | — | 基本信息 / Webpack 架构 / 关键模块识别 / 加密 / 签名 |
+| 主文 | 2025-09-26 | [ACW acw_sc_v2 混淆代码的 AST 还原参考](./web-reverse/acw-sc-v2-ast-restoration-reference.md) | — | 分层还原 / 验证与限制 |
+| 主文 | 2025-09-26 | [Python 爬虫进阶：acw_sc_v2 加密 AST 解混淆全流程（来源归档）](./web-reverse/acw-sc-v2-source-archive.md) | — | 清洗与完整性说明 / 来源正文 / 复用边界 |
 | 主文 | 多篇合集 | [AI辅助逆向手记 Web 逆向合集](./web-reverse/ai-assisted-web-reverse-compilation.md) | — | 收录说明 / 文章目录（20 篇，连载合并后 14 条） / 提炼说明 / 同目录窄参考 |
 | 主文 | 2026-07-27 | [匿名 Web md51038 字段来源与请求落点参考](./web-reverse/ai-assisted-web-reverse-reference.md) | — | 参数机制 / 编码边界 / 请求链路与字段 provenance / 落地对照与限制 |
 | 主文 | 2026-09-18 | [Aigei Safe-Search 票据链参考](./web-reverse/aigei-safe-search-ticket-chain-reference.md) | — | 请求链 / 参数谱系 / 证据与限制 |
 | 主文 | 2026-09-18 | [爱给网 safe-search 票据链：响应体藏票据的翻页 403 根因](./web-reverse/aigei-safe-search-ticket-chain.md) | — | 摘要 / 现象与排除实验 / 根因：safe-search 票据链 / 采集侧附带发现（同项目） |
 | 主文 | 2025-12-09 | [阿里云验证码 V2 动态 key 与末段参数参考](./web-reverse/aliyun-captcha-v2-dynamic-keys-reference.md) | — | 动态 key 与参数边界 / 请求角色与观察边界 / 验证与限制 |
 | 主文 | — | [阿里云验证码 V2 请求链与参数来源参考](./web-reverse/aliyun-captcha-v2-request-chain-reference.md) | — | Signature 与 DeviceConfig 参数边界 / 上篇请求角色与上下篇边界 / 证据与限制 |
+| 主文 | unknown | [AliyunCaptcha V2 单站补环境案例（来源报告）](./web-reverse/aliyun-captcha-v2-sandbox-case.md) | — | 问题与范围 / 过程与关键证据 / 结论与反例 / 未决项与复用启示 |
+| 主文 | unknown | [AliyunCaptcha V2 滑块补环境单站分析（来源归档）](./web-reverse/aliyun-captcha-v2-sandbox-source-archive.md) | — | 清洗与完整性说明 / 来源正文 / 复用边界 |
 | 主文 | 2025-12-05 | [阿里云验证码 V2 滑块（上）：四次请求链、Signature HMAC 与 DeviceConfig 多重 AES](./web-reverse/aliyun-captcha-v2-slider-part1-request-chain.md) | — | 收录说明 / 声明 / 前言 / 目标网站 |
 | 主文 | 2025-12-09 | [阿里云验证码 V2 滑块（下）：FeiLin / sg 动态 key 与 CaptchaVerifyParam（deviceToken / data）](./web-reverse/aliyun-captcha-v2-slider-part2-dynamic-keys.md) | — | 收录说明 / 声明 / 前言 / feilin文件动态key |
 | 主文 | 2026-09-23 | [阿里云验证码 V3 登录滑块参数链参考](./web-reverse/aliyun-captcha-v3-login-slider-reference.md) | — | 来源窗口的三包 / 字段角色 / 验收口径与限制 / 验证与限制 |
@@ -772,6 +801,10 @@
 | 主文 | 多篇合集 | [反爬破解社 Web 逆向实战合集](./web-reverse/anti-crawler-web-reverse-compilation.md) | — | 收录说明 / 文章目录（16 篇，连载合并后 5 条） / 提炼说明（610） / 同目录窄参考 |
 | 主文 | 2026-08-18 | [汽车之家案例：Cookie 加 JSONP，没有本地 sign](./web-reverse/autohome-cookie-boundary-case.md) | — | 案例：帖子详情 / 失败怎么读 / 证据边界 / 本轮提炼评估 |
 | 主文 | 2026-01-21 | [亚马逊 AWS WAF aws-waf-token 纯算：checksum CRC32、Present AES-GCM 与 solution SHA256 PoW](./web-reverse/aws-waf-token-challenge-purecalc.md) | — | 收录说明 / 前言 / AWS WAF令牌简介 / 逆向目标 |
+| 主文 | unknown | [Babel AST 节点类怎么分组](./web-reverse/babel-ast-node-types-reference.md) | — | 节点类 / 验证与限制 |
+| 主文 | unknown | [AST 节点体系基础类型](./web-reverse/babel-ast-node-types.md) | — | 清洗与完整性说明 / 来源正文 / 1. 基础节点 / Program |
+| 主文 | unknown | [Babel 的 path、node、scope、binding、types](./web-reverse/babel-core-objects-reference.md) | — | 五个对象 / 验证与限制 |
+| 主文 | unknown | [Babel 中的 path / node / binding / types / scope](./web-reverse/babel-core-objects.md) | — | 清洗与完整性说明 / 来源正文 / Babel 是什么 / Babel 常用模块 |
 | 主文 | 2026-08-18 | [百家号案例：页面 runtime 供 uk，Cookie 供 Tenger-Mhor](./web-reverse/baijiahao-runtime-header-case.md) | — | 案例：作者页与列表 / 可复用点 / 证据边界 / 本轮提炼评估 |
 | 主文 | 2026-10-01 | [百家号 Runtime 参数与 JSONP 列表链](./web-reverse/baijiahao-runtime-header.md) | — | 接口与传输面 / 页面字段与会话字段 / 请求链 / 证据与边界 |
 | 主文 | 2026-06-12 | [码上爬题七 m/x/r 参数关系（来源报告）](./web-reverse/benru-m-x-r-parameters.md) | — | 参数角色与关系 / 关系边界 / 题六关联归档边界 / 一致性与复用限制 |
@@ -789,6 +822,9 @@
 | 主文 | 2026-07 | [Cloudflare 5s v2：/fo 与 form.submit 补环境](./web-reverse/cloudflare-5s-v2-fo-pipeline.md) | — | 完成门 / Python 与 Node / 状态机 / 两条成功形态 |
 | 主文 | unknown | [DataDome 无感 interstitial 补环境边界参考](./web-reverse/datadome-env-patch-reference.md) | — | 请求链 / 参数分层 / 排查顺序 / 验收口径与限制 |
 | 主文 | unknown | [DataDome 无感验证补环境](./web-reverse/datadome-env-patch.md) | — | 正文 / 前言 / 目标网站 / 抓包分析 |
+| 主文 | unknown | [DataDome plv2 / plv3 静态检测面参考](./web-reverse/datadome-plv2-plv3-detection-surface-reference.md) | — | 两条采集面 / 检测类别与阅读边界 / 验证与限制 |
+| 主文 | unknown | [DataDome 环境检测清单（plv2 + plv3）](./web-reverse/datadome-plv2-plv3-source-archive.md) | — | 清洗与完整性说明 / 来源正文 / 一、plv2 线（明文 JS，静态全量） / 1.1 navigator（62 条，全量） |
+| 主文 | 2026-10-09 | [DevTools curl 只作为请求形状](./web-reverse/devtools-curl-intake.md) | — | 请求链上的位置 |
 | 主文 | 2026-09-20 | [抖音 Web 请求面矩阵参考](./web-reverse/douyin-request-plane-matrix-reference.md) | — | 接口面 / 参数边界 / 请求装配链 / 证据边界 |
 | 主文 | 2026-08-16 | [抖音 webSign：钩宿主 MD5，再纯算规范化 query](./web-reverse/douyin-secsdk-websign-case.md) | — | 案例怎么定位到 MD5 / 规范化规则 / 策略表决定谁要加签 / 真实接入 |
 | 主文 | 2026-08-16 | [抖音 webSign 规范化与宿主 MD5 参考](./web-reverse/douyin-secsdk-websign-reference.md) | — | 明文与规范化 / 定位与写回 / 谁要加签 / 验收口径与限制 |
@@ -825,8 +861,11 @@
 | 主文 | unknown | [美团 mtgsig 的分析边界](./web-reverse/meituan-mtgsig-jsvmp-source-limits-reference.md) | — | 参数边界 / 风控框架 / 验证与限制 |
 | 主文 | 2026-08-04（浅克隆唯一提交；正文日期多停在 2026-05，skill 正文写到 2026-06-13） | [PerimeterX 参考仓：结构对照与证据边界](./web-reverse/perimeterx-human-reference-evidence-boundary.md) | — | 证据等级 / 仓的位置 / 目录职责 / 自称和树不一致 |
 | 主文 | 多篇合集 | [Web 安全产品强制命中索引](./web-reverse/products.md) | — | 用途 / 强制命中纪律 / 产品一览 / 使用边界 |
+| 主文 | unknown | [AI 纯算 Akamai](./web-reverse/purecalc-akamai-sensor-data-source-archive.md) | — | 收录说明 / 清洗与完整性说明 / 来源正文 / 一、AST 反混淆与定位 |
 | 主文 | 2026-09-23 | [纯算还是预言机：先写成本账](./web-reverse/purecalc-vs-oracle-cost-procedure.md) | — | 前提与输入 / 步骤与分支 / 输出 / 验收 |
 | 主文 | 2026-09-23 | [方法论：纯算还是预言机，先写成本账](./web-reverse/purecalc-vs-oracle-cost.md) | — | 成本账怎么填 / 预言机也有验收 / 伪代码 / 账本里要写的一句 |
+| 主文 | unknown | [reCAPTCHA “73” VMP 槽位算法参考](./web-reverse/recaptcha-73-vmp-reference.md) | — | 来源报告中的输入与变换 / 验证与限制 |
+| 主文 | unknown | [reCAPTCHA 73 算法（来源节选）](./web-reverse/recaptcha-73-vmp-source-archive.md) | — | 清洗与完整性说明 / 来源正文 / 复用边界 |
 | 主文 | 2026-09-23 | [方法论：请求面切开，失败按面翻译](./web-reverse/request-plane-failure-translation.md) | — | 画法 / 真实翻译 / 伪代码 / 同名不同面 |
 | 主文 | 2026-06-22（导出文件标注） | [同一个 signer 的两条调用面：请求签名与 Cookie 维护](./web-reverse/request-signing-vs-cookie-maintenance.md) | — | 来源中的转折 / 调用面表比函数名更重要 / 失败归因的正确顺序 / 可复用验收清单 |
 | 主文 | 2026-09-23 | [技巧：会话材料双写，并且绑源](./web-reverse/session-binding-double-write.md) | — | 双写对照 / 绑源的真实失误 / 不是双写的头 |
@@ -870,6 +909,8 @@
 | 主文 | 2026-09-08 | [小红书装配案例：材料六桶、签完即发、端别切开](./web-reverse/xiaohongshu-assembly-case.md) | — | 材料六桶 / 案例：一次 PC 业务请求 / 四条端别 / 伪代码：provenance 门 |
 | 主文 | unknown | [西瓜 query 字段与播放解密边界（来源报告）](./web-reverse/xigua-query-playback-boundary.md) | — | 参数边界 / 请求与播放边界 / 验证与限制 |
 | 主文 | 2026-08-18 | [西瓜案例：签名位是空占位，播放解密另算](./web-reverse/xigua-unsigned-query-case.md) | — | 案例：作品列表 query / 播放解密函数的形状 / 证据边界 / 本轮提炼评估 |
+| 主文 | unknown | [猿人学 match/31：WASM AES 运行时材料定位参考](./web-reverse/yuanrenxue-match-31-aes-memory-scan-reference.md) | — | 参数与算法定位 / 验证与限制 |
+| 主文 | unknown | [别逆 wasm 里的 VM，扫一遍内存就拿到 AES key](./web-reverse/yuanrenxue-match-31-source-archive.md) | — | 清洗与完整性说明 / 来源正文 / 一、先看 token 形状，不用碰代码 / 二、认清形状：壳拼明文，wasm 做加密 |
 | 主文 | 多篇合集 | [猿人学 Web 与 JavaScript 逆向合集](./web-reverse/yuanrenxue-web-reverse-compilation.md) | — | 收录说明 / 文章目录（7 篇） / 提炼说明（712） / 同目录窄参考 |
 | 主文 | 2026-08-18 | [知乎案例：x-zse-96 走整包 execjs](./web-reverse/zhihu-xzse96-execjs-case.md) | — | 案例：评论头 / 落地判断 / 误用 / 关联提炼 |
 | 主文 | 2026-08-18 | [知乎 Web x-zse-96 ExecJS 参考](./web-reverse/zhihu-xzse96-execjs-reference.md) | — | 接口面 / 参数机制 / 请求链 / 证据与边界 |
