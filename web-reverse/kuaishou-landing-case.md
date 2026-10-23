@@ -12,7 +12,7 @@ sources:
 - id: s1
   ref: null
   basis: source-report
-  citation: '`本地项目分析材料（定位不公开）`（KuaiShou-Spider，HEAD 日期 2026-08-30，只读对照）'
+  citation: '`本地项目分析材料（定位不公开）`（KuaiShou-Spider，workspace/cv-cat 只读对照；历史稿 HEAD 日期 2026-08-30；2026-10-23 窗口 HEAD `3ef36e3` 2026-10-08）'
   reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
 source_completeness: unknown
 tags:
@@ -21,6 +21,8 @@ tags:
 - caver
 - weapon_oracle
 - __NS_sig3
+- gdfp
+- captcha
 original_date: '2026-08-30'
 archived_date: '2026-09-23'
 ---
@@ -74,6 +76,13 @@ if code == 400002:
 - 验证码：`_get` 把 400002 转成滑块处理，不把这个码当成签名算错。
 
 53KB 量级的字节码留在 Node oracle，是对照仓的明确选择。把 oracle 出参标成 purecalc，或把作者机器的 canvas 贴到另一份 Cookie 上，都会和这个合同冲突。
+
+<a id="2026-10-08-window"></a>
+## 2026-10-08 对照窗口（observation，非 runtime）
+
+对照仓 `workspace/cv-cat/KuaiShou-Spider` HEAD `3ef36e3`（日期 2026-10-08），相对 `d4fcfd0`。commit subject 是刷新 captcha 指纹并允许 gdfp HTTP/1.1。本段是路径级 observation，未跑滑块、未当生产采集器。
+
+变动落在 `captcha.py` / `captcha_fp.py` / `fingerprint.py`、`gdfp_*`、`webweapon_boot.py` 与 `transport.py`：验证码指纹材料刷新；gdfp 默认接受端点协商到 HTTP/1.1，仅显式严格开关才恢复旧的 HTTP/2-only fail-closed。这是传输/指纹面，不能翻译成 `__NS_sig3` 或 hxfalcon 算错。`sig3_pure.py` / `falcon_pure.py` 未出现在本轮 diff 路径，既有纯算结论不在本段重写。README 本轮无 diff。
 
 ## 证据边界
 

@@ -12,7 +12,7 @@ sources:
 - id: s1
   ref: null
   basis: source-report
-  citation: '`本地项目分析材料（定位不公开）`（BilibiliApis，HEAD 日期 2026-09-13，只读对照）'
+  citation: '`本地项目分析材料（定位不公开）`（BilibiliApis，workspace/cv-cat 只读对照；历史稿 HEAD 日期 2026-09-13；2026-10-23 窗口 HEAD `0234d81` 2026-10-07，本轮非签名）'
   reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
 source_completeness: unknown
 tags:
@@ -89,7 +89,7 @@ wire = original_order(params) + w_rid + wts
 
 ## 证据边界
 
-本库没有重放登录。mixin 下标表、RSA 公钥、极验密钥留在源码对照，不作为长期 SDK 常量。
+本库没有重放登录。mixin 下标表、RSA 公钥、极验密钥留在源码对照，不作为长期 SDK 常量。2026-10-23 对照基线前移到 HEAD `0234d81`（2026-10-07）：本轮只改评论翻页 `pagination_str` offset，`wbi.py` 路径未出现，不把该 diff 当 WBI/极验更新。
 
 ## 提炼说明（625）
 archive_only。WBI 写回/极验边界案例；评论与 WBI 面已有 reference。

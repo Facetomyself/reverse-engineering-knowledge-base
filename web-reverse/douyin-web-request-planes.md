@@ -12,7 +12,7 @@ sources:
 - id: s1
   ref: null
   basis: source-report
-  citation: '`本地项目分析材料（定位不公开）`（DouYin_Spider，本地镜像只读对照，抓包窗口约 2026-08）'
+  citation: '`本地项目分析材料（定位不公开）`（DouYin_Spider，workspace/cv-cat 只读对照，抓包窗口约 2026-08；2026-10-23 窗口 HEAD `17efed8` 2026-10-22）'
   reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
 source_completeness: unknown
 tags:
@@ -158,6 +158,11 @@ assemble(plane, path, biz, auth, body):
       return GET sign_url(origin + path + "?" + raw_join(query), uifid)
   return REQUEST(origin + path, params=query, body=body, headers=headers)
 ```
+
+<a id="2026-10-22-window"></a>
+## 2026-10-22 对照窗口（observation，非 runtime）
+
+对照仓 HEAD `17efed8`（2026-10-22）。本窗口改的是会话材料与传输线序，不是查询签名面：`ab_pure` / `xbogus_pure` / `secsdk_web_sign` 未出现在 diff 路径，上表七条链的切开方式保持。创作者发布仍走 `with_bd(..., require_dtrait=True)`；dtrait 档案通道与 creator `msToken`（`ms_appid=2906`）见 [会话材料 2026-10-22 窗口](./douyin-session-materials-case.md#2026-10-22-window)。Cookie 按 `BROWSER_COOKIE_ORDER` 上线，不能用扁平 dict 重排。未跑线上，不能当生产采集器。
 
 ## 证据边界
 

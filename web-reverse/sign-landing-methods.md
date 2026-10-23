@@ -12,7 +12,7 @@ sources:
 - id: s1
   ref: null
   basis: source-report
-  citation: '`本地项目分析材料（定位不公开）`（GitHub cv-cat 公开仓 2026-08-30 只读对照）'
+  citation: '`本地项目分析材料（定位不公开）`（GitHub cv-cat 公开仓，workspace/cv-cat 只读对照；历史稿 2026-08-30；2026-10-23 窗口见正文）'
   reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
 source_completeness: unknown
 tags:
@@ -42,7 +42,7 @@ archived_date: '2026-08-30'
 >
 > 从公开平台 SDK 对照中提炼签名落地选型：能钩到的宿主原语就纯算，搬不动的 VM 用隔离执行出参，App Native 签名优先实例 RPC。不收录字母表、盐、keystream 或可执行签名器。
 
-公开采集 SDK 的价值不在于「复制就能过」，而在于把一条业务请求拆成可独立验收的产品面，并给每种面选定落地方式。对照窗口是 2026-08；常数、档位和 SDK 版本会过期，方法不过期。
+公开采集 SDK 的价值不在于「复制就能过」，而在于把一条业务请求拆成可独立验收的产品面，并给每种面选定落地方式。方法对照窗口从 2026-08 起；2026-10-23 只刷新通道边界。常数、档位和 SDK 版本会过期，方法不过期。
 
 本地镜像只作只读对照，禁止把上游 Cookie / `.env` 写进 knowledge base 或 evidence。目标 case 仍从 `web_case.py next` 进入，browser fact 走 RuyiTrace，本地出参默认 RuyiDOM 黑盒到 cookie / XHR / fetch 边界。
 
@@ -140,6 +140,22 @@ MTOP `InnerSignImpl.getUnifiedSign` 是标准路径：spawn → 枚举 ClassLoad
 4. `test.py` 业务读回才是 `serverAccepted`。RuyiDOM / Node vm 出参只是 `localReproduced`。
 
 对照仓刷新后只更新本页的「窗口日期」与产品文档的命中特征，不把新盐写进知识库。
+
+## 2026-10-23 窗口（observation，非签名常数更新）
+
+`workspace/cv-cat` 2026-10-23 只读刷新。本段不重写 `a_bogus` / `x-s` / `__NS_sig3` 既有结论。
+
+| 仓 | HEAD | 吸收什么 | 明确不是 |
+|----|------|----------|----------|
+| DouYin_Spider | `17efed8` 2026-10-22 | dtrait 写接口通道名、Cookie 线序、creator `msToken` `ms_appid=2906` | `ab_pure` / `xbogus` / secsdk / acrawler 本轮路径未改 |
+| Spider_XHS | `23dab80` 2026-10-22 | 登录 `ssk.py` / `webSsk`；PC/Creator 指纹档案路径变动。merge subject 是赞助 PR，以文件集合为准 | 核心 `sign.js` 族未出现 |
+| KuaiShou-Spider | `3ef36e3` 2026-10-08 | captcha 指纹刷新；gdfp 允许 HTTP/1.1 回落 | `sig3_pure` / `falcon_pure` 未出现 |
+| BilibiliApis | `0234d81` 2026-10-07 | 对照基线前移 | 评论翻页 offset，非 WBI |
+| XApis | `0bacbb9` 2026-10-09 | 对照基线前移 | 文章 Markdown 嵌入，非 Castle / XCTID |
+| catbus | `0a6e705` 2026-10-22 | 记为聚合 CLI 副本 | 不要从 vendored JS/TS 起步 |
+| DianpingApis | `58e26d7` 2026-10-07 | 浏览器会话壳，无 sign/h5st/bogus 文件名 | 不硬造点评签名模块 |
+
+TiktokApis / JdApis / XianyuAndroidApis 本窗口仍为旧 HEAD，结论不改。未跑上游 SDK、登录、发布或媒体下载。
 
 ## 方法论与技巧
 

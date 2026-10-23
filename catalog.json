@@ -58432,9 +58432,9 @@
         "证据边界",
         "提炼说明（625）"
       ],
-      "bytes": 4595,
+      "bytes": 4868,
       "lines": 96,
-      "content_sha256": "310b4db997ac56142a4c17fc7b25aee5ae3450cbbd7675e703743c9abf720f24",
+      "content_sha256": "89fa185f642b9dd6e826f78b93cf9a4263652a03c923cddbbed8a0315b80b5f9",
       "metadata_status": "v2",
       "schema_version": 2,
       "id": "web-reverse-bilibili-wbi-geetest-case",
@@ -58452,7 +58452,7 @@
           "id": "s1",
           "ref": null,
           "basis": "source-report",
-          "citation": "`本地项目分析材料（定位不公开）`（BilibiliApis，HEAD 日期 2026-09-13，只读对照）",
+          "citation": "`本地项目分析材料（定位不公开）`（BilibiliApis，workspace/cv-cat 只读对照；历史稿 HEAD 日期 2026-09-13；2026-10-23 窗口 HEAD `0234d81` 2026-10-07，本轮非签名）",
           "reason": "出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。"
         }
       ],
@@ -60155,9 +60155,9 @@
         "可复用验收顺序",
         "提炼说明"
       ],
-      "bytes": 5754,
+      "bytes": 5941,
       "lines": 88,
-      "content_sha256": "ae569602e71575af5a50550fa44adee4b48ec61dc966108ec575e4dd42d9ed18",
+      "content_sha256": "6a76682a38d2f9119f955bad45eb43315852fb7bf8f76cd341c05627c497f89d",
       "metadata_status": "v2",
       "schema_version": 2,
       "id": "web-reverse-castle-profile-compression-parity",
@@ -60175,7 +60175,7 @@
           "id": "s1",
           "ref": null,
           "basis": "source-report",
-          "citation": "`本地项目分析材料（定位不公开）`，`3fe6ea7d`，`utils/castle_token.py`、`utils/castle_crypto.py`、`utils/chromium_deflate.py`、`x_apis/login_api.py`",
+          "citation": "`本地项目分析材料（定位不公开）`，Castle 结论基线 `3fe6ea7d`，对照仓 HEAD `0bacbb9`（本轮非签名），`utils/castle_token.py`、`utils/castle_crypto.py`、`utils/chromium_deflate.py`、`x_apis/login_api.py`",
           "reason": "出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。"
         }
       ],
@@ -61087,7 +61087,9 @@
         "bd-ticket-guard",
         "x-tt-session-dtrait",
         "__ac_signature",
-        "provenance"
+        "provenance",
+        "dtrait_profile",
+        "ms_appid"
       ],
       "headings": [
         "材料出处",
@@ -61097,11 +61099,12 @@
         "案例：acrawler 失败不能写成随机 Cookie",
         "直播 signature 不是这些材料",
         "创作者上传的另一条签",
+        "2026-10-22 对照窗口（observation，非 runtime）",
         "伪代码：材料就绪门"
       ],
-      "bytes": 7693,
-      "lines": 148,
-      "content_sha256": "bdd9b205baef3e55cf8c0e35ac4c5c3833adb64c5219d22a57be809d7d92ff4c",
+      "bytes": 9710,
+      "lines": 163,
+      "content_sha256": "f4bdafdf16a74440aca2418e35fb8879888dc2eded0820356c8eaf35301f750a",
       "metadata_status": "v2",
       "schema_version": 2,
       "id": "web-reverse-douyin-session-materials-case",
@@ -61119,7 +61122,7 @@
           "id": "s1",
           "ref": null,
           "basis": "source-report",
-          "citation": "`本地项目分析材料（定位不公开）`（DouYin_Spider，本地镜像只读对照）",
+          "citation": "`本地项目分析材料（定位不公开）`（DouYin_Spider，workspace/cv-cat 只读对照；历史稿相对本地镜像；2026-10-23 窗口 HEAD `17efed8` 2026-10-22）",
           "reason": "出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。"
         }
       ],
@@ -61131,7 +61134,9 @@
         "bd-ticket-guard",
         "x-tt-session-dtrait",
         "__ac_signature",
-        "provenance"
+        "provenance",
+        "dtrait_profile",
+        "ms_appid"
       ],
       "source_completeness": "unknown",
       "metadata_errors": []
@@ -61163,13 +61168,14 @@
         "案例 D：创作者发布，材料不齐就不发",
         "失败怎么读",
         "装配器伪代码",
+        "2026-10-22 对照窗口（observation，非 runtime）",
         "证据边界",
         "关联提炼",
         "提炼说明（733）"
       ],
-      "bytes": 10423,
-      "lines": 174,
-      "content_sha256": "3b9a86e820d8192e8e52e430ec7bb38d2a83cfb1e5fb396115730c327b7c0577",
+      "bytes": 11122,
+      "lines": 179,
+      "content_sha256": "8c8b43b9f0c24ef8b95b527936eccbe3e56bc2d54aff4b92ef72c033b2d528c3",
       "metadata_status": "v2",
       "schema_version": 2,
       "id": "web-reverse-douyin-web-request-planes",
@@ -61187,7 +61193,7 @@
           "id": "s1",
           "ref": null,
           "basis": "source-report",
-          "citation": "`本地项目分析材料（定位不公开）`（DouYin_Spider，本地镜像只读对照，抓包窗口约 2026-08）",
+          "citation": "`本地项目分析材料（定位不公开）`（DouYin_Spider，workspace/cv-cat 只读对照，抓包窗口约 2026-08；2026-10-23 窗口 HEAD `17efed8` 2026-10-22）",
           "reason": "出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。"
         }
       ],
@@ -65540,18 +65546,21 @@
         "kww",
         "caver",
         "weapon_oracle",
-        "__NS_sig3"
+        "__NS_sig3",
+        "gdfp",
+        "captcha"
       ],
       "headings": [
         "案例：GET /rest/v/profile/get",
         "CP 与直播",
         "成本判断在代码里的位置",
+        "2026-10-08 对照窗口（observation，非 runtime）",
         "证据边界",
         "提炼说明（667）"
       ],
-      "bytes": 4034,
-      "lines": 84,
-      "content_sha256": "e96633ad0681d990038b94e230eec85ce3fbf0c052fa591f8274f08dcd64e78a",
+      "bytes": 4918,
+      "lines": 93,
+      "content_sha256": "370f4ddf164eb819f1a4487b6a8fd3b7804b0538a699d2444d740400feb2cdea",
       "metadata_status": "v2",
       "schema_version": 2,
       "id": "web-reverse-kuaishou-landing-case",
@@ -65569,7 +65578,7 @@
           "id": "s1",
           "ref": null,
           "basis": "source-report",
-          "citation": "`本地项目分析材料（定位不公开）`（KuaiShou-Spider，HEAD 日期 2026-08-30，只读对照）",
+          "citation": "`本地项目分析材料（定位不公开）`（KuaiShou-Spider，workspace/cv-cat 只读对照；历史稿 HEAD 日期 2026-08-30；2026-10-23 窗口 HEAD `3ef36e3` 2026-10-08）",
           "reason": "出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。"
         }
       ],
@@ -65580,7 +65589,9 @@
         "kww",
         "caver",
         "weapon_oracle",
-        "__NS_sig3"
+        "__NS_sig3",
+        "gdfp",
+        "captcha"
       ],
       "source_completeness": "unknown",
       "metadata_errors": []
@@ -67897,9 +67908,9 @@
         "验证口径",
         "提炼说明（691）"
       ],
-      "bytes": 5179,
-      "lines": 112,
-      "content_sha256": "c56e80777bda45fd4faaac0a174853cf67011e476ec80dbdd06d066d690fa7c8",
+      "bytes": 5680,
+      "lines": 116,
+      "content_sha256": "9a253ca17d5968e7179d2dad7c4a51de0df308c898c0981f1531fe8a29530252",
       "metadata_status": "v2",
       "schema_version": 2,
       "id": "web-reverse-products-kuaishou-ns-sig",
@@ -67919,6 +67930,11 @@
           "basis": "source-report",
           "citation": "KuaiShou-Spider 2026-08-30 只读对照（原归档记载）",
           "reason": "原归档明确记载对照项目名；仅保留非路径出处，省略本机定位，未提供公开原文 URL。"
+        },
+        {
+          "id": "s2",
+          "ref": "../kuaishou-landing-case.md#2026-10-08-window",
+          "basis": "source-report"
         }
       ],
       "modules": [
@@ -67926,10 +67942,11 @@
           "name": "request-chain",
           "anchor": "常见链路",
           "sources": [
-            "s1"
+            "s1",
+            "s2"
           ],
           "basis": "source-report",
-          "limits": "仅保留来源陈述；出处为文本 citation，缺少可定位公开原文，本轮未重验算法、运行时或当前服务端。"
+          "limits": "仅保留来源陈述；出处为文本 citation，缺少可定位公开原文，本轮未重验算法、运行时或当前服务端。2026-10-08 窗口只观察 captcha/gdfp 传输路径，不能升级为 sig3/falcon 已重验。"
         },
         {
           "name": "validation",
@@ -68557,9 +68574,9 @@
         "参数来源与失败闭合：来源报告增补",
         "提炼说明（700）"
       ],
-      "bytes": 7141,
-      "lines": 142,
-      "content_sha256": "fe7a7b8285fa954d81d08abda1a14ef8f6e14f7e4fad1b61b6eba3dfd96d0e3c",
+      "bytes": 7625,
+      "lines": 149,
+      "content_sha256": "a942f302325cf597695e9234af4b6f2b1e5205ebd04061ca92ef74b126654d32",
       "metadata_status": "v2",
       "schema_version": 2,
       "id": "web-reverse-products-xiaohongshu-xs",
@@ -68583,6 +68600,11 @@
         {
           "id": "s2",
           "ref": "../xiaohongshu-assembly-case.md#材料六桶",
+          "basis": "source-report"
+        },
+        {
+          "id": "s3",
+          "ref": "../xiaohongshu-assembly-case.md#2026-10-22-window",
           "basis": "source-report"
         }
       ],
@@ -68609,16 +68631,21 @@
           "name": "parameters",
           "anchor": "parameters",
           "sources": [
-            "s2"
+            "s2",
+            "s3"
           ],
           "basis": "source-report",
-          "limits": "provenance 分类、失败行为与执行接口来自未公开定位的本地来源文章，未独立检查源树或复现；TTL、profile 与守卫条件不应外推到当前版本或服务端规则。"
+          "limits": "provenance 分类、失败行为与执行接口来自未公开定位的本地来源文章，未独立检查源树或复现；TTL、profile 与守卫条件不应外推到当前版本或服务端规则。2026-10-22 窗口的 ssk 是登录材料 observation，不能当成 x-s 算法已重验。"
         }
       ],
       "relations": [
         {
           "type": "supplements",
           "target": "../xiaohongshu-assembly-case.md#材料六桶"
+        },
+        {
+          "type": "supplements",
+          "target": "../xiaohongshu-assembly-case.md#2026-10-22-window"
         }
       ],
       "tags": [],
@@ -69338,7 +69365,7 @@
       "source": "`workspace/cv-cat`（GitHub cv-cat 公开仓 2026-08-30 只读对照）",
       "original_date": "2026-08-30",
       "archive_date": "2026-08-30",
-      "summary": "公开采集 SDK 的价值不在于「复制就能过」，而在于把一条业务请求拆成可独立验收的产品面，并给每种面选定落地方式。对照窗口是 2026-08；常数、档位和 SDK 版本会过期，方法不过期。",
+      "summary": "公开采集 SDK 的价值不在于「复制就能过」，而在于把一条业务请求拆成可独立验收的产品面，并给每种面选定落地方式。方法对照窗口从 2026-08 起；2026-10-23 只刷新通道边界。常数、档位和 SDK 版本会过期，方法不过期。",
       "keywords": [
         "纯算",
         "Node vm",
@@ -69364,13 +69391,14 @@
         "7. App Native 签名优先实例 RPC",
         "反面教材",
         "与主线工作流",
+        "2026-10-23 窗口（observation，非签名常数更新）",
         "方法论与技巧",
         "2026-09-23 案例索引",
         "提炼说明（703）"
       ],
-      "bytes": 12447,
-      "lines": 182,
-      "content_sha256": "9567af269719e485565a69fbf97f2f504f2903e2f6af7d5e6871991bc2591277",
+      "bytes": 13861,
+      "lines": 198,
+      "content_sha256": "b561bc5dd6649f191da055a8c7e024024f60b3b0e87e1258b62e6669a47333cb",
       "metadata_status": "v2",
       "schema_version": 2,
       "id": "web-reverse-sign-landing-methods",
@@ -69388,7 +69416,7 @@
           "id": "s1",
           "ref": null,
           "basis": "source-report",
-          "citation": "`本地项目分析材料（定位不公开）`（GitHub cv-cat 公开仓 2026-08-30 只读对照）",
+          "citation": "`本地项目分析材料（定位不公开）`（GitHub cv-cat 公开仓，workspace/cv-cat 只读对照；历史稿 2026-08-30；2026-10-23 窗口见正文）",
           "reason": "出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。"
         }
       ],
@@ -70147,7 +70175,8 @@
         "整包",
         "双写",
         "完成度",
-        "boundary_known"
+        "boundary_known",
+        "catbus"
       ],
       "headings": [
         "五档",
@@ -70156,9 +70185,9 @@
         "伪代码：完成度标签",
         "提炼说明（703）"
       ],
-      "bytes": 4555,
+      "bytes": 4830,
       "lines": 101,
-      "content_sha256": "50a9b78a428831819d9d25590fde85cc182472d3a2e5357631f1b51fa9dec551",
+      "content_sha256": "dff7df7558b215c062285e8df6312fff967992d36b3f0218ac2bb11a65c5e544",
       "metadata_status": "v2",
       "schema_version": 2,
       "id": "web-reverse-thin-wrapper-vs-purecalc",
@@ -70176,7 +70205,7 @@
           "id": "s1",
           "ref": null,
           "basis": "source-report",
-          "citation": "`本地项目分析材料（定位不公开）` 各仓 README 与调用点（2026-08 至 2026-09 对照）",
+          "citation": "`本地项目分析材料（定位不公开）` 各仓 README 与调用点（2026-08 至 2026-09 对照；2026-10-23 窗口增补 catbus HEAD `0a6e705` 为聚合 CLI 副本）",
           "reason": "出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。"
         }
       ],
@@ -71944,9 +71973,9 @@
         "传输层与发布生命周期要独立验收",
         "固定版本证据与限制"
       ],
-      "bytes": 6932,
+      "bytes": 7158,
       "lines": 102,
-      "content_sha256": "361ad33220f650ce8c9a8be6cd5982e2d414d30f3b2b013bb5a6ba882e18c468",
+      "content_sha256": "7c39d7e6aa29d5bbae62d6b15130527a3da60afecd883f59f92fa795af369072",
       "metadata_status": "v2",
       "schema_version": 2,
       "id": "web-reverse-x-twitter-graphql-case",
@@ -71964,7 +71993,7 @@
           "id": "s1",
           "ref": null,
           "basis": "source-report",
-          "citation": "`本地项目分析材料（定位不公开）`，`a8bbd36f` → `3fe6ea7d`，公开源码静态对照",
+          "citation": "`本地项目分析材料（定位不公开）`，`a8bbd36f` → `3fe6ea7d` → `0bacbb9`，公开源码静态对照；`0bacbb9` 本轮非签名",
           "reason": "出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。"
         }
       ],
@@ -72115,19 +72144,22 @@
         "HostCookieStore",
         "ordered_wire_headers",
         "websectiga",
-        "_dsf"
+        "_dsf",
+        "ssk",
+        "webSsk"
       ],
       "headings": [
         "材料六桶",
         "案例：一次 PC 业务请求",
         "四条端别",
         "伪代码：provenance 门",
+        "2026-10-22 对照窗口（observation，非 runtime）",
         "证据边界",
         "提炼去向"
       ],
-      "bytes": 5589,
-      "lines": 110,
-      "content_sha256": "899f2c63a02b977d981d92940a8e2c3ac88df471006f00be50cd07fa5d857b7a",
+      "bytes": 6865,
+      "lines": 121,
+      "content_sha256": "5b043ec151584669df670c6842da5431c5ec7937c0add81b0b057e126d072aae",
       "metadata_status": "v2",
       "schema_version": 2,
       "id": "web-reverse-xiaohongshu-assembly-case",
@@ -72145,7 +72177,7 @@
           "id": "s1",
           "ref": null,
           "basis": "source-report",
-          "citation": "`本地项目分析材料（定位不公开）`（Spider_XHS 现行 `xhs_core` / `xhs_pc` / `xhs_creator`，只读对照）",
+          "citation": "`本地项目分析材料（定位不公开）`（Spider_XHS 现行 `xhs_core` / `xhs_pc` / `xhs_creator`，workspace/cv-cat 只读对照；2026-10-23 窗口 HEAD `23dab80` 2026-10-22）",
           "reason": "出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。"
         }
       ],
@@ -72156,7 +72188,9 @@
         "HostCookieStore",
         "ordered_wire_headers",
         "websectiga",
-        "_dsf"
+        "_dsf",
+        "ssk",
+        "webSsk"
       ],
       "source_completeness": "unknown",
       "metadata_errors": []

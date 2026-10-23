@@ -14,6 +14,9 @@ sources:
   basis: source-report
   citation: KuaiShou-Spider 2026-08-30 只读对照（原归档记载）
   reason: 原归档明确记载对照项目名；仅保留非路径出处，省略本机定位，未提供公开原文 URL。
+- id: s2
+  ref: ../kuaishou-landing-case.md#2026-10-08-window
+  basis: source-report
 tags: []
 original_date: '2026-08-30'
 archived_date: '2026-08-30'
@@ -22,8 +25,9 @@ modules:
   anchor: 常见链路
   sources:
   - s1
+  - s2
   basis: source-report
-  limits: 仅保留来源陈述；出处为文本 citation，缺少可定位公开原文，本轮未重验算法、运行时或当前服务端。
+  limits: 仅保留来源陈述；出处为文本 citation，缺少可定位公开原文，本轮未重验算法、运行时或当前服务端。2026-10-08 窗口只观察 captcha/gdfp 传输路径，不能升级为 sig3/falcon 已重验。
 - name: validation
   anchor: 验证口径
   sources:
@@ -87,7 +91,7 @@ modules:
 3. kws 是否绑定**当次** `signUrl`；仓库里的历史 `kws-N-*.js` 只是离线夹具。
 4. kwf 代际（对照见过 174 与 218 两种长度）选错会立刻风控。
 5. Live 是否用 realUrl 签名、用 `/live_api/*` 发送。
-6. 验证码失败时先查 gdfp 遥测 identity UUID 是否贯通，再查 sig。
+6. 验证码失败时先查 gdfp 遥测 identity UUID 是否贯通，再查 sig。2026-10-08 窗口默认允许 gdfp HTTP/1.1 回落，不能把 HTTP/1.1 当协议错误；captcha 指纹文件有刷新，`sig3_pure` / `falcon_pure` 路径未改。
 7. JSON body 键序必须与 `JSON.stringify` 一致；数字格式走 JS 值语义，不是 Python `str`。
 
 ## 常见坑
@@ -105,7 +109,7 @@ modules:
 - 滑块链与业务签名链分开留证
 - Brook VM 路径的出参 provenance 记 runtime，不得标纯算完成
 
-落地选型见 [平台签名落地方法](../sign-landing-methods.md)。
+落地选型见 [平台签名落地方法](../sign-landing-methods.md)。gdfp HTTP/1.1 回落与 captcha 指纹刷新的路径级 observation 见 [快手装配案例窗口](../kuaishou-landing-case.md#2026-10-08-window)。
 
 ## 提炼说明（691）
 retain_existing_reference。已有 v2 reference。

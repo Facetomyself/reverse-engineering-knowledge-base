@@ -12,7 +12,7 @@ sources:
 - id: s1
   ref: null
   basis: source-report
-  citation: '`本地项目分析材料（定位不公开）`，`a8bbd36f` → `3fe6ea7d`，公开源码静态对照'
+  citation: '`本地项目分析材料（定位不公开）`，`a8bbd36f` → `3fe6ea7d` → `0bacbb9`，公开源码静态对照；`0bacbb9` 本轮非签名'
   reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
 source_completeness: unknown
 tags:
@@ -91,7 +91,7 @@ guest token 由服务端激活接口签发，`XAuth` 内按 TTL 缓存；XCTID �
 
 ## 固定版本证据与限制
 
-源码基线：[XApis @ 3fe6ea7d](https://github.com/cv-cat/XApis/tree/3fe6ea7d)。核对入口：
+源码基线：[XApis @ 0bacbb9](https://github.com/cv-cat/XApis/tree/0bacbb9)（由 `3fe6ea7d` 快进；本轮 `utils/article_util.py` 文章 Markdown 嵌入，Castle / XCTID / GraphQL 注册表路径未出现，签名结论仍以 `3fe6ea7d` 静态对照为准）。核对入口：
 
 - `builder/auth.py::prepare_auth / transaction`。
 - `utils/graphql_registry.py::refresh / _parse_feature_defaults`。

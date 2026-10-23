@@ -12,7 +12,7 @@ sources:
 - id: s1
   ref: null
   basis: source-report
-  citation: '`本地项目分析材料（定位不公开）`（DouYin_Spider，本地镜像只读对照）'
+  citation: '`本地项目分析材料（定位不公开）`（DouYin_Spider，workspace/cv-cat 只读对照；历史稿相对本地镜像；2026-10-23 窗口 HEAD `17efed8` 2026-10-22）'
   reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
 source_completeness: unknown
 tags:
@@ -22,6 +22,8 @@ tags:
 - x-tt-session-dtrait
 - __ac_signature
 - provenance
+- dtrait_profile
+- ms_appid
 original_date: '2026-09-20'
 archived_date: '2026-09-23'
 ---
@@ -58,7 +60,7 @@ archived_date: '2026-09-23'
 - `generate_msToken(107)` 从本地字符表抽 107 位。这是未证明的合成值。
 - `generate_dynamic_msToken` 调用 `mstoken.get_mstoken`。缓存命中且未过 TTL 就返回缓存；否则 POST 报告信封，读响应头 `x-ms-token`，没有再从 `set-cookie` 里抠 `msToken=`。异常返回空串。
 
-登录页旋转走另一条 URL：`refresh_common_mstoken` POST `/web/common`，query 带 `ms_appid=6383`，续期时把旧 token 挂在 query 上。信封分 common report 和 behavior 两种，不能混用。
+登录页旋转走另一条 URL：`refresh_common_mstoken` POST `/web/common`，query 带 `ms_appid=6383`，续期时把旧 token 挂在 query 上。信封分 common report 和 behavior 两种，不能混用。创作者域另有独立通道，见下文 2026-10-22 窗口，不能把 6383 签发值直接当 creator 发布材料。
 
 业务侧 `params.add_param("msToken", auth.msToken)` 走的是惰性动态 token。个别接口抓包确认后可以不带，例如收藏列表。省略必须有该接口的抓包，不能全局删。
 
@@ -106,7 +108,7 @@ payload 是紧凑 JSON，键顺序固定为 `dtrait`、`timestamp`、`sdkVersion
 
 同一页面会话复用已经 RSA 包住的 AES key（第一段）。每个请求重新生成 IV，并按当前 path 加密第二段。发布接口 `require_dtrait=True`，生成失败就不发请求。
 
-设备 blob 本身是外来材料。本篇不描述 blob 字段，也不收录内置公钥。
+设备 blob 本身是外来材料。本篇不描述 blob 字段，也不收录内置公钥。2026-10-22 窗口把档案加载拆成独立模块，通道名见下文；仍不贴档案 JSON 或密文。
 
 ## 案例：acrawler 失败不能写成随机 Cookie
 
@@ -129,6 +131,19 @@ payload 是紧凑 JSON，键顺序固定为 `dtrait`、`timestamp`、`sdkVersion
 ## 创作者上传的另一条签
 
 图文/视频上传走 `imagex_sign.sign_request`：火山网关 V4，HMAC-SHA256，query 按 key 排序并做 RFC3986 编码，body 的 SHA256 进待签串，STS session token 进 `x-amz-security-token`。这和 `a_bogus`、ticket-guard 都不是同一把钥匙。密钥来自上传凭证接口，不在本文收录。
+
+<a id="2026-10-22-window"></a>
+## 2026-10-22 对照窗口（observation，非 runtime）
+
+对照仓 `workspace/cv-cat/DouYin_Spider` HEAD `17efed8`（日期 2026-10-22），相对 `b17b12e`。本段是文件名、函数签名与 README 通道名的 observation，以及上游 refresh 的 source-report；未跑 SDK、未登录、未当生产采集器。不能把本窗口升级成本次 runtime 或 server-accepted。
+
+写接口头名仍是 `x-tt-session-dtrait`。材料通道只记名字、不贴值：成品头 `session_dtrait`；内层 blob 可选环境变量 `DY_DTRAIT_BLOB`；档案 JSON 默认 `utils/dtrait_profile.json`，或 `DY_DTRAIT_PROFILE` 另指路径。新增 `utils/dtrait_profile.py` 在加载时校验档案形状，缺字段在进请求头之前失败。外层仍按 path 重算 RSA/AES 段；`require_dtrait=True` 时生成失败不发。换设备只换档案或 blob 通道，不把外层密文当可复用 Cookie。
+
+Cookie 线序由 `DouyinAuth.BROWSER_COOKIE_ORDER` 锁浏览器 wire 顺序。本文不枚举键名、不收录 Cookie 原值。
+
+creator 域 `msToken` 是独立 token 通道：`get_mstoken(..., creator=True)` 走 README 写明的 `ms_appid=2906`，独立缓存；主站与登录页 common 旋转仍是 `ms_appid=6383`。两条通道不能互换。失败仍返回空串，不降级成 `generate_msToken()`。
+
+本窗口路径未见 `ab_pure` / `xbogus_pure` / `secsdk_web_sign` / `acrawler` 变动；既有查询签名、webSign、直播 `signature`、acrawler Cookie 结论不在本段重写。指纹族 README 记为 2026-10-17 对齐；PASSPORT 二次验证只当作发布链失败翻译的相邻出口，不是 dtrait 算法更新。
 
 ## 伪代码：材料就绪门
 

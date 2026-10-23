@@ -12,7 +12,7 @@ sources:
 - id: s1
   ref: null
   basis: source-report
-  citation: '`本地项目分析材料（定位不公开）`，`3fe6ea7d`，`utils/castle_token.py`、`utils/castle_crypto.py`、`utils/chromium_deflate.py`、`x_apis/login_api.py`'
+  citation: '`本地项目分析材料（定位不公开）`，Castle 结论基线 `3fe6ea7d`，对照仓 HEAD `0bacbb9`（本轮非签名），`utils/castle_token.py`、`utils/castle_crypto.py`、`utils/chromium_deflate.py`、`x_apis/login_api.py`'
   reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
 source_completeness: unknown
 tags:
@@ -78,7 +78,7 @@ profile 还可能携带 `prefix`、`compression`、`inner_variant` 和 `timestam
 3. native 缺失、向量缺槽位、元信息不兼容均应显式失败，不用随机值填洞。
 4. 单独验证动作间状态变化、会话字段完整性与业务读回。
 
-上述顺序是移植验收建议，不是本轮执行结果。本轮仅静态阅读 [XApis @ 3fe6ea7d](https://github.com/cv-cat/XApis/tree/3fe6ea7d)，没有加载 DLL、运行 Node 或访问线上目标。整体请求装配见 [X GraphQL 与会话分层](./x-twitter-graphql-case.md)。
+上述顺序是移植验收建议，不是本轮执行结果。Castle 模块静态阅读仍以 [XApis @ 3fe6ea7d](https://github.com/cv-cat/XApis/tree/3fe6ea7d) 为准；对照仓当前 HEAD `0bacbb9`（2026-10-09）只含文章 Markdown 嵌入，Castle 路径未出现。没有加载 DLL、运行 Node 或访问线上目标。整体请求装配见 [X GraphQL 与会话分层](./x-twitter-graphql-case.md)。
 
 <a id="reference-extraction-202"></a>
 ## 提炼说明

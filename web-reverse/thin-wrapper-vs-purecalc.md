@@ -12,7 +12,7 @@ sources:
 - id: s1
   ref: null
   basis: source-report
-  citation: '`本地项目分析材料（定位不公开）` 各仓 README 与调用点（2026-08 至 2026-09 对照）'
+  citation: '`本地项目分析材料（定位不公开）` 各仓 README 与调用点（2026-08 至 2026-09 对照；2026-10-23 窗口增补 catbus HEAD `0a6e705` 为聚合 CLI 副本）'
   reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
 source_completeness: unknown
 tags:
@@ -49,7 +49,7 @@ archived_date: '2026-09-24'
 | 隔离运行器 | 独立 Node、形状门、失败不降级。h5st server、frontier、websectiga | 出参 provenance 是 runtime | purecalc |
 | 纯算 / RPC | 请求边界闭合后的 Python，或设备上的实例调用 | 当前窗口的边界格式，或当前进程的签名 | 跨版本、跨设备仍成立 |
 
-TikTok 仓说明写明已经去掉整包 `static/tiktok.js`，HTTP 改在 Python。京东去掉 `static/JD.js`，改成未修改的 js_security 加常驻服务。小红书 Agent skill 里的 `xhs_main_260411.js` 仍是 2026-04 execjs，现行算法在 `xhs_core`。看到仓库名相同，要看这次调用编译的是哪一个文件。
+TikTok 仓说明写明已经去掉整包 `static/tiktok.js`，HTTP 改在 Python。京东去掉 `static/JD.js`，改成未修改的 js_security 加常驻服务。小红书 Agent skill 里的 `xhs_main_260411.js` 仍是 2026-04 execjs，现行算法在 `xhs_core`。看到仓库名相同，要看这次调用编译的是哪一个文件。2026-10-22 的 `catbus`（HEAD `0a6e705`）是 All-IN-ONE 一类聚合 CLI 副本，签名来自 vendored 上游 `sign.ts` / static bundle；对照仍从各站 A 档仓起步，不把 catbus 当权威源。
 
 ## 判定流程
 

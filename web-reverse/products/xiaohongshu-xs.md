@@ -17,6 +17,9 @@ sources:
 - id: s2
   ref: ../xiaohongshu-assembly-case.md#材料六桶
   basis: source-report
+- id: s3
+  ref: ../xiaohongshu-assembly-case.md#2026-10-22-window
+  basis: source-report
 tags: []
 original_date: '2026-08-18'
 archived_date: '2026-08-30'
@@ -37,11 +40,14 @@ modules:
   anchor: parameters
   sources:
   - s2
+  - s3
   basis: source-report
-  limits: provenance 分类、失败行为与执行接口来自未公开定位的本地来源文章，未独立检查源树或复现；TTL、profile 与守卫条件不应外推到当前版本或服务端规则。
+  limits: provenance 分类、失败行为与执行接口来自未公开定位的本地来源文章，未独立检查源树或复现；TTL、profile 与守卫条件不应外推到当前版本或服务端规则。2026-10-22 窗口的 ssk 是登录材料 observation，不能当成 x-s 算法已重验。
 relations:
 - type: supplements
   target: ../xiaohongshu-assembly-case.md#材料六桶
+- type: supplements
+  target: ../xiaohongshu-assembly-case.md#2026-10-22-window
 ---
 
 # 小红书 x-s / x-t / x-s-common
@@ -132,6 +138,7 @@ Creator：`appId=ugc`，无 0301。非 bootstrap 的 mns0101 必须把服务端 
 | 服务端下发 | 登录态缺少必需材料时抛错，不合成替代值 |
 | 用户交互 | 扫码、短信等交互结果不能在代码内伪造 |
 | 对齐覆盖、生命周期状态 | 只保留其为独立 provenance 类别；来源文章未给出可泛化的具体生成规则 |
+| 登录 ssk（2026-10-22 窗口） | 登录响应加密包解密后写入 `webSsk`；通道在 `xhs_core/ssk.py`，不是 `x-s`。核心 `sign.js` / `mns.js` / `b1.js` / `xs_common.js` / `rap.js` 本轮路径未改 |
 
 来源还报告 DS 锚 TTL 与接口 `cache-control max-age=300` 对齐，`getdss()` 从混淆 JS 提取 13 位时间戳；Creator 的特定 `mns0101` 路径要求 DS 程序交给 Node 执行并有超时/退出码门，`websectiga` 则是另一种 stdin JSON 与定长十六进制输出约束。这些实现条件来自来源文章，不足以证明当前端点行为或任何请求已被服务端接受。
 

@@ -853,7 +853,7 @@
 | 主文 | 2026-06-22 | [JSVMP 变体失败谱系的记录与验收](./web-reverse/jsvmp-variant-failure-lineage-procedure.md) | — | 前提与输入 / 步骤与分支 / 输出 / 验收 |
 | 主文 | 2026-06-22（导出文件标注） | [JSVMP 动态版本：重试成功不等于提取器修复](./web-reverse/jsvmp-variant-failure-lineage.md) | — | 与已有 TDC 文章的区别 / 来源中发生了什么 / 失败谱系最小记录 / 真正修复的验收 |
 | 主文 | 多篇合集 | [零基础爬虫第一天 逆向笔记合集](./web-reverse/koohai-reverse-notes-compilation.md) | — | 收录说明 / 文章目录（17 篇） / 提炼说明 / 同目录窄参考 |
-| 主文 | 2026-08-30 | [快手案例：资料接口的 hxfalcon 装配](./web-reverse/kuaishou-landing-case.md) | — | 案例：GET /rest/v/profile/get / CP 与直播 / 成本判断在代码里的位置 / 证据边界 |
+| 主文 | 2026-08-30 | [快手案例：资料接口的 hxfalcon 装配](./web-reverse/kuaishou-landing-case.md) | — | 案例：GET /rest/v/profile/get / CP 与直播 / 成本判断在代码里的位置 / 2026-10-08 对照窗口（observation，非 runtime） |
 | 主文 | 2026-08-18 | [领英案例：JSESSIONID 双写与页面 queryId](./web-reverse/linkedin-voyager-csrf-case.md) | — | 案例：资料卡 / 可复用点 / 证据边界 / 本轮提炼评估 |
 | 主文 | 2026-10-01 | [LinkedIn Voyager 资料卡 GraphQL 请求链](./web-reverse/linkedin-voyager-request-chain.md) | — | 资料卡请求链 / 证据边界 |
 | 主文 | 2026-09-23 | [签名材料出处账本参考](./web-reverse/material-provenance-ledger-reference.md) | — | Provenance 桶与生命周期 / TTL 与缓存 / 缺字段时的解析决策 / 完成门：localReproduced 与 serverAccepted |

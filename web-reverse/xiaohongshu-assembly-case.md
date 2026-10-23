@@ -12,7 +12,7 @@ sources:
 - id: s1
   ref: null
   basis: source-report
-  citation: '`本地项目分析材料（定位不公开）`（Spider_XHS 现行 `xhs_core` / `xhs_pc` / `xhs_creator`，只读对照）'
+  citation: '`本地项目分析材料（定位不公开）`（Spider_XHS 现行 `xhs_core` / `xhs_pc` / `xhs_creator`，workspace/cv-cat 只读对照；2026-10-23 窗口 HEAD `23dab80` 2026-10-22）'
   reason: 出处来自原归档来源字段；本地路径已省略，原始材料未随本文公开，本轮未重跑来源实验。
 source_completeness: unknown
 tags:
@@ -21,6 +21,8 @@ tags:
 - ordered_wire_headers
 - websectiga
 - _dsf
+- ssk
+- webSsk
 original_date: '2026-09-08'
 archived_date: '2026-09-23'
 ---
@@ -80,7 +82,7 @@ POST url, data=body.encode("utf-8")      # not json=
 | 蒲公英 | `generate_pugongying_headers` | 只 `generate_xs`，不造 `x-s-common`；HTTP 仍走普通 `requests` |
 | 千帆工具文件 | `xhs_qianfan_util.py` | 只有静态头模板；authority 仍指向蒲公英 host，没有独立 x-s 组装 |
 
-`XHS_ALL_IN_ONE` 是运营壳，签名在仓内 `xhs_utils` 副本里，不是 import 另一份 Spider_XHS。`XhsSkills` 仍编译 `xhs_main_260411.js`，那是 2026-04 的 execjs 快照，XsCommon 没有现行的 `x12=dsl`。算法只认现行 `xhs_core`。
+`XHS_ALL_IN_ONE` 是运营壳，签名在仓内 `xhs_utils` 副本里，不是 import 另一份 Spider_XHS。`XhsSkills` 仍编译 `xhs_main_260411.js`，那是 2026-04 的 execjs 快照，XsCommon 没有现行的 `x12=dsl`。算法只认现行 `xhs_core`。2026-10-22 新 clone 的 `catbus` 是另一份聚合 CLI 副本，不要从它的 vendored JS 起步对照。
 
 ## 伪代码：provenance 门
 
@@ -100,6 +102,15 @@ after_sign(headers, body):
     require ordered_wire_headers(headers)
     send bytes(body)                         # body already canonical
 ```
+
+<a id="2026-10-22-window"></a>
+## 2026-10-22 对照窗口（observation，非 runtime）
+
+对照仓 `workspace/cv-cat/Spider_XHS` HEAD `23dab80`（日期 2026-10-22），相对 `ebb6c4f`。merge subject 写的是赞助 PR；本段以文件集合为准，不把 commit 标题当成签名更新。未跑登录、未当生产采集器。
+
+新增 `xhs_utils/xhs_core/ssk.py`：登录材料通道，不是 `x-s` 签名模块。PC 登录 API 在握手里提交客户端公钥、从登录响应取加密 `ssk`，解密后写入 localStorage `webSsk`。PC runtime 另有 Node `web_ssk.js` 握手/接受入口，与 Python 原语同通道、不同执行面。失败时源码记 warning、不把随机串写成 `webSsk`。不收录曲线常数、服务端公钥或密文。
+
+同窗口 PC/Creator 的 `dsl.py` / `params.py` / `state.py` / `reference_profile.json` 与登录 API 有路径变动，属于指纹档案与会话状态，不是 mns/`x-s` 算法正文。核心 `xhs_core/js/{sign,mns,b1,xs_common}.js` 与 `rap.js` 未出现在本轮 diff 路径，既有 xs 族结论不在本段重写。
 
 ## 证据边界
 
