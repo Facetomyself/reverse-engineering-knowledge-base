@@ -12,13 +12,13 @@
 | `collection-engineering` | 12 | 3 | 15 |
 | `drm-content-acquisition` | 2 | 0 | 2 |
 | `mobile-app-reverse` | 39 | 278 | 317 |
-| `native-analysis` | 11 | 16 | 27 |
+| `native-analysis` | 14 | 16 | 30 |
 | `packing-bypass` | 5 | 0 | 5 |
-| `protocols` | 3 | 0 | 3 |
+| `protocols` | 4 | 0 | 4 |
 | `signature-algorithms` | 11 | 30 | 41 |
 | `web-reverse` | 132 | 150 | 282 |
 
-文章总数：998。
+文章总数：1002。
 
 ## 逐篇目录
 
@@ -687,6 +687,7 @@
 | 类型 | 日期 | 文章 | 父合集 | 关键标题 |
 |------|------|------|--------|----------|
 | 主文 | unknown | [AI 复杂 VM 算法还原](./native-analysis/ai-assisted-vmp-trace-recovery.md) | — | 战场：反编译已经不够用了 / 方法论：从输出往回走 / 错误路线地图 / KEY16 和 repeating-key XOR |
+| 主文 | unknown | [Go Native 逆向阅读与证据边界参考](./native-analysis/go-native-reverse-evidence-reference.md) | — | 载体、定位与历史解释 / 地址的最小区分 / 按层绑定密码参数，不替冲突来源选答案 / Hook 与通信结果各自证明到哪一层 |
 | 主文 | 2026-10-16 | [不用提取 CDI_Leaf：把 KeyMint TA 变成 RKP 签名 Oracle](./native-analysis/kanxue-keymint-ta-rkp-signing-oracle.md) | — | 清洗与完整性说明 / 来源正文 / 前言 / 一、目标与背景知识 |
 | 主文 | 2026-07-08 至 2026-07-16 | [Nuitka onefile 外层 payload 与内层 constants](./native-analysis/nuitka-onefile-payload-recovery-procedure.md) | — | 前提与输入 / 步骤与分支 / 输出 / 验收 |
 | 主文 | 2026-07-08 至 2026-07-16 | [Nuitka onefile：外层 payload 与第二层 native 主程序](./native-analysis/nuitka-onefile-payload-recovery.md) | — | 适用与不适用 / 外层：onefile bootstrap / 内层：仍然是 Nuitka native / 不要做的 |
@@ -697,6 +698,8 @@
 | 主文 | unknown | [ARM64 VMP Trace 证据闭环流程](./native-analysis/vmp-trace-evidence-recovery-procedure.md) | — | 前提与输入 / 步骤与分支 / S3 的外部来源分支 / S4 的候选淘汰规则 |
 | 主文 | 2026-06-22 | [Android ROM 持久 jnilog 注入流程：开关、请求与验收](./native-analysis/xfinject-jnilog-rom-procedure.md) | — | 前提与输入 / 步骤与分支 / 输出 / 验收 |
 | 主文 | 多篇合集 | [逆向学习交流 Unidbg 与 Native 合集](./native-analysis/xfq-unidbg-native-compilation.md) | — | 收录说明 / 文章目录（12 篇） / 提炼说明（571） / 同目录窄参考 |
+| 主文 | unknown | [xTun / cftun Go 逆向补充教学来源归档](./native-analysis/xtun-go-reverse-supplement-archive.md) | — | 清洗与完整性说明 / 补充教学导航 / 来源正文 / 目标 |
+| 主文 | unknown | [xTun Go 逆向核心教学（脱敏来源归档）](./native-analysis/xtun-go-reverse-teaching-archive.md) | — | 来源、范围与证据边界 / 清洗与完整性说明 / 编辑勘误与跨来源冲突 / 来源导航 |
 | 子文 | 2025-12-05 | [kiro 跑 unidbg 时，执行入口和改代码分开](./native-analysis/xfq-unidbg-native-compilation/xfq-20251205-01-reference.md) | [逆向学习交流 Unidbg 与 Native 合集](./native-analysis/xfq-unidbg-native-compilation.md) | 终端入口 / 交给模型什么，不交给什么 |
 | 子文 | 2025-12-05 | [ai 自动化调试unidbg](./native-analysis/xfq-unidbg-native-compilation/xfq-20251205-01.md) | [逆向学习交流 Unidbg 与 Native 合集](./native-analysis/xfq-unidbg-native-compilation.md) | 正文 / 提炼说明（559） |
 | 子文 | 2025-12-18 | [DynarmicFactory 断点回调缺失时的无限调试器](./native-analysis/xfq-unidbg-native-compilation/xfq-20251218-01-reference.md) | [逆向学习交流 Unidbg 与 Native 合集](./native-analysis/xfq-unidbg-native-compilation.md) | 断点进来之后走到哪 / svcNumber 为什么对不上 / 为什么按继续还会再停 / 验证与限制 |
@@ -731,6 +734,7 @@
 | 主文 | 2026-07-05 | [mmtls 协议深度分析](./protocols/mmtls-protocol-analysis.md) | — | 目录 / 1. 架构总览 / 2. Record 层 — 帧格式 / 2.1 Record 结构 |
 | 主文 | 2026-07-16 | [微信公众号 HTTP 接口面：getmsg / 统计 / 评论 / 合集](./protocols/wechat-mp-http-surface.md) | — | 定位 / biz 提取（公开页） / 历史：getmsg / 统计：getappmsgext |
 | 主文 | 2026-07-16 至 2026-09-13 | [微信公众号五套会话：登录态不是 getmsg](./protocols/wechat-mp-session-planes.md) | — | 定位 / 五套会话 / 完成门（先于选库） / 平面 2：WebView getmsg |
+| 主文 | unknown | [xTun / cftun 项目分析来源归档（23 篇，脱敏与缺口保留）](./protocols/xtun-cftun-analysis-source-archive.md) | — | 清洗与完整性说明 / 编辑审阅：矛盾与结果层级 / 来源成员目录 / 来源正文 |
 
 ### `signature-algorithms`
 

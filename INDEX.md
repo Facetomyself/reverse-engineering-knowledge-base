@@ -1,6 +1,6 @@
 # 逆向知识库文章索引
 
-> 更新于 2026-10-17 ｜ 来源: `article/`
+> 更新于 2026-10-23 ｜ 来源: `article/`
 >
 > 本文件维护 canonical 入口与技术标签；合集子文章详见 [CATALOG.md](./CATALOG.md)，机器读取使用 [`catalog.json`](./catalog.json)。
 >
@@ -15,6 +15,7 @@
 | [mmtls-protocol-analysis.md](./protocols/mmtls-protocol-analysis.md) | yyb (应用宝，来源报告 archive-only) | `mmtls`, `TLS 1.3`, `ECDHE`, `PSK 0-RTT`, `AES-GCM`, `HKDF`, `腾讯私有协议`, `ShortLink`, `iLink`, `NewDNS`, `source-report` | 来源报告描述 Record/握手/PSK/密钥派生/ShortLink/iLink/NewDNS；`yyb_go` 不可定位，认证与 PSK 语义、样值存在未调和项，不表示当前协议或服务端验收 |
 | [wechat-mp-session-planes.md](./protocols/wechat-mp-session-planes.md) | weixin_download | `getmsg`, `profile_ext`, `pass_ticket`, `list_ex`, `GetA8Key`, `微信读书`, `MP_WXS_`, `uin/key`, `公众号会话` | 微信公众号五套互不续期的会话：客户端 mmtls 登录、WebView 短时 getmsg、MP 后台、微信读书 RefreshToken、原生 GetA8Key；钉错平面会把 ret=-3/验证页当成 0 篇成功 |
 | [wechat-mp-http-surface.md](./protocols/wechat-mp-http-surface.md) | weixin_download | `getmsg`, `general_msg_list`, `getappmsgext`, `appmsg_comment`, `getalbum`, `__biz`, `mid`, `idx`, `scene=124` | 公众号 HTTPS 接口面：getmsg 分页与多图文 flatten、POST 阅读量、评论、合集游标；公开 URL 无登录；ret!=0 与验证页不得当成功 |
+| [xtun-cftun-analysis-source-archive.md](./protocols/xtun-cftun-analysis-source-archive.md) | xTun / cftun（本地教学来源；source-report） | `Go`, `PE`, `ELF`, `WebSocket`, `HKDF`, `AEAD`, `partial`, `evidence-boundary` | 23 篇项目源分析脱敏归档；保留 KDF/AAD、日期与成功层级冲突，原二进制、抓包、脚本和公开 locator 缺失，不是当前协议或服务端验收 |
 
 ### 采集工程 (`article/collection-engineering/`)
 
@@ -107,6 +108,9 @@
 | [nuitka-onefile-payload-recovery.md](./native-analysis/nuitka-onefile-payload-recovery.md) | weixin_download | `Nuitka`, `onefile`, `RT_RCDATA`, `KAY`, `Zstandard`, `python310.dll`, `constants` | Windows Nuitka onefile：外层 RCDATA 高熵 payload（本样本 KAY+zstd）放出第二层 native 主程序；无 PYC 全集，只做 constants/协议字符串，不宣称还原源码 |
 | [nuitka-onefile-payload-recovery-procedure.md](./native-analysis/nuitka-onefile-payload-recovery-procedure.md) | 来源提炼（source-report） | `parameters`, `decision-flow`, `validation`, `source-report`, `nuitka`, `onefile`, `zstandard` | 这份流程只回答来源自己如何区分 Nuitka --onefile 和外层释放器，以及它把什么当成做完。它不还原 .py，也不覆盖微信公众号 HTTP 面；那两张卡的目标是 wechat-official-account。query --target "Nuitka onefil… |
 | [kanxue-keymint-ta-rkp-signing-oracle.md](./native-analysis/kanxue-keymint-ta-rkp-signing-oracle.md) | 看雪 thread-293244 | `KeyMint`, `RKP`, `CDI_Leaf`, `keybox`, `QSEE`, `MINK IPC`, `source-report` | 归档作者把 QTI KeyMint TA 的 `GENERATE_CSR_V2(0x3122)` 当 RKP 签名 oracle 的来源陈述；附件 zip 未本地化，偏移与 0.3.23 窗口未复核 |
+| [xtun-go-reverse-teaching-archive.md](./native-analysis/xtun-go-reverse-teaching-archive.md) | xTun / cftun（本地教学来源；source-report） | `Go`, `PE`, `Flutter`, `Ghidra`, `X25519`, `HKDF`, `AEAD`, `partial` | 核心 00–15 章与 README 共 17 篇脱敏来源；保留章节、代码与省略片段，独立标注 JDK 21 勘误和参数冲突，无目标复现 |
+| [xtun-go-reverse-supplement-archive.md](./native-analysis/xtun-go-reverse-supplement-archive.md) | xTun / cftun（本地补充教学；source-report） | `APK`, `ELF`, `PE`, `Go ABI`, `Frida`, `地址坐标`, `历史修正`, `partial` | A1–A8 八篇脱敏来源；保留载体/内存/ABI 讲解及历史假设与后续修正，未获样本、日志和完整向量 |
+| [go-native-reverse-evidence-reference.md](./native-analysis/go-native-reverse-evidence-reference.md) | 来源提炼（Go Native 教学；source-report） | `decision-flow`, `parameters`, `validation`, `VA/RVA`, `load bias`, `ABIInternal`, `KDF`, `四层验收` | 阅读与证据边界参考：载体和地址不混用，Hook 安装不等于命中，KDF 输入/输出/AAD 按层绑定，101/握手/数据/代理分别表述；非 procedure 或新工具路线 |
 
 ### 移动 App 逆向 (`article/mobile-app-reverse/`)
 
@@ -305,6 +309,7 @@
 ## 按技术标签检索
 
 ### 密码学
+- **KDF 输入/输出/用途、AEAD/AAD 分层与冲突保留（来源报告）**: [go-native-evidence](./native-analysis/go-native-reverse-evidence-reference.md#parameters), [xtun-source archive](./protocols/xtun-cftun-analysis-source-archive.md)
 - **AES-GCM**: [mmtls](./protocols/mmtls-protocol-analysis.md), [qidian-fock](./signature-algorithms/qidian-fock-signature.md)
 - **AES-256-CBC（libfock.so 内部能力）**: [qidian-so](./native-analysis/qidian-so-analysis.md)
 - **3DES-CBC**: [qidian-fock](./signature-algorithms/qidian-fock-signature.md), [qidian-so](./native-analysis/qidian-so-analysis.md)
@@ -362,6 +367,7 @@
 - **WASM AES match/31 来源正文（partial；目标样值脱敏）**: [match-31-source-archive](./web-reverse/yuanrenxue-match-31-source-archive.md)
 
 ### 协议
+- **WebSocket 101 / 自定义握手 / 数据通道 / 代理端到端四层口径（source-report）**: [go-native-evidence](./native-analysis/go-native-reverse-evidence-reference.md#validation), [xtun-core archive](./native-analysis/xtun-go-reverse-teaching-archive.md)
 - **TLS 1.3 变体**: [mmtls](./protocols/mmtls-protocol-analysis.md)
 - **PSK 0-RTT**: [mmtls](./protocols/mmtls-protocol-analysis.md)
 - **自定义应用帧**: [mmtls](./protocols/mmtls-protocol-analysis.md)
@@ -547,6 +553,7 @@
 - **AliyunCaptcha V2 单站来源正文与沙箱 case**: [aliyun-v2-sandbox-source](./web-reverse/aliyun-captcha-v2-sandbox-source-archive.md), [aliyun-v2-sandbox-case](./web-reverse/aliyun-captcha-v2-sandbox-case.md)
 
 ### 工具/方法
+- **Go PE/ELF/Flutter 载体、VA/RVA/load bias、ABIInternal 与 Hook 证据边界**: [go-native-evidence](./native-analysis/go-native-reverse-evidence-reference.md), [xtun-supplement archive](./native-analysis/xtun-go-reverse-supplement-archive.md)
 - **App 准入诊断流程 / S1–S8 / F1–F3 / 四门 AND 验收**: [protocol-admission-procedure](./mobile-app-reverse/protocol-admission-procedure.md)
 - **Windows VMProtect / OEP / IAT / 局部语义证据**: [windows-vmp](./packing-bypass/windows-vmp-local-recovery-evidence.md)
 - **JSVMP 动态版本 / key builder / 重试与修复分离**: [jsvmp-variant](./web-reverse/jsvmp-variant-failure-lineage.md)
