@@ -16,9 +16,9 @@
 | `packing-bypass` | 5 | 0 | 5 |
 | `protocols` | 4 | 0 | 4 |
 | `signature-algorithms` | 11 | 30 | 41 |
-| `web-reverse` | 132 | 150 | 282 |
+| `web-reverse` | 135 | 150 | 285 |
 
-文章总数：1002。
+文章总数：1005。
 
 ## 逐篇目录
 
@@ -852,8 +852,10 @@
 | 主文 | 2026-08-26 | [京东 JCAP tp:30 曲线映射与 si→vt 参考](./web-reverse/jd-jcap-tp30-curve-slider-reference.md) | — | si → vt / 字段角色 / 曲线反查与失败分流 / 验收口径与限制 |
 | 主文 | 2026-08-26 | [京东 JCAP tp:30 变速曲线滑块：si → vt 纯协议参数链与曲线反查](./web-reverse/jd-jcap-tp30-curve-slider.md) | — | 收录说明 / 摘要 / 一、完整协议链过程： / 二、按照协议顺序解决每一个困难参数 |
 | 主文 | unknown | [JS 混淆、压缩与加密的边界](./web-reverse/js-obfuscation-boundaries-reference.md) | — | 三类处理 / 验证与限制 |
+| 主文 | unknown | [JSVMP 分析分流流程](./web-reverse/jsvmp-analysis-triage-procedure.md) | — | 前提与输入 / 步骤与分支 / 输出 / 验收 |
 | 主文 | unknown | [JSVMP 与 AST 混淆的防御手段](./web-reverse/jsvmp-ast-defense-patterns-reference.md) | — | 可见性怎么被打散 / 验证与限制 |
 | 主文 | unknown | [JSVMP 自定义指令集与解释循环](./web-reverse/jsvmp-custom-isa-interpreter-reference.md) | — | 降级顺序 / 栈机器与寄存器机器 / 运行时解释循环 / 常量、调用与编码 |
+| 主文 | unknown | [JSVMP：从玩具 VM 到执行流、动态字节码与 devirtualization](./web-reverse/jsvmp-from-toy-vm-to-devirt.md) | — | 归档说明 / 一、先建立最小 VM 心智模型 / 二、反汇编与对齐 / 三、从请求定位 dispatcher |
 | 主文 | 2026-06-22 | [JSVMP 变体失败谱系的记录与验收](./web-reverse/jsvmp-variant-failure-lineage-procedure.md) | — | 前提与输入 / 步骤与分支 / 输出 / 验收 |
 | 主文 | 2026-06-22（导出文件标注） | [JSVMP 动态版本：重试成功不等于提取器修复](./web-reverse/jsvmp-variant-failure-lineage.md) | — | 与已有 TDC 文章的区别 / 来源中发生了什么 / 失败谱系最小记录 / 真正修复的验收 |
 | 主文 | 多篇合集 | [零基础爬虫第一天 逆向笔记合集](./web-reverse/koohai-reverse-notes-compilation.md) | — | 收录说明 / 文章目录（17 篇） / 提炼说明 / 同目录窄参考 |
@@ -864,6 +866,7 @@
 | 主文 | 2026-09-23 | [方法论：签名材料出处账本](./web-reverse/material-provenance-ledger.md) | — | 四类出处 / 真实记账 / 账本伪代码 / 怎么给新字段归类 |
 | 主文 | unknown | [美团 mtgsig 的分析边界](./web-reverse/meituan-mtgsig-jsvmp-source-limits-reference.md) | — | 参数边界 / 风控框架 / 验证与限制 |
 | 主文 | 2026-08-04（浅克隆唯一提交；正文日期多停在 2026-05，skill 正文写到 2026-06-13） | [PerimeterX 参考仓：结构对照与证据边界](./web-reverse/perimeterx-human-reference-evidence-boundary.md) | — | 证据等级 / 仓的位置 / 目录职责 / 自称和树不一致 |
+| 主文 | unknown | [从“覆盖率”到“可接受结果”：三期 JSVMP 交付的证据边界](./web-reverse/phase3-static-coverage-runtime-boundary-case.md) | — | 问题与范围 / 过程与关键证据 / validation / decision-flow |
 | 主文 | 多篇合集 | [Web 安全产品强制命中索引](./web-reverse/products.md) | — | 用途 / 强制命中纪律 / 产品一览 / 使用边界 |
 | 主文 | unknown | [AI 纯算 Akamai](./web-reverse/purecalc-akamai-sensor-data-source-archive.md) | — | 收录说明 / 清洗与完整性说明 / 来源正文 / 一、AST 反混淆与定位 |
 | 主文 | 2026-09-23 | [纯算还是预言机：先写成本账](./web-reverse/purecalc-vs-oracle-cost-procedure.md) | — | 前提与输入 / 步骤与分支 / 输出 / 验收 |

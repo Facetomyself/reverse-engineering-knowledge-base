@@ -168,6 +168,9 @@
 
 | 文章 | 来源项目 | 关键词 | 摘要 |
 |------|----------|--------|------|
+| [jsvmp-from-toy-vm-to-devirt.md](./web-reverse/jsvmp-from-toy-vm-to-devirt.md) | — (本地 JSVMP 教程系列，source-report) | `JSVMP`, `opcode`, `dispatcher`, `自修改字节码`, `WASM`, `devirtualization`, `反调试` | 合并归档 13 篇 JSVMP 教程：从玩具 VM/反汇编、请求定位与执行流，延伸到 dispatcher 变体、反调试、动态 eval、环境常量、自修改字节码、VM 套娃和表达式级 devirt；未做本次 runtime 或服务端验收 |
+| [jsvmp-analysis-triage-procedure.md](./web-reverse/jsvmp-analysis-triage-procedure.md) | 来源提炼（source-report） | `procedure`, `decision-flow`, `validation`, `JSVMP`, `dispatcher`, `opcode`, `devirtualization` | 将请求定位、VM 形态识别、低扰动 trace、宿主/里层/逐 op 分流和动态字节码处理整理为 S1–S7；仅来源流程，未验证具体目标版本 |
+| [phase3-static-coverage-runtime-boundary-case.md](./web-reverse/phase3-static-coverage-runtime-boundary-case.md) | 三期私有案例归档（脱敏，source-report） | `JSVMP`, `coverage`, `validation`, `source-report` | 区分静态指令覆盖、局部语义对拍、固定快照与端到端接受；未执行来源实现或当前目标验证 |
 | [jsvmp-variant-failure-lineage.md](./web-reverse/jsvmp-variant-failure-lineage.md) | — (null119 会话静态提炼) | `JSVMP`, `动态版本`, `key builder`, `失败谱系`, `重试`, `兼容性` | 提取器漏覆盖槽位后异常转为可重试，不等于支持了失败变体；按资源版本保存反例与覆盖 |
 | [jsvmp-variant-failure-lineage-procedure.md](./web-reverse/jsvmp-variant-failure-lineage-procedure.md) | 来源提炼（source-report） | `parameters`, `decision-flow`, `validation`, `source-report`, `jsvmp`, `variant-failure` | 这份流程只回答：旧样本能处理、新样本失败时，怎样记录失败阶段，以及怎样验收“提取器已修复”。它不重复 TDC 插桩、轮结构、动态 key、指纹或验证码求解。quote: 「本篇不重复算法、动态 key、指纹或验证码求解过程」。kb_catalog.py query 对 jsvm… |
 | [wasm-js-fallback-version-parity.md](./web-reverse/wasm-js-fallback-version-parity.md) | null119（来源报告，目标未知） | `WASM`, `JS fallback`, `版本绑定`, `输入边界`, `archive` | 来源归档区分旧 JS、新 fallback 与 WASM 资源身份，从输入字节找首处分叉；未运行资源或请求，窄参考见下一行 |

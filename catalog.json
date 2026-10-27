@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "article_count": 1002,
+  "article_count": 1005,
   "category_counts": {
     "anti-detection": 306,
     "collection-engineering": 15,
@@ -10,7 +10,7 @@
     "packing-bypass": 5,
     "protocols": 4,
     "signature-algorithms": 41,
-    "web-reverse": 282
+    "web-reverse": 285
   },
   "records": [
     {
@@ -64394,6 +64394,92 @@
       "metadata_errors": []
     },
     {
+      "path": "web-reverse/jsvmp-analysis-triage-procedure.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "JSVMP 分析分流流程",
+      "source": "./jsvmp-from-toy-vm-to-devirt.md#三从请求定位-dispatcher",
+      "original_date": "unknown",
+      "archive_date": "2026-10-23",
+      "summary": "<a id=\"prerequisites\"></a>",
+      "keywords": [
+        "procedure",
+        "decision-flow",
+        "validation",
+        "JSVMP",
+        "dispatcher",
+        "opcode",
+        "devirtualization"
+      ],
+      "headings": [
+        "前提与输入",
+        "步骤与分支",
+        "输出",
+        "验收",
+        "失败出口"
+      ],
+      "bytes": 3757,
+      "lines": 70,
+      "content_sha256": "be5f9ae80bc12d3fdab86a4a3c4082242635bc7c252c9861cb5469fb65258dda",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "jsvmp-analysis-triage-procedure",
+      "document_type": "procedure",
+      "scope": {
+        "targets": [
+          "JSVMP",
+          "unknown web signer"
+        ],
+        "client": "web",
+        "version": "unknown",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": "./jsvmp-from-toy-vm-to-devirt.md#三从请求定位-dispatcher",
+          "basis": "source-report"
+        }
+      ],
+      "modules": [
+        {
+          "name": "decision-flow",
+          "anchor": "steps",
+          "sources": [
+            "s1"
+          ],
+          "basis": "source-report",
+          "limits": "仅整理来源报告的分析顺序；不表示目标当前版本、运行时 parity 或服务端接受。"
+        },
+        {
+          "name": "validation",
+          "anchor": "acceptance",
+          "sources": [
+            "s1"
+          ],
+          "basis": "source-report",
+          "limits": "验收项是来源提出的检查口径，本次未执行抓包回放或环境对照。"
+        }
+      ],
+      "relations": [
+        {
+          "type": "derived_from",
+          "target": "./jsvmp-from-toy-vm-to-devirt.md#复用边界"
+        }
+      ],
+      "tags": [
+        "procedure",
+        "JSVMP",
+        "dispatcher",
+        "opcode",
+        "devirtualization",
+        "source-report"
+      ],
+      "source_completeness": "unknown",
+      "metadata_errors": []
+    },
+    {
       "path": "web-reverse/jsvmp-ast-defense-patterns-reference.md",
       "kind": "canonical",
       "category": "web-reverse",
@@ -64531,6 +64617,83 @@
         "decision-flow"
       ],
       "source_completeness": "unknown",
+      "metadata_errors": []
+    },
+    {
+      "path": "web-reverse/jsvmp-from-toy-vm-to-devirt.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "JSVMP：从玩具 VM 到执行流、动态字节码与 devirtualization",
+      "source": "JSVMP 从入门到入土（序）至（终）; JSVMP 进阶：分派器、反调试、动态 eval、环境、常量、自修改字节码、VM 套娃、devirt",
+      "original_date": "unknown",
+      "archive_date": "2026-10-23",
+      "summary": "本文合并归档 pending/JSVMP 中的 13 篇连续教程，保留其教学顺序和主要代码/判断口径，去除重复的“下一篇预告”、平台导流语句和转载尾注。内容以作者自写玩具 VM 与公开练习靶站为例；本次只做文字清洗与结构整理，没有运行原文代码、复核靶站版本或验证任何商业站点行为。因此文中的“实测”“成功”等均按 source-report 理解，不是本库的 runtime 或 server-accepted 结论。原始 Markdown 不删除，仍留在 article/pending/JSVMP。",
+      "keywords": [
+        "JSVMP",
+        "opcode",
+        "dispatcher",
+        "自修改字节码",
+        "WASM",
+        "devirtualization",
+        "反调试"
+      ],
+      "headings": [
+        "归档说明",
+        "一、先建立最小 VM 心智模型",
+        "二、反汇编与对齐",
+        "三、从请求定位 dispatcher",
+        "四、算法指纹与“不要逐 op”的分流",
+        "五、观察本身会改变结果",
+        "六、动态生成与自修改字节码",
+        "七、VM 套娃、WASM 与 devirtualization",
+        "复用边界"
+      ],
+      "bytes": 7658,
+      "lines": 84,
+      "content_sha256": "8c914473fe6ed0716152df23cc09bc0da853f21db16e1f73b84a15ab342c9461",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "jsvmp-from-toy-vm-to-devirt",
+      "document_type": "archive",
+      "scope": {
+        "targets": [
+          "JSVMP",
+          "public practice target yuanrenxue match/26 and match/30"
+        ],
+        "client": "web",
+        "version": "unknown",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": null,
+          "basis": "source-report",
+          "citation": "JSVMP 从入门到入土（序）至（终）",
+          "reason": "原始 Markdown 未提供可公开定位的稳定文章链接集合；各篇保留在本地 pending/JSVMP 队列。"
+        },
+        {
+          "id": "s2",
+          "ref": null,
+          "basis": "source-report",
+          "citation": "JSVMP 进阶：分派器、反调试、动态 eval、环境、常量、自修改字节码、VM 套娃、devirt",
+          "reason": "原始 Markdown 为本地转载稿，链接和图片未作为本次公共归档定位源。"
+        }
+      ],
+      "modules": [],
+      "relations": [],
+      "tags": [
+        "JSVMP",
+        "JavaScript",
+        "virtual-machine",
+        "opcode",
+        "dispatcher",
+        "anti-debugging",
+        "devirtualization",
+        "source-report"
+      ],
+      "source_completeness": "partial",
       "metadata_errors": []
     },
     {
@@ -67664,6 +67827,84 @@
         "版本锁定",
         "参考仓",
         "_px3"
+      ],
+      "source_completeness": "unknown",
+      "metadata_errors": []
+    },
+    {
+      "path": "web-reverse/phase3-static-coverage-runtime-boundary-case.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "从“覆盖率”到“可接受结果”：三期 JSVMP 交付的证据边界",
+      "source": "三期私有案例归档（脱敏）：多份 JSVMP/纯算交付说明与对拍报告",
+      "original_date": "unknown",
+      "archive_date": "2026-10-26",
+      "summary": "三期的多个纯算/符号执行交付使用了不同的“完成”口径：有的统计静态字节码指令，有的统计单路径节点对拍，有的依赖固定环境快照后得到业务结果。本案例只讨论如何解释这些数字，不讨论任何目标站点的参数、密钥、指纹或可运行实现。",
+      "keywords": [
+        "JSVMP",
+        "coverage",
+        "validation",
+        "source-report"
+      ],
+      "headings": [
+        "问题与范围",
+        "过程与关键证据",
+        "validation",
+        "decision-flow",
+        "结论与反例",
+        "未决项与复用启示"
+      ],
+      "bytes": 3719,
+      "lines": 61,
+      "content_sha256": "1aeeea89272844db9112a0534106810fb7426bada30ed9d6f4e227d8d5a9ceec",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "web-phase3-static-coverage-runtime-boundary-case",
+      "document_type": "case",
+      "scope": {
+        "targets": [
+          "jsvmp-purecalc-deliveries"
+        ],
+        "client": "web",
+        "version": "unknown",
+        "observed_at": "2026-10-26 source review"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": null,
+          "basis": "source-report",
+          "citation": "三期私有案例归档（脱敏）：多份 JSVMP/纯算交付说明与对拍报告",
+          "reason": "原始材料未提供可公开定位的链接"
+        }
+      ],
+      "modules": [
+        {
+          "name": "validation",
+          "anchor": "validation",
+          "sources": [
+            "s1"
+          ],
+          "basis": "source-report",
+          "limits": "仅整理脱敏交付说明中的证据分层；未执行目标脚本、未重放请求，也未验证当前服务端接受。"
+        },
+        {
+          "name": "decision-flow",
+          "anchor": "decision-flow",
+          "sources": [
+            "s1"
+          ],
+          "basis": "source-report",
+          "limits": "分支与快照边界来自来源自述；没有把静态产物推断为运行时等价实现。"
+        }
+      ],
+      "relations": [],
+      "tags": [
+        "jsvmp",
+        "coverage",
+        "validation",
+        "source-report"
       ],
       "source_completeness": "unknown",
       "metadata_errors": []
