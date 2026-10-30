@@ -8,17 +8,17 @@
 
 | 分类 | canonical | 子文章 | 合计 |
 |------|----------:|-------:|-----:|
-| `anti-detection` | 28 | 278 | 306 |
+| `anti-detection` | 29 | 278 | 307 |
 | `collection-engineering` | 12 | 3 | 15 |
 | `drm-content-acquisition` | 2 | 0 | 2 |
-| `mobile-app-reverse` | 39 | 278 | 317 |
+| `mobile-app-reverse` | 42 | 278 | 320 |
 | `native-analysis` | 14 | 16 | 30 |
 | `packing-bypass` | 5 | 0 | 5 |
 | `protocols` | 4 | 0 | 4 |
 | `signature-algorithms` | 11 | 30 | 41 |
-| `web-reverse` | 137 | 150 | 287 |
+| `web-reverse` | 139 | 150 | 289 |
 
-文章总数：1007。
+文章总数：1013。
 
 ## 逐篇目录
 
@@ -43,6 +43,7 @@
 | 主文 | unknown | [HTTP/2 指纹的结构](./anti-detection/http2-fingerprint-reference.md) | — | 参数：fingerprint / 风控触发 / 验证与限制 |
 | 主文 | unknown | [浏览器 JS 指纹](./anti-detection/js-browser-fingerprint-reference.md) | — | 参数：fingerprint / 一致性与完整性 / 验证与限制 |
 | 主文 | 2026-10-09 | [页面文本送进模型之前](./anti-detection/page-text-before-llm.md) | — | 前提与输入 / 步骤与分支 / 输出 / 验收 |
+| 主文 | unknown | [风控之关于定位（来源报告）](./anti-detection/risk-control-location.md) | — | 清洗与完整性说明 / 来源正文 / 1. 基础 / 2. 检查与作者写明的盲区 |
 | 主文 | 2026-04-25 | [云片滑块验证码 JSONP 与风控边界参考](./anti-detection/ruyi-20260425-risk-boundary-reference.md) | — | 接口与字段角色 / 加密、身份与轨迹参数 / JSONP 请求链 / 响应验证边界 |
 | 主文 | 多篇合集 | [如意私塾浏览器指纹与反检测合集](./anti-detection/ruyi-browser-anti-detection-compilation.md) | — | 收录说明 / 文章目录（97 篇，连载合并后 96 条） / 提炼说明（361） / 同目录窄参考 |
 | 主文 | unknown | [数美 captcha SDK 的格式化行数检测](./anti-detection/shumei-js-format-detection-reference.md) | — | 行数检测与密钥切换 / 验证与限制 |
@@ -364,6 +365,7 @@
 
 | 类型 | 日期 | 文章 | 父合集 | 关键标题 |
 |------|------|------|--------|----------|
+| 主文 | unknown | [一套基于 AI 的安卓算法分析流程（来源报告）](./mobile-app-reverse/ai-android-algorithm-workflow.md) | — | 清洗与完整性说明 / 来源正文 / （一）参数定位 / （二）人工日志 |
 | 主文 | 多篇合集 | [反爬破解社 App 逆向章节合集](./mobile-app-reverse/anti-crawler-app-reverse-series.md) | — | 收录说明 / 文章目录（6 篇） / 提炼说明（388） / 同目录窄参考 |
 | 主文 | 2026-07-10 | [Frida Hook 技术选择：Java 实例与 Native 跟踪](./mobile-app-reverse/anti-crawler-frida-hook-selection.md) | — | 按分析困境选择技巧 / 证据与限制 |
 | 主文 | 2026-09-02/2026-09-07 | [吴见午 APatch 源码笔记（一至十）](./mobile-app-reverse/apatch-source-notes-wujianwu.md) | — | 清洗与完整性说明 / 篇目 / 复用边界 |
@@ -373,6 +375,7 @@
 | 主文 | 2026-07-05 | [App 逆向的全局视角](./mobile-app-reverse/app-reverse-global-map.md) | — | 收录说明 / 一条 App 请求的完整生命周期 / 1. Activity / UI 层 / 2. Service / Presenter 业务层 |
 | 主文 | 2026-09-16 | [JVM 思维导图（文本版）](./mobile-app-reverse/jvm-mindmap.md) | — | 一、类加载器子系统（ClassLoader） / 1. 加载（Loading） / 2. 链接（Linking） / 3. 初始化（Initialization） |
 | 主文 | unknown | [从抓包到纯 Python：Kimi device_register 与 ttEncrypt 还原](./mobile-app-reverse/kimi-device-register-ttencrypt.md) | — | 正文 / 一、最终结论 / 二、先分清五层数据 / 三、从抓包判断协议结构 |
+| 主文 | unknown | [乐跑：从 LocationManager 到高德回调（来源报告）](./mobile-app-reverse/lepao-location-chain.md) | — | 清洗与完整性说明 / 来源正文 / 系统入口 / 高德怎样注册系统定位 |
 | 主文 | 2026-04-13 | [MTOP InnerSignImpl Frida RPC](./mobile-app-reverse/mtop-innersign-rpc.md) | — | 适用边界 / 工作流 / Xianyu Android 来源报告补充：overload 与类加载 / 观察优先级 |
 | 主文 | 多篇合集 | [泡泡以安 Android 逆向技术合集](./mobile-app-reverse/paopao-android-reverse-compilation.md) | — | 收录说明 / 文章目录（67 篇，连载合并后 57 条） / 提炼说明（448） / 同目录窄参考 |
 | 主文 | 2026-03-16 | [匿名 Android 音乐 App 设备注册：p 与请求体加密关系](./mobile-app-reverse/paopao-dfid-registration-encryption.md) | — | 参数机制 / 请求链路 / 来源报告中的验证动作 / 未覆盖与复用边界 |
@@ -397,6 +400,7 @@
 | 主文 | unknown | [微信 4.1 本地数据库结构参考](./mobile-app-reverse/wechat-wcdb-schema.md) | — | 清洗与完整性说明 / 来源正文 / 一、数据库清单 / 二、表结构 |
 | 主文 | unknown | [微信 Windows 4.1.13.65 发送消息的静态定位](./mobile-app-reverse/wechat-windows-sendmsg-static-case.md) | — | 问题与范围 / 过程与关键证据 / 结论与反例 / 未决项与复用启示 |
 | 主文 | unknown | [微信 4.1.13.65 Windows 发送消息链路 —— 逆向笔记](./mobile-app-reverse/wechat-windows-sendmsg-static.md) | — | 清洗与完整性说明 / 来源正文 / 1. 架构总览：这不再是一个单体程序 / 主进程实际加载的腾讯模块 |
+| 主文 | 2021-02-13 | [微博极速版 s 字段（Null_Null，2021-02-13）](./mobile-app-reverse/weibo-app-s-field-protocol.md) | — | 清洗与完整性说明 / 来源正文 / 作者要查的字段 / 从字符串搜到 calculateS / generateS |
 | 主文 | 多篇合集 | [逆向学习交流安卓实战案例合集](./mobile-app-reverse/xfq-android-cases-compilation.md) | — | 收录说明 / 文章目录（15 篇） / 提炼说明（493） / 同目录窄参考 |
 | 主文 | 多篇合集 | [逆向学习交流 AOSP 与 ROM 笔记合集](./mobile-app-reverse/xfq-aosp-rom-compilation.md) | — | 收录说明 / 文章目录（13 篇） / 提炼说明（508） / 同目录窄参考 |
 | 主文 | 多篇合集 | [逆向学习交流工具与调试合集](./mobile-app-reverse/xfq-tools-debug-compilation.md) | — | 收录说明 / 文章目录（41 篇） / 提炼说明（541） / 同目录窄参考 |
@@ -875,6 +879,7 @@
 | 主文 | 2026-09-23 | [方法论：纯算还是预言机，先写成本账](./web-reverse/purecalc-vs-oracle-cost.md) | — | 成本账怎么填 / 预言机也有验收 / 伪代码 / 账本里要写的一句 |
 | 主文 | unknown | [reCAPTCHA “73” VMP 槽位算法参考](./web-reverse/recaptcha-73-vmp-reference.md) | — | 来源报告中的输入与变换 / 验证与限制 |
 | 主文 | unknown | [reCAPTCHA 73 算法（来源节选）](./web-reverse/recaptcha-73-vmp-source-archive.md) | — | 清洗与完整性说明 / 来源正文 / 复用边界 |
+| 主文 | unknown | [Reese84 反混淆、VMP 反编译与 p 生成（来源报告）](./web-reverse/reese84-pure-compute.md) | — | 清洗与完整性说明 / 来源正文 / 链路 / 外层字符串解码 |
 | 主文 | 2026-09-23 | [方法论：请求面切开，失败按面翻译](./web-reverse/request-plane-failure-translation.md) | — | 画法 / 真实翻译 / 伪代码 / 同名不同面 |
 | 主文 | 2026-06-22（导出文件标注） | [同一个 signer 的两条调用面：请求签名与 Cookie 维护](./web-reverse/request-signing-vs-cookie-maintenance.md) | — | 来源中的转折 / 调用面表比函数名更重要 / 失败归因的正确顺序 / 可复用验收清单 |
 | 主文 | 2026-09-23 | [技巧：会话材料双写，并且绑源](./web-reverse/session-binding-double-write.md) | — | 双写对照 / 绑源的真实失误 / 不是双写的头 |
@@ -882,6 +887,7 @@
 | 主文 | 2026-09-05 | [拼图打乱重排型滑块纯协议：loc 重排、length+9 与错误码分流](./web-reverse/shuffled-jigsaw-slider-protocol.md) | — | 收录说明 / 缺口检测全面失败：它根本不是普通滑块 / length 坐标系 & 合成事件两道坎 / 真实 op 轨迹：四条全猜错 |
 | 主文 | 2026-08-30 | [平台签名落地方法：纯算、黑盒与 RPC 分流](./web-reverse/sign-landing-methods.md) | — | 落地四分法 / 产品切开，失败不要单归因 / 可复用方法 / 1. VMP 先钩宿主原语 |
 | 主文 | 2026-09-23 | [签完即线上：query、头序与 HTTP/2 Cookie](./web-reverse/signed-query-wire-contract.md) | — | 四条写回规则 / 案例：抖音两条编码函数不能混 / 案例：TikTok 与小红书 / 传输层单独验收 |
+| 主文 | unknown | [spiderdemo T30：WebSocket 与 jsvmp 题解（来源报告）](./web-reverse/spiderdemo-t30-websocket-jsvmp.md) | — | 清洗与完整性说明 / 来源正文 / 前言 / 抓包看到的帧序 |
 | 主文 | 2026-08-18 | [淘宝 H5 案例：MTOP sign 与钉钉 LWP 分链](./web-reverse/taobao-h5-mtop-lwp-case.md) | — | 落地形态 / 案例：拿 IM token / 案例：私信是 LWP，不是再签一次 MTOP / 脏边界 |
 | 主文 | 2025-12-23 | [腾讯 TDC collect 补环境检测点参考](./web-reverse/tencent-tdc-slider-vmp-part1-env-patch-reference.md) | — | 三接口顺序 / 字段角色 / 补环境重点 / 验证与限制 |
 | 主文 | 2025-12-23 | [腾讯滑块 TDC vmp（上）：cap_union 三接口与 collect 补环境检测点](./web-reverse/tencent-tdc-slider-vmp-part1-env-patch.md) | — | 收录说明 / 声明 / 前言 / 目标网站 |

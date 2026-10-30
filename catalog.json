@@ -1,16 +1,16 @@
 {
   "schema_version": 2,
-  "article_count": 1007,
+  "article_count": 1013,
   "category_counts": {
-    "anti-detection": 306,
+    "anti-detection": 307,
     "collection-engineering": 15,
     "drm-content-acquisition": 2,
-    "mobile-app-reverse": 317,
+    "mobile-app-reverse": 320,
     "native-analysis": 30,
     "packing-bypass": 5,
     "protocols": 4,
     "signature-algorithms": 41,
-    "web-reverse": 287
+    "web-reverse": 289
   },
   "records": [
     {
@@ -8100,6 +8100,70 @@
         "source-report"
       ],
       "source_completeness": "unknown",
+      "metadata_errors": []
+    },
+    {
+      "path": "anti-detection/risk-control-location.md",
+      "kind": "canonical",
+      "category": "anti-detection",
+      "parent": null,
+      "title": "风控之关于定位（来源报告）",
+      "source": "风控之关于定位",
+      "original_date": "unknown",
+      "archive_date": "2026-10-30",
+      "summary": "来源标题是「风控之关于定位」。没有作者署名，也没有发表日期。它同时写手机 App 和网页请求里的经纬度。按合同 client 只记 app；网页侧只保留「请求里可以带坐标」这一限制，不另建网页目标。",
+      "keywords": [
+        "location-risk-control",
+        "GNSS",
+        "ASN",
+        "IMU",
+        "RTT",
+        "GCJ-02",
+        "source-report",
+        "partial"
+      ],
+      "headings": [
+        "清洗与完整性说明",
+        "来源正文",
+        "1. 基础",
+        "2. 检查与作者写明的盲区",
+        "复用边界"
+      ],
+      "bytes": 12397,
+      "lines": 125,
+      "content_sha256": "ad7b23a82e52e1c4a06b0f09e189493478d976aaae149c673cead5e3e1333b90",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "risk-control-location",
+      "document_type": "archive",
+      "scope": {
+        "targets": [
+          "location-risk-control"
+        ],
+        "client": "app",
+        "version": "unknown",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": null,
+          "basis": "source-report",
+          "citation": "风控之关于定位",
+          "reason": "原始材料未提供可公开定位的链接"
+        }
+      ],
+      "modules": [],
+      "relations": [],
+      "tags": [
+        "location",
+        "gnss",
+        "asn",
+        "imu",
+        "rtt",
+        "source-report"
+      ],
+      "source_completeness": "partial",
       "metadata_errors": []
     },
     {
@@ -23092,6 +23156,67 @@
       "metadata_errors": []
     },
     {
+      "path": "mobile-app-reverse/ai-android-algorithm-workflow.md",
+      "kind": "canonical",
+      "category": "mobile-app-reverse",
+      "parent": null,
+      "title": "一套基于 AI 的安卓算法分析流程（来源报告）",
+      "source": "https://mp.weixin.qq.com/s/W3xDragHQ4LDsZjiWvqyFQ",
+      "original_date": "unknown",
+      "archive_date": "2026-10-30",
+      "summary": "来源把 App 算法分析收成四段：参数定位、人工日志、trace、再把 trace 交给模型。作者写明只想加快「看懂算法逻辑」，并要把模型和人工的边界分开。没有作者署名，发表日期未知。",
+      "keywords": [
+        "android-algorithm",
+        "jadx",
+        "GumTrace",
+        "trace",
+        "source-report",
+        "partial"
+      ],
+      "headings": [
+        "清洗与完整性说明",
+        "来源正文",
+        "（一）参数定位",
+        "（二）人工日志",
+        "（三）trace",
+        "（四）分析提示词",
+        "复用边界"
+      ],
+      "bytes": 3928,
+      "lines": 66,
+      "content_sha256": "16e91e23a079f64b866f8f91137e0a13a6fa98d565b7d47a93eedd5eef44bce3",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "ai-android-algorithm-workflow",
+      "document_type": "archive",
+      "scope": {
+        "targets": [
+          "android-algorithm"
+        ],
+        "client": "app",
+        "version": "unknown",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": "https://mp.weixin.qq.com/s/W3xDragHQ4LDsZjiWvqyFQ",
+          "basis": "source-report"
+        }
+      ],
+      "modules": [],
+      "relations": [],
+      "tags": [
+        "android",
+        "jadx",
+        "gumtrace",
+        "trace",
+        "source-report"
+      ],
+      "source_completeness": "partial",
+      "metadata_errors": []
+    },
+    {
       "path": "mobile-app-reverse/anti-crawler-app-reverse-series.md",
       "kind": "canonical",
       "category": "mobile-app-reverse",
@@ -24971,6 +25096,79 @@
         "volces"
       ],
       "source_completeness": "unknown",
+      "metadata_errors": []
+    },
+    {
+      "path": "mobile-app-reverse/lepao-location-chain.md",
+      "kind": "canonical",
+      "category": "mobile-app-reverse",
+      "parent": null,
+      "title": "乐跑：从 LocationManager 到高德回调（来源报告）",
+      "source": "如何定位系统定位的链路呢？（乐跑）",
+      "original_date": "unknown",
+      "archive_date": "2026-10-30",
+      "summary": "来源 PDF 的标题是「如何定位系统定位的链路呢？」，页眉反复出现「乐跑」。包名写成 com.lptiyu.tanke，业务类落到 school_run。没有作者、没有日期、没有公开链接。定位风控的一般讨论见 风控之关于定位。本文只保留这份 PDF 文本层里的 App 链路，不把一般 GNSS 理论再写一遍。",
+      "keywords": [
+        "lepao",
+        "AMap",
+        "LocationManager",
+        "deopt",
+        "source-report",
+        "partial"
+      ],
+      "headings": [
+        "清洗与完整性说明",
+        "来源正文",
+        "系统入口",
+        "高德怎样注册系统定位",
+        "App 入口与梆梆",
+        "deopt",
+        "三条位置从哪来",
+        "作者怎样理解 error 15",
+        "SDK 内部分派",
+        "80 与 240，以及文中的 30",
+        "AMapLocation 的自有字段",
+        "复用边界"
+      ],
+      "bytes": 14863,
+      "lines": 183,
+      "content_sha256": "46daf4dad58f04a15d167fa8903f88afdcffa3df802c347c8193d8498a9e2d12",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "lepao-location-chain",
+      "document_type": "archive",
+      "scope": {
+        "targets": [
+          "lepao"
+        ],
+        "client": "app",
+        "version": "unknown",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": null,
+          "basis": "source-report",
+          "citation": "如何定位系统定位的链路呢？（乐跑）",
+          "reason": "原始 PDF 未提供可公开定位的链接"
+        }
+      ],
+      "modules": [],
+      "relations": [
+        {
+          "type": "supplements",
+          "target": "../anti-detection/risk-control-location.md#来源正文"
+        }
+      ],
+      "tags": [
+        "lepao",
+        "amap",
+        "location",
+        "art",
+        "source-report"
+      ],
+      "source_completeness": "partial",
       "metadata_errors": []
     },
     {
@@ -38134,6 +38332,72 @@
         "sendmsg",
         "ilink",
         "static"
+      ],
+      "source_completeness": "partial",
+      "metadata_errors": []
+    },
+    {
+      "path": "mobile-app-reverse/weibo-app-s-field-protocol.md",
+      "kind": "canonical",
+      "category": "mobile-app-reverse",
+      "parent": null,
+      "title": "微博极速版 s 字段（Null_Null，2021-02-13）",
+      "source": "https://www.52pojie.cn/thread-1370540-1-1.html",
+      "original_date": "2021-02-13",
+      "archive_date": "2026-10-30",
+      "summary": "作者 Null_Null 于 2021-02-13 22:00 编辑。帖子标题是「从零开始逆向分析APP系列----微博APP协议分析」。作者本来想看微博 APP，后来改看体积更小的极速版，包名写成 com.sina.weibolite。准备工具是 JADX、Frida、IDA Pro。",
+      "keywords": [
+        "weibo",
+        "generateS",
+        "libnative-lib.so",
+        "sha512",
+        "source-report",
+        "partial"
+      ],
+      "headings": [
+        "清洗与完整性说明",
+        "来源正文",
+        "作者要查的字段",
+        "从字符串搜到 calculateS / generateS",
+        "so 里的分流",
+        "两次 SHA-512 之后怎样取字符",
+        "复用边界"
+      ],
+      "bytes": 5530,
+      "lines": 84,
+      "content_sha256": "6f9b0a2b67b68dc31403caa5f55c89bdb6e0ec2cedbc70de52f56feaa11d99f4",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "weibo-app-s-field-protocol",
+      "document_type": "archive",
+      "scope": {
+        "targets": [
+          "weibo"
+        ],
+        "client": "app",
+        "version": "unknown",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": "https://www.52pojie.cn/thread-1370540-1-1.html",
+          "basis": "source-report"
+        }
+      ],
+      "modules": [],
+      "relations": [
+        {
+          "type": "supplements",
+          "target": "../web-reverse/weibo-request-planes.md#interfaces"
+        }
+      ],
+      "tags": [
+        "weibo",
+        "generateS",
+        "sha512",
+        "native",
+        "source-report"
       ],
       "source_completeness": "partial",
       "metadata_errors": []
@@ -64942,7 +65206,7 @@
       "source": "JSVMP 从入门到入土（序）至（终）; JSVMP 进阶：分派器、反调试、动态 eval、环境、常量、自修改字节码、VM 套娃、devirt",
       "original_date": "unknown",
       "archive_date": "2026-10-23",
-      "summary": "本文合并归档 pending/JSVMP 中的 13 篇连续教程，保留其教学顺序和主要代码/判断口径，去除重复的“下一篇预告”、平台导流语句和转载尾注。内容以作者自写玩具 VM 与公开练习靶站为例；本次只做文字清洗与结构整理，没有运行原文代码、复核靶站版本或验证任何商业站点行为。因此文中的“实测”“成功”等均按 source-report 理解，不是本库的 runtime 或 server-accepted 结论。原始 Markdown 不删除，仍留在 article/pending/JSVMP。",
+      "summary": "本文合并归档 13 篇连续教程，保留其教学顺序和主要代码/判断口径，去除重复的“下一篇预告”、平台导流语句和转载尾注。内容以作者自写玩具 VM 与公开练习靶站为例；本次只做文字清洗与结构整理，没有运行原文代码、复核靶站版本或验证任何商业站点行为。因此文中的“实测”“成功”等均按 source-report 理解，不是本库的 runtime 或 server-accepted 结论。原件已移出 Public article 留证，身份见吸收回执的 sha256。",
       "keywords": [
         "JSVMP",
         "opcode",
@@ -64963,9 +65227,9 @@
         "七、VM 套娃、WASM 与 devirtualization",
         "复用边界"
       ],
-      "bytes": 7658,
+      "bytes": 7674,
       "lines": 84,
-      "content_sha256": "8c914473fe6ed0716152df23cc09bc0da853f21db16e1f73b84a15ab342c9461",
+      "content_sha256": "100cb79ce3c937bbeee22c210a79dd667019ab2dad27b0f93c80d79ab181dd4e",
       "metadata_status": "v2",
       "schema_version": 2,
       "id": "jsvmp-from-toy-vm-to-devirt",
@@ -64985,7 +65249,7 @@
           "ref": null,
           "basis": "source-report",
           "citation": "JSVMP 从入门到入土（序）至（终）",
-          "reason": "原始 Markdown 未提供可公开定位的稳定文章链接集合；各篇保留在本地 pending/JSVMP 队列。"
+          "reason": "原始 Markdown 未提供可公开定位的稳定文章链接集合；原件已移出 Public article 留证，身份见吸收回执的 sha256。"
         },
         {
           "id": "s2",
@@ -71201,6 +71465,80 @@
       "metadata_errors": []
     },
     {
+      "path": "web-reverse/reese84-pure-compute.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "Reese84 反混淆、VMP 反编译与 p 生成（来源报告）",
+      "source": "https://mp.weixin.qq.com/s/KGLV7-gLseIbzRERn7mmxw",
+      "original_date": "unknown",
+      "archive_date": "2026-10-30",
+      "summary": "来源讨论航空站点上的 Reese84：从当前 JS 提取字段目录、编码计划和动态常量，再在本地把指纹结构编成参数 p。文首写明「文章由 ai 生成内容注意甄别」。发表日期未知。observed_at 只用作者写下的 2026-10-28 测试批次，不是本次编辑的观测时间。",
+      "keywords": [
+        "reese84",
+        "VMP",
+        "p",
+        "PoW",
+        "oxc",
+        "source-report",
+        "partial"
+      ],
+      "headings": [
+        "清洗与完整性说明",
+        "来源正文",
+        "链路",
+        "外层字符串解码",
+        "三元指令",
+        "迁到 OXC",
+        "catalog、plans 和动态常量",
+        "指纹文件怎样参与生成",
+        "p 的二进制编码",
+        "PoW",
+        "提取缓存",
+        "作者的 50 次查询",
+        "Canvas 与音频",
+        "复用边界"
+      ],
+      "bytes": 13824,
+      "lines": 173,
+      "content_sha256": "503d6d60d7bc9080900bd4ade862687fb1ffdde4d160f134f4090b79f9b4fd7a",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "reese84-pure-compute",
+      "document_type": "archive",
+      "scope": {
+        "targets": [
+          "reese84"
+        ],
+        "client": "web",
+        "version": "unknown",
+        "observed_at": "2026-10-28"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": "https://mp.weixin.qq.com/s/KGLV7-gLseIbzRERn7mmxw",
+          "basis": "source-report"
+        }
+      ],
+      "modules": [],
+      "relations": [
+        {
+          "type": "supplements",
+          "target": "./products/reese84.md#常见链路"
+        }
+      ],
+      "tags": [
+        "reese84",
+        "vmp",
+        "pow",
+        "encoding",
+        "source-report"
+      ],
+      "source_completeness": "partial",
+      "metadata_errors": []
+    },
+    {
       "path": "web-reverse/request-plane-failure-translation.md",
       "kind": "canonical",
       "category": "web-reverse",
@@ -71697,6 +72035,77 @@
         "quote"
       ],
       "source_completeness": "unknown",
+      "metadata_errors": []
+    },
+    {
+      "path": "web-reverse/spiderdemo-t30-websocket-jsvmp.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "spiderdemo T30：WebSocket 与 jsvmp 题解（来源报告）",
+      "source": "https://mp.weixin.qq.com/s/fa4VsV72tYs6mUQG5ZV5FA",
+      "original_date": "unknown",
+      "archive_date": "2026-10-30",
+      "summary": "来源是一篇公众号转载的练习题题解，题目站写为 https://www.spiderdemo.cn/，题号为 T30 WebSocket+jsvmp。作者声明内容仅供学习、不提供完整代码，并称抓包、敏感网址和数据接口已脱敏。发表日期未知。本文只清洗留存，没有运行原文代码，也没有访问题目站复核。",
+      "keywords": [
+        "spiderdemo",
+        "WebSocket",
+        "msgpack",
+        "base62",
+        "jsvmp",
+        "source-report",
+        "partial"
+      ],
+      "headings": [
+        "清洗与完整性说明",
+        "来源正文",
+        "前言",
+        "抓包看到的帧序",
+        "凭证机制",
+        "传输层",
+        "补环境",
+        "日志里的消息类型",
+        "密钥机制",
+        "加密契约",
+        "应答从哪来",
+        "翻页与数字",
+        "提交",
+        "作者总结的经验",
+        "复用边界"
+      ],
+      "bytes": 9720,
+      "lines": 166,
+      "content_sha256": "f89b13acab54a23f9934fe1bf891158e465057f4fff3f0c00eb79ee56451cbbb",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "spiderdemo-t30-websocket-jsvmp",
+      "document_type": "archive",
+      "scope": {
+        "targets": [
+          "spiderdemo"
+        ],
+        "client": "web",
+        "version": "unknown",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": "https://mp.weixin.qq.com/s/fa4VsV72tYs6mUQG5ZV5FA",
+          "basis": "source-report"
+        }
+      ],
+      "modules": [],
+      "relations": [],
+      "tags": [
+        "spiderdemo",
+        "websocket",
+        "jsvmp",
+        "msgpack",
+        "base62",
+        "source-report"
+      ],
+      "source_completeness": "partial",
       "metadata_errors": []
     },
     {

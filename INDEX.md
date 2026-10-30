@@ -1,6 +1,6 @@
 # 逆向知识库文章索引
 
-> 更新于 2026-10-23 ｜ 来源: `article/`
+> 更新于 2026-10-30 ｜ 来源: `article/`
 >
 > 本文件维护 canonical 入口与技术标签；合集子文章详见 [CATALOG.md](./CATALOG.md)，机器读取使用 [`catalog.json`](./catalog.json)。
 >
@@ -65,6 +65,7 @@
 | [shumei-js-format-detection-reference.md](./anti-detection/shumei-js-format-detection-reference.md) | 来源提炼（source-report） | `risk-control`, `shumei-captcha`, `isJsFormat`, `DES`, `source-report` | 只登记行数检测和密钥切换的来源陈述；未加载 SDK，不把恒返回 false 写成已验收绕过 |
 | [third-party-browser-fetcher-boundaries.md](./anti-detection/third-party-browser-fetcher-boundaries.md) | Scrapling 0.4.15（静态阅读） | `Playwright`, `Patchright`, `CDP`, `Camoufox`, `PagesCount`, `source-report` | DynamicFetcher / StealthyFetcher 不进采集运行时；过检测与 Cloudflare 保持作者自述 |
 | [page-text-before-llm.md](./anti-detection/page-text-before-llm.md) | 来源提炼（页面文本） | `decision-flow`, `aria-hidden`, `template`, `prompt-injection`, `source-report` | 送模型前的最小清洗；class 隐藏和低对比度文字仍会漏过，清洗通过不是内容可信 |
+| [risk-control-location.md](./anti-detection/risk-control-location.md) | — (来源方法论，无公开链接，source-report) | `location-risk-control`, `GNSS`, `ASN`, `IMU`, `RTT`, `GCJ-02`, `source-report`, `partial` | 来源报告的定位交叉验证与盲区；拆行表格按单元格顺序还原，网页信号写在正文限制里；不表示本次验收 |
 
 
 ### 签名算法 (`article/signature-algorithms/`)
@@ -156,6 +157,9 @@
 | [wechat-wcdb-schema-reference.md](./mobile-app-reverse/wechat-wcdb-schema-reference.md) | 来源提炼（source-report） | `interfaces`, `message_0`, `session`, `contact`, `sns`, `source-report` | 消息、会话、联系人、朋友圈各在哪个库；不复制全部 SQL |
 | [wechat-windows-sendmsg-static.md](./mobile-app-reverse/wechat-windows-sendmsg-static.md) | — (本地笔记，无公开链接) | `4.1.13.65`, `Weixin.dll`, `sendmsg`, `ilink2`, `pdata`, `source-report` | 静态发送链来源稿。本机解释器路径已脱敏。来源写明未注入、未发消息 |
 | [wechat-windows-sendmsg-static-case.md](./mobile-app-reverse/wechat-windows-sendmsg-static-case.md) | 来源提炼（source-report） | `wechat-windows`, `sendmsg`, `ilink`, `static`, `source-report` | 4.1.13.65 静态定位的范围、调用链和 localhost 不是 HTTP 的反例；不把未做的注入写成流程 |
+| [weibo-app-s-field-protocol.md](./mobile-app-reverse/weibo-app-s-field-protocol.md) | 52pojie thread-1370540（Null_Null，source-report） | `weibo`, `generateS`, `libnative-lib.so`, `sha512`, `source-report`, `partial` | 2021-02-13 微博极速版 s 字段来源叙述：Java/so 分流与摘取规则；登录包、会话、手机号、附件 aid 与图片未入库，本次未复现 |
+| [ai-android-algorithm-workflow.md](./mobile-app-reverse/ai-android-algorithm-workflow.md) | — (公众号归档，source-report) | `android-algorithm`, `jadx`, `GumTrace`, `trace`, `source-report`, `partial` | 四段来源流程：定位、人工日志、GumTrace、分析提示词；缺验收与失败出口，提示词图为占位，不表示算法已验收 |
+| [lepao-location-chain.md](./mobile-app-reverse/lepao-location-chain.md) | — (乐跑 PDF，source-report，partial) | `lepao`, `AMap`, `LocationManager`, `deopt`, `source-report`, `partial` | 文本层归档系统定位到高德回调再到 App；图与矢量未抽取，30 米/80 米冲突保留，坐标样值不入库，本次未复现 |
 
 ### DRM 内容获取 (`article/drm-content-acquisition/`)
 
@@ -310,6 +314,8 @@
 | [acw-sc-v2-ast-restoration-reference.md](./web-reverse/acw-sc-v2-ast-restoration-reference.md) | ACW `acw_sc_v2`（来源参考） | `decision-flow`, `Babel AST`, `binding`, `decoder`, `source-report` | AST 分层还原与外部解密表依赖摘要；不含目标 URL、完整代码或当前接受结论 |
 | [aliyun-captcha-v2-sandbox-source-archive.md](./web-reverse/aliyun-captcha-v2-sandbox-source-archive.md) | AliyunCaptcha V2（来源归档，partial） | `AliyunCaptcha`, `FeiLin`, `sg`, `Node vm`, `source-report`, `partial` | 单站来源正文归档；目标 host 与会话样值脱敏，图片附件及运行时证据缺失 |
 | [aliyun-captcha-v2-sandbox-case.md](./web-reverse/aliyun-captcha-v2-sandbox-case.md) | AliyunCaptcha V2（单站来源案例） | `request-chain`, `validation`, `requestInfo`, `Node vm`, `FeiLin`, `sg`, `source-report` | 单站补环境案例；分开请求真实性、环境数据与行为结果，作者结果未由本轮复现 |
+| [spiderdemo-t30-websocket-jsvmp.md](./web-reverse/spiderdemo-t30-websocket-jsvmp.md) | spiderdemo T30（公众号转载，source-report） | `spiderdemo`, `WebSocket`, `msgpack`, `base62`, `jsvmp`, `source-report`, `partial` | T30 题解叙述：自定义 base62、msgpack 与补环境日志；作者声明无完整代码，凭证与密钥原值不入库，本次未复现 |
+| [reese84-pure-compute.md](./web-reverse/reese84-pure-compute.md) | — (公众号归档，source-report) | `reese84`, `VMP`, `p`, `PoW`, `oxc`, `source-report`, `partial` | 来源报告的三元指令、p 编码与 PoW 结构；50 次查询与出 cookie 耗时仅为作者自述，指纹/cookie/token 样值不入库，本次未复现 |
 
 ## 按技术标签检索
 

@@ -14,7 +14,7 @@ sources:
     ref: null
     basis: source-report
     citation: "JSVMP 从入门到入土（序）至（终）"
-    reason: 原始 Markdown 未提供可公开定位的稳定文章链接集合；各篇保留在本地 pending/JSVMP 队列。
+    reason: 原始 Markdown 未提供可公开定位的稳定文章链接集合；原件已移出 Public article 留证，身份见吸收回执的 sha256。
   - id: s2
     ref: null
     basis: source-report
@@ -28,7 +28,7 @@ tags: [JSVMP, JavaScript, virtual-machine, opcode, dispatcher, anti-debugging, d
 
 ## 归档说明
 
-本文合并归档 `pending/JSVMP` 中的 13 篇连续教程，保留其教学顺序和主要代码/判断口径，去除重复的“下一篇预告”、平台导流语句和转载尾注。内容以作者自写玩具 VM 与公开练习靶站为例；本次只做文字清洗与结构整理，没有运行原文代码、复核靶站版本或验证任何商业站点行为。因此文中的“实测”“成功”等均按 `source-report` 理解，不是本库的 runtime 或 server-accepted 结论。原始 Markdown 不删除，仍留在 `article/pending/JSVMP`。
+本文合并归档 13 篇连续教程，保留其教学顺序和主要代码/判断口径，去除重复的“下一篇预告”、平台导流语句和转载尾注。内容以作者自写玩具 VM 与公开练习靶站为例；本次只做文字清洗与结构整理，没有运行原文代码、复核靶站版本或验证任何商业站点行为。因此文中的“实测”“成功”等均按 `source-report` 理解，不是本库的 runtime 或 server-accepted 结论。原件已移出 Public article 留证，身份见吸收回执的 sha256。
 
 ## 一、先建立最小 VM 心智模型
 
