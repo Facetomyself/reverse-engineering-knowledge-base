@@ -16,9 +16,9 @@
 | `packing-bypass` | 5 | 0 | 5 |
 | `protocols` | 4 | 0 | 4 |
 | `signature-algorithms` | 11 | 30 | 41 |
-| `web-reverse` | 135 | 150 | 285 |
+| `web-reverse` | 137 | 150 | 287 |
 
-文章总数：1005。
+文章总数：1007。
 
 ## 逐篇目录
 
@@ -828,6 +828,8 @@
 | 主文 | unknown | [DataDome 无感验证补环境](./web-reverse/datadome-env-patch.md) | — | 正文 / 前言 / 目标网站 / 抓包分析 |
 | 主文 | unknown | [DataDome plv2 / plv3 静态检测面参考](./web-reverse/datadome-plv2-plv3-detection-surface-reference.md) | — | 两条采集面 / 检测类别与阅读边界 / 验证与限制 |
 | 主文 | unknown | [DataDome 环境检测清单（plv2 + plv3）](./web-reverse/datadome-plv2-plv3-source-archive.md) | — | 清洗与完整性说明 / 来源正文 / 一、plv2 线（明文 JS，静态全量） / 1.1 navigator（62 条，全量） |
+| 主文 | unknown | [DataDome plv3 参数 r 纯 Python 落地案例](./web-reverse/datadome-plv3-r-purecalc-case.md) | — | 问题与范围 / 过程与关键证据 / 本次命令 / 参数 |
+| 主文 | unknown | [DataDome plv3 参数 r 的纯 Python 参考](./web-reverse/datadome-plv3-r-purecalc-reference.md) | — | 参数机制 / fingerprint / initialization / encryption |
 | 主文 | 2026-10-09 | [DevTools curl 只作为请求形状](./web-reverse/devtools-curl-intake.md) | — | 请求链上的位置 |
 | 主文 | 2026-09-20 | [抖音 Web 请求面矩阵参考](./web-reverse/douyin-request-plane-matrix-reference.md) | — | 接口面 / 参数边界 / 请求装配链 / 证据边界 |
 | 主文 | 2026-08-16 | [抖音 webSign：钩宿主 MD5，再纯算规范化 query](./web-reverse/douyin-secsdk-websign-case.md) | — | 案例怎么定位到 MD5 / 规范化规则 / 策略表决定谁要加签 / 真实接入 |

@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "article_count": 1005,
+  "article_count": 1007,
   "category_counts": {
     "anti-detection": 306,
     "collection-engineering": 15,
@@ -10,7 +10,7 @@
     "packing-bypass": 5,
     "protocols": 4,
     "signature-algorithms": 41,
-    "web-reverse": 285
+    "web-reverse": 287
   },
   "records": [
     {
@@ -62370,6 +62370,320 @@
         "source-report"
       ],
       "source_completeness": "partial",
+      "metadata_errors": []
+    },
+    {
+      "path": "web-reverse/datadome-plv3-r-purecalc-case.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "DataDome plv3 参数 r 纯 Python 落地案例",
+      "source": "本地笔记 README《浏览器原始输入 → 纯 Python `r`》，以及同目录 cipher-notes、initialization-notes、fingerprint-spec",
+      "original_date": "unknown",
+      "archive_date": "2026-10-30",
+      "summary": "这次只记录一件事：把已反编译样本上的 plv3 参数 r，用纯 Python 从显式浏览器原始输入算出来，并在本机离线跑过现有测试与入口。它不是 静态检测面参考 里的 API 清单，那篇写明没有可运行实现，依据是 source-report。也不是 无感 interstitial 补环境 的 jsdom 跑原脚本。产品命中仍以 DataDome 产品索引 为准。",
+      "keywords": [
+        "datadome",
+        "plv3",
+        "r",
+        "purecalc",
+        "parameters",
+        "request-chain",
+        "risk-control",
+        "source-report"
+      ],
+      "headings": [
+        "问题与范围",
+        "过程与关键证据",
+        "本次命令",
+        "参数",
+        "请求链路",
+        "风控",
+        "结论与反例",
+        "未决项与复用启示"
+      ],
+      "bytes": 11583,
+      "lines": 133,
+      "content_sha256": "e4995beabc25e3903eea9a7287bbcbb10a7fac4e1faad6243f38dc182d71ce1a",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "web-reverse-datadome-plv3-r-purecalc-case",
+      "document_type": "case",
+      "scope": {
+        "targets": [
+          "datadome"
+        ],
+        "client": "web",
+        "version": "unknown",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": null,
+          "basis": "source-report",
+          "citation": "本地笔记 README《浏览器原始输入 → 纯 Python `r`》，以及同目录 cipher-notes、initialization-notes、fingerprint-spec",
+          "reason": "原材料在本地待审目录，未提供可公开定位的链接。"
+        }
+      ],
+      "modules": [
+        {
+          "name": "parameters",
+          "anchor": "parameters",
+          "sources": [
+            "s1"
+          ],
+          "basis": "source-report",
+          "limits": "只记录这次案例能支持的分层和离线边界。s1 无公开 locator，未复现。不把 r 统称加密参数，也不把产品字段 plv3 写成已绑定的发送点。"
+        },
+        {
+          "name": "request-chain",
+          "anchor": "request-chain",
+          "sources": [
+            "s1"
+          ],
+          "basis": "source-report",
+          "limits": "这次命令只覆盖样本内计算链的离线入口。s1 无公开 locator，未复现。产品 HTTP 链不是本次反编译定位到的 URL、方法或 body 键。未联网。"
+        },
+        {
+          "name": "risk-control",
+          "anchor": "risk-control",
+          "sources": [
+            "s1"
+          ],
+          "basis": "source-report",
+          "limits": "只记录笔记要求的缺测失败和五组读数。s1 无公开 locator，未复现。不是服务端原因码，也不复制检测面全量清单。"
+        }
+      ],
+      "relations": [
+        {
+          "type": "supplements",
+          "target": "./datadome-plv2-plv3-detection-surface-reference.md#collection-surfaces"
+        },
+        {
+          "type": "supplements",
+          "target": "./datadome-plv2-plv3-detection-surface-reference.md#detection-patterns"
+        },
+        {
+          "type": "supplements",
+          "target": "./datadome-plv3-r-purecalc-reference.md#parameters"
+        },
+        {
+          "type": "supplements",
+          "target": "./datadome-plv3-r-purecalc-reference.md#input-lifecycle"
+        },
+        {
+          "type": "supplements",
+          "target": "./datadome-plv3-r-purecalc-reference.md#request-chain"
+        },
+        {
+          "type": "supplements",
+          "target": "./datadome-plv3-r-purecalc-reference.md#risk-control"
+        }
+      ],
+      "tags": [
+        "datadome",
+        "plv3",
+        "r",
+        "purecalc",
+        "parameters",
+        "request-chain",
+        "risk-control",
+        "source-report"
+      ],
+      "source_completeness": "unknown",
+      "metadata_errors": []
+    },
+    {
+      "path": "web-reverse/datadome-plv3-r-purecalc-reference.md",
+      "kind": "canonical",
+      "category": "web-reverse",
+      "parent": null,
+      "title": "DataDome plv3 参数 r 的纯 Python 参考",
+      "source": "本地笔记 README《浏览器原始输入 → 纯 Python `r`》，以及同目录 cipher-notes、initialization-notes、fingerprint-spec; ./datadome-plv3-r-purecalc-case.md#algorithm-boundary; ./datadome-plv3-r-purecalc-case.md#local-run; ./products/datadome.md#常见链路; ./products/datadome.md#观察优先级; ./datadome-env-patch-reference.md#request-chain; ./datadome-env-patch-reference.md#parameters; ./datadome-plv2-plv3-detection-surface-reference.md#detection-patterns; ./products/datadome.md#命中特征",
+      "original_date": "unknown",
+      "archive_date": "2026-10-30",
+      "summary": "这张卡分开写三件事。parameters 回答反编译样本里的符号 r 在笔记描述的正常路径上如何从显式浏览器原始输入算出，并把 fingerprint、initialization、encryption、encoding 分开，不把 r 统称加密参数。request-chain 把样本内计算链和产品 HTTP 链分成两份证据。risk-control 只写这条主路径的读数分组和缺测失败，不替换 静态检测面 的全量类别，也不替换 补环境参考 的 jsdom 执行细节。落地范围与本次命令见 案例。",
+      "keywords": [
+        "parameters",
+        "request-chain",
+        "risk-control",
+        "validation",
+        "fingerprint",
+        "encryption",
+        "plv3",
+        "source-report"
+      ],
+      "headings": [
+        "参数机制",
+        "fingerprint",
+        "initialization",
+        "encryption",
+        "encoding",
+        "输入生命周期",
+        "验证与限制",
+        "请求链路",
+        "样本内计算链",
+        "产品 HTTP 链",
+        "两链之间的缺口",
+        "风控",
+        "自动化与运行时",
+        "渲染一致性",
+        "时间与熵",
+        "文档状态",
+        "控制台探针"
+      ],
+      "bytes": 28867,
+      "lines": 271,
+      "content_sha256": "2b75ccdf95ec8f06337a899f1e1d7aa1ec07d062432c229c62133fcb0656e19b",
+      "metadata_status": "v2",
+      "schema_version": 2,
+      "id": "web-reverse-datadome-plv3-r-purecalc-reference",
+      "document_type": "reference",
+      "scope": {
+        "targets": [
+          "datadome"
+        ],
+        "client": "web",
+        "version": "unknown",
+        "observed_at": "unknown"
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "ref": null,
+          "basis": "source-report",
+          "citation": "本地笔记 README《浏览器原始输入 → 纯 Python `r`》，以及同目录 cipher-notes、initialization-notes、fingerprint-spec",
+          "reason": "原材料在本地待审目录，未提供可公开定位的链接。"
+        },
+        {
+          "id": "s2",
+          "ref": "./datadome-plv3-r-purecalc-case.md#algorithm-boundary",
+          "basis": "source-report"
+        },
+        {
+          "id": "s3",
+          "ref": "./datadome-plv3-r-purecalc-case.md#local-run",
+          "basis": "source-report"
+        },
+        {
+          "id": "s4",
+          "ref": "./products/datadome.md#常见链路",
+          "basis": "source-report"
+        },
+        {
+          "id": "s5",
+          "ref": "./products/datadome.md#观察优先级",
+          "basis": "source-report"
+        },
+        {
+          "id": "s6",
+          "ref": "./datadome-env-patch-reference.md#request-chain",
+          "basis": "source-report"
+        },
+        {
+          "id": "s7",
+          "ref": "./datadome-env-patch-reference.md#parameters",
+          "basis": "source-report"
+        },
+        {
+          "id": "s8",
+          "ref": "./datadome-plv2-plv3-detection-surface-reference.md#detection-patterns",
+          "basis": "source-report"
+        },
+        {
+          "id": "s9",
+          "ref": "./products/datadome.md#命中特征",
+          "basis": "source-report"
+        }
+      ],
+      "modules": [
+        {
+          "name": "parameters",
+          "anchor": "parameters",
+          "sources": [
+            "s1",
+            "s2"
+          ],
+          "basis": "source-report",
+          "limits": "只整理笔记对当前样本正常路径的 fingerprint、header/key、RC4-like 与 Base64URL 分层，以及输入进入哪一层、能否离线。未抄常量表、样本 r 或诊断值。s1 无公开 locator，未复现。不覆盖笔记点名的其他 VM 分支，也不把 README 的对照升成 local-parity。不把 r 统称加密参数。"
+        },
+        {
+          "name": "request-chain",
+          "anchor": "request-chain",
+          "sources": [
+            "s1",
+            "s4",
+            "s5",
+            "s6",
+            "s7",
+            "s9"
+          ],
+          "basis": "source-report",
+          "limits": "样本内计算链只整理笔记的主路径状态与四层；s1 无公开 locator，未复现。产品 HTTP 链只转述产品索引与补环境参考，不是这次反编译定位到的 URL、方法或 body 键。本次命令未联网。不把本地符号 r 与产品字段 plv3 写成已经绑定的同一发送点。"
+        },
+        {
+          "name": "risk-control",
+          "anchor": "risk-control",
+          "sources": [
+            "s1",
+            "s8"
+          ],
+          "basis": "source-report",
+          "limits": "只整理笔记对缺测和伪造读数的失败要求。s1 无公开 locator，未复现。不是服务端原因码，也不复制检测面 reference 的全量清单。不收录像素、UA 或硬件原值。"
+        },
+        {
+          "name": "validation",
+          "anchor": "validation",
+          "sources": [
+            "s1",
+            "s3"
+          ],
+          "basis": "source-report",
+          "limits": "README 的浏览器对照只是 source-report。本次命令只观察到测试计数、退出码、428 字节和哈希前缀；回执无公开 locator，本模块不升 runtime-observation、local-parity 或 server-accepted。未联网。不是全部 VM 已恢复。"
+        }
+      ],
+      "relations": [
+        {
+          "type": "derived_from",
+          "target": "./datadome-plv3-r-purecalc-case.md#algorithm-boundary"
+        },
+        {
+          "type": "supplements",
+          "target": "./datadome-plv2-plv3-detection-surface-reference.md#collection-surfaces"
+        },
+        {
+          "type": "supplements",
+          "target": "./datadome-plv2-plv3-detection-surface-reference.md#detection-patterns"
+        },
+        {
+          "type": "supplements",
+          "target": "./products/datadome.md#常见链路"
+        },
+        {
+          "type": "supplements",
+          "target": "./products/datadome.md#观察优先级"
+        },
+        {
+          "type": "supplements",
+          "target": "./datadome-env-patch-reference.md#request-chain"
+        },
+        {
+          "type": "supplements",
+          "target": "./datadome-env-patch-reference.md#parameters"
+        }
+      ],
+      "tags": [
+        "datadome",
+        "plv3",
+        "fingerprint",
+        "encryption",
+        "encoding",
+        "request-chain",
+        "risk-control",
+        "source-report"
+      ],
+      "source_completeness": "unknown",
       "metadata_errors": []
     },
     {
